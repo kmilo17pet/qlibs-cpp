@@ -1,2 +1,2 @@
-# qlibs-
+# qlibs++
 C++ version of qlibs
