@@ -156,12 +156,15 @@ void test_fis( void )
 
 void test_fp16( void ) 
 {
+    cout << "fp16 test "<<endl;
     fp16 x = 6.5_fp;
     fp16 y = 7.33_fp;
     fp16 z = x * y;
     fp16 w = z/2.0_fp;
     fp16 r = -y;
     fp16 t = fp16::exp( 0.1_fp );
+    cout << sizeof( fp16 ) << endl;
+    cout << t << endl;
     cout << x.raw() << " "<< y.raw() << " " << z.raw() << endl;
     cout <<  z  << endl;
     cout <<  fp16::sqrt( z )  << endl;
@@ -178,9 +181,14 @@ void test_fp16( void )
     x -= 0.5_fp;
     cout <<  x << endl;
     x += y;
-    cout <<  x  << endl;
+    cout << x << endl;
     x++;
     cout << x << endl;
+    x = 20.77;
+    cout << x << endl;
+    fp16 ab = fp16::from( -57.22 );
+    cout << ab << endl;
+    
 }
 
 void test_crc( void )
