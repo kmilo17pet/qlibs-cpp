@@ -466,7 +466,7 @@ bool fis::inference( void )
     bool retValue = false;
 
     if ( nullptr != rules  ) {
-        size_t i = 0u;
+        size_t i = 0U;
 
         if ( Q_FIS_RULES_BEGIN == rules[ 0 ] ) {
             inferenceState = &fis::inferenceAntecedent;

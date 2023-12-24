@@ -410,7 +410,7 @@ real_t fisCore::LinearMF( const fisIOBase * const in, const real_t *p, const siz
     real_t px = 0.0;
     size_t i;
 
-    for ( i = 0u ; i < n ; ++i ) {
+    for ( i = 0U ; i < n ; ++i ) {
         px += in[ i ].value*p[ i ];
     }
     px += p[ i ];

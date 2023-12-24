@@ -349,7 +349,7 @@ bool smootherALNF::setup( const real_t a, const real_t m, real_t *window, const 
         mu = m;
         xx = window;
         w = &window[ wsize ];
-        w_1 = ( mu > 0.0 ) ? &window[ 2u*wsize ] : nullptr;
+        w_1 = ( mu > 0.0 ) ? &window[ 2U*wsize ] : nullptr;
         n = wsize;
         retValue = reset();
     }
