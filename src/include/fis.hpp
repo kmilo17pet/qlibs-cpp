@@ -34,7 +34,7 @@ namespace qlibs {
         tsmf,           /*!< Tsukamoto S-Shape membership function f(a,b) [ Only for ::Tsukamoto FIS ]*/
         tzmf,           /*!< Tsukamoto Z-Shape membership function f(a,b) [ Only for ::Tsukamoto FIS ]*/
         /*! @cond  */
-        _NUM_MFS        /*!< Number of supported membership functions*/
+        FIS_NUM_MFS        /*!< Number of supported membership functions*/
         /*! @endcond  */
     };
 
@@ -47,7 +47,7 @@ namespace qlibs {
         wtaver,         /*!< Weighted average of all rule outputs [ Only for ::Sugeno and ::Tsukamoto FIS ]*/
         wtsum,          /*!< Weighted sum of all rule outputs [ Only for ::Sugeno FIS ]*/
         /*! @cond  */
-        _NUM_DEFUZZ      /*!< Number of supported defuzzification methods*/
+        FIS_NUM_DEFUZZ      /*!< Number of supported defuzzification methods*/
         /*! @endcond  */
     };
 

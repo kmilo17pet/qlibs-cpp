@@ -40,7 +40,7 @@ void tdl::removeOldest( void )
 /*============================================================================*/
 real_t tdl::getOldest( void ) const
 {
-    return ( ( rd + 1u ) >= tail ) ? head[ 0 ] : rd[ 1 ];
+    return ( ( rd + 1U ) >= tail ) ? head[ 0 ] : rd[ 1 ];
 }
 /*============================================================================*/
 real_t tdl::getRecent( void ) const

@@ -195,7 +195,7 @@ real_t continuousSystem::update( const real_t u )
         for ( size_t i = ( n - 1U ) ; i >= 1U ; --i ) {
             dx0 += a[ i ]*xc[ i ](); /*compute the first derivative*/
             /*integrate to obtain the remaining states*/
-            (void)xc[ i ].integrate( xc[ i - 1u ](), dt );
+            (void)xc[ i ].integrate( xc[ i - 1U ](), dt );
             /*compute the first part of the output*/
             y += ( b[ i ] - ( a[ i ]*b0 ) )*xc[ i ];
         }

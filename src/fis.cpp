@@ -48,16 +48,16 @@ bool fis::setDeFuzzMethod( fisDeFuzzMethod m )
 {
     bool retValue = false;
 
-    static const fisDeFuzzFunction method[ _NUM_DEFUZZ ] = { &deFuzzCentroid,
-                                                            &deFuzzBisector,
-                                                            &deFuzzMOM,
-                                                            &deFuzzLOM,
-                                                            &deFuzzSOM,
-                                                            &deFuzzWtAverage,
-                                                            &deFuzzWtSum
+    static const fisDeFuzzFunction method[ FIS_NUM_DEFUZZ ] = { &deFuzzCentroid,
+                                                                &deFuzzBisector,
+                                                                &deFuzzMOM,
+                                                                &deFuzzLOM,
+                                                                &deFuzzSOM,
+                                                                &deFuzzWtAverage,
+                                                                &deFuzzWtSum
                                                           };
 
-    if ( m < _NUM_DEFUZZ ) {
+    if ( m < FIS_NUM_DEFUZZ ) {
         if ( ( ( Mamdani == type ) && ( m <= som ) ) ||
              ( ( Sugeno == type ) && ( m >= wtaver ) && ( m <= wtsum ) ) ||
              ( ( Tsukamoto == type ) && ( wtaver == m ) )) {
@@ -187,7 +187,7 @@ bool fis::getOutput( const fisTag t, real_t &value ) const
 bool fis::setMF( fisMF *m, const fisTag io, const fisTag mf, const fisShapeMF s, fisMFFunction customMf, const real_t *cp, const real_t h )
 {
     bool retValue = false;
-    static const fisMFFunction fShape[ _NUM_MFS ] = { &ConstantMF,
+    static const fisMFFunction fShape[ FIS_NUM_MFS ] = { &ConstantMF,
         /* Conventional membership functions, applies on any antecedent*/
         &TriMF, &TrapMF, &GBellMF, &GaussMF, &Gauss2MF, &SigMF, &DSigMF, &PSigMF,
         &PiMF, &SMF, &ZMF, &SingletonMF, &ConcaveMF, &SpikeMF, &LinSMF, &LinZMF,
@@ -198,7 +198,7 @@ bool fis::setMF( fisMF *m, const fisTag io, const fisTag mf, const fisShapeMF s,
         &TLinSMF, &TLinZMF, &TConcaveMF, &TSigMF, &TSMF, &TZMF
     };
 
-    if ( ( io >= 0 ) && ( mf >= 0 ) && ( s < _NUM_MFS ) ) {
+    if ( ( io >= 0 ) && ( mf >= 0 ) && ( s < FIS_NUM_MFS ) ) {
         /*cstat -CERT-STR34-C*/
         m[ mf ].shape = ( nullptr != customMf ) ? customMf : fShape[ s ];
         m[ mf ].index = static_cast<size_t>( io );
