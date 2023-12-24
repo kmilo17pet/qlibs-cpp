@@ -1,0 +1,241 @@
+#include <include/bitfield.hpp>
+#include <cstring> 
+
+using namespace qlibs;
+
+const size_t bitfield::LBit =  static_cast<size_t>( sizeof(uint32_t) * 8u );
+
+/*============================================================================*/
+bool bitfield::setup( void * const area, const size_t area_size )
+{
+    bool retValue = false;
+
+    if ( ( nullptr != area ) && ( area_size > 0U ) ) {
+        /*cstat -CERT-EXP36-C_b*/
+        field = static_cast<uint32_t *>( area );
+        /*cstat +CERT-EXP36-C_b*/
+        size = area_size*8u;
+        nSlots = area_size/sizeof(uint32_t);
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::clearAll( void )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        (void)std::memset( field, 0, size/8u );
+        retValue = true;
+    }
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::setAll( void )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        (void)std::memset( field, 0xFF, size/8u );
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::setBit( const size_t index )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        bitSet( index );
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::clearBit( const size_t index )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        bitClear( index );
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::toggleBit( const size_t index )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        bitToggle( index );
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::readBit( const size_t index ) const
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        retValue = 0U != bitGet( index );
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::writeBit( const size_t index, bool value )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        if ( value ) {
+            bitSet( index );
+        }
+        else {
+            bitClear( index );
+        }
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+uint32_t bitfield::readUINTn( const size_t index, size_t xBits ) const
+{
+    uint32_t retValue = 0U;
+
+    if ( ( nullptr != field ) && ( xBits <= 32U ) ) {
+        if ( 1U == xBits ) {
+            retValue = static_cast<uint32_t>( readBit( index ) );
+        }
+        else if ( 32u == xBits ) {
+            retValue = read_uint32( index );
+        }
+        else {
+            retValue = read_uint32( index );
+            retValue &= safeMask( 0xFFFFFFFFu, 32u, xBits );
+        }
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::writeUINTn( const size_t index, size_t xBits, uint32_t value )
+{
+    bool retValue = false;
+
+    if ( ( nullptr != field ) && ( xBits <= 32u ) ) {
+        uint32_t w, wMask;
+
+        if ( 1u == xBits ) {
+            (void)writeBit( index, 0 != value );
+        }
+        else if ( 32u == xBits ) {
+            write_uint32( index, value );
+        }
+        else {
+            w = read_uint32( index );
+            value &= safeMask( 0xFFFFFFFFu, 32u, xBits );
+            /*cstat -ATH-overflow*/
+            wMask = static_cast<uint32_t>( 0xFFFFFFFFu ) << static_cast<uint32_t>( xBits );
+            /*cstat +ATH-overflow*/
+            write_uint32( index, maskMerge( w, value, wMask ) );
+        }
+        retValue = 1;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+float bitfield::readFloat( const size_t index ) const
+{
+    float retValue = 0.0f;
+
+    if ( nullptr != field ) {
+        uint32_t rval;
+
+        rval = read_uint32( index );
+        (void)std::memcpy( &retValue, &rval, sizeof(float) );
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool bitfield::writeFloat( const size_t index, float value )
+{
+    bool retValue = false;
+
+    if ( nullptr != field ) {
+        uint32_t fval = 0u;
+        
+        (void)std::memcpy( &fval, &value, sizeof(float) );
+        write_uint32( index, fval );
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+void* bitfield::dump( void * const dst, size_t n )
+{
+    void *retValue = nullptr;
+
+    if ( ( nullptr != field ) && ( nullptr != dst ) ) {
+        if ( n <= ( size/8u ) ) {
+            retValue = std::memcpy( dst, static_cast<const void*>( field ), n );
+        }
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+uint32_t bitfield::read_uint32( const size_t index ) const
+{
+    size_t slot, of, bits_taken;
+    uint32_t result;
+
+    slot = bitSlot( index );
+    of = offset( index );
+    /*cstat -CERT-INT34-C_a*/
+    result = field[ slot ] >> of;
+    /*cstat +CERT-INT34-C_a*/
+    bits_taken  = 32U - of;
+    if ( ( 0U != of ) && ( ( index + bits_taken ) < size ) ) {
+        /*cstat -ATH-shift-bounds -MISRAC++2008-5-8-1 -CERT-INT34-C_b*/
+        result |= field[ slot + 1u ] << static_cast<uint32_t>( bits_taken );
+        /*cstat +ATH-shift-bounds +MISRAC++2008-5-8-1 +CERT-INT34-C_b*/
+    }
+
+    return result;
+}
+/*============================================================================*/
+void bitfield::write_uint32( const size_t index, const uint32_t value )
+{
+    uint32_t wMask;
+    size_t slot, of;
+
+    slot = bitSlot( index );
+    of = offset( index );
+    if ( 0u == of ) {
+        field[ slot ] = value;
+    }
+    else {
+        wMask = safeMask( 0xFFFFFFFFu, LBit, of );
+        /*cstat -CERT-INT34-C_a*/
+        field[ slot ] = ( value << of ) | ( field[ slot ] & wMask );
+        /*cstat +CERT-INT34-C_a*/
+        if ( ++slot < nSlots ) {
+            field[ slot ] = safeMask( value, 32u, of ) | ( field[ slot ] & ( ~wMask ) );
+        }
+    }
+}
+/*============================================================================*/
