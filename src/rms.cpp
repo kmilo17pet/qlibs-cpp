@@ -7,7 +7,7 @@ bool rms::setup( real_t * const window, const size_t wsize )
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( wsize > 0U) ) {
+    if ( ( nullptr != window ) && ( wsize > 0U ) ) {
         (void)smootherEXPW::setup( 0.99 );
         (void)smootherMWM2::setup( window, wsize );
         (void)smootherLPF1::setup( 0.75 );

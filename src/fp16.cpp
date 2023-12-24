@@ -3,7 +3,6 @@
 
 using namespace qlibs;
 
-
 fp16_t fp16::Min = -2147483647;
 fp16_t fp16::Max = 2147483647;
 bool fp16::rounding = true;

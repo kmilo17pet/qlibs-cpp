@@ -157,7 +157,7 @@ namespace qlibs {
             }
             inline uint32_t crc32_BZIP2( const void * const pData, const size_t length )
             {
-                return generic( CRC32, pData, length, 0x04C11DB7u, 0xFFFFFFFFU, false, false, 0xFFFFFFFFU  );
+                return generic( CRC32, pData, length, 0x04C11DB7U, 0xFFFFFFFFU, false, false, 0xFFFFFFFFU  );
             }
             inline uint32_t crc32_C( const void * const pData, const size_t length )
             {

@@ -6,7 +6,7 @@ using namespace qlibs;
 /*============================================================================*/
 void smoother::windowSet( real_t *w, const size_t wsize, const real_t x )
 {
-    for ( size_t i = 0 ; i < wsize ; ++i ) {
+    for ( size_t i = 0U ; i < wsize ; ++i ) {
         w[ i ] = x;
     }
 }
@@ -82,7 +82,7 @@ bool smootherMWM1::setup( real_t *window, const size_t w_size )
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( wsize > 0u ) ) {
+    if ( ( nullptr != window ) && ( wsize > 0U ) ) {
         w = window;
         wsize = w_size;
         retValue = reset();
@@ -105,7 +105,7 @@ bool smootherMWM2::setup( real_t *window, const size_t w_size )
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( w_size > 0u ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) ) {
         tdl::setup( window, w_size );
         retValue = reset();
     }
@@ -132,7 +132,7 @@ bool smootherMOR1::setup( real_t *window, const size_t w_size, const real_t a )
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( w_size > 0u ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
         w = window;
         wsize = w_size;
         alpha = a;
@@ -165,7 +165,7 @@ bool smootherMOR2::setup( real_t *window, const size_t w_size, const real_t a )
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( w_size > 0u ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
         alpha = a;
         tdl::setup( window, w_size );
         sum = 0.0;
@@ -203,17 +203,17 @@ bool smootherGMWF::setup( const real_t sg, const size_t c, real_t *window, const
     bool retValue = false;
     const size_t ws = wsize/2U;
 
-    if ( ( nullptr != window ) && ( w_size > 0u ) && ( c < ws ) && ( sg > 0.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( c < ws ) && ( sg > 0.0 ) ) {
         real_t * const kernel = &window[ ws ];
-        real_t r, sum = 0.0f;
+        real_t r, sum = 0.0;
         size_t i;
         real_t l, center;
         /*cstat -MISRAC++2008-5-0-7*/
-        l = static_cast<real_t>( wsize - 1u )/2.0;
+        l = static_cast<real_t>( wsize - 1U )/2.0;
         /*cstat +MISRAC++2008-5-0-7*/
         center = static_cast<real_t>( c ) - l;
         r = 2.0*sg*sg;
-        for ( i = 0u ; i < ws ; ++i ) {
+        for ( i = 0U ; i < ws ; ++i ) {
             /*cstat -MISRAC++2008-5-0-7*/
             real_t d = static_cast<real_t>( i ) - l; /*symmetry*/
             /*cstat +MISRAC++2008-5-0-7*/
@@ -223,7 +223,7 @@ bool smootherGMWF::setup( const real_t sg, const size_t c, real_t *window, const
             /*cstat +CERT-FLP32-C_b*/
             sum += kernel[ i ];
         }
-        for ( i = 0u ; i < ws ; ++i ) {
+        for ( i = 0U ; i < ws ; ++i ) {
             kernel[ i ] /= sum;
         }
         w = window;
@@ -248,7 +248,7 @@ bool smootherEXPW::setup( const real_t lam )
 {
     bool retValue = false;
     
-    if ( ( lam > 0.0f ) && ( lam < 1.0f ) ) {
+    if ( ( lam > 0.0 ) && ( lam < 1.0 ) ) {
         lambda = lam;
         m = 0.0;
         w = 1.0;
@@ -264,7 +264,7 @@ real_t smootherEXPW::smooth( const real_t x )
 
     if ( init ) {
         m = x;
-        w = 1.0f;
+        w = 1.0;
         init = false;
     }
     w = ( lambda*w ) + 1.0;
@@ -278,7 +278,7 @@ bool smootherKLMN::setup( const real_t processNoiseCov, const real_t measureNois
 {
     bool retValue = false;
 
-    if ( ( processNoiseCov > 0.0f ) && ( measureNoiseCov > 0.0f ) && ( estErrorCov > 0.0f ) ) {
+    if ( ( processNoiseCov > 0.0 ) && ( measureNoiseCov > 0.0 ) && ( estErrorCov > 0.0 ) ) {
         p = estErrorCov;
         q = processNoiseCov;
         r = measureNoiseCov;
@@ -349,7 +349,7 @@ bool smootherALNF::setup( const real_t a, const real_t m, real_t *window, const 
         mu = m;
         xx = window;
         w = &window[ wsize ];
-        w_1 = ( mu > 0.0f ) ? &window[ 2u*wsize ] : nullptr;
+        w_1 = ( mu > 0.0 ) ? &window[ 2u*wsize ] : nullptr;
         n = wsize;
         retValue = reset();
     }
@@ -375,7 +375,7 @@ real_t smootherALNF::smooth( const real_t x )
     if ( nullptr != w_1 ) {
         real_t * const ww_1 = &w[ n ];
 
-        for ( size_t i = 0u ; i < n ; ++i ) {
+        for ( size_t i = 0U ; i < n ; ++i ) {
             const real_t w0 = w[ i ];
             const real_t w1 = ww_1[ i ];
  
@@ -384,10 +384,11 @@ real_t smootherALNF::smooth( const real_t x )
         }
     }
     else {
-        for ( size_t i = 0u ; i < n ; ++i ) {
+        for ( size_t i = 0U ; i < n ; ++i ) {
             w[ i ] += alpha*( x - xe )*xx[ i ];
         }
     }
 
     return xe;
 }
+/*============================================================================*/

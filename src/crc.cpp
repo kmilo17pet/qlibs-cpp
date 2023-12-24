@@ -45,9 +45,9 @@ uint32_t crc::generic( crcMode mode, const void * const pData, const size_t leng
             val ^= ( refIn ) ? ( reflect( static_cast<uint32_t>( msg[ i ] ) , 8U ) <<  wd1 )
                              : ( static_cast<uint32_t>( msg[ i ] ) << wd1 );
             /*cstat +MISRAC++2008-5-0-8*/
-            for ( xBit = 8u ; xBit > 0u ; --xBit ) {
-                val = ( 0u != ( val & topBit ) ) ? ( ( val << 1u ) ^ poly )
-                                                 : ( val << 1u );
+            for ( xBit = 8U ; xBit > 0U ; --xBit ) {
+                val = ( 0U != ( val & topBit ) ) ? ( ( val << 1U ) ^ poly )
+                                                 : ( val << 1U );
             }
         }
         val = ( refOut ) ? ( reflect( val, static_cast<uint8_t>( width ) )^xorOut ) : ( val^xorOut );

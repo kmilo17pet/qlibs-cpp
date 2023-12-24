@@ -170,7 +170,7 @@ real_t fisCore::TSMF( const fisIOBase * const in, const real_t *p, const size_t 
     a = p[ 0 ]; /*start*/
     b = p[ 1 ]; /*end*/
     diff = b - a;
-    diff = 0.5f*diff*diff;
+    diff = 0.5*diff*diff;
     ta = a + sqrt( x*diff );
     tmp.value = ta;
     ma = SMF( &tmp, p, n );

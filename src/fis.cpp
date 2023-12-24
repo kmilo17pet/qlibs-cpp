@@ -83,7 +83,7 @@ bool fis::setup( const fisType t,
          ( nullptr != outputs) && ( no > 0U ) && 
          ( nullptr != mf_inputs) && ( nmi > 0U ) &&
          ( nullptr != mf_outputs) && ( nmo > 0U ) &&
-         ( nullptr != r ) && ( n > 0 )
+         ( nullptr != r ) && ( n > 0U )
        ) {
         type = t;
         input = inputs;
@@ -102,7 +102,7 @@ bool fis::setup( const fisType t,
         (void)setParameter( FIS_OR, FIS_MAX );
         (void)setParameter( FIS_Implication, FIS_MIN );
         (void)setParameter( FIS_Aggregation, FIS_MAX );
-        for ( size_t i = 0u ; i < nOutputs ; ++i ) {
+        for ( size_t i = 0U ; i < nOutputs ; ++i ) {
             //output[ i ].res = ( output[ i ].max - output[ i ].min )/static_cast<real_t>( nPoints );
             output[ i ].owner = this;
         }
@@ -221,7 +221,7 @@ void fis::evalInputMFs( void )
 /*============================================================================*/
 void fis::truncateInputs( void )
 {
-    for ( size_t i = 0 ; i < nInputs ; ++i ) {
+    for ( size_t i = 0U ; i < nInputs ; ++i ) {
         input[ i ].value = bound( input[ i ].value, input[ i ].min, input[ i ].max );
     }
 }
@@ -294,11 +294,11 @@ size_t fis::inferenceAntecedent( size_t i )
         if ( ( Q_FIS_AND == connector ) || ( Q_FIS_OR == connector ) ) {
             lastConnector = connector;
             inferenceState = &fis::inferenceAntecedent;
-            i += 2u;
+            i += 2U;
         }
         else if ( Q_FIS_THEN == connector ) {
             inferenceState = &fis::inferenceReachEnd;
-            i += 2u;
+            i += 2U;
         }
         else {
             i = INFERENCE_ERROR;
@@ -408,7 +408,7 @@ bool fis::deFuzzify( void )
     if ( ( nullptr != output ) && ( nullptr != outMF ) ) {
         size_t i;
 
-        for ( i = 0; i < nOutputs ; ++i ) {
+        for ( i = 0U ; i < nOutputs ; ++i ) {
             deFuzz( &output[ i ] , FIS_DEFUZZ_INIT );
         }
         if ( Mamdani == type ) {

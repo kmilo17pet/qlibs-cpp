@@ -304,7 +304,7 @@ bool pidAutoTuning::step( const real_t u, const real_t y, const real_t dt )
     /*cstat +MISRAC++2008-5-14-1*/
         k = gain + ( mu*( k - gain ) );
         tao = timeConstant + ( mu*( tao - timeConstant ) );
-        if ( ( 0uL == --it ) && ( pidAutoTuning::UNDEFINED != it ) ) {
+        if ( ( 0UL == --it ) && ( pidAutoTuning::UNDEFINED != it ) ) {
             ready = true;
         }
     }
@@ -357,7 +357,7 @@ bool pidController::bindAutoTuning( pidAutoTuning &at )
         at.it = 100UL;
         at.mu = 0.95;
         k = Kc/0.9;
-        T = ( 0.27f*k )/Ki;
+        T = ( 0.27*k )/Ki;
         /*cstat -CERT-FLP32-C_b*/
         at.a1 = -exp( -dt/T );
         /*cstat +CERT-FLP32-C_b*/

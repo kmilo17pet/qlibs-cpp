@@ -8,10 +8,10 @@ void ltisys::normalizeTransferFunction( real_t *num, real_t *den, size_t n_num, 
     const real_t a0 = den[ 0 ];
     size_t i;
 
-    for ( i = 0 ; i < n_num ; ++i ) {
+    for ( i = 0U ; i < n_num ; ++i ) {
         num[ i ] /= a0;
     }
-    for ( i = 0 ; i < n_den ; ++i ) {
+    for ( i = 0U ; i < n_den ; ++i ) {
         den[ i ] /= a0;
     }
     b0 = num[ 0 ];
@@ -59,18 +59,18 @@ bool ltisys::setSaturation( const real_t minV, const real_t maxV )
 real_t discreteSystem::updateFIR( real_t *w, const size_t wsize, const real_t x, const real_t * const c )
 {
     size_t i;
-    real_t y = 0.0f;
+    real_t y = 0.0;
 
     if ( nullptr != c ) {
-        for ( i = ( wsize - 1u ) ; i >= 1u ; --i ) {
-            w[ i ] = w[ i - 1u ];
+        for ( i = ( wsize - 1U ) ; i >= 1U ; --i ) {
+            w[ i ] = w[ i - 1U ];
             y += w[ i ]*c[ i ];
         }
         y += c[ 0 ]*x;
     }
     else {
-        for ( i = ( wsize - 1u ) ; i >= 1u ; --i ) {
-            w[ i ] = w[ i - 1u ];
+        for ( i = ( wsize - 1U ) ; i >= 1U ; --i ) {
+            w[ i ] = w[ i - 1U ];
             y += w[ i ];
         }
         y += x;
@@ -85,8 +85,8 @@ bool discreteSystem::setInitStates( const real_t *xi )
     bool retValue = false;
 
     if ( isInitialized() ) {
-        for ( size_t i = 0u; i < n ; ++i ) {
-            const real_t zero = 0.0f;
+        for ( size_t i = 0U; i < n ; ++i ) {
+            const real_t zero = 0.0;
             const real_t * const iv = ( nullptr != xi ) ? &xi[ i ] : &zero;
             xd[ i ] = iv[ i ];
         }
@@ -102,7 +102,7 @@ bool discreteSystem::setup( real_t *num, real_t *den, real_t *x, const size_t n_
 
     if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_a > 0U ) ) {
         b = num;
-        na = n_a - 1;
+        na = n_a - 1U;
         nb = n_b;
         n = ( na > nb ) ? na : nb;
         xd = x;
@@ -149,7 +149,7 @@ bool continuousSystem::setup( real_t *num, real_t *den, state *x,const size_t n_
 
     if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_a > 0U ) ) {
         b = &num[ 1 ];
-        n = n_a - 1u;
+        n = n_a - 1U;
         nb = n;
         na = n_a;
         xc = x;
@@ -169,8 +169,8 @@ bool continuousSystem::setInitStates( const real_t *xi )
     bool retValue = false;
 
     if ( isInitialized() ) {
-        for ( size_t i = 0u; i < n ; ++i ) {
-            const real_t zero = 0.0f;
+        for ( size_t i = 0U; i < n ; ++i ) {
+            const real_t zero = 0.0;
             const real_t * const iv = ( nullptr != xi ) ? &xi[ i ] : &zero;
             xc[ i ].init( iv[ 0 ], iv[ 0 ], iv[ 0 ] );
         }
@@ -182,17 +182,17 @@ bool continuousSystem::setInitStates( const real_t *xi )
 /*============================================================================*/
 real_t continuousSystem::update( const real_t u )
 {
-    real_t y = 0.0f;
-    real_t dx0 = 0.0f;
+    real_t y = 0.0;
+    real_t dx0 = 0.0;
 
-    if ( 1u == n ) {
+    if ( 1U == n ) {
         dx0 = ( u - ( xc[ 0 ]*a[ 0 ] ) );
         (void)xc[ 0 ].integrate( dx0, dt );
         y = ( b[ 0 ] - ( a[ 0 ]*b0 ) )*xc[ 0 ];
     }
     else {
         /*compute states of the system by using the controllable canonical form*/
-        for ( size_t i = ( n - 1u ) ; i >= 1u ; --i ) {
+        for ( size_t i = ( n - 1U ) ; i >= 1U ; --i ) {
             dx0 += a[ i ]*xc[ i ](); /*compute the first derivative*/
             /*integrate to obtain the remaining states*/
             (void)xc[ i ].integrate( xc[ i - 1u ](), dt );
@@ -232,7 +232,7 @@ bool continuousSystem::setIntegrationMethod( integrationMethod m )
         /*cstat -MISRAC++2008-0-1-2_a*/
         if ( ( INTEGRATION_RECTANGULAR == m ) || ( INTEGRATION_TRAPEZOIDAL == m ) || ( INTEGRATION_SIMPSON == m ) ) {
         /*cstat +MISRAC++2008-0-1-2_a*/
-            for ( size_t i = 0; i < n ; ++i ) {
+            for ( size_t i = 0U; i < n ; ++i ) {
                 xc[ i ].setIntegrationMethod( m );
             }
             retValue = true;

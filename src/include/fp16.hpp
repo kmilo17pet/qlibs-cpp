@@ -27,7 +27,6 @@ namespace qlibs {
             fp16 operator*( const fp16Constant& other ) const;
             fp16 operator/( const fp16Constant& other ) const;
     };
-
     class fp16 {
         friend class fp16Constant;
         private:

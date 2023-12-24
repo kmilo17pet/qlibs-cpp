@@ -73,7 +73,7 @@ const real_t& tdl::operator[]( int index )
         /*cstat +MISRAC++2008-5-0-3*/
     }
     else if ( -1 == index ) {
-        return ( ( rd + 1u ) >= tail ) ? head[ 0 ] : rd[ 1 ];
+        return ( ( rd + 1U ) >= tail ) ? head[ 0 ] : rd[ 1 ];
     }
     else {
         return undefined;

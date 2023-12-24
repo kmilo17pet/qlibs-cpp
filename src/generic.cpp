@@ -17,14 +17,14 @@ void generic::swap( void * const x, void * const y, size_t n )
 {
     uint8_t * const a = static_cast<uint8_t *>( x );
     uint8_t * const b = static_cast<uint8_t *>( y );
-    size_t i = 0u, j = 0u;
+    size_t i = 0U, j = 0U;
     do {
         const uint8_t tmp = a[ i ];
         /*cstat -CERT-INT30-C_a*/
         a[ i++ ] = b[ j ];
         b[ j++ ] = tmp;
         /*cstat +CERT-INT30-C_a*/
-    } while( --n > 0u );
+    } while( --n > 0U );
 }
 /*============================================================================*/
 static void sortStackPush( sortStackNode **top, uint8_t *low, uint8_t *high )
@@ -36,21 +36,21 @@ static void sortStackPush( sortStackNode **top, uint8_t *low, uint8_t *high )
 /*============================================================================*/
 void generic::sort( void * const pbase, size_t n, size_t size, generic::compareFcn_t cmp, void *arg)
 {
-    if ( ( nullptr != pbase ) && ( size > 0u ) && ( n > 0u ) && ( nullptr != cmp ) ) {
-        const size_t max_thresh = 4u*size;
+    if ( ( nullptr != pbase ) && ( size > 0U ) && ( n > 0U ) && ( nullptr != cmp ) ) {
+        const size_t max_thresh = 4U*size;
         uint8_t * const base_ptr = static_cast<uint8_t *>( pbase );
-        uint8_t * const end_ptr = &base_ptr[ size*( n - 1u ) ];
+        uint8_t * const end_ptr = &base_ptr[ size*( n - 1U ) ];
         uint8_t * tmp_ptr = base_ptr, *run_ptr;
         uint8_t * const thresh = ( end_ptr < ( base_ptr + max_thresh) ) ? end_ptr : ( base_ptr + max_thresh ) ;
 
-        if ( n > 4u ) {
-            uint8_t *lo = base_ptr, *hi = &lo[ size*( n - 1u ) ];
-            sortStackNode stack[ 8u*sizeof(size_t) ], *top = stack;
+        if ( n > 4U ) {
+            uint8_t *lo = base_ptr, *hi = &lo[ size*( n - 1U ) ];
+            sortStackNode stack[ 8U*sizeof(size_t) ], *top = stack;
 
             sortStackPush( &top, nullptr, nullptr );
             while ( stack < top ) {
                 uint8_t *left_ptr, *right_ptr;
-                uint8_t *mid = &lo[ size*( ( static_cast<size_t>( hi - lo )/size ) >> 1u ) ];
+                uint8_t *mid = &lo[ size*( ( static_cast<size_t>( hi - lo )/size ) >> 1U ) ];
                 
                 if ( cmp( mid, lo, arg ) < 0 ) {
                     generic::swap( mid, lo, size );
@@ -162,7 +162,7 @@ void generic::sort( void * const pbase, size_t n, size_t size, generic::compareF
 /*============================================================================*/
 void generic::reverse( void * const pbase, const size_t size, const size_t init, const size_t end )
 {
-    if ( ( nullptr != pbase ) && ( size > 0u ) && ( end > init ) ) {
+    if ( ( nullptr != pbase ) && ( size > 0U ) && ( end > init ) ) {
         size_t s = size*init, e = size*end;
         uint8_t * const v = static_cast<uint8_t*>( pbase );
         
@@ -176,24 +176,24 @@ void generic::reverse( void * const pbase, const size_t size, const size_t init,
 /*============================================================================*/
 void generic::rotate( void * const pbase, const size_t size, const size_t n, const int k )
 {
-    if ( ( nullptr != pbase ) && ( 0 != k ) && ( n > 0u ) ) {
+    if ( ( nullptr != pbase ) && ( 0 != k ) && ( n > 0U ) ) {
         size_t r;
 
         if ( k > 0 ) {
             r = static_cast<size_t>( k );
             r %= n;
-            generic::reverse( pbase, size, n - r, n - 1u );
-            generic::reverse( pbase, size, 0u, n - r - 1u );
-            generic::reverse( pbase, size, 0u, n - 1u );
+            generic::reverse( pbase, size, n - r, n - 1U );
+            generic::reverse( pbase, size, 0U, n - r - 1U );
+            generic::reverse( pbase, size, 0U, n - 1U );
         }
         else {
             /*cstat -MISRAC++2008-5-0-9*/
             r = static_cast<size_t>( -k );
             /*cstat +MISRAC++2008-5-0-9*/
             r %= n;
-            generic::reverse( pbase, size, 0u, r - 1u );
-            generic::reverse( pbase, size, r, n - 1u );
-            generic::reverse( pbase, size, 0u, n - 1u );
+            generic::reverse( pbase, size, 0U, r - 1U );
+            generic::reverse( pbase, size, r, n - 1U );
+            generic::reverse( pbase, size, 0U, n - 1U );
         }
     }
 }
@@ -203,10 +203,8 @@ void* generic::set( void * const pbase, const size_t size, const size_t n,  cons
     uint8_t * const p = static_cast<uint8_t*>( pbase );
     void *retVal = nullptr;
 
-    if ( ( nullptr != pbase ) && ( size > 0u ) && ( n > 0u ) && ( nullptr != ref ) ) {
-        size_t i;
-
-        for ( i = 0u ; i < n ; i++ ) {
+    if ( ( nullptr != pbase ) && ( size > 0U ) && ( n > 0U ) && ( nullptr != ref ) ) {
+        for ( size_t i = 0U ; i < n ; i++ ) {
             retVal = std::memcpy( &p[ size*i ], ref, size );
         }
     }
@@ -219,7 +217,7 @@ void* generic::lSearch( const void *key, const void *pbase, const size_t n, cons
     const uint8_t * const pb = static_cast<const uint8_t *>( pbase );
     void* retVal = nullptr;
 
-    for ( size_t i = 0u ; i < n ; ++i ) {
+    for ( size_t i = 0U ; i < n ; ++i ) {
         const uint8_t * const element = &pb[ i*size ];
 
         if ( 0 == compar( key, element, arg ) ) {
@@ -237,10 +235,10 @@ void* generic::bSearch( const void *key, const void *pbase, const size_t n, cons
     const uint8_t *p;
     void *retVal = nullptr;
 
-    while ( 0u != lim ) {
+    while ( 0U != lim ) {
         int cmp;
 
-        p = &base[ ( lim >> 1u )*size ];
+        p = &base[ ( lim >> 1U )*size ];
         cmp = compar( key, p, arg );
         if ( 0 == cmp ) {
             retVal = reinterpret_cast<void*>( const_cast<uint8_t*>( p ) );
@@ -262,7 +260,7 @@ int generic::forEach( void *pbase, const size_t size, const size_t n, generic::f
 {
     int retVal = 0;
 
-    if ( ( nullptr != pbase ) && ( nullptr != f ) && ( n > 0u ) ) {
+    if ( ( nullptr != pbase ) && ( nullptr != f ) && ( n > 0U ) ) {
         uint8_t * const pb = static_cast<uint8_t *>( pbase );
         
         if ( 1 != f( -1, nullptr, arg ) ) {
@@ -270,7 +268,7 @@ int generic::forEach( void *pbase, const size_t size, const size_t n, generic::f
             uint8_t *element;
 
             if ( false == dir ) {
-                for ( i = 0u ; i < n ; ++i ) {
+                for ( i = 0U ; i < n ; ++i ) {
                     element = &pb[ i*size ];
                     /*cstat -MISRAC++2008-5-0-9*/
                     retVal = f( static_cast<int>( i ), element, arg );
@@ -282,7 +280,7 @@ int generic::forEach( void *pbase, const size_t size, const size_t n, generic::f
             }
             else {
                 i = n;
-                while ( i-- > 0u ) {
+                while ( i-- > 0U ) {
                     element = &pb[ i*size ];
                     /*cstat -MISRAC++2008-5-0-9*/
                     retVal = f( static_cast<int>( i ), element, arg );

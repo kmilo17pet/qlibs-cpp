@@ -60,7 +60,7 @@ bool inPolygon( const real_t x,
     bool retVal = false;
     real_t max_y = py[ 0 ], max_x = px[ 0 ], min_y = py[ 0 ], min_x = px[ 0 ];
 
-    for ( i = 0u ; i < p ; ++i ) {
+    for ( i = 0U ; i < p ; ++i ) {
         max_y = std::max( py[ i ], max_y );
         max_x = std::max( px[ i ], max_x );
         min_y = std::min( py[ i ], min_y );
@@ -68,9 +68,9 @@ bool inPolygon( const real_t x,
     }
 
     if ( ( y >= min_y ) && ( y <= max_y ) && ( x >= min_x ) && ( x <= max_x ) ) {
-        size_t j = p - 1u;
+        size_t j = p - 1U;
 
-        for ( i = 0u ; i < p ; ++i ) {
+        for ( i = 0U ; i < p ; ++i ) {
             if ( ( px[ i ] > x ) != ( px[ j ] > x ) ) {
                 const real_t dx = px[ j ] - px[ i ];
                 const real_t dy = py[ j ] - py[ i ];
