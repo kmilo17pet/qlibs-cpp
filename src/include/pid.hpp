@@ -4,7 +4,7 @@
 #include "include/types.hpp"
 #include "include/numa.hpp"
 #include "include/ltisys.hpp"
-#include <math.h>
+#include <cmath>
 
 namespace qlibs {
 

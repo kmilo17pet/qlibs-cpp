@@ -3,7 +3,7 @@
 
 #include "include/types.hpp" 
 #include "include/tdl.hpp" 
-#include <math.h>
+#include <cmath>
 
 namespace qlibs {
 

@@ -1,6 +1,5 @@
 #include <include/smoother.hpp>
 #include <include/ltisys.hpp>
-#include <math.h>
 
 using namespace qlibs;
 
