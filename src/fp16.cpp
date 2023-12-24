@@ -3,10 +3,10 @@
 
 using namespace qlibs;
 
-fp16_t fp16::Min = -2147483647;
-fp16_t fp16::Max = 2147483647;
-bool fp16::rounding = true;
-bool fp16::saturation = false;
+fp16_t fp16::Min = -2147483647; // skipcq: CXX-W2009
+fp16_t fp16::Max = 2147483647; // skipcq: CXX-W2009
+bool fp16::rounding = true; // skipcq: CXX-W2009
+bool fp16::saturation = false; // skipcq: CXX-W2009
 
 const fp16_t fp16::exp_max = 681391;
 const fp16_t fp16::f2 = 131072;

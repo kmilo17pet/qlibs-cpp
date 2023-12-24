@@ -150,7 +150,7 @@ bool bitfield::writeUINTn( const size_t index, size_t xBits, uint32_t value )
             /*cstat +ATH-overflow*/
             write_uint32( index, maskMerge( w, value, wMask ) );
         }
-        retValue = 1;
+        retValue = true;
     }
 
     return retValue;

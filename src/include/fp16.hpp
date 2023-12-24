@@ -31,10 +31,10 @@ namespace qlibs {
         friend class fp16Constant;
         private:
             fp16_t value{ overflow };
-            static fp16_t Min;
-            static fp16_t Max;
-            static bool rounding;
-            static bool saturation;
+            static fp16_t Min; // skipcq: CXX-W2009
+            static fp16_t Max; // skipcq: CXX-W2009
+            static bool rounding; // skipcq: CXX-W2009
+            static bool saturation; // skipcq: CXX-W2009
             
             static const fp16_t exp_max;
             static const fp16_t f2;

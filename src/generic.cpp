@@ -267,7 +267,7 @@ int generic::forEach( void *pbase, const size_t size, const size_t n, generic::f
             size_t i;
             uint8_t *element;
 
-            if ( false == dir ) {
+            if ( !dir ) {
                 for ( i = 0U ; i < n ; ++i ) {
                     element = &pb[ i*size ];
                     /*cstat -MISRAC++2008-5-0-9*/
