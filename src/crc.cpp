@@ -23,7 +23,7 @@ uint32_t crc::reflect( uint32_t xData, const uint8_t nBits )
 /*============================================================================*/
 uint32_t crc::generic( crcMode mode, const void * const pData, const size_t length, uint32_t poly, const uint32_t init, bool refIn, bool refOut, uint32_t xorOut )
 {
-    uint32_t val = 0u;
+    uint32_t val = 0U;
 
     if ( ( nullptr != pData ) && ( length > 0U ) && ( ( mode == crcMode::CRC8 ) || ( mode == crcMode::CRC16 ) || ( mode == crcMode::CRC32 ) ) ) {
         size_t i;

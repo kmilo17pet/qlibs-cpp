@@ -14,7 +14,7 @@ const fp16_t fp16::f3 = 196608;
 const fp16_t fp16::f16 = 1048576;
 const fp16_t fp16::f100 = 6553600;
 const fp16_t fp16::f6_5 = 425984;
-const float fp16::one_fp16_f = 0.0000152587890625f;
+const float fp16::one_fp16_f = 0.0000152587890625F;
 const double fp16::one_fp16_d = 0.0000152587890625;
 const uint32_t fp16::overflow_mask = 0x80000000U;
 const uint32_t fp16::fraction_mask = 0x0000FFFFU;
@@ -114,7 +114,7 @@ fp16_t fp16::fromFloat( const float x )
     /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
     f_value = x * static_cast<float>( one );
     if ( rounding ) {
-        f_value += ( f_value >= 0.0f ) ? 0.5f : -0.5f;
+        f_value += ( f_value >= 0.0F ) ? 0.5F : -0.5F;
     }
     return static_cast<fp16_t>( f_value );
     /*cstat +CERT-FLP36-C +CERT-FLP34-C*/
@@ -346,7 +346,7 @@ fp16_t fp16::sqrt( fp16_t x )
             }
         }
     }
-    if ( ( 1U == rounding ) && ( x > retValue ) ) {
+    if ( ( rounding ) && ( x > retValue ) ) {
         ++retValue;
     }
 

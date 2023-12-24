@@ -13,7 +13,7 @@ namespace qlibs {
             real_t *rd{ nullptr };
             real_t *wr{ nullptr };
             size_t itemCount{ 0U };
-            const real_t undefined{ nan("" ) };
+            const real_t undefined{ nan("" ) }; // skipcq: CXX-W2010
 
             void insertNewest( const real_t sample );
             void removeOldest( void );
