@@ -1,1 +1,0 @@
-﻿D:\Camilo\Documents\GitHub\QuarkTS-cpp\src\trace.cpp -o D:\Camilo\Documents\GitHub\QuarkTS-cpp\check\Debug\Obj\ --debug --endian=little --cpu=Cortex-M4 --fpu=None --dlib_config "C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\inc\c\DLib_Config_Normal.h" -I D:\Camilo\Documents\GitHub\QuarkTS-cpp\check\..\src\ -Oh --c++ --no_exceptions --no_rtti
