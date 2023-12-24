@@ -19,7 +19,7 @@ namespace qlibs {
                 return value;
             }
             fp16Constant operator-() const {
-                return fp16Constant( -value );
+                return { -value };
             }
 
             fp16 operator+( const fp16Constant& other ) const;
@@ -428,13 +428,13 @@ namespace qlibs {
     constexpr fp16Constant operator"" _fp( long double val )
     {
         /*cstat -CERT-EXP30-C_b -CERT-FLP34-C -MISRAC++2008-5-0-7*/
-        return fp16Constant( static_cast<fp16_t>( ( ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) >= 0.0 ) ? ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) + 0.5 :  ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) - 0.5 ) );
+        return { static_cast<fp16_t>( ( ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) >= 0.0 ) ? ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) + 0.5 :  ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) - 0.5 ) };
         /*cstat +CERT-EXP30-C_b +CERT-FLP34-C +MISRAC++2008-5-0-7*/
     }
     constexpr fp16Constant operator"" _fp(unsigned long long val)
     {
         /*cstat -MISRAC++2008-5-0-9*/
-        return fp16Constant( static_cast<fp16_t>( static_cast<uint32_t>( val ) << 16 ) );
+        return { static_cast<fp16_t>( static_cast<uint32_t>( val ) << 16 ) };
         /*cstat +MISRAC++2008-5-0-9*/
     }
 }
