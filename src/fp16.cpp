@@ -1,53 +1,22 @@
 #include <include/fp16.hpp>
 
-
 using namespace qlibs;
 
 fp16Raw_t fp16::Min = -2147483647; // skipcq: CXX-W2009
 fp16Raw_t fp16::Max = 2147483647; // skipcq: CXX-W2009
 bool fp16::rounding = true; // skipcq: CXX-W2009
 bool fp16::saturation = false; // skipcq: CXX-W2009
-
 const fp16Raw_t fp16::exp_max = 681391;
 const fp16Raw_t fp16::f2 = 131072;
-const fp16Raw_t fp16::f3 = 196608;
-const fp16Raw_t fp16::f16 = 1048576;
-const fp16Raw_t fp16::f100 = 6553600;
-const fp16Raw_t fp16::f6_5 = 425984;
-const float fp16::one_fp16_f = 0.0000152587890625F;
-const double fp16::one_fp16_d = 0.0000152587890625;
-const double fp16::one_dbl = static_cast<double>( one );
 const uint32_t fp16::overflow_mask = 0x80000000U;
 const uint32_t fp16::fraction_mask = 0x0000FFFFU;
 const uint32_t fp16::integer_mask = 0xFFFF0000U;
-
-const fp16Raw_t fp16::f_e = 178145;
-const fp16Raw_t fp16::f_log2e = 94548;
-const fp16Raw_t fp16::f_log10e = 28462;
-const fp16Raw_t fp16::f_ln2 = 45426;
-const fp16Raw_t fp16::f_ln10 = 150902;
-const fp16Raw_t fp16::f_pi = 205887;
 const fp16Raw_t fp16::f_pi_2 = 102944;
-const fp16Raw_t fp16::f_2pi = 411775;
-const fp16Raw_t fp16::f_pi_4 = 51471;
-const fp16Raw_t fp16::f_1_pi = 20861;
-const fp16Raw_t fp16::f_2_pi = 41722;
-const fp16Raw_t fp16::f_2_sqrtpi = 73949;
-const fp16Raw_t fp16::f_sqrt2 =92682 ;
-const fp16Raw_t fp16::f_sqrt1_2 = 46341;
-const fp16Raw_t fp16::epsilon = 1;
-const fp16Raw_t fp16::MaxValue = 2147483647;
 const fp16Raw_t fp16::overflow = -2147483647 - 1;
 const fp16Raw_t fp16::one = 65536;
 const fp16Raw_t fp16::one_half = 32768;
-const fp16Raw_t fp16::f_180_pi = 3754936;
-const fp16Raw_t fp16::f_pi_180 = 1144;
-const fp16Raw_t fp16::f_180 = 11796480;
-const fp16Raw_t fp16::f_360 = 23592960;
-
 
 /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-5-0-9 -ATH-shift-neg -CERT-INT34-C_c -MISRAC++2008-5-0-10*/
-
 /*============================================================================*/
 int fp16::toInt( const fp16 &x )
 {
@@ -70,6 +39,7 @@ int fp16::toInt( const fp16 &x )
 /*============================================================================*/
 float fp16::toFloat( const fp16 &x )
 {
+    const float one_fp16_f = 0.0000152587890625F;
     /*cstat -CERT-FLP36-C*/
     return static_cast<float>( x.value )*one_fp16_f;
     /*cstat +CERT-FLP36-C*/
@@ -77,6 +47,7 @@ float fp16::toFloat( const fp16 &x )
 /*============================================================================*/
 double fp16::toDouble( const fp16 &x )
 {
+    const double one_fp16_d = 0.0000152587890625;
     return static_cast<double>( x.value )*one_fp16_d;
 }
 /*============================================================================*/
@@ -324,6 +295,7 @@ fp16Raw_t fp16::exp( fp16Raw_t x )
         retValue = one;
     }
     else if ( x == one ) {
+        const fp16Raw_t f_e = 178145;
         retValue = f_e;
     }
     else if ( x >= exp_max ) {
@@ -365,6 +337,8 @@ fp16Raw_t fp16::log( fp16Raw_t x )
 
     if ( x > 0 ) {
         fp16Raw_t guess = f2, delta;
+        const fp16Raw_t f100 = 6553600;
+        const fp16Raw_t f3 = 196608;
         int scaling = 0, count = 0;
 
         while ( x > f100 ) {
@@ -448,6 +422,7 @@ fp16Raw_t fp16::log2( fp16Raw_t x )
     if ( x > 0 ) {
         if ( x < one ) {
             if ( 1 == x ) {
+                const fp16Raw_t f16 = 1048576;
                 retValue = -f16;
             }
             else {
@@ -471,7 +446,10 @@ fp16Raw_t fp16::log2( fp16Raw_t x )
 /*============================================================================*/
 fp16Raw_t fp16::wrapToPi( fp16Raw_t x )
 {
+    const fp16Raw_t f_pi = 205887;
+
     if ( ( x < -f_pi ) || ( x > f_pi ) ) {
+        const fp16Raw_t f_2pi = 411775;
         while ( x > f_pi ) {
             x -= f_2pi;
         }
@@ -485,12 +463,16 @@ fp16Raw_t fp16::wrapToPi( fp16Raw_t x )
 /*============================================================================*/
 fp16Raw_t fp16::wrapTo180( fp16Raw_t x )
 {
-    if ( ( x < -f_180 ) || ( x > f_180 ) ) {
-        while ( x > f_180 ) {
-            x -= f_360;
+    const fp16Raw_t F_180 = 11796480;
+
+    if ( ( x < -F_180 ) || ( x > F_180 ) ) {
+        const fp16Raw_t F_360 = 23592960;
+
+        while ( x > F_180 ) {
+            x -= F_360;
         }
-        while ( x <= -f_pi ) {
-            x += f_360;
+        while ( x <= -F_180 ) {
+            x += F_360;
         }
     }
 
@@ -544,6 +526,7 @@ fp16Raw_t fp16::atan2( fp16Raw_t y, fp16Raw_t x )
     absY = ( y + mask ) ^ mask;
     if ( x >= 0 ) {
         r = div( ( x - absY ), ( x + absY ) );
+        const fp16Raw_t f_pi_4 = 51471;
         angle = f_pi_4;
     }
     else {
@@ -635,6 +618,7 @@ fp16Raw_t fp16::sinh( fp16Raw_t x )
 fp16Raw_t fp16::tanh( fp16Raw_t x )
 {
     fp16Raw_t retValue, epx, enx;
+    const fp16Raw_t f6_5 = 425984;
 
     if ( 0 == x ) {
         retValue = 0;

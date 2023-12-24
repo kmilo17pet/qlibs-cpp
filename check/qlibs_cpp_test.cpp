@@ -9,6 +9,7 @@ void test_tdl( void );
 void test_fp16( void );
 void test_crc( void );
 
+
 void test_tdl( void )
 {
     cout << "TDL test"<< endl; 
@@ -188,6 +189,7 @@ void test_fp16( void )
     cout << x << endl;
     fp16 ab = fp16::from( -57.22 );
     cout << ab << endl;
+    cout << FP_PI << endl;
     
 }
 

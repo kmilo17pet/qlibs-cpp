@@ -18,31 +18,26 @@ namespace qlibs {
             static fp16Raw_t Max; // skipcq: CXX-W2009
             static bool rounding; // skipcq: CXX-W2009
             static bool saturation; // skipcq: CXX-W2009
-            
+
             static const fp16Raw_t exp_max;
             static const fp16Raw_t f2;
-            static const fp16Raw_t f3;
-            static const fp16Raw_t f16;
-            static const fp16Raw_t f100;
-            static const fp16Raw_t f6_5;
-            static const float one_fp16_f;
-            static const double one_fp16_d;
-            static const double one_dbl;
             static const uint32_t overflow_mask;
             static const uint32_t fraction_mask;
             static const uint32_t integer_mask;
+            static const fp16Raw_t f_pi_2;
+            static const fp16Raw_t overflow;
+            static const fp16Raw_t one;
+            static const fp16Raw_t one_half;
 
             static uint32_t overflowCheck( uint32_t res, const uint32_t x, const uint32_t y );
             static fp16Raw_t saturate( const fp16Raw_t nsInput, const fp16Raw_t x, const fp16Raw_t y );
             static fp16Raw_t fromInt( const int x );
             static fp16Raw_t fromFloat( const float x );
             static fp16Raw_t fromDouble( const double x );
-
             static fp16Raw_t add( const fp16Raw_t X, const fp16Raw_t Y );
             static fp16Raw_t sub( const fp16Raw_t X, const fp16Raw_t Y );
             static fp16Raw_t mul( const fp16Raw_t x, const fp16Raw_t y );
             static fp16Raw_t div( const fp16Raw_t x, const fp16Raw_t y );
-
             static fp16Raw_t abs( fp16Raw_t x );
             static fp16Raw_t sqrt( fp16Raw_t x );
             static fp16Raw_t exp( fp16Raw_t x );
@@ -62,44 +57,17 @@ namespace qlibs {
             static fp16Raw_t tanh( fp16Raw_t x );
             static fp16Raw_t powi( fp16Raw_t x, fp16Raw_t y );
             static fp16Raw_t pow( fp16Raw_t x, fp16Raw_t y );
-
             static char* itoa( char *buf, uint32_t scale, uint32_t val, uint8_t skip );
             static char* toASCII( const fp16Raw_t num, char *str, int decimals );
-
             static fp16Raw_t rs( fp16Raw_t x );
             static fp16Raw_t log2i( fp16Raw_t x );
 
             constexpr fp16( fp16Hidden val ) : value( val.x ) {}
             friend constexpr fp16 operator"" _fp( long double val );
             friend constexpr fp16 operator"" _fp( unsigned long long val );
-
         public:
             constexpr fp16() : value( 0 ) {}
             fp16( const fp16& other) : value( other.value ) {}
-
-            static const fp16Raw_t f_e;
-            static const fp16Raw_t f_log2e;
-            static const fp16Raw_t f_log10e;
-            static const fp16Raw_t f_ln2;
-            static const fp16Raw_t f_ln10;
-            static const fp16Raw_t f_pi;
-            static const fp16Raw_t f_pi_2;
-            static const fp16Raw_t f_2pi;
-            static const fp16Raw_t f_pi_4;
-            static const fp16Raw_t f_1_pi;
-            static const fp16Raw_t f_2_pi;
-            static const fp16Raw_t f_2_sqrtpi;
-            static const fp16Raw_t f_sqrt2;
-            static const fp16Raw_t f_sqrt1_2;
-            static const fp16Raw_t epsilon;
-            static const fp16Raw_t MaxValue;
-            static const fp16Raw_t overflow;
-            static const fp16Raw_t one;
-            static const fp16Raw_t one_half;
-            static const fp16Raw_t f_180_pi;
-            static const fp16Raw_t f_pi_180;
-            static const fp16Raw_t f_180;
-            static const fp16Raw_t f_360;
 
             inline fp16Raw_t raw( void ) const
             {
@@ -310,7 +278,7 @@ namespace qlibs {
     /*cstat -MISRAC++2008-5-0-7 -CERT-FLP34-C -MISRAC++2008-5-0-9*/
     constexpr fp16 operator"" _fp( long double val )
     {
-        return { { static_cast<fp16Raw_t>( ( ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) >= 0.0 ) ? ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) + 0.5 :  ( static_cast<double>( val )*static_cast<double>( fp16::one ) ) - 0.5 ) } };
+        return { { static_cast<fp16Raw_t>( ( ( static_cast<double>( val )*65536.0 ) >= 0.0 ) ? ( static_cast<double>( val )*65536.0 ) + 0.5 :  ( static_cast<double>( val )*65536.0 ) - 0.5 ) } };
     }
     constexpr fp16 operator"" _fp(unsigned long long val)
     {
@@ -318,6 +286,20 @@ namespace qlibs {
     }
     /*cstat +MISRAC++2008-5-0-7 -CERT-FLP34-C +MISRAC++2008-5-0-9*/
 
+
+    constexpr fp16 FP_E        = 2.718281828459045235360_fp;  // e
+    constexpr fp16 FP_LOG2E    = 1.442695040888963407360_fp;  // log2(e)
+    constexpr fp16 FP_LOG10E   = 0.434294481903251827651_fp;  // log10(e)
+    constexpr fp16 FP_LN2      = 0.693147180559945309417_fp;  // ln(2)
+    constexpr fp16 FP_LN10     = 2.302585092994045684020_fp;  // ln(10)
+    constexpr fp16 FP_PI       = 3.141592653589793238460_fp;  // pi
+    constexpr fp16 FP_PI_2     = 1.570796326794896619230_fp;  // pi/2
+    constexpr fp16 FP_PI_4     = 0.785398163397448309616_fp;  // pi/4
+    constexpr fp16 FP_1_PI     = 0.318309886183790671538_fp;  // 1/pi
+    constexpr fp16 FP_2_PI     = 0.636619772367581343076_fp;  // 2/pi
+    constexpr fp16 FP_2_SQRTPI = 1.128379167095512573900_fp;  // 2/sqrt(pi)
+    constexpr fp16 FP_SQRT2    = 1.414213562373095048800_fp;  // sqrt(2)
+    constexpr fp16 FP_SQRT1_2  = 0.707106781186547524401_fp;  // 1/sqrt(2)
 
 }
 
