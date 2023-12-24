@@ -152,7 +152,7 @@ fp16_t fp16::add( const fp16_t X, const fp16_t Y )
     uint32_t retValue;
 
     retValue =  x + y;
-    if ( ( 0u == ( ( x ^ y ) & overflow_mask ) ) && ( 0u != ( ( x ^ retValue ) & overflow_mask ) ) ) {
+    if ( ( 0U == ( ( x ^ y ) & overflow_mask ) ) && ( 0U != ( ( x ^ retValue ) & overflow_mask ) ) ) {
         retValue = static_cast<uint32_t>( overflow );
     }
 
@@ -166,7 +166,7 @@ fp16_t fp16::sub( const fp16_t X, const fp16_t Y )
     uint32_t retValue;
 
     retValue =  x - y;
-    if ( ( 0u != ( ( x ^ y ) & overflow_mask ) ) && ( 0u != ( ( x ^ retValue ) & overflow_mask ) ) ) {
+    if ( ( 0U != ( ( x ^ y ) & overflow_mask ) ) && ( 0U != ( ( x ^ retValue ) & overflow_mask ) ) ) {
         retValue = static_cast<uint32_t>( overflow );
     }
 
@@ -221,7 +221,7 @@ fp16_t fp16::div( const fp16_t x, const fp16_t y )
     fp16_t retValue = Min;
 
     if ( 0 != y ) {
-        uint32_t xRem, xDiv, bit = 0x10000u;
+        uint32_t xRem, xDiv, bit = 0x10000U;
 
         xRem = static_cast<uint32_t>( ( x >= 0 ) ? x : -x );
         xDiv = static_cast<uint32_t>( ( y >= 0 ) ? y : -y );
@@ -234,9 +234,9 @@ fp16_t fp16::div( const fp16_t x, const fp16_t y )
         /*cstat -MISRAC++2008-0-1-2_a*/
         if ( 0U != bit ) {
         /*cstat +MISRAC++2008-0-1-2_a*/
-            uint32_t quotient = 0u;
+            uint32_t quotient = 0U;
 
-            if ( 0u != ( xDiv & 0x80000000u ) ) {
+            if ( 0U != ( xDiv & 0x80000000U ) ) {
                 if ( xRem >= xDiv ) {
                     quotient |= bit;
                     xRem -= xDiv;
@@ -245,7 +245,7 @@ fp16_t fp16::div( const fp16_t x, const fp16_t y )
                 bit >>= 1;
             }
 
-            while ( ( 0u != bit ) && ( 0u != xRem ) ) {
+            while ( ( 0U != bit ) && ( 0U != xRem ) ) {
                 if ( xRem >= xDiv ) {
                     quotient |= bit;
                     xRem -= xDiv;
@@ -260,7 +260,7 @@ fp16_t fp16::div( const fp16_t x, const fp16_t y )
             }
 
             retValue = static_cast<fp16_t>( quotient );
-            if ( 0u != ( static_cast<uint32_t>( x ^ y ) & overflow_mask ) ) {
+            if ( 0U != ( static_cast<uint32_t>( x ^ y ) & overflow_mask ) ) {
                 if ( quotient == static_cast<uint32_t>( Min ) ) {
                     retValue = overflow;
                 }
@@ -314,25 +314,25 @@ fp16_t fp16::sqrt( fp16_t x )
 
         retValue = 0;
         /*cstat -MISRAC++2008-5-0-3*/
-        bit = ( 0 != ( x & static_cast<fp16_t>( 4293918720 ) ) ) ? ( 1u << 30u ) : ( 1u << 18u );
+        bit = ( 0 != ( x & static_cast<fp16_t>( 4293918720 ) ) ) ? ( 1U << 30U ) : ( 1U << 18U );
         /*cstat +MISRAC++2008-5-0-3*/
         while ( bit > static_cast<uint32_t>( x ) ) {
-            bit >>= 2u;
+            bit >>= 2U;
         }
 
-        for ( n = 0u ; n < 2u ; ++n ) {
-            while ( 0u != bit ) {
+        for ( n = 0U ; n < 2U ; ++n ) {
+            while ( 0U != bit ) {
                 if ( x >= static_cast<fp16_t>( static_cast<uint32_t>( retValue ) + bit ) ) {
                     x -= static_cast<fp16_t>( static_cast<uint32_t>( retValue ) + bit );
-                    retValue = static_cast<fp16_t>( ( static_cast<uint32_t>( retValue ) >> 1u ) + bit );
+                    retValue = static_cast<fp16_t>( ( static_cast<uint32_t>( retValue ) >> 1U ) + bit );
                 }
                 else {
                     retValue = ( retValue >> 1 );
                 }
-                bit >>= 2u;
+                bit >>= 2U;
             }
 
-            if ( 0u == n ) {
+            if ( 0U == n ) {
                 if ( x > 65535 ) {
                     x -= retValue;
                     x = ( x << 16 ) - one_half;
@@ -342,11 +342,11 @@ fp16_t fp16::sqrt( fp16_t x )
                     x <<= 16;
                     retValue <<= 16;
                 }
-                bit = 1u << 14u;
+                bit = 1U << 14U;
             }
         }
     }
-    if ( ( 1u == rounding ) && ( x > retValue ) ) {
+    if ( ( 1U == rounding ) && ( x > retValue ) ) {
         ++retValue;
     }
 
@@ -486,7 +486,7 @@ fp16_t fp16::rs( fp16_t x )
     fp16_t retValue;
 
     if ( rounding ) {
-        retValue = ( x >> 1u ) + ( x & 1 );
+        retValue = ( x >> 1U ) + ( x & 1 );
     }
     else {
         retValue = x >> 1;
@@ -723,7 +723,7 @@ fp16_t fp16::atan2( fp16_t y, fp16_t x )
     const fp16_t QFP16_0_196289 = 0x00003240;
     static const fp16_t f_3pi_div_4 = 154415; /*3*pi/4*/
 
-    mask = ( y >> ( sizeof(fp16_t)*7u ) );
+    mask = ( y >> ( sizeof(fp16_t)*7U ) );
     absY = ( y + mask ) ^ mask;
     if ( x >= 0 ) {
         r = div( ( x - absY ), ( x + absY ) );
@@ -999,7 +999,7 @@ fp16_t fp16::pow( fp16_t x, fp16_t y )
 {
     fp16_t retValue = overflow;
 
-    if ( ( 0u == ( static_cast<uint32_t>( y ) & fraction_mask ) ) && ( y > 0 ) ) {
+    if ( ( 0U == ( static_cast<uint32_t>( y ) & fraction_mask ) ) && ( y > 0 ) ) {
         retValue = powi( x, y );
     }
     else {
@@ -1107,11 +1107,11 @@ char* fp16::toASCII( const fp16_t num, char *str, int decimals )
             iPart++;
             fPart -= scale;
         }
-        str = itoa( str, 10000, static_cast<uint32_t>( iPart ), 1U );
+        str = itoa( str, 10000U, static_cast<uint32_t>( iPart ), 1U );
 
         if ( 1U != scale ) {
             *str++ = '.';
-            str = itoa( str, scale/10u, fPart, 0U );
+            str = itoa( str, scale/10U, fPart, 0U );
         }
         *str = '\0';
     }

@@ -251,7 +251,7 @@ void* generic::bSearch( const void *key, const void *pbase, const size_t n, cons
         else {
             /*nothing to do here*/
         }
-        lim >>= 1u;
+        lim >>= 1U;
     }
     return retVal;
 }
