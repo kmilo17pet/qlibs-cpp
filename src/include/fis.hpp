@@ -195,7 +195,7 @@ namespace qlibs {
             const real_t *points{ nullptr };
             real_t fx{ 0.0 };
             real_t h{ 0.0 };
-            size_t index;
+            size_t index{ 0U };
             void evalMFAtIndex( fisIOBase *io )
             {
                 if ( nullptr != shape ) {
@@ -218,6 +218,7 @@ namespace qlibs {
                 }
                 return y;
             }
+
         public:
             virtual ~fisMF() {};
             fisMF() = default;
@@ -288,10 +289,10 @@ namespace qlibs {
             fisOutput *output{ nullptr };
             fisMF *inMF{ nullptr };
             fisMF *outMF{ nullptr };
-            methods_fcn andOp;
-            methods_fcn orOp;
-            methods_fcn implicate;
-            methods_fcn aggregate;
+            methods_fcn andOp{ &Min };
+            methods_fcn orOp{ &Max };
+            methods_fcn implicate{ &Min };
+            methods_fcn aggregate{ &Max };
             size_t (fis::*inferenceState)( size_t i );
             size_t (fis::*aggregationState)( size_t i );
             fisDeFuzzFunction deFuzz;

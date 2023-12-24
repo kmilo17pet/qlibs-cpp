@@ -12,9 +12,9 @@ namespace qlibs {
 
     class bitfield : private nonCopyable {
         private:
-            uint32_t *field;
-            size_t size;
-            size_t nSlots;
+            uint32_t *field{ nullptr };
+            size_t size{ 0U };
+            size_t nSlots{ 0U };
             static const size_t LBit;
             inline uint32_t mask( const size_t index )
             {
