@@ -149,7 +149,6 @@ bool continuousSystem::setup( real_t *num, real_t *den, state *x,const size_t n_
 
     if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_a > 0U ) ) {
         b = &num[ 1 ];
-        
         n = n_a - 1u;
         nb = n;
         na = n_a;

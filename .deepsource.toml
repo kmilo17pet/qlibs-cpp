@@ -1,0 +1,10 @@
+version = 1
+
+[[analyzers]]
+name = "cxx"
+
+exclude_patterns = [
+  "check/**",
+  "examples/**",
+  "doc/**"
+]
