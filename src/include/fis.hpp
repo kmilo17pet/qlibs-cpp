@@ -82,6 +82,9 @@ namespace qlibs {
     class fisCore;
     class fis;
 
+    template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+    class fisSystem;
+
     class fisIOBase {
         protected:
             real_t min{ -1.0 };
@@ -92,6 +95,8 @@ namespace qlibs {
             fisIOBase() = default;
         friend class fis;
         friend class fisCore;
+        template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+        friend class fisSystem;
     };
 
     class fisInput : public fisIOBase {
@@ -100,6 +105,8 @@ namespace qlibs {
             virtual ~fisInput() {};
         friend class fis;
         friend class fisCore;
+        template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+        friend class fisSystem;
     };
 
     class fisOutput : public fisIOBase {
@@ -129,6 +136,8 @@ namespace qlibs {
             }
         friend class fis;
         friend class fisCore;
+        template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+        friend class fisSystem;
     };
 
     using fisMFFunction = real_t (*)( const fisIOBase * const in,
@@ -344,17 +353,11 @@ namespace qlibs {
     using fisDeFuzzFunction = real_t (*)( fisOutput * const o, const fisDeFuzzState stage );
     using fuzzyOperator = real_t (*)( const real_t a, const real_t b );
 
-    template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
-    struct fisSpecification {
-        const fisRules *rules;
-        fisInput inputs[ numberOfInputs ];
-        fisOutput outputs[ numberOfOutputs ];
-        fisMF MFin[ numberOfInputSets ], MFout[ numberOfOutputSets ];
-        real_t ruleStrength[ numberOfRules ];
-    };
-
-    class fis: public fisCore, private nonCopyable {
+     class fis: public fisCore, private nonCopyable {
         using methods_fcn = real_t (*)( const real_t a, const real_t b );
+
+        template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+        friend class fisSystem;
         
         private:
             fisInput *input{ nullptr };
@@ -427,22 +430,12 @@ namespace qlibs {
             {
                 return setup( t, inputs, numberInputs, outputs, numberOutputs, mf_inputs, numberMFinputs, mf_outputs, numberMFOutputs, r, numberRules, rWeights );
             }
-            template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
-            bool setup( const fisType t,
-                        const fisSpecification<fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules>& specs )
-            {
-                return setup( fType,
-                              specs.inputs, numberOfInputs,
-                              specs.outputs, numberOfOutputs,
-                              specs.MFin, numberOfInputSets,
-                              specs.MFout, numberOfOutputSets,
-                              specs.rules, numberOfRules, specs.ruleStrength );
-            }
             bool setupInput( const fisTag t,
                              const real_t Min,
                              const real_t Max ) noexcept;
             bool setupOutput( const fisTag t,
-                              const real_t Min, const real_t Max ) noexcept;
+                              const real_t Min,
+                              const real_t Max ) noexcept;
             bool setInputMF( const fisTag io,
                              const fisTag mf,
                              const fisShapeMF s,
@@ -518,6 +511,140 @@ namespace qlibs {
 
         friend class fisCore;
     };
+
+    template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
+    class fisSystem {
+        private:
+            fis sys;
+            const fisRules *rules;
+            fisInput inputs[ numberOfInputs ];
+            fisOutput outputs[ numberOfOutputs ];
+            fisMF MFin[ numberOfInputSets ], MFout[ numberOfOutputSets ];
+            real_t ruleStrength[ numberOfRules ];
+        public:
+            constexpr fisSystem( const fisRules *Rules ) : rules( Rules ) {};
+            inline bool setup( void )
+            {
+                return sys.setup( fType,
+                                  inputs, numberOfInputs,
+                                  outputs, numberOfOutputs,
+                                  MFin, numberOfInputSets,
+                                  MFout, numberOfOutputSets,
+                                  rules, numberOfRules,
+                                  ruleStrength );
+            }
+            inline bool setupInput( const fisTag t,
+                                    const real_t Min,
+                                    const real_t Max ) noexcept
+            {
+                return sys.setupInput( t, Min, Max );
+            }
+            inline bool setupOutput( const fisTag t,
+                                     const real_t Min,
+                                     const real_t Max ) noexcept
+            {
+                return sys.setupOutput( t, Min, Max );
+            }
+            inline bool setInputMF( const fisTag io,
+                                    const fisTag mf,
+                                    const fisShapeMF s,
+                                    const real_t *cp,
+                                    const real_t h = 1.0 ) noexcept
+            {
+                return sys.setInputMF( io, mf, s, cp, h );
+            }
+            inline bool setInputMF( const fisTag io,
+                                    const fisTag mf,
+                                    fisMFFunction customMfs,
+                                    const real_t *cp,
+                                    const real_t h = 1.0 ) noexcept
+            {
+                return sys.setInputMF( io, mf, customMfs, cp, h );
+            }
+            inline bool setOutputMF( const fisTag io,
+                                     const fisTag mf,
+                                     const fisShapeMF s,
+                                     const real_t *cp,
+                                     const real_t h = 1.0 ) noexcept
+            {
+                return sys.setOutputMF( io, mf, s, cp, h );
+            }
+            inline bool setOutputMF( const fisTag io,
+                                     const fisTag mf,
+                                     fisMFFunction customMfs,
+                                     const real_t *cp,
+                                     const real_t h = 1.0 ) noexcept
+            {
+                return sys.setOutputMF( io, mf, customMfs, cp, h );
+            }
+            inline bool fuzzify( void ) noexcept
+            {
+                return sys.fuzzify();
+            }
+            inline bool deFuzzify( void ) noexcept
+            {
+                return sys.deFuzzify();
+            }
+            inline bool inference( void ) noexcept
+            {
+                return sys.inference();
+            }
+
+            inline bool setInput( const fisTag t,
+                                  const real_t value ) noexcept
+            {
+                return sys.setInput( t, value );
+            }
+            inline bool getOutput( const fisTag t,
+                                   real_t &value ) const noexcept
+            {
+                return sys.getOutput( t, value );
+            }
+            inline bool setParameter( const fisParameter p,
+                                      const fisParamValue x ) noexcept
+            {
+                return sys.setParameter( p, x );
+            }
+            inline bool setDeFuzzMethod( fisDeFuzzMethod m ) noexcept
+            {
+                return sys.setDeFuzzMethod( m );
+            }
+            inline bool setRuleWeights( real_t *rWeights ) noexcept
+            {
+                return sys.setRuleWeights( rWeights );
+            }
+            size_t getNumberOfPoints( void ) const noexcept
+            {
+                return sys.nPoints;
+            }
+
+            real_t operator[]( fisTag outTag ) const
+            {
+                /*cstat -CERT-STR34-C*/
+                return ( static_cast<size_t>( outTag ) < sys.nOutputs ) ? sys.output[ outTag ].value :  sys.input[ sys.nOutputs -1 ].value;
+                /*cstat +CERT-STR34-C*/
+            }
+
+            fisSystem& operator<<( const fisTag& tag ) {
+                if ( static_cast<size_t>( tag ) < sys.nInputs ) {
+                    sys.lastTag = tag;
+                }
+                return *this;
+            }
+            fisSystem& operator<<( const int& value ) {
+                if ( sys.lastTag >= 0 ) {
+                    sys.input[ sys.lastTag ].value = static_cast<real_t>( value );
+                }
+                return *this;
+            }
+            fisSystem& operator<<( const real_t& value ) {
+                if ( sys.lastTag >= 0 ) {
+                    sys.input[ sys.lastTag ].value = value;
+                }
+                return *this;
+            }
+    };
+
 
 }
 

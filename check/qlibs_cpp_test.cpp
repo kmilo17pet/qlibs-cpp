@@ -39,38 +39,33 @@ void test_tdl( void )
 void test_fis2( void )
 {
     enum : fisTag { wt, dax, day, ae };
-    /*  I/O Membership functions tags */
     enum : fisTag { phit, thetat };
     enum : fisTag { wtSLOW, wtMED, wtFAST, daxLOW, daxMED, daxHIGH, dayLOW, dayMED, dayHIGH, aeLOW, aeMED, aeHIGH };
     enum : fisTag { phitGYRO, phitBOTH, phitACCEL, thetatGYRO, thetatBOTH, thetatACCEL };
 
-    fis flexnav;
-    fisInput flexnav_inputs[4];
-    fisOutput flexnav_outputs[2];
-    /* I/O Membership Objects */
-    fisMF MFin[12], MFout[6];
-    static const fisRules rules[] = {
-        FIS_RULES_BEGIN
-            IF wt IS_NOT wtSLOW THEN phit IS phitGYRO AND thetat IS thetatGYRO END
-            IF dax IS daxHIGH THEN thetat IS thetatGYRO END
-            IF day IS dayHIGH THEN thetat IS thetatGYRO END
-            IF ae IS aeHIGH THEN phit IS phitGYRO AND thetat IS thetatGYRO END
-            IF wt IS wtSLOW AND dax IS daxLOW AND ae IS aeLOW THEN phit IS phitACCEL END
-            IF wt IS wtSLOW AND day IS dayLOW AND ae IS aeLOW THEN thetat IS thetatACCEL END
-            IF wt IS wtSLOW AND dax IS daxLOW AND ae IS aeMED THEN phit IS phitBOTH END
-            IF wt IS wtSLOW AND day IS dayLOW AND ae IS aeMED THEN thetat IS thetatBOTH END
-            IF wt IS wtSLOW AND dax IS daxMED AND ae IS aeLOW THEN phit IS phitBOTH END
-            IF wt IS wtSLOW AND day IS dayMED AND ae IS aeLOW THEN thetat IS thetatBOTH END
-            IF wt IS wtMED AND dax IS daxLOW AND ae IS aeLOW THEN phit IS phitBOTH END
-            IF wt IS wtMED AND day IS dayLOW AND ae IS aeLOW THEN thetat IS thetatBOTH END
-            IF wt IS wtMED AND dax IS_NOT daxLOW THEN phit IS phitGYRO END
-            IF wt IS wtMED AND day IS_NOT dayLOW THEN thetat IS thetatGYRO END
-            IF wt IS wtMED AND ae IS_NOT aeLOW THEN phit IS phitGYRO AND thetat IS thetatGYRO END
-        FIS_RULES_END
+    fisSystem<Mamdani,4, 2, 12, 6, 15> flexnav = {
+        (const fisRules[]) {
+            FIS_RULES_BEGIN
+                IF wt IS_NOT wtSLOW THEN phit IS phitGYRO AND thetat IS thetatGYRO END
+                IF dax IS daxHIGH THEN thetat IS thetatGYRO END
+                IF day IS dayHIGH THEN thetat IS thetatGYRO END
+                IF ae IS aeHIGH THEN phit IS phitGYRO AND thetat IS thetatGYRO END
+                IF wt IS wtSLOW AND dax IS daxLOW AND ae IS aeLOW THEN phit IS phitACCEL END
+                IF wt IS wtSLOW AND day IS dayLOW AND ae IS aeLOW THEN thetat IS thetatACCEL END
+                IF wt IS wtSLOW AND dax IS daxLOW AND ae IS aeMED THEN phit IS phitBOTH END
+                IF wt IS wtSLOW AND day IS dayLOW AND ae IS aeMED THEN thetat IS thetatBOTH END
+                IF wt IS wtSLOW AND dax IS daxMED AND ae IS aeLOW THEN phit IS phitBOTH END
+                IF wt IS wtSLOW AND day IS dayMED AND ae IS aeLOW THEN thetat IS thetatBOTH END
+                IF wt IS wtMED AND dax IS daxLOW AND ae IS aeLOW THEN phit IS phitBOTH END
+                IF wt IS wtMED AND day IS dayLOW AND ae IS aeLOW THEN thetat IS thetatBOTH END
+                IF wt IS wtMED AND dax IS_NOT daxLOW THEN phit IS phitGYRO END
+                IF wt IS wtMED AND day IS_NOT dayLOW THEN thetat IS thetatGYRO END
+                IF wt IS wtMED AND ae IS_NOT aeLOW THEN phit IS phitGYRO AND thetat IS thetatGYRO END
+            FIS_RULES_END
+        }
     };
-    real_t rulesStrength[ 15 ] = { 0.0 };
-    //flexnav.setup( specs );
-    flexnav.setup( Mamdani, flexnav_inputs, flexnav_outputs, MFin, MFout, rules, rulesStrength );
+
+    flexnav.setup();
     flexnav.setupInput( wt, 0.0, 0.5 );
     flexnav.setupInput( dax, 0.0, 5.0 );
     flexnav.setupInput( day, 0.0, 5.0 );
@@ -203,7 +198,7 @@ int main()
 {
     test_crc();
     test_fp16();
-    return EXIT_SUCCESS;
+    //return EXIT_SUCCESS;
     cout << "continuousSystem"<< endl; 
     constexpr size_t SYS_ORDER = 3;
     real_t num[] = { 0.0, 2.0, 3.0, 6.0 };
