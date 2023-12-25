@@ -3,14 +3,17 @@
 using namespace qlibs;
 
 /*===========================================================================*/
-void state::init( const real_t x0, const real_t sn_1, const real_t sn_2 )
+void state::init( const real_t x0,
+                  const real_t sn_1,
+                  const real_t sn_2 ) noexcept
 {
     x[ 0 ] = x0;
     x[ 1 ] = sn_1;
     x[ 2 ] = sn_2;
 }
 /*===========================================================================*/
-real_t state::integrate( const real_t s, const real_t dt )
+real_t state::integrate( const real_t s,
+                         const real_t dt ) noexcept
 {
     switch( intMethod ) {
         case INTEGRATION_RECTANGULAR:
@@ -30,7 +33,8 @@ real_t state::integrate( const real_t s, const real_t dt )
     return x[ 0 ];
 }
 /*===========================================================================*/
-real_t state::derivative( const real_t s, const real_t dt )
+real_t state::derivative( const real_t s,
+                          const real_t dt ) noexcept
 {
     x[ 0 ] = ( s - x[ 1 ] )/dt;
     update( s );

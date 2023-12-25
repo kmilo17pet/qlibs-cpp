@@ -44,12 +44,14 @@ namespace qlibs {
             real_t mu{ 0.95};
             real_t speed{ 0.25 };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
             uint32_t it{ UNDEFINED };/*enable time*/
-            static bool isValidValue( const real_t x );
+            static bool isValidValue( const real_t x ) noexcept;
         public:
             
             pidAutoTuning() = default;
-            bool step( const real_t u, const real_t y, const real_t dt );
-            pidGains getEstimates( const real_t dt );
+            bool step( const real_t u,
+                       const real_t y,
+                       const real_t dt ) noexcept;
+            pidGains getEstimates( const real_t dt ) noexcept;
     };
 
     class pidController : public pidGains, private nonCopyable {
@@ -67,31 +69,55 @@ namespace qlibs {
             pidMode mode{ pidMode::PID_AUTOMATIC };
             pidDirection dir{ pidDirection::PID_FORWARD };
             bool init{ false };
-            static real_t saturate( real_t x, const real_t vMin, const real_t vMax );
-            void adaptGains( const real_t u, const real_t y );
+            static real_t saturate( real_t x,
+                                    const real_t vMin,
+                                    const real_t vMax ) noexcept;
+            void adaptGains( const real_t u,
+                             const real_t y ) noexcept;
         public:
             virtual ~pidController() {}
             pidController() = default;
-            bool setup( const real_t kc, const real_t ki, const real_t kd, const real_t dT );
-            bool setDirection( const pidDirection d );
-            bool setParams( const real_t kc, const real_t ti, const real_t td );
-            bool setGains( const real_t kc, const real_t ki, const real_t kd );
-            bool setExtraGains( const real_t Kw, const real_t Kt );
-            bool setSaturation( const real_t Min, const real_t Max );
-            bool setSeries( void );
-            bool setEpsilon( const real_t eps );
-            bool setDerivativeFilter( const real_t Beta );
-            bool setMode( const pidMode Mode );
-            bool setReferenceWeighting( const real_t gb, const real_t gc );
-            bool setManualInput( const real_t manualInput );
-            bool setModelReferenceControl( const real_t &modelRef, const real_t Gamma = 0.5, const real_t Alpha = 0.01 );
-            bool removeModelReferenceControl( void );
-            real_t control( const real_t w, const real_t y );
-            bool bindAutoTuning( pidAutoTuning &at );
-            bool enableAutoTuning( const uint32_t tEnable );
-            bool isAutoTuningComplete( void ) const;
-            bool setAutoTuningParameters( const real_t Mu, const real_t Alpha, const real_t lambda );
-            bool reset( void );
+            bool setup( const real_t kc,
+                        const real_t ki,
+                        const real_t kd,
+                        const real_t dT ) noexcept;
+            bool setup( const pidGains &g,
+                        const real_t dT ) noexcept
+            {
+                return setup( g.Kc, g.Ki, g.Kd, dT );
+            }
+            bool setDirection( const pidDirection d ) noexcept;
+            bool setParams( const real_t kc,
+                            const real_t ti,
+                            const real_t td ) noexcept;
+            bool setGains( const real_t kc,
+                           const real_t ki,
+                           const real_t kd ) noexcept;
+            bool setGains( const pidGains &g ) noexcept;
+            bool setExtraGains( const real_t Kw,
+                                const real_t Kt ) noexcept;
+            bool setSaturation( const real_t Min,
+                                const real_t Max ) noexcept;
+            bool setSeries( void ) noexcept;
+            bool setEpsilon( const real_t eps ) noexcept;
+            bool setDerivativeFilter( const real_t Beta ) noexcept;
+            bool setMode( const pidMode Mode ) noexcept;
+            bool setReferenceWeighting( const real_t gb,
+                                        const real_t gc ) noexcept;
+            bool setManualInput( const real_t manualInput ) noexcept;
+            bool setModelReferenceControl( const real_t &modelRef,
+                                           const real_t Gamma = 0.5,
+                                           const real_t Alpha = 0.01 ) noexcept;
+            bool removeModelReferenceControl( void ) noexcept;
+            real_t control( const real_t w,
+                            const real_t y ) noexcept;
+            bool bindAutoTuning( pidAutoTuning &at ) noexcept;
+            bool enableAutoTuning( const uint32_t tEnable ) noexcept;
+            bool isAutoTuningComplete( void ) const noexcept;
+            bool setAutoTuningParameters( const real_t Mu,
+                                          const real_t Alpha,
+                                          const real_t lambda ) noexcept;
+            bool reset( void ) noexcept;
     };
 
 }

@@ -10,14 +10,16 @@ namespace qlibs {
         public:
             virtual ~rms() {}
             rms() = default;
-            real_t update( const real_t x );
-            bool setup( real_t * const window, const size_t wsize );
+            real_t update( const real_t x ) noexcept;
+            bool setup( real_t * const window,
+                        const size_t wsize ) noexcept;
             template <size_t windowSize>
-            bool setup( real_t (&win)[ windowSize ] )
+            bool setup( real_t (&win)[ windowSize ] ) noexcept
             {
                 return setup( win, windowSize );
             }
-            bool setParams( const real_t lambda, const real_t alpha );
+            bool setParams( const real_t lambda,
+                            const real_t alpha ) noexcept;
     };
 
 }

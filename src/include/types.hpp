@@ -79,8 +79,8 @@ namespace qlibs {
             nonCopyable() {}
             ~nonCopyable() {}
         private:
-            nonCopyable(const nonCopyable &);
-            nonCopyable& operator=(const nonCopyable &);
+            nonCopyable( const nonCopyable & );
+            nonCopyable& operator=( const nonCopyable & );
     };
 
 }

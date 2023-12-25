@@ -6,7 +6,8 @@ using namespace qlibs;
 const size_t bitfield::LBit =  static_cast<size_t>( sizeof(uint32_t) * 8U );
 
 /*============================================================================*/
-bool bitfield::setup( void * const area, const size_t area_size )
+bool bitfield::setup( void * const area,
+                      const size_t area_size ) noexcept
 {
     bool retValue = false;
 
@@ -22,7 +23,7 @@ bool bitfield::setup( void * const area, const size_t area_size )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::clearAll( void )
+bool bitfield::clearAll( void ) noexcept
 {
     bool retValue = false;
 
@@ -33,7 +34,7 @@ bool bitfield::clearAll( void )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::setAll( void )
+bool bitfield::setAll( void ) noexcept
 {
     bool retValue = false;
 
@@ -45,7 +46,7 @@ bool bitfield::setAll( void )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::setBit( const size_t index )
+bool bitfield::setBit( const size_t index ) noexcept
 {
     bool retValue = false;
 
@@ -57,7 +58,7 @@ bool bitfield::setBit( const size_t index )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::clearBit( const size_t index )
+bool bitfield::clearBit( const size_t index ) noexcept
 {
     bool retValue = false;
 
@@ -69,7 +70,7 @@ bool bitfield::clearBit( const size_t index )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::toggleBit( const size_t index )
+bool bitfield::toggleBit( const size_t index ) noexcept
 {
     bool retValue = false;
 
@@ -81,7 +82,7 @@ bool bitfield::toggleBit( const size_t index )
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::readBit( const size_t index ) const
+bool bitfield::readBit( const size_t index ) const noexcept
 {
     bool retValue = false;
 
@@ -92,7 +93,8 @@ bool bitfield::readBit( const size_t index ) const
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::writeBit( const size_t index, bool value )
+bool bitfield::writeBit( const size_t index,
+                         const bool value ) noexcept
 {
     bool retValue = false;
 
@@ -109,7 +111,8 @@ bool bitfield::writeBit( const size_t index, bool value )
     return retValue;
 }
 /*============================================================================*/
-uint32_t bitfield::readUINTn( const size_t index, size_t xBits ) const
+uint32_t bitfield::readUINTn( const size_t index,
+                              const size_t xBits ) const noexcept
 {
     uint32_t retValue = 0U;
 
@@ -129,7 +132,9 @@ uint32_t bitfield::readUINTn( const size_t index, size_t xBits ) const
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::writeUINTn( const size_t index, size_t xBits, uint32_t value )
+bool bitfield::writeUINTn( const size_t index,
+                           const size_t xBits,
+                           uint32_t value ) noexcept
 {
     bool retValue = false;
 
@@ -156,7 +161,7 @@ bool bitfield::writeUINTn( const size_t index, size_t xBits, uint32_t value )
     return retValue;
 }
 /*============================================================================*/
-float bitfield::readFloat( const size_t index ) const
+float bitfield::readFloat( const size_t index ) const noexcept
 {
     float retValue = 0.0F;
 
@@ -170,7 +175,8 @@ float bitfield::readFloat( const size_t index ) const
     return retValue;
 }
 /*============================================================================*/
-bool bitfield::writeFloat( const size_t index, float value )
+bool bitfield::writeFloat( const size_t index,
+                           const float value ) noexcept
 {
     bool retValue = false;
 
@@ -185,7 +191,8 @@ bool bitfield::writeFloat( const size_t index, float value )
     return retValue;
 }
 /*============================================================================*/
-void* bitfield::dump( void * const dst, size_t n )
+void* bitfield::dump( void * const dst,
+                      const size_t n ) noexcept
 {
     void *retValue = nullptr;
 
@@ -198,7 +205,7 @@ void* bitfield::dump( void * const dst, size_t n )
     return retValue;
 }
 /*============================================================================*/
-uint32_t bitfield::read_uint32( const size_t index ) const
+uint32_t bitfield::read_uint32( const size_t index ) const noexcept
 {
     size_t slot, of, bits_taken;
     uint32_t result;
@@ -218,7 +225,8 @@ uint32_t bitfield::read_uint32( const size_t index ) const
     return result;
 }
 /*============================================================================*/
-void bitfield::write_uint32( const size_t index, const uint32_t value )
+void bitfield::write_uint32( const size_t index,
+                             const uint32_t value ) noexcept
 {
     uint32_t wMask;
     size_t slot, of;

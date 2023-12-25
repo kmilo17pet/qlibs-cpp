@@ -28,7 +28,10 @@ namespace qlibs {
             real_t b0{ 0.0 };
             real_t min{ DBL_MIN };
             real_t max{ DBL_MAX };
-            void normalizeTransferFunction( real_t *num, real_t *den, size_t n_num, size_t n_den );
+            void normalizeTransferFunction( real_t *num,
+                                            real_t *den,
+                                            size_t n_num,
+                                            size_t n_den );
             real_t saturate( real_t y );
             ltisysType type{ LTISYS_TYPE_UNKNOWN };
         public:
@@ -42,8 +45,11 @@ namespace qlibs {
             {
                 return type;
             }
-            bool setDelay( real_t * const w, const size_t nD, const real_t initVal = 0.0 );
-            bool setSaturation( const real_t minV, const real_t maxV );
+            bool setDelay( real_t * const w,
+                           const size_t nD,
+                           const real_t initVal = 0.0 ) noexcept;
+            bool setSaturation( const real_t minV,
+                                const real_t maxV ) noexcept;
     }; 
 
     class discreteSystem : public ltisys {
@@ -52,17 +58,28 @@ namespace qlibs {
             real_t update( const real_t u );
         public:
             virtual ~discreteSystem() {}
-            discreteSystem( real_t *num, real_t *den, real_t *x, const size_t n_b, const size_t n_a )
+            discreteSystem( real_t *num,
+                            real_t *den,
+                            real_t *x,
+                            const size_t n_b,
+                            const size_t n_a ) noexcept
             {
                 (void)setup( num, den, x, n_b, n_a );
             }
-            bool setup( real_t *num, real_t *den, real_t *x, const size_t n_b, const size_t n_a );
+            bool setup( real_t *num,
+                        real_t *den,
+                        real_t *x,
+                        const size_t n_b,
+                        const size_t n_a ) noexcept;
             bool isInitialized( void ) const override
             {
                 return ( nullptr != xd );
             }
             bool setInitStates( const real_t *xi = nullptr ) override;
-            static real_t updateFIR( real_t *w, const size_t wsize, const real_t x, const real_t * const c = nullptr );
+            static real_t updateFIR( real_t *w,
+                                     const size_t wsize,
+                                     const real_t x,
+                                     const real_t * const c = nullptr );
             real_t excite( real_t u ) override;
 
     };
@@ -74,11 +91,19 @@ namespace qlibs {
             real_t update( const real_t u );
         public:
             virtual ~continuousSystem() {}
-            continuousSystem( real_t *num, real_t *den, state *x, const size_t n_a, const real_t dT )
+            continuousSystem( real_t *num,
+                              real_t *den,
+                              state *x,
+                              const size_t n_a,
+                              const real_t dT ) noexcept
             {
                 (void)setup( num, den, x, n_a, dT );
             }
-            bool setup( real_t *num, real_t *den, state *x, const size_t n_a, const real_t dT );
+            bool setup( real_t *num,
+                        real_t *den,
+                        state *x,
+                        const size_t n_a,
+                        const real_t dT ) noexcept;
             bool isInitialized( void ) const override
             {
                 return ( nullptr != xc );

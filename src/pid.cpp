@@ -6,7 +6,10 @@ using namespace qlibs;
 const uint32_t pidAutoTuning::UNDEFINED = 0xFFFFFFFEUL;
 
 /*============================================================================*/
-bool pidController::setup( const real_t kc, const real_t ki, const real_t kd, const real_t dT )
+bool pidController::setup( const real_t kc,
+                           const real_t ki,
+                           const real_t kd,
+                           const real_t dT ) noexcept
 {
     bool retValue = false;
 
@@ -28,7 +31,7 @@ bool pidController::setup( const real_t kc, const real_t ki, const real_t kd, co
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setDirection( const pidDirection d )
+bool pidController::setDirection( const pidDirection d ) noexcept
 {
     bool retValue = false;
 
@@ -40,7 +43,9 @@ bool pidController::setDirection( const pidDirection d )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setParams( const real_t kc, const real_t ti, const real_t td )
+bool pidController::setParams( const real_t kc,
+                               const real_t ti,
+                               const real_t td ) noexcept
 {
     bool retValue = false;
 
@@ -54,7 +59,9 @@ bool pidController::setParams( const real_t kc, const real_t ti, const real_t td
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setGains( const real_t kc, const real_t ki, const real_t kd )
+bool pidController::setGains( const real_t kc,
+                              const real_t ki,
+                              const real_t kd ) noexcept
 {
     bool retValue = false;
 
@@ -68,7 +75,22 @@ bool pidController::setGains( const real_t kc, const real_t ki, const real_t kd 
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setExtraGains( const real_t Kw, const real_t Kt )
+bool pidController::setGains( const pidGains &g ) noexcept
+{
+    bool retValue = false;
+
+    if ( init ) {
+        Kc = g.Kc;
+        Ki = g.Ki;
+        Kd = g.Kd;
+        retValue = true;
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool pidController::setExtraGains( const real_t Kw,
+                                   const real_t Kt ) noexcept
 {
     bool retValue = false;
 
@@ -81,7 +103,8 @@ bool pidController::setExtraGains( const real_t Kw, const real_t Kt )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setSaturation( const real_t Min, const real_t Max )
+bool pidController::setSaturation( const real_t Min,
+                                   const real_t Max ) noexcept
 {
     bool retValue = false;
 
@@ -94,7 +117,7 @@ bool pidController::setSaturation( const real_t Min, const real_t Max )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setSeries( void )
+bool pidController::setSeries( void ) noexcept
 {
     bool retValue = false;
 
@@ -113,7 +136,7 @@ bool pidController::setSeries( void )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setEpsilon( const real_t eps )
+bool pidController::setEpsilon( const real_t eps ) noexcept
 {
     bool retValue = false;
 
@@ -125,7 +148,7 @@ bool pidController::setEpsilon( const real_t eps )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setDerivativeFilter( const real_t Beta )
+bool pidController::setDerivativeFilter( const real_t Beta ) noexcept
 {
     bool retValue = false;
 
@@ -137,7 +160,7 @@ bool pidController::setDerivativeFilter( const real_t Beta )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setMode( const pidMode Mode )
+bool pidController::setMode( const pidMode Mode ) noexcept
 {
     bool retValue = false;
 
@@ -149,7 +172,8 @@ bool pidController::setMode( const pidMode Mode )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setReferenceWeighting( const real_t gb, const real_t gc )
+bool pidController::setReferenceWeighting( const real_t gb,
+                                           const real_t gc ) noexcept
 {
     bool retValue = false;
 
@@ -162,7 +186,7 @@ bool pidController::setReferenceWeighting( const real_t gb, const real_t gc )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setManualInput( const real_t manualInput )
+bool pidController::setManualInput( const real_t manualInput ) noexcept
 {
     bool retValue = false;
 
@@ -174,7 +198,7 @@ bool pidController::setManualInput( const real_t manualInput )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::reset( void )
+bool pidController::reset( void ) noexcept
 {
     bool retValue = false;
 
@@ -191,7 +215,9 @@ bool pidController::reset( void )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setModelReferenceControl( const real_t &modelRef, const real_t Gamma, const real_t Alpha )
+bool pidController::setModelReferenceControl( const real_t &modelRef,
+                                              const real_t Gamma,
+                                              const real_t Alpha ) noexcept
 {
     bool retValue = false;
 
@@ -206,7 +232,7 @@ bool pidController::setModelReferenceControl( const real_t &modelRef, const real
     return retValue;
 }
 /*============================================================================*/
-bool pidController::removeModelReferenceControl( void )
+bool pidController::removeModelReferenceControl( void ) noexcept
 {
     bool retValue = false;
     
@@ -218,7 +244,8 @@ bool pidController::removeModelReferenceControl( void )
     return retValue;
 }
 /*============================================================================*/
-real_t pidController::control( const real_t w, const real_t y )
+real_t pidController::control( const real_t w,
+                               const real_t y ) noexcept
 {
     real_t u = w;
 
@@ -265,7 +292,9 @@ real_t pidController::control( const real_t w, const real_t y )
     return u;
 }
 /*============================================================================*/
-bool pidAutoTuning::step( const real_t u, const real_t y, const real_t dt )
+bool pidAutoTuning::step( const real_t u,
+                          const real_t y,
+                          const real_t dt ) noexcept
 {
     real_t error , r, l0, l1;
     real_t lp00, lp01, lp10, lp11;
@@ -300,7 +329,7 @@ bool pidAutoTuning::step( const real_t u, const real_t y, const real_t dt )
     gain = b1/( 1.0 + a1 );
     timeConstant = -dt/log( fabs( a1 ) );
     /*cstat -MISRAC++2008-5-14-1*/
-    if ( isValidValue( timeConstant ) && isValidValue( gain ) && ( it > 0UL ) ) { /*no side effecs here*/
+    if ( isValidValue( timeConstant ) && isValidValue( gain ) && ( it > 0UL ) ) { /*no side effects here*/
     /*cstat +MISRAC++2008-5-14-1*/
         k = gain + ( mu*( k - gain ) );
         tao = timeConstant + ( mu*( tao - timeConstant ) );
@@ -312,7 +341,7 @@ bool pidAutoTuning::step( const real_t u, const real_t y, const real_t dt )
     return ready;
 }
 /*============================================================================*/
-pidGains pidAutoTuning::getEstimates( const real_t dt )
+pidGains pidAutoTuning::getEstimates( const real_t dt ) noexcept
 {
     pidGains gains;
     real_t tmp1, tmp2;
@@ -326,7 +355,8 @@ pidGains pidAutoTuning::getEstimates( const real_t dt )
     return gains;
 }
 /*============================================================================*/
-void pidController::adaptGains( const real_t u, const real_t y )
+void pidController::adaptGains( const real_t u,
+                                const real_t y ) noexcept
 {
     if ( adapt->step( u, y, dt ) ) {
         pidGains newGains = adapt->getEstimates( dt );
@@ -336,7 +366,7 @@ void pidController::adaptGains( const real_t u, const real_t y )
     }
 }
 /*============================================================================*/
-bool pidController::bindAutoTuning( pidAutoTuning &at )
+bool pidController::bindAutoTuning( pidAutoTuning &at ) noexcept
 {
     bool retValue = false;
 
@@ -370,7 +400,7 @@ bool pidController::bindAutoTuning( pidAutoTuning &at )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::enableAutoTuning( const uint32_t tEnable )
+bool pidController::enableAutoTuning( const uint32_t tEnable ) noexcept
 {
     bool retValue = false;
 
@@ -382,7 +412,7 @@ bool pidController::enableAutoTuning( const uint32_t tEnable )
     return retValue;
 }
 /*============================================================================*/
-bool pidController::isAutoTuningComplete( void ) const
+bool pidController::isAutoTuningComplete( void ) const noexcept
 {
     bool retValue = false;
 
@@ -393,7 +423,9 @@ bool pidController::isAutoTuningComplete( void ) const
     return retValue;
 }
 /*============================================================================*/
-bool pidController::setAutoTuningParameters( const real_t Mu, const real_t Alpha, const real_t lambda )
+bool pidController::setAutoTuningParameters( const real_t Mu,
+                                             const real_t Alpha,
+                                             const real_t lambda ) noexcept
 {
     bool retValue = false;
 
@@ -409,14 +441,16 @@ bool pidController::setAutoTuningParameters( const real_t Mu, const real_t Alpha
     return retValue;
 }
 /*============================================================================*/
-bool pidAutoTuning::isValidValue( const real_t x )
+bool pidAutoTuning::isValidValue( const real_t x ) noexcept
 {
      /*cstat -MISRAC++2008-5-14-1*/
      return ( !isnan( x ) ) && ( x > 0.0 ) && ( !isinf( x ) );
      /*cstat +MISRAC++2008-5-14-1*/
 }
 /*============================================================================*/
-real_t pidController::saturate( real_t x, const real_t vMin, const real_t vMax )
+real_t pidController::saturate( real_t x,
+                                const real_t vMin,
+                                const real_t vMax ) noexcept
 {
     if ( x > vMax ) {
         x = vMax;

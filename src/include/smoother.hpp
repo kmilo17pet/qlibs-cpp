@@ -10,7 +10,9 @@ namespace qlibs {
     class smoother {
         protected:
             bool init{ true };
-            static void windowSet( real_t *w, const size_t wsize, const real_t x );
+            static void windowSet( real_t *w,
+                                   const size_t wsize,
+                                   const real_t x );
         public:
             virtual ~smoother() {}
             bool isInitialized( void ) const;
@@ -51,10 +53,16 @@ namespace qlibs {
     class smootherMWM1 : public smoother, private nonCopyable {
         protected:
             real_t *w{ nullptr };
-            size_t wsize;
+            size_t wsize{ 0U };
         public:
             virtual ~smootherMWM1() {}
-            bool setup( real_t *window, const size_t w_size );
+            bool setup( real_t *window,
+                        const size_t w_size );
+            template <size_t windowSize>
+            bool setup( real_t (&window)[ windowSize ] )
+            {
+                return setup( window, windowSize );
+            }
             real_t smooth( const real_t x ) override;
     };
 
@@ -63,7 +71,13 @@ namespace qlibs {
             real_t sum{ 0.0 };
         public:
             virtual ~smootherMWM2() {}
-            bool setup( real_t *window, const size_t w_size );
+            bool setup( real_t *window,
+                        const size_t w_size );
+            template <size_t windowSize>
+            bool setup( real_t (&window)[ windowSize ] )
+            {
+                return setup( window, windowSize );
+            }
             real_t smooth( const real_t x ) override;
     };
 
@@ -71,11 +85,19 @@ namespace qlibs {
         protected:
             real_t *w{ nullptr };
             real_t m{ 0.0 };
-            real_t alpha{ 0.0 };
-            size_t wsize;
+            real_t alpha{ 0.8 };
+            size_t wsize{ 0U };
         public:
             virtual ~smootherMOR1() {}
-            bool setup( real_t *window, const size_t w_size, const real_t a = 0.9 );
+            bool setup( real_t *window,
+                        const size_t w_size,
+                        const real_t a = 0.9 );
+            template <size_t windowSize>
+            bool setup( real_t (&window)[ windowSize ],
+                        const real_t a = 0.9 )
+            {
+                return setup( window, windowSize, a );
+            }
             real_t smooth( const real_t x ) override;
     };
 
@@ -83,10 +105,18 @@ namespace qlibs {
         protected:
             real_t sum{ 0.0 };
             real_t m{ 0.0 };
-            real_t alpha;
+            real_t alpha{ 0.8 };
         public:
             virtual ~smootherMOR2() {}
-            bool setup( real_t *window, const size_t w_size, const real_t a = 0.9 );
+            bool setup( real_t *window,
+                        const size_t w_size,
+                        const real_t a = 0.9 );
+            template <size_t windowSize>
+            bool setup( real_t (&window)[ windowSize ],
+                        const real_t a = 0.9 )
+            {
+                return setup( window, windowSize, a );
+            }
             real_t smooth( const real_t x ) override;
     };
 
@@ -97,33 +127,45 @@ namespace qlibs {
             size_t wsize;
         public:
             virtual ~smootherGMWF() {}
-            bool setup( const real_t sg, const size_t c, real_t *window, const size_t w_size );
+            bool setup( const real_t sg,
+                        const real_t c,
+                        real_t *window,
+                        const size_t w_size );
+            template <size_t windowSize>
+            bool setup( const real_t sg,
+                        const real_t c,
+                        real_t (&window)[ windowSize ] )
+            {
+                return setup( sg, c, window, windowSize );
+            }
             real_t smooth( const real_t x ) override;
     };
 
     class smootherEXPW : public smoother {
         protected:
-            real_t lambda{ 0U };
+            real_t lambda{ 0.8 };
             real_t m{ 0U };
-            real_t w{ 0U };
+            real_t w{ 1.0 };
         public:
             virtual ~smootherEXPW() {}
-            bool setup( const real_t lam );
+            bool setup( const real_t lam = 0.8 );
             real_t smooth( const real_t x ) override;
     };
 
     class smootherKLMN : public smoother {
         protected:
-            real_t xS;  /* state */
+            real_t xS{ 0.0 };  /* state */
             real_t A{ 1.0 };  /* x(n)=A*x(n-1)+u(n),u(n)~N(0,q) */
             real_t H{ 1.0 };  /* z(n)=H*x(n)+w(n),w(n)~N(0,r) */
-            real_t q;  /* process(predict) noise covariance */
-            real_t r;  /* measure noise covariance */
-            real_t p;  /* estimated error covariance */
+            real_t q{ 100.0 };  /* process(predict) noise covariance */
+            real_t r{ 0.9 };  /* measure noise covariance */
+            real_t p{ 100.0 };  /* estimated error covariance */
             real_t gain;
         public:
             virtual ~smootherKLMN() {}
-            bool setup( const real_t processNoiseCov, const real_t measureNoiseCov, const real_t estErrorCov );
+            bool setup( const real_t processNoiseCov,
+                        const real_t measureNoiseCov,
+                        const real_t estErrorCov );
             real_t smooth( const real_t x ) override;
     };
 
@@ -136,7 +178,9 @@ namespace qlibs {
             real_t n;
         public:
             virtual ~smootherDESF() {}
-            bool setup( const real_t a, const real_t b, const real_t N );
+            bool setup( const real_t a,
+                        const real_t b,
+                        const real_t N );
             real_t smooth( const real_t x ) override;
     };
 
@@ -150,7 +194,17 @@ namespace qlibs {
             size_t n{ 0U };
         public:
             virtual ~smootherALNF() {}
-            bool setup( const real_t a, const real_t m, real_t *window, const size_t wsize );
+            bool setup( const real_t a,
+                        const real_t m,
+                        real_t *window,
+                        const size_t wsize );
+            template <size_t windowSize>
+            bool setup( const real_t a,
+                        const real_t m,
+                        real_t (&window)[ windowSize ] )
+            {
+                return setup( a, m, window, windowSize, a );
+            }
             real_t smooth( const real_t x ) override;
     };
 

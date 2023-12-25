@@ -3,7 +3,10 @@
 using namespace qlibs;
 
 /*============================================================================*/
-void ltisys::normalizeTransferFunction( real_t *num, real_t *den, size_t n_num, size_t n_den )
+void ltisys::normalizeTransferFunction( real_t *num,
+                                        real_t *den,
+                                        size_t n_num,
+                                        size_t n_den )
 {
     const real_t a0 = den[ 0 ];
     size_t i;
@@ -31,7 +34,9 @@ real_t ltisys::saturate( real_t y )
     return y;
 }
 /*============================================================================*/
-bool ltisys::setDelay( real_t * const w, const size_t nD, const real_t initVal )
+bool ltisys::setDelay( real_t * const w,
+                       const size_t nD,
+                       const real_t initVal ) noexcept
 {
     bool retValue = false;
 
@@ -43,7 +48,8 @@ bool ltisys::setDelay( real_t * const w, const size_t nD, const real_t initVal )
     return retValue;
 }
 /*============================================================================*/
-bool ltisys::setSaturation( const real_t minV, const real_t maxV ) 
+bool ltisys::setSaturation( const real_t minV,
+                            const real_t maxV ) noexcept
 {
     bool retValue = false;
 
@@ -56,7 +62,10 @@ bool ltisys::setSaturation( const real_t minV, const real_t maxV )
     return retValue;
 }
 /*============================================================================*/
-real_t discreteSystem::updateFIR( real_t *w, const size_t wsize, const real_t x, const real_t * const c )
+real_t discreteSystem::updateFIR( real_t *w,
+                                  const size_t wsize,
+                                  const real_t x,
+                                  const real_t * const c )
 {
     size_t i;
     real_t y = 0.0;
@@ -96,7 +105,11 @@ bool discreteSystem::setInitStates( const real_t *xi )
     return retValue;
 }
 /*============================================================================*/
-bool discreteSystem::setup( real_t *num, real_t *den, real_t *x, const size_t n_b, const size_t n_a )
+bool discreteSystem::setup( real_t *num,
+                            real_t *den,
+                            real_t *x,
+                            const size_t n_b,
+                            const size_t n_a ) noexcept
 {
     bool retValue = false;
 
@@ -143,7 +156,11 @@ real_t discreteSystem::excite( real_t u )
     return y;
 }
 /*============================================================================*/
-bool continuousSystem::setup( real_t *num, real_t *den, state *x,const size_t n_a, const real_t dT )
+bool continuousSystem::setup( real_t *num,
+                              real_t *den,
+                              state *x,
+                              const size_t n_a,
+                              const real_t dT ) noexcept
 {
     bool retValue = false;
 

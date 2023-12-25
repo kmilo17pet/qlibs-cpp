@@ -3,14 +3,16 @@
 using namespace qlibs;
 
 /*============================================================================*/
-void tdl::setup( real_t * const area, const size_t n, const real_t initVal ) noexcept
+void tdl::setup( real_t * const area,
+                 const size_t n,
+                 const real_t initVal ) noexcept
 {
     itemCount = n;
     head = area;
     flush( initVal );
 }
 /*============================================================================*/
-void tdl::flush( const real_t initVal )
+void tdl::flush( const real_t initVal ) noexcept
 {
     tail = &head[ itemCount ];
     wr = head;
@@ -22,7 +24,7 @@ void tdl::flush( const real_t initVal )
     }
 }
 /*============================================================================*/
-void tdl::insertNewest( const real_t sample )
+void tdl::insertNewest( const real_t sample ) noexcept
 {
     wr[ 0 ] = sample;
     wr++;
@@ -31,24 +33,24 @@ void tdl::insertNewest( const real_t sample )
     }
 }
 /*============================================================================*/
-void tdl::removeOldest( void )
+void tdl::removeOldest( void ) noexcept
 {
     if ( ++rd >= tail ) {
         rd = head;
     }
 }
 /*============================================================================*/
-real_t tdl::getOldest( void ) const
+real_t tdl::getOldest( void ) const noexcept
 {
     return ( ( rd + 1U ) >= tail ) ? head[ 0 ] : rd[ 1 ];
 }
 /*============================================================================*/
-real_t tdl::getRecent( void ) const
+real_t tdl::getRecent( void ) const noexcept
 {
     return rd[ 0 ];
 }
 /*============================================================================*/
-real_t tdl::getAtIndex( const size_t i ) const
+real_t tdl::getAtIndex( const size_t i ) const noexcept
 {
     /*cstat -MISRAC++2008-5-0-3*/
     return ( ( wr >= rd ) && ( ( head + i ) >= wr ) ) ? rd[ itemCount - i ]
@@ -56,13 +58,13 @@ real_t tdl::getAtIndex( const size_t i ) const
     /*cstat +MISRAC++2008-5-0-3*/
 }
 /*============================================================================*/
-void tdl::insertSample( const real_t sample )
+void tdl::insertSample( const real_t sample ) noexcept
 {
     removeOldest();
     insertNewest( sample );
 }
 /*============================================================================*/
-const real_t& tdl::operator[]( int index )
+const real_t& tdl::operator[]( int index ) noexcept
 {
     const size_t i = static_cast<size_t>( index );
     /*cstat -MISRAC++2008-6-6-5*/

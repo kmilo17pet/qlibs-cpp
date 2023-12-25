@@ -22,38 +22,49 @@ namespace qlibs {
             integrationMethod intMethod{ INTEGRATION_TRAPEZOIDAL };
         public:
             virtual ~state() {}
-            state( const real_t x0 = 0.0, const real_t sn_1 = 0.0, const real_t sn_2 = 0.0 )
+            state( const real_t x0 = 0.0,
+                   const real_t sn_1 = 0.0,
+                   const real_t sn_2 = 0.0 ) noexcept
             {
                 init( x0, sn_1, sn_2 );
             }
-            void init( const real_t x0 = 0.0, const real_t sn_1 = 0.0, const real_t sn_2 = 0.0 );
-            real_t integrate( const real_t s, const real_t dt );
-            real_t derivative( const real_t s, const real_t dt );
-            inline void setIntegrationMethod( integrationMethod m )
+            void init( const real_t x0 = 0.0,
+                       const real_t sn_1 = 0.0,
+                       const real_t sn_2 = 0.0 ) noexcept;
+            real_t integrate( const real_t s,
+                              const real_t dt ) noexcept;
+            real_t derivative( const real_t s,
+                               const real_t dt ) noexcept;
+            inline void setIntegrationMethod( integrationMethod m ) noexcept
             {
                 intMethod = m;
             }
-            real_t operator()( void ) const {
+            real_t operator()( void ) const  noexcept
+            {
                 return x[ 0 ];
             }
 
-            real_t operator*( real_t rValue) const
+            real_t operator*( real_t rValue) const noexcept
             {
                 return x[ 0 ]*rValue;
             }
-            real_t operator+( real_t rValue) const
+            real_t operator+( real_t rValue) const noexcept
             {
                 return x[ 0 ]+rValue;
             }
-            friend real_t operator*( real_t rValue, const state& s );
-            friend real_t operator+( real_t rValue, const state& s );
+            friend real_t operator*( real_t rValue,
+                                     const state& s ) noexcept;
+            friend real_t operator+( real_t rValue,
+                                     const state& s ) noexcept;
     };
 
-    inline real_t operator*( real_t rValue, const state& s )
+    inline real_t operator*( real_t rValue,
+                             const state& s ) noexcept
     {
         return rValue*s.x[ 0 ];
     }
-    inline real_t operator+( real_t rValue, const state& s )
+    inline real_t operator+( real_t rValue,
+                             const state& s ) noexcept
     {
         return rValue+s.x[ 0 ];
     }

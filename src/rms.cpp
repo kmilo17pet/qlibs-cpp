@@ -3,7 +3,8 @@
 using namespace qlibs;
 
 /*============================================================================*/
-bool rms::setup( real_t * const window, const size_t wsize )
+bool rms::setup( real_t * const window,
+                 const size_t wsize ) noexcept
 {
     bool retValue = false;
 
@@ -17,7 +18,7 @@ bool rms::setup( real_t * const window, const size_t wsize )
     return retValue;
 }
 /*============================================================================*/
-real_t rms::update( const real_t x )
+real_t rms::update( const real_t x ) noexcept
 {
     real_t y;
 
@@ -28,7 +29,8 @@ real_t rms::update( const real_t x )
     return y;
 }
 /*============================================================================*/
-bool rms::setParams( const real_t l, const real_t a )
+bool rms::setParams( const real_t l,
+                     const real_t a ) noexcept
 {
     bool retValue = false;
 

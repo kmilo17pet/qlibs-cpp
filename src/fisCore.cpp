@@ -7,7 +7,9 @@ using namespace qlibs;
 /*cstat -CERT-FLP32-C_b*/
 
 /*============================================================================*/
-real_t fisCore::TriMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TriMF( const fisIOBase * const in,
+                       const real_t *p,
+                       const size_t n )
 {
     real_t a, b, c, tmp;
     const real_t x = in[ 0 ].value;
@@ -21,7 +23,9 @@ real_t fisCore::TriMF( const fisIOBase * const in, const real_t *p, const size_t
     return Max( tmp , 0.0 );
 }
 /*============================================================================*/
-real_t fisCore::TrapMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TrapMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     real_t a, b, c, d, tmp;
     const real_t x = in[ 0 ].value;
@@ -37,7 +41,9 @@ real_t fisCore::TrapMF( const fisIOBase * const in, const real_t *p, const size_
     return Max( tmp , 0.0 );
 }
 /*============================================================================*/
-real_t fisCore::GBellMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::GBellMF( const fisIOBase * const in,
+                         const real_t *p,
+                         const size_t n )
 {
     real_t a, b, c;
     const real_t x = in[ 0 ].value;
@@ -50,7 +56,9 @@ real_t fisCore::GBellMF( const fisIOBase * const in, const real_t *p, const size
     return ( 1.0/( 1.0 + pow( fabs( ( x - c )/a ) , 2.0*b ) ) );
 }
 /*============================================================================*/
-real_t fisCore::GaussMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::GaussMF( const fisIOBase * const in,
+                         const real_t *p,
+                         const size_t n )
 {
     real_t a, c, tmp;
     const real_t x = in[ 0 ].value;
@@ -63,7 +71,9 @@ real_t fisCore::GaussMF( const fisIOBase * const in, const real_t *p, const size
     return exp( -0.5*tmp*tmp );
 }
 /*============================================================================*/
-real_t fisCore::Gauss2MF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::Gauss2MF( const fisIOBase * const in,
+                          const real_t *p,
+                          const size_t n )
 {
     real_t c1, c2, f1, f2;
     const real_t x = in[ 0 ].value;
@@ -76,7 +86,9 @@ real_t fisCore::Gauss2MF( const fisIOBase * const in, const real_t *p, const siz
     return f1*f2;
 }
 /*============================================================================*/
-real_t fisCore::SigMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::SigMF( const fisIOBase * const in,
+                       const real_t *p,
+                       const size_t n )
 {
     real_t a, b;
     const real_t x = in[ 0 ].value;
@@ -88,7 +100,9 @@ real_t fisCore::SigMF( const fisIOBase * const in, const real_t *p, const size_t
     return 1.0/( 1.0 + exp( -a*( x - b ) ) );
 }
 /*============================================================================*/
-real_t fisCore::TSigMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TSigMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     real_t a, b, y;
     const real_t x = in[ 0 ].value;
@@ -121,17 +135,23 @@ real_t fisCore::TSigMF( const fisIOBase * const in, const real_t *p, const size_
     return y;
 }
 /*============================================================================*/
-real_t fisCore::DSigMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::DSigMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     return fabs( SigMF( in , p, n ) - SigMF( in , &p[ 2 ], n ) );
 }
 /*============================================================================*/
-real_t fisCore::PSigMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::PSigMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     return fabs( SigMF( in , p, n )*SigMF( in , &p[ 2 ], n ) );
 }
 /*============================================================================*/
-real_t fisCore::SMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::SMF( const fisIOBase * const in,
+                     const real_t *p,
+                     const size_t n )
 {
     real_t a, b, tmp, y;
     const real_t x = in[ 0 ].value;
@@ -160,7 +180,9 @@ real_t fisCore::SMF( const fisIOBase * const in, const real_t *p, const size_t n
     return y;
 }
 /*============================================================================*/
-real_t fisCore::TSMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TSMF( const fisIOBase * const in,
+                      const real_t *p,
+                      const size_t n )
 {
     real_t diff, a, b, ta, tb, ma, mb;
     const real_t x = in[ 0 ].value;
@@ -180,7 +202,9 @@ real_t fisCore::TSMF( const fisIOBase * const in, const real_t *p, const size_t 
     return  ( fabs( x - ma ) < fabs( x - mb ) ) ? ta : tb;
 }
 /*============================================================================*/
-real_t fisCore::ZMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::ZMF( const fisIOBase * const in,
+                     const real_t *p,
+                     const size_t n )
 {
     real_t a, b, tmp, y;
     const real_t x = in[ 0 ].value;
@@ -209,7 +233,9 @@ real_t fisCore::ZMF( const fisIOBase * const in, const real_t *p, const size_t n
     return y;
 }
 /*============================================================================*/
-real_t fisCore::LinSMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::LinSMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     real_t a, b, y;
     const real_t x = in[ 0 ].value;
@@ -238,7 +264,9 @@ real_t fisCore::LinSMF( const fisIOBase * const in, const real_t *p, const size_
     return y;
 }
 /*============================================================================*/
-real_t fisCore::LinZMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::LinZMF( const fisIOBase * const in,
+                        const real_t *p,
+                        const size_t n )
 {
     real_t a, b, y;
     const real_t x = in[ 0 ].value;
@@ -267,7 +295,9 @@ real_t fisCore::LinZMF( const fisIOBase * const in, const real_t *p, const size_
     return y;
 }
 /*============================================================================*/
-real_t fisCore::TZMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TZMF( const fisIOBase * const in,
+                      const real_t *p,
+                      const size_t n )
 {
     real_t diff, a, b, ta, tb, ma, mb;
     const real_t x = in[ 0 ].value;
@@ -287,12 +317,16 @@ real_t fisCore::TZMF( const fisIOBase * const in, const real_t *p, const size_t 
     return  ( fabs( x - ma ) < fabs( x - mb ) ) ? ta : tb;
 }
 /*============================================================================*/
-real_t fisCore::PiMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::PiMF( const fisIOBase * const in,
+                      const real_t *p,
+                      const size_t n )
 {
     return fabs( SMF( in , p, n )*ZMF( in , &p[ 2 ], n ) );
 }
 /*============================================================================*/
-real_t fisCore::SingletonMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::SingletonMF( const fisIOBase * const in,
+                             const real_t *p,
+                             const size_t n )
 {
     const real_t x = in[ 0 ].value;
     (void)n;
@@ -300,7 +334,9 @@ real_t fisCore::SingletonMF( const fisIOBase * const in, const real_t *p, const 
     return ( isEqual( x, p[ 0 ] ) ) ? 1.0 : 0.0;
 }
 /*============================================================================*/
-real_t fisCore::ConcaveMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::ConcaveMF( const fisIOBase * const in,
+                           const real_t *p,
+                           const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t i, e, y;
@@ -321,7 +357,9 @@ real_t fisCore::ConcaveMF( const fisIOBase * const in, const real_t *p, const si
     return y;
 }
 /*============================================================================*/
-real_t fisCore::TConcaveMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TConcaveMF( const fisIOBase * const in,
+                            const real_t *p,
+                            const size_t n )
 {
     real_t i, e;
 
@@ -331,7 +369,9 @@ real_t fisCore::TConcaveMF( const fisIOBase * const in, const real_t *p, const s
     return ( ( i - e )/ConcaveMF( in, p, n ) ) + ( 2.0*e ) - i;
 }
 /*============================================================================*/
-real_t fisCore::SpikeMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::SpikeMF( const fisIOBase * const in,
+                         const real_t *p,
+                         const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t w, c;
@@ -343,7 +383,9 @@ real_t fisCore::SpikeMF( const fisIOBase * const in, const real_t *p, const size
     return exp( -fabs( 10.0*( x - c )/w ) );
 }
 /*============================================================================*/
-real_t fisCore::TLinSMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TLinSMF( const fisIOBase * const in,
+                         const real_t *p,
+                         const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t a, b;
@@ -355,7 +397,9 @@ real_t fisCore::TLinSMF( const fisIOBase * const in, const real_t *p, const size
     return ( ( b - a )*x ) + a;
 }
 /*============================================================================*/
-real_t fisCore::TLinZMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::TLinZMF( const fisIOBase * const in,
+                         const real_t *p,
+                         const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t a, b;
@@ -367,7 +411,9 @@ real_t fisCore::TLinZMF( const fisIOBase * const in, const real_t *p, const size
     return a - ( ( a - b )*x );
 }
 /*============================================================================*/
-real_t fisCore::RectangleMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::RectangleMF( const fisIOBase * const in,
+                             const real_t *p,
+                             const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t s, e;
@@ -379,7 +425,9 @@ real_t fisCore::RectangleMF( const fisIOBase * const in, const real_t *p, const 
     return ( ( x >= s ) && ( x <= e ) ) ? 1.0 : 0.0;
 }
 /*============================================================================*/
-real_t fisCore::CosineMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::CosineMF( const fisIOBase * const in,
+                          const real_t *p,
+                          const size_t n )
 {
     const real_t x = in[ 0 ].value;
     real_t c, w, y;
@@ -398,14 +446,18 @@ real_t fisCore::CosineMF( const fisIOBase * const in, const real_t *p, const siz
     return y;
 }
 /*============================================================================*/
-real_t fisCore::ConstantMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::ConstantMF( const fisIOBase * const in,
+                            const real_t *p,
+                            const size_t n )
 {
     (void)in;
     (void)n;
     return p[ 0 ];
 }
 /*============================================================================*/
-real_t fisCore::LinearMF( const fisIOBase * const in, const real_t *p, const size_t n )
+real_t fisCore::LinearMF( const fisIOBase * const in,
+                          const real_t *p,
+                          const size_t n )
 {
     real_t px = 0.0;
     size_t i;
@@ -418,39 +470,47 @@ real_t fisCore::LinearMF( const fisIOBase * const in, const real_t *p, const siz
     return px;
 }
 /*============================================================================*/
-real_t fisCore::bound( real_t y, const real_t minValue, const real_t maxValue )
+real_t fisCore::bound( real_t y,
+                       const real_t minValue,
+                       const real_t maxValue )
 {
     (void)inRangeCoerce( y, minValue, maxValue );
 
     return y;
 }
 /*============================================================================*/
-real_t fisCore::Min( const real_t a, const real_t b )
+real_t fisCore::Min( const real_t a,
+                     const real_t b )
 {
     return bound( ( a < b ) ? a : b, 0.0, 1.0 );
 }
 /*============================================================================*/
-real_t fisCore::Prod( const real_t a, const real_t b )
+real_t fisCore::Prod( const real_t a,
+                      const real_t b )
 {
     return bound( a*b, 0.0, 1.0 );
 }
 /*============================================================================*/
-real_t fisCore::Max( const real_t a, const real_t b )
+real_t fisCore::Max( const real_t a,
+                     const real_t b )
 {
     return bound( ( a > b ) ? a : b, 0.0, 1.0 );
 }
 /*============================================================================*/
-real_t fisCore::ProbOr( const real_t a, const real_t b )
+real_t fisCore::ProbOr( const real_t a,
+                        const real_t b )
 {
     return bound( a + b - ( a*b ), 0.0, 1.0 );
 }
 /*============================================================================*/
-real_t fisCore::Sum( const real_t a, const real_t b )
+real_t fisCore::Sum( const real_t a,
+                     const real_t b )
 {
     return bound( a + b, 0.0, 1.0 );
 }
 /*============================================================================*/
-real_t fisCore::deFuzzCentroid( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzCentroid( fisOutput * const o,
+                                const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 
@@ -473,7 +533,8 @@ real_t fisCore::deFuzzCentroid( fisOutput * const o, const fisDeFuzzState stage 
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzBisector( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzBisector( fisOutput * const o,
+                                const fisDeFuzzState stage )
 {
     size_t k;
     real_t d = 0.0;
@@ -509,7 +570,8 @@ real_t fisCore::deFuzzBisector( fisOutput * const o, const fisDeFuzzState stage 
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzLOM( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzLOM( fisOutput * const o,
+                           const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 
@@ -534,7 +596,8 @@ real_t fisCore::deFuzzLOM( fisOutput * const o, const fisDeFuzzState stage )
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzSOM( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzSOM( fisOutput * const o,
+                           const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 
@@ -559,7 +622,8 @@ real_t fisCore::deFuzzSOM( fisOutput * const o, const fisDeFuzzState stage )
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzMOM( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzMOM( fisOutput * const o,
+                           const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 
@@ -597,7 +661,8 @@ real_t fisCore::deFuzzMOM( fisOutput * const o, const fisDeFuzzState stage )
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzWtAverage( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzWtAverage( fisOutput * const o,
+                                 const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 
@@ -608,7 +673,8 @@ real_t fisCore::deFuzzWtAverage( fisOutput * const o, const fisDeFuzzState stage
     return d;
 }
 /*============================================================================*/
-real_t fisCore::deFuzzWtSum( fisOutput * const o, const fisDeFuzzState stage )
+real_t fisCore::deFuzzWtSum( fisOutput * const o,
+                             const fisDeFuzzState stage )
 {
     real_t d = 0.0;
 

@@ -8,12 +8,16 @@ struct sortStackNode {
     uint8_t *hi;
 };
 
-static void sortStackPush( sortStackNode **top, uint8_t *low, uint8_t *high );
+static void sortStackPush( sortStackNode **top,
+                           uint8_t *low,
+                           uint8_t *high ) noexcept;
 
 /*cstat -CERT-EXP36-C_b*/
 
 /*============================================================================*/
-void generic::swap( void * const x, void * const y, size_t n )
+void generic::swap( void * const x,
+                    void * const y,
+                    size_t n ) noexcept
 {
     uint8_t * const a = static_cast<uint8_t *>( x );
     uint8_t * const b = static_cast<uint8_t *>( y );
@@ -27,14 +31,20 @@ void generic::swap( void * const x, void * const y, size_t n )
     } while( --n > 0U );
 }
 /*============================================================================*/
-static void sortStackPush( sortStackNode **top, uint8_t *low, uint8_t *high )
+static void sortStackPush( sortStackNode **top,
+                           uint8_t *low,
+                           uint8_t *high ) noexcept
 {
     top[ 0 ]->lo = low;
     top[ 0 ]->hi = high;
     ++top[ 0 ];
 }
 /*============================================================================*/
-void generic::sort( void * const pbase, size_t n, size_t size, generic::compareFcn_t cmp, void *arg)
+void generic::sort( void * const pbase,
+                    size_t n,
+                    size_t size,
+                    generic::compareFcn_t cmp,
+                    void *arg ) noexcept
 {
     if ( ( nullptr != pbase ) && ( size > 0U ) && ( n > 0U ) && ( nullptr != cmp ) ) {
         const size_t max_thresh = 4U*size;
@@ -160,7 +170,10 @@ void generic::sort( void * const pbase, size_t n, size_t size, generic::compareF
     }
 }
 /*============================================================================*/
-void generic::reverse( void * const pbase, const size_t size, const size_t init, const size_t end )
+void generic::reverse( void * const pbase,
+                       const size_t size,
+                       const size_t init,
+                       const size_t end ) noexcept
 {
     if ( ( nullptr != pbase ) && ( size > 0U ) && ( end > init ) ) {
         size_t s = size*init, e = size*end;
@@ -174,7 +187,10 @@ void generic::reverse( void * const pbase, const size_t size, const size_t init,
     }
 }
 /*============================================================================*/
-void generic::rotate( void * const pbase, const size_t size, const size_t n, const int k )
+void generic::rotate( void * const pbase,
+                      const size_t size,
+                      const size_t n,
+                      const int k ) noexcept
 {
     if ( ( nullptr != pbase ) && ( 0 != k ) && ( n > 0U ) ) {
         size_t r;
@@ -198,7 +214,10 @@ void generic::rotate( void * const pbase, const size_t size, const size_t n, con
     }
 }
 /*============================================================================*/
-void* generic::set( void * const pbase, const size_t size, const size_t n,  const void * const ref )
+void* generic::set( void * const pbase,
+                    const size_t size,
+                    const size_t n,
+                    const void * const ref ) noexcept
 {
     uint8_t * const p = static_cast<uint8_t*>( pbase );
     void *retVal = nullptr;
@@ -212,7 +231,12 @@ void* generic::set( void * const pbase, const size_t size, const size_t n,  cons
     return retVal;
 }
 /*============================================================================*/
-void* generic::lSearch( const void *key, const void *pbase, const size_t n, const size_t size, generic::compareFcn_t compar, void *arg )
+void* generic::lSearch( const void *key,
+                        const void *pbase,
+                        const size_t n,
+                        const size_t size,
+                        generic::compareFcn_t compar,
+                        void *arg ) noexcept
 {
     const uint8_t * const pb = static_cast<const uint8_t *>( pbase );
     void* retVal = nullptr;
@@ -228,7 +252,12 @@ void* generic::lSearch( const void *key, const void *pbase, const size_t n, cons
     return retVal;
 }
 /*============================================================================*/
-void* generic::bSearch( const void *key, const void *pbase, const size_t n, const size_t size, generic::compareFcn_t compar, void *arg )
+void* generic::bSearch( const void *key,
+                        const void *pbase,
+                        const size_t n,
+                        const size_t size,
+                        generic::compareFcn_t compar,
+                        void *arg ) noexcept
 {
     const uint8_t *base = static_cast<const uint8_t *>( pbase );
     size_t lim  = n;
@@ -256,7 +285,12 @@ void* generic::bSearch( const void *key, const void *pbase, const size_t n, cons
     return retVal;
 }
 /*============================================================================*/
-int generic::forEach( void *pbase, const size_t size, const size_t n, generic::forEachFcn_t f, const bool dir, void *arg )
+int generic::forEach( void *pbase,
+                      const size_t size,
+                      const size_t n,
+                      generic::forEachFcn_t f,
+                      const bool dir,
+                      void *arg ) noexcept
 {
     int retVal = 0;
 

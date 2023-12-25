@@ -7,7 +7,7 @@ namespace qlibs {
 /*============================================================================*/
 real_t normalize( const real_t x,
                   const real_t xMin,
-                  const real_t xMax )
+                  const real_t xMax ) noexcept
 {
     return ( x - xMin )/( xMax - xMin );
 }
@@ -16,14 +16,14 @@ real_t mapMinMax( const real_t x,
                   const real_t xMin,
                   const real_t xMax,
                   const real_t yMin,
-                  const real_t yMax )
+                  const real_t yMax ) noexcept
 {
     return ( ( yMax - yMin )*normalize( x, xMin, xMax ) ) + yMin;
 }
 /*============================================================================*/
 bool inRangeCoerce( real_t &x,
                     const real_t lowerL,
-                    const real_t upperL )
+                    const real_t upperL ) noexcept
 {
     bool retVal = false;
 
@@ -45,7 +45,9 @@ bool inRangeCoerce( real_t &x,
     return retVal;
 }
 /*============================================================================*/
-bool isEqual( const real_t a, const real_t b, const real_t tol )
+bool isEqual( const real_t a,
+              const real_t b,
+              const real_t tol ) noexcept
 {
     return ( fabs( a - b ) <= fabs( tol ) );
 }
@@ -54,7 +56,7 @@ bool inPolygon( const real_t x,
                 const real_t y,
                 const real_t * const px,
                 const real_t * const py,
-                const size_t p )
+                const size_t p ) noexcept
 {
     size_t i;
     bool retVal = false;
@@ -89,7 +91,7 @@ bool inCircle( const real_t x,
                const real_t y,
                const real_t cx,
                const real_t cy,
-               const real_t r )
+               const real_t r ) noexcept
 {
     const real_t d = ( ( x - cx )*( x - cx ) ) + ( ( y - cy )*( y - cy ) );
     return ( d <= (r*r) );

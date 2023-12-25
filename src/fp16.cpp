@@ -18,7 +18,7 @@ const fp16Raw_t fp16::one_half = 32768;
 
 /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-5-0-9 -ATH-shift-neg -CERT-INT34-C_c -MISRAC++2008-5-0-10*/
 /*============================================================================*/
-int fp16::toInt( const fp16 &x )
+int fp16::toInt( const fp16 &x ) noexcept
 {
     int retValue;
 
@@ -37,7 +37,7 @@ int fp16::toInt( const fp16 &x )
     return retValue;
 }
 /*============================================================================*/
-float fp16::toFloat( const fp16 &x )
+float fp16::toFloat( const fp16 &x ) noexcept
 {
     const float one_fp16_f = 0.0000152587890625F;
     /*cstat -CERT-FLP36-C*/
@@ -45,18 +45,18 @@ float fp16::toFloat( const fp16 &x )
     /*cstat +CERT-FLP36-C*/
 }
 /*============================================================================*/
-double fp16::toDouble( const fp16 &x )
+double fp16::toDouble( const fp16 &x ) noexcept
 {
     const double one_fp16_d = 0.0000152587890625;
     return static_cast<double>( x.value )*one_fp16_d;
 }
 /*============================================================================*/
-fp16Raw_t fp16::fromInt( const int x )
+fp16Raw_t fp16::fromInt( const int x ) noexcept
 {
     return static_cast<fp16Raw_t>( static_cast<uint32_t>( x ) << 16U );
 }
 /*============================================================================*/
-fp16Raw_t fp16::fromFloat( const float x )
+fp16Raw_t fp16::fromFloat( const float x ) noexcept
 {
     float f_value;
     /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
@@ -68,7 +68,7 @@ fp16Raw_t fp16::fromFloat( const float x )
     /*cstat +CERT-FLP36-C +CERT-FLP34-C*/
 }
 /*============================================================================*/
-fp16Raw_t fp16::fromDouble( const double x )
+fp16Raw_t fp16::fromDouble( const double x ) noexcept
 {
     double d_value;
     /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
@@ -80,7 +80,9 @@ fp16Raw_t fp16::fromDouble( const double x )
     /*cstat +CERT-FLP36-C +CERT-FLP34-C*/
 }
 /*============================================================================*/
-fp16Raw_t fp16::saturate( const fp16Raw_t nsInput, const fp16Raw_t x, const fp16Raw_t y )
+fp16Raw_t fp16::saturate( const fp16Raw_t nsInput,
+                          const fp16Raw_t x,
+                          const fp16Raw_t y ) noexcept
 {
     fp16Raw_t retValue = nsInput;
 
@@ -93,7 +95,8 @@ fp16Raw_t fp16::saturate( const fp16Raw_t nsInput, const fp16Raw_t x, const fp16
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::add( const fp16Raw_t X, const fp16Raw_t Y )
+fp16Raw_t fp16::add( const fp16Raw_t X,
+                     const fp16Raw_t Y ) noexcept
 {
     const uint32_t x = static_cast<uint32_t>( X );
     const uint32_t y = static_cast<uint32_t>( Y );
@@ -107,7 +110,8 @@ fp16Raw_t fp16::add( const fp16Raw_t X, const fp16Raw_t Y )
     return saturate( static_cast<fp16Raw_t>( retValue ), X, X );
 }
 /*============================================================================*/
-fp16Raw_t fp16::sub( const fp16Raw_t X, const fp16Raw_t Y )
+fp16Raw_t fp16::sub( const fp16Raw_t X,
+                     const fp16Raw_t Y ) noexcept
 {
     const uint32_t x = static_cast<uint32_t>( X );
     const uint32_t y = static_cast<uint32_t>( Y );
@@ -121,7 +125,8 @@ fp16Raw_t fp16::sub( const fp16Raw_t X, const fp16Raw_t Y )
     return saturate( static_cast<fp16Raw_t>( retValue ), X, X );
 }
 /*============================================================================*/
-fp16Raw_t fp16::mul( const fp16Raw_t x, const fp16Raw_t y )
+fp16Raw_t fp16::mul( const fp16Raw_t x,
+                     const fp16Raw_t y ) noexcept
 {
     fp16Raw_t retValue = overflow;
     fp16Raw_t a, c, ac, ad_cb, mulH;
@@ -164,7 +169,8 @@ fp16Raw_t fp16::mul( const fp16Raw_t x, const fp16Raw_t y )
     return saturate( retValue, x, y );
 }
 /*============================================================================*/
-fp16Raw_t fp16::div( const fp16Raw_t x, const fp16Raw_t y )
+fp16Raw_t fp16::div( const fp16Raw_t x,
+                     const fp16Raw_t y ) noexcept
 {
     fp16Raw_t retValue = Min;
 
@@ -222,7 +228,7 @@ fp16Raw_t fp16::div( const fp16Raw_t x, const fp16Raw_t y )
     return saturate( retValue, x, y );
 }
 /*============================================================================*/
-fp16Raw_t fp16::abs( fp16Raw_t x )
+fp16Raw_t fp16::abs( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue;
 
@@ -236,7 +242,7 @@ fp16Raw_t fp16::abs( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::sqrt( fp16Raw_t x )
+fp16Raw_t fp16::sqrt( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
 
@@ -285,7 +291,7 @@ fp16Raw_t fp16::sqrt( fp16Raw_t x )
     return static_cast<fp16Raw_t>( retValue );
 }
 /*============================================================================*/
-fp16Raw_t fp16::exp( fp16Raw_t x )
+fp16Raw_t fp16::exp( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue, term;
     bool isNegative;
@@ -330,7 +336,7 @@ fp16Raw_t fp16::exp( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::log( fp16Raw_t x )
+fp16Raw_t fp16::log( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
     static const fp16Raw_t e4 = 3578144; /*e^4*/
@@ -368,7 +374,7 @@ fp16Raw_t fp16::log( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::rs( fp16Raw_t x )
+fp16Raw_t fp16::rs( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue;
 
@@ -382,7 +388,7 @@ fp16Raw_t fp16::rs( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::log2i( fp16Raw_t x )
+fp16Raw_t fp16::log2i( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = 0;
 
@@ -415,7 +421,7 @@ fp16Raw_t fp16::log2i( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::log2( fp16Raw_t x )
+fp16Raw_t fp16::log2( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
 
@@ -444,7 +450,7 @@ fp16Raw_t fp16::log2( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::wrapToPi( fp16Raw_t x )
+fp16Raw_t fp16::wrapToPi( fp16Raw_t x ) noexcept
 {
     const fp16Raw_t f_pi = 205887;
 
@@ -461,7 +467,7 @@ fp16Raw_t fp16::wrapToPi( fp16Raw_t x )
     return x;
 }
 /*============================================================================*/
-fp16Raw_t fp16::wrapTo180( fp16Raw_t x )
+fp16Raw_t fp16::wrapTo180( fp16Raw_t x ) noexcept
 {
     const fp16Raw_t F_180 = 11796480;
 
@@ -479,7 +485,7 @@ fp16Raw_t fp16::wrapTo180( fp16Raw_t x )
     return x;
 }
 /*============================================================================*/
-fp16Raw_t fp16::sin( fp16Raw_t x )
+fp16Raw_t fp16::sin( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue, x2;
 
@@ -500,12 +506,12 @@ fp16Raw_t fp16::sin( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::cos( fp16Raw_t x )
+fp16Raw_t fp16::cos( fp16Raw_t x ) noexcept
 {
     return sin( x + f_pi_2 );
 }
 /*============================================================================*/
-fp16Raw_t fp16::tan( fp16Raw_t x )
+fp16Raw_t fp16::tan( fp16Raw_t x ) noexcept
 {
     fp16Raw_t a ,b;
 
@@ -515,7 +521,8 @@ fp16Raw_t fp16::tan( fp16Raw_t x )
     return div( a, b );
 }
 /*============================================================================*/
-fp16Raw_t fp16::atan2( fp16Raw_t y, fp16Raw_t x )
+fp16Raw_t fp16::atan2( fp16Raw_t y,
+                       fp16Raw_t x ) noexcept
 {
     fp16Raw_t absY, mask, angle, r, r_3;
     const fp16Raw_t QFP16_0_981689 = 0x0000FB50;
@@ -543,12 +550,12 @@ fp16Raw_t fp16::atan2( fp16Raw_t y, fp16Raw_t x )
     return angle;
 }
 /*============================================================================*/
-fp16Raw_t fp16::atan( fp16Raw_t x )
+fp16Raw_t fp16::atan( fp16Raw_t x ) noexcept
 {
     return atan2( x, one );
 }
 /*============================================================================*/
-fp16Raw_t fp16::asin( fp16Raw_t x )
+fp16Raw_t fp16::asin( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = 0;
 
@@ -561,12 +568,12 @@ fp16Raw_t fp16::asin( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::acos( fp16Raw_t x )
+fp16Raw_t fp16::acos( fp16Raw_t x ) noexcept
 {
     return ( f_pi_2 - asin( x ) );
 }
 /*============================================================================*/
-fp16Raw_t fp16::cosh( fp16Raw_t x )
+fp16Raw_t fp16::cosh( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
     fp16Raw_t epx, enx;
@@ -589,7 +596,7 @@ fp16Raw_t fp16::cosh( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::sinh( fp16Raw_t x )
+fp16Raw_t fp16::sinh( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
     fp16Raw_t epx, enx;
@@ -615,7 +622,7 @@ fp16Raw_t fp16::sinh( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::tanh( fp16Raw_t x )
+fp16Raw_t fp16::tanh( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue, epx, enx;
     const fp16Raw_t f6_5 = 425984;
@@ -640,7 +647,8 @@ fp16Raw_t fp16::tanh( fp16Raw_t x )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::powi( fp16Raw_t x, fp16Raw_t y )
+fp16Raw_t fp16::powi( fp16Raw_t x,
+                      fp16Raw_t y ) noexcept
 {
     fp16Raw_t retValue;
     fp16Raw_t n;
@@ -666,7 +674,8 @@ fp16Raw_t fp16::powi( fp16Raw_t x, fp16Raw_t y )
     return retValue;
 }
 /*============================================================================*/
-fp16Raw_t fp16::pow( fp16Raw_t x, fp16Raw_t y )
+fp16Raw_t fp16::pow( fp16Raw_t x,
+                     fp16Raw_t y ) noexcept
 {
     fp16Raw_t retValue = overflow;
 
@@ -687,7 +696,10 @@ fp16Raw_t fp16::pow( fp16Raw_t x, fp16Raw_t y )
     return retValue;
 }
 /*============================================================================*/
-char* fp16::itoa( char *buf, uint32_t scale, uint32_t val, uint8_t skip )
+char* fp16::itoa( char *buf,
+                  uint32_t scale,
+                  uint32_t val,
+                  uint8_t skip ) noexcept
 {
     while ( 0U != scale ) {
         const uint32_t digit = ( val / scale );
@@ -704,7 +716,9 @@ char* fp16::itoa( char *buf, uint32_t scale, uint32_t val, uint8_t skip )
     return buf;
 }
 /*============================================================================*/
-char* fp16::toASCII( const fp16Raw_t num, char *str, int decimals )
+char* fp16::toASCII( const fp16Raw_t num,
+                     char *str,
+                     int decimals ) noexcept
 {
     char * const retValue = str;
 

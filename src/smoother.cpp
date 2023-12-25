@@ -4,7 +4,9 @@
 using namespace qlibs;
 
 /*============================================================================*/
-void smoother::windowSet( real_t *w, const size_t wsize, const real_t x )
+void smoother::windowSet( real_t *w,
+                          const size_t wsize,
+                          const real_t x )
 {
     for ( size_t i = 0U ; i < wsize ; ++i ) {
         w[ i ] = x;
@@ -78,7 +80,8 @@ real_t smootherLPF2::smooth( const real_t x )
     return y;
 }
 /*============================================================================*/
-bool smootherMWM1::setup( real_t *window, const size_t w_size )
+bool smootherMWM1::setup( real_t *window,
+                          const size_t w_size )
 {
     bool retValue = false;
 
@@ -101,7 +104,8 @@ real_t smootherMWM1::smooth( const real_t x )
     return discreteSystem::updateFIR( w, wsize, x )/static_cast<real_t>( wsize );
 }
 /*============================================================================*/
-bool smootherMWM2::setup( real_t *window, const size_t w_size )
+bool smootherMWM2::setup( real_t *window,
+                          const size_t w_size )
 {
     bool retValue = false;
 
@@ -128,7 +132,9 @@ real_t smootherMWM2::smooth( const real_t x )
     return sum/wsize;
 }
 /*============================================================================*/
-bool smootherMOR1::setup( real_t *window, const size_t w_size, const real_t a )
+bool smootherMOR1::setup( real_t *window,
+                          const size_t w_size,
+                          const real_t a )
 {
     bool retValue = false;
 
@@ -161,7 +167,9 @@ real_t smootherMOR1::smooth( const real_t x )
     return w[ 0 ];
 }
 /*============================================================================*/
-bool smootherMOR2::setup( real_t *window, const size_t w_size, const real_t a )
+bool smootherMOR2::setup( real_t *window,
+                          const size_t w_size,
+                          const real_t a )
 {
     bool retValue = false;
 
@@ -198,12 +206,15 @@ real_t smootherMOR2::smooth( const real_t x )
     return x;
 }
 /*============================================================================*/
-bool smootherGMWF::setup( const real_t sg, const size_t c, real_t *window, const size_t w_size )
+bool smootherGMWF::setup( const real_t sg,
+                          const real_t c,
+                          real_t *window,
+                          const size_t w_size )
 {
     bool retValue = false;
     const size_t ws = wsize/2U;
 
-    if ( ( nullptr != window ) && ( w_size > 0U ) && ( c < ws ) && ( sg > 0.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0 ) ) {
         real_t * const kernel = &window[ ws ];
         real_t r, sum = 0.0;
         size_t i;
@@ -211,7 +222,7 @@ bool smootherGMWF::setup( const real_t sg, const size_t c, real_t *window, const
         /*cstat -MISRAC++2008-5-0-7*/
         l = static_cast<real_t>( wsize - 1U )/2.0;
         /*cstat +MISRAC++2008-5-0-7*/
-        center = static_cast<real_t>( c ) - l;
+        center = c - l;
         r = 2.0*sg*sg;
         for ( i = 0U ; i < ws ; ++i ) {
             /*cstat -MISRAC++2008-5-0-7*/
@@ -274,7 +285,9 @@ real_t smootherEXPW::smooth( const real_t x )
     return m;
 }
 /*============================================================================*/
-bool smootherKLMN::setup( const real_t processNoiseCov, const real_t measureNoiseCov, const real_t estErrorCov )
+bool smootherKLMN::setup( const real_t processNoiseCov,
+                          const real_t measureNoiseCov,
+                          const real_t estErrorCov )
 {
     bool retValue = false;
 
@@ -310,7 +323,9 @@ real_t smootherKLMN::smooth( const real_t x )
     return xS;
 }
 /*============================================================================*/
-bool smootherDESF::setup( const real_t a, const real_t b, const real_t N )
+bool smootherDESF::setup( const real_t a,
+                          const real_t b,
+                          const real_t N )
 {
     bool retValue = false;
 
@@ -340,7 +355,10 @@ real_t smootherDESF::smooth( const real_t x )
     return lt + ( n*bt ); /*model/forecast*/
 }
 /*============================================================================*/
-bool smootherALNF::setup( const real_t a, const real_t m, real_t *window, const size_t wsize )
+bool smootherALNF::setup( const real_t a,
+                          const real_t m,
+                          real_t *window,
+                          const size_t wsize )
 {
     bool retValue = false;
 

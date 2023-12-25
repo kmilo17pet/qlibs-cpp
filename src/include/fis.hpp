@@ -111,16 +111,19 @@ namespace qlibs {
             real_t x{ 0.0 };
             real_t y{ 0.0 };
             real_t v[ 4 ] = { 0.0, 0.0, 0.0, 0.0 };
-            void getNextX( const size_t i )
+            void getNextX( const size_t i ) noexcept
             {
                 x = min + ( ( static_cast<real_t>( i ) + 0.5 )*res );
             }
         public:
             fisOutput() = default;
             virtual ~fisOutput() {};
-            bool storeAggregatedRegion( real_t *xData, real_t *yData, const size_t n );
+            bool storeAggregatedRegion( real_t *xData,
+                                        real_t *yData,
+                                        const size_t n ) noexcept;
             template <size_t numberOfPoints>
-            bool storeAggregatedRegion( real_t (&xData)[ numberOfPoints ], real_t (&yData)[ numberOfPoints ] )
+            bool storeAggregatedRegion( real_t (&xData)[ numberOfPoints ],
+                                        real_t (&yData)[ numberOfPoints ] ) noexcept
             {
                 return storeAggregatedRegion( xData, yData, numberOfPoints );
             }
@@ -128,11 +131,13 @@ namespace qlibs {
         friend class fisCore;
     };
 
-    using fisMFFunction = real_t (*)( const fisIOBase * const in, const real_t *p, const size_t n );
+    using fisMFFunction = real_t (*)( const fisIOBase * const in,
+                                      const real_t *p,
+                                      const size_t n );
 
     class fisCore {
         protected:
-            enum defuzzMembers { 
+            enum defuzzMembers {
                 yMax = 0,
                 xSmallest = 1,
                 xLargest = 2 ,
@@ -146,47 +151,113 @@ namespace qlibs {
             };
             virtual ~fisCore() {}
             fisCore() = default;
-            static real_t bound( real_t y, const real_t minValue, const real_t maxValue );
-            static real_t Min( const real_t a, const real_t b );
-            static real_t Prod( const real_t a, const real_t b );
-            static real_t Max( const real_t a, const real_t b );
-            static real_t ProbOr( const real_t a, const real_t b );
-            static real_t Sum( const real_t a, const real_t b );
+            static real_t bound( real_t y,
+                                 const real_t minValue,
+                                 const real_t maxValue );
+            static real_t Min( const real_t a,
+                               const real_t b );
+            static real_t Prod( const real_t a,
+                                const real_t b );
+            static real_t Max( const real_t a,
+                               const real_t b );
+            static real_t ProbOr( const real_t a,
+                                  const real_t b );
+            static real_t Sum( const real_t a,
+                               const real_t b );
 
-            static real_t TriMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TrapMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t GBellMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t GaussMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t Gauss2MF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t SigMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TSigMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t DSigMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t PSigMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t SMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TSMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t ZMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t LinSMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t LinZMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TZMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t PiMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t SingletonMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t ConcaveMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TConcaveMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t SpikeMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TLinSMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t TLinZMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t RectangleMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t CosineMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t ConstantMF( const fisIOBase * const in, const real_t *p, const size_t n );
-            static real_t LinearMF( const fisIOBase * const in, const real_t *p, const size_t n );
+            static real_t TriMF( const fisIOBase * const in,
+                                 const real_t *p,
+                                 const size_t n );
+            static real_t TrapMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t GBellMF( const fisIOBase * const in,
+                                   const real_t *p,
+                                   const size_t n );
+            static real_t GaussMF( const fisIOBase * const in,
+                                   const real_t *p,
+                                   const size_t n );
+            static real_t Gauss2MF( const fisIOBase * const in,
+                                    const real_t *p,
+                                    const size_t n );
+            static real_t SigMF( const fisIOBase * const in,
+                                 const real_t *p,
+                                 const size_t n );
+            static real_t TSigMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t DSigMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t PSigMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t SMF( const fisIOBase * const in,
+                               const real_t *p,
+                               const size_t n );
+            static real_t TSMF( const fisIOBase * const in,
+                                const real_t *p,
+                                const size_t n );
+            static real_t ZMF( const fisIOBase * const in,
+                               const real_t *p,
+                               const size_t n );
+            static real_t LinSMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t LinZMF( const fisIOBase * const in,
+                                  const real_t *p,
+                                  const size_t n );
+            static real_t TZMF( const fisIOBase * const in,
+                                const real_t *p,
+                                const size_t n );
+            static real_t PiMF( const fisIOBase * const in,
+                                const real_t *p,
+                                const size_t n );
+            static real_t SingletonMF( const fisIOBase * const in,
+                                       const real_t *p,
+                                       const size_t n );
+            static real_t ConcaveMF( const fisIOBase * const in,
+                                     const real_t *p,
+                                     const size_t n );
+            static real_t TConcaveMF( const fisIOBase * const in,
+                                      const real_t *p,
+                                      const size_t n );
+            static real_t SpikeMF( const fisIOBase * const in,
+                                   const real_t *p,
+                                   const size_t n );
+            static real_t TLinSMF( const fisIOBase * const in,
+                                   const real_t *p,
+                                   const size_t n );
+            static real_t TLinZMF( const fisIOBase * const in,
+                                   const real_t *p,
+                                   const size_t n );
+            static real_t RectangleMF( const fisIOBase * const in,
+                                       const real_t *p,
+                                       const size_t n );
+            static real_t CosineMF( const fisIOBase * const in,
+                                    const real_t *p,
+                                    const size_t n );
+            static real_t ConstantMF( const fisIOBase * const in,
+                                      const real_t *p,
+                                      const size_t n );
+            static real_t LinearMF( const fisIOBase * const in,
+                                    const real_t *p,
+                                    const size_t n );
 
-            static real_t deFuzzCentroid( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzBisector( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzLOM( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzSOM( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzMOM( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzWtAverage( fisOutput * const o, const fisDeFuzzState stage );
-            static real_t deFuzzWtSum( fisOutput * const o, const fisDeFuzzState stage );
+            static real_t deFuzzCentroid( fisOutput * const o,
+                                          const fisDeFuzzState stage );
+            static real_t deFuzzBisector( fisOutput * const o,
+                                          const fisDeFuzzState stage );
+            static real_t deFuzzLOM( fisOutput * const o,
+                                     const fisDeFuzzState stage );
+            static real_t deFuzzSOM( fisOutput * const o,
+                                     const fisDeFuzzState stage );
+            static real_t deFuzzMOM( fisOutput * const o,
+                                     const fisDeFuzzState stage );
+            static real_t deFuzzWtAverage( fisOutput * const o,
+                                           const fisDeFuzzState stage );
+            static real_t deFuzzWtSum( fisOutput * const o,
+                                       const fisDeFuzzState stage );
     };
 
     class fisMF {
@@ -210,7 +281,8 @@ namespace qlibs {
                 }
                 return y;
             }
-            real_t evalMF( fisIOBase *io, size_t n )
+            real_t evalMF( fisIOBase *io,
+                           size_t n )
             {
                 real_t y = 0.0;
                 if ( nullptr != shape ) {
@@ -295,41 +367,55 @@ namespace qlibs {
             methods_fcn aggregate{ &Max };
             size_t (fis::*inferenceState)( size_t i );
             size_t (fis::*aggregationState)( size_t i );
-            fisDeFuzzFunction deFuzz;
+            fisDeFuzzFunction deFuzz{ &deFuzzCentroid };
             real_t *ruleWeight{ nullptr };
             real_t *wi{ nullptr };
             const fisRules *rules{ nullptr };
-            size_t rules_cols;
+            size_t rules_cols{ 0U};
             size_t nInputs{ 0 };
             size_t nOutputs{ 0 };
-            size_t nMFInputs, nMFOutputs;
+            size_t nMFInputs{ 0U };
+            size_t nMFOutputs{ 0U };
             size_t nPoints{ 100 };
-            size_t nRules, ruleCount;
-            real_t rStrength;
+            size_t nRules{ 0U };
+            size_t ruleCount{ 0U };
+            real_t rStrength{ 0.0 };
             fisRules lastConnector;
             fisType type{ Mamdani };
-            bool setMF( fisMF *m,  const fisTag io, const fisTag mf, const fisShapeMF s, fisMFFunction customMf, const real_t *cp, const real_t h );
-            void evalInputMFs( void );
-            void truncateInputs( void );
-            static real_t parseFuzzValue( fisMF * const mfIO, fisRules index );
-            fuzzyOperator getFuzzOperator( void );
-            size_t inferenceAntecedent( size_t i );
-            size_t inferenceReachEnd( size_t i );
-            size_t aggregationFindConsequent( size_t i );
-            size_t inferenceConsequent( size_t i );
-            void fuzzyAggregate( void );
+            bool setMF( fisMF *m,
+                        const fisTag io,
+                        const fisTag mf,
+                        const fisShapeMF s,
+                        fisMFFunction customMf,
+                        const real_t *cp,
+                        const real_t h ) noexcept;
+            void evalInputMFs( void ) noexcept;
+            void truncateInputs( void ) noexcept;
+            static real_t parseFuzzValue( fisMF * const mfIO,
+                                          fisRules index ) noexcept;
+            fuzzyOperator getFuzzOperator( void ) noexcept;
+            size_t inferenceAntecedent( size_t i ) noexcept;
+            size_t inferenceReachEnd( size_t i ) noexcept;
+            size_t aggregationFindConsequent( size_t i ) noexcept;
+            size_t inferenceConsequent( size_t i ) noexcept;
+            void fuzzyAggregate( void ) noexcept;
             static const size_t INFERENCE_ERROR;
             fisTag lastTag{ -1 };
         public:
             fis() = default;
             virtual ~fis() {}
             bool setup( const fisType t,
-                 fisInput * const inputs, const size_t ni,
-                 fisOutput * const outputs, const size_t no,
-                 fisMF * const mf_inputs, const size_t nmi,
-                 fisMF * const mf_outputs, const size_t nmo,
-                 const fisRules * const r, const size_t n,
-                 real_t *rWeights = nullptr );
+                 fisInput * const inputs,
+                 const size_t ni,
+                 fisOutput * const outputs,
+                 const size_t no,
+                 fisMF * const mf_inputs,
+                 const size_t nmi,
+                 fisMF * const mf_outputs,
+                 const size_t nmo,
+                 const fisRules * const r,
+                 const size_t n,
+                 real_t *rWeights = nullptr ) noexcept;
             template <size_t numberInputs, size_t numberOutputs, size_t numberMFinputs, size_t numberMFOutputs, size_t numberRules>
             bool setup( const fisType t,
                  fisInput (&inputs)[ numberInputs ],
@@ -337,12 +423,13 @@ namespace qlibs {
                  fisMF (&mf_inputs)[ numberMFinputs ],
                  fisMF (&mf_outputs)[ numberMFOutputs ],
                  const fisRules * const r,
-                 real_t (&rWeights)[ numberRules ] )
+                 real_t (&rWeights)[ numberRules ] ) noexcept
             {
                 return setup( t, inputs, numberInputs, outputs, numberOutputs, mf_inputs, numberMFinputs, mf_outputs, numberMFOutputs, r, numberRules, rWeights );
             }
             template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
-            bool setup( const fisType t, const fisSpecification<fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules>& specs )
+            bool setup( const fisType t,
+                        const fisSpecification<fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules>& specs )
             {
                 return setup( fType,
                               specs.inputs, numberOfInputs,
@@ -351,33 +438,55 @@ namespace qlibs {
                               specs.MFout, numberOfOutputSets,
                               specs.rules, numberOfRules, specs.ruleStrength );
             }
-            bool setupInput( const fisTag t, const real_t Min, const real_t Max );
-            bool setupOutput( const fisTag t, const real_t Min, const real_t Max );
-            bool setInputMF( const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h = 1.0 )
+            bool setupInput( const fisTag t,
+                             const real_t Min,
+                             const real_t Max ) noexcept;
+            bool setupOutput( const fisTag t,
+                              const real_t Min, const real_t Max ) noexcept;
+            bool setInputMF( const fisTag io,
+                             const fisTag mf,
+                             const fisShapeMF s,
+                             const real_t *cp,
+                             const real_t h = 1.0 ) noexcept
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, s, nullptr, cp, h ) : false;
             }
-            bool setInputMF( const fisTag io, const fisTag mf, fisMFFunction customMfs, const real_t *cp, const real_t h = 1.0 )
+            bool setInputMF( const fisTag io,
+                             const fisTag mf,
+                             fisMFFunction customMfs,
+                             const real_t *cp,
+                             const real_t h = 1.0 ) noexcept
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, custommf, customMfs, cp, h ) : false;
             }
-            bool setOutputMF( const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h = 1.0 )
+            bool setOutputMF( const fisTag io,
+                              const fisTag mf,
+                              const fisShapeMF s,
+                              const real_t *cp,
+                              const real_t h = 1.0 ) noexcept
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false; 
             }
-            bool setOutputMF( const fisTag io, const fisTag mf, fisMFFunction customMfs, const real_t *cp, const real_t h = 1.0 )
+            bool setOutputMF( const fisTag io,
+                              const fisTag mf,
+                              fisMFFunction customMfs,
+                              const real_t *cp,
+                              const real_t h = 1.0 ) noexcept
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false; 
             }
-            bool setInput( const fisTag t, const real_t value );
-            bool getOutput( const fisTag t, real_t &value ) const;
-            bool setParameter( const fisParameter p, const fisParamValue x );
-            bool setDeFuzzMethod( fisDeFuzzMethod m );
-            bool fuzzify( void );
-            bool deFuzzify( void );
-            bool inference( void );
-            bool setRuleWeights( real_t *rWeights );
-            size_t getNumberOfPoints( void ) const
+            bool setInput( const fisTag t,
+                           const real_t value ) noexcept;
+            bool getOutput( const fisTag t,
+                            real_t &value ) const noexcept;
+            bool setParameter( const fisParameter p,
+                               const fisParamValue x ) noexcept;
+            bool setDeFuzzMethod( fisDeFuzzMethod m ) noexcept;
+            bool fuzzify( void ) noexcept;
+            bool deFuzzify( void ) noexcept;
+            bool inference( void ) noexcept;
+            bool setRuleWeights( real_t *rWeights ) noexcept;
+            size_t getNumberOfPoints( void ) const noexcept
             {
                 return nPoints;
             }
