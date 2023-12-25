@@ -139,7 +139,7 @@ real_t fisCore::SMF( const fisIOBase * const in, const real_t *p, const size_t n
 
     a = p[ 0 ];
     b = p[ 1 ];
-    if ( x <= a ) {
+    if ( x <= a ) { // skipcq: CXX-W2041
         y =  0.0;
     }
     else if ( x >= b ) {
@@ -191,7 +191,7 @@ real_t fisCore::ZMF( const fisIOBase * const in, const real_t *p, const size_t n
     if ( x <= a ) {
         y = 1.0;
     }
-    else if ( x >= b ) {
+    else if ( x >= b ) { // skipcq: CXX-W2041
         y = 0.0;
     }
     else if ( ( x >= a ) && ( x <= ( ( a + b )*0.5 ) ) ) {
