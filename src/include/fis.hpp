@@ -120,9 +120,11 @@ namespace qlibs {
     /*! @cond  */
     class fisIOBase {
         protected:
+            /*! @cond  */
             real_t min{ -1.0 };
             real_t max{ 1.0 };
             real_t value{ 0.0 };
+            /*! @endcond  */
         public:
             virtual ~fisIOBase() {};
             fisIOBase() = default;
@@ -424,7 +426,7 @@ namespace qlibs {
     #define Q_FIS_IS_STATEMENT      ,(
     #define Q_FIS_IS_NOT_STATEMENT  ,-(
     #define Q_FIS_END_STATEMENT     +1)
-    /*! @cond  */
+    /*! @endcond  */
 
     /**
     * @brief Start a Fuzzy rule set.

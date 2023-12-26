@@ -133,6 +133,7 @@ namespace qlibs {
                 return value;
             }
 
+            /*! @cond  */
             inline fp16 operator+( const fp16 &other ) noexcept
             {
                 return fp16( { add( value, other.value ) } );
@@ -239,6 +240,7 @@ namespace qlibs {
                 value = other.value;
                 return *this;
             }
+            /*! @endcond  */
 
             /**
             * @brief Returns the fixed-point value @a x converted to int.

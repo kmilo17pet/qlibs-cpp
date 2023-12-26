@@ -40,7 +40,7 @@ namespace qlibs {
 
     /*! @cond  */
     class pidController;
-    /*! @cond  */
+    /*! @endcond  */
 
     /**
     * @brief PID Gains structure
