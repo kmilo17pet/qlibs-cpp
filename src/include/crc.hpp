@@ -31,9 +31,8 @@ namespace qlibs {
         private:
             static uint32_t reflect( uint32_t xData,
                                      const uint8_t nBits ) noexcept;
-        public:
-            virtual ~crc() {}
             crc() = default;
+        public:
 
             /**
             * @brief Calculates in one pass the common @a width bit CRC value for a
@@ -65,8 +64,8 @@ namespace qlibs {
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
-             */
-            inline uint8_t crc8( const void * const pData, const size_t length ) noexcept
+            */
+            static inline uint8_t crc8( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x07U ) );
             }
@@ -78,7 +77,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_CDMA2000( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_CDMA2000( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x9BU, 0xFFU ) );
             }
@@ -90,7 +89,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_DARC( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_DARC( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x39U, 0U, true, true ) );
             }
@@ -102,7 +101,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_DVS_S2( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_DVS_S2( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0xD5U ) );
             }
@@ -114,7 +113,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_EBU( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_EBU( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x1DU, 0xFFU, true, true ) );
             }
@@ -126,7 +125,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_I_CODE( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_I_CODE( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x1DU, 0xFDU ) );
             }
@@ -138,7 +137,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_ITU( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_ITU( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x07U, 0U, false, false, 0x55U ) );
             }
@@ -150,7 +149,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_MAXIM( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_MAXIM( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x31U, 0U, true, true ) );
             }
@@ -162,7 +161,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_ROHC( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_ROHC( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x07U, 0xFFU, true, true ) );
             }
@@ -174,7 +173,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint8_t crc8_WCDMA( const void * const pData, const size_t length ) noexcept
+            static inline uint8_t crc8_WCDMA( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint8_t>( generic( CRC8, pData, length, 0x9BU, 0U, true, true ) );
             }
@@ -186,7 +185,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_CCITT_FALSE( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_CCITT_FALSE( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xFFFFU ) );
             }
@@ -198,7 +197,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_ARC( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_ARC( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U, 0U, true, true ) );
             }
@@ -210,7 +209,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_AUG_CCITT( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_AUG_CCITT( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0x1D0FU ) );
             }
@@ -222,7 +221,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_BUYPASS( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_BUYPASS( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U ) );
             }
@@ -234,7 +233,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_CDMA2000( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_CDMA2000( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0xC867U, 0xFFFFU ) );
             }
@@ -246,7 +245,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_DDS_110( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_DDS_110( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U, 0x800DU ) );
             }
@@ -258,7 +257,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_DECT_R( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_DECT_R( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x0589U, 0U, false, false, 0x0001U ) );
             }
@@ -270,7 +269,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_DECT_X( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_DECT_X( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x0589U ) );
             }
@@ -282,7 +281,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_DNP( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_DNP( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x3D65U, 0U, true, true, 0xFFFFU ) );
             }
@@ -294,7 +293,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_EN_13757( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_EN_13757( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x3D65U, 0U, false, false, 0xFFFFU ) );
             }
@@ -306,7 +305,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_GENIBUS( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_GENIBUS( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xFFFFU, false, false, 0xFFFFU ) );
             }
@@ -318,7 +317,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_MAXIM( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_MAXIM( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U, 0U, true, true, 0xFFFFU ) );
             }
@@ -330,7 +329,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_MCRF4XX( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_MCRF4XX( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xFFFFU, true, true ) );
             }
@@ -342,7 +341,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_RIELLO( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_RIELLO( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xB2AAU, true, true ) );
             }
@@ -354,7 +353,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_T10_DIF( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_T10_DIF( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8BB7U ) );
             }
@@ -366,7 +365,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_TELEDISK( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_TELEDISK( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0xA097U ) );
             }
@@ -378,7 +377,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_TMS37157( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_TMS37157( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0x89ECU, true, true ) );
             }
@@ -390,7 +389,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_USB( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_USB( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U, 0xFFFFU, true, true, 0xFFFFU ) );
             }
@@ -402,7 +401,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_A( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_A( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xc6c6U, true, true ) );
             }
@@ -414,7 +413,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_KERMIT( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_KERMIT( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0U, true, true ) );
             }
@@ -426,7 +425,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_MODBUS( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_MODBUS( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x8005U, 0xFFFFU, true, true ) );
             }
@@ -438,7 +437,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_X_25( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_X_25( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U, 0xFFFFU, true, true, 0xFFFFU ) );
             }
@@ -450,7 +449,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint16_t crc16_XMODEM( const void * const pData, const size_t length ) noexcept
+            static inline uint16_t crc16_XMODEM( const void * const pData, const size_t length ) noexcept
             {
                 return static_cast<uint16_t>( generic( CRC16, pData, length, 0x1021U ) );
             }
@@ -462,7 +461,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x04C11DB7U, 0xFFFFFFFFU, true, true, 0xFFFFFFFFU  );
             }
@@ -474,7 +473,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_BZIP2( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_BZIP2( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x04C11DB7U, 0xFFFFFFFFU, false, false, 0xFFFFFFFFU  );
             }
@@ -486,7 +485,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_C( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_C( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x1EDC6F41U, 0xFFFFFFFFU, true, true, 0xFFFFFFFFU  );
             }
@@ -498,7 +497,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_D( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_D( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0xA833982BU, 0xFFFFFFFFU, true, true, 0xFFFFFFFFU  );
             }
@@ -510,7 +509,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_JAMCRC( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_JAMCRC( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x04C11DB7U, 0xFFFFFFFFU, true, true );
             }
@@ -522,7 +521,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_MPEG2( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_MPEG2( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x04C11DB7U, 0xFFFFFFFFU );
             }
@@ -534,7 +533,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_POSIX( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_POSIX( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x04C11DB7U, 0U, false, false, 0xFFFFFFFFU  );
             }
@@ -546,7 +545,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_Q( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_Q( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x814141ABU );
             }
@@ -558,7 +557,7 @@ namespace qlibs {
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
              */
-            inline uint32_t crc32_XFER( const void * const pData, const size_t length ) noexcept
+            static inline uint32_t crc32_XFER( const void * const pData, const size_t length ) noexcept
             {
                 return generic( CRC32, pData, length, 0x000000AFU );
             }

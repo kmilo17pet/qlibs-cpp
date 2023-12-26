@@ -190,8 +190,8 @@ void test_fp16( void )
 
 void test_crc( void )
 {
-    crc crcx;
-    cout << sizeof(crc) << endl;
+    auto res = crc::crc16_A( "hello world", 11 );
+    cout << sizeof(crc) << " res = "<< res << endl;
 }
 
 int main()
