@@ -164,9 +164,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85e43e86902675b73ad7cdd6a3dd8538"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1rms.html#a85e43e86902675b73ad7cdd6a3dd8538">setup</a> (real_t(&amp;win)[windowSize]) noexcept</td></tr>
 <tr class="memdesc:a85e43e86902675b73ad7cdd6a3dd8538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the RMS instance by setting the default optimal parameters.  <a href="classqlibs_1_1rms.html#a85e43e86902675b73ad7cdd6a3dd8538">More...</a><br /></td></tr>
 <tr class="separator:a85e43e86902675b73ad7cdd6a3dd8538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c5479cb955acb5182c410190d90739a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1rms.html#a0c5479cb955acb5182c410190d90739a">setParams</a> (const real_t lambda, const real_t alpha) noexcept</td></tr>
-<tr class="memdesc:a0c5479cb955acb5182c410190d90739a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the recursive parameters for the moving RMS estimator.  <a href="classqlibs_1_1rms.html#a0c5479cb955acb5182c410190d90739a">More...</a><br /></td></tr>
-<tr class="separator:a0c5479cb955acb5182c410190d90739a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4b789eecf38131ebb56e6e809027c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1rms.html#aaa4b789eecf38131ebb56e6e809027c5">setParams</a> (const real_t l, const real_t a) noexcept</td></tr>
+<tr class="memdesc:aaa4b789eecf38131ebb56e6e809027c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the recursive parameters for the moving RMS estimator.  <a href="classqlibs_1_1rms.html#aaa4b789eecf38131ebb56e6e809027c5">More...</a><br /></td></tr>
+<tr class="separator:aaa4b789eecf38131ebb56e6e809027c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classqlibs_1_1smoother_e_x_p_w"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classqlibs_1_1smoother_e_x_p_w')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1smoother_e_x_p_w.html">smootherEXPW</a></td></tr>
 <tr class="memitem:adfecd88ee636716a61a5fb2cc80bff56 inherit pub_methods_classqlibs_1_1smoother_e_x_p_w"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_e_x_p_w.html#adfecd88ee636716a61a5fb2cc80bff56">setup</a> (const real_t lam=0.8)</td></tr>
 <tr class="memdesc:adfecd88ee636716a61a5fb2cc80bff56 inherit pub_methods_classqlibs_1_1smoother_e_x_p_w"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Exponential weighting filter.  <a href="classqlibs_1_1smoother_e_x_p_w.html#adfecd88ee636716a61a5fb2cc80bff56">More...</a><br /></td></tr>
@@ -242,8 +242,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >RMS calculator object. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0c5479cb955acb5182c410190d90739a" name="a0c5479cb955acb5182c410190d90739a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c5479cb955acb5182c410190d90739a">&#9670;&nbsp;</a></span>setParams()</h2>
+<a id="aaa4b789eecf38131ebb56e6e809027c5" name="aaa4b789eecf38131ebb56e6e809027c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4b789eecf38131ebb56e6e809027c5">&#9670;&nbsp;</a></span>setParams()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,13 +255,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool setParams </td>
           <td>(</td>
           <td class="paramtype">const real_t&#160;</td>
-          <td class="paramname"><em>lambda</em>, </td>
+          <td class="paramname"><em>l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const real_t&#160;</td>
-          <td class="paramname"><em>alpha</em>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -279,8 +279,8 @@ Public Member Functions</h2></td></tr>
 <p>Change the recursive parameters for the moving RMS estimator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>Exponential weighting factor, specified as a positive real scalar in the range [0,1]. A forgetting factor of 0.9 gives more weight to the older data than does a forgetting factor of 0.1. A forgetting factor of 1.0 indicates infinite memory. All the past samples are given an equal weight. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>A parameter to tune the 2nd stage filter. Should be a value between [ 0 &lt; alpha &lt; 1 ]. A higher value will result in a smoother output but also increasing the convergence time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>Exponential weighting factor, specified as a positive real scalar in the range [0,1]. A forgetting factor of 0.9 gives more weight to the older data than does a forgetting factor of 0.1. A forgetting factor of 1.0 indicates infinite memory. All the past samples are given an equal weight. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>A parameter to tune the 2nd stage filter. Should be a value between [ 0 &lt; a &lt; 1 ]. A higher value will result in a smoother output but also increasing the convergence time. </td></tr>
   </table>
   </dd>
 </dl>

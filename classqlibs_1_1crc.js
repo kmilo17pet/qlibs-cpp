@@ -41,6 +41,5 @@ var classqlibs_1_1crc =
     [ "crc8_ITU", "classqlibs_1_1crc.html#a1ce158af55f0b6eb6430d21747b79bd8", null ],
     [ "crc8_MAXIM", "classqlibs_1_1crc.html#acf77887e063cd86988fa0177f04887f5", null ],
     [ "crc8_ROHC", "classqlibs_1_1crc.html#a181a262b75267975610e1dac1b8ef732", null ],
-    [ "crc8_WCDMA", "classqlibs_1_1crc.html#a6c1d9c2b9cdf45ac3724f7a7c47e0732", null ],
-    [ "generic", "classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d", null ]
+    [ "crc8_WCDMA", "classqlibs_1_1crc.html#a6c1d9c2b9cdf45ac3724f7a7c47e0732", null ]
 ];

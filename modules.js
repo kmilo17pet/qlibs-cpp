@@ -8,7 +8,7 @@ var modules =
     [ "Bit-Field", "group__qbitfield.html", "group__qbitfield" ],
     [ "RMS", "group__qrms.html", "group__qrms" ],
     [ "CRC", "group__qcrc.html", "group__qcrc" ],
+    [ "Tapped Delay Line", "group__qtdl.html", "group__qtdl" ],
     [ "Type-generic utilities", "group__qtypegeneric.html", "group__qtypegeneric" ],
-    [ "Math extra", "group__qfmathex.html", "group__qfmathex" ],
-    [ "Tapped Delay Line", "group__qtdl.html", "group__qtdl" ]
+    [ "Math extra", "group__qfmathex.html", "group__qfmathex" ]
 ];

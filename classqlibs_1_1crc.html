@@ -127,16 +127,14 @@ $(document).ready(function(){initNavTree('classqlibs_1_1crc.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle"><div class="title">crc Class Reference<div class="ingroups"><a class="el" href="group__qcrc.html">CRC</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab71dddf96cea5389111c35f306ede39d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">generic</a> (<a class="el" href="group__qcrc.html#gaa970e174eebbebf85af0d9085d2f824e">crcMode</a> mode, const void *const pData, const size_t length, uint32_t poly, const uint32_t init=0U, bool refIn=false, bool refOut=false, uint32_t xorOut=0U) noexcept</td></tr>
-<tr class="memdesc:ab71dddf96cea5389111c35f306ede39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates in one pass the common <em>width</em> bit CRC value for a block of data that is passed to the function together with a parameter indicating the <em>length</em>.  <a href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">More...</a><br /></td></tr>
-<tr class="separator:ab71dddf96cea5389111c35f306ede39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46559fa757f2bacf87dfa99540140190"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a46559fa757f2bacf87dfa99540140190">crc8</a> (const void *const pData, const size_t length) noexcept</td></tr>
 <tr class="memdesc:a46559fa757f2bacf87dfa99540140190"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8 with poly = 0x07 init = 0x00 refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a46559fa757f2bacf87dfa99540140190">More...</a><br /></td></tr>
 <tr class="separator:a46559fa757f2bacf87dfa99540140190"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,6 +261,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc55dc903d480f9a31d91a9ab0e515fc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#abc55dc903d480f9a31d91a9ab0e515fc">crc32_XFER</a> (const void *const pData, const size_t length) noexcept</td></tr>
 <tr class="memdesc:abc55dc903d480f9a31d91a9ab0e515fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/XFER with poly = 0x000000AF init = 0x00000000 refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#abc55dc903d480f9a31d91a9ab0e515fc">More...</a><br /></td></tr>
 <tr class="separator:abc55dc903d480f9a31d91a9ab0e515fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab71dddf96cea5389111c35f306ede39d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">generic</a> (<a class="el" href="group__qcrc.html#gaa970e174eebbebf85af0d9085d2f824e">crcMode</a> mode, const void *const pData, const size_t length, uint32_t poly, const uint32_t init=0U, bool refIn=false, bool refOut=false, uint32_t xorOut=0U) noexcept</td></tr>
+<tr class="memdesc:ab71dddf96cea5389111c35f306ede39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates in one pass the common <em>width</em> bit CRC value for a block of data that is passed to the function together with a parameter indicating the <em>length</em>.  <a href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">More...</a><br /></td></tr>
+<tr class="separator:ab71dddf96cea5389111c35f306ede39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="adf7e2db6fa99135d9a09799bbcd59721" name="adf7e2db6fa99135d9a09799bbcd59721"></a>
@@ -2262,7 +2266,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
