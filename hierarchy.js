@@ -1,9 +1,20 @@
 var hierarchy =
 [
     [ "crc", "classqlibs_1_1crc.html", null ],
+    [ "fisCore", null, [
+      [ "fis", "classfis.html", null ]
+    ] ],
+    [ "fisIOBase", null, [
+      [ "fisInput", "classfis_input.html", null ],
+      [ "fisOutput", "classfis_output.html", null ]
+    ] ],
+    [ "fisMF", "classfis_m_f.html", null ],
+    [ "fisSystem< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classfis_system.html", null ],
     [ "fp16", "classqlibs_1_1fp16.html", null ],
     [ "nonCopyable", null, [
+      [ "fis", "classfis.html", null ],
       [ "bitfield", "classqlibs_1_1bitfield.html", null ],
+      [ "pidController", "classqlibs_1_1pid_controller.html", null ],
       [ "smootherALNF", "classqlibs_1_1smoother_a_l_n_f.html", null ],
       [ "smootherGMWF", "classqlibs_1_1smoother_g_m_w_f.html", null ],
       [ "smootherMOR1", "classqlibs_1_1smoother_m_o_r1.html", null ],
@@ -18,6 +29,10 @@ var hierarchy =
           [ "rms", "classqlibs_1_1rms.html", null ]
         ] ]
       ] ]
+    ] ],
+    [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
+    [ "pidGains", "structqlibs_1_1pid_gains.html", [
+      [ "pidController", "classqlibs_1_1pid_controller.html", null ]
     ] ],
     [ "smoother", "classqlibs_1_1smoother.html", [
       [ "smootherALNF", "classqlibs_1_1smoother_a_l_n_f.html", null ],

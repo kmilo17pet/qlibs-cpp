@@ -310,22 +310,26 @@ Building a Mamdani FIS</h1>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The number of parameters may vary depending on the shape of the membership function.</dd></dl>
 <p>the next step is to configure the membership functions by relating I/O, tags, shape and parameters one by one by using the qFIS_SetMF() API as follows:</p>
 <div class="fragment"><div class="line"><span class="comment">/* setup membership functions for the inputs */</span></div>
-<div class="line">qFIS_SetMF( MFin, service, service_poor, gaussmf, NULL, service_poor_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, service, service_good, gaussmf, NULL, service_good_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, service, service_excellent, gaussmf, NULL, service_excellent_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, food, food_rancid, trapmf, NULL, food_rancid_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, food, food_delicious, trapmf, NULL, food_delicious_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, service, service_poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_poor_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, service, service_good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_good_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, service, service_excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_excellent_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, food, food_rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_rancid_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, food, food_delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_delicious_p, 1.0f );</div>
 <div class="line"><span class="comment">/* setup membership functions for the outputs */</span></div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_cheap, trimf, NULL, tip_cheap_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_average, trimf, NULL, tip_average_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_generous, trimf, NULL, tip_generous_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_cheap_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_average_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_generous_p, 1.0f );</div>
+<div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">qlibs::trapmf</a></div><div class="ttdeci">@ trapmf</div><div class="ttdef"><b>Definition:</b> fis.hpp:28</div></div>
+<div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">qlibs::trimf</a></div><div class="ttdeci">@ trimf</div><div class="ttdef"><b>Definition:</b> fis.hpp:27</div></div>
+<div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">qlibs::gaussmf</a></div><div class="ttdeci">@ gaussmf</div><div class="ttdef"><b>Definition:</b> fis.hpp:30</div></div>
 </div><!-- fragment --><p >Finally, we only have to configure the instance that represents the fuzzy system using the qFIS_Setup() API:</p>
 <div class="fragment"><div class="line"><span class="comment">/*Parameters of the membership functions*/</span></div>
-<div class="line">qFIS_Setup( &amp;tipper, Mamdani,</div>
+<div class="line">qFIS_Setup( &amp;tipper, <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>,</div>
 <div class="line">            tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
 <div class="line">            tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
 <div class="line">            MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>
 <div class="line">            rules, rStrength, 3u );</div>
+<div class="ttc" id="agroup__qfis_html_ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799"><div class="ttname"><a href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">qlibs::Mamdani</a></div><div class="ttdeci">@ Mamdani</div><div class="ttdef"><b>Definition:</b> fis.hpp:100</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qfis_eval"></a>
 Evaluating a Fuzzy Inference System</h1>
 <p >If we already have a fuzzy system configured with qFIS_Setup(), we can evaluate it by using qFIS_Fuzzify(), qFIS_Inference() and qFIS_DeFuzzify(). Input values can be set with qFIS_SetInput() and output values can be obtained with qFIS_GetOutput()</p>
@@ -374,18 +378,18 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line">    qFIS_InputSetup( tipper_inputs, food, 0.0f, 10.0f );</div>
 <div class="line">    qFIS_OutputSetup( tipper_outputs, tip, 0.0f, 30.0f );</div>
 <div class="line">    <span class="comment">// Set membership functions for the inputs</span></div>
-<div class="line">    qFIS_SetMF( MFin, service, service_poor, gaussmf, NULL, service_poor_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, service, service_good, gaussmf, NULL, service_good_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, service, service_excellent, gaussmf, NULL, service_excellent_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, food, food_rancid, trapmf, NULL, food_rancid_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, food, food_delicious, trapmf, NULL, food_delicious_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, service, service_poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_poor_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, service, service_good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_good_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, service, service_excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_excellent_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, food, food_rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_rancid_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, food, food_delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_delicious_p, 1.0f );</div>
 <div class="line">    <span class="comment">// Set membership functions for the outputs</span></div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_cheap, trimf, NULL, tip_cheap_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_average, trimf, NULL, tip_average_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_generous, trimf, NULL, tip_generous_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_cheap_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_average_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_generous_p, 1.0f );</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Configure the Inference System</span></div>
-<div class="line">    qFIS_Setup( &amp;tipper, Mamdani,</div>
+<div class="line">    qFIS_Setup( &amp;tipper, <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>,</div>
 <div class="line">                tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
 <div class="line">                tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
 <div class="line">                MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>

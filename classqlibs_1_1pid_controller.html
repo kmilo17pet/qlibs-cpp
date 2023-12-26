@@ -1,0 +1,1177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: pidController Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classqlibs_1_1pid_controller.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
+  <div class="headertitle"><div class="title">pidController Class Reference<div class="ingroups"><a class="el" href="group__qpid.html">PID Controller</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A PID controller object.  
+ <a href="classqlibs_1_1pid_controller.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pid_8hpp_source.html">pid.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for pidController:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classqlibs_1_1pid_controller.png" usemap="#pidController_map" alt=""/>
+  <map id="pidController_map" name="pidController_map">
+<area href="structqlibs_1_1pid_gains.html" title="PID Gains structure." alt="pidGains" shape="rect" coords="0,0,87,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6cb27e634926f3a76de87f492b9ef637"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637">setup</a> (const real_t kc, const real_t ki, const real_t kd, const real_t dT) noexcept</td></tr>
+<tr class="memdesc:a6cb27e634926f3a76de87f492b9ef637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637">More...</a><br /></td></tr>
+<tr class="separator:a6cb27e634926f3a76de87f492b9ef637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a306b5859ea44f6b6dbdf33dfeb8a3329">setup</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g, const real_t dT) noexcept</td></tr>
+<tr class="memdesc:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a306b5859ea44f6b6dbdf33dfeb8a3329">More...</a><br /></td></tr>
+<tr class="separator:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a3940f096b77ae1a414d28f13e4a04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a42a3940f096b77ae1a414d28f13e4a04">setDirection</a> (const <a class="el" href="group__qpid.html#ga6a9274f0445ed7a43468421749d9f889">pidDirection</a> d) noexcept</td></tr>
+<tr class="memdesc:a42a3940f096b77ae1a414d28f13e4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID control action direction.  <a href="classqlibs_1_1pid_controller.html#a42a3940f096b77ae1a414d28f13e4a04">More...</a><br /></td></tr>
+<tr class="separator:a42a3940f096b77ae1a414d28f13e4a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64ca98c469af0911551e31f718cda31"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab64ca98c469af0911551e31f718cda31">setParams</a> (const real_t kc, const real_t ti, const real_t td) noexcept</td></tr>
+<tr class="memdesc:ab64ca98c469af0911551e31f718cda31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains by using the [Kc, Ti Td ] triplet.  <a href="classqlibs_1_1pid_controller.html#ab64ca98c469af0911551e31f718cda31">More...</a><br /></td></tr>
+<tr class="separator:ab64ca98c469af0911551e31f718cda31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a2e0c98770aeb884ba4c18f35507a7b2e">setGains</a> (const real_t kc, const real_t ki, const real_t kd) noexcept</td></tr>
+<tr class="memdesc:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a2e0c98770aeb884ba4c18f35507a7b2e">More...</a><br /></td></tr>
+<tr class="separator:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a165e1e8eb8db9e24a2d3e343751d1a64">setGains</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g) noexcept</td></tr>
+<tr class="memdesc:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a165e1e8eb8db9e24a2d3e343751d1a64">More...</a><br /></td></tr>
+<tr class="separator:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7b133f3739a21886a000c1518f5b30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#afe7b133f3739a21886a000c1518f5b30">setExtraGains</a> (const real_t Kw, const real_t Kt) noexcept</td></tr>
+<tr class="memdesc:afe7b133f3739a21886a000c1518f5b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change extra PID controller gains.  <a href="classqlibs_1_1pid_controller.html#afe7b133f3739a21886a000c1518f5b30">More...</a><br /></td></tr>
+<tr class="separator:afe7b133f3739a21886a000c1518f5b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a6ceef558340eb4e546d777ae1e6d9fb4">setSaturation</a> (const real_t Min, const real_t Max) noexcept</td></tr>
+<tr class="memdesc:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output saturation for the PID controller.  <a href="classqlibs_1_1pid_controller.html#a6ceef558340eb4e546d777ae1e6d9fb4">More...</a><br /></td></tr>
+<tr class="separator:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729a1b8ac341878d311df112e0377e3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a729a1b8ac341878d311df112e0377e3d">setSeries</a> (void) noexcept</td></tr>
+<tr class="memdesc:a729a1b8ac341878d311df112e0377e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the controller gains to conform the series or interacting form.  <a href="classqlibs_1_1pid_controller.html#a729a1b8ac341878d311df112e0377e3d">More...</a><br /></td></tr>
+<tr class="separator:a729a1b8ac341878d311df112e0377e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465d1e8031acd86704b75e82e8ff0ea7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a465d1e8031acd86704b75e82e8ff0ea7">setEpsilon</a> (const real_t eps) noexcept</td></tr>
+<tr class="memdesc:a465d1e8031acd86704b75e82e8ff0ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum value considered as error.  <a href="classqlibs_1_1pid_controller.html#a465d1e8031acd86704b75e82e8ff0ea7">More...</a><br /></td></tr>
+<tr class="separator:a465d1e8031acd86704b75e82e8ff0ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ae43c229036d7d8c745323455d749af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a9ae43c229036d7d8c745323455d749af">setDerivativeFilter</a> (const real_t Beta) noexcept</td></tr>
+<tr class="memdesc:a9ae43c229036d7d8c745323455d749af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tuning parameter for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a9ae43c229036d7d8c745323455d749af">More...</a><br /></td></tr>
+<tr class="separator:a9ae43c229036d7d8c745323455d749af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6776695a5e7e343c87c4228ea4bb03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aef6776695a5e7e343c87c4228ea4bb03">setMode</a> (const <a class="el" href="group__qpid.html#ga0fe89391c259456e24788767f121fd6d">pidMode</a> Mode) noexcept</td></tr>
+<tr class="memdesc:aef6776695a5e7e343c87c4228ea4bb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#aef6776695a5e7e343c87c4228ea4bb03">More...</a><br /></td></tr>
+<tr class="separator:aef6776695a5e7e343c87c4228ea4bb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39093f39879c01936c868b3f6c219bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aa39093f39879c01936c868b3f6c219bf">setReferenceWeighting</a> (const real_t gb, const real_t gc) noexcept</td></tr>
+<tr class="memdesc:aa39093f39879c01936c868b3f6c219bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system.  <a href="classqlibs_1_1pid_controller.html#aa39093f39879c01936c868b3f6c219bf">More...</a><br /></td></tr>
+<tr class="separator:aa39093f39879c01936c868b3f6c219bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a0003af0aef1ac0729a1e4d22dadf8c32">setManualInput</a> (const real_t manualInput) noexcept</td></tr>
+<tr class="memdesc:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed.  <a href="classqlibs_1_1pid_controller.html#a0003af0aef1ac0729a1e4d22dadf8c32">More...</a><br /></td></tr>
+<tr class="separator:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c654f9b4ab361940da3fa93f732596"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a20c654f9b4ab361940da3fa93f732596">setModelReferenceControl</a> (const real_t &amp;modelRef, const real_t Gamma=0.5, const real_t Alpha=0.01) noexcept</td></tr>
+<tr class="memdesc:a20c654f9b4ab361940da3fa93f732596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the additive MRAC(Model Reference Adaptive Control) feature.  <a href="classqlibs_1_1pid_controller.html#a20c654f9b4ab361940da3fa93f732596">More...</a><br /></td></tr>
+<tr class="separator:a20c654f9b4ab361940da3fa93f732596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93fd918c7ea64920a977e4f6eea7d22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ac93fd918c7ea64920a977e4f6eea7d22">removeModelReferenceControl</a> (void) noexcept</td></tr>
+<tr class="memdesc:ac93fd918c7ea64920a977e4f6eea7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop.  <a href="classqlibs_1_1pid_controller.html#ac93fd918c7ea64920a977e4f6eea7d22">More...</a><br /></td></tr>
+<tr class="separator:ac93fd918c7ea64920a977e4f6eea7d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1c1ef7bedbdfa06a7bd28803d88d60f5">control</a> (const real_t w, const real_t y) noexcept</td></tr>
+<tr class="memdesc:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the control action for given PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a1c1ef7bedbdfa06a7bd28803d88d60f5">More...</a><br /></td></tr>
+<tr class="separator:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24">bindAutoTuning</a> (<a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a> &amp;at) noexcept</td></tr>
+<tr class="memdesc:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the specified instance to enable the PID controller auto tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24">More...</a><br /></td></tr>
+<tr class="separator:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0789159d7029daf5e4fee0a57d26e92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92">unbindAutoTuning</a> (void) noexcept</td></tr>
+<tr class="memdesc:ae0789159d7029daf5e4fee0a57d26e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind and disable the PID controller auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92">More...</a><br /></td></tr>
+<tr class="separator:ae0789159d7029daf5e4fee0a57d26e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af600aec91cf730f8984102b8f565dc69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#af600aec91cf730f8984102b8f565dc69">enableAutoTuning</a> (const uint32_t tEnable) noexcept</td></tr>
+<tr class="memdesc:af600aec91cf730f8984102b8f565dc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time steps where the auto tuner algorithm will modify the controller gains.  <a href="classqlibs_1_1pid_controller.html#af600aec91cf730f8984102b8f565dc69">More...</a><br /></td></tr>
+<tr class="separator:af600aec91cf730f8984102b8f565dc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0607ebd52203489acf34492f4a1775f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#af0607ebd52203489acf34492f4a1775f">isAutoTuningComplete</a> (void) const noexcept</td></tr>
+<tr class="memdesc:af0607ebd52203489acf34492f4a1775f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the auto tuning process has finished with new gains set on the controller.  <a href="classqlibs_1_1pid_controller.html#af0607ebd52203489acf34492f4a1775f">More...</a><br /></td></tr>
+<tr class="separator:af0607ebd52203489acf34492f4a1775f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a681bf6255ea4e97d730080fba5999bda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a681bf6255ea4e97d730080fba5999bda">setAutoTuningParameters</a> (const real_t Mu, const real_t Alpha, const real_t lambda) noexcept</td></tr>
+<tr class="memdesc:a681bf6255ea4e97d730080fba5999bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a681bf6255ea4e97d730080fba5999bda">More...</a><br /></td></tr>
+<tr class="separator:a681bf6255ea4e97d730080fba5999bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab537261ac416c86c81074bcc5a82342a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab537261ac416c86c81074bcc5a82342a">reset</a> (void) noexcept</td></tr>
+<tr class="memdesc:ab537261ac416c86c81074bcc5a82342a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the internal PID controller calculations.  <a href="classqlibs_1_1pid_controller.html#ab537261ac416c86c81074bcc5a82342a">More...</a><br /></td></tr>
+<tr class="separator:ab537261ac416c86c81074bcc5a82342a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_structqlibs_1_1pid_gains"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structqlibs_1_1pid_gains')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a></td></tr>
+<tr class="memitem:a3da3fcc7e42fa52384170c9336bf7500 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a3da3fcc7e42fa52384170c9336bf7500">Kc</a></td></tr>
+<tr class="separator:a3da3fcc7e42fa52384170c9336bf7500 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb31545fd8ea119995d6f8d010f2016 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#abbb31545fd8ea119995d6f8d010f2016">Ki</a></td></tr>
+<tr class="separator:abbb31545fd8ea119995d6f8d010f2016 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff76c699e5643c475c7978ae96e125b inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a2ff76c699e5643c475c7978ae96e125b">Kd</a></td></tr>
+<tr class="separator:a2ff76c699e5643c475c7978ae96e125b inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A PID controller object. </p>
+<p >The instance should be initialized using the pid::setup() method. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5ff3bce0f1c2185ce55ddb7d1a433f24" name="a5ff3bce0f1c2185ce55ddb7d1a433f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff3bce0f1c2185ce55ddb7d1a433f24">&#9670;&nbsp;</a></span>bindAutoTuning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bindAutoTuning </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a> &amp;&#160;</td>
+          <td class="paramname"><em>at</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Binds the specified instance to enable the PID controller auto tuning algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">at</td><td>The PID auto-tuning instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a1c1ef7bedbdfa06a7bd28803d88d60f5" name="a1c1ef7bedbdfa06a7bd28803d88d60f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1ef7bedbdfa06a7bd28803d88d60f5">&#9670;&nbsp;</a></span>control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">real_t control </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the control action for given PID controller instance. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Instance must be previously initialized by <a class="el" href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637" title="Setup and initialize the PID controller instance.">pidController::setup()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The user must ensure that this function is executed in the time specified in <em>dt</em> either by using a HW or SW timer, a real time task, or a timing service. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The reference value aka SetPoint. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The controlled variable aka Process-variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The control action. </dd></dl>
+
+</div>
+</div>
+<a id="af600aec91cf730f8984102b8f565dc69" name="af600aec91cf730f8984102b8f565dc69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af600aec91cf730f8984102b8f565dc69">&#9670;&nbsp;</a></span>enableAutoTuning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool enableAutoTuning </td>
+          <td>(</td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>tEnable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the number of time steps where the auto tuner algorithm will modify the controller gains. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Controller must have an <a class="el" href="classqlibs_1_1pid_auto_tuning.html" title="A PID Auto-tuning object.">pidAutoTuning</a> object already binded wih <a class="el" href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>To disable auto-tuning pass a 0uL value to the <em>tEnable</em> argument. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tEnable</td><td>The number of time steps. To keep the auto tuner enabled indefinitely pass <a class="el" href="classqlibs_1_1pid_auto_tuning.html#a9384f9b788abdbe1ca2d933f2a7f3e53" title="Constant to keep the auto-tuner enabled indefinitely.">pidAutoTuning::UNDEFINED</a> as argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="af0607ebd52203489acf34492f4a1775f" name="af0607ebd52203489acf34492f4a1775f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0607ebd52203489acf34492f4a1775f">&#9670;&nbsp;</a></span>isAutoTuningComplete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isAutoTuningComplete </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifies that the auto tuning process has finished with new gains set on the controller. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if auto-tuning its complete, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ac93fd918c7ea64920a977e4f6eea7d22" name="ac93fd918c7ea64920a977e4f6eea7d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93fd918c7ea64920a977e4f6eea7d22">&#9670;&nbsp;</a></span>removeModelReferenceControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool removeModelReferenceControl </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ab537261ac416c86c81074bcc5a82342a" name="ab537261ac416c86c81074bcc5a82342a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab537261ac416c86c81074bcc5a82342a">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the internal PID controller calculations. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a681bf6255ea4e97d730080fba5999bda" name="a681bf6255ea4e97d730080fba5999bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a681bf6255ea4e97d730080fba5999bda">&#9670;&nbsp;</a></span>setAutoTuningParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setAutoTuningParameters </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>lambda</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change parameters of the auto-tuning algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Mu</td><td>Algorithm momentum. [ 0 &lt;= Mu &lt;= 1 ]. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Alpha</td><td>Final controller speed adjustment. [ 0 &lt; Alpha &lt;= 1 ]. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>Algorithm forgetting factor [ 0.8 &lt;= lambda &lt;= 1 ]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
+
+</div>
+</div>
+<a id="a9ae43c229036d7d8c745323455d749af" name="a9ae43c229036d7d8c745323455d749af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ae43c229036d7d8c745323455d749af">&#9670;&nbsp;</a></span>setDerivativeFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setDerivativeFilter </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Beta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the tuning parameter for the derivative filter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Beta</td><td>The tuning parameter. [ 0 &lt; Beta &lt; 1 ] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a42a3940f096b77ae1a414d28f13e4a04" name="a42a3940f096b77ae1a414d28f13e4a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a3940f096b77ae1a414d28f13e4a04">&#9670;&nbsp;</a></span>setDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setDirection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#ga6a9274f0445ed7a43468421749d9f889">pidDirection</a>&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the PID control action direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>Desired output direction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a465d1e8031acd86704b75e82e8ff0ea7" name="a465d1e8031acd86704b75e82e8ff0ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465d1e8031acd86704b75e82e8ff0ea7">&#9670;&nbsp;</a></span>setEpsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setEpsilon </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>eps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the minimum value considered as error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>The minimal error value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="afe7b133f3739a21886a000c1518f5b30" name="afe7b133f3739a21886a000c1518f5b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7b133f3739a21886a000c1518f5b30">&#9670;&nbsp;</a></span>setExtraGains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setExtraGains </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Kw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Kt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set/Change extra PID controller gains. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Kw</td><td>Saturation feedback gain. Used for antiWindup and bumpless transfer. A zero value disables these features. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Kt</td><td>Manual input gain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a165e1e8eb8db9e24a2d3e343751d1a64" name="a165e1e8eb8db9e24a2d3e343751d1a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165e1e8eb8db9e24a2d3e343751d1a64">&#9670;&nbsp;</a></span>setGains() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setGains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set/Change the PID controller gains. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The structure with the controller gains </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a2e0c98770aeb884ba4c18f35507a7b2e" name="a2e0c98770aeb884ba4c18f35507a7b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0c98770aeb884ba4c18f35507a7b2e">&#9670;&nbsp;</a></span>setGains() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setGains </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>kc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>kd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set/Change the PID controller gains. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kc</td><td>Proportional Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ki</td><td>Integral Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kd</td><td>Derivative Gain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a0003af0aef1ac0729a1e4d22dadf8c32" name="a0003af0aef1ac0729a1e4d22dadf8c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0003af0aef1ac0729a1e4d22dadf8c32">&#9670;&nbsp;</a></span>setManualInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setManualInput </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>manualInput</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">manualInput</td><td>The value of the manual input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="aef6776695a5e7e343c87c4228ea4bb03" name="aef6776695a5e7e343c87c4228ea4bb03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6776695a5e7e343c87c4228ea4bb03">&#9670;&nbsp;</a></span>setMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setMode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#ga0fe89391c259456e24788767f121fd6d">pidMode</a>&#160;</td>
+          <td class="paramname"><em>Mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Mode</td><td>The desired operational mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a20c654f9b4ab361940da3fa93f732596" name="a20c654f9b4ab361940da3fa93f732596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20c654f9b4ab361940da3fa93f732596">&#9670;&nbsp;</a></span>setModelReferenceControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setModelReferenceControl </td>
+          <td>(</td>
+          <td class="paramtype">const real_t &amp;&#160;</td>
+          <td class="paramname"><em>modelRef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Gamma</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Alpha</em> = <code>0.01</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the additive MRAC(Model Reference Adaptive Control) feature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">modelRef</td><td>A pointer to the output of the model reference. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Gamma</td><td>Adjustable parameter to indicate the adaptation speed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Gamma</td><td>Adjustable parameter the adaptation momentum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ab64ca98c469af0911551e31f718cda31" name="ab64ca98c469af0911551e31f718cda31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64ca98c469af0911551e31f718cda31">&#9670;&nbsp;</a></span>setParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setParams </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>kc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>ti</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>td</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set/Change the PID controller gains by using the [Kc, Ti Td ] triplet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kc</td><td>Proportional Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ti</td><td>Integral time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">td</td><td>Derivative time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="aa39093f39879c01936c868b3f6c219bf" name="aa39093f39879c01936c868b3f6c219bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39093f39879c01936c868b3f6c219bf">&#9670;&nbsp;</a></span>setReferenceWeighting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setReferenceWeighting </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>gb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system. </p>
+<dl class="section note"><dt>Note</dt><dd>A value close to zero en <em>gc</em> can be used to eliminate the reduce the effect of the phenomena called "derivative-kick" </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gb</td><td>The reference weight value for the proportional element. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gc</td><td>The reference weight value for the derivative element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a6ceef558340eb4e546d777ae1e6d9fb4" name="a6ceef558340eb4e546d777ae1e6d9fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ceef558340eb4e546d777ae1e6d9fb4">&#9670;&nbsp;</a></span>setSaturation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setSaturation </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the output saturation for the PID controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Min</td><td>The minimal value allowed for the output. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Max</td><td>The maximal value allowed for the output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a729a1b8ac341878d311df112e0377e3d" name="a729a1b8ac341878d311df112e0377e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729a1b8ac341878d311df112e0377e3d">&#9670;&nbsp;</a></span>setSeries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setSeries </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert the controller gains to conform the series or interacting form. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a306b5859ea44f6b6dbdf33dfeb8a3329" name="a306b5859ea44f6b6dbdf33dfeb8a3329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306b5859ea44f6b6dbdf33dfeb8a3329">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize the PID controller instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The structure with the controller gains </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>Time step in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a6cb27e634926f3a76de87f492b9ef637" name="a6cb27e634926f3a76de87f492b9ef637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb27e634926f3a76de87f492b9ef637">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setup </td>
+          <td>(</td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>kc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>kd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize the PID controller instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kc</td><td>Proportional Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ki</td><td>Integral Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kd</td><td>Derivative Gain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>Time step in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ae0789159d7029daf5e4fee0a57d26e92" name="ae0789159d7029daf5e4fee0a57d26e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0789159d7029daf5e4fee0a57d26e92">&#9670;&nbsp;</a></span>unbindAutoTuning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool unbindAutoTuning </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unbind and disable the PID controller auto-tuning algorithm. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>qlibs</b></li><li class="navelem"><a class="el" href="classqlibs_1_1pid_controller.html">pidController</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

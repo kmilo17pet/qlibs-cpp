@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['wrapto180_0',['wrapTo180',['../classqlibs_1_1fp16.html#a5678c90a68c1b1e8176b973ae3b432b3',1,'qlibs::fp16']]],
-  ['wraptopi_1',['wrapToPi',['../classqlibs_1_1fp16.html#a3bd4afd1bc989e17ceb79f29084232d6',1,'qlibs::fp16']]],
-  ['writebit_2',['writeBit',['../classqlibs_1_1bitfield.html#ae8d181abb5ac9bb4e6ea2b7844184a94',1,'qlibs::bitfield']]],
-  ['writefloat_3',['writeFloat',['../classqlibs_1_1bitfield.html#aff573fe4d1d7526dada52c3cca97739b',1,'qlibs::bitfield']]],
-  ['writeuintn_4',['writeUINTn',['../classqlibs_1_1bitfield.html#a8d4e350b2745cdba3a2f919871042bac',1,'qlibs::bitfield']]]
+  ['unbindautotuning_0',['unbindAutoTuning',['../classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92',1,'qlibs::pidController']]],
+  ['undefined_1',['UNDEFINED',['../classqlibs_1_1pid_auto_tuning.html#a9384f9b788abdbe1ca2d933f2a7f3e53',1,'qlibs::pidAutoTuning']]],
+  ['update_2',['update',['../classqlibs_1_1rms.html#a397a5e929acfe7403776251d6e4897c6',1,'qlibs::rms']]],
+  ['updatefir_3',['updateFIR',['../classqlibs_1_1discrete_system.html#a542f689697ef1e149b4e9b84ccc3cfdb',1,'qlibs::discreteSystem']]]
 ];
