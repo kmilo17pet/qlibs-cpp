@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('qssmoother_desc.html',''); initResizab
 </ul>
 </div>
 <div class="textblock"><p >In many embedded systems applications, signals are captured and may be subject to "noise." To reconstruct the original signal, a "smoothing filter" is applied to "clear" the signal of this noise. The filter attenuates high frequency components and emphasizes slow changes in values, making trends easier to discern. The qLibs library offers the qSSMoother module, which includes a collection of commonly used and efficient smoothing filters for easy signal processing.</p>
-<p >Below is the list of filters supported by <a class="el" href="group__qssmoother.html">qSSMoother</a> :</p>
+<p >Below is the list of filters supported by <a class="el" href="group__qssmoother.html">Smoothing filters</a> :</p>
 <h1><a class="anchor" id="qssmoother_lpf1"></a>
 First Order Low Pass Filter</h1>
 <p >A first-order low-pass filter passes signals with a frequency lower than a chosen cutoff frequency and reduces signals with frequencies higher than the cutoff. This results in a smoother signal by removing short-term fluctuations and highlighting longer-term trends. The discrete-time equation of this filter is defined as follows, where \(w\) is the cut-off frequency given in \(rad/seg\)</p>
@@ -249,7 +249,7 @@ Example: setting up an outlier removal filter:</h2>
 <div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="qssmoother_mor2"></a>
 Moving Outlier Removal Filter O(1)</h1>
-<p >Similar to the previous filter, but with a constant time complexity of  \(O(1)\) by using a <a class="el" href="group__qtdl.html">qTDL</a> data structure.</p>
+<p >Similar to the previous filter, but with a constant time complexity of  \(O(1)\) by using a <a class="el" href="group__qtdl.html">Tapped Delay Line</a> data structure.</p>
 <h2><a class="anchor" id="qssmoother_ex6"></a>
 Example: setting up an outlier removal filter:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define N_MWM     ( 10u )</span></div>

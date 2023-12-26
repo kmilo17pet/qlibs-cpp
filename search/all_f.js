@@ -24,9 +24,10 @@ var searchData=
   ['smoothermor2_21',['smootherMOR2',['../classqlibs_1_1smoother_m_o_r2.html',1,'qlibs']]],
   ['smoothermwm1_22',['smootherMWM1',['../classqlibs_1_1smoother_m_w_m1.html',1,'qlibs']]],
   ['smoothermwm2_23',['smootherMWM2',['../classqlibs_1_1smoother_m_w_m2.html',1,'qlibs']]],
-  ['sort_24',['sort',['../group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
-  ['sortstacknode_25',['sortStackNode',['../structsort_stack_node.html',1,'']]],
-  ['sqrt_26',['sqrt',['../classqlibs_1_1fp16.html#ab312bf8a40ff582890423064c35d3c28',1,'qlibs::fp16']]],
-  ['state_27',['state',['../classqlibs_1_1state.html',1,'state'],['../classqlibs_1_1state.html#a05c4a4403fd068fe6a0a05ad9ef9d8c8',1,'qlibs::state::state()']]],
-  ['swap_28',['swap',['../group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e',1,'qlibs::generic']]]
+  ['smoothing_20filters_24',['Smoothing filters',['../group__qssmoother.html',1,'']]],
+  ['sort_25',['sort',['../group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
+  ['sortstacknode_26',['sortStackNode',['../structsort_stack_node.html',1,'']]],
+  ['sqrt_27',['sqrt',['../classqlibs_1_1fp16.html#ab312bf8a40ff582890423064c35d3c28',1,'qlibs::fp16']]],
+  ['state_28',['state',['../classqlibs_1_1state.html',1,'state'],['../classqlibs_1_1state.html#a05c4a4403fd068fe6a0a05ad9ef9d8c8',1,'qlibs::state::state()']]],
+  ['swap_29',['swap',['../group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e',1,'qlibs::generic']]]
 ];

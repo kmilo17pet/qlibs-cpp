@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('classqlibs_1_1smoother_a_l_n_f.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">smootherALNF Class Reference<div class="ingroups"><a class="el" href="group__qssmoother.html">qSSMoother</a></div></div></div>
+  <div class="headertitle"><div class="title">smootherALNF Class Reference<div class="ingroups"><a class="el" href="group__qssmoother.html">Smoothing filters</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -148,14 +148,14 @@ Inheritance diagram for smootherALNF:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad9ccfe4659c34148cc3b3f59eb1f5841"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#ad9ccfe4659c34148cc3b3f59eb1f5841">setup</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> a, const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> m, <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *window, const size_t wsize)</td></tr>
+<tr class="memitem:ad9ccfe4659c34148cc3b3f59eb1f5841"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#ad9ccfe4659c34148cc3b3f59eb1f5841">setup</a> (const real_t a, const real_t m, real_t *window, const size_t wsize)</td></tr>
 <tr class="memdesc:ad9ccfe4659c34148cc3b3f59eb1f5841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Adaptive Filter LMS.  <a href="classqlibs_1_1smoother_a_l_n_f.html#ad9ccfe4659c34148cc3b3f59eb1f5841">More...</a><br /></td></tr>
 <tr class="separator:ad9ccfe4659c34148cc3b3f59eb1f5841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a345af57dc42b3ca707c296c3eaa00a51"><td class="memTemplParams" colspan="2">template&lt;size_t windowSize&gt; </td></tr>
-<tr class="memitem:a345af57dc42b3ca707c296c3eaa00a51"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a345af57dc42b3ca707c296c3eaa00a51">setup</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> a, const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> m, <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;window)[windowSize])</td></tr>
+<tr class="memitem:a345af57dc42b3ca707c296c3eaa00a51"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a345af57dc42b3ca707c296c3eaa00a51">setup</a> (const real_t a, const real_t m, real_t(&amp;window)[windowSize])</td></tr>
 <tr class="memdesc:a345af57dc42b3ca707c296c3eaa00a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Adaptive Filter LMS.  <a href="classqlibs_1_1smoother_a_l_n_f.html#a345af57dc42b3ca707c296c3eaa00a51">More...</a><br /></td></tr>
 <tr class="separator:a345af57dc42b3ca707c296c3eaa00a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1116b73eb7b200a50733aad75495a6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a1116b73eb7b200a50733aad75495a6fe">smooth</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> x) override</td></tr>
+<tr class="memitem:a1116b73eb7b200a50733aad75495a6fe"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a1116b73eb7b200a50733aad75495a6fe">smooth</a> (const real_t x) override</td></tr>
 <tr class="memdesc:a1116b73eb7b200a50733aad75495a6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em>x</em>.  <a href="classqlibs_1_1smoother_a_l_n_f.html#a1116b73eb7b200a50733aad75495a6fe">More...</a><br /></td></tr>
 <tr class="separator:a1116b73eb7b200a50733aad75495a6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classqlibs_1_1smoother"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classqlibs_1_1smoother')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1smoother.html">smoother</a></td></tr>
@@ -178,19 +178,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool setup </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const real_t&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const real_t&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td>
+          <td class="paramtype">real_t *&#160;</td>
           <td class="paramname"><em>window</em>, </td>
         </tr>
         <tr>
@@ -233,19 +233,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool setup </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const real_t&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const real_t&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramtype">real_t(&amp;)&#160;</td>
           <td class="paramname"><em>window</em>[windowSize]&#160;</td>
         </tr>
         <tr>
@@ -284,9 +284,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> smooth </td>
+          <td class="memname">real_t smooth </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const real_t&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
           <td></td>
         </tr>

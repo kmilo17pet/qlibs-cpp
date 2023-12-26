@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"qssmoother_desc.html#qssmoother_alnf":[0,0,10],
-"qssmoother_desc.html#qssmoother_desf":[0,0,9],
 "qssmoother_desc.html#qssmoother_ex1":[0,0,0,0],
 "qssmoother_desc.html#qssmoother_ex10":[0,0,11],
 "qssmoother_desc.html#qssmoother_ex2":[0,0,1,0],

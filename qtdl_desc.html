@@ -129,14 +129,14 @@ $(document).ready(function(){initNavTree('qtdl_desc.html',''); initResizable(); 
   <div class="headertitle"><div class="title">Tapped Delay Line in O(1) </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >The class <a class="el" href="group__qtdl.html">qTDL</a> is an implementation of the Tapped Delay Line (TDL) structure. A TDL is a discrete element in digital filter theory, that allows a signal to be delayed by a number of samples and provides an output signal for each delay. Here, a TDL is implemented as a circular buffer. This means that the complexity of the enqueue and dequeue operations is constant O(1), so integer delays can be computed very efficiently.</p>
+<div class="textblock"><p >The class <a class="el" href="group__qtdl.html">Tapped Delay Line</a> is an implementation of the Tapped Delay Line (TDL) structure. A TDL is a discrete element in digital filter theory, that allows a signal to be delayed by a number of samples and provides an output signal for each delay. Here, a TDL is implemented as a circular buffer. This means that the complexity of the enqueue and dequeue operations is constant O(1), so integer delays can be computed very efficiently.</p>
 <p >The delay by one sample is notated \(z^{-1}\) and delays of \(N\) samples is notated as \(z^{-N}\) motivated by the role the z-transform plays in describing digital filter structures.</p>
 <p >To create a TDL, you just need to define an instance of type qTDL_t and then, configure it by using qTDL_Setup(), where you can define the number of lines to be delayed and the initial values for all of them. Then, you can start operating over this structure by inserting samples of the input signal by using qTDL_InsertSample(). You can also get any specific delay from it by using:</p>
 <ul>
 <li>qTDL_GetOldest(), to get the oldest delay at tap \(z^{-N}\)</li>
 <li>qTDL_GetAtIndex(), to get the delay at tap \(z^{-i}\)</li>
 </ul>
-<p >Given the applications of this structure, the <a class="el" href="group__qtdl.html">qTDL</a> class is used as the base component of some aspects of <a class="el" href="group__qssmoother.html">qSSMoother</a> and <a class="el" href="group__qltisys.html">qLTISys</a>.</p>
+<p >Given the applications of this structure, the <a class="el" href="group__qtdl.html">Tapped Delay Line</a> class is used as the base component of some aspects of <a class="el" href="group__qssmoother.html">Smoothing filters</a> and <a class="el" href="group__qltisys.html">LTI Systems</a>.</p>
 <h1><a class="anchor" id="qtdl_ex1"></a>
 Example : Code snippet to instantiate a TDL to hold up to 256 delays.</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#define MAX_DELAYS   ( 256 )</span></div>
