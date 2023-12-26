@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: Fuzzy Inference System Engine</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('qfis_desc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Fuzzy Inference System Engine </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#qfis_mamdani">Mamdani</a></li>
+<li class="level1"><a href="#qfis_sugeno">Sugeno</a></li>
+<li class="level1"><a href="#qfis_tsukamoto">Tsukamoto</a></li>
+<li class="level1"><a href="#qfis_defuzz">Defuzzification Methods</a></li>
+<li class="level1"><a href="#qfis_buildfis">Building a Mamdani FIS</a></li>
+<li class="level1"><a href="#qfis_eval">Evaluating a Fuzzy Inference System</a></li>
+<li class="level1"><a href="#qfis_codegen">Code generation</a></li>
+</ul>
+</div>
+<div class="textblock"><p >A Fuzzy Inference System (FIS) is a key component of any fuzzy logic system. It uses fuzzy set theory, IF-THEN rules and fuzzy reasoning process to find the output corresponding to crisp inputs. Predicates in <code>IF-THEN</code> rules are connected using <code>AND</code> or <code>OR</code> logical connectives.</p>
+<p >Fuzzy inference works by sending any process's crisp input to the fuzzifier, which applies a fuzzy membership function and maps the actual readings into fuzzy values. The inference engine applies fuzzy rules from the knowledge base and produces the fuzzy output. This output can not be used directly in any process or system. It needs to be mapped into the original domain. For this, the defuzzifier is used, which is the inverse process of fuzzification. It converts the fuzzy output into crisp output, which can be fed to the process.</p>
+<p >The <a class="el" href="group__qfis.html">qFIS</a> Fuzzy Inference System engine provides an API for building and evaluation of type-1 fuzzy logic inference systems.</p>
+<p >The types of inferences supported by qFIS are listed in the qFIS_Type_t and are detailed below:</p>
+<h1><a class="anchor" id="qfis_mamdani"></a>
+Mamdani</h1>
+<p >In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani systems have more intuitive and easier to understand rule bases, they are well-suited to expert system applications where the rules are created from human expert knowledge.</p>
+<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the ::Mamdani enum definition when calling qFIS_Setup().</p>
+<center>  
+<!DOCTYPE html>
+<html>
+<head>
+<title>mamdanifis</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-21T12:24:51.086Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36\&quot; etag=\&quot;GporpD4HgS3TULajmcnV\&quot; version=\&quot;20.4.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;b76JhKOhOGUdQaUB4UHg\&quot; name=\&quot;Página-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+ <em>Mamdani inference system</em> </center><h1><a class="anchor" id="qfis_sugeno"></a>
+Sugeno</h1>
+<p >Sugeno fuzzy inference, also referred to as Takagi-Sugeno-Kang fuzzy inference, uses singleton output membership functions that are either constant or a linear function of the input values. The defuzzification process for a Sugeno system is more computationally efficient compared to that of a Mamdani system, since it uses a weighted average or weighted sum of a few data points rather than computing the centroid of a two-dimensional area.</p>
+<p >Each rule generates two values:</p>
+<p >\(u_i\) Rule output level, which is either a constant value or a linear function of the input values.</p>
+<p >and \(w_i\), the rule firing strength, that is determined by the rule antecedent</p>
+<p >The output of each rule is the weighted output level, which is the product of \(w_i\) and \(u_i\).</p>
+<p >The final output of the system is the weighted average/sum over all rule outputs:</p>
+<center> \(out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \) </center><p >where \(N\) is the number of rules.</p>
+<p >Because of the linear dependence of each rule on the input variables, the Sugeno method is ideal for acting as an interpolating supervisor of multiple linear controllers that are to be applied, respectively, to different operating conditions of a dynamic nonlinear system.</p>
+<p >To specificy a FIS of this type, use the ::Sugeno enum definition when calling qFIS_Setup().</p>
+<center>  
+<!DOCTYPE html>
+<html>
+<head>
+<title>sugenofis</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-21T12:26:53.087Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36\&quot; etag=\&quot;Gn7_LPBRFnYcJWAdcmce\&quot; version=\&quot;20.4.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;B5A3irbYMv0O7n4GprYW\&quot; name=\&quot;Página-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+ <em>Sugeno inference system</em> </center><h1><a class="anchor" id="qfis_tsukamoto"></a>
+Tsukamoto</h1>
+<p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
+<p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
+<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling qFIS_Setup().</p>
+<center>  
+<!DOCTYPE html>
+<html>
+<head>
+<title>tsukamotofis</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-21T12:28:30.817Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36\&quot; etag=\&quot;GO0rFroHnX2iWalfD0AV\&quot; version=\&quot;20.4.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;yG3-giIi_3HVufmugneO\&quot; name=\&quot;Página-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+ <em>Tsukamoto inference system</em> </center><h1><a class="anchor" id="qfis_defuzz"></a>
+Defuzzification Methods</h1>
+<p >qFIS supports five different methods, as listed in the qFIS_DeFuzz_Method_t type for computing a single crisp output value for such a fuzzy set.</p>
+<ol type="1">
+<li>::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+</ol>
+<center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
+<li>::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>::mom : Middle of Maximum. Only for ::Mamdani systems.</li>
+<li>::som : Smallest of Maximum. Only for ::Mamdani systems.</li>
+<li>::lom : Largest of Maximum. Only for ::Mamdani systems.</li>
+<li>::wtaver (default): Weighted average of all rule outputs. this method applies only for ::Sugeno and ::Tsukamoto systems.</li>
+<li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with qFIS_Setup(). However, the user can later change the default method using the qFIS_SetDeFuzzMethod() function.</dd></dl>
+<h1><a class="anchor" id="qfis_buildfis"></a>
+Building a Mamdani FIS</h1>
+<p >To carry out the FIS building process in a more friendly manner, we will explain it using a specific example. The goal is to solve the tipping problem, which is described as follows:</p>
+<p >Given a number from 0 through 10 that represents the quality of service at a restaurant, where 10 is excellent, and another number from 0 through 10 that represents the quality of the food, where 10 is delicious, what should the tip be? Tipping behavior varies depending on local traditions and personal preferences. In this example, the problem is based on tipping as it is typically practiced in the United States. An average tip for a meal in the US is 15%. A generous tip could be as high as 25% and a cheap tip could be 5%.</p>
+<p >The actual amount of the tip can vary depending on the quality of the service and food. For this problem, tipping behavior is defined using the following three rules.</p>
+<ol type="1">
+<li><code> IF the service IS poor OR the food IS rancid, THEN the tip IS cheap. </code></li>
+<li><code> IF the service IS good, THEN the tip IS average. </code></li>
+<li><code> IF the service IS excellent OR the food IS delicious, THEN the tip IS generous. </code></li>
+</ol>
+<p >This leads to a system with 2 inputs : <code>service</code> and <code>food</code> and 1 output: <code>tip</code> </p>
+<center>  
+<!DOCTYPE html>
+<html>
+<head>
+<title>fistipper</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;zoom&quot;:1.1,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-21T02:08:39.175Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36\&quot; etag=\&quot;SCuM4LE2NdtaU8qmsqFR\&quot; version=\&quot;20.4.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;tCH73QwP0SZsCBjILYLj\&quot; name=\&quot;Página-1\&quot;&gt;7VvbcuI4EP0aHuOybr48BhI2u7Wpmt1s1ew8arAA1xibscVtv35btoxvODjEwGQGQiWoJbVbrXOkVisMyGix/S3my/lz5IlggE1vOyAPA4xdG8FvJdhlAmTaOJPMYt/TskLw4v8n8oZauvI9kVQayigKpL+sCidRGIqJrMh4HEebarNpFFSfuuQz0RC8THjQlH72PTnXUmS5RcWT8Gdz/WgH21nFgueN9UiSOfeiTUlEHgdkFEeRzD4ttiMRKOflfsn6jVtq94bFIpRdOiy+/3H3Of6LfUO/Dz1r/fTlmZA7PRlrHqz0gLWxcpd7II5WoSeUEnNAhpu5L8XLkk9U7QbmHGRzuQighOBjIuPomxhFQRSnvYljqp99Te5DGP1w6gdB3jKMQlA41NaIWIpt6zDR3nmAOhEthIx30ER3wI72t0Ycobq8KabP0VrnpYljuhnXgJntNRc+hQ/arW9wMTnu4skqXqceVi4UoXevgFt4peTf6mR09bZWO/aV5WnPzAThNcB/1M0lN+YuO+TGWARc+uuq+kO+1U/4FPnw4NIsouosurXpSaJVPBG6Vxn1NUXEOqJI8ngmZEMRTAHflZotVYOk3WCCDj+n1S5ca0+PtCev6ocPmcUFTvdzdjp06Q26b4cuQZaBXLN4sZ6QzF7XW1/A+gI26TScVqtpJ6vPCmN2g/EJMMbMcJxi3npaj7EDam23eF0GxCYzKCk9lb4JxBDHGg65PHCt48D94NEZNa8cndnHXXy25QDs/1d1NCgcGrTgi6o1TNPNBQ9brTsr7cqlTyL2wQ0ifuOaAmeolFfHoHe96I8ZLmvdNCg6dQtFGPRWddFzrTjNR6ELLBnOj4BnxlAZz6bhuvhXxjNh+Dx4xo196Wx4JraBWGkHtS+PbfcAtq1Aqs0qSm2d7IFqfV+pvAogiJimPZ1Oy6ISGXKhUnCXpNmne2iA8HKbNi06WTP9N31gsuThuxQ984XHQz/X9zV+l7Z/dkuh6nN14N7MwqrVIM48lYuvEUxAywf6iMZMj0/n/BDOy9oe1EO4QZzGKnwoH2TZRk7JMvtRnZe9RR254p8osqM2NWjN1faVg7s8J/Nz7IZi68tMI7FsXc7DRaLLhT5V2JUKp++t2W50FM3X2lyZ6TY47kBMfdqWSh1kWAS1HHspPs/uSl1qIKtlDGfdUxG+UeS9FLka8rFlYGx3xWpXCjCTGJZTUMCsJksocg2HNjI4PTOCIRhbLecEjMDsApTocGNzo8QPSgnqGnBU6YkIwC/bNVtylRfiAYEBodZ86aUo0eEmqESJScCTxJ+8iRVwTBuPx4cD1uKU4OrioY450lEJ5cCjVzHeYxSkPXI0E+Fekx/EbqalyIn0oLh5uHK6xUe94bLD1c6vjsvrZr5stXG1X7zYzCilxUx8GhKzY373/Nq5Udnh3uZDorIIT6qhCTsSmPSIZrfjKnvdM+kR2FNCK9XOibB3D9wxuK9pPjfwm7dp0l8uIXqsw1+KrWzgWkfSB/JTPPBnoaIK4EXFokOVqvInPLjXFQvf85RulZid+OHsTzFVM0oLyd96kpUogu7TICXfHDoK0DDUgRhYx4bwBhyMFLAZWDuCMirK8FbNY6BVCAPgfophwRO5EYlMuSu55F/Tsabszf/zDzX5uD8MKPmYL/xAzeSTCNZCDbBlJWjwvdecqWXUj5JU46jEHkoMx24SqB5r95fLa95sAbZuwPo4wFJJLrOa5Nofza4JrOa10jSKvBuyPg6ysOsYrHboZ9dHFm7e8iQiXvsQ4NzA9YHApcZZObUcWLWsA8HkCcCCYvGNgCwsK75XQR7/Bw==&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+ <em>Tipper FIS</em> </center><p >5 membership functions for the inputs</p>
+<ol type="1">
+<li>(service)poor : A <em>gaussian</em> membership function with spread of <code>1.5</code> and center on <code>0</code> </li>
+<li>(service)good : A <em>gaussian</em> membership function with spread of <code>1.5</code> and center on <code>5</code> </li>
+<li>(service)excelent : A <em>gaussian</em> membership function with spread of <code>1.5</code> and center on <code>10</code> </li>
+<li>(food)rancid : A <em>trapezoidal</em> membership function with points located on <code> [0 0 1 3] </code></li>
+<li>(food)delicious : A <em>trapezoidal</em> membership function with points located on <code> [7 9 10 10] </code></li>
+</ol>
+<p >and 3 membership functions for the output</p>
+<ol type="1">
+<li>(tip)cheap : A <em>triangular</em> membership function with points located on <code> [0 5 10] </code></li>
+<li>(tip)average : A <em>triangular</em> membership function with points located on <code> [10 15 20] </code></li>
+<li>(tip)generous : A <em>triangular</em> membership function with points located on <code> [20 25 30] </code></li>
+</ol>
+<center>  
+<!DOCTYPE html>
+<html>
+<head>
+<title>tippermfs</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-31T01:03:46.138Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\&quot; etag=\&quot;2-IGhcoIFnCwtGoDrFKq\&quot; version=\&quot;20.5.1\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;TkKrG8LqcgTcTKjQ6oiX\&quot; name=\&quot;Página-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+ <em>Membership functions for the tipper FIS</em> </center><p >To build the fuzzy system, you must first instantiate an abstract object of type qFIS_t that represents the fuzzy inference system, then the input and output vectors, fuzzy set vectors for inputs and outputs, and enumerations with the tags for all of them. Let's take a look :</p>
+<div class="fragment"><div class="line"><span class="comment">// FIS Object</span></div>
+<div class="line"><span class="keyword">static</span> qFIS_t tipper;</div>
+<div class="line"><span class="comment">// I/O Fuzzy Objects</span></div>
+<div class="line"><span class="keyword">static</span> qFIS_Input_t tipper_inputs[ 2 ];</div>
+<div class="line"><span class="keyword">static</span> qFIS_Output_t tipper_outputs[ 1 ];</div>
+<div class="line"><span class="comment">// I/O Membership Objects</span></div>
+<div class="line"><span class="keyword">static</span> qFIS_MF_t MFin[5], MFout[3];</div>
+<div class="line"><span class="comment">// I/O Names</span></div>
+<div class="line"><span class="keyword">enum</span> { service, food};</div>
+<div class="line"><span class="keyword">enum</span> { tip};</div>
+<div class="line"><span class="comment">// I/O Membership functions tags</span></div>
+<div class="line"><span class="keyword">enum</span> { service_poor, service_good, service_excellent, food_rancid, food_delicious};</div>
+<div class="line"><span class="keyword">enum</span> { tip_cheap, tip_average, tip_generous};</div>
+</div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Please note that all tag names are unique.</dd></dl>
+<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type qFIS_Rules_t and the contents should be rules constructed with the provided statements:</p>
+<ul>
+<li>QFIS_RULES_BEGIN to start the rules set</li>
+<li>QFIS_RULES_END to end the rules set</li>
+<li>IF to start a rule sentence</li>
+<li>END to end a rule sentence</li>
+<li>AND and OR fuzzy connectors</li>
+<li>IS and IS_NOT to represent a premise and a negated premise respectively.</li>
+<li>THEN to represent the implication</li>
+</ul>
+<p >Let's apply some of these statements to build the rule set.</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> qFIS_Rules_t rules[] = { </div>
+<div class="line">    QFIS_RULES_BEGIN</div>
+<div class="line">       IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END</div>
+<div class="line">       IF service IS service_good THEN tip IS tip_average END</div>
+<div class="line">       IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END</div>
+<div class="line">    QFIS_RULES_END</div>
+<div class="line">};</div>
+</div><!-- fragment --><p >Additionally, we also need to define a vector where the firing strength of each rule will be stored. The size of the vector will be the number of rules. In this particular case, there will be only three.</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">float</span> rulesStrength[ 3 ];</div>
+</div><!-- fragment --><p >Once all the necessary elements have been defined, we can proceed to the construction of the fuzzy system. First, we must configure the inputs and outputs by setting the ranges of each. For this, we will use the qFIS_InputSetup() and qFIS_OutputSetup() functions as follows:</p>
+<div class="fragment"><div class="line">qFIS_InputSetup( tipper_inputs, service, 0.0f, 10.0f );</div>
+<div class="line">qFIS_InputSetup( tipper_inputs, food, 0.0f, 10.0f );</div>
+<div class="line">qFIS_OutputSetup( tipper_outputs, tip, 0.0f, 30.0f );</div>
+</div><!-- fragment --><p >Then, let's define the parameters of all the membership functions:</p>
+<div class="fragment"><div class="line"><span class="comment">/*Parameters of the membership functions*/</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_poor_p[] = { 1.5f, 0.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_good_p[] = { 1.5f, 5.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_excellent_p[] = { 1.5f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_rancid_p[] = { 0.0f, 0.0f, 1.0f, 3.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_delicious_p[] = { 7.0f, 9.0f, 10.0f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_cheap_p[] = { 0.0f, 5.0f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_average_p[] = { 10.0f, 15.0f, 20.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_generous_p[] = { 20.0f, 25.0f, 30.0f }</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The number of parameters may vary depending on the shape of the membership function.</dd></dl>
+<p>the next step is to configure the membership functions by relating I/O, tags, shape and parameters one by one by using the qFIS_SetMF() API as follows:</p>
+<div class="fragment"><div class="line"><span class="comment">/* setup membership functions for the inputs */</span></div>
+<div class="line">qFIS_SetMF( MFin, service, service_poor, gaussmf, NULL, service_poor_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, service, service_good, gaussmf, NULL, service_good_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, service, service_excellent, gaussmf, NULL, service_excellent_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, food, food_rancid, trapmf, NULL, food_rancid_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFin, food, food_delicious, trapmf, NULL, food_delicious_p, 1.0f );</div>
+<div class="line"><span class="comment">/* setup membership functions for the outputs */</span></div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_cheap, trimf, NULL, tip_cheap_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_average, trimf, NULL, tip_average_p, 1.0f );</div>
+<div class="line">qFIS_SetMF( MFout, tip, tip_generous, trimf, NULL, tip_generous_p, 1.0f );</div>
+</div><!-- fragment --><p >Finally, we only have to configure the instance that represents the fuzzy system using the qFIS_Setup() API:</p>
+<div class="fragment"><div class="line"><span class="comment">/*Parameters of the membership functions*/</span></div>
+<div class="line">qFIS_Setup( &amp;tipper, Mamdani,</div>
+<div class="line">            tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
+<div class="line">            tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
+<div class="line">            MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>
+<div class="line">            rules, rStrength, 3u );</div>
+</div><!-- fragment --><h1><a class="anchor" id="qfis_eval"></a>
+Evaluating a Fuzzy Inference System</h1>
+<p >If we already have a fuzzy system configured with qFIS_Setup(), we can evaluate it by using qFIS_Fuzzify(), qFIS_Inference() and qFIS_DeFuzzify(). Input values can be set with qFIS_SetInput() and output values can be obtained with qFIS_GetOutput()</p>
+<p >To show its use, first we are going to put everything together in a single code snippet and we are going to create two functions, <code>tipper_init()</code> and <code>tipper_run()</code> that will be in charge of setting up the fuzzy inference system and evaluating it respectively.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;tipper_fis.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;qfis.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// FIS Object</span></div>
+<div class="line"><span class="keyword">static</span> qFIS_t tipper;</div>
+<div class="line"><span class="comment">// I/O Fuzzy Objects </span></div>
+<div class="line"><span class="keyword">static</span> qFIS_Input_t tipper_inputs[ 2 ];</div>
+<div class="line"><span class="keyword">static</span> qFIS_Output_t tipper_outputs[ 1 ];</div>
+<div class="line"><span class="comment">// I/O Membership Objects </span></div>
+<div class="line"><span class="keyword">static</span> qFIS_MF_t MFin[ 5 ], MFout[ 3 ];</div>
+<div class="line"><span class="comment">// I/O Names </span></div>
+<div class="line"><span class="keyword">enum</span> { service, food };</div>
+<div class="line"><span class="keyword">enum</span> { tip };</div>
+<div class="line"><span class="comment">// I/O Membership functions tags </span></div>
+<div class="line"><span class="keyword">enum</span> { service_poor, service_good, service_excellent, food_rancid, food_delicious };</div>
+<div class="line"><span class="keyword">enum</span> { tip_cheap, tip_average, tip_generous };</div>
+<div class="line"><span class="comment">// Rules of the inference system</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> qFIS_Rules_t rules[] = { </div>
+<div class="line">    QFIS_RULES_BEGIN</div>
+<div class="line">       IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END</div>
+<div class="line">       IF service IS service_good THEN tip IS tip_average END</div>
+<div class="line">       IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END</div>
+<div class="line">    QFIS_RULES_END</div>
+<div class="line">};</div>
+<div class="line"><span class="comment">//Rule strengths</span></div>
+<div class="line"><span class="keywordtype">float</span> rStrength[ 3 ] = { 0.0f };</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Parameters of the membership functions</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_poor_p[] = { 1.5f, 0.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_good_p[] = { 1.5f, 5.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_excellent_p[] = { 1.5f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_rancid_p[] = { 0.0f, 0.0f, 1.0f, 3.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_delicious_p[] = { 7.0f, 9.0f, 10.0f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_cheap_p[] = { 0.0f, 5.0f, 10.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_average_p[] = { 10.0f, 15.0f, 20.0f };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_generous_p[] = { 20.0f, 25.0f, 30.0f };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> tipper_init( <span class="keywordtype">void</span> )</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Set inputs </span></div>
+<div class="line">    qFIS_InputSetup( tipper_inputs, service, 0.0f, 10.0f );</div>
+<div class="line">    qFIS_InputSetup( tipper_inputs, food, 0.0f, 10.0f );</div>
+<div class="line">    qFIS_OutputSetup( tipper_outputs, tip, 0.0f, 30.0f );</div>
+<div class="line">    <span class="comment">// Set membership functions for the inputs</span></div>
+<div class="line">    qFIS_SetMF( MFin, service, service_poor, gaussmf, NULL, service_poor_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, service, service_good, gaussmf, NULL, service_good_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, service, service_excellent, gaussmf, NULL, service_excellent_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, food, food_rancid, trapmf, NULL, food_rancid_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFin, food, food_delicious, trapmf, NULL, food_delicious_p, 1.0f );</div>
+<div class="line">    <span class="comment">// Set membership functions for the outputs</span></div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_cheap, trimf, NULL, tip_cheap_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_average, trimf, NULL, tip_average_p, 1.0f );</div>
+<div class="line">    qFIS_SetMF( MFout, tip, tip_generous, trimf, NULL, tip_generous_p, 1.0f );</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Configure the Inference System</span></div>
+<div class="line">    qFIS_Setup( &amp;tipper, Mamdani,</div>
+<div class="line">                tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
+<div class="line">                tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
+<div class="line">                MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>
+<div class="line">                rules, rStrength, 3u );</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> tipper_run( <span class="keywordtype">float</span> *inputs, <span class="keywordtype">float</span> *outputs )</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Set the crips inputs</span></div>
+<div class="line">    qFIS_SetInput( tipper_inputs, service, inputs[ service ] );</div>
+<div class="line">    qFIS_SetInput( tipper_inputs, food, inputs[ food ] );</div>
+<div class="line"> </div>
+<div class="line">    qFIS_Fuzzify( &amp;tipper );</div>
+<div class="line">    <span class="keywordflow">if</span> ( qFIS_Inference( &amp;tipper ) &gt; 0 ) {</div>
+<div class="line">        qFIS_DeFuzzify( &amp;tipper );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="comment">// Error!</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Get the crips outputs</span></div>
+<div class="line">    outputs[ tip ] = qFIS_GetOutput( tipper_outputs, tip );</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="qfis_codegen"></a>
+Code generation</h1>
+<p >Building a fuzzy system in code can become tedious, especially when you want to tune membership function parameters. It would be appropriate to have a graphical tool that reflects the changes made by each tweak.</p>
+<p >Although the qFIS engine does not provide such a tool, a well-known tool, MATLAB's Fuzzy Logic Toolbox, can be used to build the fuzzy system and generate qFIS-compatible C code. qLibs provides a MATLAB command that can be used to take a FIS object generated by that tool and generate C code based on the qFIS engine.</p>
+<p >Download the C-Code generator here:</p>
+<p ><a href="https://la.mathworks.com/matlabcentral/fileexchange/117465-qfiscgen-fuzzy-c-code-generator-for-embedded-systems"><img src="https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg" alt="" style="pointer-events: none;" class="inline"/></a> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="index.html">qLibs</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: fp16 Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classqlibs_1_1fp16.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
+  <div class="headertitle"><div class="title">fp16 Class Reference<div class="ingroups"><a class="el" href="group__qfp16.html">qFP16</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fixed-point Q16.16 type with width of exactly 32 bits.  
+ <a href="classqlibs_1_1fp16.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae74b19c83c372c8e08028a9fdc16481a"><td class="memItemLeft" align="right" valign="top"><a id="ae74b19c83c372c8e08028a9fdc16481a" name="ae74b19c83c372c8e08028a9fdc16481a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>fp16</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other)</td></tr>
+<tr class="separator:ae74b19c83c372c8e08028a9fdc16481a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8af38a2c755f9c80c08a13d152c74d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a8c8af38a2c755f9c80c08a13d152c74d">isOverflow</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a8c8af38a2c755f9c80c08a13d152c74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for (q16.16) fixed-point overflow.  <a href="classqlibs_1_1fp16.html#a8c8af38a2c755f9c80c08a13d152c74d">More...</a><br /></td></tr>
+<tr class="separator:a8c8af38a2c755f9c80c08a13d152c74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58378c91a77c8e7d3aa894b79ba39d30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a58378c91a77c8e7d3aa894b79ba39d30">isExpMax</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a58378c91a77c8e7d3aa894b79ba39d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for (q16.16) fixed-point fp16::exp() operation reaches the <code>EXP_MAX</code> value.  <a href="classqlibs_1_1fp16.html#a58378c91a77c8e7d3aa894b79ba39d30">More...</a><br /></td></tr>
+<tr class="separator:a58378c91a77c8e7d3aa894b79ba39d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19fa5babf75d1fc1a6b61b66e22f122e"><td class="memItemLeft" align="right" valign="top">fp16Raw_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a19fa5babf75d1fc1a6b61b66e22f122e">raw</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a19fa5babf75d1fc1a6b61b66e22f122e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the (q16.16) raw integer value from x.  <a href="classqlibs_1_1fp16.html#a19fa5babf75d1fc1a6b61b66e22f122e">More...</a><br /></td></tr>
+<tr class="separator:a19fa5babf75d1fc1a6b61b66e22f122e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77d7736c551468e8e1694acc6c61526"><td class="memItemLeft" align="right" valign="top"><a id="ae77d7736c551468e8e1694acc6c61526" name="ae77d7736c551468e8e1694acc6c61526"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:ae77d7736c551468e8e1694acc6c61526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93113b3e92fe60b21b7c2daf38e562db"><td class="memItemLeft" align="right" valign="top"><a id="a93113b3e92fe60b21b7c2daf38e562db" name="a93113b3e92fe60b21b7c2daf38e562db"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:a93113b3e92fe60b21b7c2daf38e562db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b693b33fcfb10f12634eab04d5decb"><td class="memItemLeft" align="right" valign="top"><a id="ae2b693b33fcfb10f12634eab04d5decb" name="ae2b693b33fcfb10f12634eab04d5decb"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> () const noexcept</td></tr>
+<tr class="separator:ae2b693b33fcfb10f12634eab04d5decb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876b295040a8e87b6723317c651c6c6a"><td class="memItemLeft" align="right" valign="top"><a id="a876b295040a8e87b6723317c651c6c6a" name="a876b295040a8e87b6723317c651c6c6a"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:a876b295040a8e87b6723317c651c6c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004fa85beff36ad473eae3dacc06ef91"><td class="memItemLeft" align="right" valign="top"><a id="a004fa85beff36ad473eae3dacc06ef91" name="a004fa85beff36ad473eae3dacc06ef91"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:a004fa85beff36ad473eae3dacc06ef91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad046358ddc70a1b975b50ec3d1831a34"><td class="memItemLeft" align="right" valign="top"><a id="ad046358ddc70a1b975b50ec3d1831a34" name="ad046358ddc70a1b975b50ec3d1831a34"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:ad046358ddc70a1b975b50ec3d1831a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a56cb2324c02a8736a94f7badf0264c"><td class="memItemLeft" align="right" valign="top"><a id="a3a56cb2324c02a8736a94f7badf0264c" name="a3a56cb2324c02a8736a94f7badf0264c"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:a3a56cb2324c02a8736a94f7badf0264c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7699e185f6095a4b3750c89ff465452a"><td class="memItemLeft" align="right" valign="top"><a id="a7699e185f6095a4b3750c89ff465452a" name="a7699e185f6095a4b3750c89ff465452a"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:a7699e185f6095a4b3750c89ff465452a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af117934a9ad5bd20555414e041fdfb8e"><td class="memItemLeft" align="right" valign="top"><a id="af117934a9ad5bd20555414e041fdfb8e" name="af117934a9ad5bd20555414e041fdfb8e"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:af117934a9ad5bd20555414e041fdfb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f4afe3f7f544f0dc09d82dcb3847179"><td class="memItemLeft" align="right" valign="top"><a id="a7f4afe3f7f544f0dc09d82dcb3847179" name="a7f4afe3f7f544f0dc09d82dcb3847179"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> () noexcept</td></tr>
+<tr class="separator:a7f4afe3f7f544f0dc09d82dcb3847179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2d801dcf4664a7e62ef1e9be8c8053"><td class="memItemLeft" align="right" valign="top"><a id="acb2d801dcf4664a7e62ef1e9be8c8053" name="acb2d801dcf4664a7e62ef1e9be8c8053"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int) noexcept</td></tr>
+<tr class="separator:acb2d801dcf4664a7e62ef1e9be8c8053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad636d766c4e659763fd12e18ce054025"><td class="memItemLeft" align="right" valign="top"><a id="ad636d766c4e659763fd12e18ce054025" name="ad636d766c4e659763fd12e18ce054025"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> () noexcept</td></tr>
+<tr class="separator:ad636d766c4e659763fd12e18ce054025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eadb150cadf60d1161db665f39a40e0"><td class="memItemLeft" align="right" valign="top"><a id="a4eadb150cadf60d1161db665f39a40e0" name="a4eadb150cadf60d1161db665f39a40e0"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> (int) noexcept</td></tr>
+<tr class="separator:a4eadb150cadf60d1161db665f39a40e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2bba78ea2088076d90373501d89330f"><td class="memItemLeft" align="right" valign="top"><a id="aa2bba78ea2088076d90373501d89330f" name="aa2bba78ea2088076d90373501d89330f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:aa2bba78ea2088076d90373501d89330f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6c5b5a7af5300faebfe6bb258d6284"><td class="memItemLeft" align="right" valign="top"><a id="a4b6c5b5a7af5300faebfe6bb258d6284" name="a4b6c5b5a7af5300faebfe6bb258d6284"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a4b6c5b5a7af5300faebfe6bb258d6284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9c92a3b26abca69a5e1872e1b4641e"><td class="memItemLeft" align="right" valign="top"><a id="a6f9c92a3b26abca69a5e1872e1b4641e" name="a6f9c92a3b26abca69a5e1872e1b4641e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a6f9c92a3b26abca69a5e1872e1b4641e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292e7a06ffd4cc8235e8fc4ad7e6c7f7"><td class="memItemLeft" align="right" valign="top"><a id="a292e7a06ffd4cc8235e8fc4ad7e6c7f7" name="a292e7a06ffd4cc8235e8fc4ad7e6c7f7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a292e7a06ffd4cc8235e8fc4ad7e6c7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5879f86c7f0258879238077a672e74"><td class="memItemLeft" align="right" valign="top"><a id="a6d5879f86c7f0258879238077a672e74" name="a6d5879f86c7f0258879238077a672e74"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a6d5879f86c7f0258879238077a672e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac2b7a0348341ca054d04c01d15a585"><td class="memItemLeft" align="right" valign="top"><a id="a8ac2b7a0348341ca054d04c01d15a585" name="a8ac2b7a0348341ca054d04c01d15a585"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a8ac2b7a0348341ca054d04c01d15a585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb0c856eaaeb4f53d40e017c0330f3c"><td class="memItemLeft" align="right" valign="top"><a id="a0bb0c856eaaeb4f53d40e017c0330f3c" name="a0bb0c856eaaeb4f53d40e017c0330f3c"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (int x) noexcept</td></tr>
+<tr class="separator:a0bb0c856eaaeb4f53d40e017c0330f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0b19be80f62fdef67ab8c3e1ef5ccb"><td class="memItemLeft" align="right" valign="top"><a id="a3b0b19be80f62fdef67ab8c3e1ef5ccb" name="a3b0b19be80f62fdef67ab8c3e1ef5ccb"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (float x) noexcept</td></tr>
+<tr class="separator:a3b0b19be80f62fdef67ab8c3e1ef5ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11db0553f8adbce506162656b960daa6"><td class="memItemLeft" align="right" valign="top"><a id="a11db0553f8adbce506162656b960daa6" name="a11db0553f8adbce506162656b960daa6"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (double x) noexcept</td></tr>
+<tr class="separator:a11db0553f8adbce506162656b960daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9b360b3cbbcb926b5625e9e98f914c"><td class="memItemLeft" align="right" valign="top"><a id="add9b360b3cbbcb926b5625e9e98f914c" name="add9b360b3cbbcb926b5625e9e98f914c"></a>
+<a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;other) noexcept</td></tr>
+<tr class="separator:add9b360b3cbbcb926b5625e9e98f914c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a0523dacdb76f67e89f9ea3d4e5f1c5a5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a0523dacdb76f67e89f9ea3d4e5f1c5a5">toInt</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a0523dacdb76f67e89f9ea3d4e5f1c5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point value <em>x</em> converted to int.  <a href="classqlibs_1_1fp16.html#a0523dacdb76f67e89f9ea3d4e5f1c5a5">More...</a><br /></td></tr>
+<tr class="separator:a0523dacdb76f67e89f9ea3d4e5f1c5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc872dc60ee9878f41c5c0bcfed19f0a"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#afc872dc60ee9878f41c5c0bcfed19f0a">toFloat</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:afc872dc60ee9878f41c5c0bcfed19f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point value <em>x</em> converted to float.  <a href="classqlibs_1_1fp16.html#afc872dc60ee9878f41c5c0bcfed19f0a">More...</a><br /></td></tr>
+<tr class="separator:afc872dc60ee9878f41c5c0bcfed19f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56eeb841d42785abf40fad66c47e3f56"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a56eeb841d42785abf40fad66c47e3f56">toDouble</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a56eeb841d42785abf40fad66c47e3f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point value <em>x</em> converted to double.  <a href="classqlibs_1_1fp16.html#a56eeb841d42785abf40fad66c47e3f56">More...</a><br /></td></tr>
+<tr class="separator:a56eeb841d42785abf40fad66c47e3f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b36a6b13591ba645d456a39639a752"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a89b36a6b13591ba645d456a39639a752">from</a> (const int x) noexcept</td></tr>
+<tr class="memdesc:a89b36a6b13591ba645d456a39639a752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the int value <em>x</em> converted to fixed-point q16.16.  <a href="classqlibs_1_1fp16.html#a89b36a6b13591ba645d456a39639a752">More...</a><br /></td></tr>
+<tr class="separator:a89b36a6b13591ba645d456a39639a752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af441621f285f6f63b84505834c3e7b4f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#af441621f285f6f63b84505834c3e7b4f">from</a> (const float x) noexcept</td></tr>
+<tr class="memdesc:af441621f285f6f63b84505834c3e7b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the float value <em>x</em> converted to fixed-point q16.16.  <a href="classqlibs_1_1fp16.html#af441621f285f6f63b84505834c3e7b4f">More...</a><br /></td></tr>
+<tr class="separator:af441621f285f6f63b84505834c3e7b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c87a6e9a809a5eb46be90182dbf575"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a82c87a6e9a809a5eb46be90182dbf575">from</a> (const double x) noexcept</td></tr>
+<tr class="memdesc:a82c87a6e9a809a5eb46be90182dbf575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the double value <em>x</em> converted to fixed-point q16.16.  <a href="classqlibs_1_1fp16.html#a82c87a6e9a809a5eb46be90182dbf575">More...</a><br /></td></tr>
+<tr class="separator:a82c87a6e9a809a5eb46be90182dbf575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12aad1994a73ce618efeb9c33d3c4640"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a12aad1994a73ce618efeb9c33d3c4640">floor</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a12aad1994a73ce618efeb9c33d3c4640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the largest integer value less than or equal to <em>x</em>.  <a href="classqlibs_1_1fp16.html#a12aad1994a73ce618efeb9c33d3c4640">More...</a><br /></td></tr>
+<tr class="separator:a12aad1994a73ce618efeb9c33d3c4640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b4579da265a0efefacb33a00f9a649"><td class="memItemLeft" align="right" valign="top"><a id="a70b4579da265a0efefacb33a00f9a649" name="a70b4579da265a0efefacb33a00f9a649"></a>
+static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ceil</b> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="separator:a70b4579da265a0efefacb33a00f9a649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1614d483a9a2002a1640795d225517cd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a1614d483a9a2002a1640795d225517cd">round</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a1614d483a9a2002a1640795d225517cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the nearest integer value of the fixed-point argument <em>x</em>.  <a href="classqlibs_1_1fp16.html#a1614d483a9a2002a1640795d225517cd">More...</a><br /></td></tr>
+<tr class="separator:a1614d483a9a2002a1640795d225517cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2d906737ca664e514ecb3dd797803e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#aba2d906737ca664e514ecb3dd797803e">abs</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:aba2d906737ca664e514ecb3dd797803e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of <em>x</em>.  <a href="classqlibs_1_1fp16.html#aba2d906737ca664e514ecb3dd797803e">More...</a><br /></td></tr>
+<tr class="separator:aba2d906737ca664e514ecb3dd797803e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab312bf8a40ff582890423064c35d3c28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#ab312bf8a40ff582890423064c35d3c28">sqrt</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:ab312bf8a40ff582890423064c35d3c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point square root of <em>x</em>.  <a href="classqlibs_1_1fp16.html#ab312bf8a40ff582890423064c35d3c28">More...</a><br /></td></tr>
+<tr class="separator:ab312bf8a40ff582890423064c35d3c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37bd26b17a0bad9fc3c940303c9df21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#ad37bd26b17a0bad9fc3c940303c9df21">exp</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:ad37bd26b17a0bad9fc3c940303c9df21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point value of e raised to the xth power.  <a href="classqlibs_1_1fp16.html#ad37bd26b17a0bad9fc3c940303c9df21">More...</a><br /></td></tr>
+<tr class="separator:ad37bd26b17a0bad9fc3c940303c9df21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5be363de4f0805a3681aa8c05f38332"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#ac5be363de4f0805a3681aa8c05f38332">log</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:ac5be363de4f0805a3681aa8c05f38332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point natural logarithm (base-e logarithm) of <em>x</em>.  <a href="classqlibs_1_1fp16.html#ac5be363de4f0805a3681aa8c05f38332">More...</a><br /></td></tr>
+<tr class="separator:ac5be363de4f0805a3681aa8c05f38332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d452e80888b234730173c1ad0dab99d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a4d452e80888b234730173c1ad0dab99d">log2</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a4d452e80888b234730173c1ad0dab99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the fixed-point log base 2 of <em>x</em>.  <a href="classqlibs_1_1fp16.html#a4d452e80888b234730173c1ad0dab99d">More...</a><br /></td></tr>
+<tr class="separator:a4d452e80888b234730173c1ad0dab99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e32839dc818c03213e2bbebf46904f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#ab3e32839dc818c03213e2bbebf46904f">radToDeg</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:ab3e32839dc818c03213e2bbebf46904f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts angle units from radians to degrees.  <a href="classqlibs_1_1fp16.html#ab3e32839dc818c03213e2bbebf46904f">More...</a><br /></td></tr>
+<tr class="separator:ab3e32839dc818c03213e2bbebf46904f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6fe3e1c58f845bcce36f3ad269ba8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#adb6fe3e1c58f845bcce36f3ad269ba8a">degToRad</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:adb6fe3e1c58f845bcce36f3ad269ba8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts angle units from degrees to radians.  <a href="classqlibs_1_1fp16.html#adb6fe3e1c58f845bcce36f3ad269ba8a">More...</a><br /></td></tr>
+<tr class="separator:adb6fe3e1c58f845bcce36f3ad269ba8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd4afd1bc989e17ceb79f29084232d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a3bd4afd1bc989e17ceb79f29084232d6">wrapToPi</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a3bd4afd1bc989e17ceb79f29084232d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap the fixed-point angle in radians to [−pi pi].  <a href="classqlibs_1_1fp16.html#a3bd4afd1bc989e17ceb79f29084232d6">More...</a><br /></td></tr>
+<tr class="separator:a3bd4afd1bc989e17ceb79f29084232d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5678c90a68c1b1e8176b973ae3b432b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a5678c90a68c1b1e8176b973ae3b432b3">wrapTo180</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a5678c90a68c1b1e8176b973ae3b432b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap the fixed-point angle in degrees to [−180 180].  <a href="classqlibs_1_1fp16.html#a5678c90a68c1b1e8176b973ae3b432b3">More...</a><br /></td></tr>
+<tr class="separator:a5678c90a68c1b1e8176b973ae3b432b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cfdf6fea4397d149a34d15da9cb16e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a39cfdf6fea4397d149a34d15da9cb16e">sin</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a39cfdf6fea4397d149a34d15da9cb16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point sine of the radian angle <em>x</em>.  <a href="classqlibs_1_1fp16.html#a39cfdf6fea4397d149a34d15da9cb16e">More...</a><br /></td></tr>
+<tr class="separator:a39cfdf6fea4397d149a34d15da9cb16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfef1a1513fea76b6f451d04facd3a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a0dfef1a1513fea76b6f451d04facd3a5">cos</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a0dfef1a1513fea76b6f451d04facd3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point cosine of the radian angle <em>x</em>.  <a href="classqlibs_1_1fp16.html#a0dfef1a1513fea76b6f451d04facd3a5">More...</a><br /></td></tr>
+<tr class="separator:a0dfef1a1513fea76b6f451d04facd3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880ba98ab185371a3e9ca37902eb114d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a880ba98ab185371a3e9ca37902eb114d">tan</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a880ba98ab185371a3e9ca37902eb114d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point tangent of the radian angle <em>x</em>.  <a href="classqlibs_1_1fp16.html#a880ba98ab185371a3e9ca37902eb114d">More...</a><br /></td></tr>
+<tr class="separator:a880ba98ab185371a3e9ca37902eb114d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6980e8c30b58462a29a87da4ca946b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a0b6980e8c30b58462a29a87da4ca946b">atan2</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;y, const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a0b6980e8c30b58462a29a87da4ca946b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point arc tangent in radians of <em>y</em> / <em>x</em> based on the signs of both values to determine the correct quadrant.  <a href="classqlibs_1_1fp16.html#a0b6980e8c30b58462a29a87da4ca946b">More...</a><br /></td></tr>
+<tr class="separator:a0b6980e8c30b58462a29a87da4ca946b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbb2402ff67e1492d88a1c08c869a32"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#acdbb2402ff67e1492d88a1c08c869a32">atan</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:acdbb2402ff67e1492d88a1c08c869a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point arc tangent of <em>x</em> in radians.  <a href="classqlibs_1_1fp16.html#acdbb2402ff67e1492d88a1c08c869a32">More...</a><br /></td></tr>
+<tr class="separator:acdbb2402ff67e1492d88a1c08c869a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26aef76a5edfe3e233f36e1a9f76094c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a26aef76a5edfe3e233f36e1a9f76094c">asin</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a26aef76a5edfe3e233f36e1a9f76094c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point arc sine of <em>x</em> in radians.  <a href="classqlibs_1_1fp16.html#a26aef76a5edfe3e233f36e1a9f76094c">More...</a><br /></td></tr>
+<tr class="separator:a26aef76a5edfe3e233f36e1a9f76094c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b1cb97e81403bf1594b4238b522c41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a90b1cb97e81403bf1594b4238b522c41">acos</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a90b1cb97e81403bf1594b4238b522c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point arc cosine of <em>x</em> in radians.  <a href="classqlibs_1_1fp16.html#a90b1cb97e81403bf1594b4238b522c41">More...</a><br /></td></tr>
+<tr class="separator:a90b1cb97e81403bf1594b4238b522c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb820c6e47115f58b2f4fecc27e2e3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a5cb820c6e47115f58b2f4fecc27e2e3b">cosh</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a5cb820c6e47115f58b2f4fecc27e2e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point hyperbolic cosine of <em>x</em>.  <a href="classqlibs_1_1fp16.html#a5cb820c6e47115f58b2f4fecc27e2e3b">More...</a><br /></td></tr>
+<tr class="separator:a5cb820c6e47115f58b2f4fecc27e2e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa6007d78f54381acb8af0947373201"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a4fa6007d78f54381acb8af0947373201">sinh</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a4fa6007d78f54381acb8af0947373201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point hyperbolic sine of <em>x</em>.  <a href="classqlibs_1_1fp16.html#a4fa6007d78f54381acb8af0947373201">More...</a><br /></td></tr>
+<tr class="separator:a4fa6007d78f54381acb8af0947373201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7279d316e6b8c2bd5906d8ac93a2a7bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a7279d316e6b8c2bd5906d8ac93a2a7bb">tanh</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x) noexcept</td></tr>
+<tr class="memdesc:a7279d316e6b8c2bd5906d8ac93a2a7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the fixed-point hyperbolic tangent of <em>x</em>.  <a href="classqlibs_1_1fp16.html#a7279d316e6b8c2bd5906d8ac93a2a7bb">More...</a><br /></td></tr>
+<tr class="separator:a7279d316e6b8c2bd5906d8ac93a2a7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c508732a1ebe345a9827f8199225a35"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#a9c508732a1ebe345a9827f8199225a35">pow</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x, const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;y) noexcept</td></tr>
+<tr class="memdesc:a9c508732a1ebe345a9827f8199225a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <em>x</em> raised to the power of <em>y</em>. (x^y)  <a href="classqlibs_1_1fp16.html#a9c508732a1ebe345a9827f8199225a35">More...</a><br /></td></tr>
+<tr class="separator:a9c508732a1ebe345a9827f8199225a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bf0beb2d156fb569fb1b306622777e"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html#ae3bf0beb2d156fb569fb1b306622777e">toASCII</a> (const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;x, char *str, int decimals) noexcept</td></tr>
+<tr class="memdesc:ae3bf0beb2d156fb569fb1b306622777e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the fixed-point value to a formatted string.  <a href="classqlibs_1_1fp16.html#ae3bf0beb2d156fb569fb1b306622777e">More...</a><br /></td></tr>
+<tr class="separator:ae3bf0beb2d156fb569fb1b306622777e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a9c1228e71b6c18530940ca74783cd864"><td class="memItemLeft" align="right" valign="top"><a id="a9c1228e71b6c18530940ca74783cd864" name="a9c1228e71b6c18530940ca74783cd864"></a>
+constexpr friend <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator&quot;&quot;_fp</b> (long double val)</td></tr>
+<tr class="separator:a9c1228e71b6c18530940ca74783cd864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3978e8f23b5b68325268c1d22663bc7"><td class="memItemLeft" align="right" valign="top"><a id="ae3978e8f23b5b68325268c1d22663bc7" name="ae3978e8f23b5b68325268c1d22663bc7"></a>
+constexpr friend <a class="el" href="classqlibs_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator&quot;&quot;_fp</b> (unsigned long long val)</td></tr>
+<tr class="separator:ae3978e8f23b5b68325268c1d22663bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Fixed-point Q16.16 type with width of exactly 32 bits. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aba2d906737ca664e514ecb3dd797803e" name="aba2d906737ca664e514ecb3dd797803e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2d906737ca664e514ecb3dd797803e">&#9670;&nbsp;</a></span>abs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> abs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the absolute value of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the absolute value of x. </dd></dl>
+
+</div>
+</div>
+<a id="a90b1cb97e81403bf1594b4238b522c41" name="a90b1cb97e81403bf1594b4238b522c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b1cb97e81403bf1594b4238b522c41">&#9670;&nbsp;</a></span>acos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> acos </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point arc cosine of <em>x</em> in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns arc cosine of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a26aef76a5edfe3e233f36e1a9f76094c" name="a26aef76a5edfe3e233f36e1a9f76094c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26aef76a5edfe3e233f36e1a9f76094c">&#9670;&nbsp;</a></span>asin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> asin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point arc sine of <em>x</em> in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns arc sine of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="acdbb2402ff67e1492d88a1c08c869a32" name="acdbb2402ff67e1492d88a1c08c869a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdbb2402ff67e1492d88a1c08c869a32">&#9670;&nbsp;</a></span>atan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> atan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point arc tangent of <em>x</em> in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns arc tangent of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a0b6980e8c30b58462a29a87da4ca946b" name="a0b6980e8c30b58462a29a87da4ca946b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6980e8c30b58462a29a87da4ca946b">&#9670;&nbsp;</a></span>atan2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> atan2 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point arc tangent in radians of <em>y</em> / <em>x</em> based on the signs of both values to determine the correct quadrant. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The fixed-point(q16.16) value representing an x-coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the principal arc tangent of y/x, in the interval [-pi,+pi] radians. </dd></dl>
+
+</div>
+</div>
+<a id="a0dfef1a1513fea76b6f451d04facd3a5" name="a0dfef1a1513fea76b6f451d04facd3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfef1a1513fea76b6f451d04facd3a5">&#9670;&nbsp;</a></span>cos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> cos </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point cosine of the radian angle <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns cosine of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a5cb820c6e47115f58b2f4fecc27e2e3b" name="a5cb820c6e47115f58b2f4fecc27e2e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb820c6e47115f58b2f4fecc27e2e3b">&#9670;&nbsp;</a></span>cosh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> cosh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point hyperbolic cosine of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns hyperbolic cosine of <em>x</em>. If overflow detected returns <code>overflow</code>. If the function saturates, returns <code>EXP_MAX</code> or <code>EXP_MIN</code>. </dd></dl>
+
+</div>
+</div>
+<a id="adb6fe3e1c58f845bcce36f3ad269ba8a" name="adb6fe3e1c58f845bcce36f3ad269ba8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6fe3e1c58f845bcce36f3ad269ba8a">&#9670;&nbsp;</a></span>degToRad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> degToRad </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts angle units from degrees to radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the angle converted in radians. </dd></dl>
+
+</div>
+</div>
+<a id="ad37bd26b17a0bad9fc3c940303c9df21" name="ad37bd26b17a0bad9fc3c940303c9df21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37bd26b17a0bad9fc3c940303c9df21">&#9670;&nbsp;</a></span>exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> exp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point value of e raised to the xth power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the exponential value of x. <code>overflow</code> when an operation overflow is detected. </dd></dl>
+
+</div>
+</div>
+<a id="a12aad1994a73ce618efeb9c33d3c4640" name="a12aad1994a73ce618efeb9c33d3c4640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12aad1994a73ce618efeb9c33d3c4640">&#9670;&nbsp;</a></span>floor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> floor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the largest integer value less than or equal to <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the largest integral value not greater than <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a82c87a6e9a809a5eb46be90182dbf575" name="a82c87a6e9a809a5eb46be90182dbf575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c87a6e9a809a5eb46be90182dbf575">&#9670;&nbsp;</a></span>from() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> from </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the double value <em>x</em> converted to fixed-point q16.16. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The double precision floating-point value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to fixed-point q16.16. </dd></dl>
+
+</div>
+</div>
+<a id="af441621f285f6f63b84505834c3e7b4f" name="af441621f285f6f63b84505834c3e7b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af441621f285f6f63b84505834c3e7b4f">&#9670;&nbsp;</a></span>from() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> from </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the float value <em>x</em> converted to fixed-point q16.16. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating-point value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to fixed-point q16.16. </dd></dl>
+
+</div>
+</div>
+<a id="a89b36a6b13591ba645d456a39639a752" name="a89b36a6b13591ba645d456a39639a752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b36a6b13591ba645d456a39639a752">&#9670;&nbsp;</a></span>from() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> from </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the int value <em>x</em> converted to fixed-point q16.16. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The integer value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to fixed-point q16.16. </dd></dl>
+
+</div>
+</div>
+<a id="a58378c91a77c8e7d3aa894b79ba39d30" name="a58378c91a77c8e7d3aa894b79ba39d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58378c91a77c8e7d3aa894b79ba39d30">&#9670;&nbsp;</a></span>isExpMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isExpMax </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check for (q16.16) fixed-point fp16::exp() operation reaches the <code>EXP_MAX</code> value. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the fixed-point has reached <code>EXP_MAX</code>, otherwise <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a8c8af38a2c755f9c80c08a13d152c74d" name="a8c8af38a2c755f9c80c08a13d152c74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8af38a2c755f9c80c08a13d152c74d">&#9670;&nbsp;</a></span>isOverflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isOverflow </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check for (q16.16) fixed-point overflow. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the fixed-point has overflowed otherwise <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ac5be363de4f0805a3681aa8c05f38332" name="ac5be363de4f0805a3681aa8c05f38332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5be363de4f0805a3681aa8c05f38332">&#9670;&nbsp;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> log </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point natural logarithm (base-e logarithm) of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns natural logarithm of <em>x</em>. For negative values returns <code>overflow</code> </dd></dl>
+
+</div>
+</div>
+<a id="a4d452e80888b234730173c1ad0dab99d" name="a4d452e80888b234730173c1ad0dab99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d452e80888b234730173c1ad0dab99d">&#9670;&nbsp;</a></span>log2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> log2 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point log base 2 of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns log base 2 of <em>x</em>. For negative values returns <code>overflow</code> </dd></dl>
+
+</div>
+</div>
+<a id="a9c508732a1ebe345a9827f8199225a35" name="a9c508732a1ebe345a9827f8199225a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c508732a1ebe345a9827f8199225a35">&#9670;&nbsp;</a></span>pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> pow </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <em>x</em> raised to the power of <em>y</em>. (x^y) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) base value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The fixed-point(q16.16) power value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the result of raising <em>x</em> to the power <em>y</em>. <code>overflow</code> when an operation overflow is detected. </dd></dl>
+
+</div>
+</div>
+<a id="ab3e32839dc818c03213e2bbebf46904f" name="ab3e32839dc818c03213e2bbebf46904f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e32839dc818c03213e2bbebf46904f">&#9670;&nbsp;</a></span>radToDeg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> radToDeg </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts angle units from radians to degrees. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the angle converted in degrees. </dd></dl>
+
+</div>
+</div>
+<a id="a19fa5babf75d1fc1a6b61b66e22f122e" name="a19fa5babf75d1fc1a6b61b66e22f122e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19fa5babf75d1fc1a6b61b66e22f122e">&#9670;&nbsp;</a></span>raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fp16Raw_t raw </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the (q16.16) raw integer value from x. </p>
+<dl class="section return"><dt>Returns</dt><dd>The raw integer value that represents the fixed-point. </dd></dl>
+
+</div>
+</div>
+<a id="a1614d483a9a2002a1640795d225517cd" name="a1614d483a9a2002a1640795d225517cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1614d483a9a2002a1640795d225517cd">&#9670;&nbsp;</a></span>round()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> round </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the nearest integer value of the fixed-point argument <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the nearest integral value of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a39cfdf6fea4397d149a34d15da9cb16e" name="a39cfdf6fea4397d149a34d15da9cb16e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39cfdf6fea4397d149a34d15da9cb16e">&#9670;&nbsp;</a></span>sin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> sin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point sine of the radian angle <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns sine of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a4fa6007d78f54381acb8af0947373201" name="a4fa6007d78f54381acb8af0947373201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa6007d78f54381acb8af0947373201">&#9670;&nbsp;</a></span>sinh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> sinh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point hyperbolic sine of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns hyperbolic sine of <em>x</em>. If overflow detected returns <code>overflow</code>. If the function saturates, returns <code>EXP_MAX</code> or <code>EXP_MIN</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ab312bf8a40ff582890423064c35d3c28" name="ab312bf8a40ff582890423064c35d3c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab312bf8a40ff582890423064c35d3c28">&#9670;&nbsp;</a></span>sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> sqrt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point square root of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the square root of <em>x</em>. For negative numbers, returns <code>overflow</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a880ba98ab185371a3e9ca37902eb114d" name="a880ba98ab185371a3e9ca37902eb114d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a880ba98ab185371a3e9ca37902eb114d">&#9670;&nbsp;</a></span>tan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> tan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point tangent of the radian angle <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns tangent of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a7279d316e6b8c2bd5906d8ac93a2a7bb" name="a7279d316e6b8c2bd5906d8ac93a2a7bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7279d316e6b8c2bd5906d8ac93a2a7bb">&#9670;&nbsp;</a></span>tanh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> tanh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the fixed-point hyperbolic tangent of <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns hyperbolic tangent of <em>x</em>. If overflow detected returns <code>overflow</code>. If the function saturates, returns <code>EXP_MAX</code> or <code>EXP_MIN</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ae3bf0beb2d156fb569fb1b306622777e" name="ae3bf0beb2d156fb569fb1b306622777e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bf0beb2d156fb569fb1b306622777e">&#9670;&nbsp;</a></span>toASCII()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char * toASCII </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decimals</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the fixed-point value to a formatted string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>The fixed-point(q16.16) value to be converted to string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>Array in memory where to store the resulting null-terminated string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">decimals</td><td>Number of decimals to show in the string representation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>: Max decimal allowed = 5 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the resulting null-terminated string, same as parameter <em>str</em> </dd></dl>
+
+</div>
+</div>
+<a id="a56eeb841d42785abf40fad66c47e3f56" name="a56eeb841d42785abf40fad66c47e3f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56eeb841d42785abf40fad66c47e3f56">&#9670;&nbsp;</a></span>toDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double toDouble </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point value <em>x</em> converted to double. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to double. </dd></dl>
+
+</div>
+</div>
+<a id="afc872dc60ee9878f41c5c0bcfed19f0a" name="afc872dc60ee9878f41c5c0bcfed19f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc872dc60ee9878f41c5c0bcfed19f0a">&#9670;&nbsp;</a></span>toFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float toFloat </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point value <em>x</em> converted to float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to float. </dd></dl>
+
+</div>
+</div>
+<a id="a0523dacdb76f67e89f9ea3d4e5f1c5a5" name="a0523dacdb76f67e89f9ea3d4e5f1c5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0523dacdb76f67e89f9ea3d4e5f1c5a5">&#9670;&nbsp;</a></span>toInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int toInt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the fixed-point value <em>x</em> converted to int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns <em>x</em> converted to int. </dd></dl>
+
+</div>
+</div>
+<a id="a5678c90a68c1b1e8176b973ae3b432b3" name="a5678c90a68c1b1e8176b973ae3b432b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5678c90a68c1b1e8176b973ae3b432b3">&#9670;&nbsp;</a></span>wrapTo180()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> wrapTo180 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrap the fixed-point angle in degrees to [−180 180]. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the wrapped angle in the range [−180, 180] of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a3bd4afd1bc989e17ceb79f29084232d6" name="a3bd4afd1bc989e17ceb79f29084232d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd4afd1bc989e17ceb79f29084232d6">&#9670;&nbsp;</a></span>wrapToPi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqlibs_1_1fp16.html">fp16</a> wrapToPi </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1fp16.html">fp16</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrap the fixed-point angle in radians to [−pi pi]. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The fixed-point(q16.16) value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns the wrapped angle in the range [−pi, pi] of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>qlibs</b></li><li class="navelem"><a class="el" href="classqlibs_1_1fp16.html">fp16</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

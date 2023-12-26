@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: qTypeGeneric</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__qtypegeneric.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">qTypeGeneric</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Type-generic utilities.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac63d6a8348eb966186d6583c753b359e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e">swap</a> (void *const x, void *const y, size_t n) noexcept</td></tr>
+<tr class="memdesc:gac63d6a8348eb966186d6583c753b359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the data pointed by <em>x</em> and <em>y</em>.  <a href="group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e">More...</a><br /></td></tr>
+<tr class="separator:gac63d6a8348eb966186d6583c753b359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08acc13c13a224f664d821d1875ed06a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a">sort</a> (void *const pbase, size_t n, size_t size, compareFcn_t cmp, void *arg=nullptr) noexcept</td></tr>
+<tr class="memdesc:ga08acc13c13a224f664d821d1875ed06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array pointed to by <em>pbase</em> in ascending order. The array contains <em>n</em> elements of <em>size</em> bytes. Function pointed to by <em>cmp</em> is used for object comparison.  <a href="group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a">More...</a><br /></td></tr>
+<tr class="separator:ga08acc13c13a224f664d821d1875ed06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab86856bd79f4400c708856cf13ecfb65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gab86856bd79f4400c708856cf13ecfb65">reverse</a> (void *const pbase, const size_t size, const size_t init, const size_t end) noexcept</td></tr>
+<tr class="memdesc:gab86856bd79f4400c708856cf13ecfb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the given array pointed to by <em>pbase</em>. Operation takes place on the portion of the array that starts at position <em>init</em> to position <em>end</em>.  <a href="group__qtypegeneric.html#gab86856bd79f4400c708856cf13ecfb65">More...</a><br /></td></tr>
+<tr class="separator:gab86856bd79f4400c708856cf13ecfb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bdc86076df0d49be8691b063212c73c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga4bdc86076df0d49be8691b063212c73c">rotate</a> (void *const pbase, const size_t size, const size_t n, const int k) noexcept</td></tr>
+<tr class="memdesc:ga4bdc86076df0d49be8691b063212c73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates <em>k</em> elements of the array pointed to by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes. Rotation direction is determined by the sign of <em>k</em>, the means a positive value performs a right-rotation and a negative value a left-rotation.  <a href="group__qtypegeneric.html#ga4bdc86076df0d49be8691b063212c73c">More...</a><br /></td></tr>
+<tr class="separator:ga4bdc86076df0d49be8691b063212c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeeeb7cd121be65f932af36e24131fd37"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaeeeb7cd121be65f932af36e24131fd37">set</a> (void *const pbase, const size_t size, const size_t n, const void *const ref) noexcept</td></tr>
+<tr class="memdesc:gaeeeb7cd121be65f932af36e24131fd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the data pointed by <em>ref</em> to every element of the array pointed by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes.  <a href="group__qtypegeneric.html#gaeeeb7cd121be65f932af36e24131fd37">More...</a><br /></td></tr>
+<tr class="separator:gaeeeb7cd121be65f932af36e24131fd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff612ff160d8c61605f1b25386ae9a9e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e">lSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
+<tr class="memdesc:gaff612ff160d8c61605f1b25386ae9a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a linear search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element.  <a href="group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e">More...</a><br /></td></tr>
+<tr class="separator:gaff612ff160d8c61605f1b25386ae9a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0">bSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
+<tr class="memdesc:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element.  <a href="group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0">More...</a><br /></td></tr>
+<tr class="separator:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4818e24c0d6ee84051d6870f19d8664"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664">forEach</a> (void *pbase, const size_t size, const size_t n, forEachFcn_t f, const bool dir=false, void *arg=nullptr) noexcept</td></tr>
+<tr class="memdesc:gab4818e24c0d6ee84051d6870f19d8664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates <em>n</em> elements of the array pointed to by <em>pbase</em>. The size of each element is specified by <em>size</em>. Every element should be handled by function <em>f</em>. The iteration loop can be aborted by returning 1.  <a href="group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664">More...</a><br /></td></tr>
+<tr class="separator:gab4818e24c0d6ee84051d6870f19d8664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p >Type-generic utilities. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga5604d8d2805e5eeda2e53544b110a7a0" name="ga5604d8d2805e5eeda2e53544b110a7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5604d8d2805e5eeda2e53544b110a7a0">&#9670;&nbsp;</a></span>bSearch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * qlibs::generic::bSearch </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">compareFcn_t&#160;</td>
+          <td class="paramname"><em>compar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs a binary search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the pointer to the object that serves as key for the search, type-casted as a <code>void*</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pbase</td><td>This is the pointer to the first object of the array where the search is performed, type-casted as a <code>void*</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>This is the number of elements in the array pointed by <em>base</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>This is the size in bytes of each element in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">compar</td><td>This is the function that compares two elements. The signature of the comparison function should be equivalent to the following: <div class="fragment"><div class="line"><span class="keywordtype">int</span> compar( <span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *arg );</div>
+</div><!-- fragment --> Comparison function which returns ​a negative integer value if the first argument is less than the second, a positive integer value if the first argument is greater than the second and zero if the arguments are equivalent. <em>key</em> is passed as the first argument, an element from the array as the second. The function must not modify the objects passed to it and must return consistent results when called for the same objects, regardless of their positions in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Additional information (e.g., collating sequence), passed to <em>compar</em> as the third argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns a pointer to an entry in the array that matches the search key. If key is not found, a <code>nullptr</code> pointer is returned. </dd></dl>
+
+</div>
+</div>
+<a id="gab4818e24c0d6ee84051d6870f19d8664" name="gab4818e24c0d6ee84051d6870f19d8664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4818e24c0d6ee84051d6870f19d8664">&#9670;&nbsp;</a></span>forEach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qlibs::generic::forEach </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">forEachFcn_t&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>dir</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Iterates <em>n</em> elements of the array pointed to by <em>pbase</em>. The size of each element is specified by <em>size</em>. Every element should be handled by function <em>f</em>. The iteration loop can be aborted by returning 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pbase</td><td>This is the pointer to the first object of the array type-casted as a <code>void*</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>This is the number of elements in the array pointed by <em>pbase</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>This is the size in bytes of each element in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>The function that will handle each element of the array The signature of this handling function should be equivalent to the following: <div class="fragment"><div class="line"><span class="keywordtype">int</span> iterFcn( <span class="keywordtype">int</span> i, <span class="keywordtype">void</span> *element, <span class="keywordtype">void</span> *arg );</div>
+</div><!-- fragment --> The argument <em>i</em> is used to keep track of the iteration in which the loop is.<ul>
+<li><code>i &lt; 0</code> Loop its a about to start (pre-loop invocation). The <em>element</em> argument at this stage its passed as <code>NULL</code> and should not be dereferenced.</li>
+<li><code>[ 0 &lt;= i &lt; n ]</code> Loop its iterating and the <em>element</em> argument is pointing to the array at index <em>i</em>.</li>
+<li><code>i == n</code> Loop has ended (pos-loop invocation). The <em>element</em> argument at this stage its passed as <code>NULL</code> and should not be dereferenced. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dir</td><td>Pass <code>true</code> to iterate the array backwards. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Additional information (e.g., collating sequence), passed to <em>f</em> as the third argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns 1 if the iteration loop is aborted otherwise returns 0. </dd></dl>
+
+</div>
+</div>
+<a id="gaff612ff160d8c61605f1b25386ae9a9e" name="gaff612ff160d8c61605f1b25386ae9a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff612ff160d8c61605f1b25386ae9a9e">&#9670;&nbsp;</a></span>lSearch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * qlibs::generic::lSearch </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">compareFcn_t&#160;</td>
+          <td class="paramname"><em>compar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs a linear search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the pointer to the object that serves as key for the search, type-casted as a <code>void*</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pbase</td><td>This is the pointer to the first object of the array where the search is performed, type-casted as a <code>void*</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>This is the number of elements in the array pointed by <em>pbase</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>This is the size in bytes of each element in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">compar</td><td>This is the function that compares two elements. The signature of the comparison function should be equivalent to the following: <div class="fragment"><div class="line"><span class="keywordtype">int</span> compar( <span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *arg );</div>
+</div><!-- fragment --> Comparison function which returns ​a negative integer value if the first argument is less than the second, a positive integer value if the first argument is greater than the second and zero if the arguments are equivalent. <em>key</em> is passed as the first argument, an element from the array as the second. The function must not modify the objects passed to it and must return consistent results when called for the same objects, regardless of their positions in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Additional information (e.g., collating sequence), passed to <em>compar</em> as the third argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns a pointer to an entry in the array that matches the search key. If key is not found, a <code>nullptr</code> pointer is returned. </dd></dl>
+
+</div>
+</div>
+<a id="gab86856bd79f4400c708856cf13ecfb65" name="gab86856bd79f4400c708856cf13ecfb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab86856bd79f4400c708856cf13ecfb65">&#9670;&nbsp;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reverse </td>
+          <td>(</td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reverse the given array pointed to by <em>pbase</em>. Operation takes place on the portion of the array that starts at position <em>init</em> to position <em>end</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pbase</td><td>Pointer to the array to reverse. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Size of each element in the array in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">init</td><td>Position of the first element. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>Position of the last element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
+
+</div>
+</div>
+<a id="ga4bdc86076df0d49be8691b063212c73c" name="ga4bdc86076df0d49be8691b063212c73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4bdc86076df0d49be8691b063212c73c">&#9670;&nbsp;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rotate </td>
+          <td>(</td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rotates <em>k</em> elements of the array pointed to by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes. Rotation direction is determined by the sign of <em>k</em>, the means a positive value performs a right-rotation and a negative value a left-rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pbase</td><td>Pointer to the array to reverse. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Size of each element in the array in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Number of elements in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>Positions to rotate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
+
+</div>
+</div>
+<a id="gaeeeb7cd121be65f932af36e24131fd37" name="gaeeeb7cd121be65f932af36e24131fd37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeeeb7cd121be65f932af36e24131fd37">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * set </td>
+          <td>(</td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *const&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the data pointed by <em>ref</em> to every element of the array pointed by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pbase</td><td>Pointer to the array to reverse. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Size of each element in the array in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Number of elements in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ref</td><td>Pointer to the value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns a pointer to the memory area <em>pbase</em> </dd></dl>
+
+</div>
+</div>
+<a id="ga08acc13c13a224f664d821d1875ed06a" name="ga08acc13c13a224f664d821d1875ed06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08acc13c13a224f664d821d1875ed06a">&#9670;&nbsp;</a></span>sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void qlibs::generic::sort </td>
+          <td>(</td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>pbase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">compareFcn_t&#160;</td>
+          <td class="paramname"><em>cmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the given array pointed to by <em>pbase</em> in ascending order. The array contains <em>n</em> elements of <em>size</em> bytes. Function pointed to by <em>cmp</em> is used for object comparison. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This algorithm uses a non-recursive variant of the quicksort algorithm. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pbase</td><td>Pointer to the array to sort. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Number of elements in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>size of each element in the array in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmp</td><td>Comparison function which returns ​a negative integer value if the first argument is less than the second, a positive integer value if the first argument is greater than the second and zero if the arguments are equivalent. The signature of the comparison function should be equivalent to the following: <div class="fragment"><div class="line"><span class="keywordtype">int</span> cmp( <span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *arg );</div>
+</div><!-- fragment --> The function must not modify the objects passed to it and must return consistent results when called for the same objects, regardless of their positions in the array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Additional information (e.g., collating sequence), passed to <code>cmp</code> as the third argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
+
+</div>
+</div>
+<a id="gac63d6a8348eb966186d6583c753b359e" name="gac63d6a8348eb966186d6583c753b359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac63d6a8348eb966186d6583c753b359e">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps the data pointed by <em>x</em> and <em>y</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Pointer to data to be swapped. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">y</td><td>Pointer to data to be swapped. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The size of the data to be swapped. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

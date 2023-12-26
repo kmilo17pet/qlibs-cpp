@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: Data Fields</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div>
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>abs()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#aba2d906737ca664e514ecb3dd797803e">fp16</a></li>
+<li>acos()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a90b1cb97e81403bf1594b4238b522c41">fp16</a></li>
+<li>asin()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a26aef76a5edfe3e233f36e1a9f76094c">fp16</a></li>
+<li>atan()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#acdbb2402ff67e1492d88a1c08c869a32">fp16</a></li>
+<li>atan2()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a0b6980e8c30b58462a29a87da4ca946b">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>clearAll()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#a7d3079f41eb879d3f61f1d3cc9706659">bitfield</a></li>
+<li>clearBit()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#a566f7b139cb65785beeede3316f2edcd">bitfield</a></li>
+<li>continuousSystem()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#a50ff6d3b31516dd7101e1b7474106182">continuousSystem</a></li>
+<li>cos()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a0dfef1a1513fea76b6f451d04facd3a5">fp16</a></li>
+<li>cosh()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a5cb820c6e47115f58b2f4fecc27e2e3b">fp16</a></li>
+<li>crc16_A()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#adf7e2db6fa99135d9a09799bbcd59721">crc</a></li>
+<li>crc16_ARC()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#aedf1cf13d490ace5f0eb413bee0c3b81">crc</a></li>
+<li>crc16_AUG_CCITT()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a10864e569713f79c0acdf1f88f685553">crc</a></li>
+<li>crc16_BUYPASS()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a92589fd6da097816cab52cdb1f76faf3">crc</a></li>
+<li>crc16_CCITT_FALSE()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a7206c74cefd2cceba6fb0de749340351">crc</a></li>
+<li>crc16_CDMA2000()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a0d29bc1ac7d67df6419280f2b06a39ed">crc</a></li>
+<li>crc16_DDS_110()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#af9c47ce2a1c74a4d78fb85be7d2bb631">crc</a></li>
+<li>crc16_DECT_R()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a8b40fa7079a528d10984a93ff0c5e759">crc</a></li>
+<li>crc16_DECT_X()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a8b825f417db820ccad7b81ef33c26744">crc</a></li>
+<li>crc16_DNP()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a6e78ce13eaad2fb7256b58fd36489ade">crc</a></li>
+<li>crc16_EN_13757()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a21552fdd4ba08f27dc9637611bdf73d1">crc</a></li>
+<li>crc16_GENIBUS()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#abc5a3695ccb45935569ef939faa782c4">crc</a></li>
+<li>crc16_KERMIT()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a7600650de99fe71497cecb32d0e5e193">crc</a></li>
+<li>crc16_MAXIM()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a4efa1d82c51744715451516b4c65df19">crc</a></li>
+<li>crc16_MCRF4XX()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a34dcd8aeb8fe22643dce6eac146c144c">crc</a></li>
+<li>crc16_MODBUS()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a99ccd70c8427a41896ec02e41a108fe9">crc</a></li>
+<li>crc16_RIELLO()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a34680e857594bbfd698493fa0e92d2eb">crc</a></li>
+<li>crc16_T10_DIF()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a9f1921ea4e20d690faf1bad56977f742">crc</a></li>
+<li>crc16_TELEDISK()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#afc52dd9ac9b3d6b45a565e98f90f63fc">crc</a></li>
+<li>crc16_TMS37157()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#ad67ec4cfbcd5c751bae2bba487661331">crc</a></li>
+<li>crc16_USB()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a3a277a5441a3e0879fa0ea33c0f0e6ff">crc</a></li>
+<li>crc16_X_25()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#adc089a76fc0fe1a1ffd17538f532a703">crc</a></li>
+<li>crc16_XMODEM()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a79b0348928c597c7841e73d00cb8af8c">crc</a></li>
+<li>crc32()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a0beb6c4404c1df0a478fa22b7651af12">crc</a></li>
+<li>crc32_BZIP2()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#ada02903dbc1c5f74f005c92a15f5cece">crc</a></li>
+<li>crc32_C()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a77bfce9a08c5ace878aa58c3c7acf719">crc</a></li>
+<li>crc32_D()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a551ede3a433277bc21d8cb0c1284ed44">crc</a></li>
+<li>crc32_JAMCRC()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a4cc4b5167786b8d5a2f6f90de0e3a9f6">crc</a></li>
+<li>crc32_MPEG2()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a1a68052b38b08feac2a4130de984ccee">crc</a></li>
+<li>crc32_POSIX()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#ae9b5fb010bf43b1d93039d97b68ef63a">crc</a></li>
+<li>crc32_Q()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a7523a33f612bb4ef8f2d4ee54bd61fce">crc</a></li>
+<li>crc32_XFER()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#abc55dc903d480f9a31d91a9ab0e515fc">crc</a></li>
+<li>crc8()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a46559fa757f2bacf87dfa99540140190">crc</a></li>
+<li>crc8_CDMA2000()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a010a4b450836274f82f5e0e9b4b727b4">crc</a></li>
+<li>crc8_DARC()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a2af4836f5d2b6f107390e821b5e24cad">crc</a></li>
+<li>crc8_DVS_S2()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#ae61904ab340bb1af1ebdd32c11ed49fe">crc</a></li>
+<li>crc8_EBU()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#af001039e7eac066bc2d696bf07312c1d">crc</a></li>
+<li>crc8_I_CODE()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a18160bc0fc655456eb3ea4f8f3c652ac">crc</a></li>
+<li>crc8_ITU()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a1ce158af55f0b6eb6430d21747b79bd8">crc</a></li>
+<li>crc8_MAXIM()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#acf77887e063cd86988fa0177f04887f5">crc</a></li>
+<li>crc8_ROHC()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a181a262b75267975610e1dac1b8ef732">crc</a></li>
+<li>crc8_WCDMA()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#a6c1d9c2b9cdf45ac3724f7a7c47e0732">crc</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>degToRad()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#adb6fe3e1c58f845bcce36f3ad269ba8a">fp16</a></li>
+<li>derivative()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#a40f49ae7da014295742a7363a5b0e9b6">state</a></li>
+<li>discreteSystem()&#160;:&#160;<a class="el" href="classqlibs_1_1discrete_system.html#a7d2716be9ff37b46dca478c1364590f6">discreteSystem</a></li>
+<li>dump()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#a737ed03352437ff2cbd4130cc167273c">bitfield</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>excite()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#a74617daefbc875d6f1a2a69405fa203f">continuousSystem</a>, <a class="el" href="classqlibs_1_1discrete_system.html#a74617daefbc875d6f1a2a69405fa203f">discreteSystem</a>, <a class="el" href="classqlibs_1_1ltisys.html#a84db60c669da2d63778fc8348c008dc7">ltisys</a></li>
+<li>exp()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ad37bd26b17a0bad9fc3c940303c9df21">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>floor()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a12aad1994a73ce618efeb9c33d3c4640">fp16</a></li>
+<li>flush()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#a2f93ea561bce3fda6a9bf9b18fe462d8">tdl</a></li>
+<li>from()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a89b36a6b13591ba645d456a39639a752">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>generic()&#160;:&#160;<a class="el" href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">crc</a></li>
+<li>getAtIndex()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#aab0d9909d8dbaf0b307eba4a9753231a">tdl</a></li>
+<li>getOldest()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#aab31f9fb38c2b615639180200cc697f1">tdl</a></li>
+<li>getRecent()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#a122f54a4a62a165ab8e941d10321bd07">tdl</a></li>
+<li>getType()&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a3fe98a6d32ce4f45ee4331f3318c1889">ltisys</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>init()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#abc31f5907c2cd9f2c69613610a4ebc7e">state</a></li>
+<li>insertSample()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#a1130d3119564956360d2b4850dfe7da5">tdl</a></li>
+<li>integrate()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#aeee4a09fabdbc72b11b3dd44d42e7be8">state</a></li>
+<li>isExpMax()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a58378c91a77c8e7d3aa894b79ba39d30">fp16</a></li>
+<li>isInitialized()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#a9b62d14053df267cffe4aa2d8cc67433">continuousSystem</a>, <a class="el" href="classqlibs_1_1discrete_system.html#a9b62d14053df267cffe4aa2d8cc67433">discreteSystem</a>, <a class="el" href="classqlibs_1_1ltisys.html#a29a422ca0e79955f2c29b9d0f7a5269a">ltisys</a>, <a class="el" href="classqlibs_1_1smoother.html#a3bed58b46f0fb23aeb1ec60c340f1f90">smoother</a>, <a class="el" href="classqlibs_1_1tdl.html#a3bed58b46f0fb23aeb1ec60c340f1f90">tdl</a></li>
+<li>isOverflow()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a8c8af38a2c755f9c80c08a13d152c74d">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>log()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ac5be363de4f0805a3681aa8c05f38332">fp16</a></li>
+<li>log2()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a4d452e80888b234730173c1ad0dab99d">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>operator()()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#a17cab7f5023f87e5393bb42ea7e371e7">state</a>, <a class="el" href="classqlibs_1_1tdl.html#a2909e6f494a74d4af80dd1f06f6c7b98">tdl</a></li>
+<li>operator[]()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#a8038fccbdcdafe9a558e4b3aa6aa10c0">tdl</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>pow()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a9c508732a1ebe345a9827f8199225a35">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>radToDeg()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ab3e32839dc818c03213e2bbebf46904f">fp16</a></li>
+<li>raw()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a19fa5babf75d1fc1a6b61b66e22f122e">fp16</a></li>
+<li>readBit()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#acebe99c54f34e2206fd0497dd67f72c9">bitfield</a></li>
+<li>readFloat()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#aec91d54241545e249d70ac6cc257d978">bitfield</a></li>
+<li>readUINTn()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#add89d52dfd3cad9cd8c9998f56affa67">bitfield</a></li>
+<li>reset()&#160;:&#160;<a class="el" href="classqlibs_1_1smoother.html#ae6e0f8dc9ee62cc59592a8154069b347">smoother</a></li>
+<li>round()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a1614d483a9a2002a1640795d225517cd">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>setAll()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#adcdcfa4087fc630bafa0260420ffe232">bitfield</a></li>
+<li>setBit()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#a78c779810c4cec44d5aec7aab18c2124">bitfield</a></li>
+<li>setDelay()&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a7399fd52f5254e8dcc007a247b29c3d3">ltisys</a></li>
+<li>setInitStates()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#a1447ef080e34b0a104988cdd3b07e6df">continuousSystem</a>, <a class="el" href="classqlibs_1_1discrete_system.html#a1447ef080e34b0a104988cdd3b07e6df">discreteSystem</a>, <a class="el" href="classqlibs_1_1ltisys.html#ae915641db933148c1cf0cc7df88c2d44">ltisys</a></li>
+<li>setIntegrationMethod()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#a863f93662eb979dc2b7abea597a7d01b">continuousSystem</a>, <a class="el" href="classqlibs_1_1state.html#a023d48c948fa2dc7febb7a8f04fb16ad">state</a></li>
+<li>setParams()&#160;:&#160;<a class="el" href="classqlibs_1_1rms.html#a0c5479cb955acb5182c410190d90739a">rms</a></li>
+<li>setSaturation()&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#aa9c70416de6b3013105dcbfe584d04d1">ltisys</a></li>
+<li>setup()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#afcccca579f31494e9e20018dc117e1d7">bitfield</a>, <a class="el" href="classqlibs_1_1continuous_system.html#ae94b24d073cc876c0a58c306d341d621">continuousSystem</a>, <a class="el" href="classqlibs_1_1discrete_system.html#a0e388a1604f69aa4276fc15110e2dfbb">discreteSystem</a>, <a class="el" href="classqlibs_1_1rms.html#a120938e90a896b834f7f35c1ef991830">rms</a>, <a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a345af57dc42b3ca707c296c3eaa00a51">smootherALNF</a>, <a class="el" href="classqlibs_1_1smoother_e_x_p_w.html#adfecd88ee636716a61a5fb2cc80bff56">smootherEXPW</a>, <a class="el" href="classqlibs_1_1smoother_g_m_w_f.html#adc7b68bc128b65e66814267a663ac565">smootherGMWF</a>, <a class="el" href="classqlibs_1_1smoother_k_l_m_n.html#ad78ce7f46595b99addaa9ac4f2d1d006">smootherKLMN</a>, <a class="el" href="classqlibs_1_1smoother_l_p_f1.html#adb53fe1434eead75b80acf37f35a798d">smootherLPF1</a>, <a class="el" href="classqlibs_1_1smoother_l_p_f2.html#adb53fe1434eead75b80acf37f35a798d">smootherLPF2</a>, <a class="el" href="classqlibs_1_1smoother_m_o_r1.html#a87bafbc8861978e12bec2f71859f580e">smootherMOR1</a>, <a class="el" href="classqlibs_1_1smoother_m_o_r2.html#a087b81ea94e17699c4509dc8d3724452">smootherMOR2</a>, <a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a6c3e2797edd9dab0b36893d3674eec8b">smootherMWM1</a>, <a class="el" href="classqlibs_1_1smoother_m_w_m2.html#a6c3e2797edd9dab0b36893d3674eec8b">smootherMWM2</a>, <a class="el" href="classqlibs_1_1tdl.html#a39a2ce410393822fdfaae8f4fdcef598">tdl</a></li>
+<li>sin()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a39cfdf6fea4397d149a34d15da9cb16e">fp16</a></li>
+<li>sinh()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a4fa6007d78f54381acb8af0947373201">fp16</a></li>
+<li>smooth()&#160;:&#160;<a class="el" href="classqlibs_1_1smoother.html#a93e0f7c2982ed490ed52e76b9d6c5f82">smoother</a>, <a class="el" href="classqlibs_1_1smoother_a_l_n_f.html#a1116b73eb7b200a50733aad75495a6fe">smootherALNF</a>, <a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#a1116b73eb7b200a50733aad75495a6fe">smootherDESF</a>, <a class="el" href="classqlibs_1_1smoother_e_x_p_w.html#a1116b73eb7b200a50733aad75495a6fe">smootherEXPW</a>, <a class="el" href="classqlibs_1_1smoother_g_m_w_f.html#a1116b73eb7b200a50733aad75495a6fe">smootherGMWF</a>, <a class="el" href="classqlibs_1_1smoother_k_l_m_n.html#a1116b73eb7b200a50733aad75495a6fe">smootherKLMN</a>, <a class="el" href="classqlibs_1_1smoother_l_p_f1.html#a1116b73eb7b200a50733aad75495a6fe">smootherLPF1</a>, <a class="el" href="classqlibs_1_1smoother_l_p_f2.html#a1116b73eb7b200a50733aad75495a6fe">smootherLPF2</a>, <a class="el" href="classqlibs_1_1smoother_m_o_r1.html#a1116b73eb7b200a50733aad75495a6fe">smootherMOR1</a>, <a class="el" href="classqlibs_1_1smoother_m_o_r2.html#a1116b73eb7b200a50733aad75495a6fe">smootherMOR2</a>, <a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a1116b73eb7b200a50733aad75495a6fe">smootherMWM1</a>, <a class="el" href="classqlibs_1_1smoother_m_w_m2.html#a1116b73eb7b200a50733aad75495a6fe">smootherMWM2</a></li>
+<li>sqrt()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ab312bf8a40ff582890423064c35d3c28">fp16</a></li>
+<li>state()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#a05c4a4403fd068fe6a0a05ad9ef9d8c8">state</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>tan()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a880ba98ab185371a3e9ca37902eb114d">fp16</a></li>
+<li>tanh()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a7279d316e6b8c2bd5906d8ac93a2a7bb">fp16</a></li>
+<li>tdl()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#a09c201541e4c96f17dd0df0b5af2eb36">tdl</a></li>
+<li>toASCII()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ae3bf0beb2d156fb569fb1b306622777e">fp16</a></li>
+<li>toDouble()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a56eeb841d42785abf40fad66c47e3f56">fp16</a></li>
+<li>toFloat()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#afc872dc60ee9878f41c5c0bcfed19f0a">fp16</a></li>
+<li>toggleBit()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#ac7c4657a44f73bf16a3a7ce03aa26985">bitfield</a></li>
+<li>toInt()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a0523dacdb76f67e89f9ea3d4e5f1c5a5">fp16</a></li>
+</ul>
+
+
+<h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>update()&#160;:&#160;<a class="el" href="classqlibs_1_1rms.html#a397a5e929acfe7403776251d6e4897c6">rms</a></li>
+<li>updateFIR()&#160;:&#160;<a class="el" href="classqlibs_1_1discrete_system.html#a542f689697ef1e149b4e9b84ccc3cfdb">discreteSystem</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>wrapTo180()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a5678c90a68c1b1e8176b973ae3b432b3">fp16</a></li>
+<li>wrapToPi()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a3bd4afd1bc989e17ceb79f29084232d6">fp16</a></li>
+<li>writeBit()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#ae8d181abb5ac9bb4e6ea2b7844184a94">bitfield</a></li>
+<li>writeFloat()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#aff573fe4d1d7526dada52c3cca97739b">bitfield</a></li>
+<li>writeUINTn()&#160;:&#160;<a class="el" href="classqlibs_1_1bitfield.html#a8d4e350b2745cdba3a2f919871042bac">bitfield</a></li>
+</ul>
+
+
+<h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~smootherDESF()&#160;:&#160;<a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#ac13f5f519fddcd4120fee73321f4db0f">smootherDESF</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

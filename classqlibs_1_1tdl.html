@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: tdl Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classqlibs_1_1tdl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
+  <div class="headertitle"><div class="title">tdl Class Reference<div class="ingroups"><a class="el" href="group__qtdl.html">qTDL</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A Tapped Delay Line (TDL) object.  
+ <a href="classqlibs_1_1tdl.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tdl_8hpp_source.html">tdl.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for tdl:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classqlibs_1_1tdl.png" usemap="#tdl_map" alt=""/>
+  <map id="tdl_map" name="tdl_map">
+<area href="classqlibs_1_1ltisys.html" title="A LTI system base class." alt="ltisys" shape="rect" coords="61,112,174,136"/>
+<area href="classqlibs_1_1smoother_m_o_r2.html" title="A Moving Outlier Removal filter." alt="smootherMOR2" shape="rect" coords="184,112,297,136"/>
+<area href="classqlibs_1_1smoother_m_w_m2.html" title="A Moving Window Median filter." alt="smootherMWM2" shape="rect" coords="307,112,420,136"/>
+<area href="classqlibs_1_1continuous_system.html" title="A LTI continuous system object." alt="continuousSystem" shape="rect" coords="0,168,113,192"/>
+<area href="classqlibs_1_1discrete_system.html" title="A LTI discrete system object." alt="discreteSystem" shape="rect" coords="123,168,236,192"/>
+<area href="classqlibs_1_1rms.html" title="RMS calculator object." alt="rms" shape="rect" coords="307,168,420,192"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a09c201541e4c96f17dd0df0b5af2eb36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a09c201541e4c96f17dd0df0b5af2eb36">tdl</a> (<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *const area, const size_t n, const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> initVal=0.0)</td></tr>
+<tr class="memdesc:a09c201541e4c96f17dd0df0b5af2eb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Tapped Delay Line (TDL) instance.  <a href="classqlibs_1_1tdl.html#a09c201541e4c96f17dd0df0b5af2eb36">More...</a><br /></td></tr>
+<tr class="separator:a09c201541e4c96f17dd0df0b5af2eb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035e80822e790fd073555e6e8e07fa02"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfDelays&gt; </td></tr>
+<tr class="memitem:a035e80822e790fd073555e6e8e07fa02"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a035e80822e790fd073555e6e8e07fa02">tdl</a> (<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;area)[numberOfDelays], const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> initVal=0.0) noexcept</td></tr>
+<tr class="memdesc:a035e80822e790fd073555e6e8e07fa02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Tapped Delay Line (TDL) instance.  <a href="classqlibs_1_1tdl.html#a035e80822e790fd073555e6e8e07fa02">More...</a><br /></td></tr>
+<tr class="separator:a035e80822e790fd073555e6e8e07fa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a2ce410393822fdfaae8f4fdcef598"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a39a2ce410393822fdfaae8f4fdcef598">setup</a> (<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *const area, const size_t n, const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> initVal=0.0) noexcept</td></tr>
+<tr class="memdesc:a39a2ce410393822fdfaae8f4fdcef598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters.  <a href="classqlibs_1_1tdl.html#a39a2ce410393822fdfaae8f4fdcef598">More...</a><br /></td></tr>
+<tr class="separator:a39a2ce410393822fdfaae8f4fdcef598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc906c0237c060c37d843b991ff9588"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfDelays&gt; </td></tr>
+<tr class="memitem:a2dc906c0237c060c37d843b991ff9588"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a2dc906c0237c060c37d843b991ff9588">setup</a> (<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;area)[numberOfDelays], const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> initVal=0.0) noexcept</td></tr>
+<tr class="memdesc:a2dc906c0237c060c37d843b991ff9588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters.  <a href="classqlibs_1_1tdl.html#a2dc906c0237c060c37d843b991ff9588">More...</a><br /></td></tr>
+<tr class="separator:a2dc906c0237c060c37d843b991ff9588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f93ea561bce3fda6a9bf9b18fe462d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a2f93ea561bce3fda6a9bf9b18fe462d8">flush</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> initVal=0.0) noexcept</td></tr>
+<tr class="memdesc:a2f93ea561bce3fda6a9bf9b18fe462d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all delays from the TDL and sets them to the specified value.  <a href="classqlibs_1_1tdl.html#a2f93ea561bce3fda6a9bf9b18fe462d8">More...</a><br /></td></tr>
+<tr class="separator:a2f93ea561bce3fda6a9bf9b18fe462d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab31f9fb38c2b615639180200cc697f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#aab31f9fb38c2b615639180200cc697f1">getOldest</a> (void) const noexcept</td></tr>
+<tr class="memdesc:aab31f9fb38c2b615639180200cc697f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the oldest sample from the TDL x(k-n)  <a href="classqlibs_1_1tdl.html#aab31f9fb38c2b615639180200cc697f1">More...</a><br /></td></tr>
+<tr class="separator:aab31f9fb38c2b615639180200cc697f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122f54a4a62a165ab8e941d10321bd07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a122f54a4a62a165ab8e941d10321bd07">getRecent</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a122f54a4a62a165ab8e941d10321bd07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the most recent sample from the TDL x(k)  <a href="classqlibs_1_1tdl.html#a122f54a4a62a165ab8e941d10321bd07">More...</a><br /></td></tr>
+<tr class="separator:a122f54a4a62a165ab8e941d10321bd07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0d9909d8dbaf0b307eba4a9753231a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#aab0d9909d8dbaf0b307eba4a9753231a">getAtIndex</a> (const size_t i) const noexcept</td></tr>
+<tr class="memdesc:aab0d9909d8dbaf0b307eba4a9753231a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified delayed sample from the TDL x(k-i)  <a href="classqlibs_1_1tdl.html#aab0d9909d8dbaf0b307eba4a9753231a">More...</a><br /></td></tr>
+<tr class="separator:aab0d9909d8dbaf0b307eba4a9753231a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1130d3119564956360d2b4850dfe7da5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a1130d3119564956360d2b4850dfe7da5">insertSample</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> sample) noexcept</td></tr>
+<tr class="memdesc:a1130d3119564956360d2b4850dfe7da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new sample to the TDL removing the oldest sample.  <a href="classqlibs_1_1tdl.html#a1130d3119564956360d2b4850dfe7da5">More...</a><br /></td></tr>
+<tr class="separator:a1130d3119564956360d2b4850dfe7da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8038fccbdcdafe9a558e4b3aa6aa10c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a8038fccbdcdafe9a558e4b3aa6aa10c0">operator[]</a> (int index) noexcept</td></tr>
+<tr class="memdesc:a8038fccbdcdafe9a558e4b3aa6aa10c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified delayed sample from the TDL x(k-i)  <a href="classqlibs_1_1tdl.html#a8038fccbdcdafe9a558e4b3aa6aa10c0">More...</a><br /></td></tr>
+<tr class="separator:a8038fccbdcdafe9a558e4b3aa6aa10c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2909e6f494a74d4af80dd1f06f6c7b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a2909e6f494a74d4af80dd1f06f6c7b98">operator()</a> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> sample) noexcept</td></tr>
+<tr class="memdesc:a2909e6f494a74d4af80dd1f06f6c7b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new sample to the TDL removing the oldest sample.  <a href="classqlibs_1_1tdl.html#a2909e6f494a74d4af80dd1f06f6c7b98">More...</a><br /></td></tr>
+<tr class="separator:a2909e6f494a74d4af80dd1f06f6c7b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bed58b46f0fb23aeb1ec60c340f1f90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a3bed58b46f0fb23aeb1ec60c340f1f90">isInitialized</a> (void) const</td></tr>
+<tr class="memdesc:a3bed58b46f0fb23aeb1ec60c340f1f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the TDL has been initialized.  <a href="classqlibs_1_1tdl.html#a3bed58b46f0fb23aeb1ec60c340f1f90">More...</a><br /></td></tr>
+<tr class="separator:a3bed58b46f0fb23aeb1ec60c340f1f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aff4f9a0d2bc72a8d4b964f3f053fd146"><td class="memItemLeft" align="right" valign="top"><a id="aff4f9a0d2bc72a8d4b964f3f053fd146" name="aff4f9a0d2bc72a8d4b964f3f053fd146"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insertNewest</b> (const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> sample) noexcept</td></tr>
+<tr class="separator:aff4f9a0d2bc72a8d4b964f3f053fd146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe11815a44bbdeda81182bd377aacc8"><td class="memItemLeft" align="right" valign="top"><a id="afbe11815a44bbdeda81182bd377aacc8" name="afbe11815a44bbdeda81182bd377aacc8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeOldest</b> (void) noexcept</td></tr>
+<tr class="separator:afbe11815a44bbdeda81182bd377aacc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a876b4d08748d213a3305dbc950153dd1"><td class="memItemLeft" align="right" valign="top"><a id="a876b4d08748d213a3305dbc950153dd1" name="a876b4d08748d213a3305dbc950153dd1"></a>
+<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>head</b></td></tr>
+<tr class="separator:a876b4d08748d213a3305dbc950153dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ea64a48339133f15335012d05c60e4"><td class="memItemLeft" align="right" valign="top"><a id="ac2ea64a48339133f15335012d05c60e4" name="ac2ea64a48339133f15335012d05c60e4"></a>
+<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>tail</b></td></tr>
+<tr class="separator:ac2ea64a48339133f15335012d05c60e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ae3714c89a5640b2199912a65d74a8"><td class="memItemLeft" align="right" valign="top"><a id="a76ae3714c89a5640b2199912a65d74a8" name="a76ae3714c89a5640b2199912a65d74a8"></a>
+<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rd</b></td></tr>
+<tr class="separator:a76ae3714c89a5640b2199912a65d74a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a66f58ccc4cfbfb3ce799a31b79c9c"><td class="memItemLeft" align="right" valign="top"><a id="a80a66f58ccc4cfbfb3ce799a31b79c9c" name="a80a66f58ccc4cfbfb3ce799a31b79c9c"></a>
+<a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>wr</b></td></tr>
+<tr class="separator:a80a66f58ccc4cfbfb3ce799a31b79c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9225cc80711c49214dc5b5c8d5b6c07a"><td class="memItemLeft" align="right" valign="top"><a id="a9225cc80711c49214dc5b5c8d5b6c07a" name="a9225cc80711c49214dc5b5c8d5b6c07a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>itemCount</b></td></tr>
+<tr class="separator:a9225cc80711c49214dc5b5c8d5b6c07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8ab90ac16d5f104dd8498080d8b6ad"><td class="memItemLeft" align="right" valign="top"><a id="aec8ab90ac16d5f104dd8498080d8b6ad" name="aec8ab90ac16d5f104dd8498080d8b6ad"></a>
+const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>undefined</b></td></tr>
+<tr class="separator:aec8ab90ac16d5f104dd8498080d8b6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A Tapped Delay Line (TDL) object. </p>
+<p >The instance should be initialized using the td::setup() method. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a09c201541e4c96f17dd0df0b5af2eb36" name="a09c201541e4c96f17dd0df0b5af2eb36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c201541e4c96f17dd0df0b5af2eb36">&#9670;&nbsp;</a></span>tdl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1tdl.html">tdl</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *const&#160;</td>
+          <td class="paramname"><em>area</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>initVal</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the Tapped Delay Line (TDL) instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>An array of size <em>n</em> where delays will be stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The number of elements on <em>area</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initVal</td><td>The value with which all TDL delays will be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a035e80822e790fd073555e6e8e07fa02" name="a035e80822e790fd073555e6e8e07fa02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035e80822e790fd073555e6e8e07fa02">&#9670;&nbsp;</a></span>tdl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1tdl.html">tdl</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>area</em>[numberOfDelays], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>initVal</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the Tapped Delay Line (TDL) instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>An array where delays will be stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initVal</td><td>The value with which all TDL delays will be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f93ea561bce3fda6a9bf9b18fe462d8" name="a2f93ea561bce3fda6a9bf9b18fe462d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f93ea561bce3fda6a9bf9b18fe462d8">&#9670;&nbsp;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void flush </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>initVal</em> = <code>0.0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears all delays from the TDL and sets them to the specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">initVal</td><td>The value with which all TDL delays will be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="aab0d9909d8dbaf0b307eba4a9753231a" name="aab0d9909d8dbaf0b307eba4a9753231a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0d9909d8dbaf0b307eba4a9753231a">&#9670;&nbsp;</a></span>getAtIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> getAtIndex </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified delayed sample from the TDL x(k-i) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>The requested delay index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested value from the TDL </dd></dl>
+
+</div>
+</div>
+<a id="aab31f9fb38c2b615639180200cc697f1" name="aab31f9fb38c2b615639180200cc697f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab31f9fb38c2b615639180200cc697f1">&#9670;&nbsp;</a></span>getOldest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> getOldest </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the oldest sample from the TDL x(k-n) </p>
+<dl class="section return"><dt>Returns</dt><dd>The requested value from the TDL </dd></dl>
+
+</div>
+</div>
+<a id="a122f54a4a62a165ab8e941d10321bd07" name="a122f54a4a62a165ab8e941d10321bd07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122f54a4a62a165ab8e941d10321bd07">&#9670;&nbsp;</a></span>getRecent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> getRecent </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the most recent sample from the TDL x(k) </p>
+<dl class="section return"><dt>Returns</dt><dd>The requested value from the TDL </dd></dl>
+
+</div>
+</div>
+<a id="a1130d3119564956360d2b4850dfe7da5" name="a1130d3119564956360d2b4850dfe7da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1130d3119564956360d2b4850dfe7da5">&#9670;&nbsp;</a></span>insertSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insertSample </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>sample</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Insert a new sample to the TDL removing the oldest sample. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sample</td><td>The new sample to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a3bed58b46f0fb23aeb1ec60c340f1f90" name="a3bed58b46f0fb23aeb1ec60c340f1f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bed58b46f0fb23aeb1ec60c340f1f90">&#9670;&nbsp;</a></span>isInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isInitialized </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the TDL has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if instance has been initialized </dd></dl>
+
+</div>
+</div>
+<a id="a2909e6f494a74d4af80dd1f06f6c7b98" name="a2909e6f494a74d4af80dd1f06f6c7b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2909e6f494a74d4af80dd1f06f6c7b98">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>sample</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Insert a new sample to the TDL removing the oldest sample. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sample</td><td>The new sample to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a8038fccbdcdafe9a558e4b3aa6aa10c0" name="a8038fccbdcdafe9a558e4b3aa6aa10c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8038fccbdcdafe9a558e4b3aa6aa10c0">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> &amp; operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the specified delayed sample from the TDL x(k-i) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>The requested delay index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested value from the TDL </dd></dl>
+
+</div>
+</div>
+<a id="a39a2ce410393822fdfaae8f4fdcef598" name="a39a2ce410393822fdfaae8f4fdcef598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a2ce410393822fdfaae8f4fdcef598">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a> *const&#160;</td>
+          <td class="paramname"><em>area</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>initVal</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>An array of size <em>n</em> where delays will be stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The number of elements on <em>area</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initVal</td><td>The value with which all TDL delays will be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a2dc906c0237c060c37d843b991ff9588" name="a2dc906c0237c060c37d843b991ff9588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc906c0237c060c37d843b991ff9588">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>area</em>[numberOfDelays], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qtypes.html#gab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramname"><em>initVal</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>The array where delays will be stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initVal</td><td>The value with which all TDL delays will be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>qlibs</b></li><li class="navelem"><a class="el" href="classqlibs_1_1tdl.html">tdl</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>
