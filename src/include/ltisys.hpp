@@ -19,7 +19,7 @@ namespace qlibs {
     /** @addtogroup  qltisys Recursive LTI systems evaluation by transfer functions
     * @brief API for the qLTISys library for recursive evaluation of LTI systems
     * defined by transfer functions
-    *  @{
+    * @{
     */
 
     enum ltisysType {
@@ -280,7 +280,7 @@ namespace qlibs {
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
-            * @param[in] dt The time-step of the continuos system.
+            * @param[in] dT The time-step of the continuos system.
             * @note By default, initial conditions are set to zero. To change the initial
             * conditions to the desired values, use the 
             * continuousSystem::setInitStates() method.
@@ -312,7 +312,7 @@ namespace qlibs {
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
-            * @param[in] dt The time-step of the continuos system.
+            * @param[in] dT The time-step of the continuos system.
             * @return @c true on success, otherwise return @c false.
             * @note By default, initial conditions are set to zero. To change the initial
             * conditions to the desired values, use the 

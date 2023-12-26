@@ -17,9 +17,9 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qpid Closed Loop PID Controller library
+    /** @addtogroup qpid Closed Loop PID Controller library
     * @brief API for the qPID Controller library
-    *  @{
+    * @{
     */
 
     /**

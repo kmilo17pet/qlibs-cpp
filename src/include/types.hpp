@@ -59,6 +59,8 @@ namespace qlibs {
     };
     /*! @endcond */
 
+    /** @}*/
+
 }
 
 /*! @cond */
@@ -66,6 +68,6 @@ namespace qlibs {
 #define     Q_NONE            /*EMPTY MACRO*/
 /*! @endcond */
 
-/** @}*/
+
 
 #endif /*QOS_CPP_TYPES*/

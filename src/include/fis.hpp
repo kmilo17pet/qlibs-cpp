@@ -13,7 +13,7 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qfis Fuzzy Inference System Engine
+    /** @addtogroup qfis Fuzzy Inference System Engine
     * @brief API for the qFIS Fuzzy Inference System Engine
     *  @{
     */
@@ -1199,7 +1199,7 @@ namespace qlibs {
             }
     };
 
-     /** @}*/
+    /** @}*/
 
 }
 

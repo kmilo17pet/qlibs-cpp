@@ -15,7 +15,7 @@ namespace qlibs {
 
     /** @addtogroup  qfmathex qFMathEx
     * @brief Extra floating-point math and analysis functions
-    *  @{
+    * @{
     */
 
      /**

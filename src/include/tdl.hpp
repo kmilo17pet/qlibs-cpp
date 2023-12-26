@@ -28,6 +28,7 @@ namespace qlibs {
     */
     class tdl : private nonCopyable {
         protected:
+            /*! @cond  */
             real_t *head{ nullptr };
             real_t *tail{ nullptr };
             real_t *rd{ nullptr };
@@ -37,6 +38,7 @@ namespace qlibs {
 
             void insertNewest( const real_t sample ) noexcept;
             void removeOldest( void ) noexcept;
+            /*! @endcond  */
         public:
             virtual ~tdl() {}
             tdl() = default;
@@ -127,7 +129,7 @@ namespace qlibs {
 
             /**
             * @brief Get the specified delayed sample from the TDL x(k-i)
-            * @param[in] i The requested delay index
+            * @param[in] index The requested delay index
             * @return The requested value from the TDL
             */
             const real_t& operator[]( int index ) noexcept;

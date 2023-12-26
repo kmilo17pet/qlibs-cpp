@@ -21,7 +21,7 @@ namespace qlibs {
 
     /**
     * @brief Determine the @c uint8_t array-size to setup a BitField instance.
-    * @param[in] nbits The desired number of bits for the BitField.
+    * @param[in] n The desired number of bits for the BitField.
     * @return The number for bytes ( or array size for @c uint8_t ) required for
     * the BitField of @a n bits
     */
@@ -126,7 +126,6 @@ namespace qlibs {
 
             /**
             * @brief Clears one bit in a BitField
-            * @param[in] b A pointer to the BitField instance
             * @param[in] index The bit-index.
             * @return @c true on success, otherwise return @c false.
             */

@@ -24,10 +24,12 @@ namespace qlibs {
     */
     class smoother {
         protected:
+            /*! @cond  */
             bool init{ true };
             static void windowSet( real_t *w,
                                    const size_t wsize,
                                    const real_t x );
+            /*! @endcond  */
         public:
             virtual ~smoother() {}
 
@@ -62,8 +64,10 @@ namespace qlibs {
     */
     class smootherLPF1 : public smoother {
         protected:
+            /*! @cond  */
             real_t alpha{ 0.9 };
             real_t y1{ 0.0 };
+            /*! @endcond  */
         public:
             virtual ~smootherLPF1() {}
 
@@ -89,6 +93,7 @@ namespace qlibs {
     */
     class smootherLPF2 : public smoother {
         protected:
+            /*! @cond  */
             real_t y1{ 0.0 };
             real_t y2{ 0.0 };
             real_t x1{ 0.0 };
@@ -97,6 +102,7 @@ namespace qlibs {
             real_t a1{ 0.0 };
             real_t a2{ 0.0 };
             real_t b1{ 0.0 };
+            /*! @endcond  */
         public:
             virtual ~smootherLPF2() {}
 
@@ -123,8 +129,10 @@ namespace qlibs {
     */
     class smootherMWM1 : public smoother, private nonCopyable {
         protected:
+            /*! @cond  */
             real_t *w{ nullptr };
             size_t wsize{ 0U };
+            /*! @endcond  */
         public:
             virtual ~smootherMWM1() {}
 
@@ -163,7 +171,9 @@ namespace qlibs {
     */
     class smootherMWM2 : public smoother, public tdl {
         protected:
+            /*! @cond  */
             real_t sum{ 0.0 };
+            /*! @endcond  */
         public:
             virtual ~smootherMWM2() {}
 
@@ -202,10 +212,12 @@ namespace qlibs {
     */
     class smootherMOR1 : public smoother, private nonCopyable {
         protected:
+            /*! @cond  */
             real_t *w{ nullptr };
             real_t m{ 0.0 };
             real_t alpha{ 0.8 };
             size_t wsize{ 0U };
+            /*! @endcond  */
         public:
             virtual ~smootherMOR1() {}
 
@@ -248,9 +260,11 @@ namespace qlibs {
     */
     class smootherMOR2 : public smoother, public tdl {
         protected:
+            /*! @cond  */
             real_t sum{ 0.0 };
             real_t m{ 0.0 };
             real_t alpha{ 0.8 };
+            /*! @endcond  */
         public:
             virtual ~smootherMOR2() {}
 
@@ -292,9 +306,11 @@ namespace qlibs {
     */
     class smootherGMWF : public smoother, private nonCopyable {
         protected:
+            /*! @cond  */
             real_t *w{ nullptr };
             real_t *k{ nullptr };
             size_t wsize;
+            /*! @endcond  */
         public:
             virtual ~smootherGMWF() {}
 
@@ -346,9 +362,11 @@ namespace qlibs {
     */
     class smootherEXPW : public smoother {
         protected:
+            /*! @cond  */
             real_t lambda{ 0.8 };
             real_t m{ 0U };
             real_t w{ 1.0 };
+            /*! @endcond  */
         public:
             virtual ~smootherEXPW() {}
 
@@ -373,6 +391,7 @@ namespace qlibs {
     */
     class smootherKLMN : public smoother {
         protected:
+            /*! @cond  */
             real_t xS{ 0.0 };  /* state */
             real_t A{ 1.0 };  /* x(n)=A*x(n-1)+u(n),u(n)~N(0,q) */
             real_t H{ 1.0 };  /* z(n)=H*x(n)+w(n),w(n)~N(0,r) */
@@ -380,6 +399,7 @@ namespace qlibs {
             real_t r{ 0.9 };  /* measure noise covariance */
             real_t p{ 100.0 };  /* estimated error covariance */
             real_t gain;
+            /*! @endcond  */
         public:
             virtual ~smootherKLMN() {}
 
@@ -408,11 +428,13 @@ namespace qlibs {
     */
     class smootherDESF : public smoother {
         protected:
+            /*! @cond  */
             real_t alpha;
             real_t beta;
             real_t lt;
             real_t bt;
             real_t n;
+            /*! @endcond  */
         public:
 
             /**
@@ -441,12 +463,14 @@ namespace qlibs {
     */
     class smootherALNF : public smoother, private nonCopyable {
         protected:
+            /*! @cond  */
             real_t alpha;
             real_t mu;
             real_t *w{ nullptr };
             real_t *w_1{ nullptr };
             real_t *xx{ nullptr };
             size_t n{ 0U };
+            /*! @endcond  */
         public:
             virtual ~smootherALNF() {}
 

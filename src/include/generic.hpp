@@ -16,13 +16,13 @@ namespace qlibs {
 
         /** @addtogroup  qtypegeneric qTypeGeneric
         * @brief Type-generic utilities
-        *  @{
+        * @{
         */
 
-         /*! @cond  */
+        /*! @cond  */
         using compareFcn_t = int (*)( const void *, const void *, void * );
         using forEachFcn_t = int (* const)( int, void *, void * );
-         /*! @endcond  */
+        /*! @endcond  */
 
         /**
         * @brief Swaps the data pointed by @a x and @a y
