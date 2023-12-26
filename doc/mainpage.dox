@@ -81,3 +81,8 @@
 *  @defgroup qcrc CRC
 *  For a brief description of this module, please read \ref qcrc_desc
 */
+
+/**
+*  @defgroup qtdl Tapped Delay Line
+*  For a brief description of this module, please read \ref qcrc_desc
+*/

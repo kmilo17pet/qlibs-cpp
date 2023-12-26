@@ -85,7 +85,7 @@ namespace qlibs {
             bool step( const real_t u,
                        const real_t y,
                        const real_t dt ) noexcept;
-            pidGains getEstimates( const real_t dt ) noexcept;
+            pidGains getEstimates( const real_t dt ) const noexcept;
     };
 
     /**

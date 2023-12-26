@@ -59,6 +59,7 @@ bool fis::setDeFuzzMethod( fisDeFuzzMethod m ) noexcept
                                                           };
 
     if ( m < FIS_NUM_DEFUZZ ) {
+        /*cppcheck-suppress knownConditionTrueFalse */
         if ( ( ( Mamdani == type ) && ( m <= som ) ) ||
              ( ( Sugeno == type ) && ( m >= wtaver ) && ( m <= wtsum ) ) ||
              ( ( Tsukamoto == type ) && ( wtaver == m ) )) {

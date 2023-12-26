@@ -341,7 +341,7 @@ bool pidAutoTuning::step( const real_t u,
     return ready;
 }
 /*============================================================================*/
-pidGains pidAutoTuning::getEstimates( const real_t dt ) noexcept
+pidGains pidAutoTuning::getEstimates( const real_t dt ) const noexcept
 {
     pidGains gains;
     real_t tmp1, tmp2;

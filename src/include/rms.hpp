@@ -66,18 +66,18 @@ namespace qlibs {
 
             /**
             * @brief Change the recursive parameters for the moving RMS estimator.
-            * @param[in] lambda Exponential weighting factor, specified as a positive
+            * @param[in] l Exponential weighting factor, specified as a positive
             * real scalar in the range [0,1]. A forgetting factor of 0.9 gives more
             * weight to the older data than does a forgetting factor of 0.1. A forgetting
             * factor of 1.0 indicates infinite memory. All the past samples are given an
             * equal weight.
-            * @param[in] alpha A parameter to tune the 2nd stage filter. Should be
-            * a value between  [ 0 < alpha < 1 ]. A higher value will result in a
+            * @param[in] a A parameter to tune the 2nd stage filter. Should be
+            * a value between  [ 0 < a < 1 ]. A higher value will result in a
             * smoother output but also increasing the convergence time.
             * @return @c true on success, otherwise returns @c false.
             */
-            bool setParams( const real_t lambda,
-                            const real_t alpha ) noexcept;
+            bool setParams( const real_t l,
+                            const real_t a ) noexcept;
     };
 
     /** @}*/

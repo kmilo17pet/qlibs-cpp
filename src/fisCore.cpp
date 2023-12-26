@@ -164,10 +164,12 @@ real_t fisCore::SMF( const fisIOBase * const in,
     else if ( x >= b ) {
         y = 1.0;
     }
+    /*cppcheck-suppress knownConditionTrueFalse */
     else if ( ( x >= a ) && ( x <= ( ( a + b )*0.5 ) ) ) {
         tmp = ( x - a )/( b - a );
         y = 2.0*tmp*tmp;
     }
+    /*cppcheck-suppress knownConditionTrueFalse */
     else if ( ( x <= b ) && ( x >= ( ( a + b )*0.5 ) ) ) {
         tmp = ( x - b )/( b - a );
         y = ( 1.0 - ( 2.0*tmp*tmp ) );
@@ -217,10 +219,12 @@ real_t fisCore::ZMF( const fisIOBase * const in,
     else if ( x >= b ) { // skipcq: CXX-W2041
         y = 0.0;
     }
+    /*cppcheck-suppress knownConditionTrueFalse */
     else if ( ( x >= a ) && ( x <= ( ( a + b )*0.5 ) ) ) {
         tmp = ( x - a )/( b - a );
         y = 1.0 - ( 2.0*tmp*tmp );
     }
+    /*cppcheck-suppress knownConditionTrueFalse */
     else if ( ( x <= b ) && ( x >= ( ( a + b )*0.5 ) ) ) {
         tmp = ( x - b )/( b - a );
         y = 2.0*tmp*tmp;

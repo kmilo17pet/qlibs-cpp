@@ -50,14 +50,14 @@ namespace qlibs {
             * @param[in] xorOut The final XOR value.
             * @return The CRC value for @a data.
             */
-            uint32_t generic( crcMode mode,
-                              const void * const pData,
-                              const size_t length,
-                              uint32_t poly,
-                              const uint32_t init = 0U,
-                              bool refIn = false,
-                              bool refOut = false,
-                              uint32_t xorOut = 0U ) noexcept;
+            static uint32_t generic( crcMode mode,
+                                     const void * const pData,
+                                     const size_t length,
+                                     uint32_t poly,
+                                     const uint32_t init = 0U,
+                                     bool refIn = false,
+                                     bool refOut = false,
+                                     uint32_t xorOut = 0U ) noexcept;
 
             /**
             * @brief CRC-8 with poly = 0x07 init = 0x00 refIn = false refOut = false
