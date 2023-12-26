@@ -1,5 +1,4 @@
 #include <include/generic.hpp>
-#include <cstring> 
 
 using namespace qlibs;
 

@@ -1,3 +1,11 @@
+/*!
+ * @file types.hpp
+ * @author J. Camilo Gomez C.
+ * @version 1.01
+ * @note This file is part of the qLibs-cpp distribution.
+ * @brief Common types for qLibs-cpp.
+ **/
+
 #ifndef QLIBS_TYPES
 #define QLIBS_TYPES
 
@@ -12,14 +20,18 @@
     #include <stdlib.h>
     #include <string.h>
     #include <ctype.h>
+    #include <math.h>
     #include <limits.h>
+    #include <float.h>
 #else 
     #include <cstddef>
     #include <cstdint>
     #include <cstdlib>
     #include <cstring>
     #include <cctype>
+    #include <cmath>
     #include <climits>
+    #include <cfloat>
     using namespace std;
 #endif
 
@@ -32,48 +44,11 @@ namespace qlibs {
     */
 
     /**
-    * @brief A type to instantiate a integer-base variable. This size of this type is
-    * implementation-defined.
-    */
-    using base_t = int;
-
-    /**
-    * @brief A type to instantiate a byte variable
-    */
-    using byte_t = uint8_t;
-
-    /**
-    * @brief A type to instantiate an unsigned variable
-    */
-    using unsigned_t = unsigned long;
-
-    /**
-    * @brief A type to instantiate an signed variable
-    */
-    using signed_t = long int;
-
-    /**
-    * @brief A type to instantiate a single-precision variable of 32-bits IEEE 754.
-    */
-    using float32_t = float;  /*this is not always true in some compilers*/
-
-    /**
-    * @brief A type to instantiate a double-precision variable of 64-bits IEEE 754.
-    */
-    using float64_t = double;  /*this is not always true in some compilers*/
-
-    /**
     * @brief A type to instantiate a real variable double-precision of 64-bits IEEE 754.
     */
     using real_t = double;
 
-    /**
-    * @brief A type to instantiate an OS index variable. Can store the maximum
-    * size of a theoretically possible object of any type (including array).
-    * Should be used for array indexing and loop counting.
-    */
-    using index_t = size_t;
-
+    /*! @cond */
     class nonCopyable {
         protected:
             nonCopyable() {}
@@ -82,9 +57,9 @@ namespace qlibs {
             nonCopyable( const nonCopyable & );
             nonCopyable& operator=( const nonCopyable & );
     };
+    /*! @endcond */
 
 }
-
 
 /*! @cond */
 #define     Q_UNUSED(arg)     (void)(arg)

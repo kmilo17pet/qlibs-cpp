@@ -242,6 +242,14 @@ fp16Raw_t fp16::abs( fp16Raw_t x ) noexcept
     return retValue;
 }
 /*============================================================================*/
+fp16Raw_t fp16::ceil( fp16Raw_t x ) noexcept
+{
+    const fp16Raw_t i = x & static_cast<fp16Raw_t>( integer_mask );
+    const fp16Raw_t f = x & static_cast<fp16Raw_t>( fraction_mask );
+
+    return ( 0 != f ) ? i + one : i;
+}
+/*============================================================================*/
 fp16Raw_t fp16::sqrt( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue = overflow;
@@ -448,6 +456,18 @@ fp16Raw_t fp16::log2( fp16Raw_t x ) noexcept
     }
 
     return retValue;
+}
+/*============================================================================*/
+fp16Raw_t fp16::radToDeg( const fp16Raw_t x )
+{
+    const fp16Raw_t f_180_pi = 3754936;
+    return mul( wrapToPi( x ), f_180_pi );
+}
+/*============================================================================*/
+fp16Raw_t fp16::degToRad( const fp16Raw_t x )
+{
+    const fp16Raw_t f_pi_180 = 1144;
+    return mul( wrapTo180( x ), f_pi_180 );
 }
 /*============================================================================*/
 fp16Raw_t fp16::wrapToPi( fp16Raw_t x ) noexcept

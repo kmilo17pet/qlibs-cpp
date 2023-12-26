@@ -1,6 +1,4 @@
 #include "include/mathex.hpp"
-#include <cmath>
-#include <algorithm>
 
 namespace qlibs {
 
@@ -63,10 +61,10 @@ bool inPolygon( const real_t x,
     real_t max_y = py[ 0 ], max_x = px[ 0 ], min_y = py[ 0 ], min_x = px[ 0 ];
 
     for ( i = 0U ; i < p ; ++i ) {
-        max_y = std::max( py[ i ], max_y );
-        max_x = std::max( px[ i ], max_x );
-        min_y = std::min( py[ i ], min_y );
-        min_x = std::min( px[ i ], min_x );
+        max_y = ( py[ i ] > max_y ) ? py[ i ] : max_y;
+        max_x = ( px[ i ] > max_x ) ? px[ i ] : max_x;
+        min_y = ( py[ i ] < min_y ) ? py[ i ] : min_y;
+        min_x = ( px[ i ] < min_x ) ? px[ i ] : min_x;
     }
 
     if ( ( y >= min_y ) && ( y <= max_y ) && ( x >= min_x ) && ( x <= max_x ) ) {
@@ -94,7 +92,7 @@ bool inCircle( const real_t x,
                const real_t r ) noexcept
 {
     const real_t d = ( ( x - cx )*( x - cx ) ) + ( ( y - cy )*( y - cy ) );
-    return ( d <= (r*r) );
+    return ( d <= ( r*r ) );
 }
 /*============================================================================*/
 

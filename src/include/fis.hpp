@@ -1,3 +1,11 @@
+/*!
+ * @file fis.hpp
+ * @author J. Camilo Gomez C.
+ * @version 1.0.1
+ * @note This file is part of the qLibs-cpp distribution.
+ * @brief Fuzzy Inference System (FIS) Engine
+ **/
+
 #ifndef QLIBS_FIS
 #define QLIBS_FIS
 
@@ -5,6 +13,15 @@
 
 namespace qlibs {
 
+    /** @addtogroup  qfis Fuzzy Inference System Engine
+    * @brief API for the qFIS Fuzzy Inference System Engine
+    *  @{
+    */
+
+    /**
+    * @brief An enum with all the possible values to specify a membership
+    * function.
+    */
     enum fisShapeMF {
         custommf = 0,   /*!< Custom user-defined Membership function*/
         trimf,          /*!< Triangular Membership function f(a,b,c)*/
@@ -38,6 +55,9 @@ namespace qlibs {
         /*! @endcond  */
     };
 
+    /**
+    * @brief An enum with all the possible de-Fuzzyfication methods.
+    */
     enum fisDeFuzzMethod {
         centroid = 0,   /*!< Center of gravity of the fuzzy set along the x-axis [ Only for ::Mamdani FIS ]*/
         bisector,       /*!< Vertical line that divides the fuzzy set into two sub-regions of equal area [ Only for ::Mamdani FIS ]**/
@@ -51,6 +71,9 @@ namespace qlibs {
         /*! @endcond  */
     };
 
+    /**
+    * @brief An enum with the supported parameter values
+    */
     enum fisParamValue {
         FIS_MIN = 0,   /*!< Minimal value*/
         FIS_PROD,      /*!< Product*/
@@ -59,32 +82,42 @@ namespace qlibs {
         FIS_SUM        /*!< Sum*/
     };
 
+    /**
+    * @brief An enum with the allowed parameters that can be set on a FIS instance
+    */
     enum fisParameter {
-        FIS_Implication,   /*!< Only ::qFIS_MIN and qFIS_PROD supported*/
-        FIS_Aggregation,   /*!< Only ::qFIS_MAX, qFIS_PROBOR and qFIS_SUM supported*/
-        FIS_AND,           /*!< Only ::qFIS_MIN and qFIS_PROD supported*/
-        FIS_OR,            /*!< Only ::qFIS_MAX and qFIS_PROBOR supported*/
+        FIS_Implication,   /*!< Only ::FIS_MIN and FIS_PROD supported*/
+        FIS_Aggregation,   /*!< Only ::FIS_MAX, FIS_PROBOR and qFIS_SUM supported*/
+        FIS_AND,           /*!< Only ::FIS_MIN and FIS_PROD supported*/
+        FIS_OR,            /*!< Only ::FIS_MAX and FIS_PROBOR supported*/
         FIS_EvalPoints     /*!< The number of points for de-fuzzification*/
     };
 
+    /**
+    * @brief An enum with the inference system types supported by qFIS
+    */
     enum fisType {
         Mamdani = 0,        /*!< Mamdani inference system. The output of each rule its a fuzzy logic set.*/
         Sugeno,             /*!< Takagi-Sugeno inference system. The output of each rule its a function either linear or constant.*/
         Tsukamoto           /*!< Mamdani inference system. The output of each rule its a fuzzy logic set represented with a monotonic membership function.*/
     };
 
+    /*! @cond  */
     enum fisDeFuzzState {
         FIS_DEFUZZ_INIT,
         FIS_DEFUZZ_COMPUTE,
         FIS_DEFUZZ_END
     };
-
+    /*! @endcond  */
+    
+    /*! @cond  */
     class fisCore;
     class fis;
-
     template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
     class fisSystem;
+    /*! @endcond  */
 
+    /*! @cond  */
     class fisIOBase {
         protected:
             real_t min{ -1.0 };
@@ -98,7 +131,12 @@ namespace qlibs {
         template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
         friend class fisSystem;
     };
+    /*! @endcond  */
 
+    /**
+    * @brief A FIS Input object
+    * @details The instance should be initialized using the fis::inputSetup() method.
+    */
     class fisInput : public fisIOBase {
         public:
             fisInput() = default;
@@ -109,6 +147,10 @@ namespace qlibs {
         friend class fisSystem;
     };
 
+    /**
+    * @brief A FIS Output object
+    * @details The instance should be initialized using the fis::outputSetup() method.
+    */
     class fisOutput : public fisIOBase {
         private:
             fis *owner{ nullptr };
@@ -140,10 +182,13 @@ namespace qlibs {
         friend class fisSystem;
     };
 
+    /*! @cond  */
     using fisMFFunction = real_t (*)( const fisIOBase * const in,
                                       const real_t *p,
                                       const size_t n );
+    /*! @endcond  */
 
+    /*! @cond  */
     class fisCore {
         protected:
             enum defuzzMembers {
@@ -268,7 +313,13 @@ namespace qlibs {
             static real_t deFuzzWtSum( fisOutput * const o,
                                        const fisDeFuzzState stage );
     };
+    /*! @endcond  */
 
+    /**
+    * @brief A FIS Membership Function
+    * @details The instance should be initialized using the fis::setInputMF() 
+    * or fis::setOutputMF() methods.
+    */
     class fisMF {
         private:
             fisMFFunction shape{ nullptr };
@@ -299,7 +350,6 @@ namespace qlibs {
                 }
                 return y;
             }
-
         public:
             virtual ~fisMF() {};
             fisMF() = default;
@@ -309,15 +359,58 @@ namespace qlibs {
     #define FIS_RULE_ITEM_SIZE  1
 
     #if ( FIS_RULE_ITEM_SIZE == 1 )
+        /**
+        * @brief Type definition to instantiate a set of fuzzy rules
+        * @details Rules are defined by combining I/O and membership function tags
+        * with the following statements:
+        * 
+        * #FIS_RULES_BEGIN, #IF, #IS, #IS_NOT, #AND, #OR, #THEN, #END and
+        * #FIS_RULES_END
+        * 
+        * Example:
+        * @code{.c}
+        * static const fisRules rules[] = { 
+        *     FIS_RULES_BEGIN
+        *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
+        *         IF service IS service_good THEN tip IS tip_average END
+        *         IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END
+        *     FIS_RULES_END
+        * };
+        * @endcode
+        */
+        /*! @cond  */
         using fisRules = int8_t;
         #define FIS_RULES_MIN_VALUE     INT8_MIN
+        /*! @endcond  */
     #else
+        /**
+        * @brief Type definition to instantiate a set of fuzzy rules
+        * @details Rules are defined by combining I/O and membership function tags
+        * with the following statements:
+        * 
+        * #FIS_RULES_BEGIN, #IF, #IS, #IS_NOT, #AND, #OR, #THEN, #END and
+        * #FIS_RULES_END
+        * 
+        * Example:
+        * @code{.c}
+        * static const fisRules rules[] = { 
+        *     FIS_RULES_BEGIN
+        *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
+        *         IF service IS service_good THEN tip IS tip_average END
+        *         IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END
+        *     FIS_RULES_END
+        * };
+        * @endcode
+        */
+        /*! @cond  */
         using fisRules = int16_t;
         #define FIS_RULES_MIN_VALUE     INT16_MIN
+        /*! @endcond  */
     #endif
 
     using fisTag = fisRules;
     /*cstat -MISRAC++2008-0-1-4_b*/
+    /*! @cond  */
     constexpr fisRules Q_FIS_RULES_BEGIN    = FIS_RULES_MIN_VALUE;
     constexpr fisRules Q_FIS_RULES_END      = FIS_RULES_MIN_VALUE + 1;
     constexpr fisRules Q_FIS_AND            = FIS_RULES_MIN_VALUE + 2;
@@ -331,8 +424,45 @@ namespace qlibs {
     #define Q_FIS_IS_STATEMENT      ,(
     #define Q_FIS_IS_NOT_STATEMENT  ,-(
     #define Q_FIS_END_STATEMENT     +1)
+    /*! @cond  */
 
+    /**
+    * @brief Start a Fuzzy rule set.
+    * The #FIS_RULES_BEGIN statement is used to declare the starting point of
+    * a FIS rule set. It should be placed at the start of the rules enumeration.
+    * #FIS_RULES_END declare the end of the FIS rule set.
+    * @see #FIS_RULES_END
+    * @warning Only one segment is allowed inside a fuzzy rule set.
+    * @note It must always be used together with a matching #FIS_RULES_END 
+    * statement.
+    * Example:
+    * @code{.c}
+    * static const fisRules rules[] = { 
+    *     FIS_RULES_BEGIN
+    *       
+    *     FIS_RULES_END
+    * };
+    * @endcode
+    */
     #define FIS_RULES_BEGIN         Q_FIS_RULES_BEGIN
+    /**
+    * @brief Ends a Fuzzy rule set.
+    * The #FIS_RULES_END statement is used to finalize the declaration of a 
+    * FIS rule set. It should be placed at the end of the rules enumeration.
+    * #FIS_RULES_BEGIN declare the start point of the FIS rule set.
+    * @see #FIS_RULES_BEGIN
+    * @warning Only one segment is allowed inside a fuzzy rule set.
+    * @note It must always be used together with a matching #FIS_RULES_BEGIN 
+    * statement.
+    * Example:
+    * @code{.c}
+    * static const fisRules_t rules[] = { 
+    *     FIS_RULES_BEGIN
+    *       
+    *     FIS_RULES_END
+    * };
+    * @endcode
+    */
     #define FIS_RULES_END           ,Q_FIS_RULES_END
     /** @brief Rule statement to begin a rule sentence */
     #define IF                      Q_FIS_IF_STATEMENT
@@ -353,6 +483,10 @@ namespace qlibs {
     using fisDeFuzzFunction = real_t (*)( fisOutput * const o, const fisDeFuzzState stage );
     using fuzzyOperator = real_t (*)( const real_t a, const real_t b );
 
+    /**
+    * @brief A FIS(Fuzzy Inference System) object
+    * @details The instance should be initialized using the fis::setup() method.
+    */
      class fis: public fisCore, private nonCopyable {
         using methods_fcn = real_t (*)( const real_t a, const real_t b );
 
@@ -407,6 +541,29 @@ namespace qlibs {
         public:
             fis() = default;
             virtual ~fis() {}
+
+            /**
+            * @brief Setup and initialize the FIS instance.
+            * @note Default configuration : AND = Min, OR = Max, Implication = Min
+            * Aggregation = Max, EvalPoints = 100
+            * @param[in] t Type of inference ::Mamdani, ::Sugeno or ::Tsukamoto.
+            * @param[in] inputs An array with all the system inputs as fisInput
+            * objects.
+            * @param[in] ni The number of elements in the @a inputs array.
+            * @param[in] outputs An array with all the system outputs as fisOutput
+            * objects.
+            * @param[in] no The number of elements in the @a outputs array.
+            * @param[in] mf_inputs An array with all the membership functions related to
+            * the inputs. This should be an array of fisMF objects.
+            * @param[in] nmi The number of elements in the @a mf_inputs array.
+            * @param[in] mf_outputs An array with all the membership functions related to
+            * the outputs. This should be an array of fisMF objects.
+            * @param[in] nmo The number of elements in the @a mf_outputs array.
+            * @param[in] r The rules set.
+            * @param[in] n Number of rules
+            * @param[in] rWeights An array of size @a n were the rule strengths will be stored.
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const fisType t,
                  fisInput * const inputs,
                  const size_t ni,
@@ -419,6 +576,24 @@ namespace qlibs {
                  const fisRules * const r,
                  const size_t n,
                  real_t *rWeights = nullptr ) noexcept;
+
+            /**
+            * @brief Setup and initialize the FIS instance.
+            * @note Default configuration : AND = Min, OR = Max, Implication = Min
+            * Aggregation = Max, EvalPoints = 100
+            * @param[in] t Type of inference ::Mamdani, ::Sugeno or ::Tsukamoto.
+            * @param[in] inputs An array with all the system inputs as fisInput
+            * objects.
+            * @param[in] outputs An array with all the system outputs as fisOutput
+            * objects.
+            * @param[in] mf_inputs An array with all the membership functions related to
+            * the inputs. This should be an array of fisMF objects.
+            * @param[in] mf_outputs An array with all the membership functions related to
+            * the outputs. This should be an array of fisMF objects.
+            * @param[in] r The rules set.
+            * @param[in] rWeights An array of size @a n were the rule strengths will be stored.
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t numberInputs, size_t numberOutputs, size_t numberMFinputs, size_t numberMFOutputs, size_t numberRules>
             bool setup( const fisType t,
                  fisInput (&inputs)[ numberInputs ],
@@ -430,12 +605,49 @@ namespace qlibs {
             {
                 return setup( t, inputs, numberInputs, outputs, numberOutputs, mf_inputs, numberMFinputs, mf_outputs, numberMFOutputs, r, numberRules, rWeights );
             }
+
+            /**
+            * @brief Setup the input with the specified tag and set limits for it
+            * @param[in] t The input tag
+            * @param[in] min Minimum allowed value for this input
+            * @param[in] max Max allowed value for this input
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setupInput( const fisTag t,
                              const real_t Min,
                              const real_t Max ) noexcept;
+            /**
+            * @brief Setup the output with the specified tag and set limits for it
+            * @param[in] t The output tag
+            * @param[in] min Minimum allowed value for this output
+            * @param[in] max Max allowed value for this output
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setupOutput( const fisTag t,
                               const real_t Min,
                               const real_t Max ) noexcept;
+
+            /**
+            * @brief Set the input tag and points for the specified membership
+            * function
+            * @param[in] io The input tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] s The wanted shape/form for this membership function, can
+            * be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf,
+            * ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf,
+            * ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf,
+            * ::cosmf.
+            * @note For ::Sugeno FIS, an output membership function should be one of the
+            * following: ::constantmf, ::linearmf.
+            * @note For ::Tsukamoto FIS, an output membership function should be one the
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * ::tconcavemf
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setInputMF( const fisTag io,
                              const fisTag mf,
                              const fisShapeMF s,
@@ -444,6 +656,19 @@ namespace qlibs {
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, s, nullptr, cp, h ) : false;
             }
+
+            /**
+            * @brief Set the input tag and points for the specified membership
+            * function
+            * @param[in] io The input tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] customMfs Custom user-defined membership function.
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setInputMF( const fisTag io,
                              const fisTag mf,
                              fisMFFunction customMfs,
@@ -452,6 +677,28 @@ namespace qlibs {
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, custommf, customMfs, cp, h ) : false;
             }
+
+            /**
+            * @brief Set the output tag and points for the specified membership
+            * function
+            * @param[in] io The output tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] s The wanted shape/form for this membership function, can
+            * be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf,
+            * ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf,
+            * ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf,
+            * ::cosmf.
+            * @note For ::Sugeno FIS, an output membership function should be one of the
+            * following: ::constantmf, ::linearmf.
+            * @note For ::Tsukamoto FIS, an output membership function should be one the
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * ::tconcavemf
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setOutputMF( const fisTag io,
                               const fisTag mf,
                               const fisShapeMF s,
@@ -460,6 +707,19 @@ namespace qlibs {
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false; 
             }
+
+            /**
+            * @brief Set the output tag and points for the specified membership
+            * function
+            * @param[in] io The output tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] customMfs Custom user-defined membership function.
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setOutputMF( const fisTag io,
                               const fisTag mf,
                               fisMFFunction customMfs,
@@ -468,21 +728,99 @@ namespace qlibs {
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false; 
             }
+
+            /**
+            * @brief Set a crisp value of the input with the specified tag.
+            * @param[in] t The input tag
+            * @param[in] value The crisp value to set
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setInput( const fisTag t,
                            const real_t value ) noexcept;
+
+            /**
+            * @brief Get the de-fuzzified crisp value from the output with the
+            * specified tag.
+            * @param[in] t The output tag
+            * @return The requested de-fuzzified crisp value.
+            */
             bool getOutput( const fisTag t,
                             real_t &value ) const noexcept;
+
+            /**
+            * @brief Set parameters of the FIS instance.
+            * @param[in] p The requested parameter to change/set.
+            * @param[in] x The value of the parameter to set.
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setParameter( const fisParameter p,
                                const fisParamValue x ) noexcept;
+
+            /**
+            * @brief Change the default de-Fuzzification method of the FIS instance.
+            * @param[in] m The de-fuzzification method: use one of the following :
+            *  ::centroid, ::bisector, ::mom, ::lom, ::som, ::wtaver, ::wtsum
+            * @note ::centroid, ::bisector, ::mom, ::lom and ::som only apply for a
+            * ::Mamdani FIS
+            * @note ::wtaver and ::wtsum only apply for a ::Sugeno FIS.
+            * @note ::wtaver only apply for a ::Tsukamoto FIS
+            * @return @c true on success, otherwise return @c false
+            */
             bool setDeFuzzMethod( fisDeFuzzMethod m ) noexcept;
+
+            /**
+            * @brief Perform the fuzzification operation over the crisp inputs on the
+            * requested FIS object
+            * @pre I/Os and fuzzy sets must be previously initialized by fis::setupInput(),
+            * fis::setupOutput(), fis::setInputMF(), fis::setOutputMF and fis::setup() respectively.
+            * @return @c true on success, otherwise return @c false.
+            */
             bool fuzzify( void ) noexcept;
+
+            /**
+            * @brief Perform the de-Fuzzification operation to compute the crisp outputs.
+            * @pre The instance should have already invoked the inference process 
+            * successfully with fis::inference()
+            * @note By default, this method, uses the Centroid method on
+            * ::Mamdani type FIS and weight-average on ::Sugeno type FIS. To change
+            * the default settings use the fis::setDeFuzzMethod() function.
+            * @return @c true on success, otherwise return @c false.
+            */
             bool deFuzzify( void ) noexcept;
+
+            /**
+            * @brief Perform the inference process on the FIS object
+            * @pre The instance should have already invoked the fuzzification operation 
+            * successfully with fis::fuzzify()
+            * @return @c true on success, otherwise return @c false.
+            */
             bool inference( void ) noexcept;
+
+            /**
+            * @brief Set weights to the rules of the inference system.
+            * @pre I/Os and fuzzy sets must be previously initialized by fis::setupInput(),
+            * fis::setupOutput(), fis::setInputMF(), fis::setOutputMF and fis::setup() respectively.
+            * @param[in] rWeights An array with the values of every rule weight;
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setRuleWeights( real_t *rWeights ) noexcept;
+
+            /**
+            * @brief Get the number of points used on Mamdani to perform the 
+            * de-fuzzification proccess
+            * @return The number for points for de-fuzzification.
+            */
             size_t getNumberOfPoints( void ) const noexcept
             {
                 return nPoints;
             }
+
+            /**
+            * @brief Get the de-fuzzified crisp value from the output with the
+            * specified tag.
+            * @param[in] outTag The output tag
+            * @return The requested de-fuzzified crisp value.
+            */
             real_t operator[]( fisTag outTag ) const
             {
                 /*cstat -CERT-STR34-C*/
@@ -490,18 +828,35 @@ namespace qlibs {
                 /*cstat +CERT-STR34-C*/
             }
 
+            /**
+            * @brief Select the input to set using with the specified tag.
+            * @param[in] tag The input tag
+            * @return The fis object you invoked << upon.
+            */
             fis& operator<<( const fisTag& tag ) {
                 if ( static_cast<size_t>( tag ) < nInputs ) {
                     lastTag = tag;
                 }
                 return *this;
             }
+
+            /**
+            * @brief The value to set the previously selected input.
+            * @param[in] value The crisp value to set
+            * @return The fis object you invoked << upon.
+            */
             fis& operator<<( const int& value ) {
                 if ( lastTag >= 0 ) {
                     input[ lastTag ].value = static_cast<real_t>(value);
                 }
                 return *this;
             }
+
+            /**
+            * @brief The value to set the previously selected input.
+            * @param[in] value The crisp value to set
+            * @return The fis object you invoked << upon.
+            */
             fis& operator<<( const real_t& value ) {
                 if ( lastTag >= 0 ) {
                     input[ lastTag ].value = value;
@@ -512,6 +867,18 @@ namespace qlibs {
         friend class fisCore;
     };
 
+    /**
+    * @brief A wrapper for the FIS object
+    * @details The instance should be initialized using the fisSystem::setup() method.
+    * @tparam fType Type of inference ::Mamdani, ::Sugeno or ::Tsukamoto.
+    * @tparam numberOfInputs The number of inputs of the FIS system.
+    * @tparam numberOfOutputs The number of outputs of the FIS system.
+    * @tparam numberOfInputSets The number of sets/membership functions for 
+    * the inputs.
+    * @tparam numberOfOutputSets The number of sets/membership functions for 
+    * the outputs.
+    * @tparam numberOfRules Number of rules
+    */
     template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
     class fisSystem {
         private:
@@ -523,6 +890,11 @@ namespace qlibs {
             real_t ruleStrength[ numberOfRules ];
         public:
             constexpr fisSystem( const fisRules *Rules ) : rules( Rules ) {};
+
+            /**
+            * @brief Setup and initialize the FIS instance.
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setup( void )
             {
                 return sys.setup( fType,
@@ -533,18 +905,56 @@ namespace qlibs {
                                   rules, numberOfRules,
                                   ruleStrength );
             }
+
+            /**
+            * @brief Setup the input with the specified tag and set limits for it
+            * @param[in] t The input tag
+            * @param[in] min Minimum allowed value for this input
+            * @param[in] max Max allowed value for this input
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setupInput( const fisTag t,
                                     const real_t Min,
                                     const real_t Max ) noexcept
             {
                 return sys.setupInput( t, Min, Max );
             }
+
+            /**
+            * @brief Setup the output with the specified tag and set limits for it
+            * @param[in] t The output tag
+            * @param[in] min Minimum allowed value for this output
+            * @param[in] max Max allowed value for this output
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setupOutput( const fisTag t,
                                      const real_t Min,
                                      const real_t Max ) noexcept
             {
                 return sys.setupOutput( t, Min, Max );
             }
+
+            /**
+            * @brief Set the input tag and points for the specified membership
+            * function
+            * @param[in] io The input tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] s The wanted shape/form for this membership function, can
+            * be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf,
+            * ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf,
+            * ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf,
+            * ::cosmf.
+            * @note For ::Sugeno FIS, an output membership function should be one of the
+            * following: ::constantmf, ::linearmf.
+            * @note For ::Tsukamoto FIS, an output membership function should be one the
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * ::tconcavemf
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setInputMF( const fisTag io,
                                     const fisTag mf,
                                     const fisShapeMF s,
@@ -553,6 +963,19 @@ namespace qlibs {
             {
                 return sys.setInputMF( io, mf, s, cp, h );
             }
+
+            /**
+            * @brief Set the input tag and points for the specified membership
+            * function
+            * @param[in] io The input tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] customMfs Custom user-defined membership function.
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setInputMF( const fisTag io,
                                     const fisTag mf,
                                     fisMFFunction customMfs,
@@ -561,6 +984,28 @@ namespace qlibs {
             {
                 return sys.setInputMF( io, mf, customMfs, cp, h );
             }
+
+            /**
+            * @brief Set the output tag and points for the specified membership
+            * function
+            * @param[in] io The output tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] s The wanted shape/form for this membership function, can
+            * be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf,
+            * ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf,
+            * ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf,
+            * ::cosmf.
+            * @note For ::Sugeno FIS, an output membership function should be one of the
+            * following: ::constantmf, ::linearmf.
+            * @note For ::Tsukamoto FIS, an output membership function should be one the
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * ::tconcavemf
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setOutputMF( const fisTag io,
                                      const fisTag mf,
                                      const fisShapeMF s,
@@ -569,6 +1014,19 @@ namespace qlibs {
             {
                 return sys.setOutputMF( io, mf, s, cp, h );
             }
+
+            /**
+            * @brief Set the output tag and points for the specified membership
+            * function
+            * @param[in] io The output tag related with this membership function
+            * @param[in] mf The user-defined tag for this membership function
+            * @param[in] customMfs Custom user-defined membership function.
+            * @param[in] cp Points or coefficients of the membership function.
+            * @param[in] h Height of the membership function.
+            * @note Height parameter @a h does not apply for output membership functions
+            * on ::Sugeno and ::Tsukamoto inference systems. [ 0 <= h <= 1]
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setOutputMF( const fisTag io,
                                      const fisTag mf,
                                      fisMFFunction customMfs,
@@ -577,47 +1035,126 @@ namespace qlibs {
             {
                 return sys.setOutputMF( io, mf, customMfs, cp, h );
             }
+
+            /**
+            * @brief Perform the fuzzification operation over the crisp inputs on the
+            * requested FIS object
+            * @pre I/Os and fuzzy sets must be previously initialized by fis::setupInput(),
+            * fisSystem::setupOutput(), fisSystem::setInputMF(), fisSystem::setOutputMF 
+            * and fisSystem::setup() respectively.
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool fuzzify( void ) noexcept
             {
                 return sys.fuzzify();
             }
+
+            /**
+            * @brief Perform the de-Fuzzification operation to compute the crisp outputs.
+            * @pre The instance should have already invoked the inference process 
+            * successfully with fisSystem::inference()
+            * @note By default, this method, uses the Centroid method on
+            * ::Mamdani type FIS and weight-average on ::Sugeno type FIS. To change
+            * the default settings use the fis::setDeFuzzMethod() function.
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool deFuzzify( void ) noexcept
             {
                 return sys.deFuzzify();
             }
+
+            /**
+            * @brief Perform the inference process on the FIS object
+            * @pre The instance should have already invoked the fuzzification operation 
+            * successfully with fisSystem::fuzzify()
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool inference( void ) noexcept
             {
                 return sys.inference();
             }
 
+            /**
+            * @brief Set a crisp value of the input with the specified tag.
+            * @param[in] t The input tag
+            * @param[in] value The crisp value to set
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setInput( const fisTag t,
                                   const real_t value ) noexcept
             {
                 return sys.setInput( t, value );
             }
+
+            /**
+            * @brief Get the de-fuzzified crisp value from the output with the
+            * specified tag.
+            * @param[in] t The output tag
+            * @return The requested de-fuzzified crisp value.
+            */
             inline bool getOutput( const fisTag t,
                                    real_t &value ) const noexcept
             {
                 return sys.getOutput( t, value );
             }
+
+            /**
+            * @brief Set parameters of the FIS instance.
+            * @param[in] p The requested parameter to change/set.
+            * @param[in] x The value of the parameter to set.
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setParameter( const fisParameter p,
                                       const fisParamValue x ) noexcept
             {
                 return sys.setParameter( p, x );
             }
+
+            /**
+            * @brief Change the default de-Fuzzification method of the FIS instance.
+            * @param[in] m The de-fuzzification method: use one of the following :
+            *  ::centroid, ::bisector, ::mom, ::lom, ::som, ::wtaver, ::wtsum
+            * @note ::centroid, ::bisector, ::mom, ::lom and ::som only apply for a
+            * ::Mamdani FIS
+            * @note ::wtaver and ::wtsum only apply for a ::Sugeno FIS.
+            * @note ::wtaver only apply for a ::Tsukamoto FIS
+            * @return @c true on success, otherwise return @c false
+            */
             inline bool setDeFuzzMethod( fisDeFuzzMethod m ) noexcept
             {
                 return sys.setDeFuzzMethod( m );
             }
+
+            /**
+            * @brief Set weights to the rules of the inference system.
+            * @pre I/Os and fuzzy sets must be previously initialized by 
+            * fisSystem::setupInput(), fisSystem::setupOutput(), 
+            * fisSystem::setInputMF(), fisSystem::setOutputMF and 
+            * fisSystem::setup() respectively.
+            * @param[in] rWeights An array with the values of every rule weight;
+            * @return @c true on success, otherwise return @c false.
+            */
             inline bool setRuleWeights( real_t *rWeights ) noexcept
             {
                 return sys.setRuleWeights( rWeights );
             }
+
+            /**
+            * @brief Get the number of points used on Mamdani to perform the 
+            * de-fuzzification proccess
+            * @return The number for points for de-fuzzification.
+            */
             size_t getNumberOfPoints( void ) const noexcept
             {
                 return sys.nPoints;
             }
 
+            /**
+            * @brief Get the de-fuzzified crisp value from the output with the
+            * specified tag.
+            * @param[in] outTag The output tag
+            * @return The requested de-fuzzified crisp value.
+            */
             real_t operator[]( fisTag outTag ) const
             {
                 /*cstat -CERT-STR34-C*/
@@ -625,18 +1162,35 @@ namespace qlibs {
                 /*cstat +CERT-STR34-C*/
             }
 
+            /**
+            * @brief Select the input to set using with the specified tag.
+            * @param[in] tag The input tag
+            * @return The fisSystem object you invoked << upon.
+            */
             fisSystem& operator<<( const fisTag& tag ) {
                 if ( static_cast<size_t>( tag ) < sys.nInputs ) {
                     sys.lastTag = tag;
                 }
                 return *this;
             }
+
+            /**
+            * @brief The value to set the previously selected input.
+            * @param[in] value The crisp value to set
+            * @return The fisSystem object you invoked << upon.
+            */
             fisSystem& operator<<( const int& value ) {
                 if ( sys.lastTag >= 0 ) {
                     sys.input[ sys.lastTag ].value = static_cast<real_t>( value );
                 }
                 return *this;
             }
+
+            /**
+            * @brief The value to set the previously selected input.
+            * @param[in] value The crisp value to set
+            * @return The fisSystem object you invoked << upon.
+            */
             fisSystem& operator<<( const real_t& value ) {
                 if ( sys.lastTag >= 0 ) {
                     sys.input[ sys.lastTag ].value = value;
@@ -645,6 +1199,7 @@ namespace qlibs {
             }
     };
 
+     /** @}*/
 
 }
 

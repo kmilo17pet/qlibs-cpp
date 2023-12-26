@@ -209,18 +209,18 @@ real_t smootherMOR2::smooth( const real_t x )
 bool smootherGMWF::setup( const real_t sg,
                           const real_t c,
                           real_t *window,
-                          const size_t w_size )
+                          real_t *kernel,
+                          const size_t wk_size )
 {
     bool retValue = false;
-    const size_t ws = wsize/2U;
+    const size_t ws = wk_size;
 
-    if ( ( nullptr != window ) && ( w_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0 ) ) {
-        real_t * const kernel = &window[ ws ];
+    if ( ( nullptr != window ) && ( wk_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0 ) ) {
         real_t r, sum = 0.0;
         size_t i;
         real_t l, center;
         /*cstat -MISRAC++2008-5-0-7*/
-        l = static_cast<real_t>( wsize - 1U )/2.0;
+        l = static_cast<real_t>( wk_size - 1U );
         /*cstat +MISRAC++2008-5-0-7*/
         center = c - l;
         r = 2.0*sg*sg;
@@ -230,7 +230,7 @@ bool smootherGMWF::setup( const real_t sg,
             /*cstat +MISRAC++2008-5-0-7*/
             d -= center;
             /*cstat -CERT-FLP32-C_b*/
-            kernel[ i ] =  exp( -( d*d )/r );
+            kernel[ i ] = exp( -( d*d )/r );
             /*cstat +CERT-FLP32-C_b*/
             sum += kernel[ i ];
         }
@@ -325,14 +325,14 @@ real_t smootherKLMN::smooth( const real_t x )
 /*============================================================================*/
 bool smootherDESF::setup( const real_t a,
                           const real_t b,
-                          const real_t N )
+                          const size_t N )
 {
     bool retValue = false;
 
-    if ( ( n >= 0.0 ) && ( a > 0.0 ) && ( a < 1.0 ) && ( b > 0.0 ) && ( b < 1.0 ) ) {
+    if ( ( a > 0.0 ) && ( a < 1.0 ) && ( b > 0.0 ) && ( b < 1.0 ) ) {
         alpha = a;
         beta = b;
-        n = round( N );
+        n = static_cast<real_t>( N );
         retValue = reset();
     }
 

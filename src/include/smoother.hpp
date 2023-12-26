@@ -1,12 +1,27 @@
+/*!
+ * @file smoother.hpp
+ * @author J. Camilo Gomez C.
+ * @version 1.01
+ * @note This file is part of the qLibs-cpp distribution.
+ * @brief API to smooth noisy signals.
+ **/
+
 #ifndef QLIBS_SMOOTHER
 #define QLIBS_SMOOTHER
 
 #include "include/types.hpp" 
 #include "include/tdl.hpp" 
-#include <cmath>
 
 namespace qlibs {
 
+    /** @addtogroup qssmoother Smoother : Filters to smooth noisy signals
+    * @brief API for the Smoother library
+    *  @{
+    */
+
+    /**
+    * @brief The smoother base abstract class
+    */
     class smoother {
         protected:
             bool init{ true };
@@ -15,25 +30,63 @@ namespace qlibs {
                                    const real_t x );
         public:
             virtual ~smoother() {}
+
+            /**
+            * @brief Check if the smoother filter is initialized.
+            * @return @c true if the smoother has been initialized, otherwise 
+            * return @c false.
+            */
             bool isInitialized( void ) const;
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             virtual real_t smooth( const real_t x ) = 0;
-            bool reset( void )
+
+            /**
+            * @brief Reset the the smoother filter.
+            * @return @c true on success, otherwise return false.
+            */
+            inline bool reset( void )
             {
                 init = true;
                 return true;
             }
     };
 
+    /**
+    * @brief A 1st order Low-Pass Filter
+    */
     class smootherLPF1 : public smoother {
         protected:
             real_t alpha{ 0.9 };
             real_t y1{ 0.0 };
         public:
             virtual ~smootherLPF1() {}
+
+            /**
+            * @brief Setup an initialize the 1st order Low-Pass Filter.
+            * @param[in] a The filter adjustment parameter. 
+            * A value between  [ 0 < @a alpha < 1 ]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t a = 0.9 );
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A 2nd order Low-Pass Filter
+    */
     class smootherLPF2 : public smoother {
         protected:
             real_t y1{ 0.0 };
@@ -46,41 +99,107 @@ namespace qlibs {
             real_t b1{ 0.0 };
         public:
             virtual ~smootherLPF2() {}
+
+            /**
+            * @brief Setup an initialize the 2nd order Low-Pass Filter.
+            * @param[in] a The filter adjustment parameter. 
+            * A value between  [ 0 < @a a < 1 ]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t a = 0.9 );
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A Moving Window Median filter
+    * @note Time complexity is O(n)
+    */
     class smootherMWM1 : public smoother, private nonCopyable {
         protected:
             real_t *w{ nullptr };
             size_t wsize{ 0U };
         public:
             virtual ~smootherMWM1() {}
+
+            /**
+            * @brief Setup an initialize the Moving Window Median filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] w_size The number of elements in @a window
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( real_t *window,
                         const size_t w_size );
+
+            /**
+            * @brief Setup an initialize the Moving Window Median filter
+            * @param[in] window An array to hold the samples of the window
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t windowSize>
             bool setup( real_t (&window)[ windowSize ] )
             {
                 return setup( window, windowSize );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A Moving Window Median filter
+    * @note Time complexity is O(1)
+    */
     class smootherMWM2 : public smoother, public tdl {
         protected:
             real_t sum{ 0.0 };
         public:
             virtual ~smootherMWM2() {}
+
+            /**
+            * @brief Setup an initialize the Moving Window Median filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] w_size The number of elements in @a window
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( real_t *window,
                         const size_t w_size );
+
+            /**
+            * @brief Setup an initialize the Moving Window Median filter
+            * @param[in] window An array to hold the samples of the window
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t windowSize>
             bool setup( real_t (&window)[ windowSize ] )
             {
                 return setup( window, windowSize );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A Moving Outlier Removal filter
+    * @note Time complexity is O(n)
+    */
     class smootherMOR1 : public smoother, private nonCopyable {
         protected:
             real_t *w{ nullptr };
@@ -89,18 +208,44 @@ namespace qlibs {
             size_t wsize{ 0U };
         public:
             virtual ~smootherMOR1() {}
+
+            /**
+            * @brief Setup an initialize the Moving Outlier Removal filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] w_size The number of elements in @a window
+            * @param[in] a A value to adjust the filter behavior
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( real_t *window,
                         const size_t w_size,
                         const real_t a = 0.9 );
+
+            /**
+            * @brief Setup an initialize the Moving Outlier Removal filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] a A value to adjust the filter behavior
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t windowSize>
             bool setup( real_t (&window)[ windowSize ],
                         const real_t a = 0.9 )
             {
                 return setup( window, windowSize, a );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A Moving Outlier Removal filter
+    * @note Time complexity is O(1)
+    */
     class smootherMOR2 : public smoother, public tdl {
         protected:
             real_t sum{ 0.0 };
@@ -108,18 +253,43 @@ namespace qlibs {
             real_t alpha{ 0.8 };
         public:
             virtual ~smootherMOR2() {}
+
+            /**
+            * @brief Setup an initialize the Moving Outlier Removal filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] w_size The number of elements in @a window
+            * @param[in] a A value to adjust the filter behavior
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( real_t *window,
                         const size_t w_size,
                         const real_t a = 0.9 );
+
+            /**
+            * @brief Setup an initialize the Moving Outlier Removal filter
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] a A value to adjust the filter behavior
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t windowSize>
             bool setup( real_t (&window)[ windowSize ],
                         const real_t a = 0.9 )
             {
                 return setup( window, windowSize, a );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A Gaussian filter
+    */
     class smootherGMWF : public smoother, private nonCopyable {
         protected:
             real_t *w{ nullptr };
@@ -127,20 +297,53 @@ namespace qlibs {
             size_t wsize;
         public:
             virtual ~smootherGMWF() {}
+
+            /**
+            * @brief Setup an initialize the Gaussian filter
+            * @param[in] sg Standard deviation [ @a sigma > 0 ]
+            * @param[in] c Offset of the gaussian center [ 0 < @a offset < ( @a wsize - 1 ) ]
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] kernel An array to hold the gaussian kernel coefficients.
+            * @param[in] wk_size The number of elements in @a window or @a kernel.
+            * @note Size of both @a window and @a kernel should be equal
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t sg,
                         const real_t c,
                         real_t *window,
-                        const size_t w_size );
-            template <size_t windowSize>
+                        real_t *kernel,
+                        const size_t wk_size );
+
+            /**
+            * @brief Setup an initialize the Gaussian filter
+            * @param[in] sg Standard deviation [ @a sigma > 0 ]
+            * @param[in] c Offset of the gaussian center [ 0 < @a offset < ( @a wsize - 1 ) ]
+            * @param[in] window An array to hold the samples of the window
+            * @param[in] kernel An array to hold the gaussian kernel coefficients.
+            * @note Size of both @a window and @a kernel should be equal
+            * @return @c true on success, otherwise return @c false.
+            */
+            template <size_t windowAndKernelSize>
             bool setup( const real_t sg,
                         const real_t c,
-                        real_t (&window)[ windowSize ] )
+                        real_t (&window)[ windowAndKernelSize ],
+                        real_t (&kernel)[ windowAndKernelSize ] )
             {
-                return setup( sg, c, window, windowSize );
+                return setup( sg, c, window, kernel, windowAndKernelSize );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief An Exponential weighting filter
+    */
     class smootherEXPW : public smoother {
         protected:
             real_t lambda{ 0.8 };
@@ -148,10 +351,26 @@ namespace qlibs {
             real_t w{ 1.0 };
         public:
             virtual ~smootherEXPW() {}
+
+            /**
+            * @brief Setup an initialize the Exponential weighting filter
+            * @param[in] lam Forgetting factor, a value between [ 0 < @a lam < 1 ]
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t lam = 0.8 );
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief A scalar Kalman filter
+    */
     class smootherKLMN : public smoother {
         protected:
             real_t xS{ 0.0 };  /* state */
@@ -163,12 +382,30 @@ namespace qlibs {
             real_t gain;
         public:
             virtual ~smootherKLMN() {}
+
+            /**
+            * @brief Setup an initialize the scalar Kalman filter
+            * @param[in] processNoiseCov Process(predict) noise covariance
+            * @param[in] measureNoiseCov Measure noise covariance
+            * @param[in] estErrorCov Initial estimated error covariance
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t processNoiseCov,
                         const real_t measureNoiseCov,
                         const real_t estErrorCov );
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief Double exponential smoothing (Holt’s Method)
+    */
     class smootherDESF : public smoother {
         protected:
             real_t alpha;
@@ -177,13 +414,31 @@ namespace qlibs {
             real_t bt;
             real_t n;
         public:
+
+            /**
+            * @brief Setup an initialize the Double exponential smoothing instance
+            * @param[in] a Weight for the level [ 0 < @a a < 1 ]
+            * @param[in] b Weight for the trend [ 0 < @a b < 1 ]
+            * @param[in] N Number of steps for the forecast
+            * @return @c true on success, otherwise return @c false.
+            */
             virtual ~smootherDESF() {}
             bool setup( const real_t a,
                         const real_t b,
-                        const real_t N );
+                        const size_t N );
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /**
+    * @brief Adaptive Filter LMS
+    */
     class smootherALNF : public smoother, private nonCopyable {
         protected:
             real_t alpha;
@@ -194,10 +449,27 @@ namespace qlibs {
             size_t n{ 0U };
         public:
             virtual ~smootherALNF() {}
+
+            /**
+            * @brief Setup an initialize the Adaptive Filter LMS
+            * @param[in] a Learning rate [ 0 < @a a < 1 ]
+            * @param[in] m Momentum [ 0 < @a m < 1 ]
+            * @param[in] window An array to store the window samples.
+            * @param[in] wsize The size of the @a window array
+            * @return @c true on success, otherwise return @c false.
+            */
             bool setup( const real_t a,
                         const real_t m,
                         real_t *window,
                         const size_t wsize );
+
+            /**
+            * @brief Setup an initialize the Adaptive Filter LMS
+            * @param[in] a Learning rate [ 0 < @a a < 1 ]
+            * @param[in] m Momentum [ 0 < @a m < 1 ]
+            * @param[in] window An array to store the window samples.
+            * @return @c true on success, otherwise return @c false.
+            */
             template <size_t windowSize>
             bool setup( const real_t a,
                         const real_t m,
@@ -205,9 +477,17 @@ namespace qlibs {
             {
                 return setup( a, m, window, windowSize, a );
             }
+
+            /**
+            * @brief Perform the smooth operation recursively for the input signal @a x.
+            * @pre Instance must be previously initialized
+            * @param[in] x A sample of the input signal.
+            * @return The smoothed output.
+            */
             real_t smooth( const real_t x ) override;
     };
 
+    /** @}*/
 
 }
 

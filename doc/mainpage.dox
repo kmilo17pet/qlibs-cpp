@@ -1,0 +1,83 @@
+/** @mainpage qLibs
+* @image html https://user-images.githubusercontent.com/11412210/199044031-0e37f39d-5a57-4a68-9da1-fe3cdbc7c0fa.jpg 
+* A collection of useful libraries written in C for embedded systems. 
+*
+* @remark
+* qLibs is developed using a formal and rigorous process framed in compliance with 
+* the MISRA C 2012 and CERT coding standard guidelines and complemented with 
+* multiple static-analysis checks targeted to safe critical applications.
+*
+* qLibs includes the following modules:
+*
+* - @subpage qssmoother_desc "qSSMoother : Filters for signal smoothing"
+*        -# 1st and 2nd order Low-Pass filters
+*        -# Moving Average filters
+*        -# Outlier Removal filters
+*        -# Gaussian filter
+*        -# Exponential weighting filter
+*        -# Scalar Kalman filter
+* - @subpage qfis_desc "qFIS : Fuzzy Inference System Engine"
+*        -# Mamdani
+*        -# Sugeno
+*        -# Tsukamoto
+* - @subpage qpid_desc "qPID : PID Controller"
+*        -# Derivative filter
+*        -# Anti-windup
+*        -# Tracking mode
+*        -# Auto-tunning
+*        -# Additive MRAC
+* - @subpage qltisys_desc "qLTISys : Recursive LTI systems evaluation by transfer functions"
+*        -# Continuos
+*        -# Discrete
+* - @subpage qfp16_desc "qFP16 : Fixed-Point Q16.16 math library"
+*        -# Basic operations
+*        -# Trigonometric functions
+*        -# Exponential functions
+* - @subpage qbitfield_desc "qBitField : Bit-Field manipulation library"
+* - @subpage qrms_desc "qRMS : Recursive Root Mean Square (RMS) calculation"
+* - @subpage qcrc_desc "qCRC : Generic Cyclic Redundancy Check (CRC) calculator"
+* - @subpage qtdl_desc "qTDL : Tapped Delay Line in O(1)"
+* - Type-generic array operations
+* - Single precision floating-point vector(1D-Array) operations
+* - Fast single-precision floating-point math
+*/
+
+/**
+*  @defgroup qfp16 qFP16
+* For a brief description of this module, please read \ref qfp16_desc
+*/
+
+/**
+*  @defgroup qssmoother qSSMoother
+* For a brief description of this module, please read \ref qssmoother_desc
+*/
+
+/**
+*  @defgroup qpid qPID
+*  For a brief description of this module, please read \ref qpid_desc
+*/
+
+/**
+*  @defgroup qltisys qLTISys
+*  For a brief description of this module, please read \ref qltisys_desc
+*/
+
+/**
+*  @defgroup qfis qFIS
+*  For a brief description of this module, please read \ref qfis_desc
+*/
+
+/**
+*  @defgroup qbitfield qBitField
+*  For a brief description of this module, please read \ref qbitfield_desc
+*/
+
+/**
+*  @defgroup qrms qRMS
+*  For a brief description of this module, please read \ref qrms_desc
+*/
+
+/**
+*  @defgroup qcrc qCRC
+*  For a brief description of this module, please read \ref qcrc_desc
+*/
