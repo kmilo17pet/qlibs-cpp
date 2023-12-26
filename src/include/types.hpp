@@ -36,13 +36,6 @@
 #endif
 
 namespace qlibs {
-    /** @addtogroup  qtypes
-    * @brief Sets of types having specified widths used to design the entire library.
-    * It also define macros directives to perform specific actions and options
-    * for some APIs.
-    * @{
-    */
-
     /**
     * @brief A type to instantiate a real variable double-precision of 64-bits IEEE 754.
     */

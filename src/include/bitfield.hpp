@@ -14,7 +14,7 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qbitfield A Bit-Field manipulation library
+    /** @addtogroup qbitfield Bit-Field
     * @brief API for the Bit-Field manipulation library
     *  @{
     */

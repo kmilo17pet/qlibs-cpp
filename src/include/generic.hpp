@@ -14,7 +14,7 @@
 namespace qlibs {
     namespace generic {
 
-        /** @addtogroup  qtypegeneric qTypeGeneric
+        /** @addtogroup  qtypegeneric Type-generic utilities
         * @brief Type-generic utilities
         * @{
         */

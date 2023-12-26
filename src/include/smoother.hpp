@@ -14,8 +14,8 @@
 
 namespace qlibs {
 
-    /** @addtogroup qssmoother Smoother : Filters to smooth noisy signals
-    * @brief API for the Smoother library
+    /** @addtogroup qssmoother Smoothing filters
+    * @brief Filters to smooth noisy signals
     *  @{
     */
 

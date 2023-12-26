@@ -17,7 +17,7 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qtdl qTDL
+    /** @addtogroup  qtdl Tapped Delay Line
     * @brief An implementation of the Tapped Delay Line (TDL) structure in O(1) 
     *  @{
     */

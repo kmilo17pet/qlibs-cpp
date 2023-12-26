@@ -15,8 +15,8 @@
 
 namespace qlibs {
 
-    /** @addtogroup qrms Recursive Root Mean Square(RMS) calculation of a signal.
-    * @brief API for the qRMS Recursive Root Mean Square calculator
+    /** @addtogroup qrms RMS estimator.
+    * @brief Class for Recursive Root Mean Square RMS estimation
     *  @{
     */
 

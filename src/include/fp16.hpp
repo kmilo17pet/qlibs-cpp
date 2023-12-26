@@ -14,8 +14,8 @@
 
 namespace qlibs {
 
-    /** @addtogroup qfp16 Q16.16 Fixed-point math
-    * @brief API for the qFP16 Fixed-point math library
+    /** @addtogroup qfp16 Fixed-Point Q16.16 math
+    * @brief Fixed-point Q16.16 math library
     *  @{
     */
 

@@ -43,41 +43,41 @@
 */
 
 /**
-*  @defgroup qfp16 qFP16
+*  @defgroup qfp16 Fixed-Point Q16.16 math
 * For a brief description of this module, please read \ref qfp16_desc
 */
 
 /**
-*  @defgroup qssmoother qSSMoother
+*  @defgroup qssmoother Smoothing filters
 * For a brief description of this module, please read \ref qssmoother_desc
 */
 
 /**
-*  @defgroup qpid qPID
+*  @defgroup qpid PID Controller
 *  For a brief description of this module, please read \ref qpid_desc
 */
 
 /**
-*  @defgroup qltisys qLTISys
+*  @defgroup qltisys LTI Systems
 *  For a brief description of this module, please read \ref qltisys_desc
 */
 
 /**
-*  @defgroup qfis qFIS
+*  @defgroup qfis FIS - Fuzzy Inference System
 *  For a brief description of this module, please read \ref qfis_desc
 */
 
 /**
-*  @defgroup qbitfield qBitField
+*  @defgroup qbitfield Bit-Field
 *  For a brief description of this module, please read \ref qbitfield_desc
 */
 
 /**
-*  @defgroup qrms qRMS
+*  @defgroup qrms RMS
 *  For a brief description of this module, please read \ref qrms_desc
 */
 
 /**
-*  @defgroup qcrc qCRC
+*  @defgroup qcrc CRC
 *  For a brief description of this module, please read \ref qcrc_desc
 */

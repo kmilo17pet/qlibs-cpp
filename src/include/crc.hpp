@@ -13,8 +13,8 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qcrc Generic Cyclic Redundancy Check (CRC) calculator
-    * @brief API for the qCRC Generic Cyclic Redundancy Check (CRC) calculator
+    /** @addtogroup qcrc CRC
+    * @brief Generic Cyclic Redundancy Check (CRC) calculator class
     *  @{
     */
 

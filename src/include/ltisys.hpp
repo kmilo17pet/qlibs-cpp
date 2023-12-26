@@ -16,8 +16,8 @@
 
 namespace qlibs {
 
-    /** @addtogroup  qltisys Recursive LTI systems evaluation by transfer functions
-    * @brief API for the qLTISys library for recursive evaluation of LTI systems
+    /** @addtogroup  qltisys LTI Systems
+    * @brief Classes for recursive evaluation of LTI systems
     * defined by transfer functions
     * @{
     */
