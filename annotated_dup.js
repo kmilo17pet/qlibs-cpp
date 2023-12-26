@@ -3,7 +3,7 @@ var annotated_dup =
     [ "qlibs", null, [
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
-      [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
+      [ "crc", "classqlibs_1_1crc.html", null ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],

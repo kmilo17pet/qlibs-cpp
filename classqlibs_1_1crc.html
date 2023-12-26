@@ -127,150 +127,146 @@ $(document).ready(function(){initNavTree('classqlibs_1_1crc.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle"><div class="title">crc Class Reference<div class="ingroups"><a class="el" href="group__qcrc.html">CRC</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a46559fa757f2bacf87dfa99540140190"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a46559fa757f2bacf87dfa99540140190">crc8</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a46559fa757f2bacf87dfa99540140190"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8 with poly = 0x07 init = 0x00 refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a46559fa757f2bacf87dfa99540140190">More...</a><br /></td></tr>
-<tr class="separator:a46559fa757f2bacf87dfa99540140190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010a4b450836274f82f5e0e9b4b727b4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a010a4b450836274f82f5e0e9b4b727b4">crc8_CDMA2000</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a010a4b450836274f82f5e0e9b4b727b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/CDMA2000 with poly = 0x9B init = 0xFF refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a010a4b450836274f82f5e0e9b4b727b4">More...</a><br /></td></tr>
-<tr class="separator:a010a4b450836274f82f5e0e9b4b727b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af4836f5d2b6f107390e821b5e24cad"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a2af4836f5d2b6f107390e821b5e24cad">crc8_DARC</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a2af4836f5d2b6f107390e821b5e24cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/DARC with poly = 0x39 init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a2af4836f5d2b6f107390e821b5e24cad">More...</a><br /></td></tr>
-<tr class="separator:a2af4836f5d2b6f107390e821b5e24cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae61904ab340bb1af1ebdd32c11ed49fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ae61904ab340bb1af1ebdd32c11ed49fe">crc8_DVS_S2</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:ae61904ab340bb1af1ebdd32c11ed49fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/DVS-S2 with poly = 0xD5 init = 0x00 refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#ae61904ab340bb1af1ebdd32c11ed49fe">More...</a><br /></td></tr>
-<tr class="separator:ae61904ab340bb1af1ebdd32c11ed49fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af001039e7eac066bc2d696bf07312c1d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#af001039e7eac066bc2d696bf07312c1d">crc8_EBU</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:af001039e7eac066bc2d696bf07312c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/EBU with poly = 0x1D init = 0xFF refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#af001039e7eac066bc2d696bf07312c1d">More...</a><br /></td></tr>
-<tr class="separator:af001039e7eac066bc2d696bf07312c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18160bc0fc655456eb3ea4f8f3c652ac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a18160bc0fc655456eb3ea4f8f3c652ac">crc8_I_CODE</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a18160bc0fc655456eb3ea4f8f3c652ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/I-CODE with poly = 0x1D init = 0xFD refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a18160bc0fc655456eb3ea4f8f3c652ac">More...</a><br /></td></tr>
-<tr class="separator:a18160bc0fc655456eb3ea4f8f3c652ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ce158af55f0b6eb6430d21747b79bd8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a1ce158af55f0b6eb6430d21747b79bd8">crc8_ITU</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a1ce158af55f0b6eb6430d21747b79bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/ITU with poly = 0x07 init = 0x00 refIn = false refOut = false xorOut= 0x55.  <a href="classqlibs_1_1crc.html#a1ce158af55f0b6eb6430d21747b79bd8">More...</a><br /></td></tr>
-<tr class="separator:a1ce158af55f0b6eb6430d21747b79bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf77887e063cd86988fa0177f04887f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#acf77887e063cd86988fa0177f04887f5">crc8_MAXIM</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:acf77887e063cd86988fa0177f04887f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/MAXIM with poly = 0x31 init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#acf77887e063cd86988fa0177f04887f5">More...</a><br /></td></tr>
-<tr class="separator:acf77887e063cd86988fa0177f04887f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a181a262b75267975610e1dac1b8ef732"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a181a262b75267975610e1dac1b8ef732">crc8_ROHC</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a181a262b75267975610e1dac1b8ef732"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/ROHC with poly = 0x07 init = 0xFF refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a181a262b75267975610e1dac1b8ef732">More...</a><br /></td></tr>
-<tr class="separator:a181a262b75267975610e1dac1b8ef732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1d9c2b9cdf45ac3724f7a7c47e0732"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a6c1d9c2b9cdf45ac3724f7a7c47e0732">crc8_WCDMA</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a6c1d9c2b9cdf45ac3724f7a7c47e0732"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/WCDMA with poly = 0x9B init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a6c1d9c2b9cdf45ac3724f7a7c47e0732">More...</a><br /></td></tr>
-<tr class="separator:a6c1d9c2b9cdf45ac3724f7a7c47e0732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7206c74cefd2cceba6fb0de749340351"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a7206c74cefd2cceba6fb0de749340351">crc16_CCITT_FALSE</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a7206c74cefd2cceba6fb0de749340351"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/CCITT-FALSE with poly = 0x1021 init = 0xFFFF refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a7206c74cefd2cceba6fb0de749340351">More...</a><br /></td></tr>
-<tr class="separator:a7206c74cefd2cceba6fb0de749340351"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedf1cf13d490ace5f0eb413bee0c3b81"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aedf1cf13d490ace5f0eb413bee0c3b81">crc16_ARC</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:aedf1cf13d490ace5f0eb413bee0c3b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/ARC with poly = 0x8005 init = 0x0000 refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#aedf1cf13d490ace5f0eb413bee0c3b81">More...</a><br /></td></tr>
-<tr class="separator:aedf1cf13d490ace5f0eb413bee0c3b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10864e569713f79c0acdf1f88f685553"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a10864e569713f79c0acdf1f88f685553">crc16_AUG_CCITT</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a10864e569713f79c0acdf1f88f685553"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/AUG-CCITT with poly = 0x1021 init = 0x1D0F refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a10864e569713f79c0acdf1f88f685553">More...</a><br /></td></tr>
-<tr class="separator:a10864e569713f79c0acdf1f88f685553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92589fd6da097816cab52cdb1f76faf3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a92589fd6da097816cab52cdb1f76faf3">crc16_BUYPASS</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a92589fd6da097816cab52cdb1f76faf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/BUYPASS with poly = 0x8005 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a92589fd6da097816cab52cdb1f76faf3">More...</a><br /></td></tr>
-<tr class="separator:a92589fd6da097816cab52cdb1f76faf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d29bc1ac7d67df6419280f2b06a39ed"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a0d29bc1ac7d67df6419280f2b06a39ed">crc16_CDMA2000</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a0d29bc1ac7d67df6419280f2b06a39ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/CDMA2000 with poly = 0xC867 init = 0xFFFF refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a0d29bc1ac7d67df6419280f2b06a39ed">More...</a><br /></td></tr>
-<tr class="separator:a0d29bc1ac7d67df6419280f2b06a39ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c47ce2a1c74a4d78fb85be7d2bb631"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#af9c47ce2a1c74a4d78fb85be7d2bb631">crc16_DDS_110</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:af9c47ce2a1c74a4d78fb85be7d2bb631"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DDS-110 with poly = 0x8005 init = 0x800D refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#af9c47ce2a1c74a4d78fb85be7d2bb631">More...</a><br /></td></tr>
-<tr class="separator:af9c47ce2a1c74a4d78fb85be7d2bb631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b40fa7079a528d10984a93ff0c5e759"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a8b40fa7079a528d10984a93ff0c5e759">crc16_DECT_R</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a8b40fa7079a528d10984a93ff0c5e759"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-R with poly = 0x0589 init = 0x0000 refIn = false refOut = false xorOut= 0x0001.  <a href="classqlibs_1_1crc.html#a8b40fa7079a528d10984a93ff0c5e759">More...</a><br /></td></tr>
-<tr class="separator:a8b40fa7079a528d10984a93ff0c5e759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b825f417db820ccad7b81ef33c26744"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a8b825f417db820ccad7b81ef33c26744">crc16_DECT_X</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a8b825f417db820ccad7b81ef33c26744"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-X with poly = 0x0589 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a8b825f417db820ccad7b81ef33c26744">More...</a><br /></td></tr>
-<tr class="separator:a8b825f417db820ccad7b81ef33c26744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e78ce13eaad2fb7256b58fd36489ade"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a6e78ce13eaad2fb7256b58fd36489ade">crc16_DNP</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a6e78ce13eaad2fb7256b58fd36489ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DNP with poly = 0x3D98 init = 0x0000 refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a6e78ce13eaad2fb7256b58fd36489ade">More...</a><br /></td></tr>
-<tr class="separator:a6e78ce13eaad2fb7256b58fd36489ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21552fdd4ba08f27dc9637611bdf73d1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a21552fdd4ba08f27dc9637611bdf73d1">crc16_EN_13757</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a21552fdd4ba08f27dc9637611bdf73d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/EN-13757 with poly = 0x3D65 init = 0x0000 refIn = false refOut = false xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a21552fdd4ba08f27dc9637611bdf73d1">More...</a><br /></td></tr>
-<tr class="separator:a21552fdd4ba08f27dc9637611bdf73d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc5a3695ccb45935569ef939faa782c4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#abc5a3695ccb45935569ef939faa782c4">crc16_GENIBUS</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:abc5a3695ccb45935569ef939faa782c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/GENIBUS with poly = 0x1021 init = 0xFFFF refIn = false refOut = false xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#abc5a3695ccb45935569ef939faa782c4">More...</a><br /></td></tr>
-<tr class="separator:abc5a3695ccb45935569ef939faa782c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4efa1d82c51744715451516b4c65df19"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a4efa1d82c51744715451516b4c65df19">crc16_MAXIM</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a4efa1d82c51744715451516b4c65df19"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MAXIM with poly = 0x8005 init = 0x0000 refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a4efa1d82c51744715451516b4c65df19">More...</a><br /></td></tr>
-<tr class="separator:a4efa1d82c51744715451516b4c65df19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34dcd8aeb8fe22643dce6eac146c144c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a34dcd8aeb8fe22643dce6eac146c144c">crc16_MCRF4XX</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a34dcd8aeb8fe22643dce6eac146c144c"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MCRF4XX with poly = 0x1021 init = 0xFFFF refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a34dcd8aeb8fe22643dce6eac146c144c">More...</a><br /></td></tr>
-<tr class="separator:a34dcd8aeb8fe22643dce6eac146c144c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34680e857594bbfd698493fa0e92d2eb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a34680e857594bbfd698493fa0e92d2eb">crc16_RIELLO</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a34680e857594bbfd698493fa0e92d2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/RIELLO with poly = 0x1021 init = 0xB2AA refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a34680e857594bbfd698493fa0e92d2eb">More...</a><br /></td></tr>
-<tr class="separator:a34680e857594bbfd698493fa0e92d2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1921ea4e20d690faf1bad56977f742"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a9f1921ea4e20d690faf1bad56977f742">crc16_T10_DIF</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a9f1921ea4e20d690faf1bad56977f742"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-X with poly = 0x8bb7 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a9f1921ea4e20d690faf1bad56977f742">More...</a><br /></td></tr>
-<tr class="separator:a9f1921ea4e20d690faf1bad56977f742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc52dd9ac9b3d6b45a565e98f90f63fc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#afc52dd9ac9b3d6b45a565e98f90f63fc">crc16_TELEDISK</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:afc52dd9ac9b3d6b45a565e98f90f63fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/TELEDISK with poly = 0xA097 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#afc52dd9ac9b3d6b45a565e98f90f63fc">More...</a><br /></td></tr>
-<tr class="separator:afc52dd9ac9b3d6b45a565e98f90f63fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67ec4cfbcd5c751bae2bba487661331"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ad67ec4cfbcd5c751bae2bba487661331">crc16_TMS37157</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:ad67ec4cfbcd5c751bae2bba487661331"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/TMS37157 with poly = 0x1021 init = 0x89EC refIn = true refOut = true xorOut= 0x000.  <a href="classqlibs_1_1crc.html#ad67ec4cfbcd5c751bae2bba487661331">More...</a><br /></td></tr>
-<tr class="separator:ad67ec4cfbcd5c751bae2bba487661331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a277a5441a3e0879fa0ea33c0f0e6ff"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a3a277a5441a3e0879fa0ea33c0f0e6ff">crc16_USB</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a3a277a5441a3e0879fa0ea33c0f0e6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/USB with poly = 0x8005 init = 0xFFFF refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a3a277a5441a3e0879fa0ea33c0f0e6ff">More...</a><br /></td></tr>
-<tr class="separator:a3a277a5441a3e0879fa0ea33c0f0e6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf7e2db6fa99135d9a09799bbcd59721"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#adf7e2db6fa99135d9a09799bbcd59721">crc16_A</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:adf7e2db6fa99135d9a09799bbcd59721"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-A with poly = 0x1021 init = 0xC6C6 refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#adf7e2db6fa99135d9a09799bbcd59721">More...</a><br /></td></tr>
-<tr class="separator:adf7e2db6fa99135d9a09799bbcd59721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7600650de99fe71497cecb32d0e5e193"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a7600650de99fe71497cecb32d0e5e193">crc16_KERMIT</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a7600650de99fe71497cecb32d0e5e193"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/KERMIT with poly = 0x1021 init = 0x0000 refIn = true refOut = true xorOut= 0x000.  <a href="classqlibs_1_1crc.html#a7600650de99fe71497cecb32d0e5e193">More...</a><br /></td></tr>
-<tr class="separator:a7600650de99fe71497cecb32d0e5e193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ccd70c8427a41896ec02e41a108fe9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a99ccd70c8427a41896ec02e41a108fe9">crc16_MODBUS</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a99ccd70c8427a41896ec02e41a108fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MODBUS with poly = 0x8005 init = 0xFFFF refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a99ccd70c8427a41896ec02e41a108fe9">More...</a><br /></td></tr>
-<tr class="separator:a99ccd70c8427a41896ec02e41a108fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc089a76fc0fe1a1ffd17538f532a703"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#adc089a76fc0fe1a1ffd17538f532a703">crc16_X_25</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:adc089a76fc0fe1a1ffd17538f532a703"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/X-25 with poly = 0x1021 init = 0xFFFF refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#adc089a76fc0fe1a1ffd17538f532a703">More...</a><br /></td></tr>
-<tr class="separator:adc089a76fc0fe1a1ffd17538f532a703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b0348928c597c7841e73d00cb8af8c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a79b0348928c597c7841e73d00cb8af8c">crc16_XMODEM</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a79b0348928c597c7841e73d00cb8af8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/XMODEM with poly = 0x1021 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a79b0348928c597c7841e73d00cb8af8c">More...</a><br /></td></tr>
-<tr class="separator:a79b0348928c597c7841e73d00cb8af8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0beb6c4404c1df0a478fa22b7651af12"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a0beb6c4404c1df0a478fa22b7651af12">crc32</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a0beb6c4404c1df0a478fa22b7651af12"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a0beb6c4404c1df0a478fa22b7651af12">More...</a><br /></td></tr>
-<tr class="separator:a0beb6c4404c1df0a478fa22b7651af12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada02903dbc1c5f74f005c92a15f5cece"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ada02903dbc1c5f74f005c92a15f5cece">crc32_BZIP2</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:ada02903dbc1c5f74f005c92a15f5cece"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/BZIP2 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = false refOut = false xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#ada02903dbc1c5f74f005c92a15f5cece">More...</a><br /></td></tr>
-<tr class="separator:ada02903dbc1c5f74f005c92a15f5cece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77bfce9a08c5ace878aa58c3c7acf719"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a77bfce9a08c5ace878aa58c3c7acf719">crc32_C</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a77bfce9a08c5ace878aa58c3c7acf719"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32C with poly = 0x1EDC6F41 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a77bfce9a08c5ace878aa58c3c7acf719">More...</a><br /></td></tr>
-<tr class="separator:a77bfce9a08c5ace878aa58c3c7acf719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a551ede3a433277bc21d8cb0c1284ed44"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a551ede3a433277bc21d8cb0c1284ed44">crc32_D</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a551ede3a433277bc21d8cb0c1284ed44"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32D with poly = 0xA833982B init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a551ede3a433277bc21d8cb0c1284ed44">More...</a><br /></td></tr>
-<tr class="separator:a551ede3a433277bc21d8cb0c1284ed44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cc4b5167786b8d5a2f6f90de0e3a9f6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a4cc4b5167786b8d5a2f6f90de0e3a9f6">crc32_JAMCRC</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a4cc4b5167786b8d5a2f6f90de0e3a9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/JAMCRC with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#a4cc4b5167786b8d5a2f6f90de0e3a9f6">More...</a><br /></td></tr>
-<tr class="separator:a4cc4b5167786b8d5a2f6f90de0e3a9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a68052b38b08feac2a4130de984ccee"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a1a68052b38b08feac2a4130de984ccee">crc32_MPEG2</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a1a68052b38b08feac2a4130de984ccee"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/MPEG2 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#a1a68052b38b08feac2a4130de984ccee">More...</a><br /></td></tr>
-<tr class="separator:a1a68052b38b08feac2a4130de984ccee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9b5fb010bf43b1d93039d97b68ef63a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ae9b5fb010bf43b1d93039d97b68ef63a">crc32_POSIX</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:ae9b5fb010bf43b1d93039d97b68ef63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/POSIX with poly = 0x04C11DB7 init = 0x00000000 refIn = false refOut = false xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#ae9b5fb010bf43b1d93039d97b68ef63a">More...</a><br /></td></tr>
-<tr class="separator:ae9b5fb010bf43b1d93039d97b68ef63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7523a33f612bb4ef8f2d4ee54bd61fce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a7523a33f612bb4ef8f2d4ee54bd61fce">crc32_Q</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:a7523a33f612bb4ef8f2d4ee54bd61fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32Q with poly = 0x814141AB init = 0x00000000 refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#a7523a33f612bb4ef8f2d4ee54bd61fce">More...</a><br /></td></tr>
-<tr class="separator:a7523a33f612bb4ef8f2d4ee54bd61fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc55dc903d480f9a31d91a9ab0e515fc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#abc55dc903d480f9a31d91a9ab0e515fc">crc32_XFER</a> (const void *const pData, const size_t length) noexcept</td></tr>
-<tr class="memdesc:abc55dc903d480f9a31d91a9ab0e515fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/XFER with poly = 0x000000AF init = 0x00000000 refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#abc55dc903d480f9a31d91a9ab0e515fc">More...</a><br /></td></tr>
-<tr class="separator:abc55dc903d480f9a31d91a9ab0e515fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab71dddf96cea5389111c35f306ede39d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">generic</a> (<a class="el" href="group__qcrc.html#gaa970e174eebbebf85af0d9085d2f824e">crcMode</a> mode, const void *const pData, const size_t length, uint32_t poly, const uint32_t init=0U, bool refIn=false, bool refOut=false, uint32_t xorOut=0U) noexcept</td></tr>
 <tr class="memdesc:ab71dddf96cea5389111c35f306ede39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates in one pass the common <em>width</em> bit CRC value for a block of data that is passed to the function together with a parameter indicating the <em>length</em>.  <a href="classqlibs_1_1crc.html#ab71dddf96cea5389111c35f306ede39d">More...</a><br /></td></tr>
 <tr class="separator:ab71dddf96cea5389111c35f306ede39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91051a83807dd87371b1f0809e08e57"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ad91051a83807dd87371b1f0809e08e57">crc8</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ad91051a83807dd87371b1f0809e08e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8 with poly = 0x07 init = 0x00 refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#ad91051a83807dd87371b1f0809e08e57">More...</a><br /></td></tr>
+<tr class="separator:ad91051a83807dd87371b1f0809e08e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64857110621748441cc2a0ffadd82b71"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a64857110621748441cc2a0ffadd82b71">crc8_CDMA2000</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a64857110621748441cc2a0ffadd82b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/CDMA2000 with poly = 0x9B init = 0xFF refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a64857110621748441cc2a0ffadd82b71">More...</a><br /></td></tr>
+<tr class="separator:a64857110621748441cc2a0ffadd82b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac400e79e40bb614dfe2819c41092d644"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac400e79e40bb614dfe2819c41092d644">crc8_DARC</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac400e79e40bb614dfe2819c41092d644"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/DARC with poly = 0x39 init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#ac400e79e40bb614dfe2819c41092d644">More...</a><br /></td></tr>
+<tr class="separator:ac400e79e40bb614dfe2819c41092d644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc1ec3eb793828ae4dd962b340c11d7"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a9bc1ec3eb793828ae4dd962b340c11d7">crc8_DVS_S2</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a9bc1ec3eb793828ae4dd962b340c11d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/DVS-S2 with poly = 0xD5 init = 0x00 refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a9bc1ec3eb793828ae4dd962b340c11d7">More...</a><br /></td></tr>
+<tr class="separator:a9bc1ec3eb793828ae4dd962b340c11d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a64d49669cfc93d7ed1f1112e93388"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a25a64d49669cfc93d7ed1f1112e93388">crc8_EBU</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a25a64d49669cfc93d7ed1f1112e93388"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/EBU with poly = 0x1D init = 0xFF refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a25a64d49669cfc93d7ed1f1112e93388">More...</a><br /></td></tr>
+<tr class="separator:a25a64d49669cfc93d7ed1f1112e93388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f2eabc53d62a7493cc88c80eb1e32d"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab3f2eabc53d62a7493cc88c80eb1e32d">crc8_I_CODE</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ab3f2eabc53d62a7493cc88c80eb1e32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/I-CODE with poly = 0x1D init = 0xFD refIn = false refOut = false xorOut= 0x00.  <a href="classqlibs_1_1crc.html#ab3f2eabc53d62a7493cc88c80eb1e32d">More...</a><br /></td></tr>
+<tr class="separator:ab3f2eabc53d62a7493cc88c80eb1e32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2226336942878ad93a1232a0aee014ee"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a2226336942878ad93a1232a0aee014ee">crc8_ITU</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a2226336942878ad93a1232a0aee014ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/ITU with poly = 0x07 init = 0x00 refIn = false refOut = false xorOut= 0x55.  <a href="classqlibs_1_1crc.html#a2226336942878ad93a1232a0aee014ee">More...</a><br /></td></tr>
+<tr class="separator:a2226336942878ad93a1232a0aee014ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a422b968a976e21c6a20c2dd515a1e"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a33a422b968a976e21c6a20c2dd515a1e">crc8_MAXIM</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a33a422b968a976e21c6a20c2dd515a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/MAXIM with poly = 0x31 init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a33a422b968a976e21c6a20c2dd515a1e">More...</a><br /></td></tr>
+<tr class="separator:a33a422b968a976e21c6a20c2dd515a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0329f2f3f2c5091eeeac1896ef43ce8"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab0329f2f3f2c5091eeeac1896ef43ce8">crc8_ROHC</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ab0329f2f3f2c5091eeeac1896ef43ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/ROHC with poly = 0x07 init = 0xFF refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#ab0329f2f3f2c5091eeeac1896ef43ce8">More...</a><br /></td></tr>
+<tr class="separator:ab0329f2f3f2c5091eeeac1896ef43ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bc09be1ece00b563f1624295f5e0ba1"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a3bc09be1ece00b563f1624295f5e0ba1">crc8_WCDMA</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a3bc09be1ece00b563f1624295f5e0ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-8/WCDMA with poly = 0x9B init = 0x00 refIn = true refOut = true xorOut= 0x00.  <a href="classqlibs_1_1crc.html#a3bc09be1ece00b563f1624295f5e0ba1">More...</a><br /></td></tr>
+<tr class="separator:a3bc09be1ece00b563f1624295f5e0ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03788c595f138146e0233dc3a896c82"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ab03788c595f138146e0233dc3a896c82">crc16_CCITT_FALSE</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ab03788c595f138146e0233dc3a896c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/CCITT-FALSE with poly = 0x1021 init = 0xFFFF refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#ab03788c595f138146e0233dc3a896c82">More...</a><br /></td></tr>
+<tr class="separator:ab03788c595f138146e0233dc3a896c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91dfa75548df82a4c534c4b54f9a4071"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a91dfa75548df82a4c534c4b54f9a4071">crc16_ARC</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a91dfa75548df82a4c534c4b54f9a4071"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/ARC with poly = 0x8005 init = 0x0000 refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a91dfa75548df82a4c534c4b54f9a4071">More...</a><br /></td></tr>
+<tr class="separator:a91dfa75548df82a4c534c4b54f9a4071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af222edd95bdc4d37ea5354d521b12f22"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#af222edd95bdc4d37ea5354d521b12f22">crc16_AUG_CCITT</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:af222edd95bdc4d37ea5354d521b12f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/AUG-CCITT with poly = 0x1021 init = 0x1D0F refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#af222edd95bdc4d37ea5354d521b12f22">More...</a><br /></td></tr>
+<tr class="separator:af222edd95bdc4d37ea5354d521b12f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811420548b847976dcc3a82f155a6f27"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a811420548b847976dcc3a82f155a6f27">crc16_BUYPASS</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a811420548b847976dcc3a82f155a6f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/BUYPASS with poly = 0x8005 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a811420548b847976dcc3a82f155a6f27">More...</a><br /></td></tr>
+<tr class="separator:a811420548b847976dcc3a82f155a6f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83a685fc9cea540307dc81edd0a0877"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac83a685fc9cea540307dc81edd0a0877">crc16_CDMA2000</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac83a685fc9cea540307dc81edd0a0877"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/CDMA2000 with poly = 0xC867 init = 0xFFFF refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#ac83a685fc9cea540307dc81edd0a0877">More...</a><br /></td></tr>
+<tr class="separator:ac83a685fc9cea540307dc81edd0a0877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae991356925c5c94066a53eaa080c4bc"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aae991356925c5c94066a53eaa080c4bc">crc16_DDS_110</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:aae991356925c5c94066a53eaa080c4bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DDS-110 with poly = 0x8005 init = 0x800D refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#aae991356925c5c94066a53eaa080c4bc">More...</a><br /></td></tr>
+<tr class="separator:aae991356925c5c94066a53eaa080c4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e71cae420870eee614e1d5b5366f8e"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a48e71cae420870eee614e1d5b5366f8e">crc16_DECT_R</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a48e71cae420870eee614e1d5b5366f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-R with poly = 0x0589 init = 0x0000 refIn = false refOut = false xorOut= 0x0001.  <a href="classqlibs_1_1crc.html#a48e71cae420870eee614e1d5b5366f8e">More...</a><br /></td></tr>
+<tr class="separator:a48e71cae420870eee614e1d5b5366f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0479f537ce91e0c1c1ce804ed1840a"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#acc0479f537ce91e0c1c1ce804ed1840a">crc16_DECT_X</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:acc0479f537ce91e0c1c1ce804ed1840a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-X with poly = 0x0589 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#acc0479f537ce91e0c1c1ce804ed1840a">More...</a><br /></td></tr>
+<tr class="separator:acc0479f537ce91e0c1c1ce804ed1840a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c5a9de13d80a89166cdfc790273d1"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac14c5a9de13d80a89166cdfc790273d1">crc16_DNP</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac14c5a9de13d80a89166cdfc790273d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DNP with poly = 0x3D98 init = 0x0000 refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#ac14c5a9de13d80a89166cdfc790273d1">More...</a><br /></td></tr>
+<tr class="separator:ac14c5a9de13d80a89166cdfc790273d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ecca60467693a08df2d21c5541aa9b"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a55ecca60467693a08df2d21c5541aa9b">crc16_EN_13757</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a55ecca60467693a08df2d21c5541aa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/EN-13757 with poly = 0x3D65 init = 0x0000 refIn = false refOut = false xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a55ecca60467693a08df2d21c5541aa9b">More...</a><br /></td></tr>
+<tr class="separator:a55ecca60467693a08df2d21c5541aa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0edab1dcaf7b9e0f73bd03bbc32c1d5"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac0edab1dcaf7b9e0f73bd03bbc32c1d5">crc16_GENIBUS</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac0edab1dcaf7b9e0f73bd03bbc32c1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/GENIBUS with poly = 0x1021 init = 0xFFFF refIn = false refOut = false xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#ac0edab1dcaf7b9e0f73bd03bbc32c1d5">More...</a><br /></td></tr>
+<tr class="separator:ac0edab1dcaf7b9e0f73bd03bbc32c1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd937a226a1a96eb52a8d1280007dfb"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#abfd937a226a1a96eb52a8d1280007dfb">crc16_MAXIM</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:abfd937a226a1a96eb52a8d1280007dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MAXIM with poly = 0x8005 init = 0x0000 refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#abfd937a226a1a96eb52a8d1280007dfb">More...</a><br /></td></tr>
+<tr class="separator:abfd937a226a1a96eb52a8d1280007dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9b82a839e6fa335b9f7e9a813834fd"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aaf9b82a839e6fa335b9f7e9a813834fd">crc16_MCRF4XX</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:aaf9b82a839e6fa335b9f7e9a813834fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MCRF4XX with poly = 0x1021 init = 0xFFFF refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#aaf9b82a839e6fa335b9f7e9a813834fd">More...</a><br /></td></tr>
+<tr class="separator:aaf9b82a839e6fa335b9f7e9a813834fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f98bd7f30e1931331da2c2bd5c354c"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac4f98bd7f30e1931331da2c2bd5c354c">crc16_RIELLO</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac4f98bd7f30e1931331da2c2bd5c354c"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/RIELLO with poly = 0x1021 init = 0xB2AA refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#ac4f98bd7f30e1931331da2c2bd5c354c">More...</a><br /></td></tr>
+<tr class="separator:ac4f98bd7f30e1931331da2c2bd5c354c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcf95395e4f8fbad3e991f4aad75b0a"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#afbcf95395e4f8fbad3e991f4aad75b0a">crc16_T10_DIF</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:afbcf95395e4f8fbad3e991f4aad75b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/DECT-X with poly = 0x8bb7 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#afbcf95395e4f8fbad3e991f4aad75b0a">More...</a><br /></td></tr>
+<tr class="separator:afbcf95395e4f8fbad3e991f4aad75b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1067ea8deab8af14105308e40a9e8d"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aeb1067ea8deab8af14105308e40a9e8d">crc16_TELEDISK</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:aeb1067ea8deab8af14105308e40a9e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/TELEDISK with poly = 0xA097 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#aeb1067ea8deab8af14105308e40a9e8d">More...</a><br /></td></tr>
+<tr class="separator:aeb1067ea8deab8af14105308e40a9e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2415d0a8f938c5e066aab049d42cd2ed"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a2415d0a8f938c5e066aab049d42cd2ed">crc16_TMS37157</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a2415d0a8f938c5e066aab049d42cd2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/TMS37157 with poly = 0x1021 init = 0x89EC refIn = true refOut = true xorOut= 0x000.  <a href="classqlibs_1_1crc.html#a2415d0a8f938c5e066aab049d42cd2ed">More...</a><br /></td></tr>
+<tr class="separator:a2415d0a8f938c5e066aab049d42cd2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec230b0a8c08e07968ea00012c4a28f"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a3ec230b0a8c08e07968ea00012c4a28f">crc16_USB</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a3ec230b0a8c08e07968ea00012c4a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/USB with poly = 0x8005 init = 0xFFFF refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#a3ec230b0a8c08e07968ea00012c4a28f">More...</a><br /></td></tr>
+<tr class="separator:a3ec230b0a8c08e07968ea00012c4a28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428a23ce4c3a40bc082b1a3999b8bce3"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a428a23ce4c3a40bc082b1a3999b8bce3">crc16_A</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a428a23ce4c3a40bc082b1a3999b8bce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-A with poly = 0x1021 init = 0xC6C6 refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a428a23ce4c3a40bc082b1a3999b8bce3">More...</a><br /></td></tr>
+<tr class="separator:a428a23ce4c3a40bc082b1a3999b8bce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44661bd7edb00a36b1b0427688279630"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a44661bd7edb00a36b1b0427688279630">crc16_KERMIT</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a44661bd7edb00a36b1b0427688279630"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/KERMIT with poly = 0x1021 init = 0x0000 refIn = true refOut = true xorOut= 0x000.  <a href="classqlibs_1_1crc.html#a44661bd7edb00a36b1b0427688279630">More...</a><br /></td></tr>
+<tr class="separator:a44661bd7edb00a36b1b0427688279630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7956dfa79b7adf40857eef1c142f3bbe"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a7956dfa79b7adf40857eef1c142f3bbe">crc16_MODBUS</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a7956dfa79b7adf40857eef1c142f3bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/MODBUS with poly = 0x8005 init = 0xFFFF refIn = true refOut = true xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a7956dfa79b7adf40857eef1c142f3bbe">More...</a><br /></td></tr>
+<tr class="separator:a7956dfa79b7adf40857eef1c142f3bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef23233c0c43b4a1c550a482b3d2529"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aeef23233c0c43b4a1c550a482b3d2529">crc16_X_25</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:aeef23233c0c43b4a1c550a482b3d2529"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/X-25 with poly = 0x1021 init = 0xFFFF refIn = true refOut = true xorOut= 0xFFFF.  <a href="classqlibs_1_1crc.html#aeef23233c0c43b4a1c550a482b3d2529">More...</a><br /></td></tr>
+<tr class="separator:aeef23233c0c43b4a1c550a482b3d2529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529be49bb2cbe754c7d23c2e930f068b"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a529be49bb2cbe754c7d23c2e930f068b">crc16_XMODEM</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a529be49bb2cbe754c7d23c2e930f068b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/XMODEM with poly = 0x1021 init = 0x0000 refIn = false refOut = false xorOut= 0x0000.  <a href="classqlibs_1_1crc.html#a529be49bb2cbe754c7d23c2e930f068b">More...</a><br /></td></tr>
+<tr class="separator:a529be49bb2cbe754c7d23c2e930f068b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61edecaa0a159e524bdecb73c5e39a9d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a61edecaa0a159e524bdecb73c5e39a9d">crc32</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a61edecaa0a159e524bdecb73c5e39a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a61edecaa0a159e524bdecb73c5e39a9d">More...</a><br /></td></tr>
+<tr class="separator:a61edecaa0a159e524bdecb73c5e39a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423a97e5b6acbbe9f7629ab7a5007a09"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a423a97e5b6acbbe9f7629ab7a5007a09">crc32_BZIP2</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a423a97e5b6acbbe9f7629ab7a5007a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/BZIP2 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = false refOut = false xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a423a97e5b6acbbe9f7629ab7a5007a09">More...</a><br /></td></tr>
+<tr class="separator:a423a97e5b6acbbe9f7629ab7a5007a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc0d9d3a113ac4958f987984a95b05e"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a6cc0d9d3a113ac4958f987984a95b05e">crc32_C</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a6cc0d9d3a113ac4958f987984a95b05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32C with poly = 0x1EDC6F41 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a6cc0d9d3a113ac4958f987984a95b05e">More...</a><br /></td></tr>
+<tr class="separator:a6cc0d9d3a113ac4958f987984a95b05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b9e64af8543b09529d38d96de863a4"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a43b9e64af8543b09529d38d96de863a4">crc32_D</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a43b9e64af8543b09529d38d96de863a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32D with poly = 0xA833982B init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a43b9e64af8543b09529d38d96de863a4">More...</a><br /></td></tr>
+<tr class="separator:a43b9e64af8543b09529d38d96de863a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdc4428812605f8a5f112d233a29686"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a2bdc4428812605f8a5f112d233a29686">crc32_JAMCRC</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a2bdc4428812605f8a5f112d233a29686"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/JAMCRC with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true refOut = true xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#a2bdc4428812605f8a5f112d233a29686">More...</a><br /></td></tr>
+<tr class="separator:a2bdc4428812605f8a5f112d233a29686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a3122c20d9f43ce5a871f150ad5260"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#aa3a3122c20d9f43ce5a871f150ad5260">crc32_MPEG2</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:aa3a3122c20d9f43ce5a871f150ad5260"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/MPEG2 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#aa3a3122c20d9f43ce5a871f150ad5260">More...</a><br /></td></tr>
+<tr class="separator:aa3a3122c20d9f43ce5a871f150ad5260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b0e22569b51781b2cea073b8ec2365"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a39b0e22569b51781b2cea073b8ec2365">crc32_POSIX</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a39b0e22569b51781b2cea073b8ec2365"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/POSIX with poly = 0x04C11DB7 init = 0x00000000 refIn = false refOut = false xorOut= 0xFFFFFFFF.  <a href="classqlibs_1_1crc.html#a39b0e22569b51781b2cea073b8ec2365">More...</a><br /></td></tr>
+<tr class="separator:a39b0e22569b51781b2cea073b8ec2365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5173fc279a9e8ffaa35383d6fde4e71"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#ac5173fc279a9e8ffaa35383d6fde4e71">crc32_Q</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:ac5173fc279a9e8ffaa35383d6fde4e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32Q with poly = 0x814141AB init = 0x00000000 refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#ac5173fc279a9e8ffaa35383d6fde4e71">More...</a><br /></td></tr>
+<tr class="separator:ac5173fc279a9e8ffaa35383d6fde4e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7887b6968bcba06f9b8d195d9bc302"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1crc.html#a1d7887b6968bcba06f9b8d195d9bc302">crc32_XFER</a> (const void *const pData, const size_t length) noexcept</td></tr>
+<tr class="memdesc:a1d7887b6968bcba06f9b8d195d9bc302"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32/XFER with poly = 0x000000AF init = 0x00000000 refIn = false refOut = false xorOut= 0x00000000.  <a href="classqlibs_1_1crc.html#a1d7887b6968bcba06f9b8d195d9bc302">More...</a><br /></td></tr>
+<tr class="separator:a1d7887b6968bcba06f9b8d195d9bc302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adf7e2db6fa99135d9a09799bbcd59721" name="adf7e2db6fa99135d9a09799bbcd59721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf7e2db6fa99135d9a09799bbcd59721">&#9670;&nbsp;</a></span>crc16_A()</h2>
+<a id="a428a23ce4c3a40bc082b1a3999b8bce3" name="a428a23ce4c3a40bc082b1a3999b8bce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428a23ce4c3a40bc082b1a3999b8bce3">&#9670;&nbsp;</a></span>crc16_A()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +275,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_A </td>
+          <td class="memname">static uint16_t crc16_A </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -298,7 +294,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -315,8 +311,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aedf1cf13d490ace5f0eb413bee0c3b81" name="aedf1cf13d490ace5f0eb413bee0c3b81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedf1cf13d490ace5f0eb413bee0c3b81">&#9670;&nbsp;</a></span>crc16_ARC()</h2>
+<a id="a91dfa75548df82a4c534c4b54f9a4071" name="a91dfa75548df82a4c534c4b54f9a4071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91dfa75548df82a4c534c4b54f9a4071">&#9670;&nbsp;</a></span>crc16_ARC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_ARC </td>
+          <td class="memname">static uint16_t crc16_ARC </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -344,7 +340,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -361,8 +357,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a10864e569713f79c0acdf1f88f685553" name="a10864e569713f79c0acdf1f88f685553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10864e569713f79c0acdf1f88f685553">&#9670;&nbsp;</a></span>crc16_AUG_CCITT()</h2>
+<a id="af222edd95bdc4d37ea5354d521b12f22" name="af222edd95bdc4d37ea5354d521b12f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af222edd95bdc4d37ea5354d521b12f22">&#9670;&nbsp;</a></span>crc16_AUG_CCITT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +367,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_AUG_CCITT </td>
+          <td class="memname">static uint16_t crc16_AUG_CCITT </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -390,7 +386,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -407,8 +403,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a92589fd6da097816cab52cdb1f76faf3" name="a92589fd6da097816cab52cdb1f76faf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92589fd6da097816cab52cdb1f76faf3">&#9670;&nbsp;</a></span>crc16_BUYPASS()</h2>
+<a id="a811420548b847976dcc3a82f155a6f27" name="a811420548b847976dcc3a82f155a6f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811420548b847976dcc3a82f155a6f27">&#9670;&nbsp;</a></span>crc16_BUYPASS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,7 +413,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_BUYPASS </td>
+          <td class="memname">static uint16_t crc16_BUYPASS </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -436,7 +432,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -453,8 +449,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7206c74cefd2cceba6fb0de749340351" name="a7206c74cefd2cceba6fb0de749340351"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7206c74cefd2cceba6fb0de749340351">&#9670;&nbsp;</a></span>crc16_CCITT_FALSE()</h2>
+<a id="ab03788c595f138146e0233dc3a896c82" name="ab03788c595f138146e0233dc3a896c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03788c595f138146e0233dc3a896c82">&#9670;&nbsp;</a></span>crc16_CCITT_FALSE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,7 +459,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_CCITT_FALSE </td>
+          <td class="memname">static uint16_t crc16_CCITT_FALSE </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -482,7 +478,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -499,8 +495,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0d29bc1ac7d67df6419280f2b06a39ed" name="a0d29bc1ac7d67df6419280f2b06a39ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d29bc1ac7d67df6419280f2b06a39ed">&#9670;&nbsp;</a></span>crc16_CDMA2000()</h2>
+<a id="ac83a685fc9cea540307dc81edd0a0877" name="ac83a685fc9cea540307dc81edd0a0877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac83a685fc9cea540307dc81edd0a0877">&#9670;&nbsp;</a></span>crc16_CDMA2000()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +505,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_CDMA2000 </td>
+          <td class="memname">static uint16_t crc16_CDMA2000 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -528,7 +524,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -545,8 +541,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af9c47ce2a1c74a4d78fb85be7d2bb631" name="af9c47ce2a1c74a4d78fb85be7d2bb631"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9c47ce2a1c74a4d78fb85be7d2bb631">&#9670;&nbsp;</a></span>crc16_DDS_110()</h2>
+<a id="aae991356925c5c94066a53eaa080c4bc" name="aae991356925c5c94066a53eaa080c4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae991356925c5c94066a53eaa080c4bc">&#9670;&nbsp;</a></span>crc16_DDS_110()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +551,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_DDS_110 </td>
+          <td class="memname">static uint16_t crc16_DDS_110 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -574,7 +570,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -591,8 +587,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b40fa7079a528d10984a93ff0c5e759" name="a8b40fa7079a528d10984a93ff0c5e759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b40fa7079a528d10984a93ff0c5e759">&#9670;&nbsp;</a></span>crc16_DECT_R()</h2>
+<a id="a48e71cae420870eee614e1d5b5366f8e" name="a48e71cae420870eee614e1d5b5366f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e71cae420870eee614e1d5b5366f8e">&#9670;&nbsp;</a></span>crc16_DECT_R()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,7 +597,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_DECT_R </td>
+          <td class="memname">static uint16_t crc16_DECT_R </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -620,7 +616,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -637,8 +633,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b825f417db820ccad7b81ef33c26744" name="a8b825f417db820ccad7b81ef33c26744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b825f417db820ccad7b81ef33c26744">&#9670;&nbsp;</a></span>crc16_DECT_X()</h2>
+<a id="acc0479f537ce91e0c1c1ce804ed1840a" name="acc0479f537ce91e0c1c1ce804ed1840a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0479f537ce91e0c1c1ce804ed1840a">&#9670;&nbsp;</a></span>crc16_DECT_X()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -647,7 +643,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_DECT_X </td>
+          <td class="memname">static uint16_t crc16_DECT_X </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -666,7 +662,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -683,8 +679,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e78ce13eaad2fb7256b58fd36489ade" name="a6e78ce13eaad2fb7256b58fd36489ade"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e78ce13eaad2fb7256b58fd36489ade">&#9670;&nbsp;</a></span>crc16_DNP()</h2>
+<a id="ac14c5a9de13d80a89166cdfc790273d1" name="ac14c5a9de13d80a89166cdfc790273d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14c5a9de13d80a89166cdfc790273d1">&#9670;&nbsp;</a></span>crc16_DNP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -693,7 +689,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_DNP </td>
+          <td class="memname">static uint16_t crc16_DNP </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -712,7 +708,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -729,8 +725,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a21552fdd4ba08f27dc9637611bdf73d1" name="a21552fdd4ba08f27dc9637611bdf73d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21552fdd4ba08f27dc9637611bdf73d1">&#9670;&nbsp;</a></span>crc16_EN_13757()</h2>
+<a id="a55ecca60467693a08df2d21c5541aa9b" name="a55ecca60467693a08df2d21c5541aa9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ecca60467693a08df2d21c5541aa9b">&#9670;&nbsp;</a></span>crc16_EN_13757()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -739,7 +735,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_EN_13757 </td>
+          <td class="memname">static uint16_t crc16_EN_13757 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -758,7 +754,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -775,8 +771,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abc5a3695ccb45935569ef939faa782c4" name="abc5a3695ccb45935569ef939faa782c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc5a3695ccb45935569ef939faa782c4">&#9670;&nbsp;</a></span>crc16_GENIBUS()</h2>
+<a id="ac0edab1dcaf7b9e0f73bd03bbc32c1d5" name="ac0edab1dcaf7b9e0f73bd03bbc32c1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0edab1dcaf7b9e0f73bd03bbc32c1d5">&#9670;&nbsp;</a></span>crc16_GENIBUS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -785,7 +781,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_GENIBUS </td>
+          <td class="memname">static uint16_t crc16_GENIBUS </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -804,7 +800,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -821,8 +817,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7600650de99fe71497cecb32d0e5e193" name="a7600650de99fe71497cecb32d0e5e193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7600650de99fe71497cecb32d0e5e193">&#9670;&nbsp;</a></span>crc16_KERMIT()</h2>
+<a id="a44661bd7edb00a36b1b0427688279630" name="a44661bd7edb00a36b1b0427688279630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44661bd7edb00a36b1b0427688279630">&#9670;&nbsp;</a></span>crc16_KERMIT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -831,7 +827,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_KERMIT </td>
+          <td class="memname">static uint16_t crc16_KERMIT </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -850,7 +846,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -867,8 +863,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4efa1d82c51744715451516b4c65df19" name="a4efa1d82c51744715451516b4c65df19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4efa1d82c51744715451516b4c65df19">&#9670;&nbsp;</a></span>crc16_MAXIM()</h2>
+<a id="abfd937a226a1a96eb52a8d1280007dfb" name="abfd937a226a1a96eb52a8d1280007dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd937a226a1a96eb52a8d1280007dfb">&#9670;&nbsp;</a></span>crc16_MAXIM()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -877,7 +873,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_MAXIM </td>
+          <td class="memname">static uint16_t crc16_MAXIM </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -896,7 +892,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -913,8 +909,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a34dcd8aeb8fe22643dce6eac146c144c" name="a34dcd8aeb8fe22643dce6eac146c144c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34dcd8aeb8fe22643dce6eac146c144c">&#9670;&nbsp;</a></span>crc16_MCRF4XX()</h2>
+<a id="aaf9b82a839e6fa335b9f7e9a813834fd" name="aaf9b82a839e6fa335b9f7e9a813834fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9b82a839e6fa335b9f7e9a813834fd">&#9670;&nbsp;</a></span>crc16_MCRF4XX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -923,7 +919,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_MCRF4XX </td>
+          <td class="memname">static uint16_t crc16_MCRF4XX </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -942,7 +938,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -959,8 +955,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a99ccd70c8427a41896ec02e41a108fe9" name="a99ccd70c8427a41896ec02e41a108fe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99ccd70c8427a41896ec02e41a108fe9">&#9670;&nbsp;</a></span>crc16_MODBUS()</h2>
+<a id="a7956dfa79b7adf40857eef1c142f3bbe" name="a7956dfa79b7adf40857eef1c142f3bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7956dfa79b7adf40857eef1c142f3bbe">&#9670;&nbsp;</a></span>crc16_MODBUS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +965,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_MODBUS </td>
+          <td class="memname">static uint16_t crc16_MODBUS </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -988,7 +984,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1005,8 +1001,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a34680e857594bbfd698493fa0e92d2eb" name="a34680e857594bbfd698493fa0e92d2eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34680e857594bbfd698493fa0e92d2eb">&#9670;&nbsp;</a></span>crc16_RIELLO()</h2>
+<a id="ac4f98bd7f30e1931331da2c2bd5c354c" name="ac4f98bd7f30e1931331da2c2bd5c354c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f98bd7f30e1931331da2c2bd5c354c">&#9670;&nbsp;</a></span>crc16_RIELLO()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1015,7 +1011,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_RIELLO </td>
+          <td class="memname">static uint16_t crc16_RIELLO </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1034,7 +1030,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1051,8 +1047,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f1921ea4e20d690faf1bad56977f742" name="a9f1921ea4e20d690faf1bad56977f742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f1921ea4e20d690faf1bad56977f742">&#9670;&nbsp;</a></span>crc16_T10_DIF()</h2>
+<a id="afbcf95395e4f8fbad3e991f4aad75b0a" name="afbcf95395e4f8fbad3e991f4aad75b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcf95395e4f8fbad3e991f4aad75b0a">&#9670;&nbsp;</a></span>crc16_T10_DIF()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1061,7 +1057,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_T10_DIF </td>
+          <td class="memname">static uint16_t crc16_T10_DIF </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1080,7 +1076,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1097,8 +1093,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afc52dd9ac9b3d6b45a565e98f90f63fc" name="afc52dd9ac9b3d6b45a565e98f90f63fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc52dd9ac9b3d6b45a565e98f90f63fc">&#9670;&nbsp;</a></span>crc16_TELEDISK()</h2>
+<a id="aeb1067ea8deab8af14105308e40a9e8d" name="aeb1067ea8deab8af14105308e40a9e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb1067ea8deab8af14105308e40a9e8d">&#9670;&nbsp;</a></span>crc16_TELEDISK()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1107,7 +1103,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_TELEDISK </td>
+          <td class="memname">static uint16_t crc16_TELEDISK </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1126,7 +1122,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1143,8 +1139,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad67ec4cfbcd5c751bae2bba487661331" name="ad67ec4cfbcd5c751bae2bba487661331"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad67ec4cfbcd5c751bae2bba487661331">&#9670;&nbsp;</a></span>crc16_TMS37157()</h2>
+<a id="a2415d0a8f938c5e066aab049d42cd2ed" name="a2415d0a8f938c5e066aab049d42cd2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2415d0a8f938c5e066aab049d42cd2ed">&#9670;&nbsp;</a></span>crc16_TMS37157()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1153,7 +1149,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_TMS37157 </td>
+          <td class="memname">static uint16_t crc16_TMS37157 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1172,7 +1168,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1189,8 +1185,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a277a5441a3e0879fa0ea33c0f0e6ff" name="a3a277a5441a3e0879fa0ea33c0f0e6ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a277a5441a3e0879fa0ea33c0f0e6ff">&#9670;&nbsp;</a></span>crc16_USB()</h2>
+<a id="a3ec230b0a8c08e07968ea00012c4a28f" name="a3ec230b0a8c08e07968ea00012c4a28f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ec230b0a8c08e07968ea00012c4a28f">&#9670;&nbsp;</a></span>crc16_USB()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1199,7 +1195,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_USB </td>
+          <td class="memname">static uint16_t crc16_USB </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1218,7 +1214,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1235,8 +1231,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adc089a76fc0fe1a1ffd17538f532a703" name="adc089a76fc0fe1a1ffd17538f532a703"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc089a76fc0fe1a1ffd17538f532a703">&#9670;&nbsp;</a></span>crc16_X_25()</h2>
+<a id="aeef23233c0c43b4a1c550a482b3d2529" name="aeef23233c0c43b4a1c550a482b3d2529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef23233c0c43b4a1c550a482b3d2529">&#9670;&nbsp;</a></span>crc16_X_25()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1245,7 +1241,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_X_25 </td>
+          <td class="memname">static uint16_t crc16_X_25 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1264,7 +1260,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1281,8 +1277,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a79b0348928c597c7841e73d00cb8af8c" name="a79b0348928c597c7841e73d00cb8af8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b0348928c597c7841e73d00cb8af8c">&#9670;&nbsp;</a></span>crc16_XMODEM()</h2>
+<a id="a529be49bb2cbe754c7d23c2e930f068b" name="a529be49bb2cbe754c7d23c2e930f068b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529be49bb2cbe754c7d23c2e930f068b">&#9670;&nbsp;</a></span>crc16_XMODEM()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1291,7 +1287,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t crc16_XMODEM </td>
+          <td class="memname">static uint16_t crc16_XMODEM </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1310,7 +1306,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1327,8 +1323,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0beb6c4404c1df0a478fa22b7651af12" name="a0beb6c4404c1df0a478fa22b7651af12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0beb6c4404c1df0a478fa22b7651af12">&#9670;&nbsp;</a></span>crc32()</h2>
+<a id="a61edecaa0a159e524bdecb73c5e39a9d" name="a61edecaa0a159e524bdecb73c5e39a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61edecaa0a159e524bdecb73c5e39a9d">&#9670;&nbsp;</a></span>crc32()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1337,7 +1333,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32 </td>
+          <td class="memname">static uint32_t crc32 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1356,7 +1352,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1373,8 +1369,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ada02903dbc1c5f74f005c92a15f5cece" name="ada02903dbc1c5f74f005c92a15f5cece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada02903dbc1c5f74f005c92a15f5cece">&#9670;&nbsp;</a></span>crc32_BZIP2()</h2>
+<a id="a423a97e5b6acbbe9f7629ab7a5007a09" name="a423a97e5b6acbbe9f7629ab7a5007a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423a97e5b6acbbe9f7629ab7a5007a09">&#9670;&nbsp;</a></span>crc32_BZIP2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1383,7 +1379,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_BZIP2 </td>
+          <td class="memname">static uint32_t crc32_BZIP2 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1402,7 +1398,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1419,8 +1415,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a77bfce9a08c5ace878aa58c3c7acf719" name="a77bfce9a08c5ace878aa58c3c7acf719"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77bfce9a08c5ace878aa58c3c7acf719">&#9670;&nbsp;</a></span>crc32_C()</h2>
+<a id="a6cc0d9d3a113ac4958f987984a95b05e" name="a6cc0d9d3a113ac4958f987984a95b05e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc0d9d3a113ac4958f987984a95b05e">&#9670;&nbsp;</a></span>crc32_C()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1429,7 +1425,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_C </td>
+          <td class="memname">static uint32_t crc32_C </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1448,7 +1444,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1465,8 +1461,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a551ede3a433277bc21d8cb0c1284ed44" name="a551ede3a433277bc21d8cb0c1284ed44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a551ede3a433277bc21d8cb0c1284ed44">&#9670;&nbsp;</a></span>crc32_D()</h2>
+<a id="a43b9e64af8543b09529d38d96de863a4" name="a43b9e64af8543b09529d38d96de863a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b9e64af8543b09529d38d96de863a4">&#9670;&nbsp;</a></span>crc32_D()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1475,7 +1471,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_D </td>
+          <td class="memname">static uint32_t crc32_D </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1494,7 +1490,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1511,8 +1507,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4cc4b5167786b8d5a2f6f90de0e3a9f6" name="a4cc4b5167786b8d5a2f6f90de0e3a9f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cc4b5167786b8d5a2f6f90de0e3a9f6">&#9670;&nbsp;</a></span>crc32_JAMCRC()</h2>
+<a id="a2bdc4428812605f8a5f112d233a29686" name="a2bdc4428812605f8a5f112d233a29686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bdc4428812605f8a5f112d233a29686">&#9670;&nbsp;</a></span>crc32_JAMCRC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1521,7 +1517,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_JAMCRC </td>
+          <td class="memname">static uint32_t crc32_JAMCRC </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1540,7 +1536,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1557,8 +1553,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a68052b38b08feac2a4130de984ccee" name="a1a68052b38b08feac2a4130de984ccee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a68052b38b08feac2a4130de984ccee">&#9670;&nbsp;</a></span>crc32_MPEG2()</h2>
+<a id="aa3a3122c20d9f43ce5a871f150ad5260" name="aa3a3122c20d9f43ce5a871f150ad5260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a3122c20d9f43ce5a871f150ad5260">&#9670;&nbsp;</a></span>crc32_MPEG2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1567,7 +1563,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_MPEG2 </td>
+          <td class="memname">static uint32_t crc32_MPEG2 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1586,7 +1582,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1603,8 +1599,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae9b5fb010bf43b1d93039d97b68ef63a" name="ae9b5fb010bf43b1d93039d97b68ef63a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9b5fb010bf43b1d93039d97b68ef63a">&#9670;&nbsp;</a></span>crc32_POSIX()</h2>
+<a id="a39b0e22569b51781b2cea073b8ec2365" name="a39b0e22569b51781b2cea073b8ec2365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b0e22569b51781b2cea073b8ec2365">&#9670;&nbsp;</a></span>crc32_POSIX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1613,7 +1609,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_POSIX </td>
+          <td class="memname">static uint32_t crc32_POSIX </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1632,7 +1628,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1649,8 +1645,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7523a33f612bb4ef8f2d4ee54bd61fce" name="a7523a33f612bb4ef8f2d4ee54bd61fce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7523a33f612bb4ef8f2d4ee54bd61fce">&#9670;&nbsp;</a></span>crc32_Q()</h2>
+<a id="ac5173fc279a9e8ffaa35383d6fde4e71" name="ac5173fc279a9e8ffaa35383d6fde4e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5173fc279a9e8ffaa35383d6fde4e71">&#9670;&nbsp;</a></span>crc32_Q()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1659,7 +1655,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_Q </td>
+          <td class="memname">static uint32_t crc32_Q </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1678,7 +1674,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1695,8 +1691,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abc55dc903d480f9a31d91a9ab0e515fc" name="abc55dc903d480f9a31d91a9ab0e515fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc55dc903d480f9a31d91a9ab0e515fc">&#9670;&nbsp;</a></span>crc32_XFER()</h2>
+<a id="a1d7887b6968bcba06f9b8d195d9bc302" name="a1d7887b6968bcba06f9b8d195d9bc302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7887b6968bcba06f9b8d195d9bc302">&#9670;&nbsp;</a></span>crc32_XFER()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1705,7 +1701,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t crc32_XFER </td>
+          <td class="memname">static uint32_t crc32_XFER </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1724,7 +1720,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1741,8 +1737,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a46559fa757f2bacf87dfa99540140190" name="a46559fa757f2bacf87dfa99540140190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46559fa757f2bacf87dfa99540140190">&#9670;&nbsp;</a></span>crc8()</h2>
+<a id="ad91051a83807dd87371b1f0809e08e57" name="ad91051a83807dd87371b1f0809e08e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad91051a83807dd87371b1f0809e08e57">&#9670;&nbsp;</a></span>crc8()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1751,7 +1747,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8 </td>
+          <td class="memname">static uint8_t crc8 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1770,7 +1766,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1787,8 +1783,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a010a4b450836274f82f5e0e9b4b727b4" name="a010a4b450836274f82f5e0e9b4b727b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a010a4b450836274f82f5e0e9b4b727b4">&#9670;&nbsp;</a></span>crc8_CDMA2000()</h2>
+<a id="a64857110621748441cc2a0ffadd82b71" name="a64857110621748441cc2a0ffadd82b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64857110621748441cc2a0ffadd82b71">&#9670;&nbsp;</a></span>crc8_CDMA2000()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1797,7 +1793,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_CDMA2000 </td>
+          <td class="memname">static uint8_t crc8_CDMA2000 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1816,7 +1812,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1833,8 +1829,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2af4836f5d2b6f107390e821b5e24cad" name="a2af4836f5d2b6f107390e821b5e24cad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af4836f5d2b6f107390e821b5e24cad">&#9670;&nbsp;</a></span>crc8_DARC()</h2>
+<a id="ac400e79e40bb614dfe2819c41092d644" name="ac400e79e40bb614dfe2819c41092d644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac400e79e40bb614dfe2819c41092d644">&#9670;&nbsp;</a></span>crc8_DARC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1843,7 +1839,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_DARC </td>
+          <td class="memname">static uint8_t crc8_DARC </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1862,7 +1858,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1879,8 +1875,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae61904ab340bb1af1ebdd32c11ed49fe" name="ae61904ab340bb1af1ebdd32c11ed49fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae61904ab340bb1af1ebdd32c11ed49fe">&#9670;&nbsp;</a></span>crc8_DVS_S2()</h2>
+<a id="a9bc1ec3eb793828ae4dd962b340c11d7" name="a9bc1ec3eb793828ae4dd962b340c11d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc1ec3eb793828ae4dd962b340c11d7">&#9670;&nbsp;</a></span>crc8_DVS_S2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1889,7 +1885,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_DVS_S2 </td>
+          <td class="memname">static uint8_t crc8_DVS_S2 </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1908,7 +1904,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1925,8 +1921,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af001039e7eac066bc2d696bf07312c1d" name="af001039e7eac066bc2d696bf07312c1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af001039e7eac066bc2d696bf07312c1d">&#9670;&nbsp;</a></span>crc8_EBU()</h2>
+<a id="a25a64d49669cfc93d7ed1f1112e93388" name="a25a64d49669cfc93d7ed1f1112e93388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25a64d49669cfc93d7ed1f1112e93388">&#9670;&nbsp;</a></span>crc8_EBU()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1935,7 +1931,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_EBU </td>
+          <td class="memname">static uint8_t crc8_EBU </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -1954,7 +1950,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1971,8 +1967,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a18160bc0fc655456eb3ea4f8f3c652ac" name="a18160bc0fc655456eb3ea4f8f3c652ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18160bc0fc655456eb3ea4f8f3c652ac">&#9670;&nbsp;</a></span>crc8_I_CODE()</h2>
+<a id="ab3f2eabc53d62a7493cc88c80eb1e32d" name="ab3f2eabc53d62a7493cc88c80eb1e32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f2eabc53d62a7493cc88c80eb1e32d">&#9670;&nbsp;</a></span>crc8_I_CODE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1981,7 +1977,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_I_CODE </td>
+          <td class="memname">static uint8_t crc8_I_CODE </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -2000,7 +1996,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2017,8 +2013,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ce158af55f0b6eb6430d21747b79bd8" name="a1ce158af55f0b6eb6430d21747b79bd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ce158af55f0b6eb6430d21747b79bd8">&#9670;&nbsp;</a></span>crc8_ITU()</h2>
+<a id="a2226336942878ad93a1232a0aee014ee" name="a2226336942878ad93a1232a0aee014ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2226336942878ad93a1232a0aee014ee">&#9670;&nbsp;</a></span>crc8_ITU()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2027,7 +2023,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_ITU </td>
+          <td class="memname">static uint8_t crc8_ITU </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -2046,7 +2042,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2063,8 +2059,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acf77887e063cd86988fa0177f04887f5" name="acf77887e063cd86988fa0177f04887f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf77887e063cd86988fa0177f04887f5">&#9670;&nbsp;</a></span>crc8_MAXIM()</h2>
+<a id="a33a422b968a976e21c6a20c2dd515a1e" name="a33a422b968a976e21c6a20c2dd515a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a422b968a976e21c6a20c2dd515a1e">&#9670;&nbsp;</a></span>crc8_MAXIM()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2073,7 +2069,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_MAXIM </td>
+          <td class="memname">static uint8_t crc8_MAXIM </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -2092,7 +2088,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2109,8 +2105,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a181a262b75267975610e1dac1b8ef732" name="a181a262b75267975610e1dac1b8ef732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a181a262b75267975610e1dac1b8ef732">&#9670;&nbsp;</a></span>crc8_ROHC()</h2>
+<a id="ab0329f2f3f2c5091eeeac1896ef43ce8" name="ab0329f2f3f2c5091eeeac1896ef43ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0329f2f3f2c5091eeeac1896ef43ce8">&#9670;&nbsp;</a></span>crc8_ROHC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2119,7 +2115,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_ROHC </td>
+          <td class="memname">static uint8_t crc8_ROHC </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -2138,7 +2134,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2155,8 +2151,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c1d9c2b9cdf45ac3724f7a7c47e0732" name="a6c1d9c2b9cdf45ac3724f7a7c47e0732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c1d9c2b9cdf45ac3724f7a7c47e0732">&#9670;&nbsp;</a></span>crc8_WCDMA()</h2>
+<a id="a3bc09be1ece00b563f1624295f5e0ba1" name="a3bc09be1ece00b563f1624295f5e0ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc09be1ece00b563f1624295f5e0ba1">&#9670;&nbsp;</a></span>crc8_WCDMA()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2165,7 +2161,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t crc8_WCDMA </td>
+          <td class="memname">static uint8_t crc8_WCDMA </td>
           <td>(</td>
           <td class="paramtype">const void *const&#160;</td>
           <td class="paramname"><em>pData</em>, </td>
@@ -2184,7 +2180,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
