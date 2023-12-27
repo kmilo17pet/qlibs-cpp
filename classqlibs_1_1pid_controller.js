@@ -1,5 +1,7 @@
 var classqlibs_1_1pid_controller =
 [
+    [ "~pidController", "classqlibs_1_1pid_controller.html#a2abcc41a29d7e696ef836dc094a8f238", null ],
+    [ "pidController", "classqlibs_1_1pid_controller.html#a97ee0e04c71c2cdd4a6c229bd0b2d14b", null ],
     [ "bindAutoTuning", "classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c", null ],
     [ "control", "classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc", null ],
     [ "enableAutoTuning", "classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e", null ],

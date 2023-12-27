@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['wrapto180_0',['wrapTo180',['../classqlibs_1_1fp16.html#a3ad8e43dc16698b21adcc3ac7b309f05',1,'qlibs::fp16']]],
-  ['wraptopi_1',['wrapToPi',['../classqlibs_1_1fp16.html#a7b5242399a39c32dbaf9c95b40085300',1,'qlibs::fp16']]],
-  ['writebit_2',['writeBit',['../classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07',1,'qlibs::bitfield']]],
-  ['writefloat_3',['writeFloat',['../classqlibs_1_1bitfield.html#a87a227dedc282534244a9954aef0161a',1,'qlibs::bitfield']]],
-  ['writeuintn_4',['writeUINTn',['../classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37',1,'qlibs::bitfield']]],
-  ['wtaver_5',['wtaver',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a1d0b957a516b0c7b3814e55ea36854cc',1,'qlibs']]],
-  ['wtsum_6',['wtsum',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a5d99257e412433da4f3c932046a26954',1,'qlibs']]]
+  ['uk_0',['uk',['../classqlibs_1_1pid_auto_tuning.html#a69288568b983add2d1c5f84d3b297294',1,'qlibs::pidAutoTuning']]],
+  ['unbindautotuning_1',['unbindAutoTuning',['../classqlibs_1_1pid_controller.html#a5df64adf568d4f8ec9c26b86d26aa77e',1,'qlibs::pidController']]],
+  ['undefined_2',['UNDEFINED',['../classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de',1,'qlibs::pidAutoTuning']]],
+  ['update_3',['update',['../classqlibs_1_1rms.html#a86721a80a069b9d0d62f9ef8d4fa82db',1,'qlibs::rms']]],
+  ['updatefir_4',['updateFIR',['../classqlibs_1_1discrete_system.html#a4042744053e29dbcf01f6ac0775ad0a7',1,'qlibs::discreteSystem']]]
 ];

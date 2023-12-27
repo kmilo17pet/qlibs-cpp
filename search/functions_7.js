@@ -11,5 +11,6 @@ var searchData=
   ['isequal_8',['isEqual',['../group__qfmathex.html#gab497b116252fc8763ade8c6eb655949e',1,'qlibs']]],
   ['isexpmax_9',['isExpMax',['../classqlibs_1_1fp16.html#ad369475aa239d84820c14f02a7cbc631',1,'qlibs::fp16']]],
   ['isinitialized_10',['isInitialized',['../classqlibs_1_1smoother.html#aec30c8dbc4317e6e36fbebe8e84a0b29',1,'qlibs::smoother::isInitialized()'],['../classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c',1,'qlibs::tdl::isInitialized()'],['../classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef',1,'qlibs::continuousSystem::isInitialized()'],['../classqlibs_1_1discrete_system.html#afae7d9eb20e3f5e4318df953dd5393c3',1,'qlibs::discreteSystem::isInitialized()'],['../classqlibs_1_1ltisys.html#a5700dfd0f718292a6d9da75d8211ab90',1,'qlibs::ltisys::isInitialized()']]],
-  ['isoverflow_11',['isOverflow',['../classqlibs_1_1fp16.html#a06adef7d29621413668fc9a3ffd3f910',1,'qlibs::fp16']]]
+  ['isoverflow_11',['isOverflow',['../classqlibs_1_1fp16.html#a06adef7d29621413668fc9a3ffd3f910',1,'qlibs::fp16']]],
+  ['isvalidvalue_12',['isValidValue',['../classqlibs_1_1pid_auto_tuning.html#a042cd2bd6c9639a3df8229d23334a8fd',1,'qlibs::pidAutoTuning']]]
 ];

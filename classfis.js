@@ -1,5 +1,7 @@
 var classfis =
 [
+    [ "fis", "group__qfis.html#ga8ef1512dd1494ea303963c1bf7868636", null ],
+    [ "~fis", "group__qfis.html#ga13fab92c25b610f254328203e9a0c79e", null ],
     [ "deFuzzify", "group__qfis.html#gaabd318e5a87227a2cedc939c23f4d53d", null ],
     [ "fuzzify", "group__qfis.html#gaecce84ade166e00e42a9c418fb750f90", null ],
     [ "getNumberOfPoints", "group__qfis.html#gadd8a920ec2f269bf0acd3b0575704c91", null ],
@@ -20,5 +22,7 @@ var classfis =
     [ "setup", "group__qfis.html#ga6c13e05286af5f87550af36647081594", null ],
     [ "setup", "group__qfis.html#ga40ef17f535e2c9c02d2adc844e799e86", null ],
     [ "setupInput", "group__qfis.html#gaedd3d9a74c2fc6fb48458c9a41bd05e7", null ],
-    [ "setupOutput", "group__qfis.html#ga942828fdd4f17d5c9041e820aa4c9550", null ]
+    [ "setupOutput", "group__qfis.html#ga942828fdd4f17d5c9041e820aa4c9550", null ],
+    [ "fisCore", "group__qfis.html#ga1c9785007b5314f794afdac70d5f8880", null ],
+    [ "fisSystem", "group__qfis.html#ga7ead4b6701791c7207342b8255bd3a72", null ]
 ];

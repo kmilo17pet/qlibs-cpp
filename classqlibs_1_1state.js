@@ -1,5 +1,6 @@
 var classqlibs_1_1state =
 [
+    [ "~state", "classqlibs_1_1state.html#a4ea44d630b908bf4bb27e77bcc60f0e1", null ],
     [ "state", "classqlibs_1_1state.html#a9925b22e5dd87bb2e7301a62e767a8c5", null ],
     [ "derivative", "classqlibs_1_1state.html#a3339dd9366c86fe9fef4caa13c89cd4c", null ],
     [ "init", "classqlibs_1_1state.html#a80f65c9be07e553785d69db2b040ac3f", null ],

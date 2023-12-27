@@ -1,6 +1,8 @@
 var group__qtdl =
 [
     [ "qlibs::tdl", "classqlibs_1_1tdl.html", [
+      [ "~tdl", "classqlibs_1_1tdl.html#a2b26c5d5a9b79dc602f801fe9aec232e", null ],
+      [ "tdl", "classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277", null ],
       [ "tdl", "classqlibs_1_1tdl.html#a397c91afb676db8eba5cd37a546eaeee", null ],
       [ "tdl", "classqlibs_1_1tdl.html#ab06a1f62b129d01db1df48b23b6a33fd", null ],
       [ "flush", "classqlibs_1_1tdl.html#aac66c38f322e172ecaa8b79694ef0a9e", null ],

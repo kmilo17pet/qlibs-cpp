@@ -45,7 +45,8 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ]
   ] ]
@@ -54,7 +55,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ae356531fce3d510537524c9aef724ae9"
+"classqlibs_1_1smoother_m_w_m2.html#afd97e9e5396b8a2952c1edb405435fb5",
+"group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

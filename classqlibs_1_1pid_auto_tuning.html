@@ -131,7 +131,6 @@ $(document).ready(function(){initNavTree('classqlibs_1_1pid_auto_tuning.html',''
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classqlibs_1_1pid_auto_tuning-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">qlibs::pidAutoTuning Class Reference<div class="ingroups"><a class="el" href="group__qpid.html">PID Controller</a></div></div></div>
 </div><!--header-->
@@ -144,84 +143,537 @@ $(document).ready(function(){initNavTree('classqlibs_1_1pid_auto_tuning.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c77af50acce497a4ee912fbb96073d6"><td class="memItemLeft" align="right" valign="top"><a id="a1c77af50acce497a4ee912fbb96073d6" name="a1c77af50acce497a4ee912fbb96073d6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>step</b> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> u, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> y, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt) noexcept</td></tr>
+<tr class="memitem:a6c31332f466c91e8e2827a4fa9dead5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a6c31332f466c91e8e2827a4fa9dead5c">pidAutoTuning</a> ()=default</td></tr>
+<tr class="separator:a6c31332f466c91e8e2827a4fa9dead5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c77af50acce497a4ee912fbb96073d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a1c77af50acce497a4ee912fbb96073d6">step</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> u, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> y, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt) noexcept</td></tr>
 <tr class="separator:a1c77af50acce497a4ee912fbb96073d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d0357734c37d3b329fdb902339e8e7"><td class="memItemLeft" align="right" valign="top"><a id="a33d0357734c37d3b329fdb902339e8e7" name="a33d0357734c37d3b329fdb902339e8e7"></a>
-<a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getEstimates</b> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt) const noexcept</td></tr>
+<tr class="memitem:a33d0357734c37d3b329fdb902339e8e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a33d0357734c37d3b329fdb902339e8e7">getEstimates</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt) const noexcept</td></tr>
 <tr class="separator:a33d0357734c37d3b329fdb902339e8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aa40e0ead85229b469ea74ca68ffc79de"><td class="memItemLeft" align="right" valign="top"><a id="aa40e0ead85229b469ea74ca68ffc79de" name="aa40e0ead85229b469ea74ca68ffc79de"></a>
-static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UNDEFINED</b></td></tr>
-<tr class="memdesc:aa40e0ead85229b469ea74ca68ffc79de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant to keep the auto-tuner enabled indefinitely. <br /></td></tr>
+<tr class="memitem:aa40e0ead85229b469ea74ca68ffc79de"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de">UNDEFINED</a></td></tr>
+<tr class="memdesc:aa40e0ead85229b469ea74ca68ffc79de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant to keep the auto-tuner enabled indefinitely.  <a href="classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de">More...</a><br /></td></tr>
 <tr class="separator:aa40e0ead85229b469ea74ca68ffc79de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a042cd2bd6c9639a3df8229d23334a8fd"><td class="memItemLeft" align="right" valign="top"><a id="a042cd2bd6c9639a3df8229d23334a8fd" name="a042cd2bd6c9639a3df8229d23334a8fd"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidValue</b> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> x) noexcept</td></tr>
+<tr class="memitem:a042cd2bd6c9639a3df8229d23334a8fd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a042cd2bd6c9639a3df8229d23334a8fd">isValidValue</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> x) noexcept</td></tr>
 <tr class="separator:a042cd2bd6c9639a3df8229d23334a8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a1889baeeee51b5cbd8fa1ce5503fd431"><td class="memItemLeft" align="right" valign="top"><a id="a1889baeeee51b5cbd8fa1ce5503fd431" name="a1889baeeee51b5cbd8fa1ce5503fd431"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p00</b></td></tr>
+<tr class="memitem:a1889baeeee51b5cbd8fa1ce5503fd431"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a1889baeeee51b5cbd8fa1ce5503fd431">p00</a></td></tr>
 <tr class="separator:a1889baeeee51b5cbd8fa1ce5503fd431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1f05c5cea0433940c1602892a198bf"><td class="memItemLeft" align="right" valign="top"><a id="a4a1f05c5cea0433940c1602892a198bf" name="a4a1f05c5cea0433940c1602892a198bf"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p01</b></td></tr>
+<tr class="memitem:a4a1f05c5cea0433940c1602892a198bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a4a1f05c5cea0433940c1602892a198bf">p01</a></td></tr>
 <tr class="separator:a4a1f05c5cea0433940c1602892a198bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bf88506dac6e180fc80c9528f5f5a7d"><td class="memItemLeft" align="right" valign="top"><a id="a1bf88506dac6e180fc80c9528f5f5a7d" name="a1bf88506dac6e180fc80c9528f5f5a7d"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p10</b></td></tr>
+<tr class="memitem:a1bf88506dac6e180fc80c9528f5f5a7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a1bf88506dac6e180fc80c9528f5f5a7d">p10</a></td></tr>
 <tr class="separator:a1bf88506dac6e180fc80c9528f5f5a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8b1902364f051fd32307e5425e8e21"><td class="memItemLeft" align="right" valign="top"><a id="a6b8b1902364f051fd32307e5425e8e21" name="a6b8b1902364f051fd32307e5425e8e21"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p11</b></td></tr>
+<tr class="memitem:a6b8b1902364f051fd32307e5425e8e21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a6b8b1902364f051fd32307e5425e8e21">p11</a></td></tr>
 <tr class="separator:a6b8b1902364f051fd32307e5425e8e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a928a8e16f444388cfdcd059607846ac2"><td class="memItemLeft" align="right" valign="top"><a id="a928a8e16f444388cfdcd059607846ac2" name="a928a8e16f444388cfdcd059607846ac2"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b1</b></td></tr>
+<tr class="memitem:a928a8e16f444388cfdcd059607846ac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a928a8e16f444388cfdcd059607846ac2">b1</a></td></tr>
 <tr class="separator:a928a8e16f444388cfdcd059607846ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a5873af8a0fc022ac86a522da97b02"><td class="memItemLeft" align="right" valign="top"><a id="a31a5873af8a0fc022ac86a522da97b02" name="a31a5873af8a0fc022ac86a522da97b02"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>a1</b></td></tr>
+<tr class="memitem:a31a5873af8a0fc022ac86a522da97b02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a31a5873af8a0fc022ac86a522da97b02">a1</a></td></tr>
 <tr class="separator:a31a5873af8a0fc022ac86a522da97b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69288568b983add2d1c5f84d3b297294"><td class="memItemLeft" align="right" valign="top"><a id="a69288568b983add2d1c5f84d3b297294" name="a69288568b983add2d1c5f84d3b297294"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>uk</b></td></tr>
+<tr class="memitem:a69288568b983add2d1c5f84d3b297294"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a69288568b983add2d1c5f84d3b297294">uk</a></td></tr>
 <tr class="separator:a69288568b983add2d1c5f84d3b297294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724e43ed73dfdc74e384258f63d2d82f"><td class="memItemLeft" align="right" valign="top"><a id="a724e43ed73dfdc74e384258f63d2d82f" name="a724e43ed73dfdc74e384258f63d2d82f"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>yk</b></td></tr>
+<tr class="memitem:a724e43ed73dfdc74e384258f63d2d82f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a724e43ed73dfdc74e384258f63d2d82f">yk</a></td></tr>
 <tr class="separator:a724e43ed73dfdc74e384258f63d2d82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eff6d599a6701eebe48e4e4bddb3224"><td class="memItemLeft" align="right" valign="top"><a id="a1eff6d599a6701eebe48e4e4bddb3224" name="a1eff6d599a6701eebe48e4e4bddb3224"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>l</b></td></tr>
+<tr class="memitem:a1eff6d599a6701eebe48e4e4bddb3224"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a1eff6d599a6701eebe48e4e4bddb3224">l</a></td></tr>
 <tr class="separator:a1eff6d599a6701eebe48e4e4bddb3224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af815d0a6ff5b79205dc3de68f3a12c45"><td class="memItemLeft" align="right" valign="top"><a id="af815d0a6ff5b79205dc3de68f3a12c45" name="af815d0a6ff5b79205dc3de68f3a12c45"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>il</b></td></tr>
+<tr class="memitem:af815d0a6ff5b79205dc3de68f3a12c45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#af815d0a6ff5b79205dc3de68f3a12c45">il</a></td></tr>
 <tr class="separator:af815d0a6ff5b79205dc3de68f3a12c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc346af0d6040248a2971c668234654b"><td class="memItemLeft" align="right" valign="top"><a id="abc346af0d6040248a2971c668234654b" name="abc346af0d6040248a2971c668234654b"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>k</b></td></tr>
+<tr class="memitem:abc346af0d6040248a2971c668234654b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#abc346af0d6040248a2971c668234654b">k</a></td></tr>
 <tr class="separator:abc346af0d6040248a2971c668234654b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5cc6789a3d06cd768ccd17d7289734e"><td class="memItemLeft" align="right" valign="top"><a id="ad5cc6789a3d06cd768ccd17d7289734e" name="ad5cc6789a3d06cd768ccd17d7289734e"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tao</b></td></tr>
+<tr class="memitem:ad5cc6789a3d06cd768ccd17d7289734e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#ad5cc6789a3d06cd768ccd17d7289734e">tao</a></td></tr>
 <tr class="separator:ad5cc6789a3d06cd768ccd17d7289734e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcbf1264057f3bdee5ad465b0001c622"><td class="memItemLeft" align="right" valign="top"><a id="abcbf1264057f3bdee5ad465b0001c622" name="abcbf1264057f3bdee5ad465b0001c622"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mu</b></td></tr>
+<tr class="memitem:abcbf1264057f3bdee5ad465b0001c622"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622">mu</a></td></tr>
 <tr class="separator:abcbf1264057f3bdee5ad465b0001c622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a636832441c3f233b0619981428d8aa24"><td class="memItemLeft" align="right" valign="top"><a id="a636832441c3f233b0619981428d8aa24" name="a636832441c3f233b0619981428d8aa24"></a>
-<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+<tr class="memitem:a636832441c3f233b0619981428d8aa24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#a636832441c3f233b0619981428d8aa24">speed</a></td></tr>
 <tr class="separator:a636832441c3f233b0619981428d8aa24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa41ca515fa245a232f1cf8e419d18b4"><td class="memItemLeft" align="right" valign="top"><a id="afa41ca515fa245a232f1cf8e419d18b4" name="afa41ca515fa245a232f1cf8e419d18b4"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>it</b></td></tr>
+<tr class="memitem:afa41ca515fa245a232f1cf8e419d18b4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html#afa41ca515fa245a232f1cf8e419d18b4">it</a></td></tr>
 <tr class="separator:afa41ca515fa245a232f1cf8e419d18b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:aa726a8d12c934b49a3c7add01d4f4d8c"><td class="memItemLeft" align="right" valign="top"><a id="aa726a8d12c934b49a3c7add01d4f4d8c" name="aa726a8d12c934b49a3c7add01d4f4d8c"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>pidController</b></td></tr>
-<tr class="separator:aa726a8d12c934b49a3c7add01d4f4d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A PID Auto-tuning object. </p>
 <p >The instance should be bound to a configured PID controller by using the <a class="el" href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> method </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6c31332f466c91e8e2827a4fa9dead5c" name="a6c31332f466c91e8e2827a4fa9dead5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c31332f466c91e8e2827a4fa9dead5c">&#9670;&nbsp;</a></span>pidAutoTuning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::pidAutoTuning::pidAutoTuning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a33d0357734c37d3b329fdb902339e8e7" name="a33d0357734c37d3b329fdb902339e8e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d0357734c37d3b329fdb902339e8e7">&#9670;&nbsp;</a></span>getEstimates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> pidAutoTuning::getEstimates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a042cd2bd6c9639a3df8229d23334a8fd" name="a042cd2bd6c9639a3df8229d23334a8fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042cd2bd6c9639a3df8229d23334a8fd">&#9670;&nbsp;</a></span>isValidValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pidAutoTuning::isValidValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c77af50acce497a4ee912fbb96073d6" name="a1c77af50acce497a4ee912fbb96073d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c77af50acce497a4ee912fbb96073d6">&#9670;&nbsp;</a></span>step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pidAutoTuning::step </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a31a5873af8a0fc022ac86a522da97b02" name="a31a5873af8a0fc022ac86a522da97b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a5873af8a0fc022ac86a522da97b02">&#9670;&nbsp;</a></span>a1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::a1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a928a8e16f444388cfdcd059607846ac2" name="a928a8e16f444388cfdcd059607846ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928a8e16f444388cfdcd059607846ac2">&#9670;&nbsp;</a></span>b1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::b1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af815d0a6ff5b79205dc3de68f3a12c45" name="af815d0a6ff5b79205dc3de68f3a12c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af815d0a6ff5b79205dc3de68f3a12c45">&#9670;&nbsp;</a></span>il</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::il</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa41ca515fa245a232f1cf8e419d18b4" name="afa41ca515fa245a232f1cf8e419d18b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa41ca515fa245a232f1cf8e419d18b4">&#9670;&nbsp;</a></span>it</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t qlibs::pidAutoTuning::it</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc346af0d6040248a2971c668234654b" name="abc346af0d6040248a2971c668234654b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc346af0d6040248a2971c668234654b">&#9670;&nbsp;</a></span>k</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::k</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1eff6d599a6701eebe48e4e4bddb3224" name="a1eff6d599a6701eebe48e4e4bddb3224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eff6d599a6701eebe48e4e4bddb3224">&#9670;&nbsp;</a></span>l</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::l</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcbf1264057f3bdee5ad465b0001c622" name="abcbf1264057f3bdee5ad465b0001c622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcbf1264057f3bdee5ad465b0001c622">&#9670;&nbsp;</a></span>mu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::mu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1889baeeee51b5cbd8fa1ce5503fd431" name="a1889baeeee51b5cbd8fa1ce5503fd431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1889baeeee51b5cbd8fa1ce5503fd431">&#9670;&nbsp;</a></span>p00</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::p00</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a1f05c5cea0433940c1602892a198bf" name="a4a1f05c5cea0433940c1602892a198bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1f05c5cea0433940c1602892a198bf">&#9670;&nbsp;</a></span>p01</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::p01</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1bf88506dac6e180fc80c9528f5f5a7d" name="a1bf88506dac6e180fc80c9528f5f5a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bf88506dac6e180fc80c9528f5f5a7d">&#9670;&nbsp;</a></span>p10</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::p10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b8b1902364f051fd32307e5425e8e21" name="a6b8b1902364f051fd32307e5425e8e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8b1902364f051fd32307e5425e8e21">&#9670;&nbsp;</a></span>p11</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::p11</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a636832441c3f233b0619981428d8aa24" name="a636832441c3f233b0619981428d8aa24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636832441c3f233b0619981428d8aa24">&#9670;&nbsp;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5cc6789a3d06cd768ccd17d7289734e" name="ad5cc6789a3d06cd768ccd17d7289734e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cc6789a3d06cd768ccd17d7289734e">&#9670;&nbsp;</a></span>tao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::tao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69288568b983add2d1c5f84d3b297294" name="a69288568b983add2d1c5f84d3b297294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69288568b983add2d1c5f84d3b297294">&#9670;&nbsp;</a></span>uk</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::uk</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa40e0ead85229b469ea74ca68ffc79de" name="aa40e0ead85229b469ea74ca68ffc79de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40e0ead85229b469ea74ca68ffc79de">&#9670;&nbsp;</a></span>UNDEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t pidAutoTuning::UNDEFINED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constant to keep the auto-tuner enabled indefinitely. </p>
+
+</div>
+</div>
+<a id="a724e43ed73dfdc74e384258f63d2d82f" name="a724e43ed73dfdc74e384258f63d2d82f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724e43ed73dfdc74e384258f63d2d82f">&#9670;&nbsp;</a></span>yk</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> qlibs::pidAutoTuning::yk</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

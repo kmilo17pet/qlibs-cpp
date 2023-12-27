@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classqlibs_1_1state.html#a739d28cdb5eeda949f8ee97d05541a71',1,'qlibs::state::operator()()'],['../classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d',1,'qlibs::tdl::operator()()']]],
-  ['operator_3c_3c_1',['operator&lt;&lt;',['../group__qfis.html#gaba9ffd1d28fa24262d2745ff62438aa8',1,'fis::operator&lt;&lt;(const fisTag &amp;tag)'],['../group__qfis.html#gae6f5b8d860c7ec0cc2a0e94e1f91ee62',1,'fis::operator&lt;&lt;(const int &amp;value)'],['../group__qfis.html#ga52ba86de575188aacd33130150fae544',1,'fis::operator&lt;&lt;(const real_t &amp;value)'],['../group__qfis.html#gac248abc2226e612fc47ff318f7e12d9b',1,'fisSystem::operator&lt;&lt;(const fisTag &amp;tag)'],['../group__qfis.html#ga4da4d39c0b81f190b6029626ef50429b',1,'fisSystem::operator&lt;&lt;(const int &amp;value)'],['../group__qfis.html#ga405d855d40dab05ca20238aec76c0dc7',1,'fisSystem::operator&lt;&lt;(const real_t &amp;value)']]],
-  ['operator_5b_5d_2',['operator[]',['../group__qfis.html#ga0a288244400f9c6ee7aad3e40f0dd5c0',1,'fis::operator[]()'],['../group__qfis.html#gab10f1972c867411925254b76d4593973',1,'fisSystem::operator[]()'],['../classqlibs_1_1tdl.html#a5793acd61bf5738f2ef27cc240c50f86',1,'qlibs::tdl::operator[]()']]]
+  ['n_0',['n',['../classqlibs_1_1ltisys.html#a9474f6c5d9ddb11ee2709406620424fb',1,'qlibs::ltisys']]],
+  ['na_1',['na',['../classqlibs_1_1ltisys.html#a20bb42c323d39ebc7d4c2981165247e2',1,'qlibs::ltisys']]],
+  ['nb_2',['nb',['../classqlibs_1_1ltisys.html#a12f763b9ffd67fe4f9d6e12542b76044',1,'qlibs::ltisys']]],
+  ['normalize_3',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]],
+  ['normalizetransferfunction_4',['normalizeTransferFunction',['../classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4',1,'qlibs::ltisys']]]
 ];

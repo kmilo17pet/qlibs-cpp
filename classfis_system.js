@@ -1,5 +1,6 @@
 var classfis_system =
 [
+    [ "fisSystem", "group__qfis.html#ga5f4275c65a4d217d53098feb2861a056", null ],
     [ "deFuzzify", "group__qfis.html#ga1a1586b82eb4b72ddcc1a24365b2148a", null ],
     [ "fuzzify", "group__qfis.html#ga92b13815d121065848ec00c85cf9b58a", null ],
     [ "getNumberOfPoints", "group__qfis.html#gace9206ffeac7de4fdef792f87f16d29c", null ],

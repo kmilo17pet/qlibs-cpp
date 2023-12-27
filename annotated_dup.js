@@ -3,11 +3,11 @@ var annotated_dup =
     [ "qlibs", "namespaceqlibs.html", [
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
-      [ "crc", "classqlibs_1_1crc.html", null ],
+      [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
-      [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
+      [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
       [ "pidController", "classqlibs_1_1pid_controller.html", "classqlibs_1_1pid_controller" ],
       [ "pidGains", "structqlibs_1_1pid_gains.html", "structqlibs_1_1pid_gains" ],
       [ "rms", "classqlibs_1_1rms.html", "classqlibs_1_1rms" ],
@@ -27,9 +27,9 @@ var annotated_dup =
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ],
     [ "fis", "classfis.html", "classfis" ],
-    [ "fisInput", "classfis_input.html", null ],
-    [ "fisMF", "classfis_m_f.html", null ],
-    [ "fisOutput", "classfis_output.html", null ],
+    [ "fisInput", "classfis_input.html", "classfis_input" ],
+    [ "fisMF", "classfis_m_f.html", "classfis_m_f" ],
+    [ "fisOutput", "classfis_output.html", "classfis_output" ],
     [ "fisSystem", "classfis_system.html", "classfis_system" ],
-    [ "sortStackNode", "structsort_stack_node.html", null ]
+    [ "sortStackNode", "structsort_stack_node.html", "structsort_stack_node" ]
 ];
