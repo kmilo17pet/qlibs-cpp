@@ -18,7 +18,7 @@
 *
 * @section qfp16_functions Fixed-point functions
 *
-* All the provided functions operate on 32-bit numbers, \ref fp16, which have 
+* All the provided functions operate on 32-bit numbers, fp16, which have 
 * 16-bit integer part and 16-bit fractional part.
 *
 * @subsection qfp16_conv_functions Conversion functions
@@ -26,11 +26,11 @@
 * Conversion from integers and floating-point values. These conversions retain 
 * the numeric value and perform rounding where necessary.
 *
-* - \ref fp16::from() Convert int/float or double to the fp16 type
-* - \ref fp16::toInt() Convert fp16 to integer.
-* - \ref fp16::toFloat() Convert fp16 to float.
-* - \ref fp16::toDouble() Convert fp16 to double.
-* - \ref fp16::toASCII()  Convert from \ref fp16 to string.
+* - fp16::from() Convert int/float or double to the fp16 type
+* - fp16::toInt() Convert fp16 to integer.
+* - fp16::toFloat() Convert fp16 to float.
+* - fp16::toDouble() Convert fp16 to double.
+* - fp16::toASCII()  Convert from fp16 to raw c-string.
 *
 * @subsection  qfp16_basic_arithmetic Basic arithmetic
 *
@@ -46,32 +46,32 @@
 *
 * Roots, exponents & similar.
 *
-* - \ref fp16::sqrt()  Square root. Performs rounding and is accurate to \ref fp16 limits.
-* - \ref fp16::exp()   Exponential function using power series approximation.
+* - fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
+* - fp16::exp()   Exponential function using power series approximation.
 * Accuracy depends on range, worst case +-40 absolute for negative inputs and
 * +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.
-* - \ref fp16::log()  Natural logarithm using Newton approximation and \ref fp16::exp().
+* - fp16::log()  Natural logarithm using Newton approximation and fp16::exp().
 * Worst case error +-3 absolute, average error less than 1 unit.
-* - \ref fp16::log2()  Logarithm base 2.
-* - \ref fp16::pow()  Computes the power of a \ref fp16 number
+* - fp16::log2()  Logarithm base 2.
+* - fp16::pow()  Computes the power of a fp16 number
 *
 *
 * @subsection qfp16_trig_functions Trigonometric functions and helpers
 *
-* - \ref fp16::sin()  Sine for angle in radians
-* - \ref fp16::cos()  Cosine for angle in radians
-* - \ref fp16::tan()  Tangent for angle in radians
-* - \ref fp16::asin()  Inverse of sine, output in radians
-* - \ref fp16::acos()  Inverse of cosine, output in radians
-* - \ref fp16::atan()  Inverse of tangent, output in radians
-* - \ref fp16::atan2()  Arc tangent in radians x,y
-* - \ref fp16::sinh()  Hyperbolic sine
-* - \ref fp16::cosh()  Hyperbolic cosine
-* - \ref fp16::tanh()  Hyperbolic tangent
-* - \ref fp16::radToDeg()  Converts angle units from radians to degrees.
-* - \ref fp16::degToRad()  Converts angle units from degrees to radians
-* - \ref fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
-* - \ref fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
+* - fp16::sin()  Sine for angle in radians
+* - fp16::cos()  Cosine for angle in radians
+* - fp16::tan()  Tangent for angle in radians
+* - fp16::asin()  Inverse of sine, output in radians
+* - fp16::acos()  Inverse of cosine, output in radians
+* - fp16::atan()  Inverse of tangent, output in radians
+* - fp16::atan2()  Arc tangent in radians x,y
+* - fp16::sinh()  Hyperbolic sine
+* - fp16::cosh()  Hyperbolic cosine
+* - fp16::tanh()  Hyperbolic tangent
+* - fp16::radToDeg()  Converts angle units from radians to degrees.
+* - fp16::degToRad()  Converts angle units from degrees to radians
+* - fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
+* - fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
 *
 *
 * @section qfp16_example Example: Solution of the quadratic equation

@@ -12,12 +12,11 @@
 
 #include "include/types.hpp"
 
+/** @addtogroup qbitfield Bit-Field
+* @brief API for the Bit-Field manipulation library
+*  @{
+*/
 namespace qlibs {
-
-    /** @addtogroup qbitfield Bit-Field
-    * @brief API for the Bit-Field manipulation library
-    *  @{
-    */
 
     /**
     * @brief Determine the @c uint8_t array-size to setup a BitField instance.
@@ -201,8 +200,8 @@ namespace qlibs {
             void* dump( void * const dst,
                         const size_t n ) noexcept;
     };
-
-     /** @}*/
 }
+
+/** @}*/
 
 #endif /*QLIBS_BITFIELD*/

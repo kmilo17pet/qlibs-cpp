@@ -11,13 +11,11 @@
 
 #include "include/types.hpp"
 
+/** @addtogroup qfis FIS - Fuzzy Inference System
+* @brief Fuzzy Inference System (FIS) Engine
+*  @{
+*/
 namespace qlibs {
-
-    /** @addtogroup qfis FIS - Fuzzy Inference System
-    * @brief Fuzzy Inference System (FIS) Engine
-    *  @{
-    */
-
     /**
     * @brief An enum with all the possible values to specify a membership
     * function.
@@ -1200,9 +1198,8 @@ namespace qlibs {
                 return *this;
             }
     };
-
-    /** @}*/
-
 }
+
+/** @}*/
 
 #endif /*QLIBS_FIS*/
