@@ -31,7 +31,7 @@
 * combined into a single fuzzy set using the aggregation method of the FIS.
 * Then, to compute a final crisp output value, the combined output fuzzy set is
 * defuzzified using one of the methods described in Defuzzification Methods.
-* To specify a FIS of this type use the ::Mamdani enum definition when calling
+* To specify a FIS of this type use the fisType::Mamdani enum definition when calling
 * fis::setup().
 *
 * <center>
@@ -80,7 +80,8 @@
 * controllers that are to be applied, respectively, to different operating 
 * conditions of a dynamic nonlinear system.
 *
-* To specificy a FIS of this type,  use the ::Sugeno enum definition when calling fis::setup().
+* To specificy a FIS of this type,  use the fisType::Sugeno enum definition when
+* calling fis::setup().
 *
 * <center>
 * @htmlonly
@@ -110,7 +111,7 @@
 * each rule's output by the method of weighted average and thus avoids the
 * time-consuming process of defuzzification.
 *
-* To specify a FIS of this type, use the ::Tsukamoto enum definition when
+* To specify a FIS of this type, use the fisType::Tsukamoto enum definition when
 * calling fis::setup().
 *
 * <center>
@@ -134,7 +135,7 @@
 * FIS supports five different methods, as listed in the \ref fisDeFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# ::centroid (default): this method applies only to ::Mamdani systems and returns the
+*  -# fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the
 * center of gravity of the fuzzy set along the x-axis. If you think of the area
 * as a plate with uniform thickness and density, the centroid is the point along
 * the x-axis about which the fuzzy set would balance. The centroid is computed
@@ -144,18 +145,18 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# ::bisector : this method applies only for ::Mamdani systems and finds the 
+*  -# fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# ::mom : Middle of Maximum. Only for ::Mamdani systems.
+*  -# fisDeFuzzMethod::mom : Middle of Maximum. Only for fisType::Mamdani systems.
 *
-*  -# ::som : Smallest of Maximum. Only for ::Mamdani systems.
+*  -# fisDeFuzzMethod::som : Smallest of Maximum. Only for fisType::Mamdani systems.
 *
-*  -# ::lom : Largest of Maximum. Only for ::Mamdani systems.
+*  -# fisDeFuzzMethod::lom : Largest of Maximum. Only for fisType::Mamdani systems.
 *
-*  -# ::wtaver (default): Weighted average of all rule outputs. this method applies only 
-* for ::Sugeno and ::Tsukamoto systems.
+*  -# fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. this method applies only 
+* for fisType::Sugeno and fisType::Tsukamoto systems.
 *
 *  -# ::wtsum:  Weighted sum of all rule outputs. This method applies only for
 * ::Sugeno and ::Tsukamoto systems.
@@ -263,13 +264,13 @@
 * an array of type \ref fisRules and the contents should be rules constructed
 * with the provided statements: 
 * 
-* - \ref FIS_RULES_BEGIN to start the rules set
-* - \ref FIS_RULES_END to end the rules set
-* - \ref IF to start a rule sentence
-* - \ref END to end a rule sentence
-* - \ref AND and \ref OR fuzzy connectors
-* - \ref IS and \ref IS_NOT to represent a premise and a negated premise respectively.
-* - \ref THEN to represent the implication
+* - \ref #FIS_RULES_BEGIN to start the rules set
+* - \ref #FIS_RULES_END to end the rules set
+* - \ref #IF to start a rule sentence
+* - \ref #END to end a rule sentence
+* - \ref #AND and \ref OR fuzzy connectors
+* - \ref #IS and \ref #IS_NOT to represent a premise and a negated premise respectively.
+* - \ref #THEN to represent the implication
 *
 * Let's apply some of these statements to build the rule set.
 *
@@ -329,15 +330,18 @@
 *
 * @section qfis_eval Evaluating a Fuzzy Inference System
 *
-* If we already have a fuzzy system configured with \ref qFIS_Setup(), we can 
-* evaluate it by using \ref qFIS_Fuzzify(), \ref qFIS_Inference() and 
-* \ref qFIS_DeFuzzify(). 
-* Input values can be set with \ref qFIS_SetInput() and output values can be 
-* obtained with \ref qFIS_GetOutput()
+* If we already have a fuzzy system configured with \ref fis::setup(), we can 
+* evaluate it by using \ref fis::fuzzify(), \ref fis::inference() and 
+* \ref fis::deFuzzify(). 
+* Input values can be set with \ref fis::setInput() and output values can be 
+* obtained with \ref fis::getOutput(). Also you can use the stream operator @c <<
+* to set the inputs and the index operator @c [] to get the outputs of the FIS
+* system (see example bellow).
 *
 * To show its use, first we are going to put everything together in a single 
-* code snippet and we are going to create two functions, @c tipper_init() and @c tipper_run() that will be in
-* charge of setting up the fuzzy inference system and evaluating it respectively.
+* code snippet and we are going to create two functions, @c tipper_init() and 
+* @c tipper_run() that will be in charge of setting up the fuzzy inference 
+* system and evaluating it respectively.
 *
 *  @code{.c}
 *  #include "tipper_fis.h"
@@ -357,7 +361,7 @@
 *  // I/O Membership Objects
 *  static fisMF MFin[5], MFout[3];
 *  // Rules of the inference system
-*  static const fisRules rules[] = { 
+*  static const fisRules rules[] = {
 *      FIS_RULES_BEGIN
 *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
 *         IF service IS service_good THEN tip IS tip_average END
@@ -370,7 +374,7 @@
 *  
 *  void tipper_init( void )
 *  {
-*      tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
+*      tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );
 *      tipper.setupInput( service, 0.0, 1.0 );
 *      tipper.setupInput( food, 0.0, 10.0 );
 *      tipper.setupOutput( tip, 0.0, 30.0 );
@@ -384,7 +388,7 @@
 *      tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0, 25.0, 30.0 } );
 *  }
 *  
-*  void tipper_run( real_t *inputs, float *outputs )
+*  void tipper_run( real_t *inputs, real_t *outputs )
 *  {
 *      // Set the crips inputs
 *      tipper << service << inputs[ service ] << food << inputs[ food ];

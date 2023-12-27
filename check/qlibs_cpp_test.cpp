@@ -185,7 +185,15 @@ void test_fp16( void )
     fp16 ab = fp16::from( -57.22 );
     cout << ab << endl;
     cout << FP_PI << endl;
-    
+
+    fp16 a = 1.5_fp;
+    fp16 b = 5.2_fp;
+    fp16 c = 4.0_fp;
+    fp16 result;
+    result = ( -b + fp16::sqrt( ( b*b )  - ( 4_fp*a*c ) ) )/( 2_fp*a );
+    std::cout << " result = " << result << std::endl;
+
+
 }
 
 void test_crc( void )
