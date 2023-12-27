@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('classfis_output.html',''); initResizab
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classfis_output-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">fisOutput Class Reference</div></div>
+  <div class="headertitle"><div class="title">fisOutput Class Reference<div class="ingroups"><a class="el" href="group__qfis.html">FIS - Fuzzy Inference System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -146,20 +146,152 @@ Inheritance diagram for fisOutput:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga267dc82d8513a59acb5d5ba2029066b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga267dc82d8513a59acb5d5ba2029066b9">fisOutput</a> ()=default</td></tr>
-<tr class="separator:ga267dc82d8513a59acb5d5ba2029066b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac29101f68c181e576a3f2e196a419982"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gac29101f68c181e576a3f2e196a419982">~fisOutput</a> ()</td></tr>
-<tr class="separator:gac29101f68c181e576a3f2e196a419982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa9a218918e45cacafdd0e5a7ad1e1bcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gaa9a218918e45cacafdd0e5a7ad1e1bcc">storeAggregatedRegion</a> (real_t *xData, real_t *yData, const size_t n) noexcept</td></tr>
-<tr class="separator:gaa9a218918e45cacafdd0e5a7ad1e1bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f2de8d920721728d0a37f4727294046"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfPoints&gt; </td></tr>
-<tr class="memitem:ga6f2de8d920721728d0a37f4727294046"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga6f2de8d920721728d0a37f4727294046">storeAggregatedRegion</a> (real_t(&amp;xData)[numberOfPoints], real_t(&amp;yData)[numberOfPoints]) noexcept</td></tr>
-<tr class="separator:ga6f2de8d920721728d0a37f4727294046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267dc82d8513a59acb5d5ba2029066b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_output.html#a267dc82d8513a59acb5d5ba2029066b9">fisOutput</a> ()=default</td></tr>
+<tr class="separator:a267dc82d8513a59acb5d5ba2029066b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29101f68c181e576a3f2e196a419982"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_output.html#ac29101f68c181e576a3f2e196a419982">~fisOutput</a> ()</td></tr>
+<tr class="separator:ac29101f68c181e576a3f2e196a419982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a218918e45cacafdd0e5a7ad1e1bcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_output.html#aa9a218918e45cacafdd0e5a7ad1e1bcc">storeAggregatedRegion</a> (real_t *xData, real_t *yData, const size_t n) noexcept</td></tr>
+<tr class="separator:aa9a218918e45cacafdd0e5a7ad1e1bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2de8d920721728d0a37f4727294046"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfPoints&gt; </td></tr>
+<tr class="memitem:a6f2de8d920721728d0a37f4727294046"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfis_output.html#a6f2de8d920721728d0a37f4727294046">storeAggregatedRegion</a> (real_t(&amp;xData)[numberOfPoints], real_t(&amp;yData)[numberOfPoints]) noexcept</td></tr>
+<tr class="separator:a6f2de8d920721728d0a37f4727294046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A FIS Output object. </p>
 <p >The instance should be initialized using the fis::outputSetup() method. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a267dc82d8513a59acb5d5ba2029066b9" name="a267dc82d8513a59acb5d5ba2029066b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267dc82d8513a59acb5d5ba2029066b9">&#9670;&nbsp;</a></span>fisOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fisOutput::fisOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac29101f68c181e576a3f2e196a419982" name="ac29101f68c181e576a3f2e196a419982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29101f68c181e576a3f2e196a419982">&#9670;&nbsp;</a></span>~fisOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual fisOutput::~fisOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa9a218918e45cacafdd0e5a7ad1e1bcc" name="aa9a218918e45cacafdd0e5a7ad1e1bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a218918e45cacafdd0e5a7ad1e1bcc">&#9670;&nbsp;</a></span>storeAggregatedRegion() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fisOutput::storeAggregatedRegion </td>
+          <td>(</td>
+          <td class="paramtype">real_t *&#160;</td>
+          <td class="paramname"><em>xData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real_t *&#160;</td>
+          <td class="paramname"><em>yData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f2de8d920721728d0a37f4727294046" name="a6f2de8d920721728d0a37f4727294046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2de8d920721728d0a37f4727294046">&#9670;&nbsp;</a></span>storeAggregatedRegion() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t numberOfPoints&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fisOutput::storeAggregatedRegion </td>
+          <td>(</td>
+          <td class="paramtype">real_t(&amp;)&#160;</td>
+          <td class="paramname"><em>xData</em>[numberOfPoints], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real_t(&amp;)&#160;</td>
+          <td class="paramname"><em>yData</em>[numberOfPoints]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

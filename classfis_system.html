@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('classfis_system.html',''); initResizab
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classfis_system-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">fisSystem&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">fisSystem&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__qfis.html">FIS - Fuzzy Inference System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -140,73 +140,73 @@ $(document).ready(function(){initNavTree('classfis_system.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga5f4275c65a4d217d53098feb2861a056"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga5f4275c65a4d217d53098feb2861a056">fisSystem</a> (const fisRules *Rules)</td></tr>
-<tr class="separator:ga5f4275c65a4d217d53098feb2861a056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4baeb2943980bf6915e22f373fe548b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga4baeb2943980bf6915e22f373fe548b5">setup</a> (void)</td></tr>
-<tr class="memdesc:ga4baeb2943980bf6915e22f373fe548b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the FIS instance.  <a href="group__qfis.html#ga4baeb2943980bf6915e22f373fe548b5">More...</a><br /></td></tr>
-<tr class="separator:ga4baeb2943980bf6915e22f373fe548b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga16ab7fd8a41323c23fd77ceab3766d14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga16ab7fd8a41323c23fd77ceab3766d14">setupInput</a> (const fisTag t, const real_t Min, const real_t Max) noexcept</td></tr>
-<tr class="memdesc:ga16ab7fd8a41323c23fd77ceab3766d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the input with the specified tag and set limits for it.  <a href="group__qfis.html#ga16ab7fd8a41323c23fd77ceab3766d14">More...</a><br /></td></tr>
-<tr class="separator:ga16ab7fd8a41323c23fd77ceab3766d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae99716704922b131161d0a485c77f170"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gae99716704922b131161d0a485c77f170">setupOutput</a> (const fisTag t, const real_t Min, const real_t Max) noexcept</td></tr>
-<tr class="memdesc:gae99716704922b131161d0a485c77f170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output with the specified tag and set limits for it.  <a href="group__qfis.html#gae99716704922b131161d0a485c77f170">More...</a><br /></td></tr>
-<tr class="separator:gae99716704922b131161d0a485c77f170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga94725c6ce885ab663e351eb027f9f3e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga94725c6ce885ab663e351eb027f9f3e6">setInputMF</a> (const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
-<tr class="memdesc:ga94725c6ce885ab663e351eb027f9f3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the input tag and points for the specified membership function.  <a href="group__qfis.html#ga94725c6ce885ab663e351eb027f9f3e6">More...</a><br /></td></tr>
-<tr class="separator:ga94725c6ce885ab663e351eb027f9f3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaffd15f02859debef0ce99903ff1ecdcf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gaffd15f02859debef0ce99903ff1ecdcf">setInputMF</a> (const fisTag io, const fisTag mf, fisMFFunction customMfs, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
-<tr class="memdesc:gaffd15f02859debef0ce99903ff1ecdcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the input tag and points for the specified membership function.  <a href="group__qfis.html#gaffd15f02859debef0ce99903ff1ecdcf">More...</a><br /></td></tr>
-<tr class="separator:gaffd15f02859debef0ce99903ff1ecdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4aeff27efb4e215f7fd414d42d61a947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga4aeff27efb4e215f7fd414d42d61a947">setOutputMF</a> (const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
-<tr class="memdesc:ga4aeff27efb4e215f7fd414d42d61a947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="group__qfis.html#ga4aeff27efb4e215f7fd414d42d61a947">More...</a><br /></td></tr>
-<tr class="separator:ga4aeff27efb4e215f7fd414d42d61a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8911c085856d1e7391fe8e4946e08992"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga8911c085856d1e7391fe8e4946e08992">setOutputMF</a> (const fisTag io, const fisTag mf, fisMFFunction customMfs, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
-<tr class="memdesc:ga8911c085856d1e7391fe8e4946e08992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="group__qfis.html#ga8911c085856d1e7391fe8e4946e08992">More...</a><br /></td></tr>
-<tr class="separator:ga8911c085856d1e7391fe8e4946e08992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga92b13815d121065848ec00c85cf9b58a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga92b13815d121065848ec00c85cf9b58a">fuzzify</a> (void) noexcept</td></tr>
-<tr class="memdesc:ga92b13815d121065848ec00c85cf9b58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the fuzzification operation over the crisp inputs on the requested FIS object.  <a href="group__qfis.html#ga92b13815d121065848ec00c85cf9b58a">More...</a><br /></td></tr>
-<tr class="separator:ga92b13815d121065848ec00c85cf9b58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a1586b82eb4b72ddcc1a24365b2148a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga1a1586b82eb4b72ddcc1a24365b2148a">deFuzzify</a> (void) noexcept</td></tr>
-<tr class="memdesc:ga1a1586b82eb4b72ddcc1a24365b2148a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the de-Fuzzification operation to compute the crisp outputs.  <a href="group__qfis.html#ga1a1586b82eb4b72ddcc1a24365b2148a">More...</a><br /></td></tr>
-<tr class="separator:ga1a1586b82eb4b72ddcc1a24365b2148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadb166b708df811e77f572eae34b05ab5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gadb166b708df811e77f572eae34b05ab5">inference</a> (void) noexcept</td></tr>
-<tr class="memdesc:gadb166b708df811e77f572eae34b05ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the inference process on the FIS object.  <a href="group__qfis.html#gadb166b708df811e77f572eae34b05ab5">More...</a><br /></td></tr>
-<tr class="separator:gadb166b708df811e77f572eae34b05ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6820781d52be6670e5588ec8a1e81442"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga6820781d52be6670e5588ec8a1e81442">setInput</a> (const fisTag t, const real_t value) noexcept</td></tr>
-<tr class="memdesc:ga6820781d52be6670e5588ec8a1e81442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a crisp value of the input with the specified tag.  <a href="group__qfis.html#ga6820781d52be6670e5588ec8a1e81442">More...</a><br /></td></tr>
-<tr class="separator:ga6820781d52be6670e5588ec8a1e81442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d950f1d06b9682916870b25b7a5ebcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga1d950f1d06b9682916870b25b7a5ebcd">getOutput</a> (const fisTag t, real_t &amp;value) const noexcept</td></tr>
-<tr class="memdesc:ga1d950f1d06b9682916870b25b7a5ebcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="group__qfis.html#ga1d950f1d06b9682916870b25b7a5ebcd">More...</a><br /></td></tr>
-<tr class="separator:ga1d950f1d06b9682916870b25b7a5ebcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga359824162000b38a3fb3b076c8b2304a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga359824162000b38a3fb3b076c8b2304a">setParameter</a> (const fisParameter p, const fisParamValue x) noexcept</td></tr>
-<tr class="memdesc:ga359824162000b38a3fb3b076c8b2304a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parameters of the FIS instance.  <a href="group__qfis.html#ga359824162000b38a3fb3b076c8b2304a">More...</a><br /></td></tr>
-<tr class="separator:ga359824162000b38a3fb3b076c8b2304a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga190f55bd94d032f5123c196db06ea4cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga190f55bd94d032f5123c196db06ea4cb">setDeFuzzMethod</a> (fisDeFuzzMethod m) noexcept</td></tr>
-<tr class="memdesc:ga190f55bd94d032f5123c196db06ea4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the default de-Fuzzification method of the FIS instance.  <a href="group__qfis.html#ga190f55bd94d032f5123c196db06ea4cb">More...</a><br /></td></tr>
-<tr class="separator:ga190f55bd94d032f5123c196db06ea4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed33164700afbae9e7bc5798af069367"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gaed33164700afbae9e7bc5798af069367">setRuleWeights</a> (real_t *rWeights) noexcept</td></tr>
-<tr class="memdesc:gaed33164700afbae9e7bc5798af069367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set weights to the rules of the inference system.  <a href="group__qfis.html#gaed33164700afbae9e7bc5798af069367">More...</a><br /></td></tr>
-<tr class="separator:gaed33164700afbae9e7bc5798af069367"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace9206ffeac7de4fdef792f87f16d29c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gace9206ffeac7de4fdef792f87f16d29c">getNumberOfPoints</a> (void) const noexcept</td></tr>
-<tr class="memdesc:gace9206ffeac7de4fdef792f87f16d29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of points used on Mamdani to perform the de-fuzzification proccess.  <a href="group__qfis.html#gace9206ffeac7de4fdef792f87f16d29c">More...</a><br /></td></tr>
-<tr class="separator:gace9206ffeac7de4fdef792f87f16d29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab10f1972c867411925254b76d4593973"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gab10f1972c867411925254b76d4593973">operator[]</a> (fisTag outTag) const</td></tr>
-<tr class="memdesc:gab10f1972c867411925254b76d4593973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="group__qfis.html#gab10f1972c867411925254b76d4593973">More...</a><br /></td></tr>
-<tr class="separator:gab10f1972c867411925254b76d4593973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac248abc2226e612fc47ff318f7e12d9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gac248abc2226e612fc47ff318f7e12d9b">operator&lt;&lt;</a> (const fisTag &amp;tag)</td></tr>
-<tr class="memdesc:gac248abc2226e612fc47ff318f7e12d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the input to set using with the specified tag.  <a href="group__qfis.html#gac248abc2226e612fc47ff318f7e12d9b">More...</a><br /></td></tr>
-<tr class="separator:gac248abc2226e612fc47ff318f7e12d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4da4d39c0b81f190b6029626ef50429b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga4da4d39c0b81f190b6029626ef50429b">operator&lt;&lt;</a> (const int &amp;value)</td></tr>
-<tr class="memdesc:ga4da4d39c0b81f190b6029626ef50429b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="group__qfis.html#ga4da4d39c0b81f190b6029626ef50429b">More...</a><br /></td></tr>
-<tr class="separator:ga4da4d39c0b81f190b6029626ef50429b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga405d855d40dab05ca20238aec76c0dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga405d855d40dab05ca20238aec76c0dc7">operator&lt;&lt;</a> (const real_t &amp;value)</td></tr>
-<tr class="memdesc:ga405d855d40dab05ca20238aec76c0dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="group__qfis.html#ga405d855d40dab05ca20238aec76c0dc7">More...</a><br /></td></tr>
-<tr class="separator:ga405d855d40dab05ca20238aec76c0dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4275c65a4d217d53098feb2861a056"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a5f4275c65a4d217d53098feb2861a056">fisSystem</a> (const fisRules *Rules)</td></tr>
+<tr class="separator:a5f4275c65a4d217d53098feb2861a056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4baeb2943980bf6915e22f373fe548b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a4baeb2943980bf6915e22f373fe548b5">setup</a> (void)</td></tr>
+<tr class="memdesc:a4baeb2943980bf6915e22f373fe548b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the FIS instance.  <a href="classfis_system.html#a4baeb2943980bf6915e22f373fe548b5">More...</a><br /></td></tr>
+<tr class="separator:a4baeb2943980bf6915e22f373fe548b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ab7fd8a41323c23fd77ceab3766d14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a16ab7fd8a41323c23fd77ceab3766d14">setupInput</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> t, const real_t Min, const real_t Max) noexcept</td></tr>
+<tr class="memdesc:a16ab7fd8a41323c23fd77ceab3766d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the input with the specified tag and set limits for it.  <a href="classfis_system.html#a16ab7fd8a41323c23fd77ceab3766d14">More...</a><br /></td></tr>
+<tr class="separator:a16ab7fd8a41323c23fd77ceab3766d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99716704922b131161d0a485c77f170"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#ae99716704922b131161d0a485c77f170">setupOutput</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> t, const real_t Min, const real_t Max) noexcept</td></tr>
+<tr class="memdesc:ae99716704922b131161d0a485c77f170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output with the specified tag and set limits for it.  <a href="classfis_system.html#ae99716704922b131161d0a485c77f170">More...</a><br /></td></tr>
+<tr class="separator:ae99716704922b131161d0a485c77f170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94725c6ce885ab663e351eb027f9f3e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a94725c6ce885ab663e351eb027f9f3e6">setInputMF</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> io, const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
+<tr class="memdesc:a94725c6ce885ab663e351eb027f9f3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the input tag and points for the specified membership function.  <a href="classfis_system.html#a94725c6ce885ab663e351eb027f9f3e6">More...</a><br /></td></tr>
+<tr class="separator:a94725c6ce885ab663e351eb027f9f3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd15f02859debef0ce99903ff1ecdcf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#affd15f02859debef0ce99903ff1ecdcf">setInputMF</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> io, const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> mf, fisMFFunction customMfs, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
+<tr class="memdesc:affd15f02859debef0ce99903ff1ecdcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the input tag and points for the specified membership function.  <a href="classfis_system.html#affd15f02859debef0ce99903ff1ecdcf">More...</a><br /></td></tr>
+<tr class="separator:affd15f02859debef0ce99903ff1ecdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aeff27efb4e215f7fd414d42d61a947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a4aeff27efb4e215f7fd414d42d61a947">setOutputMF</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> io, const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
+<tr class="memdesc:a4aeff27efb4e215f7fd414d42d61a947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="classfis_system.html#a4aeff27efb4e215f7fd414d42d61a947">More...</a><br /></td></tr>
+<tr class="separator:a4aeff27efb4e215f7fd414d42d61a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8911c085856d1e7391fe8e4946e08992"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a8911c085856d1e7391fe8e4946e08992">setOutputMF</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> io, const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> mf, fisMFFunction customMfs, const real_t *cp, const real_t h=1.0) noexcept</td></tr>
+<tr class="memdesc:a8911c085856d1e7391fe8e4946e08992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="classfis_system.html#a8911c085856d1e7391fe8e4946e08992">More...</a><br /></td></tr>
+<tr class="separator:a8911c085856d1e7391fe8e4946e08992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b13815d121065848ec00c85cf9b58a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a92b13815d121065848ec00c85cf9b58a">fuzzify</a> (void) noexcept</td></tr>
+<tr class="memdesc:a92b13815d121065848ec00c85cf9b58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the fuzzification operation over the crisp inputs on the requested FIS object.  <a href="classfis_system.html#a92b13815d121065848ec00c85cf9b58a">More...</a><br /></td></tr>
+<tr class="separator:a92b13815d121065848ec00c85cf9b58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1586b82eb4b72ddcc1a24365b2148a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a1a1586b82eb4b72ddcc1a24365b2148a">deFuzzify</a> (void) noexcept</td></tr>
+<tr class="memdesc:a1a1586b82eb4b72ddcc1a24365b2148a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the de-Fuzzification operation to compute the crisp outputs.  <a href="classfis_system.html#a1a1586b82eb4b72ddcc1a24365b2148a">More...</a><br /></td></tr>
+<tr class="separator:a1a1586b82eb4b72ddcc1a24365b2148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb166b708df811e77f572eae34b05ab5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#adb166b708df811e77f572eae34b05ab5">inference</a> (void) noexcept</td></tr>
+<tr class="memdesc:adb166b708df811e77f572eae34b05ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the inference process on the FIS object.  <a href="classfis_system.html#adb166b708df811e77f572eae34b05ab5">More...</a><br /></td></tr>
+<tr class="separator:adb166b708df811e77f572eae34b05ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6820781d52be6670e5588ec8a1e81442"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a6820781d52be6670e5588ec8a1e81442">setInput</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> t, const real_t value) noexcept</td></tr>
+<tr class="memdesc:a6820781d52be6670e5588ec8a1e81442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a crisp value of the input with the specified tag.  <a href="classfis_system.html#a6820781d52be6670e5588ec8a1e81442">More...</a><br /></td></tr>
+<tr class="separator:a6820781d52be6670e5588ec8a1e81442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d950f1d06b9682916870b25b7a5ebcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a1d950f1d06b9682916870b25b7a5ebcd">getOutput</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> t, real_t &amp;value) const noexcept</td></tr>
+<tr class="memdesc:a1d950f1d06b9682916870b25b7a5ebcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="classfis_system.html#a1d950f1d06b9682916870b25b7a5ebcd">More...</a><br /></td></tr>
+<tr class="separator:a1d950f1d06b9682916870b25b7a5ebcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359824162000b38a3fb3b076c8b2304a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a359824162000b38a3fb3b076c8b2304a">setParameter</a> (const fisParameter p, const fisParamValue x) noexcept</td></tr>
+<tr class="memdesc:a359824162000b38a3fb3b076c8b2304a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parameters of the FIS instance.  <a href="classfis_system.html#a359824162000b38a3fb3b076c8b2304a">More...</a><br /></td></tr>
+<tr class="separator:a359824162000b38a3fb3b076c8b2304a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190f55bd94d032f5123c196db06ea4cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a190f55bd94d032f5123c196db06ea4cb">setDeFuzzMethod</a> (fisDeFuzzMethod m) noexcept</td></tr>
+<tr class="memdesc:a190f55bd94d032f5123c196db06ea4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the default de-Fuzzification method of the FIS instance.  <a href="classfis_system.html#a190f55bd94d032f5123c196db06ea4cb">More...</a><br /></td></tr>
+<tr class="separator:a190f55bd94d032f5123c196db06ea4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed33164700afbae9e7bc5798af069367"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#aed33164700afbae9e7bc5798af069367">setRuleWeights</a> (real_t *rWeights) noexcept</td></tr>
+<tr class="memdesc:aed33164700afbae9e7bc5798af069367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set weights to the rules of the inference system.  <a href="classfis_system.html#aed33164700afbae9e7bc5798af069367">More...</a><br /></td></tr>
+<tr class="separator:aed33164700afbae9e7bc5798af069367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9206ffeac7de4fdef792f87f16d29c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#ace9206ffeac7de4fdef792f87f16d29c">getNumberOfPoints</a> (void) const noexcept</td></tr>
+<tr class="memdesc:ace9206ffeac7de4fdef792f87f16d29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of points used on Mamdani to perform the de-fuzzification proccess.  <a href="classfis_system.html#ace9206ffeac7de4fdef792f87f16d29c">More...</a><br /></td></tr>
+<tr class="separator:ace9206ffeac7de4fdef792f87f16d29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab10f1972c867411925254b76d4593973"><td class="memItemLeft" align="right" valign="top">real_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#ab10f1972c867411925254b76d4593973">operator[]</a> (<a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> outTag) const</td></tr>
+<tr class="memdesc:ab10f1972c867411925254b76d4593973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="classfis_system.html#ab10f1972c867411925254b76d4593973">More...</a><br /></td></tr>
+<tr class="separator:ab10f1972c867411925254b76d4593973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac248abc2226e612fc47ff318f7e12d9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#ac248abc2226e612fc47ff318f7e12d9b">operator&lt;&lt;</a> (const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> &amp;tag)</td></tr>
+<tr class="memdesc:ac248abc2226e612fc47ff318f7e12d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the input to set using with the specified tag.  <a href="classfis_system.html#ac248abc2226e612fc47ff318f7e12d9b">More...</a><br /></td></tr>
+<tr class="separator:ac248abc2226e612fc47ff318f7e12d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da4d39c0b81f190b6029626ef50429b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a4da4d39c0b81f190b6029626ef50429b">operator&lt;&lt;</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a4da4d39c0b81f190b6029626ef50429b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="classfis_system.html#a4da4d39c0b81f190b6029626ef50429b">More...</a><br /></td></tr>
+<tr class="separator:a4da4d39c0b81f190b6029626ef50429b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a405d855d40dab05ca20238aec76c0dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfis_system.html">fisSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfis_system.html#a405d855d40dab05ca20238aec76c0dc7">operator&lt;&lt;</a> (const real_t &amp;value)</td></tr>
+<tr class="memdesc:a405d855d40dab05ca20238aec76c0dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="classfis_system.html#a405d855d40dab05ca20238aec76c0dc7">More...</a><br /></td></tr>
+<tr class="separator:a405d855d40dab05ca20238aec76c0dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt;<br />
 class fisSystem&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;</div><p >A wrapper for the FIS object. </p>
-<p >The instance should be initialized using the <a class="el" href="group__qfis.html#ga4baeb2943980bf6915e22f373fe548b5" title="Setup and initialize the FIS instance.">fisSystem::setup()</a> method. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p >The instance should be initialized using the <a class="el" href="classfis_system.html#a4baeb2943980bf6915e22f373fe548b5" title="Setup and initialize the FIS instance.">fisSystem::setup()</a> method. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">fType</td><td>Type of inference ::Mamdani, ::Sugeno or ::Tsukamoto. </td></tr>
     <tr><td class="paramname">numberOfInputs</td><td>The number of inputs of the FIS system. </td></tr>
@@ -217,7 +217,973 @@ class fisSystem&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, n
   </table>
   </dd>
 </dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5f4275c65a4d217d53098feb2861a056" name="a5f4275c65a4d217d53098feb2861a056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4275c65a4d217d53098feb2861a056">&#9670;&nbsp;</a></span>fisSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::<a class="el" href="classfis_system.html">fisSystem</a> </td>
+          <td>(</td>
+          <td class="paramtype">const fisRules *&#160;</td>
+          <td class="paramname"><em>Rules</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1a1586b82eb4b72ddcc1a24365b2148a" name="a1a1586b82eb4b72ddcc1a24365b2148a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a1586b82eb4b72ddcc1a24365b2148a">&#9670;&nbsp;</a></span>deFuzzify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::deFuzzify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the de-Fuzzification operation to compute the crisp outputs. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>The instance should have already invoked the inference process successfully with <a class="el" href="classfis_system.html#adb166b708df811e77f572eae34b05ab5" title="Perform the inference process on the FIS object.">fisSystem::inference()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, this method, uses the Centroid method on ::Mamdani type FIS and weight-average on ::Sugeno type FIS. To change the default settings use the <a class="el" href="classfis.html#a9b5275a564242acd98dd53cc9da33cc7" title="Change the default de-Fuzzification method of the FIS instance.">fis::setDeFuzzMethod()</a> function. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a92b13815d121065848ec00c85cf9b58a" name="a92b13815d121065848ec00c85cf9b58a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b13815d121065848ec00c85cf9b58a">&#9670;&nbsp;</a></span>fuzzify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::fuzzify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the fuzzification operation over the crisp inputs on the requested FIS object. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I/Os and fuzzy sets must be previously initialized by <a class="el" href="classfis.html#aedd3d9a74c2fc6fb48458c9a41bd05e7" title="Setup the input with the specified tag and set limits for it.">fis::setupInput()</a>, <a class="el" href="classfis_system.html#ae99716704922b131161d0a485c77f170" title="Setup the output with the specified tag and set limits for it.">fisSystem::setupOutput()</a>, <a class="el" href="classfis_system.html#a94725c6ce885ab663e351eb027f9f3e6" title="Set the input tag and points for the specified membership function.">fisSystem::setInputMF()</a>, <a class="el" href="classfis_system.html#a4aeff27efb4e215f7fd414d42d61a947" title="Set the output tag and points for the specified membership function.">fisSystem::setOutputMF</a> and <a class="el" href="classfis_system.html#a4baeb2943980bf6915e22f373fe548b5" title="Setup and initialize the FIS instance.">fisSystem::setup()</a> respectively. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ace9206ffeac7de4fdef792f87f16d29c" name="ace9206ffeac7de4fdef792f87f16d29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace9206ffeac7de4fdef792f87f16d29c">&#9670;&nbsp;</a></span>getNumberOfPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::getNumberOfPoints </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of points used on Mamdani to perform the de-fuzzification proccess. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number for points for de-fuzzification. </dd></dl>
+
+</div>
+</div>
+<a id="a1d950f1d06b9682916870b25b7a5ebcd" name="a1d950f1d06b9682916870b25b7a5ebcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d950f1d06b9682916870b25b7a5ebcd">&#9670;&nbsp;</a></span>getOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::getOutput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the de-fuzzified crisp value from the output with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The output tag </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested de-fuzzified crisp value. </dd></dl>
+
+</div>
+</div>
+<a id="adb166b708df811e77f572eae34b05ab5" name="adb166b708df811e77f572eae34b05ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb166b708df811e77f572eae34b05ab5">&#9670;&nbsp;</a></span>inference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::inference </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the inference process on the FIS object. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>The instance should have already invoked the fuzzification operation successfully with <a class="el" href="classfis_system.html#a92b13815d121065848ec00c85cf9b58a" title="Perform the fuzzification operation over the crisp inputs on the requested FIS object.">fisSystem::fuzzify()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ac248abc2226e612fc47ff318f7e12d9b" name="ac248abc2226e612fc47ff318f7e12d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac248abc2226e612fc47ff318f7e12d9b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfis_system.html">fisSystem</a> &amp; <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a> &amp;&#160;</td>
+          <td class="paramname"><em>tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select the input to set using with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tag</td><td>The input tag </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classfis_system.html" title="A wrapper for the FIS object.">fisSystem</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="a4da4d39c0b81f190b6029626ef50429b" name="a4da4d39c0b81f190b6029626ef50429b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4da4d39c0b81f190b6029626ef50429b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfis_system.html">fisSystem</a> &amp; <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value to set the previously selected input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classfis_system.html" title="A wrapper for the FIS object.">fisSystem</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="a405d855d40dab05ca20238aec76c0dc7" name="a405d855d40dab05ca20238aec76c0dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a405d855d40dab05ca20238aec76c0dc7">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfis_system.html">fisSystem</a> &amp; <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const real_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value to set the previously selected input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classfis_system.html" title="A wrapper for the FIS object.">fisSystem</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="ab10f1972c867411925254b76d4593973" name="ab10f1972c867411925254b76d4593973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10f1972c867411925254b76d4593973">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">real_t <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>outTag</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the de-fuzzified crisp value from the output with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">outTag</td><td>The output tag </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested de-fuzzified crisp value. </dd></dl>
+
+</div>
+</div>
+<a id="a190f55bd94d032f5123c196db06ea4cb" name="a190f55bd94d032f5123c196db06ea4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190f55bd94d032f5123c196db06ea4cb">&#9670;&nbsp;</a></span>setDeFuzzMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setDeFuzzMethod </td>
+          <td>(</td>
+          <td class="paramtype">fisDeFuzzMethod&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the default de-Fuzzification method of the FIS instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The de-fuzzification method: use one of the following : ::centroid, ::bisector, ::mom, ::lom, ::som, ::wtaver, ::wtsum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>::centroid, ::bisector, ::mom, ::lom and ::som only apply for a ::Mamdani FIS </dd>
+<dd>
+::wtaver and ::wtsum only apply for a ::Sugeno FIS. </dd>
+<dd>
+::wtaver only apply for a ::Tsukamoto FIS </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code> </dd></dl>
+
+</div>
+</div>
+<a id="a6820781d52be6670e5588ec8a1e81442" name="a6820781d52be6670e5588ec8a1e81442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6820781d52be6670e5588ec8a1e81442">&#9670;&nbsp;</a></span>setInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setInput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a crisp value of the input with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The input tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a94725c6ce885ab663e351eb027f9f3e6" name="a94725c6ce885ab663e351eb027f9f3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94725c6ce885ab663e351eb027f9f3e6">&#9670;&nbsp;</a></span>setInputMF() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setInputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fisShapeMF&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the input tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The input tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The wanted shape/form for this membership function, can be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf, ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf, ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf, ::cosmf. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>For ::Sugeno FIS, an output membership function should be one of the following: ::constantmf, ::linearmf. </dd>
+<dd>
+For ::Tsukamoto FIS, an output membership function should be one the following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, ::tconcavemf </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on ::Sugeno and ::Tsukamoto inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="affd15f02859debef0ce99903ff1ecdcf" name="affd15f02859debef0ce99903ff1ecdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd15f02859debef0ce99903ff1ecdcf">&#9670;&nbsp;</a></span>setInputMF() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setInputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fisMFFunction&#160;</td>
+          <td class="paramname"><em>customMfs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the input tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The input tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">customMfs</td><td>Custom user-defined membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on ::Sugeno and ::Tsukamoto inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a4aeff27efb4e215f7fd414d42d61a947" name="a4aeff27efb4e215f7fd414d42d61a947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aeff27efb4e215f7fd414d42d61a947">&#9670;&nbsp;</a></span>setOutputMF() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setOutputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fisShapeMF&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the output tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The output tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The wanted shape/form for this membership function, can be one of the following: ::trimf, ::trapmf, ::gbellmf, ::gaussmf, ::gauss2mf, ::sigmf, ::dsigmf, ::psigmf, ::pimf, ::smf, ::zmf, ::singletonmf, ::concavemf, ::spikemf, ::linsmf, ::linzmf, ::rectmf, ::cosmf. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>For ::Sugeno FIS, an output membership function should be one of the following: ::constantmf, ::linearmf. </dd>
+<dd>
+For ::Tsukamoto FIS, an output membership function should be one the following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, ::tconcavemf </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on ::Sugeno and ::Tsukamoto inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a8911c085856d1e7391fe8e4946e08992" name="a8911c085856d1e7391fe8e4946e08992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8911c085856d1e7391fe8e4946e08992">&#9670;&nbsp;</a></span>setOutputMF() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setOutputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fisMFFunction&#160;</td>
+          <td class="paramname"><em>customMfs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the output tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The output tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">customMfs</td><td>Custom user-defined membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on ::Sugeno and ::Tsukamoto inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a359824162000b38a3fb3b076c8b2304a" name="a359824162000b38a3fb3b076c8b2304a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359824162000b38a3fb3b076c8b2304a">&#9670;&nbsp;</a></span>setParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setParameter </td>
+          <td>(</td>
+          <td class="paramtype">const fisParameter&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fisParamValue&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set parameters of the FIS instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>The requested parameter to change/set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The value of the parameter to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="aed33164700afbae9e7bc5798af069367" name="aed33164700afbae9e7bc5798af069367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed33164700afbae9e7bc5798af069367">&#9670;&nbsp;</a></span>setRuleWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setRuleWeights </td>
+          <td>(</td>
+          <td class="paramtype">real_t *&#160;</td>
+          <td class="paramname"><em>rWeights</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set weights to the rules of the inference system. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I/Os and fuzzy sets must be previously initialized by <a class="el" href="classfis_system.html#a16ab7fd8a41323c23fd77ceab3766d14" title="Setup the input with the specified tag and set limits for it.">fisSystem::setupInput()</a>, <a class="el" href="classfis_system.html#ae99716704922b131161d0a485c77f170" title="Setup the output with the specified tag and set limits for it.">fisSystem::setupOutput()</a>, <a class="el" href="classfis_system.html#a94725c6ce885ab663e351eb027f9f3e6" title="Set the input tag and points for the specified membership function.">fisSystem::setInputMF()</a>, <a class="el" href="classfis_system.html#a4aeff27efb4e215f7fd414d42d61a947" title="Set the output tag and points for the specified membership function.">fisSystem::setOutputMF</a> and <a class="el" href="classfis_system.html#a4baeb2943980bf6915e22f373fe548b5" title="Setup and initialize the FIS instance.">fisSystem::setup()</a> respectively. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rWeights</td><td>An array with the values of every rule weight; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a4baeb2943980bf6915e22f373fe548b5" name="a4baeb2943980bf6915e22f373fe548b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4baeb2943980bf6915e22f373fe548b5">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setup </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize the FIS instance. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a16ab7fd8a41323c23fd77ceab3766d14" name="a16ab7fd8a41323c23fd77ceab3766d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ab7fd8a41323c23fd77ceab3766d14">&#9670;&nbsp;</a></span>setupInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupInput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the input with the specified tag and set limits for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The input tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>Minimum allowed value for this input </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Max allowed value for this input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ae99716704922b131161d0a485c77f170" name="ae99716704922b131161d0a485c77f170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99716704922b131161d0a485c77f170">&#9670;&nbsp;</a></span>setupOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classfis_system.html">fisSystem</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupOutput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gab05179cf6b2efacd79e0858a9110fc53">fisTag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real_t&#160;</td>
+          <td class="paramname"><em>Max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the output with the specified tag and set limits for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The output tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>Minimum allowed value for this output </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Max allowed value for this output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

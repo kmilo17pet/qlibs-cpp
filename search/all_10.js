@@ -6,7 +6,7 @@ var searchData=
   ['readfloat_3',['readFloat',['../classqlibs_1_1bitfield.html#aae351d60490ae87b58a77e6dd85ff9e8',1,'qlibs::bitfield']]],
   ['readuintn_4',['readUINTn',['../classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e',1,'qlibs::bitfield']]],
   ['real_5ft_5',['real_t',['../namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6',1,'qlibs']]],
-  ['rectmf_6',['rectmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba3f378bc901be790a07c625955bcc4ac0',1,'qlibs']]],
+  ['rectmf_6',['rectmf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdba3f378bc901be790a07c625955bcc4ac0',1,'qlibs']]],
   ['recursive_20lti_20systems_20evaluation_20by_20transfer_20functions_2e_7',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]],
   ['recursive_20root_20mean_20square_20estimator_8',['Recursive Root Mean Square estimator',['../qrms_desc.html',1,'index']]],
   ['removemodelreferencecontrol_9',['removeModelReferenceControl',['../classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6',1,'qlibs::pidController']]],

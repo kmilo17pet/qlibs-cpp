@@ -14,7 +14,7 @@ var searchData=
   ['piddirection_11',['pidDirection',['../group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106',1,'qlibs']]],
   ['pidgains_12',['pidGains',['../structqlibs_1_1pid_gains.html',1,'qlibs']]],
   ['pidmode_13',['pidMode',['../group__qpid.html#ga723e93113c48dc2437680a245624d0f3',1,'qlibs']]],
-  ['pimf_14',['pimf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba43838ecf87ec1c6958658550c456734f',1,'qlibs']]],
+  ['pimf_14',['pimf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdba43838ecf87ec1c6958658550c456734f',1,'qlibs']]],
   ['pow_15',['pow',['../classqlibs_1_1fp16.html#a7c20d51e0a866d2969b5df05dfe2202b',1,'qlibs::fp16']]],
-  ['psigmf_16',['psigmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba080b6d0ced6a06931a8916d68886582d',1,'qlibs']]]
+  ['psigmf_16',['psigmf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdba080b6d0ced6a06931a8916d68886582d',1,'qlibs']]]
 ];
