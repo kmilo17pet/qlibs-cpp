@@ -151,7 +151,7 @@
 *
 *  -# ::mom : Middle of Maximum. Only for ::Mamdani systems.
 *
-*  -# :som : Smallest of Maximum. Only for :Mamdani systems.
+*  -# ::som : Smallest of Maximum. Only for :Mamdani systems.
 *
 *  -# ::lom : Largest of Maximum. Only for ::Mamdani systems.
 *

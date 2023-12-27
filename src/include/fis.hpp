@@ -17,7 +17,7 @@
 namespace qlibs {
     /** @addtogroup qfis FIS - Fuzzy Inference System
     * @brief Fuzzy Inference System (FIS) Engine
-    *  @{
+    * @{
     */
 
     /**
@@ -119,7 +119,6 @@ namespace qlibs {
     class fisSystem;
     /*! @endcond  */
 
-    /*! @cond  */
     class fisIOBase {
         protected:
             /*! @cond  */
@@ -135,7 +134,6 @@ namespace qlibs {
         template<fisType fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
         friend class fisSystem;
     };
-    /*! @endcond  */
 
     /**
     * @brief A FIS Input object
