@@ -9,8 +9,7 @@ var indexSectionsWithContent =
   6: "cfilp",
   7: "bcdfgilmprstwz",
   8: "o",
-  9: "bcflmprst",
-  10: "bfgpqrt"
+  9: "bcflmprst"
 };
 
 var indexSectionNames =
@@ -24,8 +23,7 @@ var indexSectionNames =
   6: "enums",
   7: "enumvalues",
   8: "related",
-  9: "groups",
-  10: "pages"
+  9: "groups"
 };
 
 var indexSectionLabels =
@@ -39,7 +37,6 @@ var indexSectionLabels =
   6: "Enumerations",
   7: "Enumerator",
   8: "Friends",
-  9: "Modules",
-  10: "Pages"
+  9: "Modules"
 };
 
