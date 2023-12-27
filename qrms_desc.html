@@ -130,28 +130,27 @@ $(document).ready(function(){initNavTree('qrms_desc.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >Real-time digital systems often require the calculation of a root-mean, such as a root-mean-square (RMS) level or average magnitude of a complex signal. While averaging can be efficiently implemented by most microprocessors, obtaining an efficient and rapidly converging algorithm is surely a time-consuming task due to the adjustments and optimizations that need to be performed. On the other hand, calculating the square root can be challenging, especially with low-cost hardware. If the processor does not have a built-in fast square root function, it must be implemented in software. While this can provide accurate results, it may not be as efficient.</p>
-<p ><a class="el" href="group__qrms.html">RMS</a> provides a super-efficient method to compute the Recursive Root Mean Square (RMS). The implementation uses 3-stage filtering and Newton's method to obtain the square root. The filter parameters are perfectly tuned and optimized to converge in around 16 cycles, operating at a sampling rate of 1mS. This means that you must configure your embedded system to meet those specifications, either by configuring a timer interrupt or by delegating responsibility to a real-time task.</p>
+<p ><a class="el" href="classqlibs_1_1rms.html">qlibs::rms</a> provides a super-efficient method to compute the Recursive Root Mean Square (RMS). The implementation uses 3-stage filtering and Newton's method to obtain the square root. The filter parameters are perfectly tuned and optimized to converge in around 16 cycles, operating at a sampling rate of 1mS. This means that you must configure your embedded system to meet those specifications, either by configuring a timer interrupt or by delegating responsibility to a real-time task.</p>
 <h1><a class="anchor" id="qrms_ex1"></a>
 Example :  By using a timer interrupt</h1>
 <p >rms_compute.c </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bsp.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;hal_timer.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;qrms.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#define RMS_WIN_SIZE ( 8 )</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> qRMS_t rms_instance;</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> rms_value = 0.0f;</div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">float</span> window[ RMS_WIN_SIZE ] = { 0.0f };</div>
+<div class="line"><span class="keyword">static</span> rms rms_instance;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> rms_value = 0.0;</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> window[ 8 ] = { 0.0 };</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> TimerA0_Int_Handler( <span class="keywordtype">void</span> ) <span class="comment">//interrupt tick at 1mS</span></div>
 <div class="line">{</div>
-<div class="line">    rms_value = qRMS_Update( &amp;rms_instance, get_sample() );</div>
+<div class="line">    rms_value = rms_instance.update( get_sample() );</div>
 <div class="line">    HAL_TimerA0_ClearStatusFlag();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> rms_setup( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    qRMS_Setup( &amp;rms_instance, window, RMS_WIN_SIZE );</div>
+<div class="line">    rms_instance.setup( window );</div>
 <div class="line">    HAL_TimerA0_Init();</div>
 <div class="line">    HAL_TimerA0_SetPeriod_mS( 1 );</div>
 <div class="line">    HAL_TimerA0_EnableInterrupts();</div>
@@ -162,6 +161,7 @@ Example :  By using a timer interrupt</h1>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> rms_value;</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> types.hpp:45</div></div>
 </div><!-- fragment --><p> rms_compute.h </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef RMS_COMPUTE_H</span></div>
 <div class="line"><span class="preprocessor">#define RMS_COMPUTE_H</span></div>
 <div class="line"> </div>

@@ -184,7 +184,7 @@ Sugeno</h1>
 Tsukamoto</h1>
 <p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
 <p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
-<p >To specify a FIS of this type, use the qlibs::fisType::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -198,17 +198,17 @@ Tsukamoto</h1>
 </html>
  <em>Tsukamoto inference system</em> </center><h1><a class="anchor" id="qfis_defuzz"></a>
 Defuzzification Methods</h1>
-<p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
+<p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0" title="An enum with all the possible de-Fuzzyfication methods.">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
-<li>fisDeFuzzMethod::centroid (default): this method applies only to qlibs::fisType::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+<li>::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
 <center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
-<li>qlibs::fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
-<li>qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.</li>
-<li>qlibs::fisDeFuzzMethod::wtsum: Weighted sum of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.</li>
+<li>::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>::mom : Middle of Maximum. Only for ::Mamdani systems.</li>
+<li>:som : Smallest of Maximum. Only for :Mamdani systems.</li>
+<li>::lom : Largest of Maximum. Only for ::Mamdani systems.</li>
+<li>::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and :Tsukamoto systems.</li>
+<li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="group__qfis.html#ga9b5275a564242acd98dd53cc9da33cc7" title="Change the default de-Fuzzification method of the FIS instance.">fis::setDeFuzzMethod()</a> function.</dd></dl>
 <h1><a class="anchor" id="qfis_buildfis"></a>
