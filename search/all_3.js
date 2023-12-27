@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['defuzzify_0',['deFuzzify',['../group__qfis.html#gaabd318e5a87227a2cedc939c23f4d53d',1,'fis::deFuzzify()'],['../group__qfis.html#ga1a1586b82eb4b72ddcc1a24365b2148a',1,'fisSystem::deFuzzify()']]],
+  ['defuzzify_0',['deFuzzify',['../classqlibs_1_1fis.html#aabd318e5a87227a2cedc939c23f4d53d',1,'qlibs::fis::deFuzzify()'],['../classqlibs_1_1fis_system.html#ace2e7212bf20fd5fa97fcf910df5bf58',1,'qlibs::fisSystem::deFuzzify()']]],
   ['degtorad_1',['degToRad',['../classqlibs_1_1fp16.html#a2e55430fe727ba9f11896ebeaee99123',1,'qlibs::fp16']]],
   ['derivative_2',['derivative',['../classqlibs_1_1state.html#a3339dd9366c86fe9fef4caa13c89cd4c',1,'qlibs::state']]],
   ['discretestates_3',['discreteStates',['../group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e',1,'qlibs']]],

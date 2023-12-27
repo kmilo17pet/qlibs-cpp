@@ -5,6 +5,13 @@ var annotated_dup =
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
       [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
+      [ "fis", "classqlibs_1_1fis.html", "classqlibs_1_1fis" ],
+      [ "fisCore", "classqlibs_1_1fis_core.html", null ],
+      [ "fisInput", "classqlibs_1_1fis_input.html", "classqlibs_1_1fis_input" ],
+      [ "fisIOBase", "classqlibs_1_1fis_i_o_base.html", "classqlibs_1_1fis_i_o_base" ],
+      [ "fisMF", "classqlibs_1_1fis_m_f.html", "classqlibs_1_1fis_m_f" ],
+      [ "fisOutput", "classqlibs_1_1fis_output.html", "classqlibs_1_1fis_output" ],
+      [ "fisSystem", "classqlibs_1_1fis_system.html", "classqlibs_1_1fis_system" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
@@ -26,11 +33,5 @@ var annotated_dup =
       [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ],
-    [ "fis", "classfis.html", "classfis" ],
-    [ "fisCore", "classfis_core.html", null ],
-    [ "fisInput", "classfis_input.html", "classfis_input" ],
-    [ "fisMF", "classfis_m_f.html", "classfis_m_f" ],
-    [ "fisOutput", "classfis_output.html", "classfis_output" ],
-    [ "fisSystem", "classfis_system.html", "classfis_system" ],
     [ "sortStackNode", "structsort_stack_node.html", "structsort_stack_node" ]
 ];

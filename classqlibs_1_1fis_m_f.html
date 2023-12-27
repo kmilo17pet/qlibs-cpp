@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: Member List</title>
+<title>API Reference: qlibs::fisMF Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,7 +107,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classfis_output.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classqlibs_1_1fis_m_f.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,21 +126,85 @@ $(document).ready(function(){initNavTree('classfis_output.html',''); initResizab
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">fisOutput Member List</div></div>
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classqlibs_1_1fis_m_f-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::fisMF Class Reference<div class="ingroups"><a class="el" href="group__qfis.html">FIS - Fuzzy Inference System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classfis_output.html">fisOutput</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="group__qfis.html#ga267dc82d8513a59acb5d5ba2029066b9">fisOutput</a>()=default</td><td class="entry"><a class="el" href="classfis_output.html">fisOutput</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="group__qfis.html#gaa9a218918e45cacafdd0e5a7ad1e1bcc">storeAggregatedRegion</a>(real_t *xData, real_t *yData, const size_t n) noexcept</td><td class="entry"><a class="el" href="classfis_output.html">fisOutput</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="group__qfis.html#ga6f2de8d920721728d0a37f4727294046">storeAggregatedRegion</a>(real_t(&amp;xData)[numberOfPoints], real_t(&amp;yData)[numberOfPoints]) noexcept</td><td class="entry"><a class="el" href="classfis_output.html">fisOutput</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="group__qfis.html#gac29101f68c181e576a3f2e196a419982">~fisOutput</a>()</td><td class="entry"><a class="el" href="classfis_output.html">fisOutput</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<p>A FIS Membership Function.  
+ <a href="classqlibs_1_1fis_m_f.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="fis_8hpp_source.html">fis.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac2992be136a728ad8bc68d48f5e48370"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_m_f.html#ac2992be136a728ad8bc68d48f5e48370">~fisMF</a> ()</td></tr>
+<tr class="separator:ac2992be136a728ad8bc68d48f5e48370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d208a4615072fb54b407b695dc14a1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_m_f.html#a6d208a4615072fb54b407b695dc14a1c">fisMF</a> ()=default</td></tr>
+<tr class="separator:a6d208a4615072fb54b407b695dc14a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A FIS Membership Function. </p>
+<p >The instance should be initialized using the <a class="el" href="classqlibs_1_1fis.html#a238fca81fb093d9f7a8dee34a501b6de" title="Set the input tag and points for the specified membership function.">fis::setInputMF()</a> or <a class="el" href="classqlibs_1_1fis.html#ad1d2820a33a2487b006938deab48cf5f" title="Set the output tag and points for the specified membership function.">fis::setOutputMF()</a> methods. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac2992be136a728ad8bc68d48f5e48370" name="ac2992be136a728ad8bc68d48f5e48370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2992be136a728ad8bc68d48f5e48370">&#9670;&nbsp;</a></span>~fisMF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual qlibs::fisMF::~fisMF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d208a4615072fb54b407b695dc14a1c" name="a6d208a4615072fb54b407b695dc14a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d208a4615072fb54b407b695dc14a1c">&#9670;&nbsp;</a></span>fisMF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::fisMF::fisMF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="namespaceqlibs.html">qlibs</a></li><li class="navelem"><a class="el" href="classqlibs_1_1fis_m_f.html">fisMF</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

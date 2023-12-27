@@ -1,7 +1,7 @@
 var searchData=
 [
   ['incircle_0',['inCircle',['../group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75',1,'qlibs']]],
-  ['inference_1',['inference',['../group__qfis.html#gadb166b708df811e77f572eae34b05ab5',1,'fisSystem::inference()'],['../group__qfis.html#ga2cdeb291feefee0431f79d9be972d8e4',1,'fis::inference()']]],
+  ['inference_1',['inference',['../classqlibs_1_1fis_system.html#a325835eb4bd018e4e7bcb29c8264912c',1,'qlibs::fisSystem::inference()'],['../classqlibs_1_1fis.html#a2cdeb291feefee0431f79d9be972d8e4',1,'qlibs::fis::inference()']]],
   ['init_2',['init',['../classqlibs_1_1state.html#a80f65c9be07e553785d69db2b040ac3f',1,'qlibs::state']]],
   ['inpolygon_3',['inPolygon',['../group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8',1,'qlibs']]],
   ['inrangecoerce_4',['inRangeCoerce',['../group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf',1,'qlibs']]],
