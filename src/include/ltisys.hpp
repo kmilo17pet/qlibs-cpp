@@ -18,6 +18,10 @@
 * defined by transfer functions
 * @{
 */
+
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     enum ltisysType {
         LTISYS_TYPE_UNKNOWN = 0,

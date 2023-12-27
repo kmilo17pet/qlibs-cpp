@@ -16,6 +16,9 @@
 * @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
      /**
     * @brief Scales the given input @a x in value range given by  @a xMin and 

@@ -16,6 +16,9 @@
 * @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     namespace generic {
 

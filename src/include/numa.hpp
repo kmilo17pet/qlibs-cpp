@@ -11,6 +11,9 @@
 
 #include "include/types.hpp" 
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
 
     enum integrationMethod {

@@ -19,6 +19,9 @@
 * @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief Enumeration class with the operational modes for the PID controller
@@ -255,7 +258,7 @@ namespace qlibs {
             * @brief Enable the additive MRAC(Model Reference Adaptive Control) feature.
             * @param[in] modelRef A pointer to the output of the model reference.
             * @param[in] Gamma Adjustable parameter to indicate the adaptation speed.
-            * @param[in] Gamma Adjustable parameter the adaptation momentum.
+            * @param[in] Alpha Adjustable parameter the adaptation momentum.
             * @return @c true on success, otherwise return @c false.
             */
             bool setModelReferenceControl( const real_t &modelRef,

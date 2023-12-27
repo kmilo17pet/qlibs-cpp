@@ -18,6 +18,9 @@
 *  @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief RMS calculator object

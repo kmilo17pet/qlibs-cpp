@@ -20,6 +20,9 @@
 *  @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief A Tapped Delay Line (TDL) object

@@ -16,6 +16,9 @@
 *  @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief Enumeration with all the supported cyclic redundancy checks

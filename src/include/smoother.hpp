@@ -17,6 +17,9 @@
 *  @{
 */
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief The smoother base abstract class

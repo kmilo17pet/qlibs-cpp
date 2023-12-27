@@ -16,6 +16,10 @@
 * @brief Fixed-point Q16.16 math library
 *  @{
 */
+
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
 
     /*! @cond  */
@@ -555,7 +559,7 @@ namespace qlibs {
 
             /**
             * @brief Converts the fixed-point value to a formatted string.
-            * @param[in] num The fixed-point(q16.16) value to be converted to string.
+            * @param[in] x The fixed-point(q16.16) value to be converted to string.
             * @param[in] str Array in memory where to store the resulting null-terminated
             * string.
             * @param[in] decimals Number of decimals to show in the string representation.

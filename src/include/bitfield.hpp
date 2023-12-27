@@ -16,6 +16,10 @@
 * @brief API for the Bit-Field manipulation library
 *  @{
 */
+
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
 
     /** @ingroup qbitfield
