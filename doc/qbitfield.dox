@@ -16,7 +16,7 @@
 * @subsection qbitfield_setup Instance setup
 *
 * - \ref qlibs::bitfield_size() Use it to determine the number of bytes required for a BitField.
-* - \ref qlibs::bitfield::Setup() Setup a initialize a BitField instance.
+* - \ref qlibs::bitfield::setup() Setup a initialize a BitField instance.
 *
 * @subsection qbitfield_sbit Single-bit
 *
@@ -68,7 +68,7 @@
                               << vPortArea[3] << ", "
                               << vPortArea[4] << ", "
                               << vPortArea[5] << ", "
-                              << endl );
+                              << std::endl ;
 *      return EXIT_SUCCESS;
 *  }
 *  @endcode

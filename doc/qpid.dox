@@ -21,7 +21,7 @@
 * Derivative. Combining all these three operations gives the name Proportional 
 * Integral Derivative (PID) Controller.
 *
-* qLibs provides the \ref qpid implementation, which, apart from the simplified 
+* qLibs provides the \ref qlibs::pid implementation, which, apart from the simplified 
 * overview representation of the PID controller, it also addresses some practical
 * issues and includes additional features as listed below:
 * 

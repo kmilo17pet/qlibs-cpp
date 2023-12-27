@@ -9,7 +9,7 @@
 * fast square root function, it must be implemented in software. While this
 * can provide accurate results, it may not be as efficient.
 *
-* \ref qrms provides a super-efficient method to compute the Recursive Root
+* \ref qlibs::rms provides a super-efficient method to compute the Recursive Root
 * Mean Square (RMS). The implementation uses 3-stage filtering and Newton's
 * method to obtain the square root. The filter parameters are perfectly tuned
 * and optimized to converge in around 16 cycles, operating at a sampling rate
@@ -23,23 +23,22 @@
 *  @code{.c}
 *  #include "bsp.h"
 *  #include "hal_timer.h"
-*  #include "qrms.h"
+*  #include <qlibs.h>
 *
-*  #define RMS_WIN_SIZE ( 8 )
-* 
-*  static qRMS_t rms_instance;
-*  static volatile float rms_value = 0.0f;
-*  static float window[ RMS_WIN_SIZE ] = { 0.0f };
+*  
+*  static rms rms_instance;
+*  static volatile real_t rms_value = 0.0;
+*  static real_t window[ 8 ] = { 0.0 };
 *
 *  void TimerA0_Int_Handler( void ) //interrupt tick at 1mS
 *  {
-*      rms_value = qRMS_Update( &rms_instance, get_sample() );
+*      rms_value = rms_instance.update( get_sample() );
 *      HAL_TimerA0_ClearStatusFlag();
 *  }
 *
 *  void rms_setup( void )
 *  {
-*      qRMS_Setup( &rms_instance, window, RMS_WIN_SIZE );
+*      rms_instance.setup( window );
 *      HAL_TimerA0_Init();
 *      HAL_TimerA0_SetPeriod_mS( 1 );
 *      HAL_TimerA0_EnableInterrupts();
