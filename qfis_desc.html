@@ -142,11 +142,11 @@ $(document).ready(function(){initNavTree('qfis_desc.html',''); initResizable(); 
 <div class="textblock"><p >A Fuzzy Inference System (FIS) is a key component of any fuzzy logic system. It uses fuzzy set theory, IF-THEN rules and fuzzy reasoning process to find the output corresponding to crisp inputs. Predicates in <code>IF-THEN</code> rules are connected using <code>AND</code> or <code>OR</code> logical connectives.</p>
 <p >Fuzzy inference works by sending any process's crisp input to the fuzzifier, which applies a fuzzy membership function and maps the actual readings into fuzzy values. The inference engine applies fuzzy rules from the knowledge base and produces the fuzzy output. This output can not be used directly in any process or system. It needs to be mapped into the original domain. For this, the defuzzifier is used, which is the inverse process of fuzzification. It converts the fuzzy output into crisp output, which can be fed to the process.</p>
 <p >The FIS Fuzzy Inference System engine provides an API for building and evaluation of type-1 fuzzy logic inference systems.</p>
-<p >The types of inferences supported by FIS are listed in the fisType enum and are detailed below:</p>
+<p >The types of inferences supported by FIS are listed in the <a class="el" href="group__qfis.html#ga209c5983c134dd6ec058dd2df498508c">qlibs::fisType</a> enum and are detailed below:</p>
 <h1><a class="anchor" id="qfis_mamdani"></a>
 Mamdani</h1>
 <p >In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani systems have more intuitive and easier to understand rule bases, they are well-suited to expert system applications where the rules are created from human expert knowledge.</p>
-<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the fisType::Mamdani enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the qlibs::fisType::Mamdani enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -168,7 +168,7 @@ Sugeno</h1>
 <p >The final output of the system is the weighted average/sum over all rule outputs:</p>
 <center> \(out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \) </center><p >where \(N\) is the number of rules.</p>
 <p >Because of the linear dependence of each rule on the input variables, the Sugeno method is ideal for acting as an interpolating supervisor of multiple linear controllers that are to be applied, respectively, to different operating conditions of a dynamic nonlinear system.</p>
-<p >To specificy a FIS of this type, use the fisType::Sugeno enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >To specificy a FIS of this type, use the qlibs::fisType::Sugeno enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -184,7 +184,7 @@ Sugeno</h1>
 Tsukamoto</h1>
 <p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
 <p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
-<p >To specify a FIS of this type, use the fisType::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >To specify a FIS of this type, use the qlibs::fisType::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -198,17 +198,17 @@ Tsukamoto</h1>
 </html>
  <em>Tsukamoto inference system</em> </center><h1><a class="anchor" id="qfis_defuzz"></a>
 Defuzzification Methods</h1>
-<p >FIS supports five different methods, as listed in the fisDeFuzzMethod enum for computing a single crisp output value for such a fuzzy set.</p>
+<p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
-<li>fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+<li>fisDeFuzzMethod::centroid (default): this method applies only to qlibs::fisType::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
 <center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
-<li>fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
-<li>fisDeFuzzMethod::mom : Middle of Maximum. Only for fisType::Mamdani systems.</li>
-<li>fisDeFuzzMethod::som : Smallest of Maximum. Only for fisType::Mamdani systems.</li>
-<li>fisDeFuzzMethod::lom : Largest of Maximum. Only for fisType::Mamdani systems.</li>
-<li>fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. this method applies only for fisType::Sugeno and fisType::Tsukamoto systems.</li>
-<li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
+<li>qlibs::fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for qlibs::fisType::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.</li>
+<li>qlibs::fisDeFuzzMethod::wtsum: Weighted sum of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="group__qfis.html#ga6c13e05286af5f87550af36647081594" title="Setup and initialize the FIS instance.">fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="group__qfis.html#ga9b5275a564242acd98dd53cc9da33cc7" title="Change the default de-Fuzzification method of the FIS instance.">fis::setDeFuzzMethod()</a> function.</dd></dl>
 <h1><a class="anchor" id="qfis_buildfis"></a>
@@ -277,7 +277,7 @@ Building a Mamdani FIS</h1>
 <div class="ttc" id="aclassfis_m_f_html"><div class="ttname"><a href="classfis_m_f.html">fisMF</a></div><div class="ttdoc">A FIS Membership Function.</div><div class="ttdef"><b>Definition:</b> fis.hpp:327</div></div>
 <div class="ttc" id="aclassfis_output_html"><div class="ttname"><a href="classfis_output.html">fisOutput</a></div><div class="ttdoc">A FIS Output object.</div><div class="ttdef"><b>Definition:</b> fis.hpp:158</div></div>
 </div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Please note that all tag names are unique.</dd></dl>
-<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type fisRules and the contents should be rules constructed with the provided statements:</p>
+<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type qlibs::fisRules and the contents should be rules constructed with the provided statements:</p>
 <ul>
 <li>#FIS_RULES_BEGIN to start the rules set</li>
 <li>#FIS_RULES_END to end the rules set</li>

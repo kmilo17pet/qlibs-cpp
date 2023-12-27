@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('qfp16_desc.html',''); initResizable();
 <h1><a class="anchor" id="qfp16_datatype_limits"></a>
 Datatype limits</h1>
 <p >The maximum representable value is <code>32767.999985</code>. The minimum value is <code>-32768.0</code> </p>
-<p >The minimum value is also used to represent <code>fp16.overflow</code> for overflow detection, so for some operations it cannot be determined whether it overflowed or the result was the smallest possible value. In practice, this does not matter much.</p>
+<p >The minimum value is also used to represent <code>overflow</code> for overflow detection, so for some operations it cannot be determined whether it overflowed or the result was the smallest possible value. In practice, this does not matter much.</p>
 <p >The smallest unit (machine precision) of the datatype is <code>1/65536=0.000015259</code>.</p>
 <h1><a class="anchor" id="qfp16_functions"></a>
 Fixed-point functions</h1>
@@ -154,11 +154,11 @@ Fixed-point functions</h1>
 Conversion functions</h2>
 <p >Conversion from integers and floating-point values. These conversions retain the numeric value and perform rounding where necessary.</p>
 <ul>
-<li><a class="el" href="classqlibs_1_1fp16.html#ab98ae26da9495b52f65f7d9c05e94862">qlibs::fp16::from()</a> Convert int/float or double to the fp16 type</li>
-<li><a class="el" href="classqlibs_1_1fp16.html#a769a279ee71fc9b768611b394fe7ab64">qlibs::fp16::toInt()</a> Convert fp16 to integer.</li>
-<li><a class="el" href="classqlibs_1_1fp16.html#a394ad7eb2355e1f9a6de1365b1c656f7">qlibs::fp16::toFloat()</a> Convert fp16 to float.</li>
-<li><a class="el" href="classqlibs_1_1fp16.html#a892b97339ddaa8c1270f2a1d3b3e7bbf">qlibs::fp16::toDouble()</a> Convert fp16 to double.</li>
-<li>qlibs::fp16::toASCII() Convert from fp16 to raw c-string.</li>
+<li><a class="el" href="classqlibs_1_1fp16.html#ab98ae26da9495b52f65f7d9c05e94862">qlibs::fp16::from()</a> Convert int/float or double to the <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> type</li>
+<li><a class="el" href="classqlibs_1_1fp16.html#a769a279ee71fc9b768611b394fe7ab64">qlibs::fp16::toInt()</a> Convert <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to integer.</li>
+<li><a class="el" href="classqlibs_1_1fp16.html#a394ad7eb2355e1f9a6de1365b1c656f7">qlibs::fp16::toFloat()</a> Convert qlibs::p16 to float.</li>
+<li><a class="el" href="classqlibs_1_1fp16.html#a892b97339ddaa8c1270f2a1d3b3e7bbf">qlibs::fp16::toDouble()</a> Convert <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to double.</li>
+<li>qlibs::fp16::toASCII() Convert from <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to raw c-string.</li>
 </ul>
 <h2><a class="anchor" id="qfp16_basic_arithmetic"></a>
 Basic arithmetic</h2>
@@ -173,29 +173,29 @@ Basic arithmetic</h2>
 Exponential and transcendental functions</h2>
 <p >Roots, exponents &amp; similar.</p>
 <ul>
-<li>fp16::sqrt() Square root. Performs rounding and is accurate to fp16 limits.</li>
-<li>fp16::exp() Exponential function using power series approximation. Accuracy depends on range, worst case +-40 absolute for negative inputs and +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.</li>
-<li>fp16::log() Natural logarithm using Newton approximation and fp16::exp(). Worst case error +-3 absolute, average error less than 1 unit.</li>
-<li>fp16::log2() Logarithm base 2.</li>
-<li>fp16::pow() Computes the power of a fp16 number</li>
+<li>qlibs::fp16::sqrt() Square root. Performs rounding and is accurate to fp16 limits.</li>
+<li>qlibs::fp16::exp() Exponential function using power series approximation. Accuracy depends on range, worst case +-40 absolute for negative inputs and +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.</li>
+<li>qlibs::fp16::log() Natural logarithm using Newton approximation and qlibs::fp16::exp(). Worst case error +-3 absolute, average error less than 1 unit.</li>
+<li>qlibs::fp16::log2() Logarithm base 2.</li>
+<li>qlibs::fp16::pow() Computes the power of a <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> number</li>
 </ul>
 <h2><a class="anchor" id="qfp16_trig_functions"></a>
 Trigonometric functions and helpers</h2>
 <ul>
-<li>fp16::sin() Sine for angle in radians</li>
-<li>fp16::cos() Cosine for angle in radians</li>
-<li>fp16::tan() Tangent for angle in radians</li>
-<li>fp16::asin() Inverse of sine, output in radians</li>
-<li>fp16::acos() Inverse of cosine, output in radians</li>
-<li>fp16::atan() Inverse of tangent, output in radians</li>
-<li>fp16::atan2() Arc tangent in radians x,y</li>
-<li>fp16::sinh() Hyperbolic sine</li>
-<li>fp16::cosh() Hyperbolic cosine</li>
-<li>fp16::tanh() Hyperbolic tangent</li>
-<li>fp16::radToDeg() Converts angle units from radians to degrees.</li>
-<li>fp16::degToRad() Converts angle units from degrees to radians</li>
-<li>fp16::wrapToPi() Wrap the fixed-point angle in radians to [−pi pi]</li>
-<li>fp16::wrapTo180() Wrap the fixed-point angle in degrees to [−180 180]</li>
+<li>qlibs::fp16::sin() Sine for angle in radians</li>
+<li>qlibs::fp16::cos() Cosine for angle in radians</li>
+<li>qlibs::fp16::tan() Tangent for angle in radians</li>
+<li>qlibs::fp16::asin() Inverse of sine, output in radians</li>
+<li>qlibs::fp16::acos() Inverse of cosine, output in radians</li>
+<li>qlibs::fp16::atan() Inverse of tangent, output in radians</li>
+<li>qlibs::fp16::atan2() Arc tangent in radians x,y</li>
+<li>qlibs::fp16::sinh() Hyperbolic sine</li>
+<li>qlibs::fp16::cosh() Hyperbolic cosine</li>
+<li>qlibs::fp16::tanh() Hyperbolic tangent</li>
+<li>qlibs::fp16::radToDeg() Converts angle units from radians to degrees.</li>
+<li>qlibs::fp16::degToRad() Converts angle units from degrees to radians</li>
+<li>qlibs::fp16::wrapToPi() Wrap the fixed-point angle in radians to [−pi pi]</li>
+<li>qlibs::fp16::wrapTo180() Wrap the fixed-point angle in degrees to [−180 180]</li>
 </ul>
 <h1><a class="anchor" id="qfp16_example"></a>
 Example: Solution of the quadratic equation</h1>
@@ -203,6 +203,8 @@ Example: Solution of the quadratic equation</h1>
 <p >\( x = \frac{ -b + \sqrt{ b^{2} - 4ac} }{ 2a } \)</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] ) </div>
 <div class="line">{</div>
@@ -215,6 +217,7 @@ Example: Solution of the quadratic equation</h1>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot; result = &quot;</span> &lt;&lt; result &lt;&lt; std::endl;</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

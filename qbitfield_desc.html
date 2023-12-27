@@ -149,37 +149,39 @@ Functions</h1>
 <h2><a class="anchor" id="qbitfield_setup"></a>
 Instance setup</h2>
 <ul>
-<li>bitfield_size Use it to determine the number of bytes required for a BitField.</li>
-<li>bitfield::Setup() Setup a initialize a BitField instance.</li>
+<li><a class="el" href="group__qbitfield.html#ga3645c015d457782880b34f38777f5067">qlibs::bitfield_size()</a> Use it to determine the number of bytes required for a BitField.</li>
+<li>qlibs::bitfield::Setup() Setup a initialize a BitField instance.</li>
 </ul>
 <h2><a class="anchor" id="qbitfield_sbit"></a>
 Single-bit</h2>
 <ul>
-<li>bitfield::setBit() Sets one bit in a BitField.</li>
-<li>bitfield::clearBit() Clears one bit in a BitField.</li>
-<li>bitfield::toggleBit() Toggles (i.e. reverses the state of) a bit in a BitField.</li>
-<li>bitfield::readBit() Retrieve the state of a bit in a bitfield.</li>
-<li>bitfield::writeBit() Writes one bit in a bitfield.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#af27c81bfc8977d80f33806950018ce86">qlibs::bitfield::setBit()</a> Sets one bit in a BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#a1b5c5d435a54c81220d93803c384bada">qlibs::bitfield::clearBit()</a> Clears one bit in a BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#abc994e1433e4e6ebc2f81c199c334f72">qlibs::bitfield::toggleBit()</a> Toggles (i.e. reverses the state of) a bit in a BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#a4a341fe55ab7bd1268295bbebd95c69a">qlibs::bitfield::readBit()</a> Retrieve the state of a bit in a bitfield.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07">qlibs::bitfield::writeBit()</a> Writes one bit in a bitfield.</li>
 </ul>
 <h2><a class="anchor" id="qbitfield_pattern"></a>
 Multiple-bits</h2>
 <ul>
-<li>bitfield::clearAll() Clear all the bits in the BitField.</li>
-<li>bitfield::setAll() Set all the bits in the BitField.</li>
-<li>bitfield::readUINTn() Reads an unsigned 32-bit value from the BitField.</li>
-<li>bitfield::writeUINTn() Writes an unsigned n-bit value from the BitField.</li>
-<li>bitfield::readFloat() Reads a 32-bit floating point value from the BitField.</li>
-<li>bitfield::writeFloat() Writes a 32-bit floating point value to the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74">qlibs::bitfield::clearAll()</a> Clear all the bits in the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#ac8bf522c01a711734d8f2d2f65d4c87e">qlibs::bitfield::setAll()</a> Set all the bits in the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e">qlibs::bitfield::readUINTn()</a> Reads an unsigned 32-bit value from the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37">qlibs::bitfield::writeUINTn()</a> Writes an unsigned n-bit value from the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#aae351d60490ae87b58a77e6dd85ff9e8">qlibs::bitfield::readFloat()</a> Reads a 32-bit floating point value from the BitField.</li>
+<li><a class="el" href="classqlibs_1_1bitfield.html#a87a227dedc282534244a9954aef0161a">qlibs::bitfield::writeFloat()</a> Writes a 32-bit floating point value to the BitField.</li>
 </ul>
 <h2><a class="anchor" id="qbitfield_dump"></a>
 Dump</h2>
 <ul>
-<li>bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.</li>
+<li>qlibs::bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.</li>
 </ul>
 <h1><a class="anchor" id="qbitfield_workingwith"></a>
 Working with bitfields</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
@@ -204,6 +206,7 @@ Working with bitfields</h1>
 <div class="line">                           &lt;&lt; endl );</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
