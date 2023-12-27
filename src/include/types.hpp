@@ -35,6 +35,9 @@
     using namespace std;
 #endif
 
+/**
+* @brief The qLibs++ library namespace.
+*/
 namespace qlibs {
     /**
     * @brief A type to instantiate a real variable double-precision of 64-bits IEEE 754.
