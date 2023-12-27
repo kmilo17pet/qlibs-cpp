@@ -27,6 +27,17 @@ var NAVTREE =
   [ "API Reference", "index.html", [
     [ "qLibs", "index.html", "index" ],
     [ "Modules", "modules.html", "modules" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -43,7 +54,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a26b5b0fec349f4dd75ea138509c7f9bc"
+"group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a18ef4cfb7704044a8fae2f7edea657dd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -296,7 +296,8 @@ Building a Mamdani FIS</h1>
 <div class="line">    FIS_RULES_END</div>
 <div class="line">};</div>
 </div><!-- fragment --><p >Additionally, we also need to define a vector where the firing strength of each rule will be stored. The size of the vector will be the number of rules. In this particular case, there will be only three.</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> real_t rulesStrength[ 3 ];</div>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> rulesStrength[ 3 ];</div>
+<div class="ttc" id="anamespaceqlibs_html_ab46614359717672dc9a4eed4669be6e6"><div class="ttname"><a href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> types.hpp:45</div></div>
 </div><!-- fragment --><p >First step is to configure the instance that represents the fuzzy system using the <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">fis::setup()</a> API:</p>
 <div class="fragment"><div class="line">tipper.<a class="code hl_function" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">setup</a>( <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );</div>
 <div class="ttc" id="agroup__qfis_html_gaa58234ed41fb09104a813e0f83e86148"><div class="ttname"><a href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">fis::setup</a></div><div class="ttdeci">bool setup(const fisType t, fisInput *const inputs, const size_t ni, fisOutput *const outputs, const size_t no, fisMF *const mf_inputs, const size_t nmi, fisMF *const mf_outputs, const size_t nmo, const fisRules *const r, const size_t n, real_t *rWeights=nullptr) noexcept</div><div class="ttdoc">Setup and initialize the FIS instance.</div></div>
@@ -351,7 +352,7 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line">    FIS_RULES_END</div>
 <div class="line">};</div>
 <div class="line"><span class="comment">//Rule strengths</span></div>
-<div class="line">real_t rStrength[ 3 ] = { 0.0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> rStrength[ 3 ] = { 0.0 };</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> tipper_init( <span class="keywordtype">void</span> )</div>

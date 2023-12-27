@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zmf_0',['zmf',['../group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a18ef4cfb7704044a8fae2f7edea657dd',1,'qlibs']]]
+  ['wtaver_0',['wtaver',['../group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa8d62125ef3bf552069d621be0af68f5e',1,'qlibs']]],
+  ['wtsum_1',['wtsum',['../group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa442dbe21e1b302813ac2a42e552a72a0',1,'qlibs']]]
 ];

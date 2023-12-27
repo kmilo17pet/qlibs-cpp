@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "qlibs", null, [
+    [ "qlibs", "namespaceqlibs.html", [
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
       [ "crc", "classqlibs_1_1crc.html", null ],
