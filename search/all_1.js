@@ -6,7 +6,8 @@ var searchData=
   ['bindautotuning_3',['bindAutoTuning',['../classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c',1,'qlibs::pidController']]],
   ['bisector_4',['bisector',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a0117356d7b7b878e4cfb4805bf545661',1,'qlibs']]],
   ['bit_2dfield_5',['Bit-Field',['../group__qbitfield.html',1,'']]],
-  ['bitfield_6',['bitfield',['../classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa',1,'qlibs::bitfield::bitfield()'],['../classqlibs_1_1bitfield.html',1,'qlibs::bitfield']]],
-  ['bitfield_5fsize_7',['bitfield_size',['../group__qbitfield.html#ga3645c015d457782880b34f38777f5067',1,'qlibs']]],
-  ['bsearch_8',['bSearch',['../group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0',1,'qlibs::generic']]]
+  ['bit_2dfield_20manipulation_20library_6',['Bit-Field manipulation library',['../qbitfield_desc.html',1,'index']]],
+  ['bitfield_7',['bitfield',['../classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa',1,'qlibs::bitfield::bitfield()'],['../classqlibs_1_1bitfield.html',1,'qlibs::bitfield']]],
+  ['bitfield_5fsize_8',['bitfield_size',['../group__qbitfield.html#ga3645c015d457782880b34f38777f5067',1,'qlibs']]],
+  ['bsearch_9',['bSearch',['../group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0',1,'qlibs::generic']]]
 ];

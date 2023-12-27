@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: qLibs</title>
+<title>API Reference: Recursive LTI Systems Evaluation by transfer functions.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,7 +107,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('qltisys_desc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,64 +126,91 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">qLibs </div></div>
+  <div class="headertitle"><div class="title">Recursive LTI Systems Evaluation by transfer functions. </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="image">
-<img src="https://user-images.githubusercontent.com/11412210/199044031-0e37f39d-5a57-4a68-9da1-fe3cdbc7c0fa.jpg" alt=""/>
-</div>
-<p> A collection of useful libraries written in C for embedded systems.</p>
-<dl class="section remark"><dt>Remarks</dt><dd>qLibs is developed using a formal and rigorous process framed in compliance with the MISRA C 2012 and CERT coding standard guidelines and complemented with multiple static-analysis checks targeted to safe critical applications.</dd></dl>
-<p>qLibs includes the following modules:</p>
-<ul>
-<li><a class="el" href="qssmoother_desc.html">qSSMoother : Filters for signal smoothing</a><ol type="1">
-<li>1st and 2nd order Low-Pass filters</li>
-<li>Moving Average filters</li>
-<li>Outlier Removal filters</li>
-<li>Gaussian filter</li>
-<li>Exponential weighting filter</li>
-<li>Scalar Kalman filter</li>
-</ol>
-</li>
-<li><a class="el" href="qfis_desc.html">qFIS : Fuzzy Inference System Engine</a><ol type="1">
-<li>Mamdani</li>
-<li>Sugeno</li>
-<li>Tsukamoto</li>
-</ol>
-</li>
-<li><a class="el" href="qpid_desc.html">qPID : PID Controller</a><ol type="1">
-<li>Derivative filter</li>
-<li>Anti-windup</li>
-<li>Tracking mode</li>
-<li>Auto-tunning</li>
-<li>Additive MRAC</li>
-</ol>
-</li>
-<li><a class="el" href="qltisys_desc.html">qLTISys : Recursive LTI systems evaluation by transfer functions</a><ol type="1">
-<li>Continuos</li>
-<li>Discrete</li>
-</ol>
-</li>
-<li><a class="el" href="qfp16_desc.html">qFP16 : Fixed-Point Q16.16 math library</a><ol type="1">
-<li>Basic operations</li>
-<li>Trigonometric functions</li>
-<li>Exponential functions</li>
-</ol>
-</li>
-<li><a class="el" href="qbitfield_desc.html">qBitField : Bit-Field manipulation library</a></li>
-<li><a class="el" href="qrms_desc.html">qRMS : Recursive Root Mean Square (RMS) calculation</a></li>
-<li><a class="el" href="qcrc_desc.html">qCRC : Generic Cyclic Redundancy Check (CRC) calculator</a></li>
-<li><a class="el" href="qtdl_desc.html">qTDL : Tapped Delay Line in O(1)</a></li>
-<li>Type-generic array operations</li>
-<li>Single precision floating-point vector(1D-Array) operations</li>
-<li>Fast single-precision floating-point math </li>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#qltisys_cont">Continous-time transfer functions</a><ul><li class="level2"><a href="#qltisys_ex1">Example: Evaluate the given continuous transfer function</a></li>
 </ul>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+</li>
+<li class="level1"><a href="#qltisys_disc">Discrete-time transfer functions</a><ul><li class="level2"><a href="#qltisys_ex2">Example: Evaluate the given discrete transfer function</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p ><a class="el" href="group__qltisys.html">LTI Systems</a> is a class that evaluates single-input, single-output (SISO) transfer function models in real-valued systems. A transfer function is a model that describes the frequency-dependent response of a linear time-invariant system, and this class can handle both continuous-time and discrete-time systems. <a class="el" href="group__qltisys.html">LTI Systems</a> can be used for simulating dynamic systems and implementing filters, compensators, or controllers.</p>
+<h1><a class="anchor" id="qltisys_cont"></a>
+Continous-time transfer functions</h1>
+<p >Here, the transfer function \( G(s) \) is the linear mapping of the Laplace transform of the input, \( U(s)= \mathcal{L}[u(t)]\), to the Laplace transform of the output \( Y(s)= \mathcal{L}[y(t)]\).</p>
+<p >\( G(s) = \frac{N(s)}{D(s)} = \frac{ b_{0}s^{n} + b_{1}s^{n-1} + b_{2}s^{n-2} + ... + b_{n} }{ s^{n} + a_{1}s^{n-1} + a_{2}s^{n-2} + ... + a_{n} } \)</p>
+<p >\( N(s) \) and \( D(s) \) are the numerator and denominator polynomials in descending powers of \(s\), respectively.</p>
+<p >To instantiate a continuous transfer function, you should define a variable of type qLTISys_t, two arrays of N+1 elements with the coefficients of the polynomials for both, the numerator and denominator, and finally, an array of type qLTISys_ContinuosX_t to hold the N states of the system. Then, you can call qLTISys_Setup() to construct the system and set initial conditions. Subsequently, you can evaluate the system with a given input-signal by just calling qLTISys_Excite().</p>
+<dl class="section attention"><dt>Attention</dt><dd>The user must ensure that the evaluation of the system is executed periodically at the required time step.</dd></dl>
+<h2><a class="anchor" id="qltisys_ex1"></a>
+Example: Evaluate the given continuous transfer function</h2>
+<p >\( G(s) = \frac{ 2s^{2} + 3s + 6 }{ s^{3} + 6s^{2} + 11s + 16 } \)</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;bsp.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;qltisys.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define SYS_ORDER   ( 3 )</span></div>
+<div class="line"><span class="keyword">const</span> TickType_t  dt = 50; <span class="comment">/*50mS time-step*/</span></div>
+<div class="line">qLTISys_t system;</div>
+<div class="line"><span class="keywordtype">float</span> num[ SYS_ORDER+1 ] = { 0.0f, 2.0f, 3.0f, 6.0f };</div>
+<div class="line"><span class="keywordtype">float</span> den[ SYS_ORDER+1 ] = { 1.0f, 6.0f, 11.0f, 16.0f };</div>
+<div class="line">qLTISys_ContinuosX_t x[ SYS_ORDER ];</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> *arg )</div>
+<div class="line">{</div>
+<div class="line">    qLTISys_Setup( &amp;system, num, den, x, 0, SYS_ORDER+1, (<span class="keywordtype">float</span>)dt/1000.0f ) );</div>
+<div class="line">    <span class="keywordtype">float</span> ut, yt;</div>
+<div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
+<div class="line">        ut = BSP_InputGet();</div>
+<div class="line">        yt = qLTISys_Excite( &amp;system, ut );</div>
+<div class="line">        vTaskDelay( dt / portTICK_RATE_MS) ;</div>
+<div class="line">        printf( <span class="stringliteral">&quot;u(t) = %0.2f   y(t)  = %0.2f \r\n&quot;</span>, ut, yt );</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="qltisys_disc"></a>
+Discrete-time transfer functions</h1>
+<p >The z-transform is used in discrete-time systems to deal with the relationship between an input signal \( u(t) \) and an output signal \( y(t) \) , so the transfer function is similarly written as \( G(z^{-1}) \) and is often referred to as the pulse-transfer function.</p>
+<p >\( G(z^{-1}) = \frac{N(z^{-1})}{D(z^{-1})} = \frac{ b_{0} + b_{1}z^{-1} + b_{2}z^{-2} + ... + b_{m}z^{-m} }{ 1 + a_{1}z^{-1} + a_{2}z^{-2} + ... + a_{n}z^{-n} } \)</p>
+<p >Discrete systems are instantiated in a similar way to continuous systems, but there are some differences. States are should be stored in an array of type qLTISys_DiscreteX_t. The size of polynomials can vary according to their order, and you should pass the #QLTISYS_DISCRETE directive on qLTISys_Setup() in order to differentiate the system when it is being evaluated. Please take a look at the following example:</p>
+<h2><a class="anchor" id="qltisys_ex2"></a>
+Example: Evaluate the given discrete transfer function</h2>
+<p >\( G(z^{-1}) = \frac{ 0.1 + 0.2z^{-1} + 0.3z^{-2} }{ 1 - 0.85z^{-1} + 0.02z^{-2} } \)</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;bsp.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;qltisys.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define NB  ( 3 )</span></div>
+<div class="line"><span class="preprocessor">#define NA  ( 2 )</span></div>
+<div class="line"><span class="keyword">const</span> TickType_t  Ts = 100; <span class="comment">/*100mS sample time*/</span></div>
+<div class="line">qLTISys_t system;</div>
+<div class="line"><span class="keywordtype">float</span> num[ NB ] = { 0.1f, 0.2f, 0.3f };</div>
+<div class="line"><span class="keywordtype">float</span> den[ NA+1 ] = { 1.0f, -0.85f, 0.02f };</div>
+<div class="line">qLTISys_DiscreteX_t xk[ NB ];</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> *arg )</div>
+<div class="line">{</div>
+<div class="line">    qLTISys_Setup( &amp;system, num, den, xk, NB, NA, QLTISYS_DISCRETE );</div>
+<div class="line">    <span class="keywordtype">float</span> uk, yk;</div>
+<div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
+<div class="line">        uk = BSP_InputGet();</div>
+<div class="line">        yk = qLTISys_Excite( &amp;system, uk );</div>
+<div class="line">        vTaskDelay( Ts / portTICK_RATE_MS) ;</div>
+<div class="line">        printf( <span class="stringliteral">&quot;u(k) = %0.2f   y(k)  = %0.2f \r\n&quot;</span>, uk, yk );</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="index.html">qLibs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

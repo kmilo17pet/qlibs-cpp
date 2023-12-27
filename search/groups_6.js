@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rms_20estimator_2e_0',['RMS estimator.',['../group__qrms.html',1,'']]]
+  ['rms_0',['RMS',['../group__qrms.html',1,'']]]
 ];

@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "API Reference", "index.html", [
+    [ "qLibs", "index.html", "index" ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

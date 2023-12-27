@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: Tapped Delay Line</title>
+<title>API Reference: Bit-Field manipulation library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,7 +107,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__qtdl.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('qbitfield_desc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -125,30 +125,92 @@ $(document).ready(function(){initNavTree('group__qtdl.html',''); initResizable()
 </iframe>
 </div>
 
-<div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">Tapped Delay Line</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Bit-Field manipulation library </div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>An implementation of the Tapped Delay Line (TDL) structure in O(1)  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Tapped Delay Line (TDL) object.  <a href="classqlibs_1_1tdl.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >An implementation of the Tapped Delay Line (TDL) structure in O(1) </p>
-<p >For a brief description of this module, please read <a class="el" href="qcrc_desc.html">Generic Cyclic Redundancy Check (CRC) calculator class</a> </p>
-</div><!-- contents -->
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#qbitfield_structure">Structure</a></li>
+<li class="level1"><a href="#qbitfield_functions">Functions</a><ul><li class="level2"><a href="#qbitfield_setup">Instance setup</a></li>
+<li class="level2"><a href="#qbitfield_sbit">Single-bit</a></li>
+<li class="level2"><a href="#qbitfield_pattern">Multiple-bits</a></li>
+<li class="level2"><a href="#qbitfield_dump">Dump</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#qbitfield_workingwith">Working with bitfields</a></li>
+</ul>
+</div>
+<div class="textblock"><p >BitField is a library of functions for creating and manipulating bit fields also known as bit arrays. These are series of zeroes and ones spread across an array of storage units, such as unsigned long integers.</p>
+<h1><a class="anchor" id="qbitfield_structure"></a>
+Structure</h1>
+<p >Bit arrays are stored in the bitfield class. This class has two elements: an array of unsigned long integers called <code>field</code> for storing the bits and an integer <code>size</code> for storing the number of bits in the array.</p>
+<h1><a class="anchor" id="qbitfield_functions"></a>
+Functions</h1>
+<h2><a class="anchor" id="qbitfield_setup"></a>
+Instance setup</h2>
+<ul>
+<li>bitfield_size Use it to determine the number of bytes required for a BitField.</li>
+<li>bitfield::Setup() Setup a initialize a BitField instance.</li>
+</ul>
+<h2><a class="anchor" id="qbitfield_sbit"></a>
+Single-bit</h2>
+<ul>
+<li>bitfield::setBit() Sets one bit in a BitField.</li>
+<li>bitfield::clearBit() Clears one bit in a BitField.</li>
+<li>bitfield::toggleBit() Toggles (i.e. reverses the state of) a bit in a BitField.</li>
+<li>bitfield::readBit() Retrieve the state of a bit in a bitfield.</li>
+<li>bitfield::writeBit() Writes one bit in a bitfield.</li>
+</ul>
+<h2><a class="anchor" id="qbitfield_pattern"></a>
+Multiple-bits</h2>
+<ul>
+<li>bitfield::clearAll() Clear all the bits in the BitField.</li>
+<li>bitfield::setAll() Set all the bits in the BitField.</li>
+<li>bitfield::readUINTn() Reads an unsigned 32-bit value from the BitField.</li>
+<li>bitfield::writeUINTn() Writes an unsigned n-bit value from the BitField.</li>
+<li>bitfield::readFloat() Reads a 32-bit floating point value from the BitField.</li>
+<li>bitfield::writeFloat() Writes a 32-bit floating point value to the BitField.</li>
+</ul>
+<h2><a class="anchor" id="qbitfield_dump"></a>
+Dump</h2>
+<ul>
+<li>bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.</li>
+</ul>
+<h1><a class="anchor" id="qbitfield_workingwith"></a>
+Working with bitfields</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
+<div class="line">{</div>
+<div class="line">    bitfield vPort; <span class="comment">// create the bitfield instance</span></div>
+<div class="line">    uint8_t vPortArea[ QBITFIELD_SIZE(48) ] = { 0 }; <span class="comment">// Create the bitfield storage area to hold 48bits</span></div>
+<div class="line">    uint16_t rWord;</div>
+<div class="line"> </div>
+<div class="line">    vPort.setup( vPortArea, <span class="keyword">sizeof</span>(vPortArea) );</div>
+<div class="line">    vPort.clearAll();</div>
+<div class="line">    <span class="comment">//we are going to write the following value in the bitfield = 0x8177AA55FF88</span></div>
+<div class="line">    vPort.writeUINTn( 0, 0xAA55FF88, 32 ); <span class="comment">// write the first 32 bits</span></div>
+<div class="line">    vPort.writeUINTn( 32, 0x77, 8 ); <span class="comment">// write one of the last two bytes</span></div>
+<div class="line">    vPort.writeBit( 47, 1 );         <span class="comment">// write the last bit of the last byte</span></div>
+<div class="line">    vPort.writeBit( 40, 1 );         <span class="comment">// write the first bit of the last byte</span></div>
+<div class="line">    rWord = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>( vPort.readUINTn( 20, 16 ); <span class="comment">// read a word at offset 24</span></div>
+<div class="line">    std::cout &lt;&lt; std::hex  &lt;&lt; vPortArea[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> </div>
+<div class="line">                           &lt;&lt; vPortArea[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                           &lt;&lt; vPortArea[2] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                           &lt;&lt; vPortArea[3] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                           &lt;&lt; vPortArea[4] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                           &lt;&lt; vPortArea[5] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                           &lt;&lt; endl );</div>
+<div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="index.html">qLibs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
