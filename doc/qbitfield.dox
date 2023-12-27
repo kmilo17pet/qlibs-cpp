@@ -15,29 +15,29 @@
 *
 * @subsection qbitfield_setup Instance setup
 *
-* - \ref bitfield_size Use it to determine the number of bytes required for a BitField.
-* - \ref bitfield::Setup() Setup a initialize a BitField instance.
+* - \ref qlibs::bitfield_size() Use it to determine the number of bytes required for a BitField.
+* - \ref qlibs::bitfield::Setup() Setup a initialize a BitField instance.
 *
 * @subsection qbitfield_sbit Single-bit
 *
-* - \ref bitfield::setBit() Sets one bit in a BitField.
-* - \ref bitfield::clearBit()  Clears one bit in a BitField.
-* - \ref bitfield::toggleBit() Toggles (i.e. reverses the state of) a bit in a BitField.
-* - \ref bitfield::readBit() Retrieve the state of a bit in a bitfield.
-* - \ref bitfield::writeBit() Writes one bit in a bitfield.
+* - \ref qlibs::bitfield::setBit() Sets one bit in a BitField.
+* - \ref qlibs::bitfield::clearBit()  Clears one bit in a BitField.
+* - \ref qlibs::bitfield::toggleBit() Toggles (i.e. reverses the state of) a bit in a BitField.
+* - \ref qlibs::bitfield::readBit() Retrieve the state of a bit in a bitfield.
+* - \ref qlibs::bitfield::writeBit() Writes one bit in a bitfield.
 *
 * @subsection qbitfield_pattern Multiple-bits
 *
-* - \ref bitfield::clearAll()  Clear all the bits in the BitField.
-* - \ref bitfield::setAll() Set all the bits in the BitField.
-* - \ref bitfield::readUINTn() Reads an unsigned 32-bit value from the BitField.
-* - \ref bitfield::writeUINTn() Writes an unsigned n-bit value from the BitField.
-* - \ref bitfield::readFloat() Reads a 32-bit floating point value from the BitField.
-* - \ref bitfield::writeFloat() Writes a 32-bit floating point value to the BitField.
+* - \ref qlibs::bitfield::clearAll()  Clear all the bits in the BitField.
+* - \ref qlibs::bitfield::setAll() Set all the bits in the BitField.
+* - \ref qlibs::bitfield::readUINTn() Reads an unsigned 32-bit value from the BitField.
+* - \ref qlibs::bitfield::writeUINTn() Writes an unsigned n-bit value from the BitField.
+* - \ref qlibs::bitfield::readFloat() Reads a 32-bit floating point value from the BitField.
+* - \ref qlibs::bitfield::writeFloat() Writes a 32-bit floating point value to the BitField.
 *
 * @subsection qbitfield_dump Dump
 *
-* - \ref bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.
+* - \ref qlibs::bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.
 *
 *
 * @section qbitfield_workingwith Working with bitfields
@@ -46,6 +46,8 @@
 *  #include <iostream>
 *  #include <qlibs.h>
 *  
+*  using namespace qlibs;
+*
 *  int main( int argc, char *argv[] )
 *  {
 *      bitfield vPort; // create the bitfield instance

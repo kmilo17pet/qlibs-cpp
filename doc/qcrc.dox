@@ -21,7 +21,7 @@
 * The lookup table method requires more memory resources and is useful for 
 * defined and/or repetitive data sets.
 *
-* The calculator class \ref crc provided here, uses the brute force method.
+* The calculator class \ref qlibs::crc provided here, uses the brute force method.
 * CRC math can be accomplished in software by shifting the data or shifting the 
 * polynomial key, then performing the computations. Supported CRCs include 8, 16
 * and 32-bit in a generic way, this means that you can specify the polynomial 

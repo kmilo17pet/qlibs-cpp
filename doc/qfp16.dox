@@ -10,7 +10,7 @@
 *
 * The maximum representable value is @c 32767.999985. The minimum value is @c -32768.0
 *
-* The minimum value is also used to represent @c fp16.overflow for overflow detection,
+* The minimum value is also used to represent @c overflow for overflow detection,
 * so for some operations it cannot be determined whether it overflowed or the 
 * result was the smallest possible value. In practice, this does not matter much.
 *
@@ -26,11 +26,11 @@
 * Conversion from integers and floating-point values. These conversions retain 
 * the numeric value and perform rounding where necessary.
 *
-* - \ref qlibs::fp16::from() Convert int/float or double to the fp16 type
-* - \ref qlibs::fp16::toInt() Convert fp16 to integer.
-* - \ref qlibs::fp16::toFloat() Convert fp16 to float.
-* - \ref qlibs::fp16::toDouble() Convert fp16 to double.
-* - \ref qlibs::fp16::toASCII()  Convert from fp16 to raw c-string.
+* - \ref qlibs::fp16::from() Convert int/float or double to the qlibs::fp16 type
+* - \ref qlibs::fp16::toInt() Convert qlibs::fp16 to integer.
+* - \ref qlibs::fp16::toFloat() Convert qlibs::p16 to float.
+* - \ref qlibs::fp16::toDouble() Convert qlibs::fp16 to double.
+* - \ref qlibs::fp16::toASCII()  Convert from qlibs::fp16 to raw c-string.
 *
 * @subsection  qfp16_basic_arithmetic Basic arithmetic
 *
@@ -46,32 +46,32 @@
 *
 * Roots, exponents & similar.
 *
-* - fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
-* - fp16::exp()   Exponential function using power series approximation.
+* - qlibs::fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
+* - qlibs::fp16::exp()   Exponential function using power series approximation.
 * Accuracy depends on range, worst case +-40 absolute for negative inputs and
 * +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.
-* - fp16::log()  Natural logarithm using Newton approximation and fp16::exp().
+* - qlibs::fp16::log()  Natural logarithm using Newton approximation and qlibs::fp16::exp().
 * Worst case error +-3 absolute, average error less than 1 unit.
-* - fp16::log2()  Logarithm base 2.
-* - fp16::pow()  Computes the power of a fp16 number
+* - qlibs::fp16::log2()  Logarithm base 2.
+* - qlibs::fp16::pow()  Computes the power of a qlibs::fp16 number
 *
 *
 * @subsection qfp16_trig_functions Trigonometric functions and helpers
 *
-* - fp16::sin()  Sine for angle in radians
-* - fp16::cos()  Cosine for angle in radians
-* - fp16::tan()  Tangent for angle in radians
-* - fp16::asin()  Inverse of sine, output in radians
-* - fp16::acos()  Inverse of cosine, output in radians
-* - fp16::atan()  Inverse of tangent, output in radians
-* - fp16::atan2()  Arc tangent in radians x,y
-* - fp16::sinh()  Hyperbolic sine
-* - fp16::cosh()  Hyperbolic cosine
-* - fp16::tanh()  Hyperbolic tangent
-* - fp16::radToDeg()  Converts angle units from radians to degrees.
-* - fp16::degToRad()  Converts angle units from degrees to radians
-* - fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
-* - fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
+* - qlibs::fp16::sin()  Sine for angle in radians
+* - qlibs::fp16::cos()  Cosine for angle in radians
+* - qlibs::fp16::tan()  Tangent for angle in radians
+* - qlibs::fp16::asin()  Inverse of sine, output in radians
+* - qlibs::fp16::acos()  Inverse of cosine, output in radians
+* - qlibs::fp16::atan()  Inverse of tangent, output in radians
+* - qlibs::fp16::atan2()  Arc tangent in radians x,y
+* - qlibs::fp16::sinh()  Hyperbolic sine
+* - qlibs::fp16::cosh()  Hyperbolic cosine
+* - qlibs::fp16::tanh()  Hyperbolic tangent
+* - qlibs::fp16::radToDeg()  Converts angle units from radians to degrees.
+* - qlibs::fp16::degToRad()  Converts angle units from degrees to radians
+* - qlibs::fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
+* - qlibs::fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
 *
 *
 * @section qfp16_example Example: Solution of the quadratic equation
@@ -84,6 +84,8 @@
 *  @code{.c}
 *  #include <iostream>
 *  #include <qlibs.h>
+*  
+*  using namespace qlibs;
 *  
 *  int main( int argc, char *argv[] ) 
 *  {

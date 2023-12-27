@@ -1,6 +1,6 @@
 /*! @page qltisys_desc Recursive LTI Systems Evaluation by transfer functions.
 * @tableofcontents
-* \ref qltisys  is a class that evaluates single-input, single-output (SISO)
+* \ref qlibs::ltisys  is a class that evaluates single-input, single-output (SISO)
 * transfer function models in real-valued systems.
 * A transfer function is a model that describes the frequency-dependent response
 * of a linear time-invariant system, and this class can handle both continuous-time

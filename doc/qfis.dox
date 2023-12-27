@@ -16,7 +16,7 @@
 * The \ref FIS Fuzzy Inference System engine provides an API for building and
 * evaluation of type-1 fuzzy logic inference systems. 
 * 
-* The types of inferences supported by FIS are listed in the \ref fisType enum
+* The types of inferences supported by FIS are listed in the \ref qlibs::fisType enum
 * and are detailed below:
 *
 * @section qfis_mamdani Mamdani
@@ -31,7 +31,7 @@
 * combined into a single fuzzy set using the aggregation method of the FIS.
 * Then, to compute a final crisp output value, the combined output fuzzy set is
 * defuzzified using one of the methods described in Defuzzification Methods.
-* To specify a FIS of this type use the fisType::Mamdani enum definition when calling
+* To specify a FIS of this type use the qlibs::fisType::Mamdani enum definition when calling
 * fis::setup().
 *
 * <center>
@@ -80,7 +80,7 @@
 * controllers that are to be applied, respectively, to different operating 
 * conditions of a dynamic nonlinear system.
 *
-* To specificy a FIS of this type,  use the fisType::Sugeno enum definition when
+* To specificy a FIS of this type,  use the qlibs::fisType::Sugeno enum definition when
 * calling fis::setup().
 *
 * <center>
@@ -111,7 +111,7 @@
 * each rule's output by the method of weighted average and thus avoids the
 * time-consuming process of defuzzification.
 *
-* To specify a FIS of this type, use the fisType::Tsukamoto enum definition when
+* To specify a FIS of this type, use the qlibs::fisType::Tsukamoto enum definition when
 * calling fis::setup().
 *
 * <center>
@@ -132,10 +132,10 @@
 *
 * @section qfis_defuzz Defuzzification Methods
 * 
-* FIS supports five different methods, as listed in the \ref fisDeFuzzMethod enum
+* FIS supports five different methods, as listed in the \ref qlibs::fisDeFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the
+*  -# fisDeFuzzMethod::centroid (default): this method applies only to qlibs::fisType::Mamdani systems and returns the
 * center of gravity of the fuzzy set along the x-axis. If you think of the area
 * as a plate with uniform thickness and density, the centroid is the point along
 * the x-axis about which the fuzzy set would balance. The centroid is computed
@@ -145,21 +145,21 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the 
+*  -# qlibs::fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# fisDeFuzzMethod::mom : Middle of Maximum. Only for fisType::Mamdani systems.
+*  -# qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for qlibs::fisType::Mamdani systems.
 *
-*  -# fisDeFuzzMethod::som : Smallest of Maximum. Only for fisType::Mamdani systems.
+*  -# qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only for qlibs::fisType::Mamdani systems.
 *
-*  -# fisDeFuzzMethod::lom : Largest of Maximum. Only for fisType::Mamdani systems.
+*  -# qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for qlibs::fisType::Mamdani systems.
 *
-*  -# fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. this method applies only 
-* for fisType::Sugeno and fisType::Tsukamoto systems.
+*  -# qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only 
+* for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.
 *
-*  -# ::wtsum:  Weighted sum of all rule outputs. This method applies only for
-* ::Sugeno and ::Tsukamoto systems.
+*  -# qlibs::fisDeFuzzMethod::wtsum:  Weighted sum of all rule outputs. This method applies only 
+* for qlibs::fisType::Sugeno and qlibs::fisType::Tsukamoto systems.
 *
 * @note The defuzzification method is selected by default when setting up the 
 * FIS instance with fis::setup(). However, the user can later change the default
@@ -261,7 +261,7 @@
 *
 * Then, we will define the rules of 
 * the fuzzy system using the previously defined tags. Rules should be defined as
-* an array of type \ref fisRules and the contents should be rules constructed
+* an array of type \ref qlibs::fisRules and the contents should be rules constructed
 * with the provided statements: 
 * 
 * - \ref #FIS_RULES_BEGIN to start the rules set
