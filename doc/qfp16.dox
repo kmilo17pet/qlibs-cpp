@@ -18,7 +18,7 @@
 *
 * @section qfp16_functions Fixed-point functions
 *
-* All the provided functions operate on 32-bit numbers, fp16, which have 
+* All the provided functions operate on 32-bit numbers, \ref qlibs::fp16, which have 
 * 16-bit integer part and 16-bit fractional part.
 *
 * @subsection qfp16_conv_functions Conversion functions
@@ -26,11 +26,11 @@
 * Conversion from integers and floating-point values. These conversions retain 
 * the numeric value and perform rounding where necessary.
 *
-* - fp16::from() Convert int/float or double to the fp16 type
-* - fp16::toInt() Convert fp16 to integer.
-* - fp16::toFloat() Convert fp16 to float.
-* - fp16::toDouble() Convert fp16 to double.
-* - fp16::toASCII()  Convert from fp16 to raw c-string.
+* - \ref qlibs::fp16::from() Convert int/float or double to the fp16 type
+* - \ref qlibs::fp16::toInt() Convert fp16 to integer.
+* - \ref qlibs::fp16::toFloat() Convert fp16 to float.
+* - \ref qlibs::fp16::toDouble() Convert fp16 to double.
+* - \ref qlibs::fp16::toASCII()  Convert from fp16 to raw c-string.
 *
 * @subsection  qfp16_basic_arithmetic Basic arithmetic
 *
