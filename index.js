@@ -87,7 +87,7 @@ var index =
     [ "Recursive Root Mean Square estimator", "qrms_desc.html", [
       [ "Example :  By using a timer interrupt", "qrms_desc.html#qrms_ex1", null ]
     ] ],
-    [ "Generic Cyclic Redundancy Check (CRC) calculator", "qcrc_desc.html", null ],
+    [ "Generic Cyclic Redundancy Check (CRC) calculator class", "qcrc_desc.html", null ],
     [ "Tapped Delay Line in O(1)", "qtdl_desc.html", [
       [ "Example : Code snippet to instantiate a TDL to hold up to 256 delays.", "qtdl_desc.html#qtdl_ex1", null ]
     ] ]

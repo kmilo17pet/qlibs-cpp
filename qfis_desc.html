@@ -141,12 +141,12 @@ $(document).ready(function(){initNavTree('qfis_desc.html',''); initResizable(); 
 </div>
 <div class="textblock"><p >A Fuzzy Inference System (FIS) is a key component of any fuzzy logic system. It uses fuzzy set theory, IF-THEN rules and fuzzy reasoning process to find the output corresponding to crisp inputs. Predicates in <code>IF-THEN</code> rules are connected using <code>AND</code> or <code>OR</code> logical connectives.</p>
 <p >Fuzzy inference works by sending any process's crisp input to the fuzzifier, which applies a fuzzy membership function and maps the actual readings into fuzzy values. The inference engine applies fuzzy rules from the knowledge base and produces the fuzzy output. This output can not be used directly in any process or system. It needs to be mapped into the original domain. For this, the defuzzifier is used, which is the inverse process of fuzzification. It converts the fuzzy output into crisp output, which can be fed to the process.</p>
-<p >The <a class="el" href="group__qfis.html">FIS - Fuzzy Inference System</a> Fuzzy Inference System engine provides an API for building and evaluation of type-1 fuzzy logic inference systems.</p>
-<p >The types of inferences supported by qFIS are listed in the qFIS_Type_t and are detailed below:</p>
+<p >The FIS Fuzzy Inference System engine provides an API for building and evaluation of type-1 fuzzy logic inference systems.</p>
+<p >The types of inferences supported by FIS are listed in the fisType enum and are detailed below:</p>
 <h1><a class="anchor" id="qfis_mamdani"></a>
 Mamdani</h1>
 <p >In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani systems have more intuitive and easier to understand rule bases, they are well-suited to expert system applications where the rules are created from human expert knowledge.</p>
-<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the ::Mamdani enum definition when calling qFIS_Setup().</p>
+<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the ::Mamdani enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -168,7 +168,7 @@ Sugeno</h1>
 <p >The final output of the system is the weighted average/sum over all rule outputs:</p>
 <center> \(out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \) </center><p >where \(N\) is the number of rules.</p>
 <p >Because of the linear dependence of each rule on the input variables, the Sugeno method is ideal for acting as an interpolating supervisor of multiple linear controllers that are to be applied, respectively, to different operating conditions of a dynamic nonlinear system.</p>
-<p >To specificy a FIS of this type, use the ::Sugeno enum definition when calling qFIS_Setup().</p>
+<p >To specificy a FIS of this type, use the ::Sugeno enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -184,7 +184,7 @@ Sugeno</h1>
 Tsukamoto</h1>
 <p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
 <p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
-<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling qFIS_Setup().</p>
+<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -198,7 +198,7 @@ Tsukamoto</h1>
 </html>
  <em>Tsukamoto inference system</em> </center><h1><a class="anchor" id="qfis_defuzz"></a>
 Defuzzification Methods</h1>
-<p >qFIS supports five different methods, as listed in the qFIS_DeFuzz_Method_t type for computing a single crisp output value for such a fuzzy set.</p>
+<p >FIS supports five different methods, as listed in the fisDeFuzzMethod enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
 <li>::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
@@ -210,7 +210,7 @@ Defuzzification Methods</h1>
 <li>::wtaver (default): Weighted average of all rule outputs. this method applies only for ::Sugeno and ::Tsukamoto systems.</li>
 <li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with qFIS_Setup(). However, the user can later change the default method using the qFIS_SetDeFuzzMethod() function.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="group__qfis.html#ga3a11ddb724e9cd036fab060892387d2c" title="Change the default de-Fuzzification method of the FIS instance.">fis::setDeFuzzMethod()</a> function.</dd></dl>
 <h1><a class="anchor" id="qfis_buildfis"></a>
 Building a Mamdani FIS</h1>
 <p >To carry out the FIS building process in a more friendly manner, we will explain it using a specific example. The goal is to solve the tipping problem, which is described as follows:</p>
@@ -258,25 +258,29 @@ Building a Mamdani FIS</h1>
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 </body>
 </html>
- <em>Membership functions for the tipper FIS</em> </center><p >To build the fuzzy system, you must first instantiate an abstract object of type qFIS_t that represents the fuzzy inference system, then the input and output vectors, fuzzy set vectors for inputs and outputs, and enumerations with the tags for all of them. Let's take a look :</p>
-<div class="fragment"><div class="line"><span class="comment">// FIS Object</span></div>
-<div class="line"><span class="keyword">static</span> qFIS_t tipper;</div>
-<div class="line"><span class="comment">// I/O Fuzzy Objects</span></div>
-<div class="line"><span class="keyword">static</span> qFIS_Input_t tipper_inputs[ 2 ];</div>
-<div class="line"><span class="keyword">static</span> qFIS_Output_t tipper_outputs[ 1 ];</div>
-<div class="line"><span class="comment">// I/O Membership Objects</span></div>
-<div class="line"><span class="keyword">static</span> qFIS_MF_t MFin[5], MFout[3];</div>
-<div class="line"><span class="comment">// I/O Names</span></div>
+ <em>Membership functions for the tipper FIS</em> </center><p >To build the fuzzy system, you must first instantiate an abstract object of type <a class="el" href="classfis.html">fis</a> that represents the fuzzy inference system, then the input and output vectors, fuzzy set vectors for inputs and outputs, and enumerations with the tags for all of them. Let's take a look :</p>
+<div class="fragment"><div class="line"><span class="comment">// I/O Names</span></div>
 <div class="line"><span class="keyword">enum</span> { service, food};</div>
 <div class="line"><span class="keyword">enum</span> { tip};</div>
 <div class="line"><span class="comment">// I/O Membership functions tags</span></div>
 <div class="line"><span class="keyword">enum</span> { service_poor, service_good, service_excellent, food_rancid, food_delicious};</div>
 <div class="line"><span class="keyword">enum</span> { tip_cheap, tip_average, tip_generous};</div>
+<div class="line"><span class="comment">// FIS Object</span></div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis.html">fis</a> tipper;</div>
+<div class="line"><span class="comment">// I/O Fuzzy Objects</span></div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_input.html">fisInput</a> tipper_inputs[ 2 ];</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_output.html">fisOutput</a> tipper_outputs[ 1 ];</div>
+<div class="line"><span class="comment">// I/O Membership Objects</span></div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_m_f.html">fisMF</a> MFin[5], MFout[3];</div>
+<div class="ttc" id="aclassfis_html"><div class="ttname"><a href="classfis.html">fis</a></div><div class="ttdoc">A FIS(Fuzzy Inference System) object.</div><div class="ttdef"><b>Definition:</b> fis.hpp:492</div></div>
+<div class="ttc" id="aclassfis_input_html"><div class="ttname"><a href="classfis_input.html">fisInput</a></div><div class="ttdoc">A FIS Input object.</div><div class="ttdef"><b>Definition:</b> fis.hpp:142</div></div>
+<div class="ttc" id="aclassfis_m_f_html"><div class="ttname"><a href="classfis_m_f.html">fisMF</a></div><div class="ttdoc">A FIS Membership Function.</div><div class="ttdef"><b>Definition:</b> fis.hpp:325</div></div>
+<div class="ttc" id="aclassfis_output_html"><div class="ttname"><a href="classfis_output.html">fisOutput</a></div><div class="ttdoc">A FIS Output object.</div><div class="ttdef"><b>Definition:</b> fis.hpp:156</div></div>
 </div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Please note that all tag names are unique.</dd></dl>
-<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type qFIS_Rules_t and the contents should be rules constructed with the provided statements:</p>
+<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type fisRules and the contents should be rules constructed with the provided statements:</p>
 <ul>
-<li>QFIS_RULES_BEGIN to start the rules set</li>
-<li>QFIS_RULES_END to end the rules set</li>
+<li>FIS_RULES_BEGIN to start the rules set</li>
+<li>FIS_RULES_END to end the rules set</li>
 <li>IF to start a rule sentence</li>
 <li>END to end a rule sentence</li>
 <li>AND and OR fuzzy connectors</li>
@@ -284,140 +288,112 @@ Building a Mamdani FIS</h1>
 <li>THEN to represent the implication</li>
 </ul>
 <p >Let's apply some of these statements to build the rule set.</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> qFIS_Rules_t rules[] = { </div>
-<div class="line">    QFIS_RULES_BEGIN</div>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = { </div>
+<div class="line">    FIS_RULES_BEGIN</div>
 <div class="line">       IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END</div>
 <div class="line">       IF service IS service_good THEN tip IS tip_average END</div>
 <div class="line">       IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END</div>
-<div class="line">    QFIS_RULES_END</div>
+<div class="line">    FIS_RULES_END</div>
 <div class="line">};</div>
 </div><!-- fragment --><p >Additionally, we also need to define a vector where the firing strength of each rule will be stored. The size of the vector will be the number of rules. In this particular case, there will be only three.</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">float</span> rulesStrength[ 3 ];</div>
-</div><!-- fragment --><p >Once all the necessary elements have been defined, we can proceed to the construction of the fuzzy system. First, we must configure the inputs and outputs by setting the ranges of each. For this, we will use the qFIS_InputSetup() and qFIS_OutputSetup() functions as follows:</p>
-<div class="fragment"><div class="line">qFIS_InputSetup( tipper_inputs, service, 0.0f, 10.0f );</div>
-<div class="line">qFIS_InputSetup( tipper_inputs, food, 0.0f, 10.0f );</div>
-<div class="line">qFIS_OutputSetup( tipper_outputs, tip, 0.0f, 30.0f );</div>
-</div><!-- fragment --><p >Then, let's define the parameters of all the membership functions:</p>
-<div class="fragment"><div class="line"><span class="comment">/*Parameters of the membership functions*/</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_poor_p[] = { 1.5f, 0.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_good_p[] = { 1.5f, 5.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_excellent_p[] = { 1.5f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_rancid_p[] = { 0.0f, 0.0f, 1.0f, 3.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_delicious_p[] = { 7.0f, 9.0f, 10.0f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_cheap_p[] = { 0.0f, 5.0f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_average_p[] = { 10.0f, 15.0f, 20.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_generous_p[] = { 20.0f, 25.0f, 30.0f }</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The number of parameters may vary depending on the shape of the membership function.</dd></dl>
-<p>the next step is to configure the membership functions by relating I/O, tags, shape and parameters one by one by using the qFIS_SetMF() API as follows:</p>
-<div class="fragment"><div class="line"><span class="comment">/* setup membership functions for the inputs */</span></div>
-<div class="line">qFIS_SetMF( MFin, service, service_poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_poor_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, service, service_good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_good_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, service, service_excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_excellent_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, food, food_rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_rancid_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFin, food, food_delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_delicious_p, 1.0f );</div>
-<div class="line"><span class="comment">/* setup membership functions for the outputs */</span></div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_cheap_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_average_p, 1.0f );</div>
-<div class="line">qFIS_SetMF( MFout, tip, tip_generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_generous_p, 1.0f );</div>
+<div class="fragment"><div class="line"><span class="keyword">static</span> real_t rulesStrength[ 3 ];</div>
+</div><!-- fragment --><p >First step is to configure the instance that represents the fuzzy system using the <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">fis::setup()</a> API:</p>
+<div class="fragment"><div class="line">tipper.<a class="code hl_function" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">setup</a>( <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );</div>
+<div class="ttc" id="agroup__qfis_html_gaa58234ed41fb09104a813e0f83e86148"><div class="ttname"><a href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">fis::setup</a></div><div class="ttdeci">bool setup(const fisType t, fisInput *const inputs, const size_t ni, fisOutput *const outputs, const size_t no, fisMF *const mf_inputs, const size_t nmi, fisMF *const mf_outputs, const size_t nmo, const fisRules *const r, const size_t n, real_t *rWeights=nullptr) noexcept</div><div class="ttdoc">Setup and initialize the FIS instance.</div></div>
+<div class="ttc" id="agroup__qfis_html_ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799"><div class="ttname"><a href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">qlibs::Mamdani</a></div><div class="ttdeci">@ Mamdani</div><div class="ttdef"><b>Definition:</b> fis.hpp:100</div></div>
+</div><!-- fragment --><p >Then, we can proceed to the construction of the fuzzy system. First, we must configure the inputs and outputs by setting the ranges of each. For this, we will use the <a class="el" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">fis::setupInput()</a> and <a class="el" href="group__qfis.html#ga22fe059619cb81a8b4f69443b9c7a02a" title="Setup the output with the specified tag and set limits for it.">fis::setupOutput()</a> methods as follows:</p>
+<div class="fragment"><div class="line">tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( service, 0.0, 1.0 );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( food, 0.0, 10.0 );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga22fe059619cb81a8b4f69443b9c7a02a">setupOutput</a>( tip, 0.0, 30.0 );</div>
+<div class="ttc" id="agroup__qfis_html_ga22fe059619cb81a8b4f69443b9c7a02a"><div class="ttname"><a href="group__qfis.html#ga22fe059619cb81a8b4f69443b9c7a02a">fis::setupOutput</a></div><div class="ttdeci">bool setupOutput(const fisTag t, const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the output with the specified tag and set limits for it.</div><div class="ttdef"><b>Definition:</b> fis.cpp:136</div></div>
+<div class="ttc" id="agroup__qfis_html_gab07d6e783e98968be63253d35eb6585a"><div class="ttname"><a href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">fis::setupInput</a></div><div class="ttdeci">bool setupInput(const fisTag t, const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the input with the specified tag and set limits for it.</div><div class="ttdef"><b>Definition:</b> fis.cpp:119</div></div>
+</div><!-- fragment --><p >The next step is to configure the membership functions by relating I/O, tags, shape and parameters one by one by using the <a class="el" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">fis::setInputMF()</a> and <a class="el" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581" title="Set the output tag and points for the specified membership function.">fis::setOutputMF()</a> methods as follows: Then, let's define the parameters of all the membership functions:</p>
+<div class="fragment"><div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 0.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 5.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 10.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( food, rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, (<span class="keyword">const</span> real_t[]){ 0.0, 0.0, 1.0, 3.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( food, delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, (<span class="keyword">const</span> real_t[]){ 7.0, 9.0, 10.0, 10.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){ 0.0, 5.0, 10.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){10.0, 15.0, 20.0 } );</div>
+<div class="line">tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){ 20.0, 25.0, 30.0 } );</div>
+<div class="ttc" id="agroup__qfis_html_ga3406a440426dd8d36f097c75e749d581"><div class="ttname"><a href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">fis::setOutputMF</a></div><div class="ttdeci">bool setOutputMF(const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</div><div class="ttdoc">Set the output tag and points for the specified membership function.</div><div class="ttdef"><b>Definition:</b> fis.hpp:704</div></div>
+<div class="ttc" id="agroup__qfis_html_ga91ae428ccb7f3032dab49e6a9c61935f"><div class="ttname"><a href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">fis::setInputMF</a></div><div class="ttdeci">bool setInputMF(const fisTag io, const fisTag mf, const fisShapeMF s, const real_t *cp, const real_t h=1.0) noexcept</div><div class="ttdoc">Set the input tag and points for the specified membership function.</div><div class="ttdef"><b>Definition:</b> fis.hpp:653</div></div>
 <div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">qlibs::trapmf</a></div><div class="ttdeci">@ trapmf</div><div class="ttdef"><b>Definition:</b> fis.hpp:28</div></div>
 <div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">qlibs::trimf</a></div><div class="ttdeci">@ trimf</div><div class="ttdef"><b>Definition:</b> fis.hpp:27</div></div>
 <div class="ttc" id="agroup__qfis_html_gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29"><div class="ttname"><a href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">qlibs::gaussmf</a></div><div class="ttdeci">@ gaussmf</div><div class="ttdef"><b>Definition:</b> fis.hpp:30</div></div>
-</div><!-- fragment --><p >Finally, we only have to configure the instance that represents the fuzzy system using the qFIS_Setup() API:</p>
-<div class="fragment"><div class="line"><span class="comment">/*Parameters of the membership functions*/</span></div>
-<div class="line">qFIS_Setup( &amp;tipper, <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>,</div>
-<div class="line">            tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
-<div class="line">            tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
-<div class="line">            MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>
-<div class="line">            rules, rStrength, 3u );</div>
-<div class="ttc" id="agroup__qfis_html_ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799"><div class="ttname"><a href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">qlibs::Mamdani</a></div><div class="ttdeci">@ Mamdani</div><div class="ttdef"><b>Definition:</b> fis.hpp:100</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="qfis_eval"></a>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The number of parameters may vary depending on the shape of the membership function.</dd></dl>
+<h1><a class="anchor" id="qfis_eval"></a>
 Evaluating a Fuzzy Inference System</h1>
 <p >If we already have a fuzzy system configured with qFIS_Setup(), we can evaluate it by using qFIS_Fuzzify(), qFIS_Inference() and qFIS_DeFuzzify(). Input values can be set with qFIS_SetInput() and output values can be obtained with qFIS_GetOutput()</p>
 <p >To show its use, first we are going to put everything together in a single code snippet and we are going to create two functions, <code>tipper_init()</code> and <code>tipper_run()</code> that will be in charge of setting up the fuzzy inference system and evaluating it respectively.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;tipper_fis.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;qfis.h&quot;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="comment">// I/O Names</span></div>
+<div class="line"><span class="keyword">enum</span> { service, food};</div>
+<div class="line"><span class="keyword">enum</span> { tip};</div>
+<div class="line"><span class="comment">// I/O Membership functions tags</span></div>
+<div class="line"><span class="keyword">enum</span> { service_poor, service_good, service_excellent, food_rancid, food_delicious};</div>
+<div class="line"><span class="keyword">enum</span> { tip_cheap, tip_average, tip_generous};</div>
 <div class="line"><span class="comment">// FIS Object</span></div>
-<div class="line"><span class="keyword">static</span> qFIS_t tipper;</div>
-<div class="line"><span class="comment">// I/O Fuzzy Objects </span></div>
-<div class="line"><span class="keyword">static</span> qFIS_Input_t tipper_inputs[ 2 ];</div>
-<div class="line"><span class="keyword">static</span> qFIS_Output_t tipper_outputs[ 1 ];</div>
-<div class="line"><span class="comment">// I/O Membership Objects </span></div>
-<div class="line"><span class="keyword">static</span> qFIS_MF_t MFin[ 5 ], MFout[ 3 ];</div>
-<div class="line"><span class="comment">// I/O Names </span></div>
-<div class="line"><span class="keyword">enum</span> { service, food };</div>
-<div class="line"><span class="keyword">enum</span> { tip };</div>
-<div class="line"><span class="comment">// I/O Membership functions tags </span></div>
-<div class="line"><span class="keyword">enum</span> { service_poor, service_good, service_excellent, food_rancid, food_delicious };</div>
-<div class="line"><span class="keyword">enum</span> { tip_cheap, tip_average, tip_generous };</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis.html">fis</a> tipper;</div>
+<div class="line"><span class="comment">// I/O Fuzzy Objects</span></div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_input.html">fisInput</a> tipper_inputs[ 2 ];</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_output.html">fisOutput</a> tipper_outputs[ 1 ];</div>
+<div class="line"><span class="comment">// I/O Membership Objects</span></div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_m_f.html">fisMF</a> MFin[5], MFout[3];</div>
 <div class="line"><span class="comment">// Rules of the inference system</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> qFIS_Rules_t rules[] = { </div>
-<div class="line">    QFIS_RULES_BEGIN</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = { </div>
+<div class="line">    FIS_RULES_BEGIN</div>
 <div class="line">       IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END</div>
 <div class="line">       IF service IS service_good THEN tip IS tip_average END</div>
 <div class="line">       IF service IS service_excellent OR food IS food_delicious THEN tip IS tip_generous END</div>
-<div class="line">    QFIS_RULES_END</div>
+<div class="line">    FIS_RULES_END</div>
 <div class="line">};</div>
 <div class="line"><span class="comment">//Rule strengths</span></div>
-<div class="line"><span class="keywordtype">float</span> rStrength[ 3 ] = { 0.0f };</div>
+<div class="line">real_t rStrength[ 3 ] = { 0.0 };</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Parameters of the membership functions</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_poor_p[] = { 1.5f, 0.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_good_p[] = { 1.5f, 5.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> service_excellent_p[] = { 1.5f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_rancid_p[] = { 0.0f, 0.0f, 1.0f, 3.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> food_delicious_p[] = { 7.0f, 9.0f, 10.0f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_cheap_p[] = { 0.0f, 5.0f, 10.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_average_p[] = { 10.0f, 15.0f, 20.0f };</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> tip_generous_p[] = { 20.0f, 25.0f, 30.0f };</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> tipper_init( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <span class="comment">// Set inputs </span></div>
-<div class="line">    qFIS_InputSetup( tipper_inputs, service, 0.0f, 10.0f );</div>
-<div class="line">    qFIS_InputSetup( tipper_inputs, food, 0.0f, 10.0f );</div>
-<div class="line">    qFIS_OutputSetup( tipper_outputs, tip, 0.0f, 30.0f );</div>
-<div class="line">    <span class="comment">// Set membership functions for the inputs</span></div>
-<div class="line">    qFIS_SetMF( MFin, service, service_poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_poor_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, service, service_good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_good_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, service, service_excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, NULL, service_excellent_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, food, food_rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_rancid_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFin, food, food_delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, NULL, food_delicious_p, 1.0f );</div>
-<div class="line">    <span class="comment">// Set membership functions for the outputs</span></div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_cheap_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_average_p, 1.0f );</div>
-<div class="line">    qFIS_SetMF( MFout, tip, tip_generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, NULL, tip_generous_p, 1.0f );</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Configure the Inference System</span></div>
-<div class="line">    qFIS_Setup( &amp;tipper, <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>,</div>
-<div class="line">                tipper_inputs, <span class="keyword">sizeof</span>(tipper_inputs),</div>
-<div class="line">                tipper_outputs, <span class="keyword">sizeof</span>(tipper_outputs),</div>
-<div class="line">                MFin, <span class="keyword">sizeof</span>(MFin), MFout, <span class="keyword">sizeof</span>(MFout),</div>
-<div class="line">                rules, rStrength, 3u );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">setup</a>( <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( service, 0.0, 1.0 );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( food, 0.0, 10.0 );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga22fe059619cb81a8b4f69443b9c7a02a">setupOutput</a>( tip, 0.0, 30.0 );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, poor, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 0.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, good, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 5.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( service, excellent, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29">gaussmf</a>, (<span class="keyword">const</span> real_t[]){ 1.5, 10.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( food, rancid, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, (<span class="keyword">const</span> real_t[]){ 0.0, 0.0, 1.0, 3.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga91ae428ccb7f3032dab49e6a9c61935f">setInputMF</a>( food, delicious, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094">trapmf</a>, (<span class="keyword">const</span> real_t[]){ 7.0, 9.0, 10.0, 10.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, cheap, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){ 0.0, 5.0, 10.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, average, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){10.0, 15.0, 20.0 } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){ 20.0, 25.0, 30.0 } );</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> tipper_run( <span class="keywordtype">float</span> *inputs, <span class="keywordtype">float</span> *outputs )</div>
+<div class="line"><span class="keywordtype">void</span> tipper_run( real_t *inputs, <span class="keywordtype">float</span> *outputs )</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Set the crips inputs</span></div>
-<div class="line">    qFIS_SetInput( tipper_inputs, service, inputs[ service ] );</div>
-<div class="line">    qFIS_SetInput( tipper_inputs, food, inputs[ food ] );</div>
+<div class="line">    tipper &lt;&lt; service &lt;&lt; inputs[ service ] &lt;&lt; food &lt;&lt; inputs[ food ];</div>
 <div class="line"> </div>
-<div class="line">    qFIS_Fuzzify( &amp;tipper );</div>
-<div class="line">    <span class="keywordflow">if</span> ( qFIS_Inference( &amp;tipper ) &gt; 0 ) {</div>
-<div class="line">        qFIS_DeFuzzify( &amp;tipper );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga0ae33df9b2f9bdb1708f9b65790b2613">fuzzify</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> ( tipper.<a class="code hl_function" href="group__qfis.html#gace40945b800efa5dc91fa3dc1062ebcd">inference</a>() ) {</div>
+<div class="line">        tipper.<a class="code hl_function" href="group__qfis.html#gac72dc7175183eba34beb63338a06cf9f">deFuzzify</a>();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <span class="comment">// Error!</span></div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Get the crips outputs</span></div>
-<div class="line">    outputs[ tip ] = qFIS_GetOutput( tipper_outputs, tip );</div>
+<div class="line">    outputs[ tip ] = tipper[ tip ];</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__qfis_html_ga0ae33df9b2f9bdb1708f9b65790b2613"><div class="ttname"><a href="group__qfis.html#ga0ae33df9b2f9bdb1708f9b65790b2613">fis::fuzzify</a></div><div class="ttdeci">bool fuzzify(void) noexcept</div><div class="ttdoc">Perform the fuzzification operation over the crisp inputs on the requested FIS object.</div><div class="ttdef"><b>Definition:</b> fis.cpp:247</div></div>
+<div class="ttc" id="agroup__qfis_html_gac72dc7175183eba34beb63338a06cf9f"><div class="ttname"><a href="group__qfis.html#gac72dc7175183eba34beb63338a06cf9f">fis::deFuzzify</a></div><div class="ttdeci">bool deFuzzify(void) noexcept</div><div class="ttdoc">Perform the de-Fuzzification operation to compute the crisp outputs.</div><div class="ttdef"><b>Definition:</b> fis.cpp:423</div></div>
+<div class="ttc" id="agroup__qfis_html_gace40945b800efa5dc91fa3dc1062ebcd"><div class="ttname"><a href="group__qfis.html#gace40945b800efa5dc91fa3dc1062ebcd">fis::inference</a></div><div class="ttdeci">bool inference(void) noexcept</div><div class="ttdoc">Perform the inference process on the FIS object.</div><div class="ttdef"><b>Definition:</b> fis.cpp:483</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qfis_codegen"></a>
 Code generation</h1>
 <p >Building a fuzzy system in code can become tedious, especially when you want to tune membership function parameters. It would be appropriate to have a graphical tool that reflects the changes made by each tweak.</p>
-<p >Although the qFIS engine does not provide such a tool, a well-known tool, MATLAB's Fuzzy Logic Toolbox, can be used to build the fuzzy system and generate qFIS-compatible C code. qLibs provides a MATLAB command that can be used to take a FIS object generated by that tool and generate C code based on the qFIS engine.</p>
-<p >Download the C-Code generator here:</p>
+<p >Although the FIS engine does not provide such a tool, a well-known tool, MATLAB's Fuzzy Logic Toolbox, can be used to build the fuzzy system and generate FIS-compatible C++ code. qLibs++ provides a MATLAB command that can be used to take a FIS object generated by that tool and generate C++ code based on the FIS engine.</p>
+<p >Download the C++-Code generator here:</p>
 <p ><a href="https://la.mathworks.com/matlabcentral/fileexchange/117465-qfiscgen-fuzzy-c-code-generator-for-embedded-systems"><img src="https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg" alt="" style="pointer-events: none;" class="inline"/></a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
