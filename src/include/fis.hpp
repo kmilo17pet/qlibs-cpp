@@ -11,15 +11,15 @@
 
 #include "include/types.hpp"
 
-/** @addtogroup qfis FIS - Fuzzy Inference System
-* @brief Fuzzy Inference System (FIS) Engine
-*  @{
-*/
-
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup qfis FIS - Fuzzy Inference System
+    * @brief Fuzzy Inference System (FIS) Engine
+    *  @{
+    */
+
     /**
     * @brief An enum with all the possible values to specify a membership
     * function.
@@ -192,9 +192,9 @@ namespace qlibs {
                                       const size_t n );
     /*! @endcond  */
 
-    /*! @cond  */
     class fisCore {
         protected:
+            /*! @cond  */
             enum defuzzMembers {
                 yMax = 0,
                 xSmallest = 1,
@@ -316,8 +316,8 @@ namespace qlibs {
                                            const fisDeFuzzState stage );
             static real_t deFuzzWtSum( fisOutput * const o,
                                        const fisDeFuzzState stage );
+            /*! @endcond  */
     };
-    /*! @endcond  */
 
     /**
     * @brief A FIS Membership Function
@@ -1204,8 +1204,8 @@ namespace qlibs {
                 return *this;
             }
     };
-}
 
-/** @}*/
+    /** @}*/
+}
 
 #endif /*QLIBS_FIS*/

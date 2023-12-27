@@ -13,16 +13,17 @@
 #include "include/tdl.hpp"
 #include "include/numa.hpp"
 
-/** @addtogroup  qltisys LTI Systems
-* @brief Classes for recursive evaluation of LTI systems
-* defined by transfer functions
-* @{
-*/
 
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup  qltisys LTI Systems
+    * @brief Classes for recursive evaluation of LTI systems
+    * defined by transfer functions
+    * @{
+    */
+
     enum ltisysType {
         LTISYS_TYPE_UNKNOWN = 0,
         LTISYS_TYPE_CONTINUOUS,
@@ -372,8 +373,8 @@ namespace qlibs {
             */
             real_t excite( real_t u ) override;
     };
-}
 
-/** @}*/
+    /** @}*/
+}
 
 #endif /*QLIBS_LTISYS*/

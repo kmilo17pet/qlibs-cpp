@@ -12,15 +12,14 @@
 #include "include/types.hpp"
 #include <iostream>
 
-/** @addtogroup qfp16 Fixed-Point Q16.16 math
-* @brief Fixed-point Q16.16 math library
-*  @{
-*/
-
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup qfp16 Fixed-Point Q16.16 math
+    * @brief Fixed-point Q16.16 math library
+    *  @{
+    */
 
     /*! @cond  */
     using fp16Raw_t = int32_t;
@@ -635,8 +634,7 @@ namespace qlibs {
     /**  @brief @c 1/sqrt(2) The inverse of the square root of @c 2 as a Fixed-point Q16.16 value.*/
     constexpr fp16 FP_SQRT1_2  = 0.707106781186547524401_fp;
 
+    /** @}*/
 }
-
-/** @}*/
 
 #endif /*QLIBS_FP16*/

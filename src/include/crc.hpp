@@ -11,15 +11,16 @@
 
 #include "include/types.hpp" 
 
-/** @addtogroup qcrc CRC
-* @brief Generic Cyclic Redundancy Check (CRC) calculator class
-*  @{
-*/
-
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup qcrc CRC
+    * @brief Generic Cyclic Redundancy Check (CRC) calculator class
+    *  @{
+    */
+
+
     /**
     * @brief Enumeration with all the supported cyclic redundancy checks
     */ 
@@ -564,8 +565,10 @@ namespace qlibs {
                 return generic( CRC32, pData, length, 0x000000AFU );
             }
     };
+
+    /** @}*/
 }
 
-/** @}*/
+
 
 #endif /*QLIBS_CRC*/

@@ -14,15 +14,15 @@
 #include "include/numa.hpp"
 #include "include/ltisys.hpp"
 
-/** @addtogroup qpid PID Controller
-* @brief Closed Loop PID Controller class
-* @{
-*/
-
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup qpid PID Controller
+    * @brief Closed Loop PID Controller class
+    * @{
+    */
+
     /**
     * @brief Enumeration class with the operational modes for the PID controller
     */
@@ -340,8 +340,8 @@ namespace qlibs {
             */
             bool reset( void ) noexcept;
     };
-}
 
-/** @}*/
+    /** @}*/
+}
 
 #endif /*QLIBS_PID*/

@@ -12,17 +12,14 @@
 
 #include "include/types.hpp"
 
-/** @addtogroup qbitfield Bit-Field
-* @brief API for the Bit-Field manipulation library
-*  @{
-*/
 
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
 
-    /** @ingroup qbitfield
+    /** @addtogroup qbitfield Bit-Field
+    * @brief API for the Bit-Field manipulation library
     *  @{
     */
 
@@ -212,6 +209,5 @@ namespace qlibs {
     /** @}*/
 }
 
-/** @}*/
 
 #endif /*QLIBS_BITFIELD*/

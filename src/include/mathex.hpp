@@ -11,15 +11,17 @@
 
 #include "include/types.hpp"
 
-/** @addtogroup  qfmathex Math extra
-* @brief Extra floating-point math and analysis functions
-* @{
-*/
 
 /**
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
+    /** @addtogroup  qfmathex Math extra
+    * @brief Extra floating-point math and analysis functions
+    * @{
+    */
+
+
      /**
     * @brief Scales the given input @a x in value range given by  @a xMin and 
     * @a xMax to value range specified by the @a yMin and @a yMax.
@@ -103,7 +105,9 @@ namespace qlibs {
                    const real_t cx,
                    const real_t cy,
                    const real_t r ) noexcept;
+
+    /** @}*/
 }
-/** @}*/
+
 
 #endif /*QLIBS_MATHEX*/
