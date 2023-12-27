@@ -13,13 +13,12 @@
 #include "include/types.hpp" 
 #include "include/smoother.hpp"
 
+/** @addtogroup qrms RMS estimator.
+* @brief Class for Recursive Root Mean Square RMS estimation
+*  @{
+*/
+
 namespace qlibs {
-
-    /** @addtogroup qrms RMS estimator.
-    * @brief Class for Recursive Root Mean Square RMS estimation
-    *  @{
-    */
-
     /**
     * @brief RMS calculator object
     */
@@ -79,9 +78,8 @@ namespace qlibs {
             bool setParams( const real_t l,
                             const real_t a ) noexcept;
     };
-
-    /** @}*/
-
 }
+
+/** @}*/
 
 #endif /*QLIBS_RMS*/

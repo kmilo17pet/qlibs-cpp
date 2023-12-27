@@ -11,13 +11,13 @@
  * @brief Type-Generic utilities
  **/
 
+/** @addtogroup  qtypegeneric Type-generic utilities
+* @brief Type-generic utilities
+* @{
+*/
+
 namespace qlibs {
     namespace generic {
-
-        /** @addtogroup  qtypegeneric Type-generic utilities
-        * @brief Type-generic utilities
-        * @{
-        */
 
         /*! @cond  */
         using compareFcn_t = int (*)( const void *, const void *, void * );
@@ -233,9 +233,9 @@ namespace qlibs {
                      forEachFcn_t f,
                      const bool dir = false,
                      void *arg = nullptr ) noexcept;
-    
-        /** @}*/
     }
 }
+
+/** @}*/
 
 #endif /*QLIBS_GENERIC*/

@@ -54,9 +54,6 @@ namespace qlibs {
             nonCopyable& operator=( const nonCopyable & );
     };
     /*! @endcond */
-
-    /** @}*/
-
 }
 
 /*! @cond */

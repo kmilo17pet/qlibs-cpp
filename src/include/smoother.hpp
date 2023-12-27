@@ -12,13 +12,12 @@
 #include "include/types.hpp" 
 #include "include/tdl.hpp" 
 
+/** @addtogroup qssmoother Smoothing filters
+* @brief Filters to smooth noisy signals
+*  @{
+*/
+
 namespace qlibs {
-
-    /** @addtogroup qssmoother Smoothing filters
-    * @brief Filters to smooth noisy signals
-    *  @{
-    */
-
     /**
     * @brief The smoother base abstract class
     */
@@ -510,9 +509,8 @@ namespace qlibs {
             */
             real_t smooth( const real_t x ) override;
     };
-
-    /** @}*/
-
 }
+
+/** @}*/
 
 #endif /*QLIBS_SMOOTHER*/

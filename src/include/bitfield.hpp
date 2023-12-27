@@ -18,6 +18,10 @@
 */
 namespace qlibs {
 
+    /** @ingroup qbitfield
+    *  @{
+    */
+
     /**
     * @brief Determine the @c uint8_t array-size to setup a BitField instance.
     * @param[in] n The desired number of bits for the BitField.
@@ -200,6 +204,8 @@ namespace qlibs {
             void* dump( void * const dst,
                         const size_t n ) noexcept;
     };
+
+    /** @}*/
 }
 
 /** @}*/

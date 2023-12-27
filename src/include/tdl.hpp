@@ -15,13 +15,12 @@
 
 #include "include/types.hpp" 
 
+/** @addtogroup  qtdl Tapped Delay Line
+* @brief An implementation of the Tapped Delay Line (TDL) structure in O(1) 
+*  @{
+*/
+
 namespace qlibs {
-
-    /** @addtogroup  qtdl Tapped Delay Line
-    * @brief An implementation of the Tapped Delay Line (TDL) structure in O(1) 
-    *  @{
-    */
-
     /**
     * @brief A Tapped Delay Line (TDL) object
     * @details The instance should be initialized using the td::setup() method.
@@ -152,9 +151,8 @@ namespace qlibs {
                 return ( nullptr != head );
             }
     };
-
-    /** @}*/
-
 }
+
+/** @}*/
 
 #endif /*QLIBS_TDL*/
