@@ -134,60 +134,60 @@ $(document).ready(function(){initNavTree('generic_8hpp_source.html',''); initRes
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;include/types.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html">   20</a></span>    <span class="keyword">namespace </span>generic {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">using</span> compareFcn_t = int (*)( <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> * );</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">using</span> forEachFcn_t = int (* <span class="keyword">const</span>)( int, <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> * );</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aaddaac5dad20d93d3dc6bd99db00579d">swap</a>( <span class="keywordtype">void</span> * <span class="keyword">const</span> x,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                   <span class="keywordtype">void</span> * <span class="keyword">const</span> y,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                   <span class="keywordtype">size_t</span> n ) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a">   63</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a">sort</a>( <span class="keywordtype">void</span> * <span class="keyword">const</span> pbase,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                   <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                   <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                   compareFcn_t cmp,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                   <span class="keywordtype">void</span> *arg = <span class="keyword">nullptr</span> ) noexcept;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a6db21157fb7adbaadc34e11b877230f8">reverse</a>( <span class="keywordtype">void</span> * const pbase,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                      const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                      const <span class="keywordtype">size_t</span> init,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                      const <span class="keywordtype">size_t</span> end ) noexcept;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aaf19b6168bf0e9931cad22a3d66149f9">rotate</a>( <span class="keywordtype">void</span> * const pbase,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                     const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                     const <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                     const <span class="keywordtype">int</span> k ) noexcept;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877">set</a>( <span class="keywordtype">void</span> * const pbase,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                   const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                   const <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                   const <span class="keywordtype">void</span> * const ref ) noexcept;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e">  150</a></span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e">lSearch</a>( const <span class="keywordtype">void</span> *key,</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                       const <span class="keywordtype">void</span> *pbase,</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                       const <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                       const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                       compareFcn_t compar,</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                       <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0">  193</a></span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0">bSearch</a>( const <span class="keywordtype">void</span> *key,</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                       const <span class="keywordtype">void</span> *pbase,</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                       const <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                       const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                       compareFcn_t compar,</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                       <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664">  230</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664">forEach</a>( <span class="keywordtype">void</span> *pbase,</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                     const <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                     const <span class="keywordtype">size_t</span> n,</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                     forEachFcn_t f,</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                     const <span class="keywordtype">bool</span> dir = false,</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                     <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#endif </span><span class="comment">/*QLIBS_GENERIC*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html">   23</a></span>    <span class="keyword">namespace </span>generic {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">using</span> compareFcn_t = int (*)( <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> * );</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">using</span> forEachFcn_t = int (* <span class="keyword">const</span>)( int, <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> * );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aaddaac5dad20d93d3dc6bd99db00579d">swap</a>( <span class="keywordtype">void</span> * <span class="keyword">const</span> x,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                   <span class="keywordtype">void</span> * <span class="keyword">const</span> y,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                   <span class="keywordtype">size_t</span> n ) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a">   66</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a">sort</a>( <span class="keywordtype">void</span> * <span class="keyword">const</span> pbase,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                   <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                   <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                   compareFcn_t cmp,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                   <span class="keywordtype">void</span> *arg = <span class="keyword">nullptr</span> ) noexcept;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a6db21157fb7adbaadc34e11b877230f8">reverse</a>( <span class="keywordtype">void</span> * const pbase,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                      const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                      const <span class="keywordtype">size_t</span> init,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                      const <span class="keywordtype">size_t</span> end ) noexcept;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aaf19b6168bf0e9931cad22a3d66149f9">rotate</a>( <span class="keywordtype">void</span> * const pbase,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                     const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                     const <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                     const <span class="keywordtype">int</span> k ) noexcept;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877">set</a>( <span class="keywordtype">void</span> * const pbase,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                   const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                   const <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                   const <span class="keywordtype">void</span> * const ref ) noexcept;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e">  153</a></span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e">lSearch</a>( const <span class="keywordtype">void</span> *key,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                       const <span class="keywordtype">void</span> *pbase,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                       const <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                       const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                       compareFcn_t compar,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                       <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0">  196</a></span>        <span class="keywordtype">void</span>* <a class="code hl_function" href="namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0">bSearch</a>( const <span class="keywordtype">void</span> *key,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                       const <span class="keywordtype">void</span> *pbase,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                       const <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                       const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                       compareFcn_t compar,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                       <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664">  233</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664">forEach</a>( <span class="keywordtype">void</span> *pbase,</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                     const <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                     const <span class="keywordtype">size_t</span> n,</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                     forEachFcn_t f,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                     const <span class="keywordtype">bool</span> dir = false,</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                     <span class="keywordtype">void</span> *arg = <span class="keywordtype">nullptr</span> ) noexcept;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#endif </span><span class="comment">/*QLIBS_GENERIC*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_a08acc13c13a224f664d821d1875ed06a"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a">qlibs::generic::sort</a></div><div class="ttdeci">void sort(void *const pbase, size_t n, size_t size, compareFcn_t cmp, void *arg=nullptr) noexcept</div><div class="ttdoc">Sorts the given array pointed to by pbase in ascending order. The array contains n elements of size b...</div></div>
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_a214751c5f34431838e9d5f2015d51877"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877">qlibs::generic::set</a></div><div class="ttdeci">void * set(void *const pbase, const size_t size, const size_t n, const void *const ref) noexcept</div><div class="ttdoc">Set the data pointed by ref to every element of the array pointed by pbase. The array contains n elem...</div><div class="ttdef"><b>Definition:</b> generic.cpp:216</div></div>
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_a5604d8d2805e5eeda2e53544b110a7a0"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0">qlibs::generic::bSearch</a></div><div class="ttdeci">void * bSearch(const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</div><div class="ttdoc">Performs a binary search over an array of n elements pointed to by pbase for an element that matches ...</div></div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('generic_8hpp_source.html',''); initRes
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_aaf19b6168bf0e9931cad22a3d66149f9"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#aaf19b6168bf0e9931cad22a3d66149f9">qlibs::generic::rotate</a></div><div class="ttdeci">void rotate(void *const pbase, const size_t size, const size_t n, const int k) noexcept</div><div class="ttdoc">Rotates k elements of the array pointed to by pbase. The array contains n elements of size bytes....</div><div class="ttdef"><b>Definition:</b> generic.cpp:189</div></div>
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_ab4818e24c0d6ee84051d6870f19d8664"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664">qlibs::generic::forEach</a></div><div class="ttdeci">int forEach(void *pbase, const size_t size, const size_t n, forEachFcn_t f, const bool dir=false, void *arg=nullptr) noexcept</div><div class="ttdoc">Iterates n elements of the array pointed to by pbase. The size of each element is specified by size....</div></div>
 <div class="ttc" id="anamespaceqlibs_1_1generic_html_aff612ff160d8c61605f1b25386ae9a9e"><div class="ttname"><a href="namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e">qlibs::generic::lSearch</a></div><div class="ttdeci">void * lSearch(const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</div><div class="ttdoc">Performs a linear search over an array of n elements pointed to by pbase for an element that matches ...</div></div>
-<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
