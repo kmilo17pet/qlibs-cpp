@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('qfis_desc.html',''); initResizable(); 
 <h1><a class="anchor" id="qfis_mamdani"></a>
 Mamdani</h1>
 <p >In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani systems have more intuitive and easier to understand rule bases, they are well-suited to expert system applications where the rules are created from human expert knowledge.</p>
-<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the ::Mamdani enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the fisType::Mamdani enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -168,7 +168,7 @@ Sugeno</h1>
 <p >The final output of the system is the weighted average/sum over all rule outputs:</p>
 <center> \(out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \) </center><p >where \(N\) is the number of rules.</p>
 <p >Because of the linear dependence of each rule on the input variables, the Sugeno method is ideal for acting as an interpolating supervisor of multiple linear controllers that are to be applied, respectively, to different operating conditions of a dynamic nonlinear system.</p>
-<p >To specificy a FIS of this type, use the ::Sugeno enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >To specificy a FIS of this type, use the fisType::Sugeno enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -184,7 +184,7 @@ Sugeno</h1>
 Tsukamoto</h1>
 <p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
 <p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
-<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
+<p >To specify a FIS of this type, use the fisType::Tsukamoto enum definition when calling <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -200,14 +200,14 @@ Tsukamoto</h1>
 Defuzzification Methods</h1>
 <p >FIS supports five different methods, as listed in the fisDeFuzzMethod enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
-<li>::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+<li>fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
 <center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
-<li>::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
-<li>::mom : Middle of Maximum. Only for ::Mamdani systems.</li>
-<li>::som : Smallest of Maximum. Only for ::Mamdani systems.</li>
-<li>::lom : Largest of Maximum. Only for ::Mamdani systems.</li>
-<li>::wtaver (default): Weighted average of all rule outputs. this method applies only for ::Sugeno and ::Tsukamoto systems.</li>
+<li>fisDeFuzzMethod::bisector : this method applies only for fisType::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>fisDeFuzzMethod::mom : Middle of Maximum. Only for fisType::Mamdani systems.</li>
+<li>fisDeFuzzMethod::som : Smallest of Maximum. Only for fisType::Mamdani systems.</li>
+<li>fisDeFuzzMethod::lom : Largest of Maximum. Only for fisType::Mamdani systems.</li>
+<li>fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. this method applies only for fisType::Sugeno and fisType::Tsukamoto systems.</li>
 <li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148" title="Setup and initialize the FIS instance.">fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="group__qfis.html#ga3a11ddb724e9cd036fab060892387d2c" title="Change the default de-Fuzzification method of the FIS instance.">fis::setDeFuzzMethod()</a> function.</dd></dl>
@@ -279,13 +279,13 @@ Building a Mamdani FIS</h1>
 </div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Please note that all tag names are unique.</dd></dl>
 <p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type fisRules and the contents should be rules constructed with the provided statements:</p>
 <ul>
-<li>FIS_RULES_BEGIN to start the rules set</li>
-<li>FIS_RULES_END to end the rules set</li>
-<li>IF to start a rule sentence</li>
-<li>END to end a rule sentence</li>
-<li>AND and OR fuzzy connectors</li>
-<li>IS and IS_NOT to represent a premise and a negated premise respectively.</li>
-<li>THEN to represent the implication</li>
+<li>#FIS_RULES_BEGIN to start the rules set</li>
+<li>#FIS_RULES_END to end the rules set</li>
+<li>#IF to start a rule sentence</li>
+<li>#END to end a rule sentence</li>
+<li>#AND and OR fuzzy connectors</li>
+<li>#IS and #IS_NOT to represent a premise and a negated premise respectively.</li>
+<li>#THEN to represent the implication</li>
 </ul>
 <p >Let's apply some of these statements to build the rule set.</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = { </div>
@@ -324,7 +324,7 @@ Building a Mamdani FIS</h1>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The number of parameters may vary depending on the shape of the membership function.</dd></dl>
 <h1><a class="anchor" id="qfis_eval"></a>
 Evaluating a Fuzzy Inference System</h1>
-<p >If we already have a fuzzy system configured with qFIS_Setup(), we can evaluate it by using qFIS_Fuzzify(), qFIS_Inference() and qFIS_DeFuzzify(). Input values can be set with qFIS_SetInput() and output values can be obtained with qFIS_GetOutput()</p>
+<p >If we already have a fuzzy system configured with <a class="el" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">fis::setup()</a>, we can evaluate it by using <a class="el" href="group__qfis.html#ga0ae33df9b2f9bdb1708f9b65790b2613">fis::fuzzify()</a>, <a class="el" href="group__qfis.html#gace40945b800efa5dc91fa3dc1062ebcd">fis::inference()</a> and <a class="el" href="group__qfis.html#gac72dc7175183eba34beb63338a06cf9f">fis::deFuzzify()</a>. Input values can be set with <a class="el" href="group__qfis.html#ga3d6773a6be2a920b121ad8692a79d8c6">fis::setInput()</a> and output values can be obtained with <a class="el" href="group__qfis.html#gad0fe1c7034970e44e782635c7e171c64">fis::getOutput()</a>. Also you can use the stream operator <code>&lt;&lt;</code> to set the inputs and the index operator <code></code>[] to get the outputs of the FIS system (see example bellow).</p>
 <p >To show its use, first we are going to put everything together in a single code snippet and we are going to create two functions, <code>tipper_init()</code> and <code>tipper_run()</code> that will be in charge of setting up the fuzzy inference system and evaluating it respectively.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;tipper_fis.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;qfis.h&quot;</span></div>
@@ -343,7 +343,7 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line"><span class="comment">// I/O Membership Objects</span></div>
 <div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classfis_m_f.html">fisMF</a> MFin[5], MFout[3];</div>
 <div class="line"><span class="comment">// Rules of the inference system</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = { </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = {</div>
 <div class="line">    FIS_RULES_BEGIN</div>
 <div class="line">       IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END</div>
 <div class="line">       IF service IS service_good THEN tip IS tip_average END</div>
@@ -356,7 +356,7 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> tipper_init( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">setup</a>( <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );</div>
+<div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gaa58234ed41fb09104a813e0f83e86148">setup</a>( <a class="code hl_enumvalue" href="group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799">Mamdani</a>, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );</div>
 <div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( service, 0.0, 1.0 );</div>
 <div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#gab07d6e783e98968be63253d35eb6585a">setupInput</a>( food, 0.0, 10.0 );</div>
 <div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga22fe059619cb81a8b4f69443b9c7a02a">setupOutput</a>( tip, 0.0, 30.0 );</div>
@@ -370,7 +370,7 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line">    tipper.<a class="code hl_function" href="group__qfis.html#ga3406a440426dd8d36f097c75e749d581">setOutputMF</a>( tip, generous, <a class="code hl_enumvalue" href="group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9">trimf</a>, (<span class="keyword">const</span> real_t[]){ 20.0, 25.0, 30.0 } );</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> tipper_run( real_t *inputs, <span class="keywordtype">float</span> *outputs )</div>
+<div class="line"><span class="keywordtype">void</span> tipper_run( real_t *inputs, real_t *outputs )</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Set the crips inputs</span></div>
 <div class="line">    tipper &lt;&lt; service &lt;&lt; inputs[ service ] &lt;&lt; food &lt;&lt; inputs[ food ];</div>
