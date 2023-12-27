@@ -127,7 +127,9 @@ $(document).ready(function(){initNavTree('group__qltisys.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">LTI Systems</div></div>
 </div><!--header-->
 <div class="contents">
@@ -135,15 +137,91 @@ $(document).ready(function(){initNavTree('group__qltisys.html',''); initResizabl
 <p>Classes for recursive evaluation of LTI systems defined by transfer functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceqlibs"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html">qlibs</a></td></tr>
-<tr class="memdesc:namespaceqlibs"><td class="mdescLeft">&#160;</td><td class="mdescRight">The qLibs++ library namespace. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html">qlibs::ltisys</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A LTI system base class.  <a href="classqlibs_1_1ltisys.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1discrete_system.html">qlibs::discreteSystem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A LTI discrete system object.  <a href="classqlibs_1_1discrete_system.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html">qlibs::continuousSystem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A LTI continuous system object.  <a href="classqlibs_1_1continuous_system.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gafadec0837d97658d7d08467310f1b0da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#gafadec0837d97658d7d08467310f1b0da">qlibs::continuousStates</a> = <a class="el" href="classqlibs_1_1state.html">state</a>[]</td></tr>
+<tr class="memdesc:gafadec0837d97658d7d08467310f1b0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify continuous states.  <a href="group__qltisys.html#gafadec0837d97658d7d08467310f1b0da">More...</a><br /></td></tr>
+<tr class="separator:gafadec0837d97658d7d08467310f1b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eb9aaa272fe0c8948b0b33f3e81ff0e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e">qlibs::discreteStates</a> = <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>[]</td></tr>
+<tr class="memdesc:ga2eb9aaa272fe0c8948b0b33f3e81ff0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify discrete states.  <a href="group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e">More...</a><br /></td></tr>
+<tr class="separator:ga2eb9aaa272fe0c8948b0b33f3e81ff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">qlibs::ltisysType</a> { <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18">qlibs::LTISYS_TYPE_UNKNOWN</a>
+, <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd">qlibs::LTISYS_TYPE_CONTINUOUS</a>
+, <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b">qlibs::LTISYS_TYPE_DISCRETE</a>
+ }</td></tr>
+<tr class="separator:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Classes for recursive evaluation of LTI systems defined by transfer functions. </p>
 <p >For a brief description of this module, please read <a class="el" href="qltisys_desc.html">Recursive LTI Systems Evaluation by transfer functions.</a> </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="gafadec0837d97658d7d08467310f1b0da" name="gafadec0837d97658d7d08467310f1b0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafadec0837d97658d7d08467310f1b0da">&#9670;&nbsp;</a></span>continuousStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__qltisys.html#gafadec0837d97658d7d08467310f1b0da">qlibs::continuousStates</a> = typedef <a class="el" href="classqlibs_1_1state.html">state</a>[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type to specify continuous states. </p>
+
+</div>
+</div>
+<a id="ga2eb9aaa272fe0c8948b0b33f3e81ff0e" name="ga2eb9aaa272fe0c8948b0b33f3e81ff0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2eb9aaa272fe0c8948b0b33f3e81ff0e">&#9670;&nbsp;</a></span>discreteStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e">qlibs::discreteStates</a> = typedef <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type to specify discrete states. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga07d3d07a42c49b5cb0850f77ad392faa" name="ga07d3d07a42c49b5cb0850f77ad392faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07d3d07a42c49b5cb0850f77ad392faa">&#9670;&nbsp;</a></span>ltisysType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">qlibs::ltisysType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18" name="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18"></a>LTISYS_TYPE_UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd" name="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd"></a>LTISYS_TYPE_CONTINUOUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b" name="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b"></a>LTISYS_TYPE_DISCRETE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('classqlibs_1_1pid_controller.html','')
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classqlibs_1_1pid_controller-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">qlibs::pidController Class Reference</div></div>
+  <div class="headertitle"><div class="title">qlibs::pidController Class Reference<div class="ingroups"><a class="el" href="group__qpid.html">PID Controller</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -159,7 +159,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8d14813671430e5fb851cec22253eb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad8d14813671430e5fb851cec22253eb8">setup</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
 <tr class="memdesc:ad8d14813671430e5fb851cec22253eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#ad8d14813671430e5fb851cec22253eb8">More...</a><br /></td></tr>
 <tr class="separator:ad8d14813671430e5fb851cec22253eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91c9b45ca2efaae7aa8184af3139c49f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f">setDirection</a> (const <a class="el" href="namespaceqlibs.html#aa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a> d) noexcept</td></tr>
+<tr class="memitem:a91c9b45ca2efaae7aa8184af3139c49f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f">setDirection</a> (const <a class="el" href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a> d) noexcept</td></tr>
 <tr class="memdesc:a91c9b45ca2efaae7aa8184af3139c49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID control action direction.  <a href="classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f">More...</a><br /></td></tr>
 <tr class="separator:a91c9b45ca2efaae7aa8184af3139c49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefe02426e77499309ecdaae144869936"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aefe02426e77499309ecdaae144869936">setParams</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ti, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> td) noexcept</td></tr>
@@ -186,14 +186,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">setDerivativeFilter</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Beta) noexcept</td></tr>
 <tr class="memdesc:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tuning parameter for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">More...</a><br /></td></tr>
 <tr class="separator:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">setMode</a> (const <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3">pidMode</a> Mode) noexcept</td></tr>
-<tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">More...</a><br /></td></tr>
+<tr class="memitem:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">setMode</a> (const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> Mode) noexcept</td></tr>
+<tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">More...</a><br /></td></tr>
 <tr class="separator:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea472ad5950fcb964137688e8aef8f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0">setReferenceWeighting</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> gb, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> gc) noexcept</td></tr>
 <tr class="memdesc:a7ea472ad5950fcb964137688e8aef8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system.  <a href="classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0">More...</a><br /></td></tr>
 <tr class="separator:a7ea472ad5950fcb964137688e8aef8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1ab27029df2b125f3c658534235fdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc">setManualInput</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> manualInput) noexcept</td></tr>
-<tr class="memdesc:a1c1ab27029df2b125f3c658534235fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed.  <a href="classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc">More...</a><br /></td></tr>
+<tr class="memdesc:a1c1ab27029df2b125f3c658534235fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed.  <a href="classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc">More...</a><br /></td></tr>
 <tr class="separator:a1c1ab27029df2b125f3c658534235fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32aad63ae45b46882838a14940180424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424">setModelReferenceControl</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> &amp;modelRef, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Gamma=0.5, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Alpha=0.01) noexcept</td></tr>
 <tr class="memdesc:a32aad63ae45b46882838a14940180424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the additive MRAC(Model Reference Adaptive Control) feature.  <a href="classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424">More...</a><br /></td></tr>
@@ -595,7 +595,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool pidController::setDirection </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a>&#160;</td>
           <td class="paramname"><em>d</em></td><td>)</td>
           <td></td>
         </tr>
@@ -811,7 +811,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed. </p>
+<p>Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">manualInput</td><td>The value of the manual input. </td></tr>
@@ -834,7 +834,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool pidController::setMode </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3">pidMode</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a>&#160;</td>
           <td class="paramname"><em>Mode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -846,7 +846,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Change the controller operational mode. In <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
+<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">Mode</td><td>The desired operational mode. </td></tr>

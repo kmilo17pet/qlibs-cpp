@@ -27,6 +27,7 @@ var annotated_dup =
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ],
     [ "fis", "classfis.html", "classfis" ],
+    [ "fisCore", "classfis_core.html", null ],
     [ "fisInput", "classfis_input.html", "classfis_input" ],
     [ "fisMF", "classfis_m_f.html", "classfis_m_f" ],
     [ "fisOutput", "classfis_output.html", "classfis_output" ],

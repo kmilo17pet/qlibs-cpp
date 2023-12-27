@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
-    [ "fisCore", null, [
+    [ "fisCore", "classfis_core.html", [
       [ "fis", "classfis.html", null ]
     ] ],
     [ "fisIOBase", null, [
