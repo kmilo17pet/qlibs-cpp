@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: smootherMWM1 Class Reference</title>
+<title>API Reference: qlibs::smootherMWM1 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -127,8 +127,9 @@ $(document).ready(function(){initNavTree('classqlibs_1_1smoother_m_w_m1.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">smootherMWM1 Class Reference<div class="ingroups"><a class="el" href="group__qssmoother.html">Smoothing filters</a></div></div></div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classqlibs_1_1smoother_m_w_m1-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::smootherMWM1 Class Reference<div class="ingroups"><a class="el" href="group__qssmoother.html">Smoothing filters</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -137,49 +138,49 @@ $(document).ready(function(){initNavTree('classqlibs_1_1smoother_m_w_m1.html',''
 
 <p><code>#include &lt;<a class="el" href="smoother_8hpp_source.html">smoother.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for smootherMWM1:</div>
+Inheritance diagram for qlibs::smootherMWM1:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classqlibs_1_1smoother_m_w_m1.png" usemap="#smootherMWM1_map" alt=""/>
-  <map id="smootherMWM1_map" name="smootherMWM1_map">
-<area href="classqlibs_1_1smoother.html" title="The smoother base abstract class." alt="smoother" shape="rect" coords="0,0,103,24"/>
+  <img src="classqlibs_1_1smoother_m_w_m1.png" usemap="#qlibs::smootherMWM1_map" alt=""/>
+  <map id="qlibs::smootherMWM1_map" name="qlibs::smootherMWM1_map">
+<area href="classqlibs_1_1smoother.html" title="The smoother base abstract class." alt="qlibs::smoother" shape="rect" coords="0,0,134,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad0481177358cfac68da599a3370b759"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#aad0481177358cfac68da599a3370b759">setup</a> (<a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> *window, const size_t w_size)</td></tr>
-<tr class="memdesc:aad0481177358cfac68da599a3370b759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Moving Window Median filter.  <a href="classqlibs_1_1smoother_m_w_m1.html#aad0481177358cfac68da599a3370b759">More...</a><br /></td></tr>
-<tr class="separator:aad0481177358cfac68da599a3370b759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c3e2797edd9dab0b36893d3674eec8b"><td class="memTemplParams" colspan="2">template&lt;size_t windowSize&gt; </td></tr>
-<tr class="memitem:a6c3e2797edd9dab0b36893d3674eec8b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a6c3e2797edd9dab0b36893d3674eec8b">setup</a> (<a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;window)[windowSize])</td></tr>
-<tr class="memdesc:a6c3e2797edd9dab0b36893d3674eec8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Moving Window Median filter.  <a href="classqlibs_1_1smoother_m_w_m1.html#a6c3e2797edd9dab0b36893d3674eec8b">More...</a><br /></td></tr>
-<tr class="separator:a6c3e2797edd9dab0b36893d3674eec8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1116b73eb7b200a50733aad75495a6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a1116b73eb7b200a50733aad75495a6fe">smooth</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> x) override</td></tr>
-<tr class="memdesc:a1116b73eb7b200a50733aad75495a6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em>x</em>.  <a href="classqlibs_1_1smoother_m_w_m1.html#a1116b73eb7b200a50733aad75495a6fe">More...</a><br /></td></tr>
-<tr class="separator:a1116b73eb7b200a50733aad75495a6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classqlibs_1_1smoother"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classqlibs_1_1smoother')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1smoother.html">smoother</a></td></tr>
-<tr class="memitem:a3bed58b46f0fb23aeb1ec60c340f1f90 inherit pub_methods_classqlibs_1_1smoother"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother.html#a3bed58b46f0fb23aeb1ec60c340f1f90">isInitialized</a> (void) const</td></tr>
-<tr class="memdesc:a3bed58b46f0fb23aeb1ec60c340f1f90 inherit pub_methods_classqlibs_1_1smoother"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the smoother filter is initialized.  <a href="classqlibs_1_1smoother.html#a3bed58b46f0fb23aeb1ec60c340f1f90">More...</a><br /></td></tr>
-<tr class="separator:a3bed58b46f0fb23aeb1ec60c340f1f90 inherit pub_methods_classqlibs_1_1smoother"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e0f8dc9ee62cc59592a8154069b347 inherit pub_methods_classqlibs_1_1smoother"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother.html#ae6e0f8dc9ee62cc59592a8154069b347">reset</a> (void)</td></tr>
-<tr class="memdesc:ae6e0f8dc9ee62cc59592a8154069b347 inherit pub_methods_classqlibs_1_1smoother"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the the smoother filter.  <a href="classqlibs_1_1smoother.html#ae6e0f8dc9ee62cc59592a8154069b347">More...</a><br /></td></tr>
-<tr class="separator:ae6e0f8dc9ee62cc59592a8154069b347 inherit pub_methods_classqlibs_1_1smoother"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068d4ea6d1fe45302c2dace1761aa6eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a068d4ea6d1fe45302c2dace1761aa6eb">setup</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *window, const size_t w_size)</td></tr>
+<tr class="memdesc:a068d4ea6d1fe45302c2dace1761aa6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Moving Window Median filter.  <a href="classqlibs_1_1smoother_m_w_m1.html#a068d4ea6d1fe45302c2dace1761aa6eb">More...</a><br /></td></tr>
+<tr class="separator:a068d4ea6d1fe45302c2dace1761aa6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57695364ca4d022ba9593a79c9daeba"><td class="memTemplParams" colspan="2">template&lt;size_t windowSize&gt; </td></tr>
+<tr class="memitem:ad57695364ca4d022ba9593a79c9daeba"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#ad57695364ca4d022ba9593a79c9daeba">setup</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;window)[windowSize])</td></tr>
+<tr class="memdesc:ad57695364ca4d022ba9593a79c9daeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Moving Window Median filter.  <a href="classqlibs_1_1smoother_m_w_m1.html#ad57695364ca4d022ba9593a79c9daeba">More...</a><br /></td></tr>
+<tr class="separator:ad57695364ca4d022ba9593a79c9daeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81521b6b6acc5ac08aa17b71a2305762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m1.html#a81521b6b6acc5ac08aa17b71a2305762">smooth</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> x) override</td></tr>
+<tr class="memdesc:a81521b6b6acc5ac08aa17b71a2305762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em>x</em>.  <a href="classqlibs_1_1smoother_m_w_m1.html#a81521b6b6acc5ac08aa17b71a2305762">More...</a><br /></td></tr>
+<tr class="separator:a81521b6b6acc5ac08aa17b71a2305762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classqlibs_1_1smoother"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classqlibs_1_1smoother')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a></td></tr>
+<tr class="memitem:aec30c8dbc4317e6e36fbebe8e84a0b29 inherit pub_methods_classqlibs_1_1smoother"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother.html#aec30c8dbc4317e6e36fbebe8e84a0b29">isInitialized</a> (void) const</td></tr>
+<tr class="memdesc:aec30c8dbc4317e6e36fbebe8e84a0b29 inherit pub_methods_classqlibs_1_1smoother"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the smoother filter is initialized.  <a href="classqlibs_1_1smoother.html#aec30c8dbc4317e6e36fbebe8e84a0b29">More...</a><br /></td></tr>
+<tr class="separator:aec30c8dbc4317e6e36fbebe8e84a0b29 inherit pub_methods_classqlibs_1_1smoother"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93047869cb3857e7c18924df8433ae32 inherit pub_methods_classqlibs_1_1smoother"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32">reset</a> (void)</td></tr>
+<tr class="memdesc:a93047869cb3857e7c18924df8433ae32 inherit pub_methods_classqlibs_1_1smoother"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the the smoother filter.  <a href="classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32">More...</a><br /></td></tr>
+<tr class="separator:a93047869cb3857e7c18924df8433ae32 inherit pub_methods_classqlibs_1_1smoother"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A Moving Window Median filter. </p>
 <dl class="section note"><dt>Note</dt><dd>Time complexity is O(n) </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aad0481177358cfac68da599a3370b759" name="aad0481177358cfac68da599a3370b759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad0481177358cfac68da599a3370b759">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+<a id="a068d4ea6d1fe45302c2dace1761aa6eb" name="a068d4ea6d1fe45302c2dace1761aa6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068d4ea6d1fe45302c2dace1761aa6eb">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool setup </td>
+          <td class="memname">bool smootherMWM1::setup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *&#160;</td>
           <td class="paramname"><em>window</em>, </td>
         </tr>
         <tr>
@@ -208,19 +209,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c3e2797edd9dab0b36893d3674eec8b" name="a6c3e2797edd9dab0b36893d3674eec8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c3e2797edd9dab0b36893d3674eec8b">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
+<a id="ad57695364ca4d022ba9593a79c9daeba" name="ad57695364ca4d022ba9593a79c9daeba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57695364ca4d022ba9593a79c9daeba">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t windowSize&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setup </td>
+          <td class="memname">bool qlibs::smootherMWM1::setup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;)&#160;</td>
           <td class="paramname"><em>window</em>[windowSize]</td><td>)</td>
           <td></td>
         </tr>
@@ -243,8 +246,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1116b73eb7b200a50733aad75495a6fe" name="a1116b73eb7b200a50733aad75495a6fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1116b73eb7b200a50733aad75495a6fe">&#9670;&nbsp;</a></span>smooth()</h2>
+<a id="a81521b6b6acc5ac08aa17b71a2305762" name="a81521b6b6acc5ac08aa17b71a2305762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81521b6b6acc5ac08aa17b71a2305762">&#9670;&nbsp;</a></span>smooth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,9 +256,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> smooth </td>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> smootherMWM1::smooth </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
           <td></td>
         </tr>
@@ -277,7 +280,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The smoothed output. </dd></dl>
 
-<p>Implements <a class="el" href="classqlibs_1_1smoother.html#a93e0f7c2982ed490ed52e76b9d6c5f82">smoother</a>.</p>
+<p>Implements <a class="el" href="classqlibs_1_1smoother.html#aed55eebe0a8653e933f6044c13d45340">qlibs::smoother</a>.</p>
 
 </div>
 </div>

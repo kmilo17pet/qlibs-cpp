@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize_0',['normalize',['../group__qfmathex.html#gac9fc4edf0e6f9d2a5c2ef939fb235fca',1,'qlibs']]]
+  ['normalize_0',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bisector_0',['bisector',['../group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa5f0b55cf3261a197a8d0212f90669e35',1,'qlibs']]]
+  ['bisector_0',['bisector',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a0117356d7b7b878e4cfb4805bf545661',1,'qlibs']]]
 ];

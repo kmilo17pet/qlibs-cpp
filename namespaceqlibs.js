@@ -4,11 +4,11 @@ var namespaceqlibs =
       [ "bSearch", "group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0", null ],
       [ "forEach", "group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664", null ],
       [ "lSearch", "group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e", null ],
-      [ "reverse", "group__qtypegeneric.html#gab86856bd79f4400c708856cf13ecfb65", null ],
-      [ "rotate", "group__qtypegeneric.html#ga4bdc86076df0d49be8691b063212c73c", null ],
-      [ "set", "group__qtypegeneric.html#gaeeeb7cd121be65f932af36e24131fd37", null ],
+      [ "reverse", "group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8", null ],
+      [ "rotate", "group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9", null ],
+      [ "set", "group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877", null ],
       [ "sort", "group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a", null ],
-      [ "swap", "group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e", null ]
+      [ "swap", "group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d", null ]
     ] ],
     [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
     [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
@@ -34,102 +34,102 @@ var namespaceqlibs =
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
     [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
-    [ "continuousStates", "group__qltisys.html#ga7575e8122fd222a681d245415c34e466", null ],
-    [ "discreteStates", "group__qltisys.html#ga838102ea686fcd21ba032c89555170e4", null ],
-    [ "real_t", "namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6", null ],
-    [ "crcMode", "group__qcrc.html#gaa970e174eebbebf85af0d9085d2f824e", [
-      [ "CRC8", "group__qcrc.html#ggaa970e174eebbebf85af0d9085d2f824ea852cb403a2665ed279b28679f11567d8", null ],
-      [ "CRC16", "group__qcrc.html#ggaa970e174eebbebf85af0d9085d2f824ea27369d6d16d5fdf2a44111924c019e11", null ],
-      [ "CRC32", "group__qcrc.html#ggaa970e174eebbebf85af0d9085d2f824ea890318d44c66e24422d8b9b01627a9b5", null ]
+    [ "continuousStates", "group__qltisys.html#gafadec0837d97658d7d08467310f1b0da", null ],
+    [ "discreteStates", "group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e", null ],
+    [ "real_t", "namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6", null ],
+    [ "crcMode", "group__qcrc.html#ga5b194c56447214ee3207b107e549cad5", [
+      [ "CRC8", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a70f6e8e0b91a39229a4d97de2e29f9cb", null ],
+      [ "CRC16", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5ad552ccca252f2622494742a8341393c6", null ],
+      [ "CRC32", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a80eef496a6b73673ecd6f0b285304829", null ]
     ] ],
-    [ "fisDeFuzzMethod", "group__qfis.html#ga83e0ce0b0a32a7646554fe9a96be696f", [
-      [ "centroid", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa6fb78ba59773ac48c2709d20df1ebefd", null ],
-      [ "bisector", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa5f0b55cf3261a197a8d0212f90669e35", null ],
-      [ "mom", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa91e435ff054716e32ac834ddfdf8ece9", null ],
-      [ "lom", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa58713f014a11fca36091e803ff431b04", null ],
-      [ "som", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fab1088c07d3cf9e75c6e7fbd84bd759c4", null ],
-      [ "wtaver", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa8d62125ef3bf552069d621be0af68f5e", null ],
-      [ "wtsum", "group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa442dbe21e1b302813ac2a42e552a72a0", null ]
+    [ "fisDeFuzzMethod", "group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0", [
+      [ "centroid", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a53eb4b2477049b1506a39840d5bcc25e", null ],
+      [ "bisector", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a0117356d7b7b878e4cfb4805bf545661", null ],
+      [ "mom", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ad07c5255c1a2e0fd8b508e957b10314f", null ],
+      [ "lom", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a4817748308a53b5d1197e6eca1017e0d", null ],
+      [ "som", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ae356531fce3d510537524c9aef724ae9", null ],
+      [ "wtaver", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a1d0b957a516b0c7b3814e55ea36854cc", null ],
+      [ "wtsum", "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a5d99257e412433da4f3c932046a26954", null ]
     ] ],
-    [ "fisParameter", "group__qfis.html#gae1ca3dd5e14782f1687d754352bbd2ce", [
-      [ "FIS_Implication", "group__qfis.html#ggae1ca3dd5e14782f1687d754352bbd2cea09ae63c8e77efdea16e9cbb46030025f", null ],
-      [ "FIS_Aggregation", "group__qfis.html#ggae1ca3dd5e14782f1687d754352bbd2cea11ad80f4901a0ef123ead77aa80df386", null ],
-      [ "FIS_AND", "group__qfis.html#ggae1ca3dd5e14782f1687d754352bbd2ceaf037e32ecab663a632a327bb7d4c0121", null ],
-      [ "FIS_OR", "group__qfis.html#ggae1ca3dd5e14782f1687d754352bbd2cea6c60bb5f09177cbf942e7322c7e0f194", null ],
-      [ "FIS_EvalPoints", "group__qfis.html#ggae1ca3dd5e14782f1687d754352bbd2cea136fbecc254e82a339e6dbfd2066ac98", null ]
+    [ "fisParameter", "group__qfis.html#ga886a45d40137b4c5c9e740816f17788b", [
+      [ "FIS_Implication", "group__qfis.html#gga886a45d40137b4c5c9e740816f17788bad876b5fc88ef96672a9f5a40dcbf16db", null ],
+      [ "FIS_Aggregation", "group__qfis.html#gga886a45d40137b4c5c9e740816f17788ba3329d48d4d7606529fe59afddf823362", null ],
+      [ "FIS_AND", "group__qfis.html#gga886a45d40137b4c5c9e740816f17788baaf2e917d14d037d0e637139d817b1d95", null ],
+      [ "FIS_OR", "group__qfis.html#gga886a45d40137b4c5c9e740816f17788bac7b9d1bef7c200f551492f8e13c5976b", null ],
+      [ "FIS_EvalPoints", "group__qfis.html#gga886a45d40137b4c5c9e740816f17788ba30ca8c9b7f4e6fe62e9beb32e0f06bbc", null ]
     ] ],
-    [ "fisParamValue", "group__qfis.html#ga2378f4f75d2fa405802f0a86dca2d6ba", [
-      [ "FIS_MIN", "group__qfis.html#gga2378f4f75d2fa405802f0a86dca2d6baaf7b0991fb6952e478fb9409d986a1409", null ],
-      [ "FIS_PROD", "group__qfis.html#gga2378f4f75d2fa405802f0a86dca2d6baa85bd95ff69276bf49cddf91d2eb752da", null ],
-      [ "FIS_MAX", "group__qfis.html#gga2378f4f75d2fa405802f0a86dca2d6baa692d7011d0452e94c1ecd8cdb21e2fa3", null ],
-      [ "FIS_PROBOR", "group__qfis.html#gga2378f4f75d2fa405802f0a86dca2d6baa86633bb5989ef160fc9ed234e665b71b", null ],
-      [ "FIS_SUM", "group__qfis.html#gga2378f4f75d2fa405802f0a86dca2d6baacb5d5dbafb006283558224079238d019", null ]
+    [ "fisParamValue", "group__qfis.html#ga5b84af67556eb20fcd740f1fd27ef8a1", [
+      [ "FIS_MIN", "group__qfis.html#gga5b84af67556eb20fcd740f1fd27ef8a1ad2820d0b166d517803eeeca719caa5ef", null ],
+      [ "FIS_PROD", "group__qfis.html#gga5b84af67556eb20fcd740f1fd27ef8a1a767015e881e0fc8bfcf619fc5d4c92de", null ],
+      [ "FIS_MAX", "group__qfis.html#gga5b84af67556eb20fcd740f1fd27ef8a1a489e4013d3ed87d932143677c55fc0e6", null ],
+      [ "FIS_PROBOR", "group__qfis.html#gga5b84af67556eb20fcd740f1fd27ef8a1acc0e6f0ea36e2d5e8983ffc930146bbc", null ],
+      [ "FIS_SUM", "group__qfis.html#gga5b84af67556eb20fcd740f1fd27ef8a1ab8f4b3eca027c5674e16c4ef926ff5ba", null ]
     ] ],
-    [ "fisShapeMF", "group__qfis.html#ga399503b61885daa8bb5a8a2284a8e576", [
-      [ "custommf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a59077554a504ca1e69784f650fbd8952", null ],
-      [ "trimf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a8f91868e5f151b88a97174ac79cbc6b9", null ],
-      [ "trapmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7676242f70c14c24cddeb8ee5bedf094", null ],
-      [ "gbellmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576ab211a8a8f9c9933e4ee7f2738684e8d3", null ],
-      [ "gaussmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af622ac933207179e7864deb02eb3aa29", null ],
-      [ "gauss2mf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a4d57e0dc8df50e01b5912fcf06ac9af7", null ],
-      [ "sigmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a26b5b0fec349f4dd75ea138509c7f9bc", null ],
-      [ "dsigmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576aff5a8ec6d6ec62d577ca656cfe4fc85a", null ],
-      [ "psigmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576ab0662075b7e1fe69127012a8963f3ae1", null ],
-      [ "pimf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a2ebaaf5da9f4f9658a77cbb7b955fde4", null ],
-      [ "smf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a1b9910ce8deaabf94e74eb0228f165fc", null ],
-      [ "zmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a18ef4cfb7704044a8fae2f7edea657dd", null ],
-      [ "singletonmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a517ec5d7ed4ba84016d6d5d5963584b7", null ],
-      [ "concavemf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576aa8c90d32cef75c377abaacb0aeaacab7", null ],
-      [ "spikemf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576ab52e90d79ad862c0608aa3c228300e09", null ],
-      [ "linsmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a1b7f254eb17ba94e97a9fe60fb7bf09b", null ],
-      [ "linzmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a50279291d8a418eb06941a1f5208d1aa", null ],
-      [ "rectmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a72d1cca9c64d5a0ff1ef5f931713d74e", null ],
-      [ "cosmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af419a1c2ca368381483a582cd2527eff", null ],
-      [ "constantmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a2c8b9058af45167c4cef2e4f7f0e0c42", null ],
-      [ "linearmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a3e187547bd00b7f8ef46fd105d170914", null ],
-      [ "tlinsmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576ad23bd69a0c39f41ec183701ea88fca62", null ],
-      [ "tlinzmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a7e69801214edbd12464450ec32caa952", null ],
-      [ "tconcavemf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a43b3471fcf257414fd73960961f71f8c", null ],
-      [ "tsigmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a15d4fd087b99bfae1ad35c04a4196be4", null ],
-      [ "tsmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576a5ac08b226723d99e82d613115b2fef6a", null ],
-      [ "tzmf", "group__qfis.html#gga399503b61885daa8bb5a8a2284a8e576af737be9cb431f74baa61fca9f29688c3", null ]
+    [ "fisShapeMF", "group__qfis.html#gaebd802f8dce229bc2aefe22c89ad1bdb", [
+      [ "custommf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba540c82058d8d9ce5297027394261098a", null ],
+      [ "trimf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaf21bcfd4ce94030aab383f99afdd4083", null ],
+      [ "trapmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbad40786c0859454bfb5487b3996add12d", null ],
+      [ "gbellmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba85bbc2e4e51c65f8b1232fba921c29f3", null ],
+      [ "gaussmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba4cb634ad5972fa458a8a2418c3c8da6b", null ],
+      [ "gauss2mf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba01e6052ea6183f251d8a3a81a39437e5", null ],
+      [ "sigmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba4e62c4921a94a9ba0554ebffd92292b9", null ],
+      [ "dsigmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba8734dff5272ea30ef67c9e2a4c55fa5d", null ],
+      [ "psigmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba080b6d0ced6a06931a8916d68886582d", null ],
+      [ "pimf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba43838ecf87ec1c6958658550c456734f", null ],
+      [ "smf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba99089190caf41f41b7d226f900c77232", null ],
+      [ "zmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba0cf57f485ec096d27894cfa95eb89ccc", null ],
+      [ "singletonmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbad98ee1dff7e452e05766939e42208bad", null ],
+      [ "concavemf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa96827d19d684ab85c3c8b58dda473fe", null ],
+      [ "spikemf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba53b8123c334a313e7ea266f635d9b821", null ],
+      [ "linsmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba3dbdc3b09cfa1dc95ecf67f90394dd27", null ],
+      [ "linzmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba5de5fc58bca6b251e68e20c18ec60891", null ],
+      [ "rectmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba3f378bc901be790a07c625955bcc4ac0", null ],
+      [ "cosmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba77e7bdf0fb6dad79cdb9785c33ab96e6", null ],
+      [ "constantmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbae274895a15dc9000dc948db1204f5659", null ],
+      [ "linearmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa0e75d55aaaf73cf8645ccafb8422d83", null ],
+      [ "tlinsmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa5fbbd416534ffed7a03706c488afaf9", null ],
+      [ "tlinzmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba7e2fc6001cc747a0412d96fbe8499024", null ],
+      [ "tconcavemf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa6fd6547d43e0ab0024daa2d2f3d782d", null ],
+      [ "tsigmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbad71a900993af71652f0c205182c91433", null ],
+      [ "tsmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba20d60d90b79d9015783837581df886b5", null ],
+      [ "tzmf", "group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba68f69b57ee31980540937347d47582d5", null ]
     ] ],
-    [ "fisType", "group__qfis.html#gacb0db7981a221a4ecb3466803cf1469e", [
-      [ "Mamdani", "group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799", null ],
-      [ "Sugeno", "group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469ea6be5a07806b4e50dc6aa3ce912692ad6", null ],
-      [ "Tsukamoto", "group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469ea7b5af38242e88e34875821666e361935", null ]
+    [ "fisType", "group__qfis.html#ga209c5983c134dd6ec058dd2df498508c", [
+      [ "Mamdani", "group__qfis.html#gga209c5983c134dd6ec058dd2df498508ca80767da3d48c315211d36c53485a8ac3", null ],
+      [ "Sugeno", "group__qfis.html#gga209c5983c134dd6ec058dd2df498508ca0060fbe96fd12ca7aceea37ab41071c6", null ],
+      [ "Tsukamoto", "group__qfis.html#gga209c5983c134dd6ec058dd2df498508cae4bee122ae3c92cd550db6b43f151bb2", null ]
     ] ],
-    [ "integrationMethod", "namespaceqlibs.html#ad9523cad8a8a726ad576964b90530a0c", [
-      [ "INTEGRATION_RECTANGULAR", "namespaceqlibs.html#ad9523cad8a8a726ad576964b90530a0ca30e0f8478b6eb0d10b2aa626f4ac98d9", null ],
-      [ "INTEGRATION_TRAPEZOIDAL", "namespaceqlibs.html#ad9523cad8a8a726ad576964b90530a0cab747f3c76d0c1cb4651752728da082aa", null ],
-      [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#ad9523cad8a8a726ad576964b90530a0cad2b1a084d70736cbe8afc7d58ba0b865", null ]
+    [ "integrationMethod", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2", [
+      [ "INTEGRATION_RECTANGULAR", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c", null ],
+      [ "INTEGRATION_TRAPEZOIDAL", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156", null ],
+      [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ]
     ] ],
-    [ "pidDirection", "group__qpid.html#ga6a9274f0445ed7a43468421749d9f889", [
-      [ "PID_FORWARD", "group__qpid.html#gga6a9274f0445ed7a43468421749d9f889aa9b54388ac530650449e65cc829a1ea2", null ],
-      [ "PID_BACKWARD", "group__qpid.html#gga6a9274f0445ed7a43468421749d9f889aa8ccee4fef92774746a89d07d34c9fa2", null ]
+    [ "pidDirection", "group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106", [
+      [ "PID_FORWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2", null ],
+      [ "PID_BACKWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2", null ]
     ] ],
-    [ "pidMode", "group__qpid.html#ga0fe89391c259456e24788767f121fd6d", [
-      [ "PID_AUTOMATIC", "group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4", null ],
-      [ "PID_MANUAL", "group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
+    [ "pidMode", "group__qpid.html#ga723e93113c48dc2437680a245624d0f3", [
+      [ "PID_AUTOMATIC", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
+      [ "PID_MANUAL", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
     ] ],
     [ "bitfield_size", "group__qbitfield.html#ga3645c015d457782880b34f38777f5067", null ],
-    [ "inCircle", "group__qfmathex.html#gabbe580aebc558d6a53eabaf3b66e47f5", null ],
-    [ "inPolygon", "group__qfmathex.html#ga2c865c0c337be3c7546fa418073b9ed2", null ],
-    [ "inRangeCoerce", "group__qfmathex.html#ga6af6b50aadf4a4aac6d47ee31143cc3a", null ],
-    [ "isEqual", "group__qfmathex.html#ga399d7a870a73cedd31446b104c86ce22", null ],
-    [ "mapMinMax", "group__qfmathex.html#ga00c54339cbec631a5f64de6921d92664", null ],
-    [ "normalize", "group__qfmathex.html#gac9fc4edf0e6f9d2a5c2ef939fb235fca", null ],
-    [ "FP_1_PI", "group__qfp16.html#ga2064ca4e446edacea8257a8a50662364", null ],
-    [ "FP_2_PI", "group__qfp16.html#ga12ce662b4b3545d8d7e4aec27f0a07ca", null ],
-    [ "FP_2_SQRTPI", "group__qfp16.html#ga2422aabb757e91a1e994570b86c37243", null ],
-    [ "FP_E", "group__qfp16.html#gae56814842a1a8de19cd06417952b90dc", null ],
-    [ "FP_LN10", "group__qfp16.html#gaa1f955ac36e00eb8f45ac7f942b71927", null ],
-    [ "FP_LN2", "group__qfp16.html#gaf634b120f46d1b4d526461bc62d00db3", null ],
-    [ "FP_LOG10E", "group__qfp16.html#ga50d0f1b8996b97f30e4eea7b444294c5", null ],
-    [ "FP_LOG2E", "group__qfp16.html#ga1c6bfb13bdc3b7fc5b30ab02dd81520d", null ],
-    [ "FP_PI", "group__qfp16.html#gad88401f431d19e023352129263694e93", null ],
-    [ "FP_PI_2", "group__qfp16.html#gad43f8fa931ca4509975d9cabadf519fd", null ],
-    [ "FP_PI_4", "group__qfp16.html#ga14eb9216d9beb29a27307fbda8e0bb2e", null ],
-    [ "FP_SQRT1_2", "group__qfp16.html#gaebd35d683f1884faebe539f06cdd5734", null ],
-    [ "FP_SQRT2", "group__qfp16.html#ga5a1b0be0e9fc70e240e741a646d79477", null ]
+    [ "inCircle", "group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75", null ],
+    [ "inPolygon", "group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8", null ],
+    [ "inRangeCoerce", "group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf", null ],
+    [ "isEqual", "group__qfmathex.html#gab497b116252fc8763ade8c6eb655949e", null ],
+    [ "mapMinMax", "group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1", null ],
+    [ "normalize", "group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b", null ],
+    [ "FP_1_PI", "group__qfp16.html#gae8e708f5e7540fab5eba3ba5f1d9e091", null ],
+    [ "FP_2_PI", "group__qfp16.html#ga2329c3a7709f3282052486c9e2ab0068", null ],
+    [ "FP_2_SQRTPI", "group__qfp16.html#gaa5f73acfac2de73a93357c968ae1895f", null ],
+    [ "FP_E", "group__qfp16.html#gad6a90100d5477e580bf45f2f9f3227f0", null ],
+    [ "FP_LN10", "group__qfp16.html#ga2bea9b82682a0c3319b689dde5561fc4", null ],
+    [ "FP_LN2", "group__qfp16.html#ga59afd5098ca25e2b6fa6c683a6a57ab3", null ],
+    [ "FP_LOG10E", "group__qfp16.html#ga80762966a7ce3862a715dde077a4012f", null ],
+    [ "FP_LOG2E", "group__qfp16.html#gad7cb4c84062c4c70aa973b3f078f3ff4", null ],
+    [ "FP_PI", "group__qfp16.html#ga0bae0189523ace0fa76c8e9db5f3700d", null ],
+    [ "FP_PI_2", "group__qfp16.html#ga692e67217b5657dda11b962728e7fc60", null ],
+    [ "FP_PI_4", "group__qfp16.html#gad496857316e5a4334157cf482971d08d", null ],
+    [ "FP_SQRT1_2", "group__qfp16.html#ga29a6003b05450db1d45e367acf411bbe", null ],
+    [ "FP_SQRT2", "group__qfp16.html#gadfc0f1a3681e7b809dbcf98078b784b0", null ]
 ];

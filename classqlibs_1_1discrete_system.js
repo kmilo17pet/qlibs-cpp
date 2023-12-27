@@ -1,8 +1,8 @@
 var classqlibs_1_1discrete_system =
 [
-    [ "discreteSystem", "classqlibs_1_1discrete_system.html#a7d2716be9ff37b46dca478c1364590f6", null ],
-    [ "excite", "classqlibs_1_1discrete_system.html#a74617daefbc875d6f1a2a69405fa203f", null ],
-    [ "isInitialized", "classqlibs_1_1discrete_system.html#a9b62d14053df267cffe4aa2d8cc67433", null ],
-    [ "setInitStates", "classqlibs_1_1discrete_system.html#a1447ef080e34b0a104988cdd3b07e6df", null ],
-    [ "setup", "classqlibs_1_1discrete_system.html#a0e388a1604f69aa4276fc15110e2dfbb", null ]
+    [ "discreteSystem", "classqlibs_1_1discrete_system.html#ae6c662c10b640e391d8b7f19a7bb4f75", null ],
+    [ "excite", "classqlibs_1_1discrete_system.html#ad374d5c62012a52fa27290ba65a15d3f", null ],
+    [ "isInitialized", "classqlibs_1_1discrete_system.html#afae7d9eb20e3f5e4318df953dd5393c3", null ],
+    [ "setInitStates", "classqlibs_1_1discrete_system.html#a1372b358328b00567f061a0296ce6266", null ],
+    [ "setup", "classqlibs_1_1discrete_system.html#a395b6eed065ec959972ba8e4a99284b1", null ]
 ];

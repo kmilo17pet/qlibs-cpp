@@ -137,28 +137,28 @@ $(document).ready(function(){initNavTree('group__qtypegeneric.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gac63d6a8348eb966186d6583c753b359e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e">swap</a> (void *const x, void *const y, size_t n) noexcept</td></tr>
-<tr class="memdesc:gac63d6a8348eb966186d6583c753b359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the data pointed by <em>x</em> and <em>y</em>.  <a href="group__qtypegeneric.html#gac63d6a8348eb966186d6583c753b359e">More...</a><br /></td></tr>
-<tr class="separator:gac63d6a8348eb966186d6583c753b359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08acc13c13a224f664d821d1875ed06a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a">sort</a> (void *const pbase, size_t n, size_t size, compareFcn_t cmp, void *arg=nullptr) noexcept</td></tr>
+<tr class="memitem:gaaddaac5dad20d93d3dc6bd99db00579d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d">qlibs::generic::swap</a> (void *const x, void *const y, size_t n) noexcept</td></tr>
+<tr class="memdesc:gaaddaac5dad20d93d3dc6bd99db00579d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the data pointed by <em>x</em> and <em>y</em>.  <a href="group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d">More...</a><br /></td></tr>
+<tr class="separator:gaaddaac5dad20d93d3dc6bd99db00579d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08acc13c13a224f664d821d1875ed06a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a">qlibs::generic::sort</a> (void *const pbase, size_t n, size_t size, compareFcn_t cmp, void *arg=nullptr) noexcept</td></tr>
 <tr class="memdesc:ga08acc13c13a224f664d821d1875ed06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array pointed to by <em>pbase</em> in ascending order. The array contains <em>n</em> elements of <em>size</em> bytes. Function pointed to by <em>cmp</em> is used for object comparison.  <a href="group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a">More...</a><br /></td></tr>
 <tr class="separator:ga08acc13c13a224f664d821d1875ed06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab86856bd79f4400c708856cf13ecfb65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gab86856bd79f4400c708856cf13ecfb65">reverse</a> (void *const pbase, const size_t size, const size_t init, const size_t end) noexcept</td></tr>
-<tr class="memdesc:gab86856bd79f4400c708856cf13ecfb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the given array pointed to by <em>pbase</em>. Operation takes place on the portion of the array that starts at position <em>init</em> to position <em>end</em>.  <a href="group__qtypegeneric.html#gab86856bd79f4400c708856cf13ecfb65">More...</a><br /></td></tr>
-<tr class="separator:gab86856bd79f4400c708856cf13ecfb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4bdc86076df0d49be8691b063212c73c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga4bdc86076df0d49be8691b063212c73c">rotate</a> (void *const pbase, const size_t size, const size_t n, const int k) noexcept</td></tr>
-<tr class="memdesc:ga4bdc86076df0d49be8691b063212c73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates <em>k</em> elements of the array pointed to by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes. Rotation direction is determined by the sign of <em>k</em>, the means a positive value performs a right-rotation and a negative value a left-rotation.  <a href="group__qtypegeneric.html#ga4bdc86076df0d49be8691b063212c73c">More...</a><br /></td></tr>
-<tr class="separator:ga4bdc86076df0d49be8691b063212c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeeeb7cd121be65f932af36e24131fd37"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaeeeb7cd121be65f932af36e24131fd37">set</a> (void *const pbase, const size_t size, const size_t n, const void *const ref) noexcept</td></tr>
-<tr class="memdesc:gaeeeb7cd121be65f932af36e24131fd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the data pointed by <em>ref</em> to every element of the array pointed by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes.  <a href="group__qtypegeneric.html#gaeeeb7cd121be65f932af36e24131fd37">More...</a><br /></td></tr>
-<tr class="separator:gaeeeb7cd121be65f932af36e24131fd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff612ff160d8c61605f1b25386ae9a9e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e">lSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
+<tr class="memitem:ga6db21157fb7adbaadc34e11b877230f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8">qlibs::generic::reverse</a> (void *const pbase, const size_t size, const size_t init, const size_t end) noexcept</td></tr>
+<tr class="memdesc:ga6db21157fb7adbaadc34e11b877230f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the given array pointed to by <em>pbase</em>. Operation takes place on the portion of the array that starts at position <em>init</em> to position <em>end</em>.  <a href="group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8">More...</a><br /></td></tr>
+<tr class="separator:ga6db21157fb7adbaadc34e11b877230f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf19b6168bf0e9931cad22a3d66149f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9">qlibs::generic::rotate</a> (void *const pbase, const size_t size, const size_t n, const int k) noexcept</td></tr>
+<tr class="memdesc:gaaf19b6168bf0e9931cad22a3d66149f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates <em>k</em> elements of the array pointed to by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes. Rotation direction is determined by the sign of <em>k</em>, the means a positive value performs a right-rotation and a negative value a left-rotation.  <a href="group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9">More...</a><br /></td></tr>
+<tr class="separator:gaaf19b6168bf0e9931cad22a3d66149f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga214751c5f34431838e9d5f2015d51877"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877">qlibs::generic::set</a> (void *const pbase, const size_t size, const size_t n, const void *const ref) noexcept</td></tr>
+<tr class="memdesc:ga214751c5f34431838e9d5f2015d51877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the data pointed by <em>ref</em> to every element of the array pointed by <em>pbase</em>. The array contains <em>n</em> elements of <em>size</em> bytes.  <a href="group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877">More...</a><br /></td></tr>
+<tr class="separator:ga214751c5f34431838e9d5f2015d51877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff612ff160d8c61605f1b25386ae9a9e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e">qlibs::generic::lSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
 <tr class="memdesc:gaff612ff160d8c61605f1b25386ae9a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a linear search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element.  <a href="group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e">More...</a><br /></td></tr>
 <tr class="separator:gaff612ff160d8c61605f1b25386ae9a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0">bSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
+<tr class="memitem:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0">qlibs::generic::bSearch</a> (const void *key, const void *pbase, const size_t n, const size_t size, compareFcn_t compar, void *arg=nullptr) noexcept</td></tr>
 <tr class="memdesc:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary search over an array of <em>n</em> elements pointed to by <em>pbase</em> for an element that matches the object pointed to by <em>key</em>. The size of each element is specified by <em>size</em>. The array contents should be sorted in ascending order according to the <em>compar</em> comparison function. This routine should take two arguments pointing to the <em>key</em> and to an array element, in that order, and should return an integer less than, equal to, or greater than zero if the <em>key</em> object is respectively less than, matching, or greater than the array element.  <a href="group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0">More...</a><br /></td></tr>
 <tr class="separator:ga5604d8d2805e5eeda2e53544b110a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4818e24c0d6ee84051d6870f19d8664"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664">forEach</a> (void *pbase, const size_t size, const size_t n, forEachFcn_t f, const bool dir=false, void *arg=nullptr) noexcept</td></tr>
+<tr class="memitem:gab4818e24c0d6ee84051d6870f19d8664"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664">qlibs::generic::forEach</a> (void *pbase, const size_t size, const size_t n, forEachFcn_t f, const bool dir=false, void *arg=nullptr) noexcept</td></tr>
 <tr class="memdesc:gab4818e24c0d6ee84051d6870f19d8664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates <em>n</em> elements of the array pointed to by <em>pbase</em>. The size of each element is specified by <em>size</em>. Every element should be handled by function <em>f</em>. The iteration loop can be aborted by returning 1.  <a href="group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664">More...</a><br /></td></tr>
 <tr class="separator:gab4818e24c0d6ee84051d6870f19d8664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -395,8 +395,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gab86856bd79f4400c708856cf13ecfb65" name="gab86856bd79f4400c708856cf13ecfb65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab86856bd79f4400c708856cf13ecfb65">&#9670;&nbsp;</a></span>reverse()</h2>
+<a id="ga6db21157fb7adbaadc34e11b877230f8" name="ga6db21157fb7adbaadc34e11b877230f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6db21157fb7adbaadc34e11b877230f8">&#9670;&nbsp;</a></span>reverse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +405,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void reverse </td>
+          <td class="memname">void qlibs::generic::reverse </td>
           <td>(</td>
           <td class="paramtype">void *const&#160;</td>
           <td class="paramname"><em>pbase</em>, </td>
@@ -455,8 +455,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga4bdc86076df0d49be8691b063212c73c" name="ga4bdc86076df0d49be8691b063212c73c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4bdc86076df0d49be8691b063212c73c">&#9670;&nbsp;</a></span>rotate()</h2>
+<a id="gaaf19b6168bf0e9931cad22a3d66149f9" name="gaaf19b6168bf0e9931cad22a3d66149f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf19b6168bf0e9931cad22a3d66149f9">&#9670;&nbsp;</a></span>rotate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +465,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void rotate </td>
+          <td class="memname">void qlibs::generic::rotate </td>
           <td>(</td>
           <td class="paramtype">void *const&#160;</td>
           <td class="paramname"><em>pbase</em>, </td>
@@ -515,8 +515,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaeeeb7cd121be65f932af36e24131fd37" name="gaeeeb7cd121be65f932af36e24131fd37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeeeb7cd121be65f932af36e24131fd37">&#9670;&nbsp;</a></span>set()</h2>
+<a id="ga214751c5f34431838e9d5f2015d51877" name="ga214751c5f34431838e9d5f2015d51877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga214751c5f34431838e9d5f2015d51877">&#9670;&nbsp;</a></span>set()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +525,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * set </td>
+          <td class="memname">void * qlibs::generic::set </td>
           <td>(</td>
           <td class="paramtype">void *const&#160;</td>
           <td class="paramname"><em>pbase</em>, </td>
@@ -644,8 +644,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gac63d6a8348eb966186d6583c753b359e" name="gac63d6a8348eb966186d6583c753b359e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac63d6a8348eb966186d6583c753b359e">&#9670;&nbsp;</a></span>swap()</h2>
+<a id="gaaddaac5dad20d93d3dc6bd99db00579d" name="gaaddaac5dad20d93d3dc6bd99db00579d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaddaac5dad20d93d3dc6bd99db00579d">&#9670;&nbsp;</a></span>swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +654,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void swap </td>
+          <td class="memname">void qlibs::generic::swap </td>
           <td>(</td>
           <td class="paramtype">void *const&#160;</td>
           <td class="paramname"><em>x</em>, </td>

@@ -1,42 +1,42 @@
 var group__qpid =
 [
-    [ "pidGains", "structqlibs_1_1pid_gains.html", [
-      [ "Kc", "structqlibs_1_1pid_gains.html#a3da3fcc7e42fa52384170c9336bf7500", null ],
-      [ "Kd", "structqlibs_1_1pid_gains.html#a2ff76c699e5643c475c7978ae96e125b", null ],
-      [ "Ki", "structqlibs_1_1pid_gains.html#abbb31545fd8ea119995d6f8d010f2016", null ]
+    [ "qlibs::pidGains", "structqlibs_1_1pid_gains.html", [
+      [ "Kc", "structqlibs_1_1pid_gains.html#a1987fbe7e40c7721309eed1d0a7b44f5", null ],
+      [ "Kd", "structqlibs_1_1pid_gains.html#a99198109fcedec88e1e8debd59562853", null ],
+      [ "Ki", "structqlibs_1_1pid_gains.html#ac917dca006c32015cb03023e3552fabd", null ]
     ] ],
-    [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
-    [ "pidController", "classqlibs_1_1pid_controller.html", [
-      [ "bindAutoTuning", "classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24", null ],
-      [ "control", "classqlibs_1_1pid_controller.html#a1c1ef7bedbdfa06a7bd28803d88d60f5", null ],
-      [ "enableAutoTuning", "classqlibs_1_1pid_controller.html#af600aec91cf730f8984102b8f565dc69", null ],
-      [ "isAutoTuningComplete", "classqlibs_1_1pid_controller.html#af0607ebd52203489acf34492f4a1775f", null ],
-      [ "removeModelReferenceControl", "classqlibs_1_1pid_controller.html#ac93fd918c7ea64920a977e4f6eea7d22", null ],
-      [ "reset", "classqlibs_1_1pid_controller.html#ab537261ac416c86c81074bcc5a82342a", null ],
-      [ "setAutoTuningParameters", "classqlibs_1_1pid_controller.html#a681bf6255ea4e97d730080fba5999bda", null ],
-      [ "setDerivativeFilter", "classqlibs_1_1pid_controller.html#a9ae43c229036d7d8c745323455d749af", null ],
-      [ "setDirection", "classqlibs_1_1pid_controller.html#a42a3940f096b77ae1a414d28f13e4a04", null ],
-      [ "setEpsilon", "classqlibs_1_1pid_controller.html#a465d1e8031acd86704b75e82e8ff0ea7", null ],
-      [ "setExtraGains", "classqlibs_1_1pid_controller.html#afe7b133f3739a21886a000c1518f5b30", null ],
-      [ "setGains", "classqlibs_1_1pid_controller.html#a165e1e8eb8db9e24a2d3e343751d1a64", null ],
-      [ "setGains", "classqlibs_1_1pid_controller.html#a2e0c98770aeb884ba4c18f35507a7b2e", null ],
-      [ "setManualInput", "classqlibs_1_1pid_controller.html#a0003af0aef1ac0729a1e4d22dadf8c32", null ],
-      [ "setMode", "classqlibs_1_1pid_controller.html#aef6776695a5e7e343c87c4228ea4bb03", null ],
-      [ "setModelReferenceControl", "classqlibs_1_1pid_controller.html#a20c654f9b4ab361940da3fa93f732596", null ],
-      [ "setParams", "classqlibs_1_1pid_controller.html#ab64ca98c469af0911551e31f718cda31", null ],
-      [ "setReferenceWeighting", "classqlibs_1_1pid_controller.html#aa39093f39879c01936c868b3f6c219bf", null ],
-      [ "setSaturation", "classqlibs_1_1pid_controller.html#a6ceef558340eb4e546d777ae1e6d9fb4", null ],
-      [ "setSeries", "classqlibs_1_1pid_controller.html#a729a1b8ac341878d311df112e0377e3d", null ],
-      [ "setup", "classqlibs_1_1pid_controller.html#a306b5859ea44f6b6dbdf33dfeb8a3329", null ],
-      [ "setup", "classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637", null ],
-      [ "unbindAutoTuning", "classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92", null ]
+    [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
+    [ "qlibs::pidController", "classqlibs_1_1pid_controller.html", [
+      [ "bindAutoTuning", "classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c", null ],
+      [ "control", "classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc", null ],
+      [ "enableAutoTuning", "classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e", null ],
+      [ "isAutoTuningComplete", "classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131", null ],
+      [ "removeModelReferenceControl", "classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6", null ],
+      [ "reset", "classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1", null ],
+      [ "setAutoTuningParameters", "classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b", null ],
+      [ "setDerivativeFilter", "classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c", null ],
+      [ "setDirection", "classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f", null ],
+      [ "setEpsilon", "classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8", null ],
+      [ "setExtraGains", "classqlibs_1_1pid_controller.html#a3868d83ac3e11846ae276c7f1234cf92", null ],
+      [ "setGains", "classqlibs_1_1pid_controller.html#aa15a1499a0a6f6d85fd40b8830636588", null ],
+      [ "setGains", "classqlibs_1_1pid_controller.html#a2130620cacb660dc8e5e0b2d08863dd4", null ],
+      [ "setManualInput", "classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc", null ],
+      [ "setMode", "classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3", null ],
+      [ "setModelReferenceControl", "classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424", null ],
+      [ "setParams", "classqlibs_1_1pid_controller.html#aefe02426e77499309ecdaae144869936", null ],
+      [ "setReferenceWeighting", "classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0", null ],
+      [ "setSaturation", "classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9", null ],
+      [ "setSeries", "classqlibs_1_1pid_controller.html#a5bf31814fb2f700c9a6edf6a8b5f8518", null ],
+      [ "setup", "classqlibs_1_1pid_controller.html#ad8d14813671430e5fb851cec22253eb8", null ],
+      [ "setup", "classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c", null ],
+      [ "unbindAutoTuning", "classqlibs_1_1pid_controller.html#a5df64adf568d4f8ec9c26b86d26aa77e", null ]
     ] ],
-    [ "qlibs::pidDirection", "group__qpid.html#ga6a9274f0445ed7a43468421749d9f889", [
-      [ "qlibs::pidDirection::PID_FORWARD", "group__qpid.html#gga6a9274f0445ed7a43468421749d9f889aa9b54388ac530650449e65cc829a1ea2", null ],
-      [ "qlibs::pidDirection::PID_BACKWARD", "group__qpid.html#gga6a9274f0445ed7a43468421749d9f889aa8ccee4fef92774746a89d07d34c9fa2", null ]
+    [ "qlibs::pidDirection", "group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106", [
+      [ "qlibs::pidDirection::PID_FORWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2", null ],
+      [ "qlibs::pidDirection::PID_BACKWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2", null ]
     ] ],
-    [ "qlibs::pidMode", "group__qpid.html#ga0fe89391c259456e24788767f121fd6d", [
-      [ "qlibs::pidMode::PID_AUTOMATIC", "group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4", null ],
-      [ "qlibs::pidMode::PID_MANUAL", "group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
+    [ "qlibs::pidMode", "group__qpid.html#ga723e93113c48dc2437680a245624d0f3", [
+      [ "qlibs::pidMode::PID_AUTOMATIC", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
+      [ "qlibs::pidMode::PID_MANUAL", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
     ] ]
 ];

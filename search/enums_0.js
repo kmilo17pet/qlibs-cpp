@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['crcmode_0',['crcMode',['../group__qcrc.html#gaa970e174eebbebf85af0d9085d2f824e',1,'qlibs']]]
+  ['crcmode_0',['crcMode',['../group__qcrc.html#ga5b194c56447214ee3207b107e549cad5',1,'qlibs']]]
 ];

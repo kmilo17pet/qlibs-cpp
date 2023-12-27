@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: pidController Class Reference</title>
+<title>API Reference: qlibs::pidController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -127,8 +127,9 @@ $(document).ready(function(){initNavTree('classqlibs_1_1pid_controller.html','')
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">pidController Class Reference<div class="ingroups"><a class="el" href="group__qpid.html">PID Controller</a></div></div></div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classqlibs_1_1pid_controller-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::pidController Class Reference<div class="ingroups"><a class="el" href="group__qpid.html">PID Controller</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -137,103 +138,103 @@ $(document).ready(function(){initNavTree('classqlibs_1_1pid_controller.html','')
 
 <p><code>#include &lt;<a class="el" href="pid_8hpp_source.html">pid.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for pidController:</div>
+Inheritance diagram for qlibs::pidController:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classqlibs_1_1pid_controller.png" usemap="#pidController_map" alt=""/>
-  <map id="pidController_map" name="pidController_map">
-<area href="structqlibs_1_1pid_gains.html" title="PID Gains structure." alt="pidGains" shape="rect" coords="0,0,87,24"/>
+  <img src="classqlibs_1_1pid_controller.png" usemap="#qlibs::pidController_map" alt=""/>
+  <map id="qlibs::pidController_map" name="qlibs::pidController_map">
+<area href="structqlibs_1_1pid_gains.html" title="PID Gains structure." alt="qlibs::pidGains" shape="rect" coords="0,0,116,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6cb27e634926f3a76de87f492b9ef637"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637">setup</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> ki, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> kd, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> dT) noexcept</td></tr>
-<tr class="memdesc:a6cb27e634926f3a76de87f492b9ef637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637">More...</a><br /></td></tr>
-<tr class="separator:a6cb27e634926f3a76de87f492b9ef637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a306b5859ea44f6b6dbdf33dfeb8a3329">setup</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> dT) noexcept</td></tr>
-<tr class="memdesc:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a306b5859ea44f6b6dbdf33dfeb8a3329">More...</a><br /></td></tr>
-<tr class="separator:a306b5859ea44f6b6dbdf33dfeb8a3329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42a3940f096b77ae1a414d28f13e4a04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a42a3940f096b77ae1a414d28f13e4a04">setDirection</a> (const <a class="el" href="group__qpid.html#ga6a9274f0445ed7a43468421749d9f889">pidDirection</a> d) noexcept</td></tr>
-<tr class="memdesc:a42a3940f096b77ae1a414d28f13e4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID control action direction.  <a href="classqlibs_1_1pid_controller.html#a42a3940f096b77ae1a414d28f13e4a04">More...</a><br /></td></tr>
-<tr class="separator:a42a3940f096b77ae1a414d28f13e4a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64ca98c469af0911551e31f718cda31"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab64ca98c469af0911551e31f718cda31">setParams</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> ti, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> td) noexcept</td></tr>
-<tr class="memdesc:ab64ca98c469af0911551e31f718cda31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains by using the [Kc, Ti Td ] triplet.  <a href="classqlibs_1_1pid_controller.html#ab64ca98c469af0911551e31f718cda31">More...</a><br /></td></tr>
-<tr class="separator:ab64ca98c469af0911551e31f718cda31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a2e0c98770aeb884ba4c18f35507a7b2e">setGains</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> ki, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> kd) noexcept</td></tr>
-<tr class="memdesc:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a2e0c98770aeb884ba4c18f35507a7b2e">More...</a><br /></td></tr>
-<tr class="separator:a2e0c98770aeb884ba4c18f35507a7b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a165e1e8eb8db9e24a2d3e343751d1a64">setGains</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g) noexcept</td></tr>
-<tr class="memdesc:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a165e1e8eb8db9e24a2d3e343751d1a64">More...</a><br /></td></tr>
-<tr class="separator:a165e1e8eb8db9e24a2d3e343751d1a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe7b133f3739a21886a000c1518f5b30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#afe7b133f3739a21886a000c1518f5b30">setExtraGains</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Kw, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Kt) noexcept</td></tr>
-<tr class="memdesc:afe7b133f3739a21886a000c1518f5b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change extra PID controller gains.  <a href="classqlibs_1_1pid_controller.html#afe7b133f3739a21886a000c1518f5b30">More...</a><br /></td></tr>
-<tr class="separator:afe7b133f3739a21886a000c1518f5b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a6ceef558340eb4e546d777ae1e6d9fb4">setSaturation</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Min, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Max) noexcept</td></tr>
-<tr class="memdesc:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output saturation for the PID controller.  <a href="classqlibs_1_1pid_controller.html#a6ceef558340eb4e546d777ae1e6d9fb4">More...</a><br /></td></tr>
-<tr class="separator:a6ceef558340eb4e546d777ae1e6d9fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729a1b8ac341878d311df112e0377e3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a729a1b8ac341878d311df112e0377e3d">setSeries</a> (void) noexcept</td></tr>
-<tr class="memdesc:a729a1b8ac341878d311df112e0377e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the controller gains to conform the series or interacting form.  <a href="classqlibs_1_1pid_controller.html#a729a1b8ac341878d311df112e0377e3d">More...</a><br /></td></tr>
-<tr class="separator:a729a1b8ac341878d311df112e0377e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465d1e8031acd86704b75e82e8ff0ea7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a465d1e8031acd86704b75e82e8ff0ea7">setEpsilon</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> eps) noexcept</td></tr>
-<tr class="memdesc:a465d1e8031acd86704b75e82e8ff0ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum value considered as error.  <a href="classqlibs_1_1pid_controller.html#a465d1e8031acd86704b75e82e8ff0ea7">More...</a><br /></td></tr>
-<tr class="separator:a465d1e8031acd86704b75e82e8ff0ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ae43c229036d7d8c745323455d749af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a9ae43c229036d7d8c745323455d749af">setDerivativeFilter</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Beta) noexcept</td></tr>
-<tr class="memdesc:a9ae43c229036d7d8c745323455d749af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tuning parameter for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a9ae43c229036d7d8c745323455d749af">More...</a><br /></td></tr>
-<tr class="separator:a9ae43c229036d7d8c745323455d749af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef6776695a5e7e343c87c4228ea4bb03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aef6776695a5e7e343c87c4228ea4bb03">setMode</a> (const <a class="el" href="group__qpid.html#ga0fe89391c259456e24788767f121fd6d">pidMode</a> Mode) noexcept</td></tr>
-<tr class="memdesc:aef6776695a5e7e343c87c4228ea4bb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#aef6776695a5e7e343c87c4228ea4bb03">More...</a><br /></td></tr>
-<tr class="separator:aef6776695a5e7e343c87c4228ea4bb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39093f39879c01936c868b3f6c219bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aa39093f39879c01936c868b3f6c219bf">setReferenceWeighting</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> gb, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> gc) noexcept</td></tr>
-<tr class="memdesc:aa39093f39879c01936c868b3f6c219bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system.  <a href="classqlibs_1_1pid_controller.html#aa39093f39879c01936c868b3f6c219bf">More...</a><br /></td></tr>
-<tr class="separator:aa39093f39879c01936c868b3f6c219bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a0003af0aef1ac0729a1e4d22dadf8c32">setManualInput</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> manualInput) noexcept</td></tr>
-<tr class="memdesc:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed.  <a href="classqlibs_1_1pid_controller.html#a0003af0aef1ac0729a1e4d22dadf8c32">More...</a><br /></td></tr>
-<tr class="separator:a0003af0aef1ac0729a1e4d22dadf8c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c654f9b4ab361940da3fa93f732596"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a20c654f9b4ab361940da3fa93f732596">setModelReferenceControl</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> &amp;modelRef, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Gamma=0.5, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Alpha=0.01) noexcept</td></tr>
-<tr class="memdesc:a20c654f9b4ab361940da3fa93f732596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the additive MRAC(Model Reference Adaptive Control) feature.  <a href="classqlibs_1_1pid_controller.html#a20c654f9b4ab361940da3fa93f732596">More...</a><br /></td></tr>
-<tr class="separator:a20c654f9b4ab361940da3fa93f732596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93fd918c7ea64920a977e4f6eea7d22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ac93fd918c7ea64920a977e4f6eea7d22">removeModelReferenceControl</a> (void) noexcept</td></tr>
-<tr class="memdesc:ac93fd918c7ea64920a977e4f6eea7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop.  <a href="classqlibs_1_1pid_controller.html#ac93fd918c7ea64920a977e4f6eea7d22">More...</a><br /></td></tr>
-<tr class="separator:ac93fd918c7ea64920a977e4f6eea7d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1c1ef7bedbdfa06a7bd28803d88d60f5">control</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> w, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> y) noexcept</td></tr>
-<tr class="memdesc:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the control action for given PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a1c1ef7bedbdfa06a7bd28803d88d60f5">More...</a><br /></td></tr>
-<tr class="separator:a1c1ef7bedbdfa06a7bd28803d88d60f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24">bindAutoTuning</a> (<a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a> &amp;at) noexcept</td></tr>
-<tr class="memdesc:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the specified instance to enable the PID controller auto tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24">More...</a><br /></td></tr>
-<tr class="separator:a5ff3bce0f1c2185ce55ddb7d1a433f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0789159d7029daf5e4fee0a57d26e92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92">unbindAutoTuning</a> (void) noexcept</td></tr>
-<tr class="memdesc:ae0789159d7029daf5e4fee0a57d26e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind and disable the PID controller auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#ae0789159d7029daf5e4fee0a57d26e92">More...</a><br /></td></tr>
-<tr class="separator:ae0789159d7029daf5e4fee0a57d26e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af600aec91cf730f8984102b8f565dc69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#af600aec91cf730f8984102b8f565dc69">enableAutoTuning</a> (const uint32_t tEnable) noexcept</td></tr>
-<tr class="memdesc:af600aec91cf730f8984102b8f565dc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time steps where the auto tuner algorithm will modify the controller gains.  <a href="classqlibs_1_1pid_controller.html#af600aec91cf730f8984102b8f565dc69">More...</a><br /></td></tr>
-<tr class="separator:af600aec91cf730f8984102b8f565dc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0607ebd52203489acf34492f4a1775f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#af0607ebd52203489acf34492f4a1775f">isAutoTuningComplete</a> (void) const noexcept</td></tr>
-<tr class="memdesc:af0607ebd52203489acf34492f4a1775f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the auto tuning process has finished with new gains set on the controller.  <a href="classqlibs_1_1pid_controller.html#af0607ebd52203489acf34492f4a1775f">More...</a><br /></td></tr>
-<tr class="separator:af0607ebd52203489acf34492f4a1775f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a681bf6255ea4e97d730080fba5999bda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a681bf6255ea4e97d730080fba5999bda">setAutoTuningParameters</a> (const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Mu, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> Alpha, const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> lambda) noexcept</td></tr>
-<tr class="memdesc:a681bf6255ea4e97d730080fba5999bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a681bf6255ea4e97d730080fba5999bda">More...</a><br /></td></tr>
-<tr class="separator:a681bf6255ea4e97d730080fba5999bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab537261ac416c86c81074bcc5a82342a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab537261ac416c86c81074bcc5a82342a">reset</a> (void) noexcept</td></tr>
-<tr class="memdesc:ab537261ac416c86c81074bcc5a82342a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the internal PID controller calculations.  <a href="classqlibs_1_1pid_controller.html#ab537261ac416c86c81074bcc5a82342a">More...</a><br /></td></tr>
-<tr class="separator:ab537261ac416c86c81074bcc5a82342a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024a3e62c9090fe9b2e44043beb0ae7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">setup</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ki, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kd, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
+<tr class="memdesc:a024a3e62c9090fe9b2e44043beb0ae7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">More...</a><br /></td></tr>
+<tr class="separator:a024a3e62c9090fe9b2e44043beb0ae7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d14813671430e5fb851cec22253eb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad8d14813671430e5fb851cec22253eb8">setup</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
+<tr class="memdesc:ad8d14813671430e5fb851cec22253eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the PID controller instance.  <a href="classqlibs_1_1pid_controller.html#ad8d14813671430e5fb851cec22253eb8">More...</a><br /></td></tr>
+<tr class="separator:ad8d14813671430e5fb851cec22253eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c9b45ca2efaae7aa8184af3139c49f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f">setDirection</a> (const <a class="el" href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a> d) noexcept</td></tr>
+<tr class="memdesc:a91c9b45ca2efaae7aa8184af3139c49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID control action direction.  <a href="classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f">More...</a><br /></td></tr>
+<tr class="separator:a91c9b45ca2efaae7aa8184af3139c49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe02426e77499309ecdaae144869936"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aefe02426e77499309ecdaae144869936">setParams</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ti, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> td) noexcept</td></tr>
+<tr class="memdesc:aefe02426e77499309ecdaae144869936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains by using the [Kc, Ti Td ] triplet.  <a href="classqlibs_1_1pid_controller.html#aefe02426e77499309ecdaae144869936">More...</a><br /></td></tr>
+<tr class="separator:aefe02426e77499309ecdaae144869936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2130620cacb660dc8e5e0b2d08863dd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a2130620cacb660dc8e5e0b2d08863dd4">setGains</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kc, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ki, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kd) noexcept</td></tr>
+<tr class="memdesc:a2130620cacb660dc8e5e0b2d08863dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a2130620cacb660dc8e5e0b2d08863dd4">More...</a><br /></td></tr>
+<tr class="separator:a2130620cacb660dc8e5e0b2d08863dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15a1499a0a6f6d85fd40b8830636588"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aa15a1499a0a6f6d85fd40b8830636588">setGains</a> (const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;g) noexcept</td></tr>
+<tr class="memdesc:aa15a1499a0a6f6d85fd40b8830636588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change the PID controller gains.  <a href="classqlibs_1_1pid_controller.html#aa15a1499a0a6f6d85fd40b8830636588">More...</a><br /></td></tr>
+<tr class="separator:aa15a1499a0a6f6d85fd40b8830636588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3868d83ac3e11846ae276c7f1234cf92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a3868d83ac3e11846ae276c7f1234cf92">setExtraGains</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Kw, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Kt) noexcept</td></tr>
+<tr class="memdesc:a3868d83ac3e11846ae276c7f1234cf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Change extra PID controller gains.  <a href="classqlibs_1_1pid_controller.html#a3868d83ac3e11846ae276c7f1234cf92">More...</a><br /></td></tr>
+<tr class="separator:a3868d83ac3e11846ae276c7f1234cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3161df46ae458642e45b0ef0b954b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">setSaturation</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Min, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Max) noexcept</td></tr>
+<tr class="memdesc:a3e3161df46ae458642e45b0ef0b954b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output saturation for the PID controller.  <a href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">More...</a><br /></td></tr>
+<tr class="separator:a3e3161df46ae458642e45b0ef0b954b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf31814fb2f700c9a6edf6a8b5f8518"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a5bf31814fb2f700c9a6edf6a8b5f8518">setSeries</a> (void) noexcept</td></tr>
+<tr class="memdesc:a5bf31814fb2f700c9a6edf6a8b5f8518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the controller gains to conform the series or interacting form.  <a href="classqlibs_1_1pid_controller.html#a5bf31814fb2f700c9a6edf6a8b5f8518">More...</a><br /></td></tr>
+<tr class="separator:a5bf31814fb2f700c9a6edf6a8b5f8518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124b96d1c7f9d882edf4b55e0af320c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8">setEpsilon</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> eps) noexcept</td></tr>
+<tr class="memdesc:a124b96d1c7f9d882edf4b55e0af320c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum value considered as error.  <a href="classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8">More...</a><br /></td></tr>
+<tr class="separator:a124b96d1c7f9d882edf4b55e0af320c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">setDerivativeFilter</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Beta) noexcept</td></tr>
+<tr class="memdesc:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tuning parameter for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">More...</a><br /></td></tr>
+<tr class="separator:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">setMode</a> (const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> Mode) noexcept</td></tr>
+<tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">More...</a><br /></td></tr>
+<tr class="separator:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea472ad5950fcb964137688e8aef8f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0">setReferenceWeighting</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> gb, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> gc) noexcept</td></tr>
+<tr class="memdesc:a7ea472ad5950fcb964137688e8aef8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system.  <a href="classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0">More...</a><br /></td></tr>
+<tr class="separator:a7ea472ad5950fcb964137688e8aef8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1ab27029df2b125f3c658534235fdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc">setManualInput</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> manualInput) noexcept</td></tr>
+<tr class="memdesc:a1c1ab27029df2b125f3c658534235fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed.  <a href="classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc">More...</a><br /></td></tr>
+<tr class="separator:a1c1ab27029df2b125f3c658534235fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32aad63ae45b46882838a14940180424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424">setModelReferenceControl</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> &amp;modelRef, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Gamma=0.5, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Alpha=0.01) noexcept</td></tr>
+<tr class="memdesc:a32aad63ae45b46882838a14940180424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the additive MRAC(Model Reference Adaptive Control) feature.  <a href="classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424">More...</a><br /></td></tr>
+<tr class="separator:a32aad63ae45b46882838a14940180424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6">removeModelReferenceControl</a> (void) noexcept</td></tr>
+<tr class="memdesc:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop.  <a href="classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6">More...</a><br /></td></tr>
+<tr class="separator:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb695602fafd10c67ca8089a217afebc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc">control</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> w, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> y) noexcept</td></tr>
+<tr class="memdesc:adb695602fafd10c67ca8089a217afebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the control action for given PID controller instance.  <a href="classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc">More...</a><br /></td></tr>
+<tr class="separator:adb695602fafd10c67ca8089a217afebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac104a665b6e24907cc74c42913c9f31c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">bindAutoTuning</a> (<a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a> &amp;at) noexcept</td></tr>
+<tr class="memdesc:ac104a665b6e24907cc74c42913c9f31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the specified instance to enable the PID controller auto tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">More...</a><br /></td></tr>
+<tr class="separator:ac104a665b6e24907cc74c42913c9f31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df64adf568d4f8ec9c26b86d26aa77e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a5df64adf568d4f8ec9c26b86d26aa77e">unbindAutoTuning</a> (void) noexcept</td></tr>
+<tr class="memdesc:a5df64adf568d4f8ec9c26b86d26aa77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind and disable the PID controller auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a5df64adf568d4f8ec9c26b86d26aa77e">More...</a><br /></td></tr>
+<tr class="separator:a5df64adf568d4f8ec9c26b86d26aa77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8454872ae2baae5962c0f88a966d3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e">enableAutoTuning</a> (const uint32_t tEnable) noexcept</td></tr>
+<tr class="memdesc:a4f8454872ae2baae5962c0f88a966d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time steps where the auto tuner algorithm will modify the controller gains.  <a href="classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e">More...</a><br /></td></tr>
+<tr class="separator:a4f8454872ae2baae5962c0f88a966d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2968dd11df6b432622b222eb41113131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131">isAutoTuningComplete</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a2968dd11df6b432622b222eb41113131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the auto tuning process has finished with new gains set on the controller.  <a href="classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131">More...</a><br /></td></tr>
+<tr class="separator:a2968dd11df6b432622b222eb41113131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce785a61afa8becb23b39038334435b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b">setAutoTuningParameters</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Mu, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> Alpha, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> lambda) noexcept</td></tr>
+<tr class="memdesc:a1ce785a61afa8becb23b39038334435b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b">More...</a><br /></td></tr>
+<tr class="separator:a1ce785a61afa8becb23b39038334435b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b5537d70b094e5793fc5a182a10fe1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1">reset</a> (void) noexcept</td></tr>
+<tr class="memdesc:ab9b5537d70b094e5793fc5a182a10fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the internal PID controller calculations.  <a href="classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1">More...</a><br /></td></tr>
+<tr class="separator:ab9b5537d70b094e5793fc5a182a10fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_structqlibs_1_1pid_gains"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structqlibs_1_1pid_gains')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a></td></tr>
-<tr class="memitem:a3da3fcc7e42fa52384170c9336bf7500 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a3da3fcc7e42fa52384170c9336bf7500">Kc</a></td></tr>
-<tr class="separator:a3da3fcc7e42fa52384170c9336bf7500 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb31545fd8ea119995d6f8d010f2016 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#abbb31545fd8ea119995d6f8d010f2016">Ki</a></td></tr>
-<tr class="separator:abbb31545fd8ea119995d6f8d010f2016 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ff76c699e5643c475c7978ae96e125b inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a2ff76c699e5643c475c7978ae96e125b">Kd</a></td></tr>
-<tr class="separator:a2ff76c699e5643c475c7978ae96e125b inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_structqlibs_1_1pid_gains"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structqlibs_1_1pid_gains')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="structqlibs_1_1pid_gains.html">qlibs::pidGains</a></td></tr>
+<tr class="memitem:a1987fbe7e40c7721309eed1d0a7b44f5 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a1987fbe7e40c7721309eed1d0a7b44f5">Kc</a></td></tr>
+<tr class="separator:a1987fbe7e40c7721309eed1d0a7b44f5 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac917dca006c32015cb03023e3552fabd inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#ac917dca006c32015cb03023e3552fabd">Ki</a></td></tr>
+<tr class="separator:ac917dca006c32015cb03023e3552fabd inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99198109fcedec88e1e8debd59562853 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1pid_gains.html#a99198109fcedec88e1e8debd59562853">Kd</a></td></tr>
+<tr class="separator:a99198109fcedec88e1e8debd59562853 inherit pub_attribs_structqlibs_1_1pid_gains"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A PID controller object. </p>
 <p >The instance should be initialized using the pid::setup() method. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5ff3bce0f1c2185ce55ddb7d1a433f24" name="a5ff3bce0f1c2185ce55ddb7d1a433f24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ff3bce0f1c2185ce55ddb7d1a433f24">&#9670;&nbsp;</a></span>bindAutoTuning()</h2>
+<a id="ac104a665b6e24907cc74c42913c9f31c" name="ac104a665b6e24907cc74c42913c9f31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac104a665b6e24907cc74c42913c9f31c">&#9670;&nbsp;</a></span>bindAutoTuning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +243,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool bindAutoTuning </td>
+          <td class="memname">bool pidController::bindAutoTuning </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a> &amp;&#160;</td>
           <td class="paramname"><em>at</em></td><td>)</td>
@@ -267,8 +268,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1c1ef7bedbdfa06a7bd28803d88d60f5" name="a1c1ef7bedbdfa06a7bd28803d88d60f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c1ef7bedbdfa06a7bd28803d88d60f5">&#9670;&nbsp;</a></span>control()</h2>
+<a id="adb695602fafd10c67ca8089a217afebc" name="adb695602fafd10c67ca8089a217afebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb695602fafd10c67ca8089a217afebc">&#9670;&nbsp;</a></span>control()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,15 +278,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> control </td>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> pidController::control </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -302,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the control action for given PID controller instance. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>Instance must be previously initialized by <a class="el" href="classqlibs_1_1pid_controller.html#a6cb27e634926f3a76de87f492b9ef637" title="Setup and initialize the PID controller instance.">pidController::setup()</a> </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Instance must be previously initialized by <a class="el" href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c" title="Setup and initialize the PID controller instance.">pidController::setup()</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The user must ensure that this function is executed in the time specified in <em>dt</em> either by using a HW or SW timer, a real time task, or a timing service. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -315,8 +316,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af600aec91cf730f8984102b8f565dc69" name="af600aec91cf730f8984102b8f565dc69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af600aec91cf730f8984102b8f565dc69">&#9670;&nbsp;</a></span>enableAutoTuning()</h2>
+<a id="a4f8454872ae2baae5962c0f88a966d3e" name="a4f8454872ae2baae5962c0f88a966d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8454872ae2baae5962c0f88a966d3e">&#9670;&nbsp;</a></span>enableAutoTuning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool enableAutoTuning </td>
+          <td class="memname">bool pidController::enableAutoTuning </td>
           <td>(</td>
           <td class="paramtype">const uint32_t&#160;</td>
           <td class="paramname"><em>tEnable</em></td><td>)</td>
@@ -340,11 +341,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the number of time steps where the auto tuner algorithm will modify the controller gains. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>Controller must have an <a class="el" href="classqlibs_1_1pid_auto_tuning.html" title="A PID Auto-tuning object.">pidAutoTuning</a> object already binded wih <a class="el" href="classqlibs_1_1pid_controller.html#a5ff3bce0f1c2185ce55ddb7d1a433f24" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Controller must have an <a class="el" href="classqlibs_1_1pid_auto_tuning.html" title="A PID Auto-tuning object.">pidAutoTuning</a> object already binded wih <a class="el" href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>To disable auto-tuning pass a 0uL value to the <em>tEnable</em> argument. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tEnable</td><td>The number of time steps. To keep the auto tuner enabled indefinitely pass <a class="el" href="classqlibs_1_1pid_auto_tuning.html#a9384f9b788abdbe1ca2d933f2a7f3e53" title="Constant to keep the auto-tuner enabled indefinitely.">pidAutoTuning::UNDEFINED</a> as argument. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tEnable</td><td>The number of time steps. To keep the auto tuner enabled indefinitely pass <a class="el" href="classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de" title="Constant to keep the auto-tuner enabled indefinitely.">pidAutoTuning::UNDEFINED</a> as argument. </td></tr>
   </table>
   </dd>
 </dl>
@@ -352,8 +353,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af0607ebd52203489acf34492f4a1775f" name="af0607ebd52203489acf34492f4a1775f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0607ebd52203489acf34492f4a1775f">&#9670;&nbsp;</a></span>isAutoTuningComplete()</h2>
+<a id="a2968dd11df6b432622b222eb41113131" name="a2968dd11df6b432622b222eb41113131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2968dd11df6b432622b222eb41113131">&#9670;&nbsp;</a></span>isAutoTuningComplete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool isAutoTuningComplete </td>
+          <td class="memname">bool pidController::isAutoTuningComplete </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -381,8 +382,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac93fd918c7ea64920a977e4f6eea7d22" name="ac93fd918c7ea64920a977e4f6eea7d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac93fd918c7ea64920a977e4f6eea7d22">&#9670;&nbsp;</a></span>removeModelReferenceControl()</h2>
+<a id="aa1bb8f7c7b01adf85e42401fafe841e6" name="aa1bb8f7c7b01adf85e42401fafe841e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1bb8f7c7b01adf85e42401fafe841e6">&#9670;&nbsp;</a></span>removeModelReferenceControl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,7 +392,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool removeModelReferenceControl </td>
+          <td class="memname">bool pidController::removeModelReferenceControl </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -410,8 +411,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab537261ac416c86c81074bcc5a82342a" name="ab537261ac416c86c81074bcc5a82342a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab537261ac416c86c81074bcc5a82342a">&#9670;&nbsp;</a></span>reset()</h2>
+<a id="ab9b5537d70b094e5793fc5a182a10fe1" name="ab9b5537d70b094e5793fc5a182a10fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b5537d70b094e5793fc5a182a10fe1">&#9670;&nbsp;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +421,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool reset </td>
+          <td class="memname">bool pidController::reset </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -439,8 +440,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a681bf6255ea4e97d730080fba5999bda" name="a681bf6255ea4e97d730080fba5999bda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681bf6255ea4e97d730080fba5999bda">&#9670;&nbsp;</a></span>setAutoTuningParameters()</h2>
+<a id="a1ce785a61afa8becb23b39038334435b" name="a1ce785a61afa8becb23b39038334435b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce785a61afa8becb23b39038334435b">&#9670;&nbsp;</a></span>setAutoTuningParameters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,21 +450,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setAutoTuningParameters </td>
+          <td class="memname">bool pidController::setAutoTuningParameters </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Mu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Alpha</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>lambda</em>&#160;</td>
         </tr>
         <tr>
@@ -492,8 +493,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ae43c229036d7d8c745323455d749af" name="a9ae43c229036d7d8c745323455d749af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ae43c229036d7d8c745323455d749af">&#9670;&nbsp;</a></span>setDerivativeFilter()</h2>
+<a id="a627e61060b12a8e3ab6e54d128f5fc7c" name="a627e61060b12a8e3ab6e54d128f5fc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627e61060b12a8e3ab6e54d128f5fc7c">&#9670;&nbsp;</a></span>setDerivativeFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -502,9 +503,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setDerivativeFilter </td>
+          <td class="memname">bool pidController::setDerivativeFilter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Beta</em></td><td>)</td>
           <td></td>
         </tr>
@@ -527,8 +528,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a42a3940f096b77ae1a414d28f13e4a04" name="a42a3940f096b77ae1a414d28f13e4a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42a3940f096b77ae1a414d28f13e4a04">&#9670;&nbsp;</a></span>setDirection()</h2>
+<a id="a91c9b45ca2efaae7aa8184af3139c49f" name="a91c9b45ca2efaae7aa8184af3139c49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c9b45ca2efaae7aa8184af3139c49f">&#9670;&nbsp;</a></span>setDirection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -537,9 +538,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setDirection </td>
+          <td class="memname">bool pidController::setDirection </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__qpid.html#ga6a9274f0445ed7a43468421749d9f889">pidDirection</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">pidDirection</a>&#160;</td>
           <td class="paramname"><em>d</em></td><td>)</td>
           <td></td>
         </tr>
@@ -562,8 +563,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a465d1e8031acd86704b75e82e8ff0ea7" name="a465d1e8031acd86704b75e82e8ff0ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a465d1e8031acd86704b75e82e8ff0ea7">&#9670;&nbsp;</a></span>setEpsilon()</h2>
+<a id="a124b96d1c7f9d882edf4b55e0af320c8" name="a124b96d1c7f9d882edf4b55e0af320c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124b96d1c7f9d882edf4b55e0af320c8">&#9670;&nbsp;</a></span>setEpsilon()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,9 +573,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setEpsilon </td>
+          <td class="memname">bool pidController::setEpsilon </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>eps</em></td><td>)</td>
           <td></td>
         </tr>
@@ -597,8 +598,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="afe7b133f3739a21886a000c1518f5b30" name="afe7b133f3739a21886a000c1518f5b30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe7b133f3739a21886a000c1518f5b30">&#9670;&nbsp;</a></span>setExtraGains()</h2>
+<a id="a3868d83ac3e11846ae276c7f1234cf92" name="a3868d83ac3e11846ae276c7f1234cf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3868d83ac3e11846ae276c7f1234cf92">&#9670;&nbsp;</a></span>setExtraGains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -607,15 +608,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setExtraGains </td>
+          <td class="memname">bool pidController::setExtraGains </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Kw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Kt</em>&#160;</td>
         </tr>
         <tr>
@@ -643,8 +644,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a165e1e8eb8db9e24a2d3e343751d1a64" name="a165e1e8eb8db9e24a2d3e343751d1a64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a165e1e8eb8db9e24a2d3e343751d1a64">&#9670;&nbsp;</a></span>setGains() <span class="overload">[1/2]</span></h2>
+<a id="aa15a1499a0a6f6d85fd40b8830636588" name="aa15a1499a0a6f6d85fd40b8830636588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15a1499a0a6f6d85fd40b8830636588">&#9670;&nbsp;</a></span>setGains() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -653,7 +654,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setGains </td>
+          <td class="memname">bool pidController::setGains </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;&#160;</td>
           <td class="paramname"><em>g</em></td><td>)</td>
@@ -678,8 +679,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2e0c98770aeb884ba4c18f35507a7b2e" name="a2e0c98770aeb884ba4c18f35507a7b2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e0c98770aeb884ba4c18f35507a7b2e">&#9670;&nbsp;</a></span>setGains() <span class="overload">[2/2]</span></h2>
+<a id="a2130620cacb660dc8e5e0b2d08863dd4" name="a2130620cacb660dc8e5e0b2d08863dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2130620cacb660dc8e5e0b2d08863dd4">&#9670;&nbsp;</a></span>setGains() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -688,21 +689,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setGains </td>
+          <td class="memname">bool pidController::setGains </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>kc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>ki</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>kd</em>&#160;</td>
         </tr>
         <tr>
@@ -731,8 +732,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0003af0aef1ac0729a1e4d22dadf8c32" name="a0003af0aef1ac0729a1e4d22dadf8c32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0003af0aef1ac0729a1e4d22dadf8c32">&#9670;&nbsp;</a></span>setManualInput()</h2>
+<a id="a1c1ab27029df2b125f3c658534235fdc" name="a1c1ab27029df2b125f3c658534235fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1ab27029df2b125f3c658534235fdc">&#9670;&nbsp;</a></span>setManualInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -741,9 +742,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setManualInput </td>
+          <td class="memname">bool pidController::setManualInput </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>manualInput</em></td><td>)</td>
           <td></td>
         </tr>
@@ -755,7 +756,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed. </p>
+<p>Set the PID manual input mode. This value will be used as the manual input when the controller it set into the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode. Bumpless-transfer is guaranteed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">manualInput</td><td>The value of the manual input. </td></tr>
@@ -766,8 +767,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aef6776695a5e7e343c87c4228ea4bb03" name="aef6776695a5e7e343c87c4228ea4bb03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef6776695a5e7e343c87c4228ea4bb03">&#9670;&nbsp;</a></span>setMode()</h2>
+<a id="ad5b752263f58824d5dfa189dd40c2ba3" name="ad5b752263f58824d5dfa189dd40c2ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b752263f58824d5dfa189dd40c2ba3">&#9670;&nbsp;</a></span>setMode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -776,9 +777,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setMode </td>
+          <td class="memname">bool pidController::setMode </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__qpid.html#ga0fe89391c259456e24788767f121fd6d">pidMode</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a>&#160;</td>
           <td class="paramname"><em>Mode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -790,7 +791,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6daba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga0fe89391c259456e24788767f121fd6da38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
+<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">Mode</td><td>The desired operational mode. </td></tr>
@@ -801,8 +802,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a20c654f9b4ab361940da3fa93f732596" name="a20c654f9b4ab361940da3fa93f732596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20c654f9b4ab361940da3fa93f732596">&#9670;&nbsp;</a></span>setModelReferenceControl()</h2>
+<a id="a32aad63ae45b46882838a14940180424" name="a32aad63ae45b46882838a14940180424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32aad63ae45b46882838a14940180424">&#9670;&nbsp;</a></span>setModelReferenceControl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -811,21 +812,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setModelReferenceControl </td>
+          <td class="memname">bool pidController::setModelReferenceControl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> &amp;&#160;</td>
           <td class="paramname"><em>modelRef</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Gamma</em> = <code>0.5</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Alpha</em> = <code>0.01</code>&#160;</td>
         </tr>
         <tr>
@@ -854,8 +855,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab64ca98c469af0911551e31f718cda31" name="ab64ca98c469af0911551e31f718cda31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab64ca98c469af0911551e31f718cda31">&#9670;&nbsp;</a></span>setParams()</h2>
+<a id="aefe02426e77499309ecdaae144869936" name="aefe02426e77499309ecdaae144869936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe02426e77499309ecdaae144869936">&#9670;&nbsp;</a></span>setParams()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -864,21 +865,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setParams </td>
+          <td class="memname">bool pidController::setParams </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>kc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>ti</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>td</em>&#160;</td>
         </tr>
         <tr>
@@ -907,8 +908,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa39093f39879c01936c868b3f6c219bf" name="aa39093f39879c01936c868b3f6c219bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa39093f39879c01936c868b3f6c219bf">&#9670;&nbsp;</a></span>setReferenceWeighting()</h2>
+<a id="a7ea472ad5950fcb964137688e8aef8f0" name="a7ea472ad5950fcb964137688e8aef8f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea472ad5950fcb964137688e8aef8f0">&#9670;&nbsp;</a></span>setReferenceWeighting()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -917,15 +918,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setReferenceWeighting </td>
+          <td class="memname">bool pidController::setReferenceWeighting </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>gb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>gc</em>&#160;</td>
         </tr>
         <tr>
@@ -954,8 +955,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ceef558340eb4e546d777ae1e6d9fb4" name="a6ceef558340eb4e546d777ae1e6d9fb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ceef558340eb4e546d777ae1e6d9fb4">&#9670;&nbsp;</a></span>setSaturation()</h2>
+<a id="a3e3161df46ae458642e45b0ef0b954b9" name="a3e3161df46ae458642e45b0ef0b954b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3161df46ae458642e45b0ef0b954b9">&#9670;&nbsp;</a></span>setSaturation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -964,15 +965,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setSaturation </td>
+          <td class="memname">bool pidController::setSaturation </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Min</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>Max</em>&#160;</td>
         </tr>
         <tr>
@@ -1000,8 +1001,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a729a1b8ac341878d311df112e0377e3d" name="a729a1b8ac341878d311df112e0377e3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a729a1b8ac341878d311df112e0377e3d">&#9670;&nbsp;</a></span>setSeries()</h2>
+<a id="a5bf31814fb2f700c9a6edf6a8b5f8518" name="a5bf31814fb2f700c9a6edf6a8b5f8518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf31814fb2f700c9a6edf6a8b5f8518">&#9670;&nbsp;</a></span>setSeries()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,7 +1011,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setSeries </td>
+          <td class="memname">bool pidController::setSeries </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1029,8 +1030,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a306b5859ea44f6b6dbdf33dfeb8a3329" name="a306b5859ea44f6b6dbdf33dfeb8a3329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a306b5859ea44f6b6dbdf33dfeb8a3329">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+<a id="ad8d14813671430e5fb851cec22253eb8" name="ad8d14813671430e5fb851cec22253eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d14813671430e5fb851cec22253eb8">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1039,7 +1040,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setup </td>
+          <td class="memname">bool qlibs::pidController::setup </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structqlibs_1_1pid_gains.html">pidGains</a> &amp;&#160;</td>
           <td class="paramname"><em>g</em>, </td>
@@ -1047,7 +1048,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>dT</em>&#160;</td>
         </tr>
         <tr>
@@ -1075,8 +1076,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6cb27e634926f3a76de87f492b9ef637" name="a6cb27e634926f3a76de87f492b9ef637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb27e634926f3a76de87f492b9ef637">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
+<a id="a024a3e62c9090fe9b2e44043beb0ae7c" name="a024a3e62c9090fe9b2e44043beb0ae7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024a3e62c9090fe9b2e44043beb0ae7c">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1085,27 +1086,27 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool setup </td>
+          <td class="memname">bool pidController::setup </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>kc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>ki</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>kd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#ab46614359717672dc9a4eed4669be6e6">real_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
           <td class="paramname"><em>dT</em>&#160;</td>
         </tr>
         <tr>
@@ -1135,8 +1136,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0789159d7029daf5e4fee0a57d26e92" name="ae0789159d7029daf5e4fee0a57d26e92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0789159d7029daf5e4fee0a57d26e92">&#9670;&nbsp;</a></span>unbindAutoTuning()</h2>
+<a id="a5df64adf568d4f8ec9c26b86d26aa77e" name="a5df64adf568d4f8ec9c26b86d26aa77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df64adf568d4f8ec9c26b86d26aa77e">&#9670;&nbsp;</a></span>unbindAutoTuning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1145,7 +1146,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool unbindAutoTuning </td>
+          <td class="memname">bool qlibs::pidController::unbindAutoTuning </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>

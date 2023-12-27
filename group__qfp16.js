@@ -1,21 +1,21 @@
 var group__qfp16 =
 [
-    [ "fp16", "classqlibs_1_1fp16.html", [
-      [ "isExpMax", "classqlibs_1_1fp16.html#a58378c91a77c8e7d3aa894b79ba39d30", null ],
-      [ "isOverflow", "classqlibs_1_1fp16.html#a8c8af38a2c755f9c80c08a13d152c74d", null ],
-      [ "raw", "classqlibs_1_1fp16.html#a19fa5babf75d1fc1a6b61b66e22f122e", null ]
+    [ "qlibs::fp16", "classqlibs_1_1fp16.html", [
+      [ "isExpMax", "classqlibs_1_1fp16.html#ad369475aa239d84820c14f02a7cbc631", null ],
+      [ "isOverflow", "classqlibs_1_1fp16.html#a06adef7d29621413668fc9a3ffd3f910", null ],
+      [ "raw", "classqlibs_1_1fp16.html#a332600a253e95f3c9709d1365325fb78", null ]
     ] ],
-    [ "qlibs::FP_1_PI", "group__qfp16.html#ga2064ca4e446edacea8257a8a50662364", null ],
-    [ "qlibs::FP_2_PI", "group__qfp16.html#ga12ce662b4b3545d8d7e4aec27f0a07ca", null ],
-    [ "qlibs::FP_2_SQRTPI", "group__qfp16.html#ga2422aabb757e91a1e994570b86c37243", null ],
-    [ "qlibs::FP_E", "group__qfp16.html#gae56814842a1a8de19cd06417952b90dc", null ],
-    [ "qlibs::FP_LN10", "group__qfp16.html#gaa1f955ac36e00eb8f45ac7f942b71927", null ],
-    [ "qlibs::FP_LN2", "group__qfp16.html#gaf634b120f46d1b4d526461bc62d00db3", null ],
-    [ "qlibs::FP_LOG10E", "group__qfp16.html#ga50d0f1b8996b97f30e4eea7b444294c5", null ],
-    [ "qlibs::FP_LOG2E", "group__qfp16.html#ga1c6bfb13bdc3b7fc5b30ab02dd81520d", null ],
-    [ "qlibs::FP_PI", "group__qfp16.html#gad88401f431d19e023352129263694e93", null ],
-    [ "qlibs::FP_PI_2", "group__qfp16.html#gad43f8fa931ca4509975d9cabadf519fd", null ],
-    [ "qlibs::FP_PI_4", "group__qfp16.html#ga14eb9216d9beb29a27307fbda8e0bb2e", null ],
-    [ "qlibs::FP_SQRT1_2", "group__qfp16.html#gaebd35d683f1884faebe539f06cdd5734", null ],
-    [ "qlibs::FP_SQRT2", "group__qfp16.html#ga5a1b0be0e9fc70e240e741a646d79477", null ]
+    [ "qlibs::FP_1_PI", "group__qfp16.html#gae8e708f5e7540fab5eba3ba5f1d9e091", null ],
+    [ "qlibs::FP_2_PI", "group__qfp16.html#ga2329c3a7709f3282052486c9e2ab0068", null ],
+    [ "qlibs::FP_2_SQRTPI", "group__qfp16.html#gaa5f73acfac2de73a93357c968ae1895f", null ],
+    [ "qlibs::FP_E", "group__qfp16.html#gad6a90100d5477e580bf45f2f9f3227f0", null ],
+    [ "qlibs::FP_LN10", "group__qfp16.html#ga2bea9b82682a0c3319b689dde5561fc4", null ],
+    [ "qlibs::FP_LN2", "group__qfp16.html#ga59afd5098ca25e2b6fa6c683a6a57ab3", null ],
+    [ "qlibs::FP_LOG10E", "group__qfp16.html#ga80762966a7ce3862a715dde077a4012f", null ],
+    [ "qlibs::FP_LOG2E", "group__qfp16.html#gad7cb4c84062c4c70aa973b3f078f3ff4", null ],
+    [ "qlibs::FP_PI", "group__qfp16.html#ga0bae0189523ace0fa76c8e9db5f3700d", null ],
+    [ "qlibs::FP_PI_2", "group__qfp16.html#ga692e67217b5657dda11b962728e7fc60", null ],
+    [ "qlibs::FP_PI_4", "group__qfp16.html#gad496857316e5a4334157cf482971d08d", null ],
+    [ "qlibs::FP_SQRT1_2", "group__qfp16.html#ga29a6003b05450db1d45e367acf411bbe", null ],
+    [ "qlibs::FP_SQRT2", "group__qfp16.html#gadfc0f1a3681e7b809dbcf98078b784b0", null ]
 ];

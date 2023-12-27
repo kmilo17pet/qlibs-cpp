@@ -1,19 +1,19 @@
 var group__qbitfield =
 [
-    [ "bitfield", "classqlibs_1_1bitfield.html", [
-      [ "clearAll", "classqlibs_1_1bitfield.html#a7d3079f41eb879d3f61f1d3cc9706659", null ],
-      [ "clearBit", "classqlibs_1_1bitfield.html#a566f7b139cb65785beeede3316f2edcd", null ],
-      [ "dump", "classqlibs_1_1bitfield.html#a737ed03352437ff2cbd4130cc167273c", null ],
-      [ "readBit", "classqlibs_1_1bitfield.html#acebe99c54f34e2206fd0497dd67f72c9", null ],
-      [ "readFloat", "classqlibs_1_1bitfield.html#aec91d54241545e249d70ac6cc257d978", null ],
-      [ "readUINTn", "classqlibs_1_1bitfield.html#add89d52dfd3cad9cd8c9998f56affa67", null ],
-      [ "setAll", "classqlibs_1_1bitfield.html#adcdcfa4087fc630bafa0260420ffe232", null ],
-      [ "setBit", "classqlibs_1_1bitfield.html#a78c779810c4cec44d5aec7aab18c2124", null ],
-      [ "setup", "classqlibs_1_1bitfield.html#afcccca579f31494e9e20018dc117e1d7", null ],
-      [ "toggleBit", "classqlibs_1_1bitfield.html#ac7c4657a44f73bf16a3a7ce03aa26985", null ],
-      [ "writeBit", "classqlibs_1_1bitfield.html#ae8d181abb5ac9bb4e6ea2b7844184a94", null ],
-      [ "writeFloat", "classqlibs_1_1bitfield.html#aff573fe4d1d7526dada52c3cca97739b", null ],
-      [ "writeUINTn", "classqlibs_1_1bitfield.html#a8d4e350b2745cdba3a2f919871042bac", null ]
+    [ "qlibs::bitfield", "classqlibs_1_1bitfield.html", [
+      [ "clearAll", "classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74", null ],
+      [ "clearBit", "classqlibs_1_1bitfield.html#a1b5c5d435a54c81220d93803c384bada", null ],
+      [ "dump", "classqlibs_1_1bitfield.html#a8c09e3f23d830fd47d82250a2893ceca", null ],
+      [ "readBit", "classqlibs_1_1bitfield.html#a4a341fe55ab7bd1268295bbebd95c69a", null ],
+      [ "readFloat", "classqlibs_1_1bitfield.html#aae351d60490ae87b58a77e6dd85ff9e8", null ],
+      [ "readUINTn", "classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e", null ],
+      [ "setAll", "classqlibs_1_1bitfield.html#ac8bf522c01a711734d8f2d2f65d4c87e", null ],
+      [ "setBit", "classqlibs_1_1bitfield.html#af27c81bfc8977d80f33806950018ce86", null ],
+      [ "setup", "classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4", null ],
+      [ "toggleBit", "classqlibs_1_1bitfield.html#abc994e1433e4e6ebc2f81c199c334f72", null ],
+      [ "writeBit", "classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07", null ],
+      [ "writeFloat", "classqlibs_1_1bitfield.html#a87a227dedc282534244a9954aef0161a", null ],
+      [ "writeUINTn", "classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37", null ]
     ] ],
     [ "qlibs::bitfield_size", "group__qbitfield.html#ga3645c015d457782880b34f38777f5067", null ]
 ];

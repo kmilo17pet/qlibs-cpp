@@ -1,58 +1,58 @@
 var group__qssmoother =
 [
-    [ "smoother", "classqlibs_1_1smoother.html", [
-      [ "isInitialized", "classqlibs_1_1smoother.html#a3bed58b46f0fb23aeb1ec60c340f1f90", null ],
-      [ "reset", "classqlibs_1_1smoother.html#ae6e0f8dc9ee62cc59592a8154069b347", null ],
-      [ "smooth", "classqlibs_1_1smoother.html#a93e0f7c2982ed490ed52e76b9d6c5f82", null ]
+    [ "qlibs::smoother", "classqlibs_1_1smoother.html", [
+      [ "isInitialized", "classqlibs_1_1smoother.html#aec30c8dbc4317e6e36fbebe8e84a0b29", null ],
+      [ "reset", "classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32", null ],
+      [ "smooth", "classqlibs_1_1smoother.html#aed55eebe0a8653e933f6044c13d45340", null ]
     ] ],
-    [ "smootherLPF1", "classqlibs_1_1smoother_l_p_f1.html", [
-      [ "setup", "classqlibs_1_1smoother_l_p_f1.html#adb53fe1434eead75b80acf37f35a798d", null ],
-      [ "smooth", "classqlibs_1_1smoother_l_p_f1.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherLPF1", "classqlibs_1_1smoother_l_p_f1.html", [
+      [ "setup", "classqlibs_1_1smoother_l_p_f1.html#a060747e205846e64f2b93ef4ce0bb1ab", null ],
+      [ "smooth", "classqlibs_1_1smoother_l_p_f1.html#ae215b6841d6176c9ce520f71781dbfd3", null ]
     ] ],
-    [ "smootherLPF2", "classqlibs_1_1smoother_l_p_f2.html", [
-      [ "setup", "classqlibs_1_1smoother_l_p_f2.html#adb53fe1434eead75b80acf37f35a798d", null ],
-      [ "smooth", "classqlibs_1_1smoother_l_p_f2.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherLPF2", "classqlibs_1_1smoother_l_p_f2.html", [
+      [ "setup", "classqlibs_1_1smoother_l_p_f2.html#a590690dcb7861a47cd2f120b48db1c39", null ],
+      [ "smooth", "classqlibs_1_1smoother_l_p_f2.html#a32805ca419952670554182e8ef04308a", null ]
     ] ],
-    [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", [
-      [ "setup", "classqlibs_1_1smoother_m_w_m1.html#aad0481177358cfac68da599a3370b759", null ],
-      [ "setup", "classqlibs_1_1smoother_m_w_m1.html#a6c3e2797edd9dab0b36893d3674eec8b", null ],
-      [ "smooth", "classqlibs_1_1smoother_m_w_m1.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", [
+      [ "setup", "classqlibs_1_1smoother_m_w_m1.html#a068d4ea6d1fe45302c2dace1761aa6eb", null ],
+      [ "setup", "classqlibs_1_1smoother_m_w_m1.html#ad57695364ca4d022ba9593a79c9daeba", null ],
+      [ "smooth", "classqlibs_1_1smoother_m_w_m1.html#a81521b6b6acc5ac08aa17b71a2305762", null ]
     ] ],
-    [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", [
-      [ "setup", "classqlibs_1_1smoother_m_w_m2.html#aad0481177358cfac68da599a3370b759", null ],
-      [ "setup", "classqlibs_1_1smoother_m_w_m2.html#a6c3e2797edd9dab0b36893d3674eec8b", null ],
-      [ "smooth", "classqlibs_1_1smoother_m_w_m2.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", [
+      [ "setup", "classqlibs_1_1smoother_m_w_m2.html#adff0655f96240a893df3874dd1dd7782", null ],
+      [ "setup", "classqlibs_1_1smoother_m_w_m2.html#afd97e9e5396b8a2952c1edb405435fb5", null ],
+      [ "smooth", "classqlibs_1_1smoother_m_w_m2.html#a00a22c1a51d51b8775c815ce70f51ee3", null ]
     ] ],
-    [ "smootherMOR1", "classqlibs_1_1smoother_m_o_r1.html", [
-      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#a87bafbc8861978e12bec2f71859f580e", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#a087b81ea94e17699c4509dc8d3724452", null ],
-      [ "smooth", "classqlibs_1_1smoother_m_o_r1.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherMOR1", "classqlibs_1_1smoother_m_o_r1.html", [
+      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#ad4aef12154d19a362a9e60b0673f5062", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#a903ed2139241033208753b1eeb7bf8e5", null ],
+      [ "smooth", "classqlibs_1_1smoother_m_o_r1.html#a14776ec21ab402b4d97a69ae3bfc2a20", null ]
     ] ],
-    [ "smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", [
-      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a87bafbc8861978e12bec2f71859f580e", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a087b81ea94e17699c4509dc8d3724452", null ],
-      [ "smooth", "classqlibs_1_1smoother_m_o_r2.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", [
+      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a309fe4dd66de0bb8e5d157c4e801ac32", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a846200dc88bf9f432015b0903ee35919", null ],
+      [ "smooth", "classqlibs_1_1smoother_m_o_r2.html#a5564b7e3e94c1132228daf74de3fd76f", null ]
     ] ],
-    [ "smootherGMWF", "classqlibs_1_1smoother_g_m_w_f.html", [
-      [ "setup", "classqlibs_1_1smoother_g_m_w_f.html#a08c2733929836d7405efffc31af1bc40", null ],
-      [ "setup", "classqlibs_1_1smoother_g_m_w_f.html#adc7b68bc128b65e66814267a663ac565", null ],
-      [ "smooth", "classqlibs_1_1smoother_g_m_w_f.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherGMWF", "classqlibs_1_1smoother_g_m_w_f.html", [
+      [ "setup", "classqlibs_1_1smoother_g_m_w_f.html#a3a18a28dd0c3a567329f6d549ae62c82", null ],
+      [ "setup", "classqlibs_1_1smoother_g_m_w_f.html#a66aa7cb4a971d50860469ac004f62f69", null ],
+      [ "smooth", "classqlibs_1_1smoother_g_m_w_f.html#aa34b78d5b3151f21391428464d7478c0", null ]
     ] ],
-    [ "smootherEXPW", "classqlibs_1_1smoother_e_x_p_w.html", [
-      [ "setup", "classqlibs_1_1smoother_e_x_p_w.html#adfecd88ee636716a61a5fb2cc80bff56", null ],
-      [ "smooth", "classqlibs_1_1smoother_e_x_p_w.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherEXPW", "classqlibs_1_1smoother_e_x_p_w.html", [
+      [ "setup", "classqlibs_1_1smoother_e_x_p_w.html#ac84cb4b936210a26649b2030370241d3", null ],
+      [ "smooth", "classqlibs_1_1smoother_e_x_p_w.html#a78870b2d015ade65a4b5cf088c26e230", null ]
     ] ],
-    [ "smootherKLMN", "classqlibs_1_1smoother_k_l_m_n.html", [
-      [ "setup", "classqlibs_1_1smoother_k_l_m_n.html#ad78ce7f46595b99addaa9ac4f2d1d006", null ],
-      [ "smooth", "classqlibs_1_1smoother_k_l_m_n.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherKLMN", "classqlibs_1_1smoother_k_l_m_n.html", [
+      [ "setup", "classqlibs_1_1smoother_k_l_m_n.html#a7ef6ea795d8012889ad06f61643a60d3", null ],
+      [ "smooth", "classqlibs_1_1smoother_k_l_m_n.html#a93093709fa2c9fbc10d60118ce32d457", null ]
     ] ],
-    [ "smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html", [
-      [ "~smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html#ac13f5f519fddcd4120fee73321f4db0f", null ],
-      [ "smooth", "classqlibs_1_1smoother_d_e_s_f.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html", [
+      [ "~smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html#a3e47d35fe261e05f325e81a741afde62", null ],
+      [ "smooth", "classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554", null ]
     ] ],
-    [ "smootherALNF", "classqlibs_1_1smoother_a_l_n_f.html", [
-      [ "setup", "classqlibs_1_1smoother_a_l_n_f.html#ad9ccfe4659c34148cc3b3f59eb1f5841", null ],
-      [ "setup", "classqlibs_1_1smoother_a_l_n_f.html#a345af57dc42b3ca707c296c3eaa00a51", null ],
-      [ "smooth", "classqlibs_1_1smoother_a_l_n_f.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "qlibs::smootherALNF", "classqlibs_1_1smoother_a_l_n_f.html", [
+      [ "setup", "classqlibs_1_1smoother_a_l_n_f.html#ae6c1b5eac73a10f02c773612f0239837", null ],
+      [ "setup", "classqlibs_1_1smoother_a_l_n_f.html#aab17b6b2814985f6196655c89ec1605a", null ],
+      [ "smooth", "classqlibs_1_1smoother_a_l_n_f.html#a95453d7717de41619524594b0ddd733c", null ]
     ] ]
 ];

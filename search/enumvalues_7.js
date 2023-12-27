@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mamdani_0',['Mamdani',['../group__qfis.html#ggacb0db7981a221a4ecb3466803cf1469eaaaafece1969d49f7a63d07fd66937799',1,'qlibs']]],
-  ['mom_1',['mom',['../group__qfis.html#gga83e0ce0b0a32a7646554fe9a96be696fa91e435ff054716e32ac834ddfdf8ece9',1,'qlibs']]]
+  ['mamdani_0',['Mamdani',['../group__qfis.html#gga209c5983c134dd6ec058dd2df498508ca80767da3d48c315211d36c53485a8ac3',1,'qlibs']]],
+  ['mom_1',['mom',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ad07c5255c1a2e0fd8b508e957b10314f',1,'qlibs']]]
 ];

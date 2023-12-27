@@ -1,5 +1,5 @@
 var classqlibs_1_1smoother_d_e_s_f =
 [
-    [ "~smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html#ac13f5f519fddcd4120fee73321f4db0f", null ],
-    [ "smooth", "classqlibs_1_1smoother_d_e_s_f.html#a1116b73eb7b200a50733aad75495a6fe", null ]
+    [ "~smootherDESF", "classqlibs_1_1smoother_d_e_s_f.html#a3e47d35fe261e05f325e81a741afde62", null ],
+    [ "smooth", "classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554", null ]
 ];
