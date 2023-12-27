@@ -44,7 +44,7 @@
 *
 *  @code{.c}
 *  #include <iostream>
-*  #include <qlibs-cpp.h>
+*  #include <qlibs.h>
 *  
 *  int main( int argc, char *argv[] )
 *  {
