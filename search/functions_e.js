@@ -1,7 +1,7 @@
 var searchData=
 [
   ['saturate_0',['saturate',['../classqlibs_1_1ltisys.html#a8e21ee9b0aaada8ccac0238d3d9bd799',1,'qlibs::ltisys']]],
-  ['set_1',['set',['../group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877',1,'qlibs::generic']]],
+  ['set_1',['set',['../namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877',1,'qlibs::generic']]],
   ['setall_2',['setAll',['../classqlibs_1_1bitfield.html#ac8bf522c01a711734d8f2d2f65d4c87e',1,'qlibs::bitfield']]],
   ['setautotuningparameters_3',['setAutoTuningParameters',['../classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b',1,'qlibs::pidController']]],
   ['setbit_4',['setBit',['../classqlibs_1_1bitfield.html#af27c81bfc8977d80f33806950018ce86',1,'qlibs::bitfield']]],
@@ -32,10 +32,10 @@ var searchData=
   ['sin_29',['sin',['../classqlibs_1_1fp16.html#a0799ad458837cd8369737d1713afcb40',1,'qlibs::fp16']]],
   ['sinh_30',['sinh',['../classqlibs_1_1fp16.html#abadb1529c99c76f28e247fca31eb1d15',1,'qlibs::fp16']]],
   ['smooth_31',['smooth',['../classqlibs_1_1smoother.html#aed55eebe0a8653e933f6044c13d45340',1,'qlibs::smoother::smooth()'],['../classqlibs_1_1smoother_a_l_n_f.html#a95453d7717de41619524594b0ddd733c',1,'qlibs::smootherALNF::smooth()'],['../classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554',1,'qlibs::smootherDESF::smooth()'],['../classqlibs_1_1smoother_k_l_m_n.html#a93093709fa2c9fbc10d60118ce32d457',1,'qlibs::smootherKLMN::smooth()'],['../classqlibs_1_1smoother_e_x_p_w.html#a78870b2d015ade65a4b5cf088c26e230',1,'qlibs::smootherEXPW::smooth()'],['../classqlibs_1_1smoother_g_m_w_f.html#aa34b78d5b3151f21391428464d7478c0',1,'qlibs::smootherGMWF::smooth()'],['../classqlibs_1_1smoother_m_o_r2.html#a5564b7e3e94c1132228daf74de3fd76f',1,'qlibs::smootherMOR2::smooth()'],['../classqlibs_1_1smoother_m_o_r1.html#a14776ec21ab402b4d97a69ae3bfc2a20',1,'qlibs::smootherMOR1::smooth()'],['../classqlibs_1_1smoother_m_w_m2.html#a00a22c1a51d51b8775c815ce70f51ee3',1,'qlibs::smootherMWM2::smooth()'],['../classqlibs_1_1smoother_m_w_m1.html#a81521b6b6acc5ac08aa17b71a2305762',1,'qlibs::smootherMWM1::smooth()'],['../classqlibs_1_1smoother_l_p_f2.html#a32805ca419952670554182e8ef04308a',1,'qlibs::smootherLPF2::smooth()'],['../classqlibs_1_1smoother_l_p_f1.html#ae215b6841d6176c9ce520f71781dbfd3',1,'qlibs::smootherLPF1::smooth()']]],
-  ['sort_32',['sort',['../group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
+  ['sort_32',['sort',['../namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
   ['sqrt_33',['sqrt',['../classqlibs_1_1fp16.html#a1b1cdfc9a364ca519de1bd4f31743164',1,'qlibs::fp16']]],
   ['state_34',['state',['../classqlibs_1_1state.html#a9925b22e5dd87bb2e7301a62e767a8c5',1,'qlibs::state']]],
   ['step_35',['step',['../classqlibs_1_1pid_auto_tuning.html#a1c77af50acce497a4ee912fbb96073d6',1,'qlibs::pidAutoTuning']]],
   ['storeaggregatedregion_36',['storeAggregatedRegion',['../classfis_output.html#aa9a218918e45cacafdd0e5a7ad1e1bcc',1,'fisOutput::storeAggregatedRegion(real_t *xData, real_t *yData, const size_t n) noexcept'],['../classfis_output.html#a6f2de8d920721728d0a37f4727294046',1,'fisOutput::storeAggregatedRegion(real_t(&amp;xData)[numberOfPoints], real_t(&amp;yData)[numberOfPoints]) noexcept']]],
-  ['swap_37',['swap',['../group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d',1,'qlibs::generic']]]
+  ['swap_37',['swap',['../namespaceqlibs_1_1generic.html#aaddaac5dad20d93d3dc6bd99db00579d',1,'qlibs::generic']]]
 ];

@@ -1,14 +1,14 @@
 var namespaceqlibs =
 [
     [ "generic", "namespaceqlibs_1_1generic.html", [
-      [ "bSearch", "group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0", null ],
-      [ "forEach", "group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664", null ],
-      [ "lSearch", "group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e", null ],
-      [ "reverse", "group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8", null ],
-      [ "rotate", "group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9", null ],
-      [ "set", "group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877", null ],
-      [ "sort", "group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a", null ],
-      [ "swap", "group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d", null ]
+      [ "bSearch", "namespaceqlibs_1_1generic.html#a5604d8d2805e5eeda2e53544b110a7a0", null ],
+      [ "forEach", "namespaceqlibs_1_1generic.html#ab4818e24c0d6ee84051d6870f19d8664", null ],
+      [ "lSearch", "namespaceqlibs_1_1generic.html#aff612ff160d8c61605f1b25386ae9a9e", null ],
+      [ "reverse", "namespaceqlibs_1_1generic.html#a6db21157fb7adbaadc34e11b877230f8", null ],
+      [ "rotate", "namespaceqlibs_1_1generic.html#aaf19b6168bf0e9931cad22a3d66149f9", null ],
+      [ "set", "namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877", null ],
+      [ "sort", "namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a", null ],
+      [ "swap", "namespaceqlibs_1_1generic.html#aaddaac5dad20d93d3dc6bd99db00579d", null ]
     ] ],
     [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
     [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
@@ -34,8 +34,8 @@ var namespaceqlibs =
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
     [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
-    [ "continuousStates", "group__qltisys.html#gafadec0837d97658d7d08467310f1b0da", null ],
-    [ "discreteStates", "group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e", null ],
+    [ "continuousStates", "namespaceqlibs.html#afadec0837d97658d7d08467310f1b0da", null ],
+    [ "discreteStates", "namespaceqlibs.html#a2eb9aaa272fe0c8948b0b33f3e81ff0e", null ],
     [ "real_t", "namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6", null ],
     [ "crcMode", "namespaceqlibs.html#a5b194c56447214ee3207b107e549cad5", [
       [ "CRC8", "namespaceqlibs.html#a5b194c56447214ee3207b107e549cad5a70f6e8e0b91a39229a4d97de2e29f9cb", null ],
@@ -104,27 +104,27 @@ var namespaceqlibs =
       [ "INTEGRATION_TRAPEZOIDAL", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156", null ],
       [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ]
     ] ],
-    [ "ltisysType", "group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa", [
-      [ "LTISYS_TYPE_UNKNOWN", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18", null ],
-      [ "LTISYS_TYPE_CONTINUOUS", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd", null ],
-      [ "LTISYS_TYPE_DISCRETE", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b", null ]
+    [ "ltisysType", "namespaceqlibs.html#a07d3d07a42c49b5cb0850f77ad392faa", [
+      [ "LTISYS_TYPE_UNKNOWN", "namespaceqlibs.html#a07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18", null ],
+      [ "LTISYS_TYPE_CONTINUOUS", "namespaceqlibs.html#a07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd", null ],
+      [ "LTISYS_TYPE_DISCRETE", "namespaceqlibs.html#a07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b", null ]
     ] ],
-    [ "pidDirection", "group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106", [
-      [ "PID_FORWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2", null ],
-      [ "PID_BACKWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2", null ]
+    [ "pidDirection", "namespaceqlibs.html#aa9de50af5e1b6b26f2e6e12e2bd1b106", [
+      [ "PID_FORWARD", "namespaceqlibs.html#aa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2", null ],
+      [ "PID_BACKWARD", "namespaceqlibs.html#aa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2", null ]
     ] ],
-    [ "pidMode", "group__qpid.html#ga723e93113c48dc2437680a245624d0f3", [
-      [ "PID_AUTOMATIC", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
-      [ "PID_MANUAL", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
+    [ "pidMode", "namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3", [
+      [ "PID_AUTOMATIC", "namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
+      [ "PID_MANUAL", "namespaceqlibs.html#a723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
     ] ],
-    [ "bitfield_size", "namespaceqlibs.html#a3645c015d457782880b34f38777f5067", null ],
+    [ "bitfield_size", "group__qbitfield.html#ga3645c015d457782880b34f38777f5067", null ],
     [ "fisIOBase", "namespaceqlibs.html#a96c8cda31655f85dbf1103dd9de8b44a", null ],
-    [ "inCircle", "group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75", null ],
-    [ "inPolygon", "group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8", null ],
-    [ "inRangeCoerce", "group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf", null ],
-    [ "isEqual", "group__qfmathex.html#gab497b116252fc8763ade8c6eb655949e", null ],
-    [ "mapMinMax", "group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1", null ],
-    [ "normalize", "group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b", null ],
+    [ "inCircle", "namespaceqlibs.html#a820d66c5c3ded982609ee93cf7eabf75", null ],
+    [ "inPolygon", "namespaceqlibs.html#ab064b0b79702d1ca904ede92900d3ff8", null ],
+    [ "inRangeCoerce", "namespaceqlibs.html#aa7b2e00118e1370b05678aa5e8c2a5bf", null ],
+    [ "isEqual", "namespaceqlibs.html#ab497b116252fc8763ade8c6eb655949e", null ],
+    [ "mapMinMax", "namespaceqlibs.html#a47c7d5ef677e7aecb7f3127f564465e1", null ],
+    [ "normalize", "namespaceqlibs.html#ace2b8080d7f9f3d4fbb9f0271f7c207b", null ],
     [ "~fisIOBase", "namespaceqlibs.html#ae1c856753bce07ff408c08c1d331426e", null ],
     [ "FP_1_PI", "namespaceqlibs.html#ae8e708f5e7540fab5eba3ba5f1d9e091", null ],
     [ "FP_2_PI", "namespaceqlibs.html#a2329c3a7709f3282052486c9e2ab0068", null ],

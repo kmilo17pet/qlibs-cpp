@@ -6,7 +6,7 @@ var searchData=
   ['clearbit_3',['clearBit',['../classqlibs_1_1bitfield.html#a1b5c5d435a54c81220d93803c384bada',1,'qlibs::bitfield']]],
   ['concavemf_4',['concavemf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdbaa96827d19d684ab85c3c8b58dda473fe',1,'qlibs']]],
   ['constantmf_5',['constantmf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdbae274895a15dc9000dc948db1204f5659',1,'qlibs']]],
-  ['continuousstates_6',['continuousStates',['../group__qltisys.html#gafadec0837d97658d7d08467310f1b0da',1,'qlibs']]],
+  ['continuousstates_6',['continuousStates',['../namespaceqlibs.html#afadec0837d97658d7d08467310f1b0da',1,'qlibs']]],
   ['continuoussystem_7',['continuousSystem',['../classqlibs_1_1continuous_system.html#a11ab8581dad5b80b8b30826c89cfaf59',1,'qlibs::continuousSystem::continuousSystem()'],['../classqlibs_1_1continuous_system.html',1,'qlibs::continuousSystem']]],
   ['control_8',['control',['../classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc',1,'qlibs::pidController']]],
   ['cos_9',['cos',['../classqlibs_1_1fp16.html#a1e3bad5cb386dc1da5be80b5724dd5d3',1,'qlibs::fp16']]],

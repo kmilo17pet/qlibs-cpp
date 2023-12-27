@@ -1,7 +1,7 @@
 var searchData=
 [
   ['saturate_0',['saturate',['../classqlibs_1_1ltisys.html#a8e21ee9b0aaada8ccac0238d3d9bd799',1,'qlibs::ltisys']]],
-  ['set_1',['set',['../group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877',1,'qlibs::generic']]],
+  ['set_1',['set',['../namespaceqlibs_1_1generic.html#a214751c5f34431838e9d5f2015d51877',1,'qlibs::generic']]],
   ['setall_2',['setAll',['../classqlibs_1_1bitfield.html#ac8bf522c01a711734d8f2d2f65d4c87e',1,'qlibs::bitfield']]],
   ['setautotuningparameters_3',['setAutoTuningParameters',['../classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b',1,'qlibs::pidController']]],
   ['setbit_4',['setBit',['../classqlibs_1_1bitfield.html#af27c81bfc8977d80f33806950018ce86',1,'qlibs::bitfield']]],
@@ -49,7 +49,7 @@ var searchData=
   ['smoothermwm2_46',['smootherMWM2',['../classqlibs_1_1smoother_m_w_m2.html',1,'qlibs']]],
   ['smoothing_20filters_47',['Smoothing filters',['../group__qssmoother.html',1,'']]],
   ['som_48',['som',['../namespaceqlibs.html#a03e1de6d8325b634bd035477ccfe45b0ae356531fce3d510537524c9aef724ae9',1,'qlibs']]],
-  ['sort_49',['sort',['../group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
+  ['sort_49',['sort',['../namespaceqlibs_1_1generic.html#a08acc13c13a224f664d821d1875ed06a',1,'qlibs::generic']]],
   ['sortstacknode_50',['sortStackNode',['../structsort_stack_node.html',1,'']]],
   ['speed_51',['speed',['../classqlibs_1_1pid_auto_tuning.html#a636832441c3f233b0619981428d8aa24',1,'qlibs::pidAutoTuning']]],
   ['spikemf_52',['spikemf',['../namespaceqlibs.html#aebd802f8dce229bc2aefe22c89ad1bdba53b8123c334a313e7ea266f635d9b821',1,'qlibs']]],
@@ -58,5 +58,5 @@ var searchData=
   ['step_55',['step',['../classqlibs_1_1pid_auto_tuning.html#a1c77af50acce497a4ee912fbb96073d6',1,'qlibs::pidAutoTuning']]],
   ['storeaggregatedregion_56',['storeAggregatedRegion',['../classfis_output.html#a6f2de8d920721728d0a37f4727294046',1,'fisOutput::storeAggregatedRegion(real_t(&amp;xData)[numberOfPoints], real_t(&amp;yData)[numberOfPoints]) noexcept'],['../classfis_output.html#aa9a218918e45cacafdd0e5a7ad1e1bcc',1,'fisOutput::storeAggregatedRegion(real_t *xData, real_t *yData, const size_t n) noexcept']]],
   ['sugeno_57',['Sugeno',['../namespaceqlibs.html#a209c5983c134dd6ec058dd2df498508ca0060fbe96fd12ca7aceea37ab41071c6',1,'qlibs']]],
-  ['swap_58',['swap',['../group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d',1,'qlibs::generic']]]
+  ['swap_58',['swap',['../namespaceqlibs_1_1generic.html#aaddaac5dad20d93d3dc6bd99db00579d',1,'qlibs::generic']]]
 ];
