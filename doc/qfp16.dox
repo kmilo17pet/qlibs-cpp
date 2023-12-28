@@ -46,32 +46,32 @@
 *
 * Roots, exponents & similar.
 *
-* - qlibs::fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
-* - qlibs::fp16::exp()   Exponential function using power series approximation.
+* - \ref qlibs::fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
+* - \ref qlibs::fp16::exp()   Exponential function using power series approximation.
 * Accuracy depends on range, worst case +-40 absolute for negative inputs and
 * +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.
-* - qlibs::fp16::log()  Natural logarithm using Newton approximation and qlibs::fp16::exp().
+* - \ref qlibs::fp16::log()  Natural logarithm using Newton approximation and qlibs::fp16::exp().
 * Worst case error +-3 absolute, average error less than 1 unit.
-* - qlibs::fp16::log2()  Logarithm base 2.
-* - qlibs::fp16::pow()  Computes the power of a qlibs::fp16 number
+* - \ref qlibs::fp16::log2()  Logarithm base 2.
+* - \ref qlibs::fp16::pow()  Computes the power of a qlibs::fp16 number
 *
 *
 * @subsection qfp16_trig_functions Trigonometric functions and helpers
 *
-* - qlibs::fp16::sin()  Sine for angle in radians
-* - qlibs::fp16::cos()  Cosine for angle in radians
-* - qlibs::fp16::tan()  Tangent for angle in radians
-* - qlibs::fp16::asin()  Inverse of sine, output in radians
-* - qlibs::fp16::acos()  Inverse of cosine, output in radians
-* - qlibs::fp16::atan()  Inverse of tangent, output in radians
-* - qlibs::fp16::atan2()  Arc tangent in radians x,y
-* - qlibs::fp16::sinh()  Hyperbolic sine
-* - qlibs::fp16::cosh()  Hyperbolic cosine
-* - qlibs::fp16::tanh()  Hyperbolic tangent
-* - qlibs::fp16::radToDeg()  Converts angle units from radians to degrees.
-* - qlibs::fp16::degToRad()  Converts angle units from degrees to radians
-* - qlibs::fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
-* - qlibs::fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
+* - \ref qlibs::fp16::sin()  Sine for angle in radians
+* - \ref qlibs::fp16::cos()  Cosine for angle in radians
+* - \ref qlibs::fp16::tan()  Tangent for angle in radians
+* - \ref qlibs::fp16::asin()  Inverse of sine, output in radians
+* - \ref qlibs::fp16::acos()  Inverse of cosine, output in radians
+* - \ref qlibs::fp16::atan()  Inverse of tangent, output in radians
+* - \ref qlibs::fp16::atan2()  Arc tangent in radians x,y
+* - \ref qlibs::fp16::sinh()  Hyperbolic sine
+* - \ref qlibs::fp16::cosh()  Hyperbolic cosine
+* - \ref qlibs::fp16::tanh()  Hyperbolic tangent
+* - \ref qlibs::fp16::radToDeg()  Converts angle units from radians to degrees.
+* - \ref qlibs::fp16::degToRad()  Converts angle units from degrees to radians
+* - \ref qlibs::fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
+* - \ref qlibs::fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
 *
 *
 * @section qfp16_example Example: Solution of the quadratic equation

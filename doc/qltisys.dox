@@ -4,7 +4,7 @@
 * transfer function models in real-valued systems.
 * A transfer function is a model that describes the frequency-dependent response
 * of a linear time-invariant system, and this class can handle both continuous-time
-* and discrete-time systems. \ref qltisys can be used for simulating dynamic
+* and discrete-time systems. \ref qlibs::qltisys can be used for simulating dynamic
 * systems and implementing filters, compensators, or controllers.
 *
 * @section qltisys_cont Continous-time transfer functions
@@ -22,10 +22,10 @@
 * To instantiate a continuous transfer function, you should define a variable
 * of type qlibs::continuousSystem, two arrays of N+1 elements with the coefficients of the
 * polynomials for both, the numerator and denominator, and finally, an array of type
-* \ref continuousStates to hold the N states of the system.
-* Then, you can call continuousSystem::setup() to construct the system and set initial
+* \ref qlibs::continuousStates to hold the N states of the system.
+* Then, you can call \ref continuousSystem::setup() to construct the system and set initial
 * conditions. Subsequently, you can evaluate the system with a given input-signal
-* by just calling continuousSystem::excite().
+* by just calling \ref continuousSystem::excite().
 *
 * @attention
 * The user must ensure that the 
@@ -37,32 +37,61 @@
 *
 *
 *  @code{.c}
-*  #include <stdio.h>
-*  #include <stdlib.h>
 *  #include <iostream>
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
 *  
-*  
-*  void xTaskSystemSimulate( void *arg )
+*  void xTaskSystemSimulate( void )
 *  {
 *      const real_t dt = 0.05; // Time step
 *      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
 *      real_t num[] = { 0.0, 2.0, 3.0, 6.0 };
 *      real_t den[] = { 1.0, 6.0, 11.0, 16.0 };
 *      continuousStates x = { 0, 0, 0 }; // n = 3
-*      continuousSystem gc( num, den, xC, 0.01 );
+*      continuousSystem gc( num, den, xC, dt );
+*      real_t ut, yt;
+*
+*      for( ;; ) {
+*          ut = BSP_InputGet();
+*          yt = gc.excite( ut );
+*          
+*          std::this_thread::sleep_for(delay);
+*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
+*      }
+*  }
+*  @endcode
+*
+* Alternatively, you can also use a simpler definition by employing the 
+* \ref qlibs::continuousTF structure as follows:
+*
+*  @code{.c}
+*  #include <iostream>
+*  #include <chrono>
+*  #include <thread>
+*  #include <qlibs.h>
+*  
+*  void xTaskSystemSimulate( void )
+*  {
+*      const real_t dt = 0.05; // Time step
+*      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
+*      continuousTF<3> ctf= {
+*          { 0.0, 2.0, 3.0, 6.0 },
+*          { 1.0, 6.0, 11.0, 16.0 },
+*      };
+*
+*      continuousSystem gc( ctf, dt );
 *      real_t ut, yt;
 *      for( ;; ) {
 *          ut = BSP_InputGet();
 *          yt = gc.excite( ut );
 *          
 *          std::this_thread::sleep_for(delay);
-*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;;
+*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
 *      }
 *  }
 *  @endcode
+*
 *
 * @section qltisys_disc Discrete-time transfer functions
 *
@@ -75,9 +104,8 @@
 
 * Discrete systems are instantiated in a similar way to continuous systems,
 * but there are some differences. States are should be stored in an array of type
-* \ref qLTISys_DiscreteX_t. The size of polynomials can vary according to
-* their order, and you should pass the \ref #QLTISYS_DISCRETE directive on \ref
-* qLTISys_Setup() in order to differentiate the system when it is being evaluated.
+* \ref qlibs::discreteStates. The size of polynomials can vary according to
+* their order.
 * Please take a look at the following example:
 * 
 * @subsection qltisys_ex2 Example: Evaluate the given discrete transfer function
@@ -85,28 +113,51 @@
 *  \f$ G(z^{-1}) = \frac{ 0.1 + 0.2z^{-1} + 0.3z^{-2} }{ 1 - 0.85z^{-1} + 0.02z^{-2} } \f$ 
 *
 *  @code{.c}
-*  #include <stdio.h>
-*  #include <stdlib.h>
-*  #include "bsp.h"
-*  #include "qltisys.h"
-*  
-*  #define NB  ( 3 )
-*  #define NA  ( 2 )
-*  const TickType_t  Ts = 100; /*100mS sample time*/
-*  qLTISys_t system;
-*  float num[ NB ] = { 0.1f, 0.2f, 0.3f };
-*  float den[ NA+1 ] = { 1.0f, -0.85f, 0.02f };
-*  qLTISys_DiscreteX_t xk[ NB ];
-*  
-*  void xTaskSystemSimulate( void *arg )
+*  #include <iostream>
+*  #include <chrono>
+*  #include <thread>
+*  #include <qlibs.h>
+*
+*  void xTaskSystemSimulate( void )
 *  {
-*      qLTISys_Setup( &system, num, den, xk, NB, NA, QLTISYS_DISCRETE );
-*      float uk, yk;
+*      real_t num[] = { 0.1, 0.2, 0.3 };
+*      real_t den[] = { 1.0, -0.85, 0.02 };
+*      discreteStates xk[] = { 0, 0, 0 };
+*      discreteSystem gc( num, den, xC );
+*      real_t uk, yk;
+*
 *      for( ;; ) {
 *          uk = BSP_InputGet();
-*          yk = qLTISys_Excite( &system, uk );
-*          vTaskDelay( Ts / portTICK_RATE_MS) ;
-*          printf( "u(k) = %0.2f   y(k)  = %0.2f \r\n", uk, yk );
+*          yk = gc.exite( uk );
+*          std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) ); /*100mS sample time*/
+*          std::cout << "u(k) = " << uk << " y(k) = " << yk << std::endl;;
+*      }
+*  }
+*  @endcode
+*
+* Alternatively, you can also use a simpler definition by employing the 
+* \ref qlibs::discreteTF structure as follows:
+*
+*  @code{.c}
+*  #include <iostream>
+*  #include <chrono>
+*  #include <thread>
+*  #include <qlibs.h>
+*  
+*  void xTaskSystemSimulate( void )
+*  {
+*      discreteTF<3,3> dtf= {
+*          { 0.1, 0.2, 0.3 },
+*          { 1.0, -0.85, 0.02 },
+*      };
+*      continuousSystem gc( dtf );
+*      real_t ut, yt;
+*      for( ;; ) {
+*          ut = BSP_InputGet();
+*          yt = gc.excite( ut );
+*          
+*          std::this_thread::sleep_for(delay);
+*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
 *      }
 *  }
 *  @endcode

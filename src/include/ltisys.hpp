@@ -43,7 +43,7 @@ namespace qlibs {
     using discreteStates = real_t[ order ];
 
     /**
-    * @brief Continuous transfer function for easy creation of continuous systems
+    * @brief Continuous transfer function for easy LTI system definition
     * @note Initial conditions are zero by default.
     */
     template<size_t order>
@@ -61,7 +61,7 @@ namespace qlibs {
     };
 
     /**
-    * @brief discrete transfer function for easy creation of continuous systems
+    * @brief Discrete transfer function for easy LTI system definition
     * @note Initial conditions are zero by default.
     */
     template<size_t NB, size_t NA>
