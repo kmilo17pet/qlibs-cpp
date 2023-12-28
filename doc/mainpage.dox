@@ -1,13 +1,13 @@
 /** @mainpage Overview
-* @image html https://user-images.githubusercontent.com/11412210/199044031-0e37f39d-5a57-4a68-9da1-fe3cdbc7c0fa.jpg 
+* @image html https://github.com/kmilo17pet/qlibs-cpp/assets/11412210/39608408-78ea-4d88-a854-f61befd845a5
 * A collection of useful libraries written in C++ for embedded systems. 
 *
 * @remark
-* qLibs complies with most of the Motor Industry Software Reliability
+* qLibs++ complies with most of the Motor Industry Software Reliability
 * Association (MISRA) MISRA-C++:2008 and the SEI CERT C coding standards in 
 * order to provide a safe, reliable, and secure foundation for embedded applications.
 *
-* qLibs includes the following modules:
+* qLibs++ includes the following modules:
 *
 * - @subpage qssmoother_desc "qSSMoother : Filters for signal smoothing"
 *        -# 1st and 2nd order Low-Pass filters
