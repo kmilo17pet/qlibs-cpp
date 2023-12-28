@@ -9,7 +9,7 @@
 #ifndef QLIBS_SMOOTHER
 #define QLIBS_SMOOTHER
 
-#include "include/types.hpp" 
+#include "include/qlibs_types.hpp" 
 #include "include/tdl.hpp" 
 
 /**

@@ -45,7 +45,7 @@ This file is part of the QuarkTS++ OS distribution.
 #define QLIBS_CPP_VERNUM          ( 100u )
 #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
 
-#include "include/types.hpp"
+#include "include/qlibs_types.hpp"
 #include "include/tdl.hpp"
 #include "include/numa.hpp"
 #include "include/ltisys.hpp"

@@ -1,5 +1,4 @@
 #include <include/bitfield.hpp>
-#include <cstring> 
 
 using namespace qlibs;
 
@@ -28,7 +27,7 @@ bool bitfield::clearAll( void ) noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        (void)std::memset( field, 0, size/8U );
+        (void)memset( field, 0, size/8U );
         retValue = true;
     }
     return retValue;
@@ -39,7 +38,7 @@ bool bitfield::setAll( void ) noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        (void)std::memset( field, 0xFF, size/8U );
+        (void)memset( field, 0xFF, size/8U );
         retValue = true;
     }
 
@@ -169,7 +168,7 @@ float bitfield::readFloat( const size_t index ) const noexcept
         uint32_t rval;
 
         rval = read_uint32( index );
-        (void)std::memcpy( &retValue, &rval, sizeof(float) );
+        (void)memcpy( &retValue, &rval, sizeof(float) );
     }
 
     return retValue;
@@ -183,7 +182,7 @@ bool bitfield::writeFloat( const size_t index,
     if ( nullptr != field ) {
         uint32_t fval = 0U;
         
-        (void)std::memcpy( &fval, &value, sizeof(float) );
+        (void)memcpy( &fval, &value, sizeof(float) );
         write_uint32( index, fval );
         retValue = true;
     }
@@ -198,7 +197,7 @@ void* bitfield::dump( void * const dst,
 
     if ( ( nullptr != field ) && ( nullptr != dst ) ) {
         if ( n <= ( size/8U ) ) {
-            retValue = std::memcpy( dst, static_cast<const void*>( field ), n );
+            retValue = memcpy( dst, static_cast<const void*>( field ), n );
         }
     }
 

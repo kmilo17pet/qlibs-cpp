@@ -10,7 +10,7 @@
 #ifndef QLIBS_BITFIELD
 #define QLIBS_BITFIELD
 
-#include "include/types.hpp"
+#include "include/qlibs_types.hpp"
 
 
 /**

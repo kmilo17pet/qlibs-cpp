@@ -1,5 +1,5 @@
 /*!
- * @file types.hpp
+ * @file qlibs_types.hpp
  * @author J. Camilo Gomez C.
  * @version 1.01
  * @note This file is part of the qLibs-cpp distribution.

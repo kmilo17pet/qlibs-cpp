@@ -9,8 +9,10 @@
 #ifndef QLIBS_FP16
 #define QLIBS_FP16
 
-#include "include/types.hpp"
-#include <iostream>
+#include "include/qlibs_types.hpp"
+#if !defined( ARDUINO_PLATFORM )
+    #include <iostream>
+#endif
 
 /**
 * @brief The qLibs++ library namespace.
@@ -34,7 +36,7 @@ namespace qlibs {
             fp16Raw_t value{ overflow };
             static fp16Raw_t Min; // skipcq: CXX-W2009
             static fp16Raw_t Max; // skipcq: CXX-W2009
-            static bool rounding; // skipcq: CXX-W2009
+            static bool flag_rounding; // skipcq: CXX-W2009
             static bool saturation; // skipcq: CXX-W2009
 
             static const fp16Raw_t exp_max;
@@ -64,7 +66,7 @@ namespace qlibs {
                                   const fp16Raw_t y ) noexcept;
             static fp16Raw_t div( const fp16Raw_t x,
                                   const fp16Raw_t y ) noexcept;
-            static fp16Raw_t abs( fp16Raw_t x ) noexcept;
+            static fp16Raw_t absolute( fp16Raw_t x ) noexcept;
             static fp16Raw_t ceil( fp16Raw_t x ) noexcept;
             static fp16Raw_t sqrt( fp16Raw_t x ) noexcept;
             static fp16Raw_t exp( fp16Raw_t x ) noexcept;
@@ -318,7 +320,7 @@ namespace qlibs {
             * @param[in] x The fixed-point(q16.16) value.
             * @return This function returns the nearest integral value of @a x.
             */
-            static inline fp16 round( const fp16 &x ) noexcept
+            static inline fp16 rounding( const fp16 &x ) noexcept
             {
                 return fp16( { x.raw() + one } );
             }
@@ -328,9 +330,9 @@ namespace qlibs {
             * @param[in] x The fixed-point(q16.16) value.
             * @return This function returns the absolute value of x.
             */
-            static inline fp16 abs( const fp16 &x ) noexcept
+            static inline fp16 absolute( const fp16 &x ) noexcept
             {
-                return fp16( { abs( x.raw() ) } );
+                return fp16( { absolute( x.raw() ) } );
             }
 
             /**
@@ -576,6 +578,7 @@ namespace qlibs {
     };
 
     /*! @cond  */
+    #if !defined( ARDUINO_PLATFORM )
     inline std::ostream& operator<<( std::ostream& os,
                                      const fp16& obj )
     {
@@ -583,6 +586,7 @@ namespace qlibs {
         os << fp16::toASCII( obj, buff, static_cast<int>( os.precision() ) );
         return os;
     }
+    #endif
     /*cstat -MISRAC++2008-5-0-7 -CERT-FLP34-C -MISRAC++2008-5-0-9*/
     constexpr fp16 operator"" _fp( long double val )
     {

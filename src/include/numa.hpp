@@ -9,7 +9,7 @@
 #ifndef QLIBS_NUMA
 #define QLIBS_NUMA
 
-#include "include/types.hpp" 
+#include "include/qlibs_types.hpp" 
 
 /**
 * @brief The qLibs++ library namespace.

@@ -223,7 +223,7 @@ void* generic::set( void * const pbase,
 
     if ( ( nullptr != pbase ) && ( size > 0U ) && ( n > 0U ) && ( nullptr != ref ) ) {
         for ( size_t i = 0U ; i < n ; i++ ) {
-            retVal = std::memcpy( &p[ size*i ], ref, size );
+            retVal = memcpy( &p[ size*i ], ref, size );
         }
     }
 

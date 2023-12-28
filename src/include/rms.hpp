@@ -10,7 +10,7 @@
 #ifndef QLIBS_RMS
 #define QLIBS_RMS
 
-#include "include/types.hpp" 
+#include "include/qlibs_types.hpp" 
 #include "include/smoother.hpp"
 
 

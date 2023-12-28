@@ -9,7 +9,7 @@
 #ifndef QLIBS_MATHEX
 #define QLIBS_MATHEX
 
-#include "include/types.hpp"
+#include "include/qlibs_types.hpp"
 
 
 /**

@@ -4,7 +4,7 @@ using namespace qlibs;
 
 fp16Raw_t fp16::Min = -2147483647; // skipcq: CXX-W2009
 fp16Raw_t fp16::Max = 2147483647; // skipcq: CXX-W2009
-bool fp16::rounding = true; // skipcq: CXX-W2009
+bool fp16::flag_rounding = true; // skipcq: CXX-W2009
 bool fp16::saturation = false; // skipcq: CXX-W2009
 const fp16Raw_t fp16::exp_max = 681391;
 const fp16Raw_t fp16::f2 = 131072;
@@ -22,7 +22,7 @@ int fp16::toInt( const fp16 &x ) noexcept
 {
     int retValue;
 
-    if ( rounding ) {
+    if ( flag_rounding ) {
         if ( x.value >= 0 ) {
             retValue = ( x.value + ( one >> 1 ) ) / one;
         }
@@ -61,7 +61,7 @@ fp16Raw_t fp16::fromFloat( const float x ) noexcept
     float f_value;
     /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
     f_value = x * static_cast<float>( one );
-    if ( rounding ) {
+    if ( flag_rounding ) {
         f_value += ( f_value >= 0.0F ) ? 0.5F : -0.5F;
     }
     return static_cast<fp16Raw_t>( f_value );
@@ -73,7 +73,7 @@ fp16Raw_t fp16::fromDouble( const double x ) noexcept
     double d_value;
     /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
     d_value = x * static_cast<double>( one );
-    if ( rounding ) {
+    if ( flag_rounding ) {
         d_value += ( d_value >= 0.0 ) ? 0.5 : -0.5;
     }
     return static_cast<fp16Raw_t>( d_value );
@@ -149,7 +149,7 @@ fp16Raw_t fp16::mul( const fp16Raw_t x,
     a = ( mulH < 0 ) ? -1 : 0;
     /*cstat +MISRAC++2008-5-0-3*/
     if ( a == ( mulH >> 15 ) ) {
-        if ( rounding ) {
+        if ( flag_rounding ) {
             uint32_t tmp2;
 
             tmp2 = mulL;
@@ -207,7 +207,7 @@ fp16Raw_t fp16::div( const fp16Raw_t x,
                 xRem <<= 1;
                 bit >>= 1;
             }
-            if ( rounding ) {
+            if ( flag_rounding ) {
                 if ( xRem >= xDiv ) {
                     ++quotient;
                 }
@@ -228,7 +228,7 @@ fp16Raw_t fp16::div( const fp16Raw_t x,
     return saturate( retValue, x, y );
 }
 /*============================================================================*/
-fp16Raw_t fp16::abs( fp16Raw_t x ) noexcept
+fp16Raw_t fp16::absolute( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue;
 
@@ -260,7 +260,7 @@ fp16Raw_t fp16::sqrt( fp16Raw_t x ) noexcept
 
         retValue = 0;
         /*cstat -MISRAC++2008-5-0-3*/
-        bit = ( 0 != ( x & static_cast<fp16Raw_t>( 4293918720 ) ) ) ? ( 1U << 30U ) : ( 1U << 18U );
+        bit = ( 0 != ( x & static_cast<fp16Raw_t>( 4293918720 ) ) ) ? 1073741824U : 262144U;
         /*cstat +MISRAC++2008-5-0-3*/
         while ( bit > static_cast<uint32_t>( x ) ) {
             bit >>= 2U;
@@ -292,7 +292,7 @@ fp16Raw_t fp16::sqrt( fp16Raw_t x ) noexcept
             }
         }
     }
-    if ( ( rounding ) && ( x > retValue ) ) {
+    if ( ( flag_rounding ) && ( x > retValue ) ) {
         ++retValue;
     }
 
@@ -386,7 +386,7 @@ fp16Raw_t fp16::rs( fp16Raw_t x ) noexcept
 {
     fp16Raw_t retValue;
 
-    if ( rounding ) {
+    if ( flag_rounding ) {
         retValue = ( x >> 1U ) + ( x & 1 );
     }
     else {
@@ -418,7 +418,7 @@ fp16Raw_t fp16::log2i( fp16Raw_t x ) noexcept
                 x = rs( x );
             }
         }
-        if ( rounding ) {
+        if ( flag_rounding ) {
             x = mul( x, x );
             if ( x >= f2 ) {
                 ++retValue;
@@ -657,7 +657,7 @@ fp16Raw_t fp16::tanh( fp16Raw_t x ) noexcept
         retValue = -one;
     }
     else {
-        retValue = abs( x );
+        retValue = absolute( x );
         epx = exp( retValue );
         enx = exp( -retValue );
         retValue = div( epx - enx, epx + enx );
@@ -704,7 +704,7 @@ fp16Raw_t fp16::pow( fp16Raw_t x,
     }
     else {
         fp16Raw_t tmp;
-        tmp = mul( y, log( abs( x ) ) );
+        tmp = mul( y, log( absolute( x ) ) );
         if ( overflow != tmp ) {
             retValue = exp( tmp );
             if ( x < 0 ) {

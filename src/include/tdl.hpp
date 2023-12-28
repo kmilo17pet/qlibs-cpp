@@ -13,7 +13,7 @@
 #ifndef QLIBS_TDL
 #define QLIBS_TDL
 
-#include "include/types.hpp" 
+#include "include/qlibs_types.hpp" 
 
 /**
 * @brief The qLibs++ library namespace.
@@ -37,7 +37,7 @@ namespace qlibs {
             real_t *rd{ nullptr };
             real_t *wr{ nullptr };
             size_t itemCount{ 0U };
-            const real_t undefined{ nan("" ) }; // skipcq: CXX-W2010
+            const real_t undefined{ 0.0/0.0 }; // skipcq: CXX-W2010
 
             void insertNewest( const real_t sample ) noexcept;
             void removeOldest( void ) noexcept;

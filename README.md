@@ -5,6 +5,7 @@
 [![MISRAC++2008](https://img.shields.io/badge/MISRAC++2008-Compliant-blue.svg?logo=verizon)](https://www.misra.org.uk/)
 [![CERT](https://img.shields.io/badge/CERT-Compliant-blue.svg?logo=cplusplus)](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards)
 [![C++ Standard](https://img.shields.io/badge/STD-C++11-green.svg?logo=cplusplus)](https://en.cppreference.com/w/cpp/11)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/qlibs.svg?)](https://www.ardu-badge.com/qlibs)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?logo=textpattern)](https://github.com/kmilo17pet/QuarkTS-cpp/graphs/commit-activity)
 [![License](https://img.shields.io/github/license/kmilo17pet/QuarkTS-cpp?logo=livejournal)](https://github.com/kmilo17pet/QuarkTS-cpp/blob/master/LICENSE)
 
