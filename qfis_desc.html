@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('qfis_desc.html',''); initResizable(); 
 <h1><a class="anchor" id="qfis_mamdani"></a>
 Mamdani</h1>
 <p >In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani systems have more intuitive and easier to understand rule bases, they are well-suited to expert system applications where the rules are created from human expert knowledge.</p>
-<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the qlibs::fisType::Mamdani enum definition when calling fis::setup().</p>
+<p >The output of each rule is a fuzzy set derived from the output membership function and the implication method of the FIS. These output fuzzy sets are combined into a single fuzzy set using the aggregation method of the FIS. Then, to compute a final crisp output value, the combined output fuzzy set is defuzzified using one of the methods described in Defuzzification Methods. To specify a FIS of this type use the qlibs::fisType::Mamdani enum definition when calling <a class="el" href="classqlibs_1_1fis.html#a6c13e05286af5f87550af36647081594">qlibs::fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -168,7 +168,7 @@ Sugeno</h1>
 <p >The final output of the system is the weighted average/sum over all rule outputs:</p>
 <center> \(out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \) </center><p >where \(N\) is the number of rules.</p>
 <p >Because of the linear dependence of each rule on the input variables, the Sugeno method is ideal for acting as an interpolating supervisor of multiple linear controllers that are to be applied, respectively, to different operating conditions of a dynamic nonlinear system.</p>
-<p >To specificy a FIS of this type, use the qlibs::fisType::Sugeno enum definition when calling fis::setup().</p>
+<p >To specificy a FIS of this type, use the qlibs::fisType::Sugeno enum definition when calling <a class="el" href="classqlibs_1_1fis.html#a6c13e05286af5f87550af36647081594">qlibs::fis::setup()</a>.</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -184,7 +184,7 @@ Sugeno</h1>
 Tsukamoto</h1>
 <p >In the Tsukamoto inference system, the consequent of each fuzzy if-then rule is represented by a fuzzy set with a monotonical membership function, As a result, the inferred output of each rule is defined as a crisp value induced by the rule's firing strength.</p>
 <p >The overall output is taken as the weighted average of each rule's output. Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates each rule's output by the method of weighted average and thus avoids the time-consuming process of defuzzification.</p>
-<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling fis::setup().</p>
+<p >To specify a FIS of this type, use the ::Tsukamoto enum definition when calling <a class="el" href="classqlibs_1_1fis.html#a6c13e05286af5f87550af36647081594">qlibs::fis::setup()</a> .</p>
 <center>  
 <!DOCTYPE html>
 <html>
@@ -198,19 +198,19 @@ Tsukamoto</h1>
 </html>
  <em>Tsukamoto inference system</em> </center><h1><a class="anchor" id="qfis_defuzz"></a>
 Defuzzification Methods</h1>
-<p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0" title="An enum with all the possible de-Fuzzyfication methods.">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
+<p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
-<li>::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+<li>qlibs::fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
 <center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
-<li>::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
-<li>::mom : Middle of Maximum. Only for ::Mamdani systems.</li>
-<li>::som : Smallest of Maximum. Only for :Mamdani systems.</li>
-<li>::lom : Largest of Maximum. Only for ::Mamdani systems.</li>
-<li>::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and :Tsukamoto systems.</li>
-<li>::wtsum: Weighted sum of all rule outputs. This method applies only for ::Sugeno and ::Tsukamoto systems.</li>
+<li>qlibs::fisDeFuzzMethod::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for qlibs::fisDeFuzzMethod::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only forqlibs::fisDeFuzzMethod::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for qlibs::fisDeFuzzMethod::Mamdani systems.</li>
+<li>qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisDeFuzzMethod::Tsukamoto systems.</li>
+<li>qlibs::fisDeFuzzMethod::wtsum: Weighted sum of all rule outputs. This method applies only for qlibs::fisDeFuzzMethod::Sugeno and qlibs::fisDeFuzzMethod::Tsukamoto systems.</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with fis::setup(). However, the user can later change the default method using the fis::setDeFuzzMethod() function.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="classqlibs_1_1fis.html#a6c13e05286af5f87550af36647081594">qlibs::fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="classqlibs_1_1fis.html#a9b5275a564242acd98dd53cc9da33cc7">qlibs::fis::setDeFuzzMethod()</a> function.</dd></dl>
 <h1><a class="anchor" id="qfis_buildfis"></a>
 Building a Mamdani FIS</h1>
 <p >To carry out the FIS building process in a more friendly manner, we will explain it using a specific example. The goal is to solve the tipping problem, which is described as follows:</p>
@@ -273,7 +273,7 @@ Building a Mamdani FIS</h1>
 <div class="line"><span class="comment">// I/O Membership Objects</span></div>
 <div class="line"><span class="keyword">static</span> fisMF MFin[5], MFout[3];</div>
 </div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Please note that all tag names are unique.</dd></dl>
-<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type qlibs::fisRules and the contents should be rules constructed with the provided statements:</p>
+<p>Then, we will define the rules of the fuzzy system using the previously defined tags. Rules should be defined as an array of type <a class="el" href="group__qfis.html#gaa1077952add66e00a9cd9c298627779f">qlibs::fisRules</a> and the contents should be rules constructed with the provided statements:</p>
 <ul>
 <li><a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a> to start the rules set</li>
 <li><a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a> to end the rules set</li>
@@ -284,20 +284,21 @@ Building a Mamdani FIS</h1>
 <li><a class="el" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> to represent the implication</li>
 </ul>
 <p >Let's apply some of these statements to build the rule set.</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = { </div>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#gaa1077952add66e00a9cd9c298627779f">fisRules</a> rules[] = { </div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_poor <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_rancid <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_cheap <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_good <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_average <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_excellent <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_delicious <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_generous <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__qfis_html_ga271cfbb53fb0266b8faa11bf1cbdd417"><div class="ttname"><a href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div><div class="ttdeci">#define FIS_RULES_END</div><div class="ttdoc">Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:468</div></div>
-<div class="ttc" id="agroup__qfis_html_ga29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdoc">Rule statement to end a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:482</div></div>
-<div class="ttc" id="agroup__qfis_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdoc">Rule statement to represent the OR connector.</div><div class="ttdef"><b>Definition:</b> fis.hpp:474</div></div>
-<div class="ttc" id="agroup__qfis_html_gac138c68a0709c57bc5f7567abc1558eb"><div class="ttname"><a href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a></div><div class="ttdeci">#define IF</div><div class="ttdoc">Rule statement to begin a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:470</div></div>
-<div class="ttc" id="agroup__qfis_html_gac7a664229ebde439af53621e565bbe02"><div class="ttname"><a href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div><div class="ttdeci">#define FIS_RULES_BEGIN</div><div class="ttdoc">Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:449</div></div>
-<div class="ttc" id="agroup__qfis_html_gad28e1b10e158ae134bb6fa3bb2f34a06"><div class="ttname"><a href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a></div><div class="ttdeci">#define IS</div><div class="ttdoc">Rule statement to represent a premise.</div><div class="ttdef"><b>Definition:</b> fis.hpp:478</div></div>
-<div class="ttc" id="agroup__qfis_html_gad9884c43f4f50a5852711a614f2343ac"><div class="ttname"><a href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a></div><div class="ttdeci">#define THEN</div><div class="ttdoc">Rule statement to represent the implication.</div><div class="ttdef"><b>Definition:</b> fis.hpp:476</div></div>
+<div class="ttc" id="agroup__qfis_html_ga271cfbb53fb0266b8faa11bf1cbdd417"><div class="ttname"><a href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div><div class="ttdeci">#define FIS_RULES_END</div><div class="ttdoc">Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:477</div></div>
+<div class="ttc" id="agroup__qfis_html_ga29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdoc">Rule statement to end a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:491</div></div>
+<div class="ttc" id="agroup__qfis_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdoc">Rule statement to represent the OR connector.</div><div class="ttdef"><b>Definition:</b> fis.hpp:483</div></div>
+<div class="ttc" id="agroup__qfis_html_gaa1077952add66e00a9cd9c298627779f"><div class="ttname"><a href="group__qfis.html#gaa1077952add66e00a9cd9c298627779f">qlibs::fisRules</a></div><div class="ttdeci">int8_t fisRules</div><div class="ttdoc">Type definition to instantiate a set of fuzzy rules.</div><div class="ttdef"><b>Definition:</b> fis.hpp:383</div></div>
+<div class="ttc" id="agroup__qfis_html_gac138c68a0709c57bc5f7567abc1558eb"><div class="ttname"><a href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a></div><div class="ttdeci">#define IF</div><div class="ttdoc">Rule statement to begin a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:479</div></div>
+<div class="ttc" id="agroup__qfis_html_gac7a664229ebde439af53621e565bbe02"><div class="ttname"><a href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div><div class="ttdeci">#define FIS_RULES_BEGIN</div><div class="ttdoc">Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:458</div></div>
+<div class="ttc" id="agroup__qfis_html_gad28e1b10e158ae134bb6fa3bb2f34a06"><div class="ttname"><a href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a></div><div class="ttdeci">#define IS</div><div class="ttdoc">Rule statement to represent a premise.</div><div class="ttdef"><b>Definition:</b> fis.hpp:487</div></div>
+<div class="ttc" id="agroup__qfis_html_gad9884c43f4f50a5852711a614f2343ac"><div class="ttname"><a href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a></div><div class="ttdeci">#define THEN</div><div class="ttdoc">Rule statement to represent the implication.</div><div class="ttdef"><b>Definition:</b> fis.hpp:485</div></div>
 </div><!-- fragment --><p >Additionally, we also need to define a vector where the firing strength of each rule will be stored. The size of the vector will be the number of rules. In this particular case, there will be only three.</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> rulesStrength[ 3 ];</div>
 <div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> types.hpp:45</div></div>
@@ -342,7 +343,7 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line"><span class="comment">// I/O Membership Objects</span></div>
 <div class="line"><span class="keyword">static</span> fisMF MFin[5], MFout[3];</div>
 <div class="line"><span class="comment">// Rules of the inference system</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fisRules rules[] = {</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#gaa1077952add66e00a9cd9c298627779f">fisRules</a> rules[] = {</div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_poor <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_rancid <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_cheap <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_good <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_average <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>

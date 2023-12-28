@@ -90,6 +90,7 @@ var group__qfis =
     [ "OR", "group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991", null ],
     [ "THEN", "group__qfis.html#gad9884c43f4f50a5852711a614f2343ac", null ],
     [ "qlibs::fisDeFuzzFunction", "group__qfis.html#gac4ba9defc0dc955acf1987fb63aa0c5b", null ],
+    [ "qlibs::fisRules", "group__qfis.html#gaa1077952add66e00a9cd9c298627779f", null ],
     [ "qlibs::fisTag", "group__qfis.html#ga49e603045e946077592760e1030515a0", null ],
     [ "qlibs::fuzzyOperator", "group__qfis.html#ga22f021f965d13ed474e87b2de05b5d91", null ],
     [ "qlibs::fisDeFuzzMethod", "group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0", [

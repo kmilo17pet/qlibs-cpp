@@ -46,6 +46,7 @@ var namespaceqlibs =
     [ "continuousStates", "group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75", null ],
     [ "discreteStates", "group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1", null ],
     [ "fisDeFuzzFunction", "group__qfis.html#gac4ba9defc0dc955acf1987fb63aa0c5b", null ],
+    [ "fisRules", "group__qfis.html#gaa1077952add66e00a9cd9c298627779f", null ],
     [ "fisTag", "group__qfis.html#ga49e603045e946077592760e1030515a0", null ],
     [ "fuzzyOperator", "group__qfis.html#ga22f021f965d13ed474e87b2de05b5d91", null ],
     [ "real_t", "namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6", null ],
