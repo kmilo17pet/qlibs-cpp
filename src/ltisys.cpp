@@ -159,16 +159,16 @@ real_t discreteSystem::excite( real_t u )
 bool continuousSystem::setup( real_t *num,
                               real_t *den,
                               state *x,
-                              const size_t N,
+                              const size_t nD,
                               const real_t dT ) noexcept
 {
     bool retValue = false;
 
     if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) ) {
         b = &num[ 1 ];
-        n = N;
+        n = nD;
         nb = n;
-        na = N + 1;
+        na = nD + 1;
         xc = x;
         dt = dT;
         a = &den[ 1 ];

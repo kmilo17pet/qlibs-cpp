@@ -443,13 +443,13 @@ namespace qlibs {
             * @brief Setup an initialize the Double exponential smoothing instance
             * @param[in] a Weight for the level [ 0 < @a a < 1 ]
             * @param[in] b Weight for the trend [ 0 < @a b < 1 ]
-            * @param[in] N Number of steps for the forecast
+            * @param[in] nS Number of steps for the forecast
             * @return @c true on success, otherwise return @c false.
             */
             virtual ~smootherDESF() {}
             bool setup( const real_t a,
                         const real_t b,
-                        const size_t N );
+                        const size_t nS );
 
             /**
             * @brief Perform the smooth operation recursively for the input signal @a x.

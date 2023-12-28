@@ -1,7 +1,7 @@
 /*!
  * @file qlibs.h
  * @author J. Camilo Gomez C.
- * @version 1.0.1
+ * @version 1.0.2
  * @note This file is part of the qlibs++ distribution.
  * @brief Global inclusion header
  **/
@@ -41,8 +41,8 @@ This file is part of the QuarkTS++ OS distribution.
 #ifndef QLIBS_CPP_H
 #define QLIBS_CPP_H
 
-#define QLIBS_CPP_VERSION         "1.0.0"
-#define QLIBS_CPP_VERNUM          ( 100u )
+#define QLIBS_CPP_VERSION         "1.0.2"
+#define QLIBS_CPP_VERNUM          ( 102u )
 #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
 
 #include "include/qlibs_types.hpp"

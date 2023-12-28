@@ -325,14 +325,14 @@ real_t smootherKLMN::smooth( const real_t x )
 /*============================================================================*/
 bool smootherDESF::setup( const real_t a,
                           const real_t b,
-                          const size_t N )
+                          const size_t nS )
 {
     bool retValue = false;
 
     if ( ( a > 0.0 ) && ( a < 1.0 ) && ( b > 0.0 ) && ( b < 1.0 ) ) {
         alpha = a;
         beta = b;
-        n = static_cast<real_t>( N );
+        n = static_cast<real_t>( nS );
         retValue = reset();
     }
 

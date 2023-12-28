@@ -397,7 +397,7 @@ namespace qlibs {
             * an array of type continuousStates with n elements.
             * The supplied array will be updated on every invocation of
             * continuousSystem::excite().
-            * @param[in] N The system order ( n ).
+            * @param[in] nD The system order ( n ).
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
@@ -409,10 +409,10 @@ namespace qlibs {
             continuousSystem( real_t *num,
                               real_t *den,
                               state *x,
-                              const size_t N,
+                              const size_t nD,
                               const real_t dT ) noexcept
             {
-                (void)setup( num, den, x, N, dT );
+                (void)setup( num, den, x, nD, dT );
             }
 
             /**
@@ -470,7 +470,7 @@ namespace qlibs {
             * an array of type continuousStates with n elements.
             * The supplied array will be updated on every invocation of
             * continuousSystem::excite().
-            * @param[in] N The system order ( n ).
+            * @param[in] nD The system order ( n ).
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
@@ -483,7 +483,7 @@ namespace qlibs {
             bool setup( real_t *num,
                         real_t *den,
                         state *x,
-                        const size_t N,
+                        const size_t nD,
                         const real_t dT ) noexcept;
 
             /**
