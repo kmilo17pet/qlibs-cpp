@@ -36,7 +36,7 @@ var NAVTREEINDEX1 =
 "classqlibs_1_1smoother_d_e_s_f.html":[2,1,10],
 "classqlibs_1_1smoother_d_e_s_f.html#a3e47d35fe261e05f325e81a741afde62":[2,1,10,0],
 "classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554":[2,1,10,2],
-"classqlibs_1_1smoother_d_e_s_f.html#aaf065c5fb1d12d4e648223c16ba510ad":[2,1,10,1],
+"classqlibs_1_1smoother_d_e_s_f.html#aaaff0f5ed3caa4f96aa610d5838365b4":[2,1,10,1],
 "classqlibs_1_1smoother_e_x_p_w.html":[2,1,8],
 "classqlibs_1_1smoother_e_x_p_w.html#a78870b2d015ade65a4b5cf088c26e230":[2,1,8,2],
 "classqlibs_1_1smoother_e_x_p_w.html#ac84cb4b936210a26649b2030370241d3":[2,1,8,1],

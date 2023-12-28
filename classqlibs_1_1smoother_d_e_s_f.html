@@ -152,8 +152,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e47d35fe261e05f325e81a741afde62"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#a3e47d35fe261e05f325e81a741afde62">~smootherDESF</a> ()</td></tr>
 <tr class="memdesc:a3e47d35fe261e05f325e81a741afde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Double exponential smoothing instance.  <a href="classqlibs_1_1smoother_d_e_s_f.html#a3e47d35fe261e05f325e81a741afde62">More...</a><br /></td></tr>
 <tr class="separator:a3e47d35fe261e05f325e81a741afde62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf065c5fb1d12d4e648223c16ba510ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#aaf065c5fb1d12d4e648223c16ba510ad">setup</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> a, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> b, const size_t N)</td></tr>
-<tr class="separator:aaf065c5fb1d12d4e648223c16ba510ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaff0f5ed3caa4f96aa610d5838365b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#aaaff0f5ed3caa4f96aa610d5838365b4">setup</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> a, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> b, const size_t nS)</td></tr>
+<tr class="separator:aaaff0f5ed3caa4f96aa610d5838365b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bfe74ab8ece59fb727c86b7fd624554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554">smooth</a> (const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> x) override</td></tr>
 <tr class="memdesc:a4bfe74ab8ece59fb727c86b7fd624554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em>x</em>.  <a href="classqlibs_1_1smoother_d_e_s_f.html#a4bfe74ab8ece59fb727c86b7fd624554">More...</a><br /></td></tr>
 <tr class="separator:a4bfe74ab8ece59fb727c86b7fd624554"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +198,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Weight for the level [ 0 &lt; <em>a</em> &lt; 1 ] </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Weight for the trend [ 0 &lt; <em>b</em> &lt; 1 ] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Number of steps for the forecast </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nS</td><td>Number of steps for the forecast </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,8 +207,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aaf065c5fb1d12d4e648223c16ba510ad" name="aaf065c5fb1d12d4e648223c16ba510ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf065c5fb1d12d4e648223c16ba510ad">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="aaaff0f5ed3caa4f96aa610d5838365b4" name="aaaff0f5ed3caa4f96aa610d5838365b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaff0f5ed3caa4f96aa610d5838365b4">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +229,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>N</em>&#160;</td>
+          <td class="paramname"><em>nS</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
