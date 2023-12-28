@@ -1,10 +1,10 @@
 /*! @page qssmoother_desc Filters for signal smoothing
 * @tableofcontents
-*  In many embedded systems applications, signals are captured and may be
-*  subject to "noise." To reconstruct the original signal, a "smoothing filter"
-*  is applied to "clear" the signal of this noise. The filter attenuates high
-*  frequency components and emphasizes slow changes in values, making trends
-*  easier to discern. The qLibs library offers the qSSMoother module, which
+* In many embedded systems applications, signals are captured and may be
+* subject to "noise." To reconstruct the original signal, a "smoothing filter"
+* is applied to "clear" the signal of this noise. The filter attenuates high
+* frequency components and emphasizes slow changes in values, making trends
+* easier to discern. The qLibs library offers the \ref qlibs::smoother class, which
 * includes a collection of commonly used and efficient smoothing filters for
 * easy signal processing.
 *
@@ -12,10 +12,10 @@
 *  
 *  @section qssmoother_lpf1 First Order Low Pass Filter
 *  
-*  A first-order low-pass filter passes signals with a frequency lower than a
-*  chosen cutoff frequency and reduces signals with frequencies higher than the
-*  cutoff. This results in a smoother signal by removing short-term fluctuations
-*  and highlighting longer-term trends.
+*  \ref qlibs::smootherLPF1 is first-order low-pass filter that passes signals 
+*  with a frequency lower than a chosen cutoff frequency and reduces signals 
+*  with frequencies higher than the cutoff. This results in a smoother signal 
+*  by removing short-term fluctuations and highlighting longer-term trends.
 *  The discrete-time equation of this filter is defined as follows, where \f$w\f$
 *  is the cut-off frequency given in \f$rad/seg\f$
 *
@@ -32,19 +32,19 @@
 *
 *  @subsection qssmoother_ex1 Example: setting up a 1st order low-pass filter:
 *  @code{.c}
-*  qSSmoother_LPF1_t smoother;
-*  float alpha = 0.85f;
-*  int ret;
+*  smootherLPF1 filter;
+*  real_t alpha = 0.85;
+*  bool ret;
 *
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_LPF1, &alpha, NULL, 0u );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( alpha );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
 *
 *  @section qssmoother_lpf2 Second Order Low Pass Filter
 *  
-*  This filter has similar properties to the 1st order low pass filter. The main
+*  \ref qlibs::smootherLPF2 is a filter with similar properties to the 1st order low pass filter. The main
 *  difference is that the stop band roll-off will be twice the 1st order filters
 *  at 40dB/decade (12dB/octave) as the operating frequency increases above the
 *  cut-off frequency \f$w\f$.
@@ -65,12 +65,12 @@
 *
 *  @subsection qssmoother_ex2 Example: setting up a 2nd order low-pass filter:
 *  @code{.c}
-*  qSSmoother_LPF2_t smoother;
-*  float alpha = 0.85f;
+*  smootherLPF2 filter;
+*  real_t alpha = 0.85;
 *  int ret;
 *
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_LPF2, &alpha, NULL, 0u );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( alpha );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -78,7 +78,7 @@
 *
 *  @section qssmoother_mwm1 Moving Window Median Filter O(n) 
 *  
-*  This low-pass filter calculates the moving median of the input signal over
+*  \ref qlibs::smootherMWM1 is a low-pass filter that calculates the moving median of the input signal over
 *  time using the sliding window method. A window of a specified length is moved
 *  sample by sample and the median of the data in the window is computed.
 *
@@ -96,14 +96,12 @@
 *
 *  @subsection qssmoother_ex3 Example: setting up a moving window median filter:
 *  @code{.c}
-*  #define N_MWM     ( 20u )
+*  smootherMWM1 filter; 
+*  real_t m_window[ 20 ] = { 0.0 };
+*  bool ret;
 *
-*  qSSmoother_MWM1_t smoother; 
-*  float m_window[ N_MWM ] = { 0.0f };
-*  int ret;
-*
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_MWM1, NULL, m_window, N_MWM );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( m_window );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -111,7 +109,7 @@
 *
 *  @section qssmoother_mwm2 Moving Window Median Filter O(1) 
 *  
-*  This filter operates on the same principle as the previous filter. The main
+*  \ref qlibs::smootherMWM2 is a filter that operates on the same principle as the previous filter. The main
 *  difference is the treatment of the sliding window, which is implemented as a
 *  TDL (Tapped Delay Line) using a circular queue.
 *  This structure has \f$N - 1\f$ taps in a line of delays, each tap extracts
@@ -128,14 +126,12 @@
 *
 *  @subsection qssmoother_ex4 Example: Setting up a moving window median filter:
 *  @code{.c}
-*  #define N_MWM     ( 150u )
+*  smootherMWM2 filter; 
+*  real_t m_window[ 150 ] = { 0.0 };
+*  bool ret;
 *
-*  qSSmoother_MWM2_t smoother; 
-*  float m_window[ N_MWM ] = { 0.0f };
-*  int ret;
-*
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_MWM1, NULL, m_window, N_MWM );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( m_window );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -143,7 +139,7 @@
 *
 *  @section qssmoother_mor1 Moving Outlier Removal Filter O(n) 
 *  
-*  This filter detects and removes outliers in the input signal by computing the
+*  The \ref qlibs::smootherMOR1 filter detects and removes outliers in the input signal by computing the
 *  median of a moving window for each sample. If a new incoming sample deviates
 *  from the median by a specified margin \f$\alpha\f$, it is replaced by the
 *  moving median \f$\overline{m(k)} \f$.
@@ -160,15 +156,13 @@
 *
 *  @subsection qssmoother_ex5 Example: setting up an outlier removal filter:
 *  @code{.c}
-*  #define N_MOR     ( 10u )
+*  smootherMOR1 smoother; 
+*  real_t alpha = 0.8;
+*  real_t m_window[ 10 ] = { 0.0 };
+*  bool ret;
 *
-*  qSSmoother_MOR1_t smoother; 
-*  float alpha = 0.8f;
-*  float m_window[ N_MOR ] = { 0.0f };
-*  int ret;
-*
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_MOR1, &alpha, m_window, N_MOR );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( m_window, alpha );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -176,20 +170,18 @@
 *
 *  @section qssmoother_mor2 Moving Outlier Removal Filter O(1) 
 *  
-*  Similar to the previous filter, but with a constant time complexity of  \f$O(1)\f$ 
-*  by using a \ref qtdl data structure.
+*  The \ref qlibs::smootherMOR2 is similar to the previous filter, but with a constant time complexity of  \f$O(1)\f$ 
+*  by using a \ref qlibs::tdl data structure.
 *
 *  @subsection qssmoother_ex6 Example: setting up an outlier removal filter:
 *  @code{.c}
-*  #define N_MWM     ( 10u )
+*  smootherMOR2 smoother; 
+*  real_t alpha = 0.8;
+*  real_t m_window[ 100 ] = { 0.0 };
+*  bool ret;
 *
-*  qSSmoother_MOR2_t smoother; 
-*  float alpha = 0.8f;
-*  float m_window[ N_MWM ] = { 0.0f };
-*  int ret;
-*
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_MOR2, &alpha, m_window, N_MWM );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( m_window, alpha );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -197,7 +189,7 @@
 *
 *  @section qssmoother_gmwf Gaussian Filter
 *
-*  This filter uses a kernel for smoothing,  which defines the shape of the function
+*  \ref qlibs::smootherGMWF is a filter that uses a kernel for smoothing,  which defines the shape of the function
 *  that is used to take the average of the neighboring points. A Gaussian kernel
 *  has the shape of a Gaussian curve with a normal distribution. 
 *
@@ -214,16 +206,16 @@
 *
 *  @subsection qssmoother_ex7 Example: setting up a gaussian filter:
 *  @code{.c}
-*  #define SMOOTHER_WINDOW_SIZE    ( 10 )
-*  #define SMOOTHER_SAMPLE_TIME    ( 100 )
+*  constexpr size_t SMOOTHER_WINDOW_SIZE = 10;
+*  const real_t sigma = 0.5;
+*  const real_t centerOffset = SMOOTHER_WINDOW_SIZE/2.0;
 *
-*  qSSmoother_GMWF_t  smoother; 
-*  float win_kernel[ 2*SMOOTHER_WINDOW_SIZE ];
-*  float params[ 2 ] = { 0.5f, SMOOTHER_WINDOW_SIZE/2.0f }; //sigma and offset
-*  int ret;
+*  smootherGMWF filter; 
+*  real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0 };
+*  real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0 };
+*  bool ret;
 *
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_GMWF,
-*                          params, win_kernel, sizeof(win_kernel)/sizeof(win_kernel[0]) );
+*  ret = filter.setup( sigma, centerOffset, window, kernel );
 *  if ( 0 == ret ) {
 *      // error, smooth filter cant be configured
 *  }
@@ -232,7 +224,7 @@
 *
 *  @section qssmoother_expw Exponential Weighting filter 
 *
-*  This filter uses a weighting factor that is computed and applied to the input
+*  The \ref qlibs::smootherEXPW filter uses a weighting factor that is computed and applied to the input
 *  signal in a recursive manner. The weighting factor decreases exponentially as
 *  the age of the data increases, but never reaches zero, meaning more recent
 *  data has more influence on the current sample than older data
@@ -252,11 +244,11 @@
 *
 *  @subsection qssmoother_ex8 Example: setting up an exponential weighting filter:
 *  @code{.c}
-*  qSSmoother_EXPW_t  smoother; 
-*  float lambda = 0.8f;
-*  int ret;
+*  smootherEXPW  filter; 
+*  real_t lambda = 0.8;
+*  bool ret;
 *
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_EXPW, &lambda, NULL, 0u );
+*  ret = filter.setup( lambda );
 *  if ( 0 == ret ) {
 *      // error, smooth filter cant be configured
 *  }
@@ -265,7 +257,7 @@
 *
 *  @section qssmoother_klmn Scalar Kalman filter 
 *
-*  The Kalman Filter is an efficient optimal estimator that provides a recursive
+*  The \ref qlibs::smootherKLMN (Kalman Filter) is an efficient optimal estimator that provides a recursive
 *  computational methodology for getting the state of a signal from measurements
 *  that are typically noisy, while providing an estimate of the uncertainty of
 *  the estimate. Here, the scalar or one-dimensional version is provided
@@ -298,12 +290,11 @@
 *  
 *  @subsection qssmoother_ex9 Example: setting up a scalar Kalman filter:
 *  @code{.c}
-*  qSSmoother_KLMN_t  smoother; 
-*  float param[] = { 100.0f, 100.0f, 9.0f }; // [initial covariance, noise covariance, measurement uncertainty]
-*  int ret;
+*  smootherKLMN filter;
+*  bool ret;
 *
-*  ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_KLMN, param, NULL, 0u );
-*  if ( 0 == ret ) {
+*  ret = filter.setup( 100.0, 0.9, 100 );
+*  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
@@ -311,7 +302,7 @@
 *
 *  @section qssmoother_desf Double Exponential Smoothing
 *
-*  Is a time series forecasting technique used to analyze and predict trends in
+*  The \ref qlibs::smootherDESF is a time series forecasting filter used to analyze and predict trends in
 *  data. It is an extension of simple exponential smoothing that incorporates 
 *  trend information into the forecast.
 * 
@@ -346,7 +337,7 @@
 *
 *  @section qssmoother_alnf Adaptive Linear Filter
 *
-*  It is a digital filter that adjusts its parameters based on the
+*  The \ref qlibs::smootherALNF is a digital filter that adjusts its parameters based on the
 *  characteristics of the input signal and the desired output signal.
 * 
 *  The adaptive linear filter works by using an algorithm to iteratively adjust
@@ -390,25 +381,26 @@
 *  for noise and disturbances.
 *
 *  @code{.c}
-*  #include <stdio.h>
-*  #include <stdlib.h>
+*  #include <iostream>
 *  #include "freertos/FreeRTOS.h"
 *  #include "freertos/task.h"
 *  #include "bsp.h"
-*  #include "qssmoother.h"
 *  #include "AppSignalProcessing.h"
-*  
-*  #define SMOOTHER_WINDOW_SIZE    ( 10 )
-*  #define SMOOTHER_SAMPLE_TIME    ( 100 )
+*  #include <qlibs.h>
+*
+*  constexpr size_t SMOOTHER_WINDOW_SIZE = 10;
+*  constexpr uint32_t SMOOTHER_SAMPLE_TIME = 100;
+*  constexpr real_t GAUSS_SIGMA = 0.5;
+*  constexpr real_t GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0;
 *  
 *  void xTaskSignalProcessing( void *arg )
 *  {
-*      qSSmoother_GMWF_t *smoother = (qSSmoother_GMWF_t *)arg;
-*      float noisySignal;
-*      float smoothedSignal;
+*      smootherGMWF *filter = static_cast<smootherGMWF *>( arg );
+*      real_t noisySignal;
+*      real_t smoothedSignal;
 *      for ( ;; ) {
 *          noisySignal = BSP_ScaletoSomething( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
-*          smoothedSignal = qSSmoother_Perform( smoother, noisySignal );
+*          smoothedSignal = filter->smooth( noisySignal );
 *          AppSignalProcess( smoothedSignal );
 *          vTaskDelay( SMOOTHER_SAMPLE_TIME / portTICK_RATE_MS ) ;
 *      }
@@ -416,17 +408,17 @@
 *  
 *  int main( int argc, char *argv[] )
 *  {
-*      qSSmoother_GMWF_t smoother;
-*      float win_kernel[ 2*SMOOTHER_WINDOW_SIZE ]; //storage for the window and the kernel
-*      float params[ 2 ] = { 0.5f, SMOOTHER_WINDOW_SIZE/2.0f }; //sigma and offset
-*      int ret;
+*      smootherGMWF filter;
+*      real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };
+*      real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };
+*      bool ret;
 *      
 *      BSP_SystemInit( );
-*      ret = qSSmoother_Setup( &smoother, QSSMOOTHER_TYPE_GMWF, params, win_kernel, sizeof(win_kernel)/sizeof(win_kernel[0]) );
-*      if ( 0 == ret ) {
+*      ret = filter.setup( GAUSS_SIGMA, GAUSS_CENTER, window, kernel );
+*      if ( !ret ) {
 *          puts( "ERROR: Cant configure the smoother filter" );
 *      }
-*      xTaskCreate( xTaskSignalProcessing, "signalProcessing", 512, &smoother, 2, NULL );
+*      xTaskCreate( xTaskSignalProcessing, "signalProcessing", 512, &filter, 2, nullptr );
 *      vTaskStartScheduler();
 *      for( ;; );
 *      return EXIT_SUCCESS;
