@@ -200,15 +200,15 @@ Tsukamoto</h1>
 Defuzzification Methods</h1>
 <p >FIS supports five different methods, as listed in the <a class="el" href="group__qfis.html#ga03e1de6d8325b634bd035477ccfe45b0">qlibs::fisDeFuzzMethod</a> enum for computing a single crisp output value for such a fuzzy set.</p>
 <ol type="1">
-<li>qlibs::fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
+<li>centroid (default): this method applies only to ::Mamdani systems and returns the center of gravity of the fuzzy set along the x-axis. If you think of the area as a plate with uniform thickness and density, the centroid is the point along the x-axis about which the fuzzy set would balance. The centroid is computed using the following formula, where \(\mu(x)\) is the membership value for point \(x_i\) in the universe of discourse.</li>
 </ol>
 <center> \(\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \) </center><ol type="1">
-<li>qlibs::fisDeFuzzMethod::bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
-<li>qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for qlibs::fisDeFuzzMethod::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only forqlibs::fisDeFuzzMethod::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for qlibs::fisDeFuzzMethod::Mamdani systems.</li>
-<li>qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only for qlibs::fisType::Sugeno and qlibs::fisDeFuzzMethod::Tsukamoto systems.</li>
-<li>qlibs::fisDeFuzzMethod::wtsum: Weighted sum of all rule outputs. This method applies only for qlibs::fisDeFuzzMethod::Sugeno and qlibs::fisDeFuzzMethod::Tsukamoto systems.</li>
+<li>bisector : this method applies only for ::Mamdani systems and finds the vertical line that divides the fuzzy set into two sub-regions of equal area. It is sometimes, but not always, coincident with the centroid line.</li>
+<li>mom : Middle of Maximum. Only for Mamdani systems.</li>
+<li>som : Smallest of Maximum. Only for Mamdani systems.</li>
+<li>lom : Largest of Maximum. Only for Mamdani systems.</li>
+<li>wtaver (default): Weighted average of all rule outputs. This method applies only for Sugeno and Tsukamoto systems.</li>
+<li>qlibs::fisDeFuzzMethod::wtsum: Weighted sum of all rule outputs. This method applies only for qlibs::fisDeFuzzMethod::Sugeno and Tsukamoto systems.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>The defuzzification method is selected by default when setting up the FIS instance with <a class="el" href="classqlibs_1_1fis.html#a6c13e05286af5f87550af36647081594">qlibs::fis::setup()</a>. However, the user can later change the default method using the <a class="el" href="classqlibs_1_1fis.html#a9b5275a564242acd98dd53cc9da33cc7">qlibs::fis::setDeFuzzMethod()</a> function.</dd></dl>
 <h1><a class="anchor" id="qfis_buildfis"></a>
