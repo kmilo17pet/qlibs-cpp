@@ -156,33 +156,33 @@ Conversion functions</h2>
 <ul>
 <li><a class="el" href="classqlibs_1_1fp16.html#ab98ae26da9495b52f65f7d9c05e94862">qlibs::fp16::from()</a> Convert int/float or double to the <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> type</li>
 <li><a class="el" href="classqlibs_1_1fp16.html#a769a279ee71fc9b768611b394fe7ab64">qlibs::fp16::toInt()</a> Convert <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to integer.</li>
-<li><a class="el" href="classqlibs_1_1fp16.html#a394ad7eb2355e1f9a6de1365b1c656f7">qlibs::fp16::toFloat()</a> Convert qlibs::p16 to float.</li>
+<li><a class="el" href="classqlibs_1_1fp16.html#a394ad7eb2355e1f9a6de1365b1c656f7">qlibs::fp16::toFloat()</a> Convert <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to float.</li>
 <li><a class="el" href="classqlibs_1_1fp16.html#a892b97339ddaa8c1270f2a1d3b3e7bbf">qlibs::fp16::toDouble()</a> Convert <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to double.</li>
-<li>qlibs::fp16::toASCII() Convert from <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to raw c-string.</li>
+<li>fp16::toASCII() Convert from <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> to raw c-string.</li>
 </ul>
 <h2><a class="anchor" id="qfp16_basic_arithmetic"></a>
 Basic arithmetic</h2>
 <p >Basic operator overloading also perform rounding and detect overflows. When overflow is detected, they return <code>overflow</code> as a marker value.</p>
 <ul>
-<li>(+) Addition</li>
-<li>(-) Subtraction</li>
-<li>(*) Multiplication</li>
-<li>(/) Division</li>
+<li><code>+</code> Addition</li>
+<li><code>-</code> Subtraction</li>
+<li><code>*</code> Multiplication</li>
+<li><code>/</code> Division</li>
 </ul>
 <h2><a class="anchor" id="qfp16_exp_functions"></a>
 Exponential and transcendental functions</h2>
 <p >Roots, exponents &amp; similar.</p>
 <ul>
 <li>qlibs::fp16::sqrt() Square root. Performs rounding and is accurate to fp16 limits.</li>
-<li>qlibs::fp16::exp() Exponential function using power series approximation. Accuracy depends on range, worst case +-40 absolute for negative inputs and +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.</li>
-<li>qlibs::fp16::log() Natural logarithm using Newton approximation and qlibs::fp16::exp(). Worst case error +-3 absolute, average error less than 1 unit.</li>
+<li>qlibs::fp16::exp() Exponential function using power series approximation. Accuracy depends on range, worst case <code>+-40</code> absolute for negative inputs and <code>+-0.003%</code> for positive inputs. Average error is <code>+-1</code> for neg and <code>+-0.0003%</code> for pos.</li>
+<li>qlibs::fp16::log() Natural logarithm using Newton approximation and qlibs::fp16::exp(). Worst case error <code>+-3</code> absolute, average error less than 1 unit.</li>
 <li>qlibs::fp16::log2() Logarithm base 2.</li>
 <li>qlibs::fp16::pow() Computes the power of a <a class="el" href="classqlibs_1_1fp16.html" title="Fixed-point Q16.16 type with width of exactly 32 bits.">qlibs::fp16</a> number</li>
 </ul>
 <h2><a class="anchor" id="qfp16_trig_functions"></a>
 Trigonometric functions and helpers</h2>
 <ul>
-<li>qlibs::fp16::sin() Sine for angle in radians</li>
+<li>sin() Sine for angle in radians</li>
 <li>qlibs::fp16::cos() Cosine for angle in radians</li>
 <li>qlibs::fp16::tan() Tangent for angle in radians</li>
 <li>qlibs::fp16::asin() Inverse of sine, output in radians</li>
