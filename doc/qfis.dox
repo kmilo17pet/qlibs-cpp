@@ -135,7 +135,7 @@
 * FIS supports five different methods, as listed in the \ref qlibs::fisDeFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani 
+*  -# \ref centroid (default): this method applies only to ::Mamdani 
 * systems and returns the center of gravity of the fuzzy set along the x-axis. 
 * If you think of the area as a plate with uniform thickness and density, the 
 * centroid is the point along the x-axis about which the fuzzy set would balance.
@@ -145,21 +145,21 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# \ref qlibs::fisDeFuzzMethod::bisector : this method applies only for ::Mamdani systems and finds the 
+*  -# \ref bisector : this method applies only for ::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for \ref qlibs::fisDeFuzzMethod::Mamdani systems.
+*  -# \ref mom : Middle of Maximum. Only for \ref Mamdani systems.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only for\ref qlibs::fisDeFuzzMethod::Mamdani systems.
+*  -# \ref som : Smallest of Maximum. Only for \ref Mamdani systems.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for \ref qlibs::fisDeFuzzMethod::Mamdani systems.
+*  -# \ref lom : Largest of Maximum. Only for \ref Mamdani systems.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only 
-* for qlibs::fisType::Sugeno and \ref qlibs::fisDeFuzzMethod::Tsukamoto systems.
+*  -# \ref wtaver (default): Weighted average of all rule outputs. This method applies only 
+* for \ref Sugeno and \ref Tsukamoto systems.
 *
 *  -# \ref qlibs::fisDeFuzzMethod::wtsum:  Weighted sum of all rule outputs. This method applies only 
-* for \ref qlibs::fisDeFuzzMethod::Sugeno and \ref qlibs::fisDeFuzzMethod::Tsukamoto systems.
+* for \ref qlibs::fisDeFuzzMethod::Sugeno and \ref Tsukamoto systems.
 *
 * @note The defuzzification method is selected by default when setting up the 
 * FIS instance with \ref qlibs::fis::setup(). However, the user can later change the default
@@ -268,7 +268,7 @@
 * - \ref #FIS_RULES_END to end the rules set
 * - \ref #IF to start a rule sentence
 * - \ref #END to end a rule sentence
-* - \ref #AND and \ref OR fuzzy connectors
+* - \ref #AND and \ref #OR fuzzy connectors
 * - \ref #IS and \ref #IS_NOT to represent a premise and a negated premise respectively.
 * - \ref #THEN to represent the implication
 *
