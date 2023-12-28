@@ -31,7 +31,7 @@
 * combined into a single fuzzy set using the aggregation method of the FIS.
 * Then, to compute a final crisp output value, the combined output fuzzy set is
 * defuzzified using one of the methods described in Defuzzification Methods.
-* To specify a FIS of this type use the \ref qlibs::fisType::Mamdani enum definition when calling
+* To specify a FIS of this type use the \ref qlibs::Mamdani enum definition when calling
 * \ref qlibs::fis::setup().
 *
 * <center>
@@ -80,7 +80,7 @@
 * controllers that are to be applied, respectively, to different operating 
 * conditions of a dynamic nonlinear system.
 *
-* To specificy a FIS of this type,  use the \ref qlibs::fisType::Sugeno enum definition when
+* To specificy a FIS of this type,  use the \ref qlibs::Sugeno enum definition when
 * calling \ref qlibs::fis::setup().
 *
 * <center>
@@ -111,7 +111,7 @@
 * each rule's output by the method of weighted average and thus avoids the
 * time-consuming process of defuzzification.
 *
-* To specify a FIS of this type, use the ::Tsukamoto enum definition when
+* To specify a FIS of this type, use the \ref qlibs::Tsukamoto enum definition when
 * calling \ref qlibs::fis::setup() .
 *
 * <center>
@@ -135,7 +135,7 @@
 * FIS supports five different methods, as listed in the \ref qlibs::fisDeFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# \ref centroid (default): this method applies only to ::Mamdani 
+*  -# \ref qlibs::centroid (default): this method applies only to \ref qlibs::Mamdani 
 * systems and returns the center of gravity of the fuzzy set along the x-axis. 
 * If you think of the area as a plate with uniform thickness and density, the 
 * centroid is the point along the x-axis about which the fuzzy set would balance.
@@ -145,21 +145,21 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# \ref bisector : this method applies only for ::Mamdani systems and finds the 
+*  -# \ref qlibs::bisector : this method applies only for \ref qlibs::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# \ref mom : Middle of Maximum. Only for \ref Mamdani systems.
+*  -# \ref qlibs::mom : Middle of Maximum. Only for \ref qlibs::Mamdani systems.
 *
-*  -# \ref som : Smallest of Maximum. Only for \ref Mamdani systems.
+*  -# \ref qlibs::som : Smallest of Maximum. Only for \ref qlibs::Mamdani systems.
 *
-*  -# \ref lom : Largest of Maximum. Only for \ref Mamdani systems.
+*  -# \ref qlibs::lom : Largest of Maximum. Only for \ref qlibs::Mamdani systems.
 *
-*  -# \ref wtaver (default): Weighted average of all rule outputs. This method applies only 
-* for \ref Sugeno and \ref Tsukamoto systems.
+*  -# \ref qlibs::wtaver (default): Weighted average of all rule outputs. This method applies only 
+* for \ref Sugeno and \ref qlibs::Tsukamoto systems.
 *
-*  -# \ref qlibs::fisDeFuzzMethod::wtsum:  Weighted sum of all rule outputs. This method applies only 
-* for \ref qlibs::fisDeFuzzMethod::Sugeno and \ref Tsukamoto systems.
+*  -# \ref qlibs::wtsum:  Weighted sum of all rule outputs. This method applies only 
+* for \ref qlibs::Sugeno and \ref qlibs::Tsukamoto systems.
 *
 * @note The defuzzification method is selected by default when setting up the 
 * FIS instance with \ref qlibs::fis::setup(). However, the user can later change the default
@@ -301,7 +301,8 @@
 *
 * Then, we can proceed to the construction of the fuzzy system. First, we must
 * configure the inputs and outputs by setting the ranges of each. For this, we 
-* will use the \ref fis::setupInput() and fis::setupOutput() methods as follows:
+* will use the \ref qlibs::fis::setupInput() and \ref qlibs::fis::setupOutput() 
+* methods as follows:
 *
 *  @code{.c}
 *  tipper.setupInput( service, 0.0, 1.0 );
@@ -310,8 +311,8 @@
 *  @endcode
 *
 * The next step is to configure the membership functions by relating I/O, 
-* tags, shape and parameters one by one by using the \ref fis::setInputMF() and 
-* fis::setOutputMF() methods as follows:
+* tags, shape and parameters one by one by using the \ref qlibs::fis::setInputMF() and 
+* \ref qlibs::fis::setOutputMF() methods as follows:
 * Then, let's define the parameters of all the membership functions:
 *
 *  @code{.c}
@@ -330,12 +331,12 @@
 *
 * @section qfis_eval Evaluating a Fuzzy Inference System
 *
-* If we already have a fuzzy system configured with \ref fis::setup(), we can 
-* evaluate it by using \ref fis::fuzzify(), \ref fis::inference() and 
-* \ref fis::deFuzzify(). 
-* Input values can be set with \ref fis::setInput() and output values can be 
-* obtained with \ref fis::getOutput(). Also you can use the stream operator @c <<
-* to set the inputs and the index operator @c [] to get the outputs of the FIS
+* If we already have a fuzzy system configured with \ref qlibs::fis::setup(), we can 
+* evaluate it by using \ref qlibs::fis::fuzzify(), \ref qlibs::fis::inference() and 
+* \ref qlibs::fis::deFuzzify(). 
+* Input values can be set with \ref qlibs::fis::setInput() and output values can be 
+* obtained with \ref qlibs::fis::getOutput(). Also you can use the stream operator @c <<
+* to set the inputs and the index operator [] to get the outputs of the FIS
 * system (see example bellow).
 *
 * To show its use, first we are going to put everything together in a single 

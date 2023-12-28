@@ -21,7 +21,7 @@
 * Derivative. Combining all these three operations gives the name Proportional 
 * Integral Derivative (PID) Controller.
 *
-* qLibs provides the \ref qlibs::pid implementation, which, apart from the simplified 
+* qLibs provides the \ref qlibs::pidController implementation, which, apart from the simplified 
 * overview representation of the PID controller, it also addresses some practical
 * issues and includes additional features as listed below:
 * 
@@ -38,7 +38,7 @@
 * the PID terms, which means an increasing positive error results in an 
 * increasing positive control output correction.
 *
-* The overall control function implemented in ::qPID_Automatic mode is 
+* The overall control function implemented in \ref qlibs::pidMode::PID_AUTOMATIC  mode is 
 * given by:
 *
 * <center>
@@ -81,7 +81,7 @@
 * </center>
 *
 * @section qpid_maninput Manual Mode 
-* When the operation mode is changed to ::qPID_Manual, the feedback is disconnected and 
+* When the operation mode is changed to \ref qlibs::pidMode::PID_MANUAL, the feedback is disconnected and 
 * the controller works in open loop being commanded by the manual input \f$ m(t) \f$. 
 * Since the controller is a dynamic system, it is necessary to make sure that
 * the state of the system is correct when switching the controller between manual
@@ -95,18 +95,18 @@
 * @section qpid_create Creating a PID Controller
 *
 * Before you start using a controller, it must be instantiated first
-* via the \ref qPID_controller_t type and then configured using the \ref qPID_Setup() API, 
+* via the \ref qlibs::pidController type and then configured using the \ref qlibs::pidController::setup() method, 
 * where you can define the PID gains and time step.
 *
 *  Example: Instantiating an configuring a PID controller:
 *  @code{.c}
-*  qPID_controller_t control;
-*  const float kc = 1.0f, ki = 0.1f, kd = 0.0f;
-*  const float dt = 0.01f; // time-step of 10mS
-*  int ret;
+*  pidController control;
+*  const real_t kc = 1.0, ki = 0.1, kd = 0.0;
+*  const real_t dt = 0.01; // time-step of 10mS
+*  bool ret;
 *
-*  ret = qPID_Setup( &control, kc, ki, kd, dt );
-*  if ( 0 == ret ) {
+*  ret = control.setup( kc, ki, kd, dt );
+*  if ( !ret ) {
 *      // error, pid controller cant be configured
 *  }
 *  @endcode
@@ -117,32 +117,31 @@
 *  The following example illustrates how a PID controller can be used to regulate
 *  the speed of a DC motor. PID control operates on a separate task running
 *  periodically at a rate of 50mS. The speed measurement is read through
-*  an analog input and then scaled to the appropriate units (RPM). The \ref qPID_Control() 
+*  an analog input and then scaled to the appropriate units (RPM). The \ref qlibs::pidController::control() 
 *  function will be in charge of computing the control action and updating the internal
 *  states of the controller. Then, the control output gets scaled back in order to
 *  send the control command by using the PWM(Pulse Width Modulation) module. 
 *
 *  @subsection qpid_ex1 Example: Speed control using a PID controller:
 *  @code{.c}
-*  #include <stdio.h>
-*  #include <stdlib.h>
+*  #include <iostream>
 *  #include "freertos/FreeRTOS.h"
 *  #include "freertos/task.h"
 *  #include "bsp.h"
-*  #include "qpid.h"
+*  #include <qlibs.h>
 *  
-*  const TickType_t  dt = 50; //50mS time-step
+*  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
-*  float SetPoint = 300.0f; // desired motor speed 300rpm
+*  real_t SetPoint = 300.0; // desired motor speed 300rpm
 *  
 *  void xTaskPIDspeedControl( void *arg )
 *  {
-*      qPID_controller_t *controller = (qPID_controller_t *)arg;
-*      float processMeasurement;
-*      float controlOutput;
+*      pidController *controller = static_cast<pidController *)( arg );
+*      real_t processMeasurement;
+*      real_t controlOutput;
 *      for ( ;; ) {
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
-*          controlOutput = qPID_Control( controller, SetPoint, processMeasurement );
+*          controlOutput = controller->control( SetPoint, processMeasurement );
 *          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); 
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
@@ -150,17 +149,17 @@
 *  
 *  int main( int argc, char *argv[] ) 
 *  {
-*      qPID_controller_t speedControl;
-*      int ret;
+*      pidController_t speedControl;
+*      bool ret;
 *      
 *      BSP_SystemInit();
-*      ret = qPID_Setup( &speedControl, 1, 0.1, 0, (float)dt/1000.0f );
-*      if ( 0 == ret ) {
+*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      qPID_SetSaturation( &speedControl, 0.0f, 100.0f );
+*      speedControl.setSaturation( 0.0, 100.0 );
 *      // Create the task that handles the speed control at the defined rate
-*      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 ,NULL );
+*      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 , nullptr );
 *      vTaskStartScheduler();
 *      for( ;; );
 *      return EXIT_SUCCESS;
@@ -203,8 +202,9 @@
 * beginning of this section.
 *
 * To use the additive MRAC, you should first instantiate a reference model and 
-* then, enable the MRAC by using the \ref qPID_SetMRAC() API. Here, you must provide
-* a pointer to the output of the reference model and the adaptation gain \f$\gamma(t)\f$
+* then, enable the MRAC by using the \ref qlibs::pidController::setModelReferenceControl() 
+* method. Here, you must provide a pointer to the output of the reference model 
+* and the adaptation gain \f$\gamma(t)\f$
 *
 *  @subsection qpid_ex2 Example: Speed control with PID controller with an additive MRAC:
 *  @code{.c}
@@ -213,8 +213,7 @@
 *  #include "freertos/FreeRTOS.h"
 *  #include "freertos/task.h"
 *  #include "bsp.h"
-*  #include "qpid.h"
-*  #include "qltisys.h" //to create the reference model
+*  #include <qlibs.h>
 *  
 *  #define REF_MODEL_ORDER   ( 1 )
 *
@@ -223,21 +222,22 @@
 *  
 *  void xTaskPIDspeedControl( void *arg )
 *  {
-*      qPID_controller_t *controller = (qPID_controller_t *)arg;
-*      qLTISys_t ref_model;
-*      float num[ REF_MODEL_ORDER+1 ] = { 0.0f, 1.0f, };
-*      float den[ REF_MODEL_ORDER+1 ] = { 3.0f, 1.0f, };
-*      float processMeasurement;
-*      float SetPoint = 300.0f; // desired motor speed 300rpm
-*      float refmodel_output = 0.0f;
-*      float controlOutput = 0.0f;
+*      picController *controller = static_cast<pidcontroller *>( arg );
+*      continuousTF<1> ctf= {
+*          { 0.0, 1.0 },
+*          { 3.0, 1.0 },
+*      };
+*      continuousSystem ref_model( ctf, 0.01 );
+*      real_t processMeasurement;
+*      real_t SetPoint = 300.0; // desired motor speed 300rpm
+*      real_t refmodel_output = 0.0;
+*      real_t controlOutput = 0.0;
 *
-*      qLTISys_Setup( &ref_model, num, den, x, 0, REF_MODEL_ORDER+1, (float)dt/1000.0f ) );
-*      qPID_SetMRAC( controller, &refmodel_output, 0.01f );
+*      controller->setModelReferenceControl( &refmodel_output, 0.01 );
 *      for ( ;; ) {
-*          refmodel_output = qLTISys_Excite( &ref_model, controlOutput );
+*          refmodel_output = ref_model->excite( controlOutput );
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
-*          controlOutput = qPID_Control( controller, SetPoint, processMeasurement );
+*          controlOutput = controller->control( SetPoint, processMeasurement );
 *          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
@@ -245,17 +245,17 @@
 *  
 *  int main( int argc, char *argv[] ) 
 *  {
-*      qPID_controller_t speedControl;
-*      int ret;
+*      picController speedControl;
+*      bool ret;
 *      
 *      BSP_SystemInit( );
-*      ret = qPID_Setup( &speedControl, 1, 0.1, 0, (float)dt/1000.0f );
-*      if ( 0 == ret ) {
+*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      qPID_SetSaturation( &speedControl, 0.0f, 100.0f );
+*      speedControl.setSaturation( 0.0, 100.0 );
 *      // Create the task that handles the speed control at the defined rate
-*      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 ,NULL );
+*      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 ,nullptr );
 *      vTaskStartScheduler();
 *      for( ;; );
 *      return EXIT_SUCCESS;
@@ -306,11 +306,11 @@
 *
 * @subsection qpid_autotune_usage Autotuning Usage
 *
-* In order to use the autotuner, you must first instantiate the \ref qPID_AutoTuning_t
+* In order to use the autotuner, you must first instantiate the \ref qlibs::pidAutoTuning
 * object and bind it to a previously configured PID controller by using the 
-* \ref qPID_BindAutoTuning().
+* \ref qlibs::pidController::bindAutoTuning().
 *
-* After this, you can enable autotuning via \ref qPID_EnableAutoTuning() 
+* After this, you can enable autotuning via \ref qlibs::pidController::enableAutoTuning() 
 * for a defined number of intervals. When the autotune ends, the resulting PID
 * gains will be applied to the bounded controller.
 * 
@@ -327,9 +327,8 @@
 *  #include "freertos/FreeRTOS.h"
 *  #include "freertos/task.h"
 *  #include "bsp.h"
-*  #include "qpid.h"
+*  #include <qlibs.h>
 *  
-*  #define REF_MODEL_ORDER   ( 1 )
 *
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
@@ -346,29 +345,33 @@
 *
 *  void xTaskPIDspeedControl( void *arg )
 *  {
-*      qPID_controller_t *controller = (qPID_controller_t *)arg;
-*      float processMeasurement;
-*      float SetPoint = 300.0f; // desired motor speed 300rpm
-*      float tmpSetPoint = 320.0f;
-*      float *p_setpoint  = &SetPoint;  
-*      float refmodel_output = 0.0f;
-*      float controlOutput = 0.0f;
+*      picController *controller = static_cast<pidcontroller *>( arg );
+*      continuousTF<1> ctf= {
+*          { 0.0, 1.0 },
+*          { 3.0, 1.0 },
+*      };
+*      continuousSystem ref_model( ctf, 0.01 );
+*      real_t processMeasurement;
+*      real_t SetPoint = 300.0; // desired motor speed 300rpm
+*      real_t tmpSetPoint = 320.0;
+*      real_t *p_setpoint  = &SetPoint;  
+*      real_t refmodel_output = 0.0;
+*      real_t controlOutput = 0.0;
 *      uint32_t notification_autotune_enable;
 *
-*      qLTISys_Setup( &ref_model, num, den, x, 0, REF_MODEL_ORDER+1, (float)dt/1000.0f ) );
-*      qPID_SetMRAC( controller, &refmodel_output, 0.01f );
+*      controller->setModelReferenceControl( &refmodel_output, 0.01 );
 *      for ( ;; ) {
 *          notification_autotune_enable = ulTaskNotifyTake( pdTRUE, 0 ); // dont wait
 *          if ( notification_autotune_enable ) {
 *              p_setpoint = &tmpSetPoint; 
-*              qPID_EnableAutoTuning( controller, 100 ); //enable for 5 seconds ( 100*50mS )
+*              controller->enableAutoTuning( 100 ); //enable for 5 seconds ( 100*50mS )
 *          }
-*          if ( qPID_AutoTuningComplete( controller) ) {
+*          if ( controller->isAutoTuningComplete() ) {
 *              p_setpoint = &SetPoint;
-*              qPID_EnableAutoTuning( controller, 0uL ); //disable
+*              controller->enableAutoTuning( 0 ); //disable
 *          }
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
-*          controlOutput = qPID_Control( controller, *p_setpoint, processMeasurement );
+*          controlOutput = controller->control( *p_setpoint, processMeasurement );
 *          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); 
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
@@ -376,20 +379,20 @@
 *  
 *  int main( int argc, char *argv[] ) 
 *  {
-*      qPID_controller_t speedControl;
-*      qPID_AutoTuning_t at;
-*      int ret;
+*      pidController speedControl;
+*      pidAutoTuning at;
+*      bool ret;
 *      
 *      BSP_SystemInit( );
 *      HAL_GPIO_Enable( GPIO12, GPIO_INPUT );
 *      HAL_GPIO_SetInterruptMode( GPIO12, RISING_EDGE );
 *      HAL_GPIO_EnableInterrupts( );
-*      ret = qPID_Setup( &speedControl, 1, 0.1, 0, (float)dt/1000.0f );
-*      if ( 0 == ret ) {
+*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      qPID_SetSaturation( &speedControl, 0.0f, 100.0f );
-*      qPID_BindAutoTuning( &speedControl, &at );
+*      speedControl.setSaturation( 0.0, 100.0 );
+*      speedControl.bindAutoTuning( at );
 *      // Create the task that handles the speed control at the defined rate
 *      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 , &pid_task );
 *      vTaskStartScheduler();

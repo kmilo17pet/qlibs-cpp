@@ -28,19 +28,19 @@
 *
 * - \ref qlibs::fp16::from() Convert int/float or double to the qlibs::fp16 type
 * - \ref qlibs::fp16::toInt() Convert qlibs::fp16 to integer.
-* - \ref qlibs::fp16::toFloat() Convert qlibs::p16 to float.
+* - \ref qlibs::fp16::toFloat() Convert qlibs::fp16 to float.
 * - \ref qlibs::fp16::toDouble() Convert qlibs::fp16 to double.
-* - \ref qlibs::fp16::toASCII()  Convert from qlibs::fp16 to raw c-string.
+* - \ref fp16::toASCII()  Convert from qlibs::fp16 to raw c-string.
 *
 * @subsection  qfp16_basic_arithmetic Basic arithmetic
 *
 * Basic operator overloading also perform rounding and detect overflows. When 
 * overflow is detected, they return @c overflow as a marker value.
 *
-* - (+) Addition
-* - (-) Subtraction
-* - (*) Multiplication
-* - (/) Division
+* - @c + Addition
+* - @c - Subtraction
+* - @c * Multiplication
+* - @c / Division
 *
 * @subsection qfp16_exp_functions Exponential and transcendental functions
 *
@@ -48,17 +48,17 @@
 *
 * - \ref qlibs::fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
 * - \ref qlibs::fp16::exp()   Exponential function using power series approximation.
-* Accuracy depends on range, worst case +-40 absolute for negative inputs and
-* +-0.003% for positive inputs. Average error is +-1 for neg and +-0.0003% for pos.
+* Accuracy depends on range, worst case \c +-40 absolute for negative inputs and
+* @c +-0.003% for positive inputs. Average error is @c +-1 for neg and @c +-0.0003% for pos.
 * - \ref qlibs::fp16::log()  Natural logarithm using Newton approximation and qlibs::fp16::exp().
-* Worst case error +-3 absolute, average error less than 1 unit.
+* Worst case error \c +-3 absolute, average error less than 1 unit.
 * - \ref qlibs::fp16::log2()  Logarithm base 2.
 * - \ref qlibs::fp16::pow()  Computes the power of a qlibs::fp16 number
 *
 *
 * @subsection qfp16_trig_functions Trigonometric functions and helpers
 *
-* - \ref qlibs::fp16::sin()  Sine for angle in radians
+* - sin()  Sine for angle in radians
 * - \ref qlibs::fp16::cos()  Cosine for angle in radians
 * - \ref qlibs::fp16::tan()  Tangent for angle in radians
 * - \ref qlibs::fp16::asin()  Inverse of sine, output in radians

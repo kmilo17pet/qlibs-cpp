@@ -4,7 +4,7 @@
 * transfer function models in real-valued systems.
 * A transfer function is a model that describes the frequency-dependent response
 * of a linear time-invariant system, and this class can handle both continuous-time
-* and discrete-time systems. \ref qlibs::qltisys can be used for simulating dynamic
+* and discrete-time systems. \ref qlibs::ltisys can be used for simulating dynamic
 * systems and implementing filters, compensators, or controllers.
 *
 * @section qltisys_cont Continous-time transfer functions
@@ -20,12 +20,12 @@
 * descending powers of \f$s\f$, respectively.
 *
 * To instantiate a continuous transfer function, you should define a variable
-* of type qlibs::continuousSystem, two arrays of N+1 elements with the coefficients of the
+* of type qlibs::continuousSystem, two arrays of @c N+1 elements with the coefficients of the
 * polynomials for both, the numerator and denominator, and finally, an array of type
-* \ref qlibs::continuousStates to hold the N states of the system.
-* Then, you can call \ref continuousSystem::setup() to construct the system and set initial
+* \ref qlibs::continuousStates to hold the @c N states of the system.
+* Then, you can call \ref qlibs::continuousSystem::setup() to construct the system and set initial
 * conditions. Subsequently, you can evaluate the system with a given input-signal
-* by just calling \ref continuousSystem::excite().
+* by just calling \ref qlibs::continuousSystem::excite() .
 *
 * @attention
 * The user must ensure that the 
