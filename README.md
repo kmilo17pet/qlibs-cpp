@@ -15,8 +15,8 @@ qlibs++ is the [qlibs](https://github.com/kmilo17pet/qlibs)  port for C++.
 # qlibs++ : A collection of useful libraries for embedded systems
 
 
-* Download the latest release [here](https://github.com/kmilo17pet/qlibs/releases)
-* Documentation and API Reference [here](https://kmilo17pet.github.io/qlibs/)
+* Download the latest release [here](https://github.com/kmilo17pet/qlibs-cpp/releases)
+* Documentation and API Reference [here](https://kmilo17pet.github.io/qlibs-cpp/)
 
 
 Below is the list of the classes and modules provided and their features:
