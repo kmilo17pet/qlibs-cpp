@@ -31,8 +31,8 @@
 * combined into a single fuzzy set using the aggregation method of the FIS.
 * Then, to compute a final crisp output value, the combined output fuzzy set is
 * defuzzified using one of the methods described in Defuzzification Methods.
-* To specify a FIS of this type use the qlibs::fisType::Mamdani enum definition when calling
-* fis::setup().
+* To specify a FIS of this type use the \ref qlibs::fisType::Mamdani enum definition when calling
+* \ref qlibs::fis::setup().
 *
 * <center>
 * @htmlonly
@@ -80,8 +80,8 @@
 * controllers that are to be applied, respectively, to different operating 
 * conditions of a dynamic nonlinear system.
 *
-* To specificy a FIS of this type,  use the qlibs::fisType::Sugeno enum definition when
-* calling fis::setup().
+* To specificy a FIS of this type,  use the \ref qlibs::fisType::Sugeno enum definition when
+* calling \ref qlibs::fis::setup().
 *
 * <center>
 * @htmlonly
@@ -112,7 +112,7 @@
 * time-consuming process of defuzzification.
 *
 * To specify a FIS of this type, use the ::Tsukamoto enum definition when
-* calling fis::setup().
+* calling \ref qlibs::fis::setup() .
 *
 * <center>
 * @htmlonly
@@ -132,10 +132,10 @@
 *
 * @section qfis_defuzz Defuzzification Methods
 * 
-* FIS supports five different methods, as listed in the qlibs::fisDeFuzzMethod enum
+* FIS supports five different methods, as listed in the \ref qlibs::fisDeFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# ::centroid (default): this method applies only to ::Mamdani 
+*  -# \ref qlibs::fisDeFuzzMethod::centroid (default): this method applies only to ::Mamdani 
 * systems and returns the center of gravity of the fuzzy set along the x-axis. 
 * If you think of the area as a plate with uniform thickness and density, the 
 * centroid is the point along the x-axis about which the fuzzy set would balance.
@@ -145,25 +145,25 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# ::bisector : this method applies only for ::Mamdani systems and finds the 
+*  -# \ref qlibs::fisDeFuzzMethod::bisector : this method applies only for ::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# ::mom : Middle of Maximum. Only for ::Mamdani systems.
+*  -# \ref qlibs::fisDeFuzzMethod::mom : Middle of Maximum. Only for \ref qlibs::fisDeFuzzMethod::Mamdani systems.
 *
-*  -# ::som : Smallest of Maximum. Only for :Mamdani systems.
+*  -# \ref qlibs::fisDeFuzzMethod::som : Smallest of Maximum. Only for\ref qlibs::fisDeFuzzMethod::Mamdani systems.
 *
-*  -# ::lom : Largest of Maximum. Only for ::Mamdani systems.
+*  -# \ref qlibs::fisDeFuzzMethod::lom : Largest of Maximum. Only for \ref qlibs::fisDeFuzzMethod::Mamdani systems.
 *
-*  -# ::wtaver (default): Weighted average of all rule outputs. This method applies only 
-* for qlibs::fisType::Sugeno and :Tsukamoto systems.
+*  -# \ref qlibs::fisDeFuzzMethod::wtaver (default): Weighted average of all rule outputs. This method applies only 
+* for qlibs::fisType::Sugeno and \ref qlibs::fisDeFuzzMethod::Tsukamoto systems.
 *
-*  -# ::wtsum:  Weighted sum of all rule outputs. This method applies only 
-* for ::Sugeno and ::Tsukamoto systems.
+*  -# \ref qlibs::fisDeFuzzMethod::wtsum:  Weighted sum of all rule outputs. This method applies only 
+* for \ref qlibs::fisDeFuzzMethod::Sugeno and \ref qlibs::fisDeFuzzMethod::Tsukamoto systems.
 *
 * @note The defuzzification method is selected by default when setting up the 
-* FIS instance with fis::setup(). However, the user can later change the default
-* method using the fis::setDeFuzzMethod() function.
+* FIS instance with \ref qlibs::fis::setup(). However, the user can later change the default
+* method using the \ref qlibs::fis::setDeFuzzMethod() function.
 *
 * @section qfis_buildfis Building a Mamdani FIS
 *

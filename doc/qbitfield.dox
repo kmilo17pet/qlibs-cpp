@@ -37,7 +37,7 @@
 *
 * @subsection qbitfield_dump Dump
 *
-* - \ref qlibs::bitField::dump() Copies n bytes from the bit-field instance to a designed memory area.
+* - \ref qlibs::bitfield::dump() Copies n bytes from the bit-field instance to a designed memory area.
 *
 *
 * @section qbitfield_workingwith Working with bitfields
@@ -45,8 +45,6 @@
 *  @code{.c}
 *  #include <iostream>
 *  #include <qlibs.h>
-*  
-*  using namespace qlibs;
 *
 *  int main( int argc, char *argv[] )
 *  {

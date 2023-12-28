@@ -130,7 +130,7 @@
 *          uk = BSP_InputGet();
 *          yk = gc.exite( uk );
 *          std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) ); /*100mS sample time*/
-*          std::cout << "u(k) = " << uk << " y(k) = " << yk << std::endl;;
+*          std::cout << "u(k) = " << uk << " y(k) = " << yk << std::endl;
 *      }
 *  }
 *  @endcode
@@ -151,13 +151,13 @@
 *          { 1.0, -0.85, 0.02 },
 *      };
 *      continuousSystem gc( dtf );
-*      real_t ut, yt;
+*      real_t uk, yk;
+*
 *      for( ;; ) {
-*          ut = BSP_InputGet();
-*          yt = gc.excite( ut );
-*          
-*          std::this_thread::sleep_for(delay);
-*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
+*          uk = BSP_InputGet();
+*          yk = gc.excite( ut );
+*          std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) ); /*100mS sample time*/
+*          std::cout << "u(k) = " << uk << " y(k) = " << yk << std::endl;
 *      }
 *  }
 *  @endcode

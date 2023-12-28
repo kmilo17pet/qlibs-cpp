@@ -380,8 +380,8 @@ namespace qlibs {
         * };
         * @endcode
         */
-        /*! @cond  */
         using fisRules = int8_t;
+        /*! @cond  */
         #define FIS_RULES_MIN_VALUE     INT8_MIN
         /*! @endcond  */
     #else
@@ -404,12 +404,21 @@ namespace qlibs {
         * };
         * @endcode
         */
-        /*! @cond  */
         using fisRules = int16_t;
+        /*! @cond  */
         #define FIS_RULES_MIN_VALUE     INT16_MIN
         /*! @endcond  */
     #endif
 
+    /**
+    * @brief Used to define an enum of fis tags
+    * @details Tags for I/O and set/membership functions should be defined 
+    * within enums of this type
+    * Example:
+    * @code{.c}
+    * enum : fisTag { tag1, tag2, tag3 };
+    * @endcode
+    */
     using fisTag = fisRules;
     /*cstat -MISRAC++2008-0-1-4_b*/
     /*! @cond  */

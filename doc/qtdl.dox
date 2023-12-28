@@ -14,15 +14,15 @@
 * then, configure it by using the constructor or \ref qlibs::tdl::setup(),
 * where you can define the number of lines to be delayed and the initial values 
 * for all of them. Then, you can start operating over this structure by inserting
-* samples of the input signal by using \ref qligs::tdl::insertSample().
+* samples of the input signal by using \ref qlibs::tdl::insertSample().
 * You can also get any specific delay from it by using:
 *
-* - \ref qblis::tdl::getOldest(), to get the oldest delay at tap \f$z^{-N}\f$
-* - \ref qblis::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$
+* - \ref qlibs::tdl::getOldest(), to get the oldest delay at tap \f$z^{-N}\f$
+* - \ref qlibs::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$
 * - Index operator
 *
 * Given the applications of this structure, the \ref qlibs::tdl class is used as the
-* base component of some aspects of \ref qblis::smoother and \ref qlibs::ltisys.
+* base component of some aspects of \ref qlibs::smoother and \ref qlibs::ltisys.
 *
 * @section qtdl_ex1 Example : Code snippet to instantiate a TDL to hold up to 256 delays.
 * 
