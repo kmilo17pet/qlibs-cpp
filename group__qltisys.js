@@ -1,5 +1,17 @@
 var group__qltisys =
 [
+    [ "qlibs::continuousTF< order >", "structqlibs_1_1continuous_t_f.html", [
+      [ "continuousTF", "structqlibs_1_1continuous_t_f.html#a8e56f1f7dc3b9e7c07e88df5c29a8c95", null ],
+      [ "den", "structqlibs_1_1continuous_t_f.html#afb9ce605f465916748dc3ee3f22509f8", null ],
+      [ "num", "structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b", null ],
+      [ "states", "structqlibs_1_1continuous_t_f.html#ac332d972b6a6104f08d9dfb18a5f59a5", null ]
+    ] ],
+    [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", [
+      [ "discreteTF", "structqlibs_1_1discrete_t_f.html#af4770d0be3cba2c43ba3685db6a63578", null ],
+      [ "den", "structqlibs_1_1discrete_t_f.html#ac45562f50db1d964b3b8d1f78444426a", null ],
+      [ "num", "structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2", null ],
+      [ "states", "structqlibs_1_1discrete_t_f.html#a4c0109cf5979c9a6ea6ae9e859f432eb", null ]
+    ] ],
     [ "qlibs::ltisys", "classqlibs_1_1ltisys.html", [
       [ "~ltisys", "classqlibs_1_1ltisys.html#a44ede5ecfd6e581c5448c5035124b138", null ],
       [ "ltisys", "classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59", null ],
@@ -24,23 +36,31 @@ var group__qltisys =
     [ "qlibs::discreteSystem", "classqlibs_1_1discrete_system.html", [
       [ "~discreteSystem", "classqlibs_1_1discrete_system.html#a0723d673327ba04bcc363dd0bf48fba5", null ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html#ae6c662c10b640e391d8b7f19a7bb4f75", null ],
+      [ "discreteSystem", "classqlibs_1_1discrete_system.html#aee816b304c8aafdf6e8d92b7ba35d597", null ],
+      [ "discreteSystem", "classqlibs_1_1discrete_system.html#a568a5c4467fbbad2cbb1fe59a66182d1", null ],
       [ "excite", "classqlibs_1_1discrete_system.html#ad374d5c62012a52fa27290ba65a15d3f", null ],
       [ "isInitialized", "classqlibs_1_1discrete_system.html#afae7d9eb20e3f5e4318df953dd5393c3", null ],
       [ "setInitStates", "classqlibs_1_1discrete_system.html#a1372b358328b00567f061a0296ce6266", null ],
+      [ "setup", "classqlibs_1_1discrete_system.html#ac09c9b64f863cab9a38ea6a665a3d933", null ],
       [ "setup", "classqlibs_1_1discrete_system.html#a395b6eed065ec959972ba8e4a99284b1", null ],
+      [ "setup", "classqlibs_1_1discrete_system.html#ac420b6b155fb1559c14166534dd35fd7", null ],
       [ "updateFIR", "classqlibs_1_1discrete_system.html#a4042744053e29dbcf01f6ac0775ad0a7", null ]
     ] ],
     [ "qlibs::continuousSystem", "classqlibs_1_1continuous_system.html", [
       [ "~continuousSystem", "classqlibs_1_1continuous_system.html#a0088321e76a276964d7d1144e71c6e37", null ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html#a11ab8581dad5b80b8b30826c89cfaf59", null ],
+      [ "continuousSystem", "classqlibs_1_1continuous_system.html#aa1fff5d5e3d692eccc74072f6bf5b11e", null ],
+      [ "continuousSystem", "classqlibs_1_1continuous_system.html#a55d1743b0032db2fd70544834a9679bd", null ],
       [ "excite", "classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca", null ],
       [ "isInitialized", "classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef", null ],
       [ "setInitStates", "classqlibs_1_1continuous_system.html#a2221e7c8aef78b6c71262680d4404807", null ],
       [ "setIntegrationMethod", "classqlibs_1_1continuous_system.html#aed8172e8447f970991a5e4a4525e3018", null ],
-      [ "setup", "classqlibs_1_1continuous_system.html#ae13e4af916731be59b059f55f65574af", null ]
+      [ "setup", "classqlibs_1_1continuous_system.html#ada40694c3bebc904c711f44eb440da14", null ],
+      [ "setup", "classqlibs_1_1continuous_system.html#ae13e4af916731be59b059f55f65574af", null ],
+      [ "setup", "classqlibs_1_1continuous_system.html#a33409df71d915c224fbb3fe1afd0a4d1", null ]
     ] ],
-    [ "qlibs::continuousStates", "group__qltisys.html#gafadec0837d97658d7d08467310f1b0da", null ],
-    [ "qlibs::discreteStates", "group__qltisys.html#ga2eb9aaa272fe0c8948b0b33f3e81ff0e", null ],
+    [ "qlibs::continuousStates", "group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75", null ],
+    [ "qlibs::discreteStates", "group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1", null ],
     [ "qlibs::ltisysType", "group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa", [
       [ "qlibs::LTISYS_TYPE_UNKNOWN", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18", null ],
       [ "qlibs::LTISYS_TYPE_CONTINUOUS", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd", null ],

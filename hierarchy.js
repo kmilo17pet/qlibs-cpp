@@ -1,6 +1,8 @@
 var hierarchy =
 [
+    [ "qlibs::continuousTF< order >", "structqlibs_1_1continuous_t_f.html", null ],
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
+    [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
     [ "qlibs::fisCore", "classqlibs_1_1fis_core.html", [
       [ "qlibs::fis", "classqlibs_1_1fis.html", null ]
     ] ],

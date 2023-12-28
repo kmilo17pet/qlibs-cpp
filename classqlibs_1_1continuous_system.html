@@ -153,11 +153,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0088321e76a276964d7d1144e71c6e37"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#a0088321e76a276964d7d1144e71c6e37">~continuousSystem</a> ()</td></tr>
 <tr class="separator:a0088321e76a276964d7d1144e71c6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11ab8581dad5b80b8b30826c89cfaf59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#a11ab8581dad5b80b8b30826c89cfaf59">continuousSystem</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *num, <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *den, <a class="el" href="classqlibs_1_1state.html">state</a> *x, const size_t n_a, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
-<tr class="memdesc:a11ab8581dad5b80b8b30826c89cfaf59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of a LTI continuous system.  <a href="classqlibs_1_1continuous_system.html#a11ab8581dad5b80b8b30826c89cfaf59">More...</a><br /></td></tr>
+<tr class="memdesc:a11ab8581dad5b80b8b30826c89cfaf59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for an instance of a LTI continuous system.  <a href="classqlibs_1_1continuous_system.html#a11ab8581dad5b80b8b30826c89cfaf59">More...</a><br /></td></tr>
 <tr class="separator:a11ab8581dad5b80b8b30826c89cfaf59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fff5d5e3d692eccc74072f6bf5b11e"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
+<tr class="memitem:aa1fff5d5e3d692eccc74072f6bf5b11e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#aa1fff5d5e3d692eccc74072f6bf5b11e">continuousSystem</a> (<a class="el" href="structqlibs_1_1continuous_t_f.html">continuousTF</a>&lt; order &gt; &amp;ctf, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT)</td></tr>
+<tr class="memdesc:aa1fff5d5e3d692eccc74072f6bf5b11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for an instance of a LTI continuous system from a transfer function definition.  <a href="classqlibs_1_1continuous_system.html#aa1fff5d5e3d692eccc74072f6bf5b11e">More...</a><br /></td></tr>
+<tr class="separator:aa1fff5d5e3d692eccc74072f6bf5b11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d1743b0032db2fd70544834a9679bd"><td class="memTemplParams" colspan="2">template&lt;size_t systemOrder&gt; </td></tr>
+<tr class="memitem:a55d1743b0032db2fd70544834a9679bd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#a55d1743b0032db2fd70544834a9679bd">continuousSystem</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;num)[systemOrder+1], <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;den)[systemOrder+1], <a class="el" href="classqlibs_1_1state.html">state</a>(&amp;x)[systemOrder], const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
+<tr class="memdesc:a55d1743b0032db2fd70544834a9679bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for an instance of a LTI continuous system.  <a href="classqlibs_1_1continuous_system.html#a55d1743b0032db2fd70544834a9679bd">More...</a><br /></td></tr>
+<tr class="separator:a55d1743b0032db2fd70544834a9679bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13e4af916731be59b059f55f65574af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#ae13e4af916731be59b059f55f65574af">setup</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *num, <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *den, <a class="el" href="classqlibs_1_1state.html">state</a> *x, const size_t n_a, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
 <tr class="memdesc:ae13e4af916731be59b059f55f65574af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of a LTI continuous system.  <a href="classqlibs_1_1continuous_system.html#ae13e4af916731be59b059f55f65574af">More...</a><br /></td></tr>
 <tr class="separator:ae13e4af916731be59b059f55f65574af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33409df71d915c224fbb3fe1afd0a4d1"><td class="memTemplParams" colspan="2">template&lt;size_t systemOrder&gt; </td></tr>
+<tr class="memitem:a33409df71d915c224fbb3fe1afd0a4d1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#a33409df71d915c224fbb3fe1afd0a4d1">setup</a> (<a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;num)[systemOrder+1], <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;den)[systemOrder+1], <a class="el" href="classqlibs_1_1state.html">state</a>(&amp;x)[systemOrder], const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT) noexcept</td></tr>
+<tr class="memdesc:a33409df71d915c224fbb3fe1afd0a4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of a LTI continuous system.  <a href="classqlibs_1_1continuous_system.html#a33409df71d915c224fbb3fe1afd0a4d1">More...</a><br /></td></tr>
+<tr class="separator:a33409df71d915c224fbb3fe1afd0a4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada40694c3bebc904c711f44eb440da14"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
+<tr class="memitem:ada40694c3bebc904c711f44eb440da14"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#ada40694c3bebc904c711f44eb440da14">setup</a> (<a class="el" href="structqlibs_1_1continuous_t_f.html">continuousTF</a>&lt; order &gt; &amp;ctf, const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dT)</td></tr>
+<tr class="memdesc:ada40694c3bebc904c711f44eb440da14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of a LTI continuous system from a transfer function definition.  <a href="classqlibs_1_1continuous_system.html#ada40694c3bebc904c711f44eb440da14">More...</a><br /></td></tr>
+<tr class="separator:ada40694c3bebc904c711f44eb440da14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca0b51fe11d4876ba6b8fc79124356ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef">isInitialized</a> (void) const override</td></tr>
 <tr class="memdesc:aca0b51fe11d4876ba6b8fc79124356ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LTI continuous system is initialized.  <a href="classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef">More...</a><br /></td></tr>
 <tr class="separator:aca0b51fe11d4876ba6b8fc79124356ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,7 +301,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a11ab8581dad5b80b8b30826c89cfaf59" name="a11ab8581dad5b80b8b30826c89cfaf59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11ab8581dad5b80b8b30826c89cfaf59">&#9670;&nbsp;</a></span>continuousSystem()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ab8581dad5b80b8b30826c89cfaf59">&#9670;&nbsp;</a></span>continuousSystem() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,17 +352,132 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Setup and initialize an instance of a LTI continuous system. </p>
+<p>Constructor for an instance of a LTI continuous system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of n+1 elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of n+1 elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. For a continuos system, an array of type continuousStates with n elements. The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca" title="Drives the continuous LTI system recursively using the input signal provided.">continuousSystem::excite()</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>The number of elements of <em>num</em> and <em>den</em>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>The system order ( n ).</td></tr>
   </table>
   </dd>
 </dl>
 <p>example 2: \( \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \) </p><dl class="section note"><dt>Note</dt><dd>Size of <em>num</em> and <em>den</em> should be equal. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="classqlibs_1_1continuous_system.html#a2221e7c8aef78b6c71262680d4404807" title="Set the initial states for the continuous system.">continuousSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="aa1fff5d5e3d692eccc74072f6bf5b11e" name="aa1fff5d5e3d692eccc74072f6bf5b11e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fff5d5e3d692eccc74072f6bf5b11e">&#9670;&nbsp;</a></span>continuousSystem() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t order&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::continuousSystem::continuousSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqlibs_1_1continuous_t_f.html">continuousTF</a>&lt; order &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ctf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for an instance of a LTI continuous system from a transfer function definition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctf</td><td>: The continuous transfer-function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55d1743b0032db2fd70544834a9679bd" name="a55d1743b0032db2fd70544834a9679bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d1743b0032db2fd70544834a9679bd">&#9670;&nbsp;</a></span>continuousSystem() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t systemOrder&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::continuousSystem::continuousSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>num</em>[systemOrder+1], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>den</em>[systemOrder+1], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqlibs_1_1state.html">state</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>x</em>[systemOrder], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for an instance of a LTI continuous system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of n+1 elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of n+1 elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. For a continuos system, an array of type continuousStates with n elements. The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca" title="Drives the continuous LTI system recursively using the input signal provided.">continuousSystem::excite()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Size of <em>num</em> and <em>den</em> should be equal. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>
@@ -496,8 +627,56 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ada40694c3bebc904c711f44eb440da14" name="ada40694c3bebc904c711f44eb440da14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada40694c3bebc904c711f44eb440da14">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t order&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::continuousSystem::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqlibs_1_1continuous_t_f.html">continuousTF</a>&lt; order &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ctf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize an instance of a LTI continuous system from a transfer function definition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctf</td><td>: The continuous transfer-function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ae13e4af916731be59b059f55f65574af" name="ae13e4af916731be59b059f55f65574af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae13e4af916731be59b059f55f65574af">&#9670;&nbsp;</a></span>setup()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13e4af916731be59b059f55f65574af">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,11 +733,80 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of n+1 elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of n+1 elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. For a continuos system, an array of type continuousStates with n elements. The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca" title="Drives the continuous LTI system recursively using the input signal provided.">continuousSystem::excite()</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>The number of elements of <em>num</em> and <em>den</em>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>The system order ( n ).</td></tr>
   </table>
   </dd>
 </dl>
 <p>example 2: \( \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \) </p><dl class="section note"><dt>Note</dt><dd>Size of <em>num</em> and <em>den</em> should be equal. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="classqlibs_1_1continuous_system.html#a2221e7c8aef78b6c71262680d4404807" title="Set the initial states for the continuous system.">continuousSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="a33409df71d915c224fbb3fe1afd0a4d1" name="a33409df71d915c224fbb3fe1afd0a4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33409df71d915c224fbb3fe1afd0a4d1">&#9670;&nbsp;</a></span>setup() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t systemOrder&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::continuousSystem::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>num</em>[systemOrder+1], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>den</em>[systemOrder+1], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqlibs_1_1state.html">state</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>x</em>[systemOrder], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a>&#160;</td>
+          <td class="paramname"><em>dT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize an instance of a LTI continuous system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of n+1 elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of n+1 elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. For a continuos system, an array of type continuousStates with n elements. The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca" title="Drives the continuous LTI system recursively using the input signal provided.">continuousSystem::excite()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Size of <em>num</em> and <em>den</em> should be equal. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dT</td><td>The time-step of the continuos system. </td></tr>

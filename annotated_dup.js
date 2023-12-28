@@ -3,8 +3,10 @@ var annotated_dup =
     [ "qlibs", "namespaceqlibs.html", [
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
+      [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],
       [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
+      [ "discreteTF", "structqlibs_1_1discrete_t_f.html", "structqlibs_1_1discrete_t_f" ],
       [ "fis", "classqlibs_1_1fis.html", "classqlibs_1_1fis" ],
       [ "fisCore", "classqlibs_1_1fis_core.html", null ],
       [ "fisInput", "classqlibs_1_1fis_input.html", "classqlibs_1_1fis_input" ],

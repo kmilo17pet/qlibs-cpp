@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_0',['n',['../classqlibs_1_1ltisys.html#a9474f6c5d9ddb11ee2709406620424fb',1,'qlibs::ltisys']]],
-  ['na_1',['na',['../classqlibs_1_1ltisys.html#a20bb42c323d39ebc7d4c2981165247e2',1,'qlibs::ltisys']]],
-  ['nb_2',['nb',['../classqlibs_1_1ltisys.html#a12f763b9ffd67fe4f9d6e12542b76044',1,'qlibs::ltisys']]]
+  ['max_0',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
+  ['min_1',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
+  ['mu_2',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
 ];
