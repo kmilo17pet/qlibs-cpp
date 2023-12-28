@@ -9,36 +9,35 @@
 *
 * qLibs++ includes the following modules:
 *
-* - @subpage qssmoother_desc "qSSMoother : Filters for signal smoothing"
+* - @subpage qssmoother_desc "SMoother : Filters for signal smoothing"
 *        -# 1st and 2nd order Low-Pass filters
 *        -# Moving Average filters
 *        -# Outlier Removal filters
 *        -# Gaussian filter
 *        -# Exponential weighting filter
 *        -# Scalar Kalman filter
-* - @subpage qfis_desc "qFIS : Fuzzy Inference System Engine"
+* - @subpage qfis_desc "FIS : Fuzzy Inference System Engine"
 *        -# Mamdani
 *        -# Sugeno
 *        -# Tsukamoto
-* - @subpage qpid_desc "qPID : PID Controller"
+* - @subpage qpid_desc "PID : PID Controller"
 *        -# Derivative filter
 *        -# Anti-windup
 *        -# Tracking mode
 *        -# Auto-tunning
 *        -# Additive MRAC
-* - @subpage qltisys_desc "qLTISys : Recursive LTI systems evaluation by transfer functions"
+* - @subpage qltisys_desc "LTISys : Recursive LTI systems evaluation by transfer functions"
 *        -# Continuos
 *        -# Discrete
-* - @subpage qfp16_desc "qFP16 : Fixed-Point Q16.16 math library"
+* - @subpage qfp16_desc "FP16 : Fixed-Point Q16.16 math library"
 *        -# Basic operations
 *        -# Trigonometric functions
 *        -# Exponential functions
-* - @subpage qbitfield_desc "qBitField : Bit-Field manipulation library"
-* - @subpage qrms_desc "qRMS : Recursive Root Mean Square (RMS) calculation"
-* - @subpage qcrc_desc "qCRC : Generic Cyclic Redundancy Check (CRC) calculator"
-* - @subpage qtdl_desc "qTDL : Tapped Delay Line in O(1)"
+* - @subpage qbitfield_desc "BitField : Bit-Field manipulation library"
+* - @subpage qrms_desc "RMS : Recursive Root Mean Square (RMS) calculation"
+* - @subpage qcrc_desc "CRC : Generic Cyclic Redundancy Check (CRC) calculator"
+* - @subpage qtdl_desc "TDL : Tapped Delay Line in O(1)"
 * - Type-generic array operations
-* - Single precision floating-point vector(1D-Array) operations
 */
 
 /**
