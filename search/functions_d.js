@@ -10,5 +10,5 @@ var searchData=
   ['reverse_7',['reverse',['../group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8',1,'qlibs::generic']]],
   ['rms_8',['rms',['../classqlibs_1_1rms.html#a393a522e384b153c716dc953eafe4352',1,'qlibs::rms']]],
   ['rotate_9',['rotate',['../group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9',1,'qlibs::generic']]],
-  ['round_10',['round',['../classqlibs_1_1fp16.html#a1debc662da30487b3d00e2b5070c2ac6',1,'qlibs::fp16']]]
+  ['rounding_10',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16']]]
 ];

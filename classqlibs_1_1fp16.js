@@ -2,7 +2,7 @@ var classqlibs_1_1fp16 =
 [
     [ "fp16", "classqlibs_1_1fp16.html#acb45986b550fff096603c196df5abb85", null ],
     [ "fp16", "classqlibs_1_1fp16.html#afe8f5cb00a5cc7c58c022649434e840c", null ],
-    [ "abs", "classqlibs_1_1fp16.html#aec005571f7aa0d83389f545f135be126", null ],
+    [ "absolute", "classqlibs_1_1fp16.html#a0de6955cbb25cfc1b6cf0811455f0460", null ],
     [ "acos", "classqlibs_1_1fp16.html#a26ad7e600ba8283c649cfaa63655bb1b", null ],
     [ "asin", "classqlibs_1_1fp16.html#a945f9056772398811c2f6113f387a3d6", null ],
     [ "atan", "classqlibs_1_1fp16.html#a3efcd9ed0515976af80007720abb66e2", null ],
@@ -23,7 +23,7 @@ var classqlibs_1_1fp16 =
     [ "pow", "classqlibs_1_1fp16.html#a7c20d51e0a866d2969b5df05dfe2202b", null ],
     [ "radToDeg", "classqlibs_1_1fp16.html#a780d01df4439c4f71ae794215e0d1a03", null ],
     [ "raw", "classqlibs_1_1fp16.html#a332600a253e95f3c9709d1365325fb78", null ],
-    [ "round", "classqlibs_1_1fp16.html#a1debc662da30487b3d00e2b5070c2ac6", null ],
+    [ "rounding", "classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83", null ],
     [ "sin", "classqlibs_1_1fp16.html#a0799ad458837cd8369737d1713afcb40", null ],
     [ "sinh", "classqlibs_1_1fp16.html#abadb1529c99c76f28e247fca31eb1d15", null ],
     [ "sqrt", "classqlibs_1_1fp16.html#a1b1cdfc9a364ca519de1bd4f31743164", null ],

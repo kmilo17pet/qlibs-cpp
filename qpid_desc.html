@@ -190,7 +190,7 @@ Creating a PID Controller</h1>
 <div class="line"><span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">    <span class="comment">// error, pid controller cant be configured</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> types.hpp:45</div></div>
+<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:45</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qfpid_usage"></a>
 Using the controller</h1>
 <p >The following example illustrates how a PID controller can be used to regulate the speed of a DC motor. PID control operates on a separate task running periodically at a rate of 50mS. The speed measurement is read through an analog input and then scaled to the appropriate units (RPM). The <a class="el" href="classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc">qlibs::pidController::control()</a> function will be in charge of computing the control action and updating the internal states of the controller. Then, the control output gets scaled back in order to send the control command by using the PWM(Pulse Width Modulation) module.</p>

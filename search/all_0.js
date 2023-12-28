@@ -2,7 +2,7 @@ var searchData=
 [
   ['a_0',['a',['../classqlibs_1_1ltisys.html#af3a5d92631d8bd493942412a6a152339',1,'qlibs::ltisys']]],
   ['a1_1',['a1',['../classqlibs_1_1pid_auto_tuning.html#a31a5873af8a0fc022ac86a522da97b02',1,'qlibs::pidAutoTuning']]],
-  ['abs_2',['abs',['../classqlibs_1_1fp16.html#aec005571f7aa0d83389f545f135be126',1,'qlibs::fp16']]],
+  ['absolute_2',['absolute',['../classqlibs_1_1fp16.html#a0de6955cbb25cfc1b6cf0811455f0460',1,'qlibs::fp16']]],
   ['acos_3',['acos',['../classqlibs_1_1fp16.html#a26ad7e600ba8283c649cfaa63655bb1b',1,'qlibs::fp16']]],
   ['and_4',['AND',['../group__qfis.html#gacd1b97556dfbbac61063a63031d2f91d',1,'fis.hpp']]],
   ['arduino_20support_5',['Arduino support',['../_arduino_01support.html',1,'']]],
