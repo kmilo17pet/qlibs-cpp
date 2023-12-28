@@ -25,7 +25,8 @@
 var NAVTREE =
 [
   [ "API Reference", "index.html", [
-    [ "qLibs", "index.html", "index" ],
+    [ "Overview", "index.html", "index" ],
+    [ "Arduino support", "_arduino_01support.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -54,9 +55,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e",
-"group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75"
+"_arduino_01support.html",
+"classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9",
+"group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
