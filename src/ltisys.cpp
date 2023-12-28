@@ -159,21 +159,21 @@ real_t discreteSystem::excite( real_t u )
 bool continuousSystem::setup( real_t *num,
                               real_t *den,
                               state *x,
-                              const size_t n_a,
+                              const size_t N,
                               const real_t dT ) noexcept
 {
     bool retValue = false;
 
-    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_a > 0U ) ) {
+    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) ) {
         b = &num[ 1 ];
-        n = n_a - 1U;
+        n = N;
         nb = n;
-        na = n_a;
+        na = N + 1;
         xc = x;
         dt = dT;
         a = &den[ 1 ];
         type = LTISYS_TYPE_CONTINUOUS;
-        normalizeTransferFunction( num, den, n_a, n_a );
+        normalizeTransferFunction( num, den, na, na );
         (void)setInitStates();
         retValue = true;
     }

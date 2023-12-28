@@ -1,12 +1,12 @@
 /*! @page qbitfield_desc Bit-Field manipulation library
 * @tableofcontents
-* \ref BitField is a library of functions for creating and manipulating
+* qlibs::bitfield class contains a setof functions for creating and manipulating
 * bit fields also known as bit arrays. These are series of zeroes and ones
 * spread across an array of storage units, such as unsigned long integers.
 *
 * @section qbitfield_structure Structure
 * 
-* Bit arrays are stored in the \ref bitfield class. This class 
+* Bit arrays are stored in the qlibs::bitfield class. This class 
 * has two elements: an array of unsigned long integers called @c field for storing the
 * bits and an integer @c size for storing the number of bits in the array. 
 *

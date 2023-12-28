@@ -33,12 +33,53 @@ namespace qlibs {
     /**
     * @brief Type to specify continuous states
     */
-    using continuousStates = state[];
+    template<size_t order>
+    using continuousStates = state[ order ];
 
     /**
     * @brief Type to specify discrete states
     */
-    using discreteStates = real_t[];
+    template<size_t order>
+    using discreteStates = real_t[ order ];
+
+    /**
+    * @brief Continuous transfer function for easy creation of continuous systems
+    * @note Initial conditions are zero by default.
+    */
+    template<size_t order>
+    struct continuousTF
+    {
+        real_t num[ order+1 ];
+        real_t den[ order+1 ];
+        continuousStates<order> states = {};
+        continuousTF( const real_t ( &numerator )[ order + 1 ], const real_t ( &denominator )[ order + 1 ] ) {
+            for ( size_t i = 0; i <= order; ++i ) {
+                num[ i ] = numerator[ i ];
+                den[ i ] = denominator[ i ];
+            }
+        }
+    };
+
+    /**
+    * @brief discrete transfer function for easy creation of continuous systems
+    * @note Initial conditions are zero by default.
+    */
+    template<size_t NB, size_t NA>
+    struct discreteTF
+    {
+        real_t num[ NB ];
+        real_t den[ NA ];
+        discreteStates<(NA>NB)? NA:NB> states = {};
+        discreteTF( const real_t ( &numerator )[ NB ], const real_t ( &denominator)[ NA ] ) {
+            for ( size_t i = 0; i <= NB; ++i ) {
+                num[ i ] = numerator[ i ];
+            }
+            for ( size_t i = 0; i <= NA; ++i) {
+                den[ i ] = denominator[ i ];
+            }
+        }
+    };
+
 
     /**
     * @brief A LTI system base class
@@ -134,11 +175,11 @@ namespace qlibs {
 
             /**
             * @brief Constructor for a the discrete LTI system.
-            * @param[in,out] num : An array of @c nb+1 elements with the numerator
+            * @param[in,out] num : An array of @c nb elements with the numerator
             * coefficients of the transfer function.
             * Coefficients should be given in descending powers of the n or nb-degree
             * polynomial. Coefficients will be normalized internally.
-            * @param[in,out] den An array of or @c na+1 elements with the 
+            * @param[in,out] den An array of or @c na elements with the 
             * denominator coefficients of the transfer function.
             * Coefficients should be given in descending powers of the n or nb-degree
             * polynomial. Coefficients will be normalized internally.
@@ -146,12 +187,13 @@ namespace qlibs {
             * an array of type discreteStates with max(na,nb) elements
             * The supplied array will be updated on every invocation of
             * discreteSystem::excite().
-            * @param[in] n_b The order of polynomial @a num
+            * @param[in] n_b Number of elements in @a num
             * 
             * example: \f$ b_{0}+b_{1}z^{-1}+b_{2}z^{-2}+b_{3}z^{-3}, nb = 4 \f$
-            * @param[in] n_a The order of polynomial @a den. 
+            * @param[in] n_a Number of elements in @a den.
             * 
-            * example 1: \f$ a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 3 \f$
+            * example 1: \f$ a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 4 \f$
+            * @return @c true on success, otherwise return @c false.
             * @note By default, initial conditions are set to zero. To change the initial
             * conditions to the desired values, use the 
             * discreteSystem::setInitStates() method.
@@ -166,12 +208,12 @@ namespace qlibs {
             }
 
             /**
-            * @brief Setup and initialize an instance of the discrete LTI system.
-            * @param[in,out] num : An array of @c nb+1 elements with the numerator
+            * @brief Constructor for a the discrete LTI system.
+            * @param[in,out] num : An array of @c nb elements with the numerator
             * coefficients of the transfer function.
             * Coefficients should be given in descending powers of the n or nb-degree
             * polynomial. Coefficients will be normalized internally.
-            * @param[in,out] den An array of or @c na+1 elements with the 
+            * @param[in,out] den An array of or @c na elements with the 
             * denominator coefficients of the transfer function.
             * Coefficients should be given in descending powers of the n or nb-degree
             * polynomial. Coefficients will be normalized internally.
@@ -179,10 +221,48 @@ namespace qlibs {
             * an array of type discreteStates with max(na,nb) elements
             * The supplied array will be updated on every invocation of
             * discreteSystem::excite().
-            * @param[in] n_b The order of polynomial @a num
+            * @return @c true on success, otherwise return @c false.
+            * @note By default, initial conditions are set to zero. To change the initial
+            * conditions to the desired values, use the 
+            * discreteSystem::setInitStates() method.
+            */
+            template<size_t NB, size_t NA>
+            discreteSystem( real_t (&num)[ NB ],
+                            real_t (&den)[ NA ],
+                            real_t *x ) noexcept
+            {
+                (void)setup( num, den, x, NB, NA );
+            }
+
+            /**
+            * @brief Constructor for a the discrete LTI system from a transfer
+            * function definition
+            * @param[in,out] dtf : The transfer function definition
+            */
+            template<size_t NB, size_t NA>
+            discreteSystem( discreteTF<NB, NA>& dtf ) noexcept
+            {
+                (void)setup( dtf.num, dtf.den, dtf.states, NB, NA );
+            }
+
+            /**
+            * @brief Setup and initialize an instance of the discrete LTI system.
+            * @param[in,out] num : An array of @c nb elements with the numerator
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] den An array of or @c na elements with the 
+            * denominator coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] x Initial conditions of the system. Should be an,
+            * an array of type discreteStates with max(na,nb) elements
+            * The supplied array will be updated on every invocation of
+            * discreteSystem::excite().
+            * @param[in] n_b Number of elements in @a num
             * 
             * example: \f$ b_{0}+b_{1}z^{-1}+b_{2}z^{-2}+b_{3}z^{-3}, nb = 4 \f$
-            * @param[in] n_a The order of polynomial @a den. 
+            * @param[in] n_a Number of elements in @a den.
             * 
             * example 1: \f$ a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 4 \f$
             * @return @c true on success, otherwise return @c false.
@@ -195,6 +275,45 @@ namespace qlibs {
                         real_t *x,
                         const size_t n_b,
                         const size_t n_a ) noexcept;
+
+            /**
+            * @brief Setup and initialize an instance of the discrete LTI system.
+            * @param[in,out] num : An array of @c nb elements with the numerator
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] den An array of or @c na elements with the 
+            * denominator coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] x Initial conditions of the system. Should be an,
+            * an array of type discreteStates with max(na,nb) elements
+            * The supplied array will be updated on every invocation of
+            * discreteSystem::excite().
+            * @return @c true on success, otherwise return @c false.
+            * @note By default, initial conditions are set to zero. To change the initial
+            * conditions to the desired values, use the 
+            * discreteSystem::setInitStates() method.
+            */
+            template<size_t NB, size_t NA>
+            bool setup( real_t (&num)[ NB ],
+                        real_t (&den)[ NA ],
+                        real_t *x )
+            {
+                return setup( num, den, x, NB, NA );
+            }
+
+            /**
+            * @brief Setup and initialize an instance of the discrete LTI system
+            * from a transfer function definition
+            * @param[in,out] dtf : The transfer function definition
+            * @return @c true on success, otherwise return @c false.
+            */
+            template<size_t NB, size_t NA>
+            bool setup( discreteTF<NB, NA>& dtf ) noexcept
+            {
+                return setup( dtf.num, dtf.den, dtf.states, NB, NA );
+            }
 
             /**
             * @brief Check if the LTI discrete system is initialized.
@@ -265,7 +384,7 @@ namespace qlibs {
             virtual ~continuousSystem() {}
 
             /**
-            * @brief Setup and initialize an instance of a LTI continuous system.
+            * @brief Constructor for an instance of a LTI continuous system.
             * @param[in,out] num : An array of n+1 elements with the numerator 
             * coefficients of the transfer function.
             * Coefficients should be given in descending powers of the n or nb-degree
@@ -278,7 +397,7 @@ namespace qlibs {
             * an array of type continuousStates with n elements.
             * The supplied array will be updated on every invocation of
             * continuousSystem::excite().
-            * @param[in] n_a The number of elements of @a num and @a den.
+            * @param[in] n_a The system order ( n ).
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
@@ -297,6 +416,47 @@ namespace qlibs {
             }
 
             /**
+            * @brief Constructor for an instance of a LTI continuous system
+            * from a transfer function definition
+            * @param[in] ctf : The continuous transfer-function
+            * @param[in] dT The time-step of the continuos system.
+            */
+            template<size_t order>
+            continuousSystem( continuousTF<order>& ctf, const real_t dT )
+            {
+                (void)setup( ctf.num, ctf.den, ctf.states, order, dT );
+            }
+
+            /**
+            * @brief Constructor for an instance of a LTI continuous system.
+            * @param[in,out] num : An array of n+1 elements with the numerator 
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] den An array of n+1 elements with the denominator 
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] x Initial conditions of the system. For a continuos system,
+            * an array of type continuousStates with n elements.
+            * The supplied array will be updated on every invocation of
+            * continuousSystem::excite().
+            * @note Size of @a num and @a den should be equal.
+            * @param[in] dT The time-step of the continuos system.
+            * @note By default, initial conditions are set to zero. To change the initial
+            * conditions to the desired values, use the 
+            * continuousSystem::setInitStates() method.
+            */
+            template<size_t systemOrder>
+            continuousSystem( real_t (&num)[ systemOrder+1 ],
+                              real_t (&den)[ systemOrder+1 ],
+                              state (&x)[ systemOrder ],
+                              const real_t dT ) noexcept
+            {
+                (void)setup( num, den, x, systemOrder, dT );
+            }
+
+            /**
             * @brief Setup and initialize an instance of a LTI continuous system.
             * @param[in,out] num : An array of n+1 elements with the numerator 
             * coefficients of the transfer function.
@@ -310,7 +470,7 @@ namespace qlibs {
             * an array of type continuousStates with n elements.
             * The supplied array will be updated on every invocation of
             * continuousSystem::excite().
-            * @param[in] n_a The number of elements of @a num and @a den.
+            * @param[in] n_a The system order ( n ).
             * 
             * example 2: \f$ \frac{ b_{0}s^{2}+b_{1}s+b_{2} }{ a_{0}s^{2} + a_{1}s + a_{2} }, na = 3 \f$
             * @note Size of @a num and @a den should be equal.
@@ -327,13 +487,56 @@ namespace qlibs {
                         const real_t dT ) noexcept;
 
             /**
+            * @brief Setup and initialize an instance of a LTI continuous system.
+            * @param[in,out] num : An array of n+1 elements with the numerator 
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] den An array of n+1 elements with the denominator 
+            * coefficients of the transfer function.
+            * Coefficients should be given in descending powers of the n or nb-degree
+            * polynomial. Coefficients will be normalized internally.
+            * @param[in,out] x Initial conditions of the system. For a continuos system,
+            * an array of type continuousStates with n elements.
+            * The supplied array will be updated on every invocation of
+            * continuousSystem::excite().
+            * @note Size of @a num and @a den should be equal.
+            * @param[in] dT The time-step of the continuos system.
+            * @return @c true on success, otherwise return @c false.
+            * @note By default, initial conditions are set to zero. To change the initial
+            * conditions to the desired values, use the 
+            * continuousSystem::setInitStates() method.
+            */
+            template<size_t systemOrder>
+            bool setup( real_t (&num)[ systemOrder+1 ],
+                        real_t (&den)[ systemOrder+1 ],
+                        state (&x)[ systemOrder ],
+                        const real_t dT ) noexcept
+            {
+                return setup( num, den, x, systemOrder, dT );
+            }
+
+            /**
+            * @brief Setup and initialize an instance of a LTI continuous system
+            * from a transfer function definition
+            * @param[in] ctf : The continuous transfer-function
+            * @param[in] dT The time-step of the continuos system.
+            * @return @c true on success, otherwise return @c false.
+            */
+            template<size_t order>
+            bool setup( continuousTF<order>& ctf, const real_t dT )
+            {
+                return setup( ctf.num, ctf.den, ctf.states, order, dT );
+            }
+
+            /**
             * @brief Check if the LTI continuous system is initialized.
             * @return @c true if the system has been initialized, otherwise 
             * return @c false.
             */
             bool isInitialized( void ) const override
             {
-                return ( nullptr != xc ) && ( LTISYS_TYPE_CONTINUOUS == type );;
+                return ( nullptr != xc ) && ( LTISYS_TYPE_CONTINUOUS == type );
             }
 
             /**

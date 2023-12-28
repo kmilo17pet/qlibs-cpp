@@ -20,12 +20,12 @@
 * descending powers of \f$s\f$, respectively.
 *
 * To instantiate a continuous transfer function, you should define a variable
-* of type \ref qLTISys_t, two arrays of N+1 elements with the coefficients of the
+* of type qlibs::continuousSystem, two arrays of N+1 elements with the coefficients of the
 * polynomials for both, the numerator and denominator, and finally, an array of type
-* \ref qLTISys_ContinuosX_t to hold the N states of the system.
-* Then, you can call \ref qLTISys_Setup() to construct the system and set initial
-* conditions. Subsequently,  you can evaluate the system with a given input-signal
-* by just calling \ref qLTISys_Excite(). 
+* \ref continuousStates to hold the N states of the system.
+* Then, you can call continuousSystem::setup() to construct the system and set initial
+* conditions. Subsequently, you can evaluate the system with a given input-signal
+* by just calling continuousSystem::excite().
 *
 * @attention
 * The user must ensure that the 
@@ -39,25 +39,27 @@
 *  @code{.c}
 *  #include <stdio.h>
 *  #include <stdlib.h>
-*  #include "bsp.h"
-*  #include "qltisys.h"
+*  #include <iostream>
+*  #include <chrono>
+*  #include <thread>
+*  #include <qlibs.h>
 *  
-*  #define SYS_ORDER   ( 3 )
-*  const TickType_t  dt = 50; /*50mS time-step*/
-*  qLTISys_t system;
-*  float num[ SYS_ORDER+1 ] = { 0.0f, 2.0f, 3.0f, 6.0f };
-*  float den[ SYS_ORDER+1 ] = { 1.0f, 6.0f, 11.0f, 16.0f };
-*  qLTISys_ContinuosX_t x[ SYS_ORDER ];
 *  
 *  void xTaskSystemSimulate( void *arg )
 *  {
-*      qLTISys_Setup( &system, num, den, x, 0, SYS_ORDER+1, (float)dt/1000.0f ) );
-*      float ut, yt;
+*      const real_t dt = 0.05; // Time step
+*      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
+*      real_t num[] = { 0.0, 2.0, 3.0, 6.0 };
+*      real_t den[] = { 1.0, 6.0, 11.0, 16.0 };
+*      continuousStates x = { 0, 0, 0 }; // n = 3
+*      continuousSystem gc( num, den, xC, 0.01 );
+*      real_t ut, yt;
 *      for( ;; ) {
 *          ut = BSP_InputGet();
-*          yt = qLTISys_Excite( &system, ut );
-*          vTaskDelay( dt / portTICK_RATE_MS) ;
-*          printf( "u(t) = %0.2f   y(t)  = %0.2f \r\n", ut, yt );
+*          yt = gc.excite( ut );
+*          
+*          std::this_thread::sleep_for(delay);
+*          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;;
 *      }
 *  }
 *  @endcode

@@ -299,7 +299,7 @@ namespace qlibs {
             */
             inline bool unbindAutoTuning( void ) noexcept
             {
-                bool retValue = nullptr != adapt;
+                const bool retValue = nullptr != adapt;
                 adapt = nullptr;
                 return retValue;
             }

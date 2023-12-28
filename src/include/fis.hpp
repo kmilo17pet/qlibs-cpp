@@ -611,8 +611,8 @@ namespace qlibs {
             /**
             * @brief Setup the input with the specified tag and set limits for it
             * @param[in] t The input tag
-            * @param[in] min Minimum allowed value for this input
-            * @param[in] max Max allowed value for this input
+            * @param[in] Min Minimum allowed value for this input
+            * @param[in] Max Max allowed value for this input
             * @return @c true on success, otherwise return @c false.
             */
             bool setupInput( const fisTag t,
@@ -621,8 +621,8 @@ namespace qlibs {
             /**
             * @brief Setup the output with the specified tag and set limits for it
             * @param[in] t The output tag
-            * @param[in] min Minimum allowed value for this output
-            * @param[in] max Max allowed value for this output
+            * @param[in] Min Minimum allowed value for this output
+            * @param[in] Max Max allowed value for this output
             * @return @c true on success, otherwise return @c false.
             */
             bool setupOutput( const fisTag t,

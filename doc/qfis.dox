@@ -13,7 +13,7 @@
 * the defuzzifier is used, which is the inverse process of fuzzification. It
 * converts the fuzzy output into crisp output, which can be fed to the process.
 *
-* The \ref FIS Fuzzy Inference System engine provides an API for building and
+* The FIS Fuzzy Inference System engine provides an API for building and
 * evaluation of type-1 fuzzy logic inference systems. 
 * 
 * The types of inferences supported by FIS are listed in the \ref qlibs::fisType enum

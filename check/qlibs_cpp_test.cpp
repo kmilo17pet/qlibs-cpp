@@ -8,11 +8,11 @@ void test_fis2( void );
 void test_tdl( void );
 void test_fp16( void );
 void test_crc( void );
-
+void test_ltisys( void );
 
 void test_tdl( void )
 {
-    cout << "TDL test"<< endl; 
+    cout << "TDL TEST"<< endl; 
 
     real_t delays[ 10 ];
     tdl delayLine( delays );
@@ -38,6 +38,7 @@ void test_tdl( void )
 
 void test_fis2( void )
 {
+    cout << "FIS2 TEST"<< endl; 
     enum : fisTag { wt, dax, day, ae };
     enum : fisTag { phit, thetat };
     enum : fisTag { wtSLOW, wtMED, wtFAST, daxLOW, daxMED, daxHIGH, dayLOW, dayMED, dayHIGH, aeLOW, aeMED, aeHIGH };
@@ -103,6 +104,7 @@ void test_fis2( void )
 
 void test_fis( void )
 {
+    cout << "FIS TEST"<< endl; 
     real_t xag[ 100 ], yag[ 100 ];
     // I/O Names
     enum : fisTag { service, food};
@@ -150,9 +152,9 @@ void test_fis( void )
     cout << "tip_out = " << tipper[ tip ] << endl;
 }
 
-void test_fp16( void ) 
+void test_fp16( void )
 {
-    cout << "fp16 test "<<endl;
+    cout << "FP16 TEST "<<endl;
     fp16 x = 6.5_fp;
     fp16 y = 7.33_fp;
     fp16 z = x * y;
@@ -192,45 +194,45 @@ void test_fp16( void )
     fp16 result;
     result = ( -b + fp16::sqrt( ( b*b )  - ( 4_fp*a*c ) ) )/( 2_fp*a );
     std::cout << " result = " << result << std::endl;
-
-
 }
 
 void test_crc( void )
 {
+    cout << "CRC TEST"<< endl; 
     auto res = crc::crc16_A( "hello world", 11 );
     cout << sizeof(crc) << " res = "<< res << endl;
+}
+
+void test_ltisys( void )
+{
+    cout << "LTISYS TEST"<< endl; 
+    cout << "continuousSystem"<< endl; 
+    continuousTF<3> ctf= {
+        { 0.0, 2.0, 3.0, 6.0 },
+        { 1.0, 6.0, 11.0, 16.0 },
+    };
+    continuousSystem gc( ctf, 0.01 );
+    for ( int i = 0; i < 3005; i++ ) {
+        cout << gc.excite( 1.0 ) << endl;
+    }
+
+    cout << "discreteSystem"<< endl; 
+    discreteTF<3,3> dtf= {
+        { 0.1, 0.2, 0.3 },
+        { 1.0, -0.85, 0.02 },
+    };
+    discreteSystem gd( dtf );
+    for ( int i = 0; i < 260; i++ ) {
+        cout << gd.excite( 1.0 ) << endl;
+    }
+
 }
 
 int main()
 {
     test_crc();
     test_fp16();
-    //return EXIT_SUCCESS;
-    cout << "continuousSystem"<< endl; 
-    constexpr size_t SYS_ORDER = 3;
-    real_t num[] = { 0.0, 2.0, 3.0, 6.0 };
-    real_t den[] = { 1.0, 6.0, 11.0, 16.0 };
-    continuousStates xC = { 0, 0, 0 }; 
-    continuousSystem gc( num, den, xC, SYS_ORDER+1, 0.01 );
-
-    for ( int i = 0; i < 3005; i++ ) {
-        cout << gc.excite( 1.0 ) << endl;
-    }
-
-    cout << "discreteSystem"<< endl; 
-    constexpr size_t NB = 3;
-    constexpr size_t NA = 3;
-    real_t nd[] = { 0.1, 0.2, 0.3 };      // 0.1 + 0.2*z^(-1) + 0.3*z^(-2)
-    real_t dd[] = { 1.0, -0.85, 0.02 };   // 1 - 0.85*z^(-1) + 0.02*z^(-2)
-    discreteStates xD = { 0, 0, 0};
-    discreteSystem gd( nd ,dd, xD, NB, NA );
-    for ( int i = 0; i < 35; i++ ) {
-        cout << gd.excite( 1.0 ) << endl;
-    }
-
-
-
+    test_ltisys();
     test_tdl();
     test_fis();
     test_fis2();
