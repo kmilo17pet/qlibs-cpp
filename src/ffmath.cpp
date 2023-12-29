@@ -16,7 +16,7 @@ static float compute_cbrt( float x , bool r );
 static float getAbnormal( const int i )
 {
     static const uint32_t u_ab[ 2 ] = { 0x7F800000u, 0x7FBFFFFFu };
-    static float f_ab[ 2 ] = { 0.0f, 0.0f };
+    static float f_ab[ 2 ] = { 0.0F, 0.0F };
     static bool init = true;
     
     if ( init ) {
@@ -39,19 +39,19 @@ float ffmath::getNan( void )
 /*============================================================================*/
 ffmath::classification ffmath::classify( const float f )
 {
-    uint32_t u = 0u;
+    uint32_t u = 0U;
     ffmath::classification retVal;
 
     cast_reinterpret( u, f );
-    u &= 0x7FFFFFFFu;
+    u &= 0x7FFFFFFFU;
 
     if ( 0u == u ) {
         retVal = ffmath::classification::FFP_ZERO;
     }
-    else if ( u < 0x00800000u ) {
+    else if ( u < 0x00800000U ) {
         retVal = ffmath::classification::FFP_SUBNORMAL;
     }
-    else if ( u < 0x7F800000u ) {
+    else if ( u < 0x7F800000U ) {
         retVal = ffmath::classification::FFP_NORMAL;
     }
     else if ( 0x7F800000U == u ) {
@@ -66,39 +66,39 @@ ffmath::classification ffmath::classify( const float f )
 /*============================================================================*/
 float ffmath::absf( float x )
 {
-    return ( x < 0.0f ) ? -x : x;
+    return ( x < 0.0F ) ? -x : x;
 }
 /*============================================================================*/
 float ffmath::recip( float x )
 {
-    uint32_t y = 0u;
-    float z = 0.0f;
+    uint32_t y = 0U;
+    float z = 0.0F;
 
     cast_reinterpret( y, x );
-    y = 0x7EF311C7u - y;
+    y = 0x7EF311C7U - y;
     cast_reinterpret( z, y );
 
-    return z*( 2.0f - ( x*z ) );
+    return z*( 2.0F - ( x*z ) );
 }
 /*============================================================================*/
 float ffmath::sqrt( float x )
 {
     float retVal;
 
-    if ( x < 0.0f ) {
+    if ( x < 0.0F ) {
         retVal = ffmath::getNan();
     }
     else if ( ffmath::classification::FFP_ZERO == ffmath::classify( x ) ) {
-        retVal = 0.0f;
+        retVal = 0.0F;
     }
     else {
-        uint32_t y = 0u;
-        float z = 0.0f;
+        uint32_t y = 0U;
+        float z = 0.0F;
 
         cast_reinterpret( y, x );
-        y = ( ( y - 0x00800000u ) >> 1u ) + 0x20000000u;
+        y = ( ( y - 0x00800000U ) >> 1U ) + 0x20000000U;
         cast_reinterpret( z, y );
-        retVal = ( ( x/z ) + z ) * 0.5f;
+        retVal = ( ( x/z ) + z ) * 0.5F;
     }
 
     return retVal;
@@ -108,20 +108,20 @@ float ffmath::rSqrt( float x )
 {
     float retVal;
 
-    if ( x < 0.0f ) {
+    if ( x < 0.0F ) {
         retVal = ffmath::getNan();
     }
     else if ( ffmath::classification::FFP_ZERO  == ffmath::classify( x ) ) {
         retVal = ffmath::getInf();
     }
     else {
-        uint32_t y = 0u;
-        const float z = 0.5f*x;
+        uint32_t y = 0U;
+        const float z = 0.5F*x;
 
         cast_reinterpret( y, x );
-        y = 0x5F375A86u - ( y >> 1u );
+        y = 0x5F375A86U - ( y >> 1U );
         cast_reinterpret( x, y );
-        retVal = x*( 1.5f - ( z*x*x ) );
+        retVal = x*( 1.5F - ( z*x*x ) );
     }
 
     return retVal;
@@ -129,24 +129,24 @@ float ffmath::rSqrt( float x )
 /*============================================================================*/
 static float compute_cbrt( float x , bool r )
 {
-    float retVal, y = 0.0f, c, d;
-    const float k[ 3 ] = { 1.752319676f, 1.2509524245f, 0.5093818292f };
-    uint32_t i = 0u;
+    float retVal, y = 0.0F, c, d;
+    const float k[ 3 ] = { 1.752319676F, 1.2509524245F, 0.5093818292F };
+    uint32_t i = 0U;
     bool neg = false;
 
-    if ( x < 0.0f ) {
+    if ( x < 0.0F ) {
         x = -x;
         neg = true;
     }
     cast_reinterpret( i, x );
-    i = 0x548C2B4Bu - ( i/3u );
+    i = 0x548C2B4BU - ( i/3U );
     cast_reinterpret( y, i );
     c = x*y*y*y;
     y = y*( k[ 0 ] - ( c*( k[ 1 ] - ( k[ 2 ]*c ) ) ) );
 
     d = x*y*y;
-    c = 1.0f - ( d*y );
-    retVal = 1.0f + ( 0.333333333333f*c );
+    c = 1.0F - ( d*y );
+    retVal = 1.0F + ( 0.333333333333F*c );
     retVal *= ( r ) ? y : d;
     return ( neg )? -retVal : retVal;
 }
@@ -164,19 +164,19 @@ float ffmath::rCbrt( float x )
 /*============================================================================*/
 float ffmath::rounding( float x )
 {
-    x += 12582912.0f;
-    x -= 12582912.0f;
+    x += 12582912.0F;
+    x -= 12582912.0F;
     return x;
 }
 /*============================================================================*/
 float ffmath::floor( float x )
 {
-    return roundf( x - 0.5f );
+    return roundf( x - 0.5F );
 }
 /*============================================================================*/
 float ffmath::ceil( float x )
 {
-    return roundf( x + 0.5f );
+    return roundf( x + 0.5F );
 }
 /*============================================================================*/
 float ffmath::trunc( float x )
@@ -206,11 +206,11 @@ float ffmath::sin( float x )
     float y;
 
     x *= -ffmath::FFP_1_PI;
-    y = x + 25165824.0f;
-    x -= y - 25165824.0f;
-    x *= ffmath::absf( x ) - 1.0f;
+    y = x + 25165824.0F;
+    x -= y - 25165824.0F;
+    x *= ffmath::absf( x ) - 1.0F;
 
-    return x*( ( 3.5841304553896f*ffmath::absf( x ) ) + 3.1039673861526f );
+    return x*( ( 3.5841304553896F*ffmath::absf( x ) ) + 3.1039673861526F );
 }
 /*============================================================================*/
 float ffmath::cos( float x )
@@ -222,16 +222,16 @@ float ffmath::tan( float x )
 {
     float abs_x;
 
-    x /= ffmath::absf( x ) + 1.0f;
+    x /= ffmath::absf( x ) + 1.0F;
     abs_x = ffmath::absf( x );
 
-    return x*( ( abs_x*( ( -1.45667498914f*abs_x ) + 2.18501248371f ) ) + 0.842458832225f );
+    return x*( ( abs_x*( ( -1.45667498914F*abs_x ) + 2.18501248371F ) ) + 0.842458832225F );
 }
 /*============================================================================*/
 float ffmath::asin( float x )
 {
-    x = ffmath::sqrt( 1.0f + x ) - ffmath::sqrt( 1.0f - x );
-    return x*( ( 0.131754508171f*ffmath::absf( x ) ) + 0.924391722181f );
+    x = ffmath::sqrt( 1.0F + x ) - ffmath::sqrt( 1.0F - x );
+    return x*( ( 0.131754508171F*ffmath::absf( x ) ) + 0.924391722181F );
 }
 /*============================================================================*/
 float ffmath::acos( float x )
@@ -243,46 +243,46 @@ float ffmath::atan( float x )
 {
     float abs_x;
 
-    x /= ffmath::absf( x ) + 1.0f;
+    x /= ffmath::absf( x ) + 1.0F;
     abs_x = ffmath::absf( x );
 
-    return x*( ( abs_x*( ( -1.45667498914f*abs_x ) + 2.18501248371f ) ) + 0.842458832225f );
+    return x*( ( abs_x*( ( -1.45667498914F*abs_x ) + 2.18501248371F ) ) + 0.842458832225F );
 }
 /*============================================================================*/
 float ffmath::atan2( float y, float x )
 {
     float t, f;
 
-    t = ffmath::FFP_PI - ( ( y < 0.0f ) ? 6.283185307f : 0.0f );
-    f = ( ffmath::absf( x ) <= FLT_MIN ) ? 1.0f : 0.0f;
-    y = ffmath::atan( y/( x + f ) ) + ( ( x < 0.0f ) ? t : 0.0f );
+    t = ffmath::FFP_PI - ( ( y < 0.0F ) ? 6.283185307f : 0.0F );
+    f = ( ffmath::absf( x ) <= FLT_MIN ) ? 1.0F : 0.0F;
+    y = ffmath::atan( y/( x + f ) ) + ( ( x < 0.0F ) ? t : 0.0F );
 
-    return y + ( f*( ( 0.5f*t ) - y ) );
+    return y + ( f*( ( 0.5F*t ) - y ) );
 }
 /*============================================================================*/
 float ffmath::exp2( float x )
 {
     float retVal;
 
-    if ( x <= -126.0f ) {
-        retVal = 0.0f;
+    if ( x <= -126.0F ) {
+        retVal = 0.0F;
     }
-    else if ( x > 128.0f ) {
+    else if ( x > 128.0F ) {
         retVal = ffmath::getInf();
     }
     else {
-        float y = 0.0f;
+        float y = 0.0F;
         uint32_t exponent;
         /*cstat -MISRAC++2008-5-0-7 -CERT-FLP34-C*/
-        exponent = static_cast<uint32_t>( x + 127.0f );
+        exponent = static_cast<uint32_t>( x + 127.0F );
         /*cstat +MISRAC++2008-5-0-7 +CERT-FLP34-C*/
         /*cstat -CERT-FLP36-C*/
-        x += 127.0f - static_cast<float>( exponent );
+        x += 127.0F - static_cast<float>( exponent );
         /*cstat +CERT-FLP36-C*/
-        exponent <<= 23u;
+        exponent <<= 23U;
         cast_reinterpret( y, exponent );
-        x *= ( x*0.339766027f ) + 0.660233972f;
-        retVal = y*( x + 1.0f );
+        x *= ( x*0.339766027F ) + 0.660233972F;
+        retVal = y*( x + 1.0F );
     }
 
     return retVal;
@@ -292,24 +292,24 @@ float ffmath::log2( float x )
 {
     float retVal;
 
-    if ( x < 0.0f ) {
+    if ( x < 0.0F ) {
         retVal = ffmath::getNan();
     }
     else if ( ffmath::classification::FFP_ZERO == ffmath::classify( x ) ) {
         retVal = -ffmath::getInf();
     }
     else {
-        uint32_t y = 0u, y2;
+        uint32_t y = 0U, y2;
 
         cast_reinterpret( y, x );
         y2 = y;
-        y >>= 23u;
+        y >>= 23U;
         /*cstat -CERT-FLP36-C*/
         retVal = static_cast<float>( y );
         /*cstat +CERT-FLP36-C*/
-        y = ( y2 & 0x007FFFFFu ) | 0x3F800000u;
+        y = ( y2 & 0x007FFFFFU ) | 0x3F800000U;
         cast_reinterpret( x, y );
-        retVal += -128.0f + ( x*( ( -0.333333333f*x ) + 2.0f ) ) - 0.666666666f;
+        retVal += -128.0F + ( x*( ( -0.333333333F*x ) + 2.0F ) ) - 0.666666666F;
     }
 
     return retVal;
@@ -322,7 +322,7 @@ float ffmath::exp( float x )
 /*============================================================================*/
 float ffmath::exp10( float x )
 {
-    return ffmath::exp2( 3.32192809f*x );
+    return ffmath::exp2( 3.32192809F*x );
 }
 /*============================================================================*/
 float ffmath::log( float x )
@@ -332,7 +332,7 @@ float ffmath::log( float x )
 /*============================================================================*/
 float ffmath::log10( float x )
 {
-    return 0.301029996f*ffmath::log2(x);
+    return 0.301029996F*ffmath::log2(x);
 }
 /*============================================================================*/
 float ffmath::pow( float b, float e )
@@ -343,47 +343,47 @@ float ffmath::pow( float b, float e )
 float ffmath::sinh( float x )
 {
     x = ffmath::exp( x );
-    return ( ( x - 1.0f )/x )*0.5f;
+    return ( ( x - 1.0F )/x )*0.5F;
 }
 /*============================================================================*/
 float ffmath::cosh( float x )
 {
     x = ffmath::exp( x );
-    return ( ( x + 1.0f )/x )*0.5f;
+    return ( ( x + 1.0F )/x )*0.5F;
 }
 /*============================================================================*/
 float ffmath::tanh( float x )
 {
-    x = ffmath::exp( -2.0f*x );
-    return ( 1.0f - x )/( 1.0f + x );
+    x = ffmath::exp( -2.0F*x );
+    return ( 1.0F - x )/( 1.0F + x );
 }
 /*============================================================================*/
 float ffmath::asinh( float x )
 {
-    return ffmath::log( x + ffmath::sqrt( ( x*x ) + 1.0f ) );
+    return ffmath::log( x + ffmath::sqrt( ( x*x ) + 1.0F ) );
 }
 /*============================================================================*/
 float ffmath::acosh( float x )
 {
-    return ( x < 1.0f ) ? ffmath::getNan()
-                        : ffmath::log( x + ffmath::sqrt( ( x*x ) - 1.0f ) );
+    return ( x < 1.0F ) ? ffmath::getNan()
+                        : ffmath::log( x + ffmath::sqrt( ( x*x ) - 1.0F ) );
 }
 /*============================================================================*/
 float ffmath::atanh( float x )
 {
-    return ffmath::log( ( 1.0f + x )/( 1.0f - x ) )*0.5f;
+    return ffmath::log( ( 1.0F + x )/( 1.0F - x ) )*0.5F;
 }
 /*============================================================================*/
 float ffmath::erf( float x )
 {
     float retVal;
 
-    if ( x >= 6.912f ) {
-        retVal = 1.0f;
+    if ( x >= 6.912F ) {
+        retVal = 1.0F;
     }
     else {
-        x = ffmath::exp( 3.472034176f*x );
-        retVal = ( x/( ( ffmath::absf( x ) + 1.0f )*2.0f ) ) - 1.0f;
+        x = ffmath::exp( 3.472034176F*x );
+        retVal = ( x/( ( ffmath::absf( x ) + 1.0F )*2.0F ) ) - 1.0F;
     }
 
     return retVal;
@@ -391,7 +391,7 @@ float ffmath::erf( float x )
 /*============================================================================*/
 float ffmath::erfc( float x )
 {
-    return 1.0f - ffmath::erf( x );
+    return 1.0F - ffmath::erf( x );
 }
 /*============================================================================*/
 float ffmath::rexp( float x, int32_t *pw2 )
@@ -400,12 +400,12 @@ float ffmath::rexp( float x, int32_t *pw2 )
     int32_t i = 0;
     
     cast_reinterpret( lu, x );
-    iu  = ( lu >> 23u ) & 0x000000FFu;  /* Find the exponent (power of 2) */
+    iu  = ( lu >> 23U ) & 0x000000FFU;  /* Find the exponent (power of 2) */
     cast_reinterpret( i, iu );
     i -= 0x7E;
     pw2[ 0 ] = static_cast<int>( i );
-    lu &= 0x807FFFFFu; /* strip all exponent bits */
-    lu |= 0x3F000000u; /* mantissa between 0.5 and 1 */
+    lu &= 0x807FFFFFU; /* strip all exponent bits */
+    lu |= 0x3F000000U; /* mantissa between 0.5 and 1 */
     cast_reinterpret( x, lu );
 
     return x;
@@ -413,15 +413,15 @@ float ffmath::rexp( float x, int32_t *pw2 )
 /*============================================================================*/
 float ffmath::ldexp( float x, int32_t pw2 )
 {
-    uint32_t lu = 0u, eu;
+    uint32_t lu = 0U, eu;
     int32_t e = 0;
     
     cast_reinterpret( lu, x );
-    eu = ( lu >> 23u ) & 0x000000FFu;
+    eu = ( lu >> 23U ) & 0x000000FFU;
     cast_reinterpret( e, eu );
     e += pw2;
     cast_reinterpret( eu, e );
-    lu = ( ( eu & 0xFFu ) << 23u ) | ( lu & 0x807FFFFFu );
+    lu = ( ( eu & 0xFFU ) << 23U ) | ( lu & 0x807FFFFFU );
     cast_reinterpret( x, lu );
 
     return x;
@@ -459,8 +459,8 @@ float ffmath::hypot( float x, float y )
 /*============================================================================*/
 float ffmath::nextAfter( float x, float y )
 {
-    float retVal = 0.0f;
-    uint32_t ax, ay, uxi = 0u, uyi = 0u;
+    float retVal = 0.0F;
+    uint32_t ax, ay, uxi = 0U, uyi = 0U;
     
     cast_reinterpret( uxi, x );
     cast_reinterpret( uyi, y );
@@ -471,12 +471,12 @@ float ffmath::nextAfter( float x, float y )
         retVal = y;
     }
     else {
-        ax = uxi & 0x7FFFFFFFu;
-        ay = uyi & 0x7FFFFFFFu;
-        if ( 0u == ax ) {
-            uxi = ( 0u == ay ) ? uyi : ( ( uyi & 0x80000000u ) | 1u );
+        ax = uxi & 0x7FFFFFFFU;
+        ay = uyi & 0x7FFFFFFFU;
+        if ( 0U == ax ) {
+            uxi = ( 0U == ay ) ? uyi : ( ( uyi & 0x80000000U ) | 1U );
         }
-        else if ( ( ax > ay ) || ( 0u != ( ( uxi^uyi ) & 0x80000000u ) ) ) {
+        else if ( ( ax > ay ) || ( 0U != ( ( uxi^uyi ) & 0x80000000U ) ) ) {
             uxi--;
         }
         else {

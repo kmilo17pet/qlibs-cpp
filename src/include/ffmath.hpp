@@ -467,31 +467,31 @@ namespace qlibs {
 
 
         /** @brief The base of natural logarithms ( e ) given as a single-precision floating-point number*/
-        constexpr float FFP_E         = ( 2.71828182845904523540f );
+        constexpr float FFP_E         = ( 2.71828182845904523540F );
         /** @brief The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number */
-        constexpr float FFP_LOG2E     = ( 1.44269504088896340740f );
+        constexpr float FFP_LOG2E     = ( 1.44269504088896340740F );
         /** @brief The base 10 logarithm of e ( log_10 e ) given as a single-precision floating-point number */
-        constexpr float FFP_LOG10E    = ( 0.43429448190325182765f );
+        constexpr float FFP_LOG10E    = ( 0.43429448190325182765F );
         /** @brief The natural logarithm of 2 ( ln 2 ) given as a single-precision floating-point number */
-        constexpr float FFP_LN2       = ( 0.69314718055994530942f );
+        constexpr float FFP_LN2       = ( 0.69314718055994530942F );
         /** @brief The natural logarithm of 10 ( ln 10 ) given as a single-precision floating-point number */
-        constexpr float FFP_LN10      = ( 2.30258509299404568402f );
+        constexpr float FFP_LN10      = ( 2.30258509299404568402F );
         /** @brief The circumference of a circle with diameter 1, ( π ) given as a single-precision floating-point number */
-        constexpr float FFP_PI        = ( 3.14159265358979323846f );
+        constexpr float FFP_PI        = ( 3.14159265358979323846F );
         /** @brief Half of π ( π/2 ) given as a single-precision floating-point number */
-        constexpr float FFP_PI_2      = ( 1.57079632679489661923f );
+        constexpr float FFP_PI_2      = ( 1.57079632679489661923F );
         /** @brief A quarter of π ( π/4 ) given as a single-precision floating-point number */
-        constexpr float FFP_PI_4      = ( 0.78539816339744830962f );
+        constexpr float FFP_PI_4      = ( 0.78539816339744830962F );
         /** @brief The inverse of π  ( 1/π ) given as a single-precision floating-point number */
-        constexpr float FFP_1_PI      = ( 0.31830988618379067154f );
+        constexpr float FFP_1_PI      = ( 0.31830988618379067154F );
         /** @brief Twice the inverse of π  (  2/π ) given as a single-precision floating-point number */
-        constexpr float FFP_2_PI      = ( 0.63661977236758134308f );
+        constexpr float FFP_2_PI      = ( 0.63661977236758134308F );
         /** @brief The inverse of the square root of π ( 2/√π ) given as a single-precision floating-point number */
-        constexpr float FFP_2_SQRTPI  = ( 1.12837916709551257390f );
+        constexpr float FFP_2_SQRTPI  = ( 1.12837916709551257390F );
         /** @brief The square root of 2 ( √2 ) given as a single-precision floating-point number */
-        constexpr float FFP_SQRT2     = ( 1.41421356237309504880f );
+        constexpr float FFP_SQRT2     = ( 1.41421356237309504880F );
         /** @brief The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number */
-        constexpr float FFP_SQRT1_2   = ( 0.70710678118654752440f );
+        constexpr float FFP_SQRT1_2   = ( 0.70710678118654752440F );
 
         /** @}*/
     }
