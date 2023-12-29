@@ -38,8 +38,7 @@ var index =
       [ "Tsukamoto", "qfis_desc.html#qfis_tsukamoto", null ],
       [ "Defuzzification Methods", "qfis_desc.html#qfis_defuzz", null ],
       [ "Building a Mamdani FIS", "qfis_desc.html#qfis_buildfis", null ],
-      [ "Evaluating a Fuzzy Inference System", "qfis_desc.html#qfis_eval", null ],
-      [ "Code generation", "qfis_desc.html#qfis_codegen", null ]
+      [ "Evaluating a Fuzzy Inference System", "qfis_desc.html#qfis_eval", null ]
     ] ],
     [ "PID Controller", "qpid_desc.html", [
       [ "PID Controller approach", "qpid_desc.html#qpid_approach", null ],
