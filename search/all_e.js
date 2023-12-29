@@ -15,6 +15,6 @@ var searchData=
   ['pidgains_12',['pidGains',['../structqlibs_1_1pid_gains.html',1,'qlibs']]],
   ['pidmode_13',['pidMode',['../group__qpid.html#ga723e93113c48dc2437680a245624d0f3',1,'qlibs']]],
   ['pimf_14',['pimf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba43838ecf87ec1c6958658550c456734f',1,'qlibs']]],
-  ['pow_15',['pow',['../classqlibs_1_1fp16.html#a7c20d51e0a866d2969b5df05dfe2202b',1,'qlibs::fp16']]],
+  ['pow_15',['pow',['../classqlibs_1_1fp16.html#a7c20d51e0a866d2969b5df05dfe2202b',1,'qlibs::fp16::pow()'],['../group__qffmath.html#gabb0e6c2362bfc556e1a839a4c2b16633',1,'qlibs::ffmath::pow()']]],
   ['psigmf_16',['psigmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba080b6d0ced6a06931a8916d68886582d',1,'qlibs']]]
 ];

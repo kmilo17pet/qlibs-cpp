@@ -5,6 +5,7 @@ var searchData=
   ['math_20extra_2',['Math extra',['../group__qfmathex.html',1,'']]],
   ['max_3',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
   ['min_4',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
-  ['mom_5',['mom',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ad07c5255c1a2e0fd8b508e957b10314f',1,'qlibs']]],
-  ['mu_6',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
+  ['mod_5',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
+  ['mom_6',['mom',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ad07c5255c1a2e0fd8b508e957b10314f',1,'qlibs']]],
+  ['mu_7',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
 ];

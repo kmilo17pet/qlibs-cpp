@@ -9,6 +9,7 @@ var modules =
     [ "RMS", "group__qrms.html", "group__qrms" ],
     [ "CRC", "group__qcrc.html", "group__qcrc" ],
     [ "Tapped Delay Line", "group__qtdl.html", "group__qtdl" ],
+    [ "Float Fast-Math", "group__qffmath.html", "group__qffmath" ],
     [ "Type-generic utilities", "group__qtypegeneric.html", "group__qtypegeneric" ],
     [ "Math extra", "group__qfmathex.html", "group__qfmathex" ]
 ];

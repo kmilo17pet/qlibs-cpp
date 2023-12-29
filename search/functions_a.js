@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['normalize_0',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]],
-  ['normalizetransferfunction_1',['normalizeTransferFunction',['../classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4',1,'qlibs::ltisys']]]
+  ['mapminmax_0',['mapMinMax',['../group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1',1,'qlibs']]],
+  ['mod_1',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]]
 ];

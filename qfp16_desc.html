@@ -182,7 +182,7 @@ Exponential and transcendental functions</h2>
 <h2><a class="anchor" id="qfp16_trig_functions"></a>
 Trigonometric functions and helpers</h2>
 <ul>
-<li>sin() Sine for angle in radians</li>
+<li><a class="el" href="group__qffmath.html#gad3e8338c79cd9c5ada93547e60ddb4a0" title="Computes the sine of x (measured in radians).">sin()</a> Sine for angle in radians</li>
 <li>qlibs::fp16::cos() Cosine for angle in radians</li>
 <li>qlibs::fp16::tan() Tangent for angle in radians</li>
 <li>qlibs::fp16::asin() Inverse of sine, output in radians</li>
@@ -212,12 +212,13 @@ Example: Solution of the quadratic equation</h1>
 <div class="line">    fp16 b = 5.2_fp;</div>
 <div class="line">    fp16 c = 4.0_fp;</div>
 <div class="line">    fp16 result;</div>
-<div class="line">    result = ( -b + fp16::sqrt( ( b*b )  - ( 4_fp*a*c ) ) )/( 2_fp*a );</div>
+<div class="line">    result = ( -b + <a class="code hl_function" href="group__qffmath.html#ga9666a5106ea3273157a3dbbad8c79608">fp16::sqrt</a>( ( b*b )  - ( 4_fp*a*c ) ) )/( 2_fp*a );</div>
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot; result = &quot;</span> &lt;&lt; result &lt;&lt; std::endl;</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
+<div class="ttc" id="agroup__qffmath_html_ga9666a5106ea3273157a3dbbad8c79608"><div class="ttname"><a href="group__qffmath.html#ga9666a5106ea3273157a3dbbad8c79608">qlibs::ffmath::sqrt</a></div><div class="ttdeci">float sqrt(float x)</div><div class="ttdoc">Computes the square-root of x.</div><div class="ttdef"><b>Definition:</b> ffmath.cpp:84</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition:</b> fp16.cpp:4</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
