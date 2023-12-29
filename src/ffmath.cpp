@@ -15,7 +15,7 @@ static float compute_cbrt( float x , bool r );
 /*============================================================================*/
 static float getAbnormal( const int i )
 {
-    static const uint32_t u_ab[ 2 ] = { 0x7F800000u, 0x7FBFFFFFu };
+    static const uint32_t u_ab[ 2 ] = { 0x7F800000U, 0x7FBFFFFFU };
     static float f_ab[ 2 ] = { 0.0F, 0.0F };
     static bool init = true;
     
@@ -45,7 +45,7 @@ ffmath::classification ffmath::classify( const float f )
     cast_reinterpret( u, f );
     u &= 0x7FFFFFFFU;
 
-    if ( 0u == u ) {
+    if ( 0U == u ) {
         retVal = ffmath::classification::FFP_ZERO;
     }
     else if ( u < 0x00800000U ) {
@@ -248,7 +248,7 @@ float ffmath::atan2( float y, float x )
 {
     float t, f;
 
-    t = ffmath::FFP_PI - ( ( y < 0.0F ) ? 6.283185307f : 0.0F );
+    t = ffmath::FFP_PI - ( ( y < 0.0F ) ? 6.283185307F : 0.0F );
     f = ( ffmath::absf( x ) <= FLT_MIN ) ? 1.0F : 0.0F;
     y = ffmath::atan( y/( x + f ) ) + ( ( x < 0.0F ) ? t : 0.0F );
 
@@ -391,7 +391,7 @@ float ffmath::erfc( float x )
 /*============================================================================*/
 float ffmath::rexp( float x, int32_t *pw2 )
 {
-    uint32_t lu = 0u, iu;
+    uint32_t lu = 0U, iu;
     int32_t i = 0;
     
     cast_reinterpret( lu, x );
