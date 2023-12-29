@@ -46,7 +46,7 @@ var group__qpid =
       [ "setGains", "classqlibs_1_1pid_controller.html#a2130620cacb660dc8e5e0b2d08863dd4", null ],
       [ "setManualInput", "classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc", null ],
       [ "setMode", "classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3", null ],
-      [ "setModelReferenceControl", "classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424", null ],
+      [ "setModelReferenceControl", "classqlibs_1_1pid_controller.html#a7d6482d7d31956365ef120629e61fbe2", null ],
       [ "setParams", "classqlibs_1_1pid_controller.html#aefe02426e77499309ecdaae144869936", null ],
       [ "setReferenceWeighting", "classqlibs_1_1pid_controller.html#a7ea472ad5950fcb964137688e8aef8f0", null ],
       [ "setSaturation", "classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9", null ],

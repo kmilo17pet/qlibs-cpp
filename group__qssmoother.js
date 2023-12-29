@@ -8,12 +8,12 @@ var group__qssmoother =
     ] ],
     [ "qlibs::smootherLPF1", "classqlibs_1_1smoother_l_p_f1.html", [
       [ "~smootherLPF1", "classqlibs_1_1smoother_l_p_f1.html#a7d4f6159a7d2c455649c570fe374aee3", null ],
-      [ "setup", "classqlibs_1_1smoother_l_p_f1.html#a060747e205846e64f2b93ef4ce0bb1ab", null ],
+      [ "setup", "classqlibs_1_1smoother_l_p_f1.html#aa7006cc8f1598740db848079bd2bf924", null ],
       [ "smooth", "classqlibs_1_1smoother_l_p_f1.html#ae215b6841d6176c9ce520f71781dbfd3", null ]
     ] ],
     [ "qlibs::smootherLPF2", "classqlibs_1_1smoother_l_p_f2.html", [
       [ "~smootherLPF2", "classqlibs_1_1smoother_l_p_f2.html#ab90c66ec80ad714b6f52c353ac467502", null ],
-      [ "setup", "classqlibs_1_1smoother_l_p_f2.html#a590690dcb7861a47cd2f120b48db1c39", null ],
+      [ "setup", "classqlibs_1_1smoother_l_p_f2.html#a145053aa5225a43ff709acb310676d89", null ],
       [ "smooth", "classqlibs_1_1smoother_l_p_f2.html#a32805ca419952670554182e8ef04308a", null ]
     ] ],
     [ "qlibs::smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", [
@@ -30,14 +30,14 @@ var group__qssmoother =
     ] ],
     [ "qlibs::smootherMOR1", "classqlibs_1_1smoother_m_o_r1.html", [
       [ "~smootherMOR1", "classqlibs_1_1smoother_m_o_r1.html#a1df34e2eb612ce5eb270766da5a8d983", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#ad4aef12154d19a362a9e60b0673f5062", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#a903ed2139241033208753b1eeb7bf8e5", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#a987acb6bc4c0acfdc8a2166b984a00e8", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r1.html#adf73a4a10a3891b48a16565bba08e144", null ],
       [ "smooth", "classqlibs_1_1smoother_m_o_r1.html#a14776ec21ab402b4d97a69ae3bfc2a20", null ]
     ] ],
     [ "qlibs::smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", [
       [ "~smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html#ad760ecf9df49141ba6490381e68c915d", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a309fe4dd66de0bb8e5d157c4e801ac32", null ],
-      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a846200dc88bf9f432015b0903ee35919", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a83e10ff3494a0cddc0e86054045c22ca", null ],
+      [ "setup", "classqlibs_1_1smoother_m_o_r2.html#a9b0d15aea5b2fdee5d9ce20ae55b7e67", null ],
       [ "smooth", "classqlibs_1_1smoother_m_o_r2.html#a5564b7e3e94c1132228daf74de3fd76f", null ]
     ] ],
     [ "qlibs::smootherGMWF", "classqlibs_1_1smoother_g_m_w_f.html", [
@@ -48,7 +48,7 @@ var group__qssmoother =
     ] ],
     [ "qlibs::smootherEXPW", "classqlibs_1_1smoother_e_x_p_w.html", [
       [ "~smootherEXPW", "classqlibs_1_1smoother_e_x_p_w.html#adc5d7a2c53b126d8af54ce92f6f3760a", null ],
-      [ "setup", "classqlibs_1_1smoother_e_x_p_w.html#ac84cb4b936210a26649b2030370241d3", null ],
+      [ "setup", "classqlibs_1_1smoother_e_x_p_w.html#aeefc4f50c12070611cfc1d9bf2120cd3", null ],
       [ "smooth", "classqlibs_1_1smoother_e_x_p_w.html#a78870b2d015ade65a4b5cf088c26e230", null ]
     ] ],
     [ "qlibs::smootherKLMN", "classqlibs_1_1smoother_k_l_m_n.html", [

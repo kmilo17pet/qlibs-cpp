@@ -172,14 +172,14 @@ First Order Low Pass Filter</h1>
 <center> \(\alpha=e^{-T_{m}w}\) </center><center> \( 0 &lt; \alpha &lt; 1\) </center><h2><a class="anchor" id="qssmoother_ex1"></a>
 Example: setting up a 1st order low-pass filter:</h2>
 <div class="fragment"><div class="line">smootherLPF1 filter;</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> alpha = 0.85;</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.85f;</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( alpha );</div>
 <div class="line"><span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">    <span class="comment">// error, smooth filter cant be configured</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:45</div></div>
+<div class="ttc" id="anamespaceqlibs_html_a8f18e9bdf2c6555715e59c089f15f60c"><div class="ttname"><a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:39</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qssmoother_lpf2"></a>
 Second Order Low Pass Filter</h1>
 <p ><a class="el" href="classqlibs_1_1smoother_l_p_f2.html">qlibs::smootherLPF2</a> is a filter with similar properties to the 1st order low pass filter. The main difference is that the stop band roll-off will be twice the 1st order filters at 40dB/decade (12dB/octave) as the operating frequency increases above the cut-off frequency \(w\).</p>
@@ -188,7 +188,7 @@ Second Order Low Pass Filter</h1>
 <center> \( 0 &lt; \alpha &lt; 1\)</center><center> \(p=\sqrt{2\alpha}\), \(r=1+p+\alpha^{2}\), \(k=\frac{\alpha^{2}}{r}\)</center><center> \(a_1=\frac{ 2(\alpha^{2}-1)}{r}\), \(a_2=\frac{ 1-p+\alpha^{2} }{r}\), \(b_1=2k\) </center><h2><a class="anchor" id="qssmoother_ex2"></a>
 Example: setting up a 2nd order low-pass filter:</h2>
 <div class="fragment"><div class="line">smootherLPF2 filter;</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> alpha = 0.85;</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.85f;</div>
 <div class="line"><span class="keywordtype">int</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( alpha );</div>
@@ -204,7 +204,7 @@ Moving Window Median Filter O(n)</h1>
 <h2><a class="anchor" id="qssmoother_ex3"></a>
 Example: setting up a moving window median filter:</h2>
 <div class="fragment"><div class="line">smootherMWM1 filter; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> m_window[ 20 ] = { 0.0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 20 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( m_window );</div>
@@ -219,7 +219,7 @@ Moving Window Median Filter O(1)</h1>
 <h2><a class="anchor" id="qssmoother_ex4"></a>
 Example: Setting up a moving window median filter:</h2>
 <div class="fragment"><div class="line">smootherMWM2 filter; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> m_window[ 150 ] = { 0.0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 150 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( m_window );</div>
@@ -234,8 +234,8 @@ Moving Outlier Removal Filter O(n)</h1>
 <h2><a class="anchor" id="qssmoother_ex5"></a>
 Example: setting up an outlier removal filter:</h2>
 <div class="fragment"><div class="line">smootherMOR1 smoother; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> alpha = 0.8;</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> m_window[ 10 ] = { 0.0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.8f;</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 10 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( m_window, alpha );</div>
@@ -248,8 +248,8 @@ Moving Outlier Removal Filter O(1)</h1>
 <h2><a class="anchor" id="qssmoother_ex6"></a>
 Example: setting up an outlier removal filter:</h2>
 <div class="fragment"><div class="line">smootherMOR2 smoother; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> alpha = 0.8;</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> m_window[ 100 ] = { 0.0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.8f;</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 100 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( m_window, alpha );</div>
@@ -265,12 +265,12 @@ Gaussian Filter</h1>
 <h2><a class="anchor" id="qssmoother_ex7"></a>
 Example: setting up a gaussian filter:</h2>
 <div class="fragment"><div class="line"><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> SMOOTHER_WINDOW_SIZE = 10;</div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> sigma = 0.5;</div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> centerOffset = SMOOTHER_WINDOW_SIZE/2.0;</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> sigma = 0.5f;</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> centerOffset = SMOOTHER_WINDOW_SIZE/2.0f;</div>
 <div class="line"> </div>
 <div class="line">smootherGMWF filter; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0 };</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0 };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( sigma, centerOffset, window, kernel );</div>
@@ -285,7 +285,7 @@ Exponential Weighting filter</h1>
 <center> \( w(t) = \lambda w(t-1) + 1 \) </center><center> \( y(t) = ( 1-\frac{1}{w(t)} )y(t-1) + \frac{1}{w(t)}x(t)\) </center><h2><a class="anchor" id="qssmoother_ex8"></a>
 Example: setting up an exponential weighting filter:</h2>
 <div class="fragment"><div class="line">smootherEXPW  filter; </div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> lambda = 0.8;</div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> lambda = 0.8f;</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = filter.setup( lambda );</div>
@@ -306,7 +306,7 @@ Example: setting up a scalar Kalman filter:</h2>
 <div class="fragment"><div class="line">smootherKLMN filter;</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
-<div class="line">ret = filter.setup( 100.0, 0.9, 100 );</div>
+<div class="line">ret = filter.setup( 100.0f, 0.9f, 100.0f );</div>
 <div class="line"><span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">    <span class="comment">// error, smooth filter cant be configured</span></div>
 <div class="line">}</div>
@@ -337,14 +337,14 @@ Example of signal smoothing</h1>
 <div class="line"> </div>
 <div class="line"><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> SMOOTHER_WINDOW_SIZE = 10;</div>
 <div class="line"><span class="keyword">constexpr</span> uint32_t SMOOTHER_SAMPLE_TIME = 100;</div>
-<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> GAUSS_SIGMA = 0.5;</div>
-<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0;</div>
+<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> GAUSS_SIGMA = 0.5f;</div>
+<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0f;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSignalProcessing( <span class="keywordtype">void</span> *arg )</div>
 <div class="line">{</div>
 <div class="line">    smootherGMWF *filter = <span class="keyword">static_cast&lt;</span>smootherGMWF *<span class="keyword">&gt;</span>( arg );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> noisySignal;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> smoothedSignal;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> noisySignal;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> smoothedSignal;</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        noisySignal = BSP_ScaletoSomething( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
 <div class="line">        smoothedSignal = filter-&gt;smooth( noisySignal );</div>
@@ -356,8 +356,8 @@ Example of signal smoothing</h1>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
 <div class="line">    smootherGMWF filter;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
 <div class="line">    </div>
 <div class="line">    BSP_SystemInit( );</div>

@@ -117,7 +117,7 @@ var namespaceqlibs =
     [ "fisRules", "group__qfis.html#gaa1077952add66e00a9cd9c298627779f", null ],
     [ "fisTag", "group__qfis.html#ga49e603045e946077592760e1030515a0", null ],
     [ "fuzzyOperator", "group__qfis.html#ga22f021f965d13ed474e87b2de05b5d91", null ],
-    [ "real_t", "namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6", null ],
+    [ "real_t", "namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c", null ],
     [ "crcMode", "group__qcrc.html#ga5b194c56447214ee3207b107e549cad5", [
       [ "CRC8", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a70f6e8e0b91a39229a4d97de2e29f9cb", null ],
       [ "CRC16", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5ad552ccca252f2622494742a8341393c6", null ],
@@ -202,7 +202,7 @@ var namespaceqlibs =
     [ "inCircle", "group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75", null ],
     [ "inPolygon", "group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8", null ],
     [ "inRangeCoerce", "group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf", null ],
-    [ "isEqual", "group__qfmathex.html#gab497b116252fc8763ade8c6eb655949e", null ],
+    [ "isEqual", "group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9", null ],
     [ "mapMinMax", "group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1", null ],
     [ "normalize", "group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],

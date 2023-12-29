@@ -182,15 +182,15 @@ Manual Mode</h1>
 Creating a PID Controller</h1>
 <p >Before you start using a controller, it must be instantiated first via the <a class="el" href="classqlibs_1_1pid_controller.html">qlibs::pidController</a> type and then configured using the <a class="el" href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">qlibs::pidController::setup()</a> method, where you can define the PID gains and time step.</p>
 <p >Example: Instantiating an configuring a PID controller: </p><div class="fragment"><div class="line">pidController control;</div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> kc = 1.0, ki = 0.1, kd = 0.0;</div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt = 0.01; <span class="comment">// time-step of 10mS</span></div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> kc = 1.0f, ki = 0.1f, kd = 0.0f;</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt = 0.01f; <span class="comment">// time-step of 10mS</span></div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">ret = control.setup( kc, ki, kd, dt );</div>
 <div class="line"><span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">    <span class="comment">// error, pid controller cant be configured</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:45</div></div>
+<div class="ttc" id="anamespaceqlibs_html_a8f18e9bdf2c6555715e59c089f15f60c"><div class="ttname"><a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:39</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qfpid_usage"></a>
 Using the controller</h1>
 <p >The following example illustrates how a PID controller can be used to regulate the speed of a DC motor. PID control operates on a separate task running periodically at a rate of 50mS. The speed measurement is read through an analog input and then scaled to the appropriate units (RPM). The <a class="el" href="classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc">qlibs::pidController::control()</a> function will be in charge of computing the control action and updating the internal states of the controller. Then, the control output gets scaled back in order to send the control command by using the PWM(Pulse Width Modulation) module.</p>
@@ -204,13 +204,13 @@ Example: Speed control using a PID controller:</h2>
 <div class="line"> </div>
 <div class="line"><span class="keyword">const</span> TickType_t dt = 50; <span class="comment">//50mS time-step</span></div>
 <div class="line"><span class="keywordtype">void</span> xTaskPIDspeedControl( <span class="keywordtype">void</span> *arg );</div>
-<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> SetPoint = 300.0; <span class="comment">// desired motor speed 300rpm</span></div>
+<div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskPIDspeedControl( <span class="keywordtype">void</span> *arg )</div>
 <div class="line">{</div>
 <div class="line">    pidController *controller = <span class="keyword">static_cast&lt;</span>pidController *)( arg );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> processMeasurement;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> controlOutput;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> processMeasurement;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput;</div>
 <div class="line">    for ( ;; ) {</div>
 <div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
 <div class="line">        controlOutput = controller-<span class="keyword">&gt;</span>control( SetPoint, processMeasurement );</div>
@@ -225,11 +225,11 @@ Example: Speed control using a PID controller:</h2>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
 <div class="line">    </div>
 <div class="line">    BSP_SystemInit();</div>
-<div class="line">    ret = speedControl.setup( 1, 0.1, 0, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a><span class="keyword">&gt;</span>( dt/1000.0 ) );</div>
+<div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">        puts( <span class="stringliteral">&quot;ERROR: Cant configure PID controller&quot;</span> );</div>
 <div class="line">    }</div>
-<div class="line">    speedControl.setSaturation( 0.0, 100.0 );</div>
+<div class="line">    speedControl.setSaturation( 0.0f, 100.0f );</div>
 <div class="line">    <span class="comment">// Create the task that handles the speed control at the defined rate</span></div>
 <div class="line">    xTaskCreate( xTaskPIDspeedControl, <span class="stringliteral">&quot;speedControl&quot;</span>, 1024, &amp;speedControl, configMAX_PRIORITIES - 1 , <span class="keyword">nullptr</span> );</div>
 <div class="line">    vTaskStartScheduler();</div>
@@ -243,7 +243,7 @@ Additive MRAC (Model Reference Adaptive Control)</h1>
 <p >The MRAC adaptation is then computed by integrating the \(\delta(t)\) term as follows:</p>
 <center> \( \psi(t) = \int [ \delta(t) + c(t) ] dt \) </center><p >This method can be used to adapt to slower changes but can become unstable for abrupt changes to the system. Therefore, this implementation uses a so-called modified MRAC (M-MRAC) where the adaptation is later added to a PID controller, being the MRAC the additive loop.</p>
 <p >Abrupt changes to the system are absorbed by the PID controller, while the change of the dynamics will still be handled by the MIT gain \(\psi(t)\). This results in the equation of the control function presented at the beginning of this section.</p>
-<p >To use the additive MRAC, you should first instantiate a reference model and then, enable the MRAC by using the <a class="el" href="classqlibs_1_1pid_controller.html#a32aad63ae45b46882838a14940180424">qlibs::pidController::setModelReferenceControl()</a> method. Here, you must provide a pointer to the output of the reference model and the adaptation gain \(\gamma(t)\)</p>
+<p >To use the additive MRAC, you should first instantiate a reference model and then, enable the MRAC by using the <a class="el" href="classqlibs_1_1pid_controller.html#a7d6482d7d31956365ef120629e61fbe2">qlibs::pidController::setModelReferenceControl()</a> method. Here, you must provide a pointer to the output of the reference model and the adaptation gain \(\gamma(t)\)</p>
 <h2><a class="anchor" id="qpid_ex2"></a>
 Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -262,16 +262,16 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line">{</div>
 <div class="line">    picController *controller = <span class="keyword">static_cast&lt;</span>pidcontroller *<span class="keyword">&gt;</span>( arg );</div>
 <div class="line">    continuousTF&lt;1&gt; ctf= {</div>
-<div class="line">        { 0.0, 1.0 },</div>
-<div class="line">        { 3.0, 1.0 },</div>
+<div class="line">        { 0.0f, 1.0f },</div>
+<div class="line">        { 3.0f, 1.0f },</div>
 <div class="line">    };</div>
-<div class="line">    continuousSystem ref_model( ctf, 0.01 );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> processMeasurement;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> SetPoint = 300.0; <span class="comment">// desired motor speed 300rpm</span></div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> refmodel_output = 0.0;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> controlOutput = 0.0;</div>
+<div class="line">    continuousSystem ref_model( ctf, 0.01f );</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> processMeasurement;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> refmodel_output = 0.0f;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput = 0.0f;</div>
 <div class="line"> </div>
-<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01 );</div>
+<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01f );</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        refmodel_output = ref_model-&gt;excite( controlOutput );</div>
 <div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
@@ -287,11 +287,11 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
 <div class="line">    </div>
 <div class="line">    BSP_SystemInit( );</div>
-<div class="line">    ret = speedControl.setup( 1, 0.1, 0, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a><span class="keyword">&gt;</span>( dt/1000.0 ) );</div>
+<div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">        puts( <span class="stringliteral">&quot;ERROR: Cant configure PID controller&quot;</span> );</div>
 <div class="line">    }</div>
-<div class="line">    speedControl.setSaturation( 0.0, 100.0 );</div>
+<div class="line">    speedControl.setSaturation( 0.0f, 100.0f );</div>
 <div class="line">    <span class="comment">// Create the task that handles the speed control at the defined rate</span></div>
 <div class="line">    xTaskCreate( xTaskPIDspeedControl, <span class="stringliteral">&quot;speedControl&quot;</span>, 1024, &amp;speedControl, configMAX_PRIORITIES - 1 ,<span class="keyword">nullptr</span> );</div>
 <div class="line">    vTaskStartScheduler();</div>
@@ -337,19 +337,19 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">{</div>
 <div class="line">    picController *controller = <span class="keyword">static_cast&lt;</span>pidcontroller *<span class="keyword">&gt;</span>( arg );</div>
 <div class="line">    continuousTF&lt;1&gt; ctf= {</div>
-<div class="line">        { 0.0, 1.0 },</div>
-<div class="line">        { 3.0, 1.0 },</div>
+<div class="line">        { 0.0f, 1.0f },</div>
+<div class="line">        { 3.0f, 1.0f },</div>
 <div class="line">    };</div>
-<div class="line">    continuousSystem ref_model( ctf, 0.01 );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> processMeasurement;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> SetPoint = 300.0; <span class="comment">// desired motor speed 300rpm</span></div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> tmpSetPoint = 320.0;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> *p_setpoint  = &amp;SetPoint;  </div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> refmodel_output = 0.0;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> controlOutput = 0.0;</div>
+<div class="line">    continuousSystem ref_model( ctf, 0.01f );</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> processMeasurement;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> tmpSetPoint = 320.0f;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *p_setpoint  = &amp;SetPoint;  </div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> refmodel_output = 0.0f;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput = 0.0f;</div>
 <div class="line">    uint32_t notification_autotune_enable;</div>
 <div class="line"> </div>
-<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01 );</div>
+<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01f );</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        notification_autotune_enable = ulTaskNotifyTake( pdTRUE, 0 ); <span class="comment">// dont wait</span></div>
 <div class="line">        <span class="keywordflow">if</span> ( notification_autotune_enable ) {</div>
@@ -377,11 +377,11 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">    HAL_GPIO_Enable( GPIO12, GPIO_INPUT );</div>
 <div class="line">    HAL_GPIO_SetInterruptMode( GPIO12, RISING_EDGE );</div>
 <div class="line">    HAL_GPIO_EnableInterrupts( );</div>
-<div class="line">    ret = speedControl.setup( 1, 0.1, 0, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a><span class="keyword">&gt;</span>( dt/1000.0 ) );</div>
+<div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a><span class="keyword">&gt;</span>( dt/1000.0 ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">        puts( <span class="stringliteral">&quot;ERROR: Cant configure PID controller&quot;</span> );</div>
 <div class="line">    }</div>
-<div class="line">    speedControl.setSaturation( 0.0, 100.0 );</div>
+<div class="line">    speedControl.setSaturation( 0.0f, 100.0f );</div>
 <div class="line">    speedControl.bindAutoTuning( at );</div>
 <div class="line">    <span class="comment">// Create the task that handles the speed control at the defined rate</span></div>
 <div class="line">    xTaskCreate( xTaskPIDspeedControl, <span class="stringliteral">&quot;speedControl&quot;</span>, 1024, &amp;speedControl, configMAX_PRIORITIES - 1 , &amp;pid_task );</div>

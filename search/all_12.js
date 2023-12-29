@@ -6,7 +6,7 @@ var searchData=
   ['tapped_20delay_20line_3',['Tapped Delay Line',['../group__qtdl.html',1,'']]],
   ['tapped_20delay_20line_20in_20o_281_29_4',['Tapped Delay Line in O(1)',['../qtdl_desc.html',1,'index']]],
   ['tconcavemf_5',['tconcavemf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa6fd6547d43e0ab0024daa2d2f3d782d',1,'qlibs']]],
-  ['tdl_6',['tdl',['../classqlibs_1_1tdl.html',1,'qlibs::tdl'],['../classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277',1,'qlibs::tdl::tdl()=default'],['../classqlibs_1_1tdl.html#a397c91afb676db8eba5cd37a546eaeee',1,'qlibs::tdl::tdl(real_t *const area, const size_t n, const real_t initVal=0.0)'],['../classqlibs_1_1tdl.html#ab06a1f62b129d01db1df48b23b6a33fd',1,'qlibs::tdl::tdl(real_t(&amp;area)[numberOfDelays], const real_t initVal=0.0) noexcept']]],
+  ['tdl_6',['tdl',['../classqlibs_1_1tdl.html',1,'qlibs::tdl'],['../classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277',1,'qlibs::tdl::tdl()=default'],['../classqlibs_1_1tdl.html#a688ee3fdcd7bb854965673f222be1ef2',1,'qlibs::tdl::tdl(real_t *const area, const size_t n, const real_t initVal=0.0_re)'],['../classqlibs_1_1tdl.html#a92cab6009f5c4ea3d1b2befc519ce604',1,'qlibs::tdl::tdl(real_t(&amp;area)[numberOfDelays], const real_t initVal=0.0_re) noexcept']]],
   ['then_7',['THEN',['../group__qfis.html#gad9884c43f4f50a5852711a614f2343ac',1,'fis.hpp']]],
   ['tlinsmf_8',['tlinsmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdbaa5fbbd416534ffed7a03706c488afaf9',1,'qlibs']]],
   ['tlinzmf_9',['tlinzmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba7e2fc6001cc747a0412d96fbe8499024',1,'qlibs']]],

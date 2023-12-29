@@ -156,13 +156,13 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt = 0.05; <span class="comment">// Time step</span></div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt = 0.05f; <span class="comment">// Time step</span></div>
 <div class="line">    std::chrono::milliseconds delay(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>( dt*1000 ) );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> num[] = { 0.0, 2.0, 3.0, 6.0 };</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> den[] = { 1.0, 6.0, 11.0, 16.0 };</div>
-<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75">continuousStates</a> x = { 0, 0, 0 }; <span class="comment">// n = 3</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> num[] = { 0.0f, 2.0f, 3.0f, 6.0f };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> den[] = { 1.0f, 6.0f, 11.0f, 16.0f };</div>
+<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75">continuousStates</a> x = { 0.0f, 0.0f, 0.0f }; <span class="comment">// n = 3</span></div>
 <div class="line">    continuousSystem gc( num, den, xC, dt );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ut, yt;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> ut, yt;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
 <div class="line">        ut = BSP_InputGet();</div>
@@ -173,7 +173,7 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__qltisys_html_ga749ee6d3fc57211c4fa36d4108316d75"><div class="ttname"><a href="group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75">qlibs::continuousStates</a></div><div class="ttdeci">state[order] continuousStates</div><div class="ttdoc">Type to specify continuous states.</div><div class="ttdef"><b>Definition:</b> ltisys.hpp:37</div></div>
-<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:45</div></div>
+<div class="ttc" id="anamespaceqlibs_html_a8f18e9bdf2c6555715e59c089f15f60c"><div class="ttname"><a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:39</div></div>
 </div><!-- fragment --><p >Alternatively, you can also use a simpler definition by employing the <a class="el" href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF</a> structure as follows:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
@@ -182,15 +182,15 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> dt = 0.05; <span class="comment">// Time step</span></div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt = 0.05f; <span class="comment">// Time step</span></div>
 <div class="line">    std::chrono::milliseconds delay(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>( dt*1000 ) );</div>
 <div class="line">    continuousTF&lt;3&gt; ctf= {</div>
-<div class="line">        { 0.0, 2.0, 3.0, 6.0 },</div>
-<div class="line">        { 1.0, 6.0, 11.0, 16.0 },</div>
+<div class="line">        { 0.0f, 2.0f, 3.0f, 6.0f },</div>
+<div class="line">        { 1.0f, 6.0f, 11.0f, 16.0f },</div>
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    continuousSystem gc( ctf, dt );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> ut, yt;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> ut, yt;</div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
 <div class="line">        ut = BSP_InputGet();</div>
 <div class="line">        yt = gc.excite( ut );</div>
@@ -214,11 +214,11 @@ Example: Evaluate the given discrete transfer function</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> num[] = { 0.1, 0.2, 0.3 };</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> den[] = { 1.0, -0.85, 0.02 };</div>
-<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">discreteStates</a> xk[] = { 0, 0, 0 };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> num[] = { 0.1f 0.2f, 0.3f };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> den[] = { 1.0f, -0.85f, 0.02f };</div>
+<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">discreteStates</a> xk[] = { 0.0f, 0.0f, 0.0f };</div>
 <div class="line">    discreteSystem gc( num, den, xC );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> uk, yk;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> uk, yk;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
 <div class="line">        uk = BSP_InputGet();</div>
@@ -237,11 +237,11 @@ Example: Evaluate the given discrete transfer function</h2>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
 <div class="line">    discreteTF&lt;3,3&gt; dtf= {</div>
-<div class="line">        { 0.1, 0.2, 0.3 },</div>
-<div class="line">        { 1.0, -0.85, 0.02 },</div>
+<div class="line">        { 0.1f, 0.2f, 0.3f },</div>
+<div class="line">        { 1.0f, -0.85f, 0.02f },</div>
 <div class="line">    };</div>
 <div class="line">    continuousSystem gc( dtf );</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> uk, yk;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> uk, yk;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
 <div class="line">        uk = BSP_InputGet();</div>

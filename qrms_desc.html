@@ -139,8 +139,8 @@ Example :  By using a timer interrupt</h1>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> rms rms_instance;</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> rms_value = 0.0;</div>
-<div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">real_t</a> window[ 8 ] = { 0.0 };</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> rms_value = 0.0f;</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> window[ 8 ] = { 0.0f };</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> TimerA0_Int_Handler( <span class="keywordtype">void</span> ) <span class="comment">//interrupt tick at 1mS</span></div>
 <div class="line">{</div>
@@ -161,7 +161,7 @@ Example :  By using a timer interrupt</h1>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> rms_value;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceqlibs_html_a6c1cf573b98970e1cc140c9ef6631eb6"><div class="ttname"><a href="namespaceqlibs.html#a6c1cf573b98970e1cc140c9ef6631eb6">qlibs::real_t</a></div><div class="ttdeci">double real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:45</div></div>
+<div class="ttc" id="anamespaceqlibs_html_a8f18e9bdf2c6555715e59c089f15f60c"><div class="ttname"><a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:39</div></div>
 </div><!-- fragment --><p> rms_compute.h </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef RMS_COMPUTE_H</span></div>
 <div class="line"><span class="preprocessor">#define RMS_COMPUTE_H</span></div>
 <div class="line"> </div>
