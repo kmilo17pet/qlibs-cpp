@@ -228,6 +228,26 @@ void test_ltisys( void )
 
 }
 
+void test_ffmath(void)
+{
+    cout << "ffmath" << endl;
+    cout << ffmath::exp( 0.5 ) << endl;
+    cout << ffmath::log( 0.5 ) << endl;
+    cout << ffmath::sin( 0.5 ) << endl;
+    cout << ffmath::cos( 0.5 ) << endl;
+    cout << ffmath::tan( 0.5 ) << endl;
+    cout << ffmath::asin( 0.5 ) << endl;
+    cout << ffmath::acos( 0.5 ) << endl;
+    cout << ffmath::atan( 0.5 ) << endl;
+    cout << ffmath::cosh( 0.5 ) << endl;
+    cout << ffmath::sinh( 0.5 ) << endl;
+    cout << ffmath::tanh( 0.5 ) << endl;
+    cout << ffmath::atan2( 0.1, 0.2 ) << endl;
+    cout << ffmath::pow( 3.8, 2.5 ) << endl;
+    cout << ffmath::getNan() << endl;
+    cout << ffmath::getInf() << endl;
+}
+
 int main()
 {
     test_crc();
@@ -236,5 +256,6 @@ int main()
     test_tdl();
     test_fis();
     test_fis2();
+    test_ffmath();
     return 0;
 }

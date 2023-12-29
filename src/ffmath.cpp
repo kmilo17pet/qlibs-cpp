@@ -215,17 +215,12 @@ float ffmath::sin( float x )
 /*============================================================================*/
 float ffmath::cos( float x )
 {
-    return ffmath::cos( x + ffmath::FFP_PI_2 );
+    return ffmath::sin( x + ffmath::FFP_PI_2 );
 }
 /*============================================================================*/
 float ffmath::tan( float x )
 {
-    float abs_x;
-
-    x /= ffmath::absf( x ) + 1.0F;
-    abs_x = ffmath::absf( x );
-
-    return x*( ( abs_x*( ( -1.45667498914F*abs_x ) + 2.18501248371F ) ) + 0.842458832225F );
+    return ffmath::sin( x )/ffmath::cos( x );
 }
 /*============================================================================*/
 float ffmath::asin( float x )
