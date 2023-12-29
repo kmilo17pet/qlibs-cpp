@@ -162,7 +162,7 @@ float ffmath::rCbrt( float x )
             ffmath::getInf() : compute_cbrt( x, true );
 }
 /*============================================================================*/
-float ffmath::roundf( float x )
+float ffmath::rounding( float x )
 {
     x += 12582912.0f;
     x -= 12582912.0f;

@@ -167,7 +167,7 @@ namespace qlibs {
         * @return The nearest integer value to @a x, rounding halfway cases away 
         * from zero
         */
-        float roundf( float x );
+        float rounding( float x );
 
         /**
         * @brief Computes the largest integer value not greater than @a x.

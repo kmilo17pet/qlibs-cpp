@@ -57,6 +57,8 @@ This file is part of the QuarkTS++ OS distribution.
 #include "include/rms.hpp"
 #include "include/fp16.hpp"
 #include "include/generic.hpp"
+#include "include/ffmath.hpp"
+
 
 using namespace qlibs;
 
