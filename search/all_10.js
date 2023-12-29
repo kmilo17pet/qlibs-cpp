@@ -20,7 +20,6 @@ var searchData=
   ['rms_17',['RMS',['../group__qrms.html',1,'']]],
   ['rms_18',['rms',['../classqlibs_1_1rms.html#a393a522e384b153c716dc953eafe4352',1,'qlibs::rms']]],
   ['rotate_19',['rotate',['../group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9',1,'qlibs::generic']]],
-  ['roundf_20',['roundf',['../group__qffmath.html#ga7444641277a0490e73dba9a43958d01d',1,'qlibs::ffmath']]],
-  ['rounding_21',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16']]],
-  ['rsqrt_22',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]]
+  ['rounding_20',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16::rounding()'],['../group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8',1,'qlibs::ffmath::rounding(float x)']]],
+  ['rsqrt_21',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]]
 ];

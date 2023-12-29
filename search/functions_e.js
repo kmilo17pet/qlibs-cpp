@@ -14,7 +14,6 @@ var searchData=
   ['rexp_11',['rexp',['../group__qffmath.html#ga9a2da57b2b1a7e30b7b8c6f3011c7810',1,'qlibs::ffmath']]],
   ['rms_12',['rms',['../classqlibs_1_1rms.html#a393a522e384b153c716dc953eafe4352',1,'qlibs::rms']]],
   ['rotate_13',['rotate',['../group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9',1,'qlibs::generic']]],
-  ['roundf_14',['roundf',['../group__qffmath.html#ga7444641277a0490e73dba9a43958d01d',1,'qlibs::ffmath']]],
-  ['rounding_15',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16']]],
-  ['rsqrt_16',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]]
+  ['rounding_14',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16::rounding()'],['../group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8',1,'qlibs::ffmath::rounding(float x)']]],
+  ['rsqrt_15',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]]
 ];

@@ -46,7 +46,7 @@ var namespaceqlibs =
       [ "recip", "group__qffmath.html#ga48c227d95bcf981020c47e711f9c5e34", null ],
       [ "remainder", "group__qffmath.html#gad8d920273d3aa4514fdff91bc40564f1", null ],
       [ "rexp", "group__qffmath.html#ga9a2da57b2b1a7e30b7b8c6f3011c7810", null ],
-      [ "roundf", "group__qffmath.html#ga7444641277a0490e73dba9a43958d01d", null ],
+      [ "rounding", "group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8", null ],
       [ "rSqrt", "group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b", null ],
       [ "sin", "group__qffmath.html#gad3e8338c79cd9c5ada93547e60ddb4a0", null ],
       [ "sinh", "group__qffmath.html#ga86da463c6e72e9724ae1af3728b44b74", null ],
