@@ -2857,6 +2857,9 @@
             <name>$PROJ_DIR$\..\src\include\crc.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\include\ffmath.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\include\fis.hpp</name>
         </file>
         <file>
@@ -2895,6 +2898,9 @@
     </file>
     <file>
         <name>$PROJ_DIR$\..\src\crc.cpp</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\..\src\ffmath.cpp</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\src\fis.cpp</name>

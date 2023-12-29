@@ -9,12 +9,12 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?logo=textpattern)](https://github.com/kmilo17pet/QuarkTS-cpp/graphs/commit-activity)
 [![License](https://img.shields.io/github/license/kmilo17pet/QuarkTS-cpp?logo=livejournal)](https://github.com/kmilo17pet/QuarkTS-cpp/blob/master/LICENSE)
 
-# qlibs++
-qlibs++ is the [qlibs](https://github.com/kmilo17pet/qlibs)  port for C++.
 
 ![qlibs++logo](https://github.com/kmilo17pet/qlibs-cpp/assets/11412210/76b07eb7-b522-449e-be1b-c4349bb02dd6)
-# qlibs++ : A collection of useful libraries for embedded systems
 
+qlibs++ is the [qlibs](https://github.com/kmilo17pet/qlibs)  port for C++.
+
+# qlibs++ : A collection of useful libraries for embedded systems
 
 * Download the latest release [here](https://github.com/kmilo17pet/qlibs-cpp/releases)
 * Documentation and API Reference [here](https://kmilo17pet.github.io/qlibs-cpp/)

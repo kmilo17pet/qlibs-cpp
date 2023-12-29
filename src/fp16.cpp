@@ -1,6 +1,24 @@
 #include <include/fp16.hpp>
 
+
+namespace qlibs {
+    const fp16 FP_E        = 2.718281828459045235360_fp;
+    const fp16 FP_LOG2E    = 1.442695040888963407360_fp;
+    const fp16 FP_LOG10E   = 0.434294481903251827651_fp;
+    const fp16 FP_LN2      = 0.693147180559945309417_fp;
+    const fp16 FP_LN10     = 2.302585092994045684020_fp;
+    const fp16 FP_PI       = 3.141592653589793238460_fp;
+    const fp16 FP_PI_2     = 1.570796326794896619230_fp;
+    const fp16 FP_PI_4     = 0.785398163397448309616_fp;
+    const fp16 FP_1_PI     = 0.318309886183790671538_fp;
+    const fp16 FP_2_PI     = 0.636619772367581343076_fp;
+    const fp16 FP_2_SQRTPI = 1.128379167095512573900_fp;
+    const fp16 FP_SQRT2    = 1.414213562373095048800_fp;
+    const fp16 FP_SQRT1_2  = 0.707106781186547524401_fp;
+}
+
 using namespace qlibs;
+
 
 fp16Raw_t fp16::Min = -2147483647; // skipcq: CXX-W2009
 fp16Raw_t fp16::Max = 2147483647; // skipcq: CXX-W2009

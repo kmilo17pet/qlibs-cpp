@@ -600,43 +600,31 @@ namespace qlibs {
     /*! @endcond  */
 
     /**  @brief @c e The base of natural logarithms as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_E        = 2.718281828459045235360_fp;
-
+    extern const fp16 FP_E;
     /**  @brief @c log2(e) The base @c 2 logarithm of @c e as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_LOG2E    = 1.442695040888963407360_fp;
-
+    extern const fp16 FP_LOG2E;
     /**  @brief @c log10(e) The base @c 10 logarithm of @c e as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_LOG10E   = 0.434294481903251827651_fp;
-
+    extern const fp16 FP_LOG10E;
     /**  @brief @c ln(2) The natural logarithm of @c 2 as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_LN2      = 0.693147180559945309417_fp;
-
+    extern const fp16 FP_LN2;
     /**  @brief @c ln(10) The natural logarithm of @c 10 as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_LN10     = 2.302585092994045684020_fp;
-
+    extern const fp16 FP_LN10;
     /**  @brief @c pi The circumference of a circle with diameter @c 1 as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_PI       = 3.141592653589793238460_fp;
-
+    extern const fp16 FP_PI;
     /**  @brief @c pi/2 Half of @c pi as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_PI_2     = 1.570796326794896619230_fp;
-
+    extern const fp16 FP_PI_2;
     /**  @brief @c pi/4 A quarter of @c pi as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_PI_4     = 0.785398163397448309616_fp;
-
+    extern const fp16 FP_PI_4;
     /**  @brief @c 1/pi The inverse of @c pi as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_1_PI     = 0.318309886183790671538_fp;
-
+    extern const fp16 FP_1_PI;
     /**  @brief @c 2/pi Twice the inverse of @c pi as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_2_PI     = 0.636619772367581343076_fp;
-
+    extern const fp16 FP_2_PI;
     /**  @brief @c 2/sqrt(pi) The inverse of the square root of @c pi as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_2_SQRTPI = 1.128379167095512573900_fp;
-
+    extern const fp16 FP_2_SQRTPI;
     /**  @brief @c sqrt(2) The square root of @c 2 as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_SQRT2    = 1.414213562373095048800_fp;
-
+    extern const fp16 FP_SQRT2;
     /**  @brief @c 1/sqrt(2) The inverse of the square root of @c 2 as a Fixed-point Q16.16 value.*/
-    constexpr fp16 FP_SQRT1_2  = 0.707106781186547524401_fp;
+    extern const fp16 FP_SQRT1_2;
 
     /** @}*/
 }
