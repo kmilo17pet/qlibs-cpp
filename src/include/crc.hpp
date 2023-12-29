@@ -9,7 +9,7 @@
 #ifndef QLIBS_CRC
 #define QLIBS_CRC
 
-#include "include/qlibs_types.hpp" 
+#include <include/qlibs_types.hpp>
 
 /**
 * @brief The qLibs++ library namespace.

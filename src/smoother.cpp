@@ -1,5 +1,6 @@
 #include <include/smoother.hpp>
 #include <include/ltisys.hpp>
+#include <include/ffmath.hpp>
 
 using namespace qlibs;
 
@@ -17,7 +18,7 @@ bool smootherLPF1::setup( const real_t a )
 {
     bool retValue = false;
 
-    if ( ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( a > 0.0_re ) && ( a < 1.0_re ) ) {
         alpha = a;
         retValue = reset();
     }
@@ -43,17 +44,17 @@ bool smootherLPF2::setup( const real_t a )
 {
     bool retValue = false;
 
-    if ( ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( a > 0.0_re ) && ( a < 1.0_re ) ) {
         real_t aa, p1, r;
         aa = a*a;
         /*cstat -MISRAC2012-Dir-4.11_b*/
-        p1 = sqrt( 2.0*a ); /*arg always positive*/
+        p1 = ffmath::sqrt( 2.0_re*a ); /*arg always positive*/
         /*cstat +MISRAC2012-Dir-4.11_b*/
-        r = 1.0 + p1 + aa;
+        r = 1.0_re + p1 + aa;
         k = aa/r;
-        a1 = 2.0*( aa - 1.0 )/r;
-        a2 = ( 1.0 - p1 + aa )/r;
-        b1 = 2.0*k;
+        a1 = 2.0_re*( aa - 1.0_re )/r;
+        a2 = ( 1.0_re - p1 + aa )/r;
+        b1 = 2.0_re*k;
         retValue = reset();
     }
 
@@ -138,7 +139,7 @@ bool smootherMOR1::setup( real_t *window,
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0_re ) && ( a < 1.0_re ) ) {
         w = window;
         wsize = w_size;
         alpha = a;
@@ -159,7 +160,7 @@ real_t smootherMOR1::smooth( const real_t x )
     }
     /*shift, sum and compensate*/
     mc = discreteSystem::updateFIR( w, wsize, x ) - x;
-    if ( fabs( m - x ) > ( alpha*fabs( m ) ) ) {
+    if ( ffmath::absf( m - x ) > ( alpha*ffmath::absf( m ) ) ) {
         w[ 0 ] = m; /*replace the outlier with the dynamic median*/
     }
     /*compute new mean for next iteration*/
@@ -173,11 +174,11 @@ bool smootherMOR2::setup( real_t *window,
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0 ) && ( a < 1.0 ) ) {
+    if ( ( nullptr != window ) && ( w_size > 0U ) && ( a > 0.0_re ) && ( a < 1.0_re ) ) {
         alpha = a;
         tdl::setup( window, w_size );
-        sum = 0.0;
-        m = 0.0;
+        sum = 0.0_re;
+        m = 0.0_re;
         retValue = reset();
     }
 
@@ -196,7 +197,7 @@ real_t smootherMOR2::smooth( const real_t x )
         init = false;
     }
     /*is it an outlier?*/
-    if ( fabs( m - x ) > ( alpha*fabs( m ) ) ) {
+    if ( ffmath::absf( m - x ) > ( alpha*ffmath::absf( m ) ) ) {
         xx = m; /*replace the outlier with the dynamic median*/
     }
     sum += xx - getOldest();
@@ -215,22 +216,22 @@ bool smootherGMWF::setup( const real_t sg,
     bool retValue = false;
     const size_t ws = wk_size;
 
-    if ( ( nullptr != window ) && ( wk_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0 ) ) {
-        real_t r, sum = 0.0;
+    if ( ( nullptr != window ) && ( wk_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0_re ) ) {
+        real_t r, sum = 0.0_re;
         size_t i;
         real_t l, center;
         /*cstat -MISRAC++2008-5-0-7*/
         l = static_cast<real_t>( wk_size - 1U );
         /*cstat +MISRAC++2008-5-0-7*/
         center = c - l;
-        r = 2.0*sg*sg;
+        r = 2.0_re*sg*sg;
         for ( i = 0U ; i < ws ; ++i ) {
             /*cstat -MISRAC++2008-5-0-7*/
             real_t d = static_cast<real_t>( i ) - l; /*symmetry*/
             /*cstat +MISRAC++2008-5-0-7*/
             d -= center;
             /*cstat -CERT-FLP32-C_b*/
-            kernel[ i ] = exp( -( d*d )/r );
+            kernel[ i ] = ffmath::exp( -( d*d )/r );
             /*cstat +CERT-FLP32-C_b*/
             sum += kernel[ i ];
         }
@@ -259,10 +260,10 @@ bool smootherEXPW::setup( const real_t lam )
 {
     bool retValue = false;
     
-    if ( ( lam > 0.0 ) && ( lam < 1.0 ) ) {
+    if ( ( lam > 0.0_re ) && ( lam < 1.0_re ) ) {
         lambda = lam;
-        m = 0.0;
-        w = 1.0;
+        m = 0.0_re;
+        w = 1.0_re;
         retValue = reset();
     }
 
@@ -275,12 +276,12 @@ real_t smootherEXPW::smooth( const real_t x )
 
     if ( init ) {
         m = x;
-        w = 1.0;
+        w = 1.0_re;
         init = false;
     }
-    w = ( lambda*w ) + 1.0;
-    iw = 1.0/w;
-    m = ( m*( 1.0 - iw ) ) + ( iw*x );
+    w = ( lambda*w ) + 1.0_re;
+    iw = 1.0_re/w;
+    m = ( m*( 1.0_re - iw ) ) + ( iw*x );
 
     return m;
 }
@@ -291,12 +292,12 @@ bool smootherKLMN::setup( const real_t processNoiseCov,
 {
     bool retValue = false;
 
-    if ( ( processNoiseCov > 0.0 ) && ( measureNoiseCov > 0.0 ) && ( estErrorCov > 0.0 ) ) {
+    if ( ( processNoiseCov > 0.0_re ) && ( measureNoiseCov > 0.0_re ) && ( estErrorCov > 0.0_re ) ) {
         p = estErrorCov;
         q = processNoiseCov;
         r = measureNoiseCov;
-        A = 1.0;
-        H = 1.0;
+        A = 1.0_re;
+        H = 1.0_re;
         retValue = reset();
     }
 
@@ -318,7 +319,7 @@ real_t smootherKLMN::smooth( const real_t x )
     pH = p*H;
     gain =  pH/( r + ( H*pH ) );
     xS += gain*( x - ( H*xS ) );
-    p = ( 1.0 - ( gain*H ) )*p; /*covariance update*/
+    p = ( 1.0_re - ( gain*H ) )*p; /*covariance update*/
 
     return xS;
 }
@@ -329,7 +330,7 @@ bool smootherDESF::setup( const real_t a,
 {
     bool retValue = false;
 
-    if ( ( a > 0.0 ) && ( a < 1.0 ) && ( b > 0.0 ) && ( b < 1.0 ) ) {
+    if ( ( a > 0.0_re ) && ( a < 1.0_re ) && ( b > 0.0_re ) && ( b < 1.0_re ) ) {
         alpha = a;
         beta = b;
         n = static_cast<real_t>( nS );
@@ -349,8 +350,8 @@ real_t smootherDESF::smooth( const real_t x )
         init = false;
     }
     lt_1 = lt;
-    lt = ( ( 1.0 - alpha)*lt_1 ) + ( alpha*x ); /*level*/
-    bt = ( ( 1.0 - beta )*bt ) + ( beta*( lt - lt_1 ) ); /*trend*/
+    lt = ( ( 1.0_re - alpha)*lt_1 ) + ( alpha*x ); /*level*/
+    bt = ( ( 1.0_re - beta )*bt ) + ( beta*( lt - lt_1 ) ); /*trend*/
 
     return lt + ( n*bt ); /*model/forecast*/
 }
@@ -362,12 +363,12 @@ bool smootherALNF::setup( const real_t a,
 {
     bool retValue = false;
 
-    if ( ( nullptr != window ) && ( wsize > 0U ) && ( a > 0.0 ) && ( a < 1.0 ) && ( m > 0.0 ) && ( m < 1.0 ) ) {
+    if ( ( nullptr != window ) && ( wsize > 0U ) && ( a > 0.0_re ) && ( a < 1.0_re ) && ( m > 0.0_re ) && ( m < 1.0_re ) ) {
         alpha = a;
         mu = m;
         xx = window;
         w = &window[ wsize ];
-        w_1 = ( mu > 0.0 ) ? &window[ 2U*wsize ] : nullptr;
+        w_1 = ( mu > 0.0_re ) ? &window[ 2U*wsize ] : nullptr;
         n = wsize;
         retValue = reset();
     }
@@ -380,7 +381,7 @@ real_t smootherALNF::smooth( const real_t x )
     real_t xe;
 
     if ( init ) {
-        const real_t np = 1.0/static_cast<real_t>( n );
+        const real_t np = 1.0_re/static_cast<real_t>( n );
 
         windowSet( xx, n, x );
         windowSet( w, n, np );

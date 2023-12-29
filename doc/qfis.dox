@@ -305,9 +305,9 @@
 * methods as follows:
 *
 *  @code{.c}
-*  tipper.setupInput( service, 0.0, 1.0 );
-*  tipper.setupInput( food, 0.0, 10.0 );
-*  tipper.setupOutput( tip, 0.0, 30.0 );
+*  tipper.setupInput( service, 0.0f, 1.0f );
+*  tipper.setupInput( food, 0.0f, 10.0f );
+*  tipper.setupOutput( tip, 0.0f, 30.0f );
 *  @endcode
 *
 * The next step is to configure the membership functions by relating I/O, 
@@ -316,14 +316,14 @@
 * Then, let's define the parameters of all the membership functions:
 *
 *  @code{.c}
-*  tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5, 0.0 } );
-*  tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5, 5.0 } );
-*  tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5, 10.0 } );
-*  tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0, 0.0, 1.0, 3.0 } );
-*  tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0, 9.0, 10.0, 10.0 } );
-*  tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0, 5.0, 10.0 } );
-*  tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0, 15.0, 20.0 } );
-*  tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0, 25.0, 30.0 } );
+*  tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+*  tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+*  tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+*  tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+*  tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
+*  tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+*  tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
+*  tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
 *  @endcode
 *
 * @note
@@ -370,23 +370,23 @@
 *      FIS_RULES_END
 *  };
 *  //Rule strengths
-*  real_t rStrength[ 3 ] = { 0.0 };
+*  real_t rStrength[ 3 ] = { 0.0f };
 *  
 *  
 *  void tipper_init( void )
 *  {
 *      tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );
-*      tipper.setupInput( service, 0.0, 1.0 );
-*      tipper.setupInput( food, 0.0, 10.0 );
-*      tipper.setupOutput( tip, 0.0, 30.0 );
-*      tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5, 0.0 } );
-*      tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5, 5.0 } );
-*      tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5, 10.0 } );
-*      tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0, 0.0, 1.0, 3.0 } );
-*      tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0, 9.0, 10.0, 10.0 } );
-*      tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0, 5.0, 10.0 } );
-*      tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0, 15.0, 20.0 } );
-*      tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0, 25.0, 30.0 } );
+*      tipper.setupInput( service, 0.0f, 1.0f );
+*      tipper.setupInput( food, 0.0f, 10.0f );
+*      tipper.setupOutput( tip, 0.0f, 30.0f );
+*      tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+*      tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+*      tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+*      tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+*      tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
+*      tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+*      tipper.setOutputMF( tip, average, trimf, (const real_t[]){ 10.0f, 15.0f, 20.0f } );
+*      tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
 *  }
 *  
 *  void tipper_run( real_t *inputs, real_t *outputs )

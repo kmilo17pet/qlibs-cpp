@@ -33,7 +33,7 @@
 *  @subsection qssmoother_ex1 Example: setting up a 1st order low-pass filter:
 *  @code{.c}
 *  smootherLPF1 filter;
-*  real_t alpha = 0.85;
+*  real_t alpha = 0.85f;
 *  bool ret;
 *
 *  ret = filter.setup( alpha );
@@ -66,7 +66,7 @@
 *  @subsection qssmoother_ex2 Example: setting up a 2nd order low-pass filter:
 *  @code{.c}
 *  smootherLPF2 filter;
-*  real_t alpha = 0.85;
+*  real_t alpha = 0.85f;
 *  int ret;
 *
 *  ret = filter.setup( alpha );
@@ -97,7 +97,7 @@
 *  @subsection qssmoother_ex3 Example: setting up a moving window median filter:
 *  @code{.c}
 *  smootherMWM1 filter; 
-*  real_t m_window[ 20 ] = { 0.0 };
+*  real_t m_window[ 20 ] = { 0.0f };
 *  bool ret;
 *
 *  ret = filter.setup( m_window );
@@ -127,7 +127,7 @@
 *  @subsection qssmoother_ex4 Example: Setting up a moving window median filter:
 *  @code{.c}
 *  smootherMWM2 filter; 
-*  real_t m_window[ 150 ] = { 0.0 };
+*  real_t m_window[ 150 ] = { 0.0f };
 *  bool ret;
 *
 *  ret = filter.setup( m_window );
@@ -157,8 +157,8 @@
 *  @subsection qssmoother_ex5 Example: setting up an outlier removal filter:
 *  @code{.c}
 *  smootherMOR1 smoother; 
-*  real_t alpha = 0.8;
-*  real_t m_window[ 10 ] = { 0.0 };
+*  real_t alpha = 0.8f;
+*  real_t m_window[ 10 ] = { 0.0f };
 *  bool ret;
 *
 *  ret = filter.setup( m_window, alpha );
@@ -176,8 +176,8 @@
 *  @subsection qssmoother_ex6 Example: setting up an outlier removal filter:
 *  @code{.c}
 *  smootherMOR2 smoother; 
-*  real_t alpha = 0.8;
-*  real_t m_window[ 100 ] = { 0.0 };
+*  real_t alpha = 0.8f;
+*  real_t m_window[ 100 ] = { 0.0f };
 *  bool ret;
 *
 *  ret = filter.setup( m_window, alpha );
@@ -207,12 +207,12 @@
 *  @subsection qssmoother_ex7 Example: setting up a gaussian filter:
 *  @code{.c}
 *  constexpr size_t SMOOTHER_WINDOW_SIZE = 10;
-*  const real_t sigma = 0.5;
-*  const real_t centerOffset = SMOOTHER_WINDOW_SIZE/2.0;
+*  const real_t sigma = 0.5f;
+*  const real_t centerOffset = SMOOTHER_WINDOW_SIZE/2.0f;
 *
 *  smootherGMWF filter; 
-*  real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0 };
-*  real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0 };
+*  real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
+*  real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *  bool ret;
 *
 *  ret = filter.setup( sigma, centerOffset, window, kernel );
@@ -245,7 +245,7 @@
 *  @subsection qssmoother_ex8 Example: setting up an exponential weighting filter:
 *  @code{.c}
 *  smootherEXPW  filter; 
-*  real_t lambda = 0.8;
+*  real_t lambda = 0.8f;
 *  bool ret;
 *
 *  ret = filter.setup( lambda );
@@ -293,7 +293,7 @@
 *  smootherKLMN filter;
 *  bool ret;
 *
-*  ret = filter.setup( 100.0, 0.9, 100 );
+*  ret = filter.setup( 100.0f, 0.9f, 100.0f );
 *  if ( !ret ) {
 *      // error, smooth filter cant be configured
 *  }
@@ -390,8 +390,8 @@
 *
 *  constexpr size_t SMOOTHER_WINDOW_SIZE = 10;
 *  constexpr uint32_t SMOOTHER_SAMPLE_TIME = 100;
-*  constexpr real_t GAUSS_SIGMA = 0.5;
-*  constexpr real_t GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0;
+*  constexpr real_t GAUSS_SIGMA = 0.5f;
+*  constexpr real_t GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0f;
 *  
 *  void xTaskSignalProcessing( void *arg )
 *  {
@@ -409,8 +409,8 @@
 *  int main( int argc, char *argv[] )
 *  {
 *      smootherGMWF filter;
-*      real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };
-*      real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0 };
+*      real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
+*      real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *      bool ret;
 *      
 *      BSP_SystemInit( );

@@ -10,9 +10,9 @@
 #ifndef QLIBS_PID
 #define QLIBS_PID
 
-#include "include/qlibs_types.hpp"
-#include "include/numa.hpp"
-#include "include/ltisys.hpp"
+#include <include/qlibs_types.hpp>
+#include <include/numa.hpp>
+#include <include/ltisys.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -65,20 +65,20 @@ namespace qlibs {
             */
             static const uint32_t UNDEFINED;
         protected:
-            real_t p00{ 1.0 };
-            real_t p01{ 0.0 };
-            real_t p10{ 0.0 };
-            real_t p11{ 1.0 };   /*covariance values*/
-            real_t b1{ 0.1 };
-            real_t a1{ 0.9 };   /*estimation  values*/
-            real_t uk{ 0.0 };
-            real_t yk{ 0.0 };      /*process I/O measurements*/
-            real_t l{ 0.9898 }; /*memory factor [ 0.9 < l < 1 ]*/
-            real_t il{ 1.0 };
-            real_t k{ 1.0 };
-            real_t tao{ 1.0 };      /*process metrics*/
-            real_t mu{ 0.95};
-            real_t speed{ 0.25 };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
+            real_t p00{ 1.0_re };
+            real_t p01{ 0.0_re };
+            real_t p10{ 0.0_re };
+            real_t p11{ 1.0_re };   /*covariance values*/
+            real_t b1{ 0.1_re };
+            real_t a1{ 0.9_re };   /*estimation  values*/
+            real_t uk{ 0.0_re };
+            real_t yk{ 0.0_re };      /*process I/O measurements*/
+            real_t l{ 0.9898_re }; /*memory factor [ 0.9 < l < 1 ]*/
+            real_t il{ 1.0_re };
+            real_t k{ 1.0_re };
+            real_t tao{ 1.0_re };      /*process metrics*/
+            real_t mu{ 0.95_re };
+            real_t speed{ 0.25_re };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
             uint32_t it{ UNDEFINED };/*enable time*/
             static bool isValidValue( const real_t x ) noexcept;
         public:
@@ -97,7 +97,7 @@ namespace qlibs {
         private:
             //real_t Kc, Ki, Kd;
             real_t b, c, min, max, epsilon, kw, kt, D, u1, beta;
-            real_t dt{ 1.0 };
+            real_t dt{ 1.0_re };
             real_t m, mInput;
             const real_t *yr{ nullptr };
             real_t alpha, gamma; /*MRAC additive controller parameters*/
@@ -262,8 +262,8 @@ namespace qlibs {
             * @return @c true on success, otherwise return @c false.
             */
             bool setModelReferenceControl( const real_t &modelRef,
-                                           const real_t Gamma = 0.5,
-                                           const real_t Alpha = 0.01 ) noexcept;
+                                           const real_t Gamma = 0.5_re,
+                                           const real_t Alpha = 0.01_re ) noexcept;
 
             /**
             * @brief Removes the Enable the additive 

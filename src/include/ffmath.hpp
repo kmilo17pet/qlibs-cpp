@@ -1,5 +1,5 @@
 /*!
- * @file qffmath.h
+ * @file ffmath.hpp
  * @author J. Camilo Gomez C.
  * @version 1.06
  * @note This file is part of the qLibs++ distribution.
@@ -10,7 +10,7 @@
 #ifndef QLIBS_FFMATH
 #define QLIBS_FFMATH
 
-#include "include/qlibs_types.hpp"
+#include <include/qlibs_types.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -465,7 +465,8 @@ namespace qlibs {
         */
         float nextAfter( float x, float y );
 
-
+        /*cstat -MISRAC++2008-0-1-4_b*/
+        
         /** @brief The base of natural logarithms ( e ) given as a single-precision floating-point number*/
         constexpr float FFP_E         = ( 2.71828182845904523540F );
         /** @brief The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number */
@@ -493,6 +494,8 @@ namespace qlibs {
         /** @brief The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number */
         constexpr float FFP_SQRT1_2   = ( 0.70710678118654752440F );
 
+        /*cstat +MISRAC++2008-0-1-4_b*/
+        
         /** @}*/
     }
 }

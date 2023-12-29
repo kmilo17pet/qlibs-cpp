@@ -20,18 +20,12 @@
     #include <stdlib.h>
     #include <string.h>
     #include <ctype.h>
-    #include <math.h>
-    #include <limits.h>
-    #include <float.h>
 #else 
     #include <cstddef>
     #include <cstdint>
     #include <cstdlib>
     #include <cstring>
     #include <cctype>
-    #include <cmath>
-    #include <climits>
-    #include <cfloat>
     using namespace std;
 #endif
 
@@ -42,9 +36,25 @@ namespace qlibs {
     /**
     * @brief A type to instantiate a real variable double-precision of 64-bits IEEE 754.
     */
-    using real_t = double;
+    using real_t = float;
 
     /*! @cond */
+    /*cstat -CERT-FLP36-C -CERT-FLP34-C*/
+    constexpr real_t operator "" _re( unsigned long long int x )
+    {
+        return static_cast<real_t>( x );
+    }
+    constexpr real_t operator "" _re( long double x )
+    {
+        return static_cast<real_t>( x );
+    }
+    /*cstat +CERT-FLP36-C +CERT-FLP34-C*/
+
+    /*cstat -MISRAC++2008-0-1-4_b*/
+    constexpr real_t REAL_MAX = 3.402823466e+38F;        // max value
+    constexpr real_t REAL_MIN = 1.175494351e-38F;        // min normalized positive value
+    /*cstat +MISRAC++2008-0-1-4_b*/
+    
     class nonCopyable {
         protected:
             nonCopyable() {}

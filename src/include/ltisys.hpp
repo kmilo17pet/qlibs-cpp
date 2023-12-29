@@ -9,9 +9,9 @@
 #ifndef QLIBS_LTISYS
 #define QLIBS_LTISYS
 
-#include "include/qlibs_types.hpp"
-#include "include/tdl.hpp"
-#include "include/numa.hpp"
+#include <include/qlibs_types.hpp>
+#include <include/tdl.hpp>
+#include <include/numa.hpp>
 
 
 /**
@@ -47,8 +47,7 @@ namespace qlibs {
     * @note Initial conditions are zero by default.
     */
     template<size_t order>
-    struct continuousTF
-    {
+    struct continuousTF {
         real_t num[ order+1 ];
         real_t den[ order+1 ];
         continuousStates<order> states = {};
@@ -65,8 +64,7 @@ namespace qlibs {
     * @note Initial conditions are zero by default.
     */
     template<size_t NB, size_t NA>
-    struct discreteTF
-    {
+    struct discreteTF {
         real_t num[ NB ];
         real_t den[ NA ];
         discreteStates<(NA>NB)? NA:NB> states = {};
@@ -91,9 +89,9 @@ namespace qlibs {
             size_t n{ 0U };
             size_t na{ 0U };
             size_t nb{ 0U };
-            real_t b0{ 0.0 };
-            real_t min{ DBL_MIN };
-            real_t max{ DBL_MAX };
+            real_t b0{ 0.0_re };
+            real_t min{ REAL_MIN };
+            real_t max{ REAL_MAX };
             void normalizeTransferFunction( real_t *num,
                                             real_t *den,
                                             size_t n_num,
@@ -149,7 +147,7 @@ namespace qlibs {
             */
             bool setDelay( real_t * const w,
                            const size_t nD,
-                           const real_t initVal = 0.0 ) noexcept;
+                           const real_t initVal = 0.0_re ) noexcept;
 
             /**
             * @brief Setup the output saturation for the LTI system.
@@ -377,7 +375,7 @@ namespace qlibs {
     */
     class continuousSystem : public ltisys {
         private:
-            real_t dt{ 1.0 };
+            real_t dt{ 1.0_re };
             state *xc{ nullptr };
             real_t update( const real_t u );
         public:

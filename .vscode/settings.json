@@ -48,6 +48,7 @@
         "xtr1common": "cpp",
         "xlocmon": "cpp",
         "iomanip": "cpp",
-        "xloctime": "cpp"
+        "xloctime": "cpp",
+        "string": "cpp"
     }
 }

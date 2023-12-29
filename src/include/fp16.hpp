@@ -9,7 +9,7 @@
 #ifndef QLIBS_FP16
 #define QLIBS_FP16
 
-#include "include/qlibs_types.hpp"
+#include <include/qlibs_types.hpp>
 #if !defined( ARDUINO_PLATFORM )
     #include <iostream>
 #endif

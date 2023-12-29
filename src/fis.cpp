@@ -1,5 +1,5 @@
-#include "include/fis.hpp"
-#include "include/mathex.hpp"
+#include <include/fis.hpp>
+#include <include/mathex.hpp>
 
 
 using namespace qlibs;
@@ -221,8 +221,8 @@ bool fis::setMF( fisMF *m,
         m[ mf ].shape = ( nullptr != customMf ) ? customMf : fShape[ s ];
         m[ mf ].index = static_cast<size_t>( io );
         m[ mf ].points = cp;
-        m[ mf ].fx = 0.0;
-        m[ mf ].h = bound( h, 0.0, 1.0 );
+        m[ mf ].fx = 0.0_re;
+        m[ mf ].h = bound( h );
         /*cstat +CERT-STR34-C*/
         retValue = true;
     }
@@ -267,9 +267,9 @@ real_t fis::parseFuzzValue( fisMF * const mfIO,
         index = -index;
     }
     /*cstat -CERT-INT30-C_a -CERT-STR34-C -CERT-INT32-C_a*/
-    y = bound( mfIO[ index - 1 ].fx, 0.0, 1.0 );
+    y = bound( mfIO[ index - 1 ].fx );
     /*cstat +CERT-INT30-C_a +CERT-STR34-C +CERT-INT32-C_a*/
-    y = ( neg ) ? ( 1.0 - y ) : y;
+    y = ( neg ) ? ( 1.0_re - y ) : y;
 
     return y;
 }
@@ -339,9 +339,9 @@ size_t fis::inferenceReachEnd( size_t i ) noexcept
         lastConnector = -1;
         wi[ ruleCount ] = rStrength;
         if ( nullptr != ruleWeight ) {
-            wi[ ruleCount ] *= bound( ruleWeight[ ruleCount ], 0.0, 1.0 );
+            wi[ ruleCount ] *= bound( ruleWeight[ ruleCount ] );
         }
-        rStrength = 0.0;
+        rStrength = 0.0_re;
         ++ruleCount;
         --i;
     }
@@ -373,7 +373,7 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
     }
     MFOutIndex -= 1;
 
-    if ( wi[ ruleCount ] > 0.0 ) {
+    if ( wi[ ruleCount ] > 0.0_re ) {
         /*cstat -CERT-STR34-C*/
         fisOutput &o = output[ outIndex ];
         fisMF &m = outMF[ MFOutIndex ];
@@ -382,7 +382,7 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
         if ( Mamdani == type ) {
             real_t v;
             v = m.evalMF( o );
-            v = ( neg )? ( 1.0 - v ) : v;
+            v = ( neg )? ( 1.0_re - v ) : v;
             o.y = aggregate( o.y, implicate( wi[ ruleCount ], v ) );
         }
         else { /* Sugeno and Tsukamoto*/
@@ -435,7 +435,7 @@ bool fis::deFuzzify( void ) noexcept
 
             for ( k = 0U ; k < nPoints ; ++k ) {
                 for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
-                    output[ i ].y = 0.0;
+                    output[ i ].y = 0.0_re;
                     output[ i ].getNextX( k );
                     output[ i ].value = output[ i ].x;
                 }
@@ -451,8 +451,8 @@ bool fis::deFuzzify( void ) noexcept
         }
         else { /*Sugeno and Tsukamoto systems*/
             for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
-                output[ i ].v[ sum_wz ] = 0.0; /*store sum wi*/
-                output[ i ].v[ sum_w ] = 0.0; /*store sum zi*wi*/
+                output[ i ].v[ sum_wz ] = 0.0_re; /*store sum wi*/
+                output[ i ].v[ sum_w ] = 0.0_re; /*store sum zi*wi*/
             }
             fuzzyAggregate();
             for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
@@ -489,7 +489,7 @@ bool fis::inference( void ) noexcept
 
         if ( Q_FIS_RULES_BEGIN == rules[ 0 ] ) {
             inferenceState = &fis::inferenceAntecedent;
-            rStrength = 0.0;
+            rStrength = 0.0_re;
             lastConnector = -1;
             ruleCount = 0U;
             i = 1U;

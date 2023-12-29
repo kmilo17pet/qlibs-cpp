@@ -27,7 +27,7 @@
 * @section qtdl_ex1 Example : Code snippet to instantiate a TDL to hold up to 256 delays.
 * 
 *  @code{.c}
-*  real_t storage[ 256 ];
+*  real_t storage[ 256 ] = { 0.0f };
 *  tdl delay( storage );
 *  @endcode
 */

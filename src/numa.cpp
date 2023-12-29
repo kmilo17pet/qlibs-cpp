@@ -1,4 +1,4 @@
-#include "include/numa.hpp"
+#include <include/numa.hpp>
 
 using namespace qlibs;
 
@@ -20,10 +20,10 @@ real_t state::integrate( const real_t s,
             x[ 0 ] += s*dt;
             break;
         case INTEGRATION_TRAPEZOIDAL:
-            x[ 0 ] += 0.5*( s + x[ 1 ] )*dt;
+            x[ 0 ] += 0.5_re*( s + x[ 1 ] )*dt;
             break;
         case INTEGRATION_SIMPSON:
-            x[ 0 ] += ( 1.0/6.0 )*( s + ( 4.0*x[ 1 ] ) + x[ 2 ] )*dt;
+            x[ 0 ] += ( 1.0_re/6.0_re )*( s + ( 4.0_re*x[ 1 ] ) + x[ 2 ] )*dt;
             break;
         default:
             break;

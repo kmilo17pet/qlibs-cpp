@@ -171,12 +171,12 @@ float ffmath::rounding( float x )
 /*============================================================================*/
 float ffmath::floor( float x )
 {
-    return roundf( x - 0.5F );
+    return ffmath::rounding( x - 0.5F );
 }
 /*============================================================================*/
 float ffmath::ceil( float x )
 {
-    return roundf( x + 0.5F );
+    return ffmath::rounding( x + 0.5F );
 }
 /*============================================================================*/
 float ffmath::trunc( float x )
@@ -249,7 +249,7 @@ float ffmath::atan2( float y, float x )
     float t, f;
 
     t = ffmath::FFP_PI - ( ( y < 0.0F ) ? 6.283185307F : 0.0F );
-    f = ( ffmath::absf( x ) <= FLT_MIN ) ? 1.0F : 0.0F;
+    f = ( ffmath::absf( x ) <= 1.175494351e-38F ) ? 1.0F : 0.0F;
     y = ffmath::atan( y/( x + f ) ) + ( ( x < 0.0F ) ? t : 0.0F );
 
     return y + ( f*( ( 0.5F*t ) - y ) );

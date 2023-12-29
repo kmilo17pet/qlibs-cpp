@@ -27,8 +27,8 @@
 *
 *  
 *  static rms rms_instance;
-*  static volatile real_t rms_value = 0.0;
-*  static real_t window[ 8 ] = { 0.0 };
+*  static volatile real_t rms_value = 0.0f;
+*  static real_t window[ 8 ] = { 0.0f };
 *
 *  void TimerA0_Int_Handler( void ) //interrupt tick at 1mS
 *  {

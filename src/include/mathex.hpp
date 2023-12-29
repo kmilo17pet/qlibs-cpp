@@ -9,7 +9,7 @@
 #ifndef QLIBS_MATHEX
 #define QLIBS_MATHEX
 
-#include "include/qlibs_types.hpp"
+#include <include/qlibs_types.hpp>
 
 
 /**
@@ -72,7 +72,7 @@ namespace qlibs {
     */
     bool isEqual( const real_t a,
                   const real_t b,
-                  const real_t tol = DBL_MIN ) noexcept;
+                  const real_t tol = 1.175494351e-38F ) noexcept;
 
     /**
     * @brief Determines if the point at ( @a x, @a y ) is inside the polygon

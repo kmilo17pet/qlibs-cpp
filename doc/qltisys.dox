@@ -44,11 +44,11 @@
 *  
 *  void xTaskSystemSimulate( void )
 *  {
-*      const real_t dt = 0.05; // Time step
+*      const real_t dt = 0.05f; // Time step
 *      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
-*      real_t num[] = { 0.0, 2.0, 3.0, 6.0 };
-*      real_t den[] = { 1.0, 6.0, 11.0, 16.0 };
-*      continuousStates x = { 0, 0, 0 }; // n = 3
+*      real_t num[] = { 0.0f, 2.0f, 3.0f, 6.0f };
+*      real_t den[] = { 1.0f, 6.0f, 11.0f, 16.0f };
+*      continuousStates x = { 0.0f, 0.0f, 0.0f }; // n = 3
 *      continuousSystem gc( num, den, xC, dt );
 *      real_t ut, yt;
 *
@@ -73,11 +73,11 @@
 *  
 *  void xTaskSystemSimulate( void )
 *  {
-*      const real_t dt = 0.05; // Time step
+*      const real_t dt = 0.05f; // Time step
 *      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
 *      continuousTF<3> ctf= {
-*          { 0.0, 2.0, 3.0, 6.0 },
-*          { 1.0, 6.0, 11.0, 16.0 },
+*          { 0.0f, 2.0f, 3.0f, 6.0f },
+*          { 1.0f, 6.0f, 11.0f, 16.0f },
 *      };
 *
 *      continuousSystem gc( ctf, dt );
@@ -120,9 +120,9 @@
 *
 *  void xTaskSystemSimulate( void )
 *  {
-*      real_t num[] = { 0.1, 0.2, 0.3 };
-*      real_t den[] = { 1.0, -0.85, 0.02 };
-*      discreteStates xk[] = { 0, 0, 0 };
+*      real_t num[] = { 0.1f 0.2f, 0.3f };
+*      real_t den[] = { 1.0f, -0.85f, 0.02f };
+*      discreteStates xk[] = { 0.0f, 0.0f, 0.0f };
 *      discreteSystem gc( num, den, xC );
 *      real_t uk, yk;
 *
@@ -147,8 +147,8 @@
 *  void xTaskSystemSimulate( void )
 *  {
 *      discreteTF<3,3> dtf= {
-*          { 0.1, 0.2, 0.3 },
-*          { 1.0, -0.85, 0.02 },
+*          { 0.1f, 0.2f, 0.3f },
+*          { 1.0f, -0.85f, 0.02f },
 *      };
 *      continuousSystem gc( dtf );
 *      real_t uk, yk;

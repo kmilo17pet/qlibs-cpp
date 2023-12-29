@@ -101,8 +101,8 @@
 *  Example: Instantiating an configuring a PID controller:
 *  @code{.c}
 *  pidController control;
-*  const real_t kc = 1.0, ki = 0.1, kd = 0.0;
-*  const real_t dt = 0.01; // time-step of 10mS
+*  const real_t kc = 1.0f, ki = 0.1f, kd = 0.0f;
+*  const real_t dt = 0.01f; // time-step of 10mS
 *  bool ret;
 *
 *  ret = control.setup( kc, ki, kd, dt );
@@ -132,7 +132,7 @@
 *  
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
-*  real_t SetPoint = 300.0; // desired motor speed 300rpm
+*  real_t SetPoint = 300.0f; // desired motor speed 300rpm
 *  
 *  void xTaskPIDspeedControl( void *arg )
 *  {
@@ -153,11 +153,11 @@
 *      bool ret;
 *      
 *      BSP_SystemInit();
-*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      ret = speedControl.setup( 1.0f, 0.1f, 0.0f, static_cast<real_t>( dt/1000.0f ) );
 *      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      speedControl.setSaturation( 0.0, 100.0 );
+*      speedControl.setSaturation( 0.0f, 100.0f );
 *      // Create the task that handles the speed control at the defined rate
 *      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 , nullptr );
 *      vTaskStartScheduler();
@@ -224,16 +224,16 @@
 *  {
 *      picController *controller = static_cast<pidcontroller *>( arg );
 *      continuousTF<1> ctf= {
-*          { 0.0, 1.0 },
-*          { 3.0, 1.0 },
+*          { 0.0f, 1.0f },
+*          { 3.0f, 1.0f },
 *      };
-*      continuousSystem ref_model( ctf, 0.01 );
+*      continuousSystem ref_model( ctf, 0.01f );
 *      real_t processMeasurement;
-*      real_t SetPoint = 300.0; // desired motor speed 300rpm
-*      real_t refmodel_output = 0.0;
-*      real_t controlOutput = 0.0;
+*      real_t SetPoint = 300.0f; // desired motor speed 300rpm
+*      real_t refmodel_output = 0.0f;
+*      real_t controlOutput = 0.0f;
 *
-*      controller->setModelReferenceControl( &refmodel_output, 0.01 );
+*      controller->setModelReferenceControl( &refmodel_output, 0.01f );
 *      for ( ;; ) {
 *          refmodel_output = ref_model->excite( controlOutput );
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
@@ -249,11 +249,11 @@
 *      bool ret;
 *      
 *      BSP_SystemInit( );
-*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      ret = speedControl.setup( 1.0f, 0.1f, 0.0f, static_cast<real_t>( dt/1000.0f ) );
 *      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      speedControl.setSaturation( 0.0, 100.0 );
+*      speedControl.setSaturation( 0.0f, 100.0f );
 *      // Create the task that handles the speed control at the defined rate
 *      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 ,nullptr );
 *      vTaskStartScheduler();
@@ -347,19 +347,19 @@
 *  {
 *      picController *controller = static_cast<pidcontroller *>( arg );
 *      continuousTF<1> ctf= {
-*          { 0.0, 1.0 },
-*          { 3.0, 1.0 },
+*          { 0.0f, 1.0f },
+*          { 3.0f, 1.0f },
 *      };
-*      continuousSystem ref_model( ctf, 0.01 );
+*      continuousSystem ref_model( ctf, 0.01f );
 *      real_t processMeasurement;
-*      real_t SetPoint = 300.0; // desired motor speed 300rpm
-*      real_t tmpSetPoint = 320.0;
+*      real_t SetPoint = 300.0f; // desired motor speed 300rpm
+*      real_t tmpSetPoint = 320.0f;
 *      real_t *p_setpoint  = &SetPoint;  
-*      real_t refmodel_output = 0.0;
-*      real_t controlOutput = 0.0;
+*      real_t refmodel_output = 0.0f;
+*      real_t controlOutput = 0.0f;
 *      uint32_t notification_autotune_enable;
 *
-*      controller->setModelReferenceControl( &refmodel_output, 0.01 );
+*      controller->setModelReferenceControl( &refmodel_output, 0.01f );
 *      for ( ;; ) {
 *          notification_autotune_enable = ulTaskNotifyTake( pdTRUE, 0 ); // dont wait
 *          if ( notification_autotune_enable ) {
@@ -387,11 +387,11 @@
 *      HAL_GPIO_Enable( GPIO12, GPIO_INPUT );
 *      HAL_GPIO_SetInterruptMode( GPIO12, RISING_EDGE );
 *      HAL_GPIO_EnableInterrupts( );
-*      ret = speedControl.setup( 1, 0.1, 0, static_cast<real_t>( dt/1000.0 ) );
+*      ret = speedControl.setup( 1.0f, 0.1f, 0.0f, static_cast<real_t>( dt/1000.0 ) );
 *      if ( !ret ) {
 *          puts( "ERROR: Cant configure PID controller" );
 *      }
-*      speedControl.setSaturation( 0.0, 100.0 );
+*      speedControl.setSaturation( 0.0f, 100.0f );
 *      speedControl.bindAutoTuning( at );
 *      // Create the task that handles the speed control at the defined rate
 *      xTaskCreate( xTaskPIDspeedControl, "speedControl", 1024, &speedControl, configMAX_PRIORITIES - 1 , &pid_task );

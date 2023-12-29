@@ -1,4 +1,5 @@
 #include <include/pid.hpp>
+#include <include/ffmath.hpp>
 
 using namespace qlibs;
 
@@ -13,17 +14,17 @@ bool pidController::setup( const real_t kc,
 {
     bool retValue = false;
 
-    if ( dt > 0.0 ) {
+    if ( dt > 0.0_re ) {
         dt = dT;
-        (void)setDerivativeFilter( 0.98 );
-        (void)setEpsilon( DBL_MIN );
+        (void)setDerivativeFilter( 0.98_re );
+        (void)setEpsilon( REAL_MIN );
         (void)setGains( kc, ki, kd );
-        (void)setSaturation( 0.0, 100.0 );
+        (void)setSaturation( 0.0_re, 100.0_re );
         (void)setMode( pidMode::PID_AUTOMATIC );
-        (void)setManualInput( 0.0 );
-        (void)setExtraGains( 1.0, 1.0 );
+        (void)setManualInput( 0.0_re );
+        (void)setExtraGains( 1.0_re, 1.0_re );
         (void)setDirection( pidDirection::PID_FORWARD );
-        (void)setReferenceWeighting( 1.0, 0.0 );
+        (void)setReferenceWeighting( 1.0_re, 0.0_re );
         init = true;
         retValue = reset();
     }
@@ -126,7 +127,7 @@ bool pidController::setSeries( void ) noexcept
 
         ti = Kc/Ki;
         td = Kd/Kc;
-        tmp = 1.0 + ( td/ti );
+        tmp = 1.0_re + ( td/ti );
         Kc = Kc*tmp;
         Ki = Kc/( ti*tmp );
         Kd = Kc*( td/tmp );
@@ -178,8 +179,8 @@ bool pidController::setReferenceWeighting( const real_t gb,
     bool retValue = false;
 
     if ( init ) {
-        b = saturate( gb, 0.0, 1.0 );
-        c = saturate( gc, 0.0, 1.0 );
+        b = saturate( gb, 0.0_re, 1.0_re );
+        c = saturate( gc, 0.0_re, 1.0_re );
         retValue = true;
     }
 
@@ -206,9 +207,9 @@ bool pidController::reset( void ) noexcept
         c_state.init();
         m_state.init();
         b_state.init();
-        D = 0.0;
-        u1 = 0.0;
-        m = 0.0;
+        D = 0.0_re;
+        u1 = 0.0_re;
+        m = 0.0_re;
         retValue = true;
     }
 
@@ -221,7 +222,7 @@ bool pidController::setModelReferenceControl( const real_t &modelRef,
 {
     bool retValue = false;
 
-    if ( init && ( Gamma > 0.0 ) && ( Alpha > 0.0 ) ) {
+    if ( init && ( Gamma > 0.0_re ) && ( Alpha > 0.0_re ) ) {
         m_state.init();
         alpha = Alpha;
         gamma = Gamma;
@@ -255,13 +256,13 @@ real_t pidController::control( const real_t w,
         ki = Ki;
         kd = Kd;
         if ( pidDirection::PID_BACKWARD == dir ) {
-            kc = ( kc > 0.0 ) ? -kc : kc;
-            ki = ( ki > 0.0 ) ? -ki : ki;
-            kd = ( kd > 0.0 ) ? -kd : kd;
+            kc = ( kc > 0.0_re ) ? -kc : kc;
+            ki = ( ki > 0.0_re ) ? -ki : ki;
+            kd = ( kd > 0.0_re ) ? -kd : kd;
         }
         e = w - y;
-        if ( fabs( e ) <= epsilon ) {
-            e = 0.0;
+        if ( ffmath::absf( e ) <= epsilon ) {
+            e = 0.0_re;
         }
         ie = c_state.integrate( e + u1, dt );
         de = c_state.derivative( ( c*w )- y , dt );
@@ -269,8 +270,8 @@ real_t pidController::control( const real_t w,
         v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
         if ( nullptr != yr ) {
             /*MRAC additive controller using the modified MIT rule*/
-            real_t theta = 0.0;
-            if ( fabs( u1 ) <= epsilon ) { /*additive anti-windup*/
+            real_t theta = 0.0_re;
+            if ( ffmath::absf( u1 ) <= epsilon ) { /*additive anti-windup*/
                 const real_t em = y - yr[ 0 ];
                 const real_t delta = -gamma*em*yr[ 0 ]/( alpha + ( yr[ 0 ]*yr[ 0 ] ) );
                 theta = m_state.integrate( delta /*+ c->u1*/, dt );
@@ -317,17 +318,17 @@ bool pidAutoTuning::step( const real_t u,
     lp01 = il*p01;
     lp10 = il*p10;
     lp11 = il*p11;
-    tmp1 = ( l0*uk ) - 1.0;
-    tmp2 = ( l1*yk ) + 1.0;
-    p00 = ( l0*lp10*yk ) - ( lp00*tmp1 ) + 1e-10;
+    tmp1 = ( l0*uk ) - 1.0_re;
+    tmp2 = ( l1*yk ) + 1.0_re;
+    p00 = ( l0*lp10*yk ) - ( lp00*tmp1 ) + 1e-10_re;
     p01 = ( l0*lp11*yk ) - ( lp01*tmp1 );
     p10 = ( lp10*tmp2 ) - ( l1*lp00*uk );
-    p11 = ( lp11*tmp2 ) - ( l1*lp01*uk ) + 1e-10;
+    p11 = ( lp11*tmp2 ) - ( l1*lp01*uk ) + 1e-10_re;
     /*update I/O measurements*/
     yk = y;
     uk = u;
-    gain = b1/( 1.0 + a1 );
-    timeConstant = -dt/log( fabs( a1 ) );
+    gain = b1/( 1.0_re + a1 );
+    timeConstant = -dt/ffmath::log( ffmath::absf( a1 ) );
     /*cstat -MISRAC++2008-5-14-1*/
     if ( isValidValue( timeConstant ) && isValidValue( gain ) && ( it > 0UL ) ) { /*no side effects here*/
     /*cstat +MISRAC++2008-5-14-1*/
@@ -347,10 +348,10 @@ pidGains pidAutoTuning::getEstimates( const real_t dt ) const noexcept
     real_t tmp1, tmp2;
 
     tmp1 = dt/tao;
-    tmp2 = ( 1.35 + ( 0.25*tmp1 ) );
+    tmp2 = ( 1.35_re + ( 0.25_re*tmp1 ) );
     gains.Kc = ( speed*tmp2*tao )/( k*dt );
-    gains.Ki = ( ( speed*gains.Kc )*( 0.54 + ( 0.33*tmp1 ) ) )/( tmp2*dt );
-    gains.Kd = ( 0.5*speed*gains.Kc*dt )/tmp2;
+    gains.Ki = ( ( speed*gains.Kc )*( 0.54_re + ( 0.33_re*tmp1 ) ) )/( tmp2*dt );
+    gains.Kd = ( 0.5_re*speed*gains.Kc*dt )/tmp2;
 
     return gains;
 }
@@ -374,25 +375,25 @@ bool pidController::bindAutoTuning( pidAutoTuning &at ) noexcept
         real_t k, T;
 
         adapt = &at;
-        at.l = 0.9898;
-        at.il = 1.0/at.l;
-        at.p00 = 1000.0;
-        at.p11 = 1000.0;
-        at.p01 = 0.0;
-        at.p10 = 0.0;
-        at.uk  = 0.0;
-        at.yk = 0.0;
-        at.k = 0.0;
-        at.tao = 0.0;
+        at.l = 0.9898_re;
+        at.il = 1.0_re/at.l;
+        at.p00 = 1000.0_re;
+        at.p11 = 1000.0_re;
+        at.p01 = 0.0_re;
+        at.p10 = 0.0_re;
+        at.uk  = 0.0_re;
+        at.yk = 0.0_re;
+        at.k = 0.0_re;
+        at.tao = 0.0_re;
         at.it = 100UL;
-        at.mu = 0.95;
-        k = Kc/0.9;
-        T = ( 0.27*k )/Ki;
+        at.mu = 0.95_re;
+        k = Kc/0.9_re;
+        T = ( 0.27_re*k )/Ki;
         /*cstat -CERT-FLP32-C_b*/
-        at.a1 = -exp( -dt/T );
+        at.a1 = -ffmath::exp( -dt/T );
         /*cstat +CERT-FLP32-C_b*/
-        at.b1 = k*( 1.0 + at.a1 );
-        at.speed = 0.25;
+        at.b1 = k*( 1.0_re + at.a1 );
+        at.speed = 0.25_re;
         at.it = pidAutoTuning::UNDEFINED;
         retValue = true;
     }
@@ -430,7 +431,7 @@ bool pidController::setAutoTuningParameters( const real_t Mu,
     bool retValue = false;
 
     if ( nullptr != adapt ) {
-        if ( ( Mu > 0.0 ) && ( Mu <= 1.0 ) && ( Alpha > 0.0 ) && ( Alpha <= 1.0 ) && ( lambda >= 0.8 ) && ( lambda <= 1.0 ) ) {
+        if ( ( Mu > 0.0_re ) && ( Mu <= 1.0_re ) && ( Alpha > 0.0_re ) && ( Alpha <= 1.0_re ) && ( lambda >= 0.8_re ) && ( lambda <= 1.0_re ) ) {
             adapt->l = lambda;
             adapt->mu = Mu;
             adapt->speed = Alpha;
@@ -444,7 +445,7 @@ bool pidController::setAutoTuningParameters( const real_t Mu,
 bool pidAutoTuning::isValidValue( const real_t x ) noexcept
 {
      /*cstat -MISRAC++2008-5-14-1*/
-     return ( !isnan( x ) ) && ( x > 0.0 ) && ( !isinf( x ) );
+     return ( !ffmath::isNan( x ) ) && ( x > 0.0_re ) && ( !ffmath::isInf( x ) );
      /*cstat +MISRAC++2008-5-14-1*/
 }
 /*============================================================================*/

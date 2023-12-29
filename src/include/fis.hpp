@@ -9,7 +9,7 @@
 #ifndef QLIBS_FIS
 #define QLIBS_FIS
 
-#include "include/qlibs_types.hpp"
+#include <include/qlibs_types.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -122,9 +122,9 @@ namespace qlibs {
     class fisIOBase {
         protected:
             /*! @cond  */
-            real_t min{ -1.0 };
-            real_t max{ 1.0 };
-            real_t value{ 0.0 };
+            real_t min{ -1.0_re };
+            real_t max{ 1.0_re };
+            real_t value{ 0.0_re };
             /*! @endcond  */
         public:
             virtual ~fisIOBase() {};
@@ -158,13 +158,13 @@ namespace qlibs {
             fis *owner{ nullptr };
             real_t *xag{ nullptr };
             real_t *yag{ nullptr };
-            real_t res{ 0.01 };
-            real_t x{ 0.0 };
-            real_t y{ 0.0 };
-            real_t v[ 4 ] = { 0.0, 0.0, 0.0, 0.0 };
+            real_t res{ 0.01_re };
+            real_t x{ 0.0_re };
+            real_t y{ 0.0_re };
+            real_t v[ 4 ] = { 0.0_re, 0.0_re, 0.0_re, 0.0_re };
             void getNextX( const size_t i ) noexcept
             {
-                x = min + ( ( static_cast<real_t>( i ) + 0.5 )*res );
+                x = min + ( ( static_cast<real_t>( i ) + 0.5_re )*res );
             }
         public:
             fisOutput() = default;
@@ -208,8 +208,8 @@ namespace qlibs {
             virtual ~fisCore() {}
             fisCore() = default;
             static real_t bound( real_t y,
-                                 const real_t minValue,
-                                 const real_t maxValue );
+                                 const real_t minValue = 0.0_re,
+                                 const real_t maxValue= 1.0_re );
             static real_t Min( const real_t a,
                                const real_t b );
             static real_t Prod( const real_t a,
@@ -326,8 +326,8 @@ namespace qlibs {
         private:
             fisMFFunction shape{ nullptr };
             const real_t *points{ nullptr };
-            real_t fx{ 0.0 };
-            real_t h{ 0.0 };
+            real_t fx{ 0.0_re };
+            real_t h{ 0.0_re };
             size_t index{ 0U };
             void evalMFAtIndex( fisIOBase *io )
             {
@@ -337,7 +337,7 @@ namespace qlibs {
             }
             real_t evalMF( fisIOBase &io )
             {
-                real_t y = 0.0;
+                real_t y = 0.0_re;
                 if ( nullptr != shape ) {
                     y = h*shape( &io, points, 1U );
                 }
@@ -346,7 +346,7 @@ namespace qlibs {
             real_t evalMF( fisIOBase *io,
                            size_t n )
             {
-                real_t y = 0.0;
+                real_t y = 0.0_re;
                 if ( nullptr != shape ) {
                     y = shape( io, points, n );
                 }
@@ -527,7 +527,7 @@ namespace qlibs {
             size_t nPoints{ 100 };
             size_t nRules{ 0U };
             size_t ruleCount{ 0U };
-            real_t rStrength{ 0.0 };
+            real_t rStrength{ 0.0_re };
             fisRules lastConnector;
             fisType type{ Mamdani };
             bool setMF( fisMF *m,
@@ -663,7 +663,7 @@ namespace qlibs {
                              const fisTag mf,
                              const fisShapeMF s,
                              const real_t *cp,
-                             const real_t h = 1.0 ) noexcept
+                             const real_t h = 1.0_re ) noexcept
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, s, nullptr, cp, h ) : false;
             }
@@ -684,7 +684,7 @@ namespace qlibs {
                              const fisTag mf,
                              fisMFFunction customMfs,
                              const real_t *cp,
-                             const real_t h = 1.0 ) noexcept
+                             const real_t h = 1.0_re ) noexcept
             {
                 return ( ( nullptr != inMF ) && ( nMFInputs > 0U ) ) ? setMF( inMF, io, mf, custommf, customMfs, cp, h ) : false;
             }
@@ -714,7 +714,7 @@ namespace qlibs {
                               const fisTag mf,
                               const fisShapeMF s,
                               const real_t *cp,
-                              const real_t h = 1.0 ) noexcept
+                              const real_t h = 1.0_re ) noexcept
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false; 
             }
@@ -735,7 +735,7 @@ namespace qlibs {
                               const fisTag mf,
                               fisMFFunction customMfs,
                               const real_t *cp,
-                              const real_t h = 1.0 ) noexcept
+                              const real_t h = 1.0_re ) noexcept
             {
                 return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false; 
             }
@@ -971,7 +971,7 @@ namespace qlibs {
                                     const fisTag mf,
                                     const fisShapeMF s,
                                     const real_t *cp,
-                                    const real_t h = 1.0 ) noexcept
+                                    const real_t h = 1.0_re ) noexcept
             {
                 return sys.setInputMF( io, mf, s, cp, h );
             }
@@ -992,7 +992,7 @@ namespace qlibs {
                                     const fisTag mf,
                                     fisMFFunction customMfs,
                                     const real_t *cp,
-                                    const real_t h = 1.0 ) noexcept
+                                    const real_t h = 1.0_re ) noexcept
             {
                 return sys.setInputMF( io, mf, customMfs, cp, h );
             }
@@ -1022,7 +1022,7 @@ namespace qlibs {
                                      const fisTag mf,
                                      const fisShapeMF s,
                                      const real_t *cp,
-                                     const real_t h = 1.0 ) noexcept
+                                     const real_t h = 1.0_re ) noexcept
             {
                 return sys.setOutputMF( io, mf, s, cp, h );
             }
@@ -1043,7 +1043,7 @@ namespace qlibs {
                                      const fisTag mf,
                                      fisMFFunction customMfs,
                                      const real_t *cp,
-                                     const real_t h = 1.0 ) noexcept
+                                     const real_t h = 1.0_re ) noexcept
             {
                 return sys.setOutputMF( io, mf, customMfs, cp, h );
             }

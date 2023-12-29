@@ -13,7 +13,7 @@
 #ifndef QLIBS_TDL
 #define QLIBS_TDL
 
-#include "include/qlibs_types.hpp" 
+#include <include/qlibs_types.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -37,7 +37,7 @@ namespace qlibs {
             real_t *rd{ nullptr };
             real_t *wr{ nullptr };
             size_t itemCount{ 0U };
-            const real_t undefined{ 0.0/0.0 }; // skipcq: CXX-W2010
+            const real_t undefined{ 0.0_re/0.0_re }; // skipcq: CXX-W2010
 
             void insertNewest( const real_t sample ) noexcept;
             void removeOldest( void ) noexcept;
@@ -54,7 +54,7 @@ namespace qlibs {
             */
             tdl( real_t * const area,
                  const size_t n,
-                 const real_t initVal = 0.0 )
+                 const real_t initVal = 0.0_re )
             {
                 setup( area, n, initVal );
             }
@@ -66,7 +66,7 @@ namespace qlibs {
             */
             template <size_t numberOfDelays>
             tdl( real_t (&area)[ numberOfDelays ],
-                 const real_t initVal = 0.0 ) noexcept
+                 const real_t initVal = 0.0_re ) noexcept
             {
                 setup( area, numberOfDelays, initVal );
             }
@@ -81,7 +81,7 @@ namespace qlibs {
             */
             void setup( real_t * const area,
                         const size_t n,
-                        const real_t initVal = 0.0 ) noexcept;
+                        const real_t initVal = 0.0_re ) noexcept;
 
             /**
             * @brief Setup and initialize a Tapped Delay Line (TDL) instance by setting
@@ -92,7 +92,7 @@ namespace qlibs {
             */
             template <size_t numberOfDelays>
             void setup( real_t (&area)[ numberOfDelays ],
-                        const real_t initVal = 0.0 ) noexcept
+                        const real_t initVal = 0.0_re ) noexcept
             {
                 setup( area, numberOfDelays, initVal );
             }
@@ -102,7 +102,7 @@ namespace qlibs {
             * @param[in] initVal The value with which all TDL delays will be initialized
             * @return none
             */
-            void flush( const real_t initVal = 0.0 ) noexcept;
+            void flush( const real_t initVal = 0.0_re ) noexcept;
 
             /**
             * @brief Get the oldest sample from the TDL x(k-n)

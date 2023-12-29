@@ -1,7 +1,7 @@
 #ifndef QLIBS_GENERIC
 #define QLIBS_GENERIC
 
-#include "include/qlibs_types.hpp"
+#include <include/qlibs_types.hpp>
 
 /*!
  * @file generic.hpp

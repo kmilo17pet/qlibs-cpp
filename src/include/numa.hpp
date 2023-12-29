@@ -9,7 +9,7 @@
 #ifndef QLIBS_NUMA
 #define QLIBS_NUMA
 
-#include "include/qlibs_types.hpp" 
+#include <include/qlibs_types.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -24,7 +24,7 @@ namespace qlibs {
 
     class state {
         private:
-            real_t x[ 3 ] = { 0.0, 0.0, 0.0 };
+            real_t x[ 3 ] = { 0.0_re, 0.0_re, 0.0_re };
             void inline update( const real_t &s )
             {
                 x[ 2 ] = x[ 1 ];
@@ -41,9 +41,9 @@ namespace qlibs {
             * @param[in] sn_2 initial condition at time (t-2)
             * @return none
             */
-            state( const real_t x0 = 0.0,
-                   const real_t sn_1 = 0.0,
-                   const real_t sn_2 = 0.0 ) noexcept
+            state( const real_t x0 = 0.0_re,
+                   const real_t sn_1 = 0.0_re,
+                   const real_t sn_2 = 0.0_re ) noexcept
             {
                 init( x0, sn_1, sn_2 );
             }
@@ -55,9 +55,9 @@ namespace qlibs {
             * @param[in] sn_2 initial condition at time (t-2)
             * @return none
             */
-            void init( const real_t x0 = 0.0,
-                       const real_t sn_1 = 0.0,
-                       const real_t sn_2 = 0.0 ) noexcept;
+            void init( const real_t x0 = 0.0_re,
+                       const real_t sn_1 = 0.0_re,
+                       const real_t sn_2 = 0.0_re ) noexcept;
 
             /**
             * @brief Perform a numerical integration step.

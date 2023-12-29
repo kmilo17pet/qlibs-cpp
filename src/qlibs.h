@@ -41,23 +41,23 @@ This file is part of the QuarkTS++ OS distribution.
 #ifndef QLIBS_CPP_H
 #define QLIBS_CPP_H
 
-#define QLIBS_CPP_VERSION         "1.0.4"
-#define QLIBS_CPP_VERNUM          ( 104u )
+#define QLIBS_CPP_VERSION         "1.0.5"
+#define QLIBS_CPP_VERNUM          ( 105u )
 #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
 
-#include "include/qlibs_types.hpp"
-#include "include/tdl.hpp"
-#include "include/numa.hpp"
-#include "include/ltisys.hpp"
-#include "include/mathex.hpp"
-#include "include/smoother.hpp"
-#include "include/fis.hpp"
-#include "include/pid.hpp"
-#include "include/crc.hpp"
-#include "include/rms.hpp"
-#include "include/fp16.hpp"
-#include "include/generic.hpp"
-#include "include/ffmath.hpp"
+#include <include/qlibs_types.hpp>
+#include <include/tdl.hpp>
+#include <include/numa.hpp>
+#include <include/ltisys.hpp>
+#include <include/mathex.hpp>
+#include <include/smoother.hpp>
+#include <include/fis.hpp>
+#include <include/pid.hpp>
+#include <include/crc.hpp>
+#include <include/rms.hpp>
+#include <include/fp16.hpp>
+#include <include/generic.hpp>
+#include <include/ffmath.hpp>
 
 
 using namespace qlibs;

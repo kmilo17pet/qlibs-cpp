@@ -68,7 +68,7 @@ real_t discreteSystem::updateFIR( real_t *w,
                                   const real_t * const c )
 {
     size_t i;
-    real_t y = 0.0;
+    real_t y = 0.0_re;
 
     if ( nullptr != c ) {
         for ( i = ( wsize - 1U ) ; i >= 1U ; --i ) {
@@ -94,12 +94,17 @@ bool discreteSystem::setInitStates( const real_t *xi )
     bool retValue = false;
 
     if ( isInitialized() ) {
-        for ( size_t i = 0U; i < n ; ++i ) {
-            const real_t zero = 0.0;
-            const real_t * const iv = ( nullptr != xi ) ? &xi[ i ] : &zero;
-            xd[ i ] = iv[ i ];
+        if ( nullptr != xi ) {
+            for ( size_t i = 0U; i < n ; ++i ) {
+                xd[ i ] = xi[ i ];
+            }
         }
-        retValue = true;
+        else {
+            for ( size_t i = 0U; i < n ; ++i ) {
+                xd[ i ] = 0.0_re;
+            }
+        }
+       retValue = true;
     }
 
     return retValue;
@@ -113,7 +118,7 @@ bool discreteSystem::setup( real_t *num,
 {
     bool retValue = false;
 
-    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_a > 0U ) ) {
+    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( n_b > 0U ) ) {
         b = num;
         na = n_a - 1U;
         nb = n_b;
@@ -137,13 +142,12 @@ real_t discreteSystem::update( const real_t u )
     for ( size_t i = 0 ; i < na ; ++i ) {
         v -= a[ i ]*xd[ i ];
     }
-
     return updateFIR( xd, n, v, b );
 }
 /*============================================================================*/
 real_t discreteSystem::excite( real_t u )
 {
-    real_t y = 0.0;
+    real_t y = 0.0_re;
 
     if ( isInitialized() ) {
         if ( tdl::isInitialized() ) {
@@ -186,10 +190,15 @@ bool continuousSystem::setInitStates( const real_t *xi )
     bool retValue = false;
 
     if ( isInitialized() ) {
-        for ( size_t i = 0U; i < n ; ++i ) {
-            const real_t zero = 0.0;
-            const real_t * const iv = ( nullptr != xi ) ? &xi[ i ] : &zero;
-            xc[ i ].init( iv[ 0 ], iv[ 0 ], iv[ 0 ] );
+        if ( nullptr != xi ) {
+            for ( size_t i = 0U; i < n ; ++i ) {
+                xc[ i ].init( xi[ 0 ], xi[ 0 ], xi[ 0 ] );
+            }
+        }
+        else {
+            for ( size_t i = 0U; i < n ; ++i ) {
+                xc[ i ].init();
+            }
         }
         retValue = true;
     }
@@ -199,8 +208,8 @@ bool continuousSystem::setInitStates( const real_t *xi )
 /*============================================================================*/
 real_t continuousSystem::update( const real_t u )
 {
-    real_t y = 0.0;
-    real_t dx0 = 0.0;
+    real_t y = 0.0_re;
+    real_t dx0 = 0.0_re;
 
     if ( 1U == n ) {
         dx0 = ( u - ( xc[ 0 ]*a[ 0 ] ) );
@@ -228,7 +237,7 @@ real_t continuousSystem::update( const real_t u )
 /*============================================================================*/
 real_t continuousSystem::excite( real_t u )
 {
-    real_t y = 0.0;
+    real_t y = 0.0_re;
 
     if ( isInitialized() ) {
         if ( tdl::isInitialized() ) {

@@ -17,18 +17,18 @@ void test_tdl( void )
     real_t delays[ 10 ];
     tdl delayLine( delays );
 
-    delayLine( 3.5 );
-    delayLine( 5 );
-    delayLine( 5.0 );
-    delayLine( 0.5 );
-    delayLine( 1.5 );
-    delayLine( 2.5 );
-    delayLine( 3.5 );
-    delayLine( 4.5 );
-    delayLine( 5.5 );
-    delayLine( 6.5 );
-    delayLine( 7.5 );
-    delayLine( 8.5 );
+    delayLine( 3.5f );
+    delayLine( 5.0f );
+    delayLine( 5.0f );
+    delayLine( 0.5f );
+    delayLine( 1.5f );
+    delayLine( 2.5f );
+    delayLine( 3.5f );
+    delayLine( 4.5f );
+    delayLine( 5.5f );
+    delayLine( 6.5f );
+    delayLine( 7.5f );
+    delayLine( 8.5f );
 
     cout << delayLine[ 0 ] << endl;
     cout << delayLine[ 1 ] << endl;
@@ -67,31 +67,31 @@ void test_fis2( void )
     };
 
     flexnav.setup();
-    flexnav.setupInput( wt, 0.0, 0.5 );
-    flexnav.setupInput( dax, 0.0, 5.0 );
-    flexnav.setupInput( day, 0.0, 5.0 );
-    flexnav.setupInput( ae, 0.0, 20.0 );
-    flexnav.setupOutput( phit, 0.0, 1.0 );
-    flexnav.setupOutput( thetat, 0.0, 1.0 );
-    flexnav.setInputMF( wt, wtSLOW, trimf, (const real_t []){ -0.2 ,0.0 ,0.2 } );
-    flexnav.setInputMF( wt, wtMED, trimf, (const real_t []){ 0.1 ,0.25 , 0.4 } );
-    flexnav.setInputMF( wt, wtFAST, trimf, (const real_t []){ 0.3 ,0.5 ,0.7 });
-    flexnav.setInputMF( dax, daxLOW, trimf, (const real_t []){ -1.0 ,0.0 ,2.0 } );
-    flexnav.setInputMF( dax, daxMED, trimf, (const real_t []){ 1.0 , 2.5 , 4.0 } );
-    flexnav.setInputMF( dax, daxHIGH, trimf, (const real_t []){ 3.0 ,5.0 , 7.0 } );
-    flexnav.setInputMF( day, dayLOW, trimf, (const real_t []){ -2.0 ,0.0 , 2.0 } );
-    flexnav.setInputMF( day, dayMED, trimf, (const real_t []){ 1.0 ,2.5 ,4.0 } );
-    flexnav.setInputMF( day, dayHIGH, trimf, (const real_t []){ 3.0 ,5.0 , 7.0 } );
-    flexnav.setInputMF( ae, aeLOW, trimf, (const real_t []){ -8.0 ,0.0 ,8.0 } );
-    flexnav.setInputMF( ae, aeMED, trimf, (const real_t []){ 5.0 ,10.0 , 15.0 } );
-    flexnav.setInputMF( ae, aeHIGH, trimf, (const real_t []){ 12.0 ,20.0 ,28.0 } );
+    flexnav.setupInput( wt, 0.0f, 0.5f );
+    flexnav.setupInput( dax, 0.0f, 5.0f );
+    flexnav.setupInput( day, 0.0f, 5.0f );
+    flexnav.setupInput( ae, 0.0f, 20.0f );
+    flexnav.setupOutput( phit, 0.0f, 1.0f );
+    flexnav.setupOutput( thetat, 0.0f, 1.0f );
+    flexnav.setInputMF( wt, wtSLOW, trimf, (const real_t []){ -0.2f ,0.0f ,0.2f } );
+    flexnav.setInputMF( wt, wtMED, trimf, (const real_t []){ 0.1f ,0.25f , 0.4f } );
+    flexnav.setInputMF( wt, wtFAST, trimf, (const real_t []){ 0.3f ,0.5f ,0.7f });
+    flexnav.setInputMF( dax, daxLOW, trimf, (const real_t []){ -1.0f ,0.0f ,2.0f } );
+    flexnav.setInputMF( dax, daxMED, trimf, (const real_t []){ 1.0f , 2.5f , 4.0f } );
+    flexnav.setInputMF( dax, daxHIGH, trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
+    flexnav.setInputMF( day, dayLOW, trimf, (const real_t []){ -2.0f ,0.0f , 2.0f } );
+    flexnav.setInputMF( day, dayMED, trimf, (const real_t []){ 1.0f ,2.5f ,4.0f } );
+    flexnav.setInputMF( day, dayHIGH, trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
+    flexnav.setInputMF( ae, aeLOW, trimf, (const real_t []){ -8.0f ,0.0f ,8.0f } );
+    flexnav.setInputMF( ae, aeMED, trimf, (const real_t []){ 5.0f ,10.0f , 15.0f } );
+    flexnav.setInputMF( ae, aeHIGH, trimf, (const real_t []){ 12.0f ,20.0f ,28.0f } );
     
-    flexnav.setOutputMF( phit, phitGYRO, trimf, (const real_t []){ -0.4 ,0.0 ,0.4 } );
-    flexnav.setOutputMF( phit, phitBOTH, trimf, (const real_t []){ 0.2 , 0.5 , 0.8 } );
-    flexnav.setOutputMF( phit, phitACCEL, trimf, (const real_t []){ 0.6 , 1.0 , 1.4 } );
-    flexnav.setOutputMF( thetat, thetatGYRO, trimf, (const real_t []){ -0.4 ,0.0 , 0.4 } );
-    flexnav.setOutputMF( thetat, thetatBOTH, trimf, (const real_t []){ 0.2 , 0.5 , 0.8 } );
-    flexnav.setOutputMF( thetat, thetatACCEL, trimf, (const real_t []){ 0.6 , 1.0 , 1.4 } );
+    flexnav.setOutputMF( phit, phitGYRO, trimf, (const real_t []){ -0.4f ,0.0f ,0.4f } );
+    flexnav.setOutputMF( phit, phitBOTH, trimf, (const real_t []){ 0.2f , 0.5f , 0.8f } );
+    flexnav.setOutputMF( phit, phitACCEL, trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
+    flexnav.setOutputMF( thetat, thetatGYRO, trimf, (const real_t []){ -0.4f ,0.0f , 0.4f } );
+    flexnav.setOutputMF( thetat, thetatBOTH, trimf, (const real_t []){ 0.2f , 0.5f, 0.8f } );
+    flexnav.setOutputMF( thetat, thetatACCEL, trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
 
     flexnav << wt << 0 << dax << 0 << day << 3 << ae << 0;
     flexnav.fuzzify();
@@ -130,17 +130,17 @@ void test_fis( void )
     real_t rulesStrength[ 3 ];
 
     tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
-    tipper.setupInput( service, 0.0, 1.0 );
-    tipper.setupInput( food, 0.0, 10.0 );
-    tipper.setupOutput( tip, 0.0, 30.0 );
-    tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5, 0.0 } );
-    tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5, 5.0 } );
-    tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5, 10.0 } );
-    tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0, 0.0, 1.0, 3.0 } );
-    tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0, 9.0, 10.0, 10.0 } );
-    tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0, 5.0, 10.0 } );
-    tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0, 15.0, 20.0 } );
-    tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0, 25.0, 30.0 } );
+    tipper.setupInput( service, 0.0f, 1.0f );
+    tipper.setupInput( food, 0.0f, 10.0f );
+    tipper.setupOutput( tip, 0.0f, 30.0f );
+    tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+    tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+    tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+    tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+    tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0, 10.0f, 10.0f } );
+    tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+    tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
+    tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
     tipper_outputs[ tip ].storeAggregatedRegion( xag, yag );
 
 
@@ -208,22 +208,25 @@ void test_ltisys( void )
     cout << "LTISYS TEST"<< endl; 
     cout << "continuousSystem"<< endl; 
     continuousTF<3> ctf= {
-        { 0.0, 2.0, 3.0, 6.0 },
-        { 1.0, 6.0, 11.0, 16.0 },
+        { 0.0f, 2.0f, 3.0f, 6.0f },
+        { 1.0f, 6.0f, 11.0f, 16.0f },
     };
-    continuousSystem gc( ctf, 0.01 );
-    for ( int i = 0; i < 3005; i++ ) {
-        cout << gc.excite( 1.0 ) << endl;
+    continuousSystem gc( ctf, 0.01f );
+    for ( int i = 0; i < 1000; i++ ) {
+        cout << gc.excite( 1.0f ) << endl;
     }
 
     cout << "discreteSystem"<< endl; 
-    discreteTF<3,3> dtf= {
-        { 0.1, 0.2, 0.3 },
-        { 1.0, -0.85, 0.02 },
-    };
-    discreteSystem gd( dtf );
-    for ( int i = 0; i < 260; i++ ) {
-        cout << gd.excite( 1.0 ) << endl;
+    //discreteTF<3,3> dtf= {
+    //    { 0.1f, 0.2f, 0.3f },
+    //    { 1.0f, -0.85f, 0.02f },
+    //};
+    real_t num[] = { 0.1f, 0.2f, 0.3f };
+    real_t den[] = { 1.0f, -0.85f, 0.02f };
+    discreteStates<3> xd= { 0.0f, 0.0f, 0.0f };
+    discreteSystem gd( num, den, xd );
+    for ( int i = 0; i < 20; i++ ) {
+        cout << gd.excite( 1.0f ) << endl;
     }
 
 }
@@ -231,19 +234,19 @@ void test_ltisys( void )
 void test_ffmath(void)
 {
     cout << "ffmath" << endl;
-    cout << ffmath::exp( 0.5 ) << endl;
-    cout << ffmath::log( 0.5 ) << endl;
-    cout << ffmath::sin( 0.5 ) << endl;
-    cout << ffmath::cos( 0.5 ) << endl;
-    cout << ffmath::tan( 0.5 ) << endl;
-    cout << ffmath::asin( 0.5 ) << endl;
-    cout << ffmath::acos( 0.5 ) << endl;
-    cout << ffmath::atan( 0.5 ) << endl;
-    cout << ffmath::cosh( 0.5 ) << endl;
-    cout << ffmath::sinh( 0.5 ) << endl;
-    cout << ffmath::tanh( 0.5 ) << endl;
-    cout << ffmath::atan2( 0.1, 0.2 ) << endl;
-    cout << ffmath::pow( 3.8, 2.5 ) << endl;
+    cout << ffmath::exp( 0.5f ) << endl;
+    cout << ffmath::log( 0.5f ) << endl;
+    cout << ffmath::sin( 0.5f ) << endl;
+    cout << ffmath::cos( 0.5f ) << endl;
+    cout << ffmath::tan( 0.5f ) << endl;
+    cout << ffmath::asin( 0.5f ) << endl;
+    cout << ffmath::acos( 0.5f ) << endl;
+    cout << ffmath::atan( 0.5f ) << endl;
+    cout << ffmath::cosh( 0.5f ) << endl;
+    cout << ffmath::sinh( 0.5f ) << endl;
+    cout << ffmath::tanh( 0.5f ) << endl;
+    cout << ffmath::atan2( 0.1f, 0.2f ) << endl;
+    cout << ffmath::pow( 3.8f, 2.5f ) << endl;
     cout << ffmath::getNan() << endl;
     cout << ffmath::getInf() << endl;
 }

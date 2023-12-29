@@ -1,4 +1,5 @@
-#include "include/mathex.hpp"
+#include <include/mathex.hpp>
+#include <include/ffmath.hpp>
 
 namespace qlibs {
 
@@ -25,7 +26,7 @@ bool inRangeCoerce( real_t &x,
 {
     bool retVal = false;
 
-    if ( isnan( x ) ) {
+    if ( ffmath::isNan( x ) ) {
         x = lowerL;
     }
     else {
@@ -47,7 +48,7 @@ bool isEqual( const real_t a,
               const real_t b,
               const real_t tol ) noexcept
 {
-    return ( fabs( a - b ) <= fabs( tol ) );
+    return ( ffmath::absf( a - b ) <= ffmath::absf( tol ) );
 }
 /*============================================================================*/
 bool inPolygon( const real_t x,
