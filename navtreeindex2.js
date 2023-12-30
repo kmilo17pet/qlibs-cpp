@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a5d99257e412433da4f3c932046a26954":[2,4,21,6],
 "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ad07c5255c1a2e0fd8b508e957b10314f":[2,4,21,2],
 "group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0ae356531fce3d510537524c9aef724ae9":[2,4,21,4],
 "group__qfis.html#gga209c5983c134dd6ec058dd2df498508ca0060fbe96fd12ca7aceea37ab41071c6":[2,4,25,1],
@@ -91,8 +90,8 @@ var NAVTREEINDEX2 =
 "group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664":[2,10,1],
 "group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e":[2,10,2],
 "hierarchy.html":[4,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "modules.html":[2],
 "namespacemembers.html":[3,1,0],
 "namespacemembers_enum.html":[3,1,4],
@@ -133,6 +132,7 @@ var NAVTREEINDEX2 =
 "qfp16_desc.html#qfp16_example":[0,4,2],
 "qfp16_desc.html#qfp16_exp_functions":[0,4,1,2],
 "qfp16_desc.html#qfp16_functions":[0,4,1],
+"qfp16_desc.html#qfp16_literal":[0,4,1,4],
 "qfp16_desc.html#qfp16_trig_functions":[0,4,1,3],
 "qltisys_desc.html":[0,3],
 "qltisys_desc.html#qltisys_cont":[0,3,0],

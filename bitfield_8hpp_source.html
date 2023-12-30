@@ -152,31 +152,31 @@ $(document).ready(function(){initNavTree('bitfield_8hpp_source.html',''); initRe
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>( 1U ) &lt;&lt; ( index % LBit );</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">inline</span> <span class="keywordtype">size_t</span> bitSlot( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">inline</span> <span class="keywordtype">size_t</span> slot( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            {</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">return</span> index/LBit;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">inline</span> uint32_t bitGet( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">inline</span> uint32_t get( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> slot = bitSlot( index );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span>  ( field[ slot ] &gt;&gt; ( index % LBit ) ) &amp; 1U;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> s = slot( index );</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span>  ( field[ s ] &gt;&gt; ( index % LBit ) ) &amp; 1U;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> bitSet( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> set( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> slot = bitSlot( index );</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                field[ slot ] |= mask( index );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> s = slot( index );</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                field[ s ] |= mask( index );</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> bitClear( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> clear( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> slot = bitSlot( index );</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> s = slot( index );</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                field[ slot ] &amp;= ~mask( index );</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                field[ s ] &amp;= ~mask( index );</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> bitToggle( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">inline</span> <span class="keywordtype">void</span> toggle( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index ) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> slot = bitSlot( index );</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keyword">const</span> <span class="keywordtype">size_t</span> s = slot( index );</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                field[ slot ] ^= mask( index );</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                field[ s ] ^= mask( index );</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keyword">inline</span> uint32_t safeMask( <span class="keyword">const</span> uint32_t val,</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                      <span class="keyword">const</span> <span class="keywordtype">size_t</span> x,</div>

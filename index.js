@@ -69,7 +69,8 @@ var index =
         [ "Conversion functions", "qfp16_desc.html#qfp16_conv_functions", null ],
         [ "Basic arithmetic", "qfp16_desc.html#qfp16_basic_arithmetic", null ],
         [ "Exponential and transcendental functions", "qfp16_desc.html#qfp16_exp_functions", null ],
-        [ "Trigonometric functions and helpers", "qfp16_desc.html#qfp16_trig_functions", null ]
+        [ "Trigonometric functions and helpers", "qfp16_desc.html#qfp16_trig_functions", null ],
+        [ "Fixed-Point literals", "qfp16_desc.html#qfp16_literal", null ]
       ] ],
       [ "Example: Solution of the quadratic equation", "qfp16_desc.html#qfp16_example", null ]
     ] ],

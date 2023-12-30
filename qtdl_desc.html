@@ -133,8 +133,8 @@ $(document).ready(function(){initNavTree('qtdl_desc.html',''); initResizable(); 
 <p >The delay by one sample is notated \(z^{-1}\) and delays of \(N\) samples is notated as \(z^{-N}\) motivated by the role the z-transform plays in describing digital filter structures.</p>
 <p >To create a TDL, you just need to define an instance of type <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> and then, configure it by using the constructor or <a class="el" href="classqlibs_1_1tdl.html#a6c093d047dfea3e8c1a09a5c278ab139">qlibs::tdl::setup()</a>, where you can define the number of lines to be delayed and the initial values for all of them. Then, you can start operating over this structure by inserting samples of the input signal by using <a class="el" href="classqlibs_1_1tdl.html#ad60dbab54a9e6f69ed070cbfbf11147a">qlibs::tdl::insertSample()</a>. You can also get any specific delay from it by using:</p>
 <ul>
-<li><a class="el" href="classqlibs_1_1tdl.html#ad089734691b7b4b3d5ad632fbf3ea84a">qlibs::tdl::getOldest()</a>, to get the oldest delay at tap \(z^{-N}\)</li>
-<li><a class="el" href="classqlibs_1_1tdl.html#a2a0ad6e826d42329c4da549ba5060a4d">qlibs::tdl::getAtIndex()</a>, to get the delay at tap \(z^{-i}\)</li>
+<li><a class="el" href="classqlibs_1_1tdl.html#ad089734691b7b4b3d5ad632fbf3ea84a">qlibs::tdl::getOldest()</a>, to get the oldest delay at tap \(z^{-N}\) You can also use the index at <code>-1</code> as follows: <code>"delay[ -1 ]"</code> </li>
+<li><a class="el" href="classqlibs_1_1tdl.html#a2a0ad6e826d42329c4da549ba5060a4d">qlibs::tdl::getAtIndex()</a>, to get the delay at tap \(z^{-i}\). You can also use the index using an unsigned value as follows: <code>"delay[ i ]"</code> </li>
 <li>Index operator</li>
 </ul>
 <p >Given the applications of this structure, the <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> class is used as the base component of some aspects of <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a> and <a class="el" href="classqlibs_1_1ltisys.html">qlibs::ltisys</a>.</p>
@@ -143,6 +143,11 @@ Example : Code snippet to instantiate a TDL to hold up to 256 delays.</h1>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> storage[ 256 ] = { 0.0f };</div>
 <div class="line">tdl delay( storage );</div>
 <div class="ttc" id="anamespaceqlibs_html_a8f18e9bdf2c6555715e59c089f15f60c"><div class="ttname"><a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition:</b> qlibs_types.hpp:39</div></div>
+</div><!-- fragment --><div class="fragment"><div class="line">delay.insertSample( 2.5 );</div>
+<div class="line">delay.insertSample( -2.3 );</div>
+<div class="line">delay( 4.8 ); <span class="comment">// same as delay.insertSample( 4.8 )</span></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">auto</span> d3 = delay[ 3 ]; <span class="comment">// get delay at t-3, same as delay.getAtIndex( 3 )</span></div>
+<div class="line"><span class="keyword">auto</span> dOldest = delay[ -1 ]; <span class="comment">// get delay at t-255 , same as delay.getOldest()</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

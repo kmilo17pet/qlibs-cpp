@@ -157,9 +157,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a44ede5ecfd6e581c5448c5035124b138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab626baedcfddadd4a3bec42d530a6e59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59">ltisys</a> ()=default</td></tr>
 <tr class="separator:ab626baedcfddadd4a3bec42d530a6e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73d04d043fefd23b4ab90a5c23460074"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a73d04d043fefd23b4ab90a5c23460074">excite</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> u)=0</td></tr>
-<tr class="memdesc:a73d04d043fefd23b4ab90a5c23460074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the LTI system recursively using the input signal provided.  <a href="classqlibs_1_1ltisys.html#a73d04d043fefd23b4ab90a5c23460074">More...</a><br /></td></tr>
-<tr class="separator:a73d04d043fefd23b4ab90a5c23460074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b58062c2f6bf7320028275c2dd52b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#ad2b58062c2f6bf7320028275c2dd52b4">excite</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> u)</td></tr>
+<tr class="memdesc:ad2b58062c2f6bf7320028275c2dd52b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the LTI system recursively using the input signal provided.  <a href="classqlibs_1_1ltisys.html#ad2b58062c2f6bf7320028275c2dd52b4">More...</a><br /></td></tr>
+<tr class="separator:ad2b58062c2f6bf7320028275c2dd52b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5700dfd0f718292a6d9da75d8211ab90"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a5700dfd0f718292a6d9da75d8211ab90">isInitialized</a> (void) const =0</td></tr>
 <tr class="memdesc:a5700dfd0f718292a6d9da75d8211ab90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LTI system is initialized.  <a href="classqlibs_1_1ltisys.html#a5700dfd0f718292a6d9da75d8211ab90">More...</a><br /></td></tr>
 <tr class="separator:a5700dfd0f718292a6d9da75d8211ab90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +225,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a2e7b0b94f9eb40fc22d124a6639bbfb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e21ee9b0aaada8ccac0238d3d9bd799"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a8e21ee9b0aaada8ccac0238d3d9bd799">saturate</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> y)</td></tr>
 <tr class="separator:a8e21ee9b0aaada8ccac0238d3d9bd799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef73a5a3b6715df2b7508445eb53b40d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#aef73a5a3b6715df2b7508445eb53b40d">update</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> u)=0</td></tr>
+<tr class="separator:aef73a5a3b6715df2b7508445eb53b40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -301,32 +303,25 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a73d04d043fefd23b4ab90a5c23460074" name="a73d04d043fefd23b4ab90a5c23460074"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73d04d043fefd23b4ab90a5c23460074">&#9670;&nbsp;</a></span>excite()</h2>
+<a id="ad2b58062c2f6bf7320028275c2dd52b4" name="ad2b58062c2f6bf7320028275c2dd52b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b58062c2f6bf7320028275c2dd52b4">&#9670;&nbsp;</a></span>excite()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> qlibs::ltisys::excite </td>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> ltisys::excite </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
           <td class="paramname"><em>u</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Drives the LTI system recursively using the input signal provided. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>Instance must be previously initialized. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The user must ensure that this function is executed in the required sample time <em>T</em> or time step <em>dt</em> either by using a HW or SW timer, a real time task or a timing service. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>A sample of the input signal that excites the system </td></tr>
@@ -334,8 +329,6 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The system response. </dd></dl>
-
-<p>Implemented in <a class="el" href="classqlibs_1_1discrete_system.html#ad374d5c62012a52fa27290ba65a15d3f">qlibs::discreteSystem</a>, and <a class="el" href="classqlibs_1_1continuous_system.html#a6a34931fcfd6ea6dbcf37138e7bbb3ca">qlibs::continuousSystem</a>.</p>
 
 </div>
 </div>
@@ -607,6 +600,32 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="aef73a5a3b6715df2b7508445eb53b40d" name="aef73a5a3b6715df2b7508445eb53b40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef73a5a3b6715df2b7508445eb53b40d">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> qlibs::ltisys::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
