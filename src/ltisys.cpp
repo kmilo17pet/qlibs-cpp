@@ -62,6 +62,21 @@ bool ltisys::setSaturation( const real_t minV,
     return retValue;
 }
 /*============================================================================*/
+real_t ltisys::excite( real_t u )
+{
+    real_t y = 0.0_re;
+
+    if ( isInitialized() ) {
+        if ( tdl::isInitialized() ) {
+            insertSample( u );
+            u = getOldest();
+        }
+        y = saturate( update( u ) );
+    }
+
+    return y;
+}
+/*============================================================================*/
 real_t discreteSystem::updateFIR( real_t *w,
                                   const size_t wsize,
                                   const real_t x,
@@ -145,21 +160,6 @@ real_t discreteSystem::update( const real_t u )
     return updateFIR( xd, n, v, b );
 }
 /*============================================================================*/
-real_t discreteSystem::excite( real_t u )
-{
-    real_t y = 0.0_re;
-
-    if ( isInitialized() ) {
-        if ( tdl::isInitialized() ) {
-            insertSample( u );
-            u = getOldest();
-        }
-        y = saturate( update( u ) );
-    }
-
-    return y;
-}
-/*============================================================================*/
 bool continuousSystem::setup( real_t *num,
                               real_t *den,
                               state *x,
@@ -230,21 +230,6 @@ real_t continuousSystem::update( const real_t u )
         (void)xc[ 0 ].integrate( dx0, dt ); /*integrate to get the first state*/
         /*compute the remaining part of the output*/
         y += ( b[ 0 ] - ( a[ 0 ]*b0 ) )*xc[ 0 ];
-    }
-
-    return y;
-}
-/*============================================================================*/
-real_t continuousSystem::excite( real_t u )
-{
-    real_t y = 0.0_re;
-
-    if ( isInitialized() ) {
-        if ( tdl::isInitialized() ) {
-            insertSample( u );
-            u = getOldest();
-        }
-        y = saturate( update( u ) );
     }
 
     return y;

@@ -9,6 +9,7 @@ void test_tdl( void );
 void test_fp16( void );
 void test_crc( void );
 void test_ltisys( void );
+void test_ffmath( void );
 
 void test_tdl( void )
 {

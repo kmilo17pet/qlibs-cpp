@@ -26,11 +26,11 @@
 * Conversion from integers and floating-point values. These conversions retain 
 * the numeric value and perform rounding where necessary.
 *
-* - \ref qlibs::fp16::from() Convert int/float or double to the qlibs::fp16 type
-* - \ref qlibs::fp16::toInt() Convert qlibs::fp16 to integer.
-* - \ref qlibs::fp16::toFloat() Convert qlibs::fp16 to float.
-* - \ref qlibs::fp16::toDouble() Convert qlibs::fp16 to double.
-* - \ref fp16::toASCII()  Convert from qlibs::fp16 to raw c-string.
+* - \ref qlibs::fp16 "from()" Convert @c int , @c float or @c double to the qlibs::fp16 type. For constants use the fixed-point literal
+* - \ref qlibs::fp16 "toInt()" Convert qlibs::fp16 to integer.
+* - \ref qlibs::fp16 "toFloat()" Convert qlibs::fp16 to float.
+* - \ref qlibs::fp16 "toDouble()" Convert qlibs::fp16 to double.
+* - \ref qlibs::fp16 "toASCII()"  Convert from qlibs::fp16 to raw c-string.
 *
 * @subsection  qfp16_basic_arithmetic Basic arithmetic
 *
@@ -46,33 +46,41 @@
 *
 * Roots, exponents & similar.
 *
-* - \ref qlibs::fp16::sqrt()  Square root. Performs rounding and is accurate to fp16 limits.
-* - \ref qlibs::fp16::exp()   Exponential function using power series approximation.
+* - \ref qlibs::fp16 "sqrt()"  Square root. Performs rounding and is accurate to fp16 limits.
+* - \ref qlibs::fp16 "exp()"   Exponential function using power series approximation.
 * Accuracy depends on range, worst case \c +-40 absolute for negative inputs and
 * @c +-0.003% for positive inputs. Average error is @c +-1 for neg and @c +-0.0003% for pos.
-* - \ref qlibs::fp16::log()  Natural logarithm using Newton approximation and qlibs::fp16::exp().
+* - \ref qlibs::fp16 "log()"  Natural logarithm using Newton approximation and \ref qlibs::fp16 "exp()".
 * Worst case error \c +-3 absolute, average error less than 1 unit.
-* - \ref qlibs::fp16::log2()  Logarithm base 2.
-* - \ref qlibs::fp16::pow()  Computes the power of a qlibs::fp16 number
+* - \ref qlibs::fp16 "log2()"  Logarithm base 2.
+* - \ref qlibs::fp16 "pow()"  Computes the power of a qlibs::fp16 number
 *
 *
 * @subsection qfp16_trig_functions Trigonometric functions and helpers
 *
-* - sin()  Sine for angle in radians
-* - \ref qlibs::fp16::cos()  Cosine for angle in radians
-* - \ref qlibs::fp16::tan()  Tangent for angle in radians
-* - \ref qlibs::fp16::asin()  Inverse of sine, output in radians
-* - \ref qlibs::fp16::acos()  Inverse of cosine, output in radians
-* - \ref qlibs::fp16::atan()  Inverse of tangent, output in radians
-* - \ref qlibs::fp16::atan2()  Arc tangent in radians x,y
-* - \ref qlibs::fp16::sinh()  Hyperbolic sine
-* - \ref qlibs::fp16::cosh()  Hyperbolic cosine
-* - \ref qlibs::fp16::tanh()  Hyperbolic tangent
-* - \ref qlibs::fp16::radToDeg()  Converts angle units from radians to degrees.
-* - \ref qlibs::fp16::degToRad()  Converts angle units from degrees to radians
-* - \ref qlibs::fp16::wrapToPi()  Wrap the fixed-point angle in radians to [−pi pi]
-* - \ref qlibs::fp16::wrapTo180()  Wrap the fixed-point angle in degrees  to [−180 180]
+* - \ref qlibs::fp16 "sin()"  Sine for angle in radians
+* - \ref qlibs::fp16 "cos()"  Cosine for angle in radians
+* - \ref qlibs::fp16 "tan()"  Tangent for angle in radians
+* - \ref qlibs::fp16 "asin()"  Inverse of sine, output in radians
+* - \ref qlibs::fp16 "acos()"  Inverse of cosine, output in radians
+* - \ref qlibs::fp16 "atan()"  Inverse of tangent, output in radians
+* - \ref qlibs::fp16 "atan2()"  Arc tangent in radians x,y
+* - \ref qlibs::fp16 "sinh()"  Hyperbolic sine
+* - \ref qlibs::fp16 "cosh()"  Hyperbolic cosine
+* - \ref qlibs::fp16 "tanh()"  Hyperbolic tangent
+* - \ref qlibs::fp16 "radToDeg()"  Converts angle units from radians to degrees.
+* - \ref qlibs::fp16 "degToRad()"  Converts angle units from degrees to radians
+* - \ref qlibs::fp16 "wrapToPi()"  Wrap the fixed-point angle in radians to [−pi pi]
+* - \ref qlibs::fp16 "wrapTo180()"  Wrap the fixed-point angle in degrees  to [−180 180]
 *
+* @subsection qfp16_literal Fixed-Point literals
+*
+* Fixed-point literal defines a compile-time constant whose value is specified 
+* in the source file.
+* The suffix @c _fp indicates a type of \ref qlibs::fp16.
+*
+* A plus (+) or minus (-) symbol can precede a fixed-point literal. However, 
+* it is not part of the literal; it is interpreted as a unary operator.
 *
 * @section qfp16_example Example: Solution of the quadratic equation
 * 

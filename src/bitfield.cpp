@@ -50,7 +50,7 @@ bool bitfield::setBit( const size_t index ) noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        bitSet( index );
+        set( index );
         retValue = true;
     }
 
@@ -62,7 +62,7 @@ bool bitfield::clearBit( const size_t index ) noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        bitClear( index );
+        clear( index );
         retValue = true;
     }
 
@@ -74,7 +74,7 @@ bool bitfield::toggleBit( const size_t index ) noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        bitToggle( index );
+        toggle( index );
         retValue = true;
     }
 
@@ -86,7 +86,7 @@ bool bitfield::readBit( const size_t index ) const noexcept
     bool retValue = false;
 
     if ( nullptr != field ) {
-        retValue = 0U != bitGet( index );
+        retValue = 0U != get( index );
     }
 
     return retValue;
@@ -99,10 +99,10 @@ bool bitfield::writeBit( const size_t index,
 
     if ( nullptr != field ) {
         if ( value ) {
-            bitSet( index );
+            set( index );
         }
         else {
-            bitClear( index );
+            clear( index );
         }
         retValue = true;
     }
@@ -206,18 +206,18 @@ void* bitfield::dump( void * const dst,
 /*============================================================================*/
 uint32_t bitfield::read_uint32( const size_t index ) const noexcept
 {
-    size_t slot, of, bits_taken;
+    size_t s, of, bits_taken;
     uint32_t result;
 
-    slot = bitSlot( index );
+    s = slot( index );
     of = offset( index );
     /*cstat -CERT-INT34-C_a*/
-    result = field[ slot ] >> of;
+    result = field[ s ] >> of;
     /*cstat +CERT-INT34-C_a*/
     bits_taken  = 32U - of;
     if ( ( 0U != of ) && ( ( index + bits_taken ) < size ) ) {
         /*cstat -ATH-shift-bounds -MISRAC++2008-5-8-1 -CERT-INT34-C_b*/
-        result |= field[ slot + 1U ] << static_cast<uint32_t>( bits_taken );
+        result |= field[ s + 1U ] << static_cast<uint32_t>( bits_taken );
         /*cstat +ATH-shift-bounds +MISRAC++2008-5-8-1 +CERT-INT34-C_b*/
     }
 
@@ -228,20 +228,20 @@ void bitfield::write_uint32( const size_t index,
                              const uint32_t value ) noexcept
 {
     uint32_t wMask;
-    size_t slot, of;
+    size_t s, of;
 
-    slot = bitSlot( index );
+    s = slot( index );
     of = offset( index );
     if ( 0U == of ) {
-        field[ slot ] = value;
+        field[ s ] = value;
     }
     else {
         wMask = safeMask( 0xFFFFFFFFU, LBit, of );
         /*cstat -CERT-INT34-C_a*/
-        field[ slot ] = ( value << of ) | ( field[ slot ] & wMask );
+        field[ s ] = ( value << of ) | ( field[ s ] & wMask );
         /*cstat +CERT-INT34-C_a*/
-        if ( ++slot < nSlots ) {
-            field[ slot ] = safeMask( value, 32U, of ) | ( field[ slot ] & ( ~wMask ) );
+        if ( ++s < nSlots ) {
+            field[ s ] = safeMask( value, 32U, of ) | ( field[ s ] & ( ~wMask ) );
         }
     }
 }

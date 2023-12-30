@@ -5,6 +5,7 @@ using namespace qlibs;
 template<typename T1, typename T2>
 static inline void cast_reinterpret( T1 &f, const T2 &u )
 {
+    static_assert( sizeof(T1)==sizeof(T2), "Types must match sizes" );
     (void)memcpy( &f, &u, sizeof(T2) );
 }
 
@@ -204,13 +205,18 @@ float ffmath::mod( float x, float y )
 float ffmath::sin( float x )
 {
     float y;
+    if ( ffmath::absf( x ) <= 0.0066F ) {
+        y = x;
+    }
+    else {
+        x *= -ffmath::FFP_1_PI;
+        y = x + 25165824.0F;
+        x -= y - 25165824.0F;
+        x *= ffmath::absf( x ) - 1.0F;
+        y = x*( ( 3.5841304553896F*ffmath::absf( x ) ) + 3.1039673861526F );
+    }
 
-    x *= -ffmath::FFP_1_PI;
-    y = x + 25165824.0F;
-    x -= y - 25165824.0F;
-    x *= ffmath::absf( x ) - 1.0F;
-
-    return x*( ( 3.5841304553896F*ffmath::absf( x ) ) + 3.1039673861526F );
+    return y;
 }
 /*============================================================================*/
 float ffmath::cos( float x )

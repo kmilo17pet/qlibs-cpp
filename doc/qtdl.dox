@@ -18,7 +18,9 @@
 * You can also get any specific delay from it by using:
 *
 * - \ref qlibs::tdl::getOldest(), to get the oldest delay at tap \f$z^{-N}\f$
-* - \ref qlibs::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$
+* You can also use the index at @c -1 as follows: @c "delay[ -1 ]"
+* - \ref qlibs::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$.
+* You can also use the index using an unsigned value as follows: @c "delay[ i ]"
 * - Index operator
 *
 * Given the applications of this structure, the \ref qlibs::tdl class is used as the
@@ -29,5 +31,16 @@
 *  @code{.c}
 *  real_t storage[ 256 ] = { 0.0f };
 *  tdl delay( storage );
+*  @endcode
+*
+* @code{.c}
+*  delay.insertSample( 2.5 );
+*  delay.insertSample( -2.3 );
+*  delay( 4.8 ); // same as delay.insertSample( 4.8 )
+*  @endcode
+*
+* @code{.c}
+*  auto d3 = delay[ 3 ]; // get delay at t-3, same as delay.getAtIndex( 3 )
+*  auto dOldest = delay[ -1 ]; // get delay at t-255 , same as delay.getOldest()
 *  @endcode
 */

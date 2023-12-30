@@ -46,31 +46,31 @@ namespace qlibs {
             {
                 return static_cast<uint32_t>( 1U ) << ( index % LBit );
             }
-            inline size_t bitSlot( const size_t index ) const noexcept
+            inline size_t slot( const size_t index ) const noexcept
             {
                 return index/LBit;
             }
-            inline uint32_t bitGet( const size_t index ) const noexcept
+            inline uint32_t get( const size_t index ) const noexcept
             {
-                const size_t slot = bitSlot( index );
-                return  ( field[ slot ] >> ( index % LBit ) ) & 1U;
+                const size_t s = slot( index );
+                return  ( field[ s ] >> ( index % LBit ) ) & 1U;
             }
-            inline void bitSet( const size_t index ) noexcept
+            inline void set( const size_t index ) noexcept
             {
-                const size_t slot = bitSlot( index );
-                field[ slot ] |= mask( index );
+                const size_t s = slot( index );
+                field[ s ] |= mask( index );
             }
-            inline void bitClear( const size_t index ) noexcept
+            inline void clear( const size_t index ) noexcept
             {
-                const size_t slot = bitSlot( index );
+                const size_t s = slot( index );
 
-                field[ slot ] &= ~mask( index );
+                field[ s ] &= ~mask( index );
             }
-            inline void bitToggle( const size_t index ) noexcept
+            inline void toggle( const size_t index ) noexcept
             {
-                const size_t slot = bitSlot( index );
+                const size_t s = slot( index );
 
-                field[ slot ] ^= mask( index );
+                field[ s ] ^= mask( index );
             }
             inline uint32_t safeMask( const uint32_t val,
                                       const size_t x,

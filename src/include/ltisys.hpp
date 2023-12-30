@@ -98,6 +98,8 @@ namespace qlibs {
                                             size_t n_den );
             real_t saturate( real_t y );
             ltisysType type{ LTISYS_TYPE_UNKNOWN };
+            virtual real_t update( const real_t u ) = 0;
+
         public:
             virtual ~ltisys() {}
             ltisys() = default;
@@ -105,10 +107,13 @@ namespace qlibs {
             /**
             * @brief Drives the LTI system recursively using the input signal provided
             * @pre Instance must be previously initialized.
+            * @note The user must ensure that this function is executed in the 
+            * required sample time @a T  or time step @a dt either by using a 
+            * HW or SW timer, a real time task or a timing service.
             * @param[in] u A sample of the input signal that excites the system
             * @return The system response.
             */
-            virtual real_t excite( real_t u ) = 0;
+            real_t excite( real_t u );
 
             /**
             * @brief Check if the LTI system is initialized.
@@ -167,7 +172,7 @@ namespace qlibs {
     class discreteSystem : public ltisys {
         private:
             real_t *xd{ nullptr };
-            real_t update( const real_t u );
+            real_t update( const real_t u ) override;
         public:
             virtual ~discreteSystem() {}
 
@@ -352,20 +357,6 @@ namespace qlibs {
                                      const size_t wsize,
                                      const real_t x,
                                      const real_t * const c = nullptr );
-
-            /**
-            * @brief Drives the discrete LTI system recursively using the input 
-            * signal provided
-            * @pre Instance must be previously initialized using the 
-            * discreteSystem::setup() method
-            * @note The user must ensure that this function is executed in the 
-            * required sample time @a T either by using a HW or SW timer, a 
-            * real time task or a timing service.
-            * @param[in] u A sample of the input signal that excites the system
-            * @return The system response.
-            */
-            real_t excite( real_t u ) override;
-
     };
 
     /**
@@ -377,7 +368,7 @@ namespace qlibs {
         private:
             real_t dt{ 1.0_re };
             state *xc{ nullptr };
-            real_t update( const real_t u );
+            real_t update( const real_t u ) override;
         public:
             virtual ~continuousSystem() {}
 
@@ -560,19 +551,6 @@ namespace qlibs {
             * @return @c true on success, otherwise return @c false.
             */
             bool setIntegrationMethod( integrationMethod m );
-
-            /**
-            * @brief Drives the continuous LTI system recursively using the input 
-            * signal provided
-            * @pre Instance must be previously initialized using the 
-            * continuousSystem::setup() method
-            * @note The user must ensure that this function is executed in the time
-            * specified in @a dt either by using a HW or SW timer, a real time task,
-            * or a timing service.
-            * @param[in] u A sample of the input signal that excites the system
-            * @return The system response.
-            */
-            real_t excite( real_t u ) override;
     };
 
     /** @}*/
