@@ -19,7 +19,7 @@
 */
 namespace qlibs {
 
-    /** @addtogroup qrms RMS estimator.
+    /** @addtogroup qrms RMS estimator
     * @brief Class for Recursive Root Mean Square RMS estimation
     *  @{
     */

@@ -2,6 +2,8 @@
 
 using namespace qlibs;
 
+/*! @cond  */
+
 struct sortStackNode {
     uint8_t *lo;
     uint8_t *hi;
@@ -332,5 +334,7 @@ int generic::forEach( void *pbase,
     return retVal;
 }
 /*============================================================================*/
+
+/*! @endcond  */
 
 /*cstat +CERT-EXP36-C_b*/

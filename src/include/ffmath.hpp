@@ -112,6 +112,13 @@ namespace qlibs {
         }
 
         /**
+        * @brief Computes the sign function ( signum function).
+        * @param[in] x The floating point value
+        * @return  The sign function of @a x
+        */
+        float sign( float x );
+
+        /**
         * @brief Computes the absolute value of a floating point value @a x.
         * @param[in] x The floating point value
         * @return  The absolute value of @a x
@@ -199,21 +206,47 @@ namespace qlibs {
         float frac( float x );
 
         /**
-        * @brief Computes the IEEE remainder of the floating point division 
-        * operation @c x/y
+        * @brief Computes the floating point remainder after division of @a x 
+        * by @a y, where  @a x is the dividend and @a y is the divisor. This 
+        * function is often called the remainder operation, which can be 
+        * expressed as @c r=a-(b*trunc(a/b)) . This function follows the 
+        * convention that @c rem(x,0) is @c nan.
+        * @note The concept of remainder after division is not uniquely defined,
+        * and the two functions ffmath::mod() and ffmath::rem() each compute a 
+        * different variation.
+        * The ffmath::mod() function produces a result that is either zero or 
+        * has the same sign as the divisor. The ffmath::rem() function produces 
+        * a result that is either zero or has the same sign as the dividend.
+        * Another difference is the convention when the divisor is zero. The 
+        * ffmath::mod() function follows the convention that @c mod(x,0) 
+        * returns @c x, whereas the rem function follows the convention that 
+        * @c rem(x,0) returns @c nan.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
         * @return If successful, returns the IEEE floating-point remainder of the 
         * division @c x/y. If a domain error occurs, a @c nan value is returned.
         */
-        float remainder( float x, float y );
+        float rem( float x, float y );
 
         /**
-        * @brief Computes the floating-point remainder of the division operation 
-        * @c x/y
+        * @brief Computes the floating point remainder after division of @a x 
+        * by @a y, where  @a x is the dividend and @a y is the divisor. This 
+        * function is often called the modulo operation, which can be expressed 
+        * as @c b=a-m*floor(a/m) . This function follows the convention that 
+        * @c mod(x,0) returns x.
+        * @note The concept of remainder after division is not uniquely defined,
+        * and the two functions ffmath::mod() and ffmath::rem() each compute a 
+        * different variation.
+        * The ffmath::mod() function produces a result that is either zero or 
+        * has the same sign as the divisor. The ffmath::rem() function produces 
+        * a result that is either zero or has the same sign as the dividend.
+        * Another difference is the convention when the divisor is zero. The 
+        * ffmath::mod() function follows the convention that @c mod(x,0) 
+        * returns @c x, whereas the rem function follows the convention that 
+        * @c rem(x,0) returns @c nan.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
-        * @return If successful, returns the floating-point remainder of the 
+        * @return If successful, returns the IEEE floating-point remainder of the 
         * division @c x/y. If a domain error occurs, a @c nan value is returned.
         */
         float mod( float x, float y );
@@ -399,6 +432,42 @@ namespace qlibs {
         float atanh( float x );
 
         /**
+        * @brief Wraps angle @a x, in radians, to the interval [−pi, pi] such that
+        * pi maps to pi and −pi maps to −pi. In general, odd, positive multiples
+        * of pi map to pi and odd, negative multiples of pi map to −pi.
+        * @param x The angle in radians
+        * @return The angle @a x wrapped to the [-pi, pi] interval
+        */
+        float wrapToPi( float x );
+
+        /**
+        * @brief Wraps angle @a x, in radians, to the interval [0, 2*pi] such that
+        * 0 maps to 0 and 2*pi and 2*pi maps to 2*pi. In general, positive multiples
+        * of 2*pi map to 2*pi and negative multiples of 2*pi map to 0.
+        * @param x The angle in radians
+        * @return The angle @a x wrapped to the [0, 2*pi] interval
+        */
+        float wrapTo2Pi( float x );
+
+        /**
+        * @brief Wraps angle @a x, in degrees, to the interval [–180, 180] such 
+        * that 180 maps to 180 and –180 maps to –180. In general, odd, positive 
+        * multiples of 180 map to 180 and odd, negative multiples of 180 map to –180.
+        * @param x The angle in degrees
+        * @return The angle @a x wrapped to the [-pi, pi] interval
+        */
+        float wrapTo180( float x );
+
+        /**
+        * @brief Wraps angle @a x, in degrees, to the interval [0, 360] such 
+        * that 0 maps to 0 and 360 maps to 360. In general, positive multiples
+        * of 360 map to 360 and negative multiples of 360 map to zero.
+        * @param x The angle in degrees
+        * @return The angle @a x wrapped to the [0, 360] interval
+        */
+        float wrapTo360( float x );
+
+        /**
         * @brief Computes the error function of @a x.
         * @param[in] x The floating point value
         * @return If no errors occur, value the error function is returned.
@@ -466,7 +535,7 @@ namespace qlibs {
         float nextAfter( float x, float y );
 
         /*cstat -MISRAC++2008-0-1-4_b*/
-        
+
         /** @brief The base of natural logarithms ( e ) given as a single-precision floating-point number*/
         constexpr float FFP_E         = ( 2.71828182845904523540F );
         /** @brief The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number */
@@ -495,7 +564,7 @@ namespace qlibs {
         constexpr float FFP_SQRT1_2   = ( 0.70710678118654752440F );
 
         /*cstat +MISRAC++2008-0-1-4_b*/
-        
+
         /** @}*/
     }
 }

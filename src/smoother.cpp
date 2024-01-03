@@ -3,7 +3,7 @@
 #include <include/ffmath.hpp>
 
 using namespace qlibs;
-
+/*! @cond  */
 /*============================================================================*/
 void smoother::windowSet( real_t *w,
                           const size_t wsize,
@@ -13,6 +13,7 @@ void smoother::windowSet( real_t *w,
         w[ i ] = x;
     }
 }
+/*! @endcond  */
 /*============================================================================*/
 bool smootherLPF1::setup( const real_t a )
 {
@@ -317,7 +318,7 @@ real_t smootherKLMN::smooth( const real_t x )
     p = ( A*A*p ) + q; /* p(n|n-1)=A^2*p(n-1|n-1)+q */
     /* Measurement */
     pH = p*H;
-    gain =  pH/( r + ( H*pH ) );
+    gain = pH/( r + ( H*pH ) );
     xS += gain*( x - ( H*xS ) );
     p = ( 1.0_re - ( gain*H ) )*p; /*covariance update*/
 

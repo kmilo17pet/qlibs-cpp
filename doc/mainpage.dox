@@ -72,7 +72,7 @@
 */
 
 /**
-*  @defgroup qrms RMS
+*  @defgroup qrms RMS estimator
 *  For a brief description of this module, please read \ref qrms_desc
 */
 

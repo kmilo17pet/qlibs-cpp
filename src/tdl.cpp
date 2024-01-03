@@ -2,6 +2,7 @@
 
 using namespace qlibs;
 
+/*! @cond  */
 /*============================================================================*/
 void tdl::setup( real_t * const area,
                  const size_t n,
@@ -83,3 +84,4 @@ const real_t& tdl::operator[]( int index ) noexcept
     /*cstat +MISRAC++2008-6-6-5*/
 }
 /*============================================================================*/
+/*! @endcond  */

@@ -4,36 +4,36 @@
 
 using namespace qlibs;
 
-const size_t fis::INFERENCE_ERROR = 0U;
+const size_t fis::instance::INFERENCE_ERROR = 0U;
 /*============================================================================*/
-bool fis::setParameter( const fisParameter p,
-                        const fisParamValue x ) noexcept
+bool fis::instance::setParameter( const fis::parameter p,
+                                  const fis::paramValue x ) noexcept
 {
     bool retValue = false;
     static const methods_fcn method[ 5 ] = {
         &Min, &Prod, &Max, &ProbOr, &Sum
     };
     switch ( p ) {
-        case fisParameter::FIS_Aggregation:
-            if ( ( x >= fisParamValue::FIS_MAX ) && ( x <= fisParamValue::FIS_SUM ) ) {
+        case fis::parameter::FIS_Aggregation:
+            if ( ( x >= fis::paramValue::FIS_MAX ) && ( x <= fis::paramValue::FIS_SUM ) ) {
                 aggregate = method[ x ];
                 retValue = true;
             }
             break;
-        case fisParameter::FIS_Implication:
-            if ( x <= fisParamValue::FIS_PROBOR ) {
+        case fis::parameter::FIS_Implication:
+            if ( x <= fis::paramValue::FIS_PROBOR ) {
                 implicate = method[ x ];
                 retValue = true;
             }
             break;
-        case fisParameter::FIS_AND:
-            if ( x <= fisParamValue::FIS_PROD ) {
+        case fis::parameter::FIS_AND:
+            if ( x <= fis::paramValue::FIS_PROD ) {
                 andOp = method[ x ];
                 retValue = true;
             }
             break;
-        case fisParameter::FIS_OR:
-            if ( ( x >= fisParamValue::FIS_MAX ) && ( x <= fisParamValue::FIS_PROBOR ) ) {
+        case fis::parameter::FIS_OR:
+            if ( ( x >= fis::paramValue::FIS_MAX ) && ( x <= fis::paramValue::FIS_PROBOR ) ) {
                 orOp = method[ x ];
                 retValue = true;
             }
@@ -45,22 +45,24 @@ bool fis::setParameter( const fisParameter p,
     return retValue;
 }
 /*============================================================================*/
-bool fis::setDeFuzzMethod( fisDeFuzzMethod m ) noexcept
+bool fis::instance::setDeFuzzMethod( fis::deFuzzMethod m ) noexcept
 {
     bool retValue = false;
 
-    static const fisDeFuzzFunction method[ FIS_NUM_DEFUZZ ] = { &deFuzzCentroid,
-                                                                &deFuzzBisector,
-                                                                &deFuzzMOM,
-                                                                &deFuzzLOM,
-                                                                &deFuzzSOM,
-                                                                &deFuzzWtAverage,
-                                                                &deFuzzWtSum
-                                                          };
+    static const fis::deFuzzFunction method[ FIS_NUM_DEFUZZ ] = { &deFuzzCentroid,
+                                                                  &deFuzzBisector,
+                                                                  &deFuzzMOM,
+                                                                  &deFuzzLOM,
+                                                                  &deFuzzSOM,
+                                                                  &deFuzzWtAverage,
+                                                                  &deFuzzWtSum
+                                                                };
 
     if ( m < FIS_NUM_DEFUZZ ) {
         /*cppcheck-suppress knownConditionTrueFalse */
-        if ( ( ( Mamdani == type ) && ( m <= som ) ) || ( ( Sugeno == type ) && ( m >= wtaver ) && ( m <= wtsum ) ) || ( ( Tsukamoto == type ) && ( wtaver == m ) )) {
+        if ( ( ( Mamdani == xType ) && ( m <= som ) ) || 
+             ( ( Sugeno == xType ) && ( m >= wtaver ) && ( m <= wtsum ) ) ||
+             ( ( Tsukamoto == xType ) && ( wtaver == m ) ) ) {
             deFuzz = method[ m ];
             retValue = true;
         }
@@ -68,18 +70,18 @@ bool fis::setDeFuzzMethod( fisDeFuzzMethod m ) noexcept
     return retValue;
 }
 /*============================================================================*/
-bool fis::setup( const fisType t,
-                 fisInput * const inputs,
-                 const size_t ni,
-                 fisOutput * const outputs,
-                 const size_t no,
-                 fisMF * const mf_inputs,
-                 const size_t nmi,
-                 fisMF * const mf_outputs,
-                 const size_t nmo,
-                 const fisRules * const r,
-                 const size_t n,
-                 real_t *rWeights ) noexcept
+bool fis::instance::setup( const fis::type t,
+                           fis::input * const inputs,
+                           const size_t ni,
+                           fis::output * const outputs,
+                           const size_t no,
+                           fis::mf * const mf_inputs,
+                           const size_t nmi,
+                           fis::mf * const mf_outputs,
+                           const size_t nmo,
+                           const fis::rules * const r,
+                           const size_t n,
+                           real_t *rWeights ) noexcept
 {
     bool retValue = false;
 
@@ -90,25 +92,25 @@ bool fis::setup( const fisType t,
          ( nullptr != mf_outputs) && ( nmo > 0U ) &&
          ( nullptr != r ) && ( n > 0U )
        ) {
-        type = t;
-        input = inputs;
-        output = outputs;
+        xType = t;
+        xInput = inputs;
+        xOutput = outputs;
         nInputs = ni;
         nOutputs = no;
         inMF = mf_inputs;
         nMFInputs = nmi;
         outMF = mf_outputs;
         nMFOutputs = nmo;
-        rules = r;
+        xRules = r;
         wi = rWeights;
         nRules = n;
-        deFuzz = ( Mamdani == type )? &deFuzzCentroid : &deFuzzWtAverage;
+        deFuzz = ( Mamdani == xType )? &deFuzzCentroid : &deFuzzWtAverage;
         (void)setParameter( FIS_AND, FIS_MIN );
         (void)setParameter( FIS_OR, FIS_MAX );
         (void)setParameter( FIS_Implication, FIS_MIN );
         (void)setParameter( FIS_Aggregation, FIS_MAX );
         for ( size_t i = 0U ; i < nOutputs ; ++i ) {
-            output[ i ].owner = this;
+            xOutput[ i ].owner = this;
         }
         retValue = true;
     }
@@ -116,16 +118,16 @@ bool fis::setup( const fisType t,
     return retValue;
 }
 /*============================================================================*/
-bool fis::setupInput( const fisTag t,
-                      const real_t Min,
-                      const real_t Max ) noexcept
+bool fis::instance::setupInput( const fis::tag t,
+                                const real_t Min,
+                                const real_t Max ) noexcept
 {
     bool retVal = false;
 
-    if ( ( nullptr != input ) && ( t >= 0 ) ) {
+    if ( ( nullptr != xInput ) && ( t >= 0 ) ) {
         /*cstat -CERT-STR34-C*/
-        input[ t ].min = Min;
-        input[ t ].max = Max;
+        xInput[ t ].min = Min;
+        xInput[ t ].max = Max;
         /*cstat +CERT-STR34-C*/
         retVal = true;
     }
@@ -133,17 +135,17 @@ bool fis::setupInput( const fisTag t,
     return retVal;
 }
 /*============================================================================*/
-bool fis::setupOutput( const fisTag t,
-                       const real_t Min,
-                       const real_t Max ) noexcept
+bool fis::instance::setupOutput( const fis::tag t,
+                                 const real_t Min,
+                                 const real_t Max ) noexcept
 {
     bool retVal = false;
 
-    if ( ( nullptr != input ) && ( t >= 0 ) ) {
+    if ( ( nullptr != xInput ) && ( t >= 0 ) ) {
         /*cstat -CERT-STR34-C*/
-        output[ t ].min = Min;
-        output[ t ].max = Max;
-        output[ t ].res = ( output[ t ].max - output[ t ].min )/static_cast<real_t>( nPoints );
+        xOutput[ t ].min = Min;
+        xOutput[ t ].max = Max;
+        xOutput[ t ].res = ( xOutput[ t ].max - xOutput[ t ].min )/static_cast<real_t>( nPoints );
         /*cstat +CERT-STR34-C*/
         retVal = true;
     }
@@ -151,9 +153,9 @@ bool fis::setupOutput( const fisTag t,
     return retVal;
 }
 /*============================================================================*/
-bool fisOutput::storeAggregatedRegion( real_t *xData,
-                                       real_t *yData,
-                                       const size_t n ) noexcept
+bool fis::output::storeAggregatedRegion( real_t *xData,
+                                         real_t *yData,
+                                         const size_t n ) noexcept
 {
     bool retVal = false;
     if ( nullptr != owner ) {
@@ -166,14 +168,14 @@ bool fisOutput::storeAggregatedRegion( real_t *xData,
     return retVal;
 }
 /*============================================================================*/
-bool fis::setInput( const fisTag t,
-                    const real_t value ) noexcept
+bool fis::instance::setInput( const fis::tag t,
+                              const real_t value ) noexcept
 {
     bool retVal = false;
 
-    if ( ( nullptr != input ) && ( t >= 0 ) ) {
+    if ( ( nullptr != xInput ) && ( t >= 0 ) ) {
         /*cstat -CERT-STR34-C*/
-        input[ t ].value = value;
+        xInput[ t ].value = value;
         /*cstat +CERT-STR34-C*/
         retVal = true;
     }
@@ -181,14 +183,14 @@ bool fis::setInput( const fisTag t,
     return retVal;
 }
 /*============================================================================*/
-bool fis::getOutput( const fisTag t,
-                     real_t &value ) const noexcept
+bool fis::instance::getOutput( const fis::tag t,
+                               real_t &value ) const noexcept
 {
     bool retVal = false;
 
-    if ( ( nullptr != output ) && ( t >= 0 ) ) {
+    if ( ( nullptr != xOutput ) && ( t >= 0 ) ) {
         /*cstat -CERT-STR34-C*/
-        value = output[ t ].value;
+        value = xOutput[ t ].value;
         /*cstat +CERT-STR34-C*/
         retVal = true;
     }
@@ -196,16 +198,16 @@ bool fis::getOutput( const fisTag t,
     return retVal;
 }
 /*============================================================================*/
-bool fis::setMF( fisMF *m,
-                 const fisTag io,
-                 const fisTag mf,
-                 const fisShapeMF s,
-                 fisMFFunction customMf,
-                 const real_t *cp,
-                 const real_t h ) noexcept
+bool fis::instance::setMF( fis::mf *m,
+                           const fis::tag io,
+                           const fis::tag mf,
+                           const fis::shapeMF s,
+                           fis::mfFunction customMf,
+                           const real_t *cp,
+                           const real_t h ) noexcept
 {
     bool retValue = false;
-    static const fisMFFunction fShape[ FIS_NUM_MFS ] = { &ConstantMF,
+    static const fis::mfFunction fShape[ FIS_NUM_MFS ] = { &ConstantMF,
         /* Conventional membership functions, applies on any antecedent*/
         &TriMF, &TrapMF, &GBellMF, &GaussMF, &Gauss2MF, &SigMF, &DSigMF, &PSigMF,
         &PiMF, &SMF, &ZMF, &SingletonMF, &ConcaveMF, &SpikeMF, &LinSMF, &LinZMF,
@@ -230,25 +232,25 @@ bool fis::setMF( fisMF *m,
     return retValue;
 }
 /*============================================================================*/
-void fis::evalInputMFs( void ) noexcept
+void fis::instance::evalInputMFs( void ) noexcept
 {
     for ( size_t i = 0U ; i < nMFInputs ; ++i ) {
-        inMF[ i ].evalMFAtIndex( input );
+        inMF[ i ].evalMFAtIndex( xInput );
     }
 }
 /*============================================================================*/
-void fis::truncateInputs( void ) noexcept
+void fis::instance::truncateInputs( void ) noexcept
 {
     for ( size_t i = 0U ; i < nInputs ; ++i ) {
-        input[ i ].value = bound( input[ i ].value, input[ i ].min, input[ i ].max );
+        xInput[ i ].value = bound( xInput[ i ].value, xInput[ i ].min, xInput[ i ].max );
     }
 }
 /*============================================================================*/
-bool fis::fuzzify( void ) noexcept
+bool fis::instance::fuzzify( void ) noexcept
 {
     bool retValue = false;
 
-    if ( ( nullptr != input ) && ( nullptr != inMF ) ) {
+    if ( ( nullptr != xInput ) && ( nullptr != inMF ) ) {
         truncateInputs();
         evalInputMFs();
         retValue = true;
@@ -257,8 +259,8 @@ bool fis::fuzzify( void ) noexcept
     return retValue;
 }
 /*============================================================================*/
-real_t fis::parseFuzzValue( fisMF * const mfIO,
-                            fisRules index ) noexcept
+real_t fis::instance::parseFuzzValue( fis::mf * const mfIO,
+                                      fis::rules index ) noexcept
 {
     const bool neg = ( index < 0 );
     real_t y;
@@ -274,9 +276,9 @@ real_t fis::parseFuzzValue( fisMF * const mfIO,
     return y;
 }
 /*============================================================================*/
-fuzzyOperator fis::getFuzzOperator( void ) noexcept
+fis::fuzzyOperator fis::instance::getFuzzOperator( void ) noexcept
 {
-    fuzzyOperator oper;
+    fis::fuzzyOperator oper;
 
     switch ( lastConnector ) {
         case Q_FIS_AND:
@@ -293,15 +295,15 @@ fuzzyOperator fis::getFuzzOperator( void ) noexcept
     return oper;
 }
 /*============================================================================*/
-size_t fis::inferenceAntecedent( size_t i ) noexcept
+size_t fis::instance::inferenceAntecedent( size_t i ) noexcept
 {
-    fisRules inIndex, MFInIndex, connector;
-    fuzzyOperator op;
+    fis::rules inIndex, MFInIndex, connector;
+    fis::fuzzyOperator op;
 
-    inIndex = rules[ i ];
+    inIndex = xRules[ i ];
     /*cstat -CERT-INT30-C_a*/
-    MFInIndex = rules[ i + 1U ];
-    connector = rules[ i + 2U ];
+    MFInIndex = xRules[ i + 1U ];
+    connector = xRules[ i + 2U ];
     /*cstat +CERT-INT30-C_a*/
     op = getFuzzOperator();
     rStrength = op( rStrength, parseFuzzValue( inMF, MFInIndex ) );
@@ -312,11 +314,11 @@ size_t fis::inferenceAntecedent( size_t i ) noexcept
     else {
         if ( ( Q_FIS_AND == connector ) || ( Q_FIS_OR == connector ) ) {
             lastConnector = connector;
-            inferenceState = &fis::inferenceAntecedent;
+            inferenceState = &fis::instance::inferenceAntecedent;
             i += 2U;
         }
         else if ( Q_FIS_THEN == connector ) {
-            inferenceState = &fis::inferenceReachEnd;
+            inferenceState = &fis::instance::inferenceReachEnd;
             i += 2U;
         }
         else {
@@ -327,15 +329,15 @@ size_t fis::inferenceAntecedent( size_t i ) noexcept
     return i;
 }
 /*============================================================================*/
-size_t fis::inferenceReachEnd( size_t i ) noexcept
+size_t fis::instance::inferenceReachEnd( size_t i ) noexcept
 {
-    fisRules connector;
+    fis::rules connector;
     /*cstat -CERT-INT30-C_a*/
-    connector = ( nOutputs > 1U )? rules[ i + 2U ] : -1;
+    connector = ( nOutputs > 1U )? xRules[ i + 2U ] : -1;
     /*cstat +CERT-INT30-C_a*/
     i += 2U;
     if ( Q_FIS_AND != connector ) {
-        inferenceState = &fis::inferenceAntecedent;
+        inferenceState = &fis::instance::inferenceAntecedent;
         lastConnector = -1;
         wi[ ruleCount ] = rStrength;
         if ( nullptr != ruleWeight ) {
@@ -349,23 +351,23 @@ size_t fis::inferenceReachEnd( size_t i ) noexcept
     return i;
 }
 /*============================================================================*/
-size_t fis::aggregationFindConsequent( size_t i ) noexcept
+size_t fis::instance::aggregationFindConsequent( size_t i ) noexcept
 {
-    while ( Q_FIS_THEN != rules[ i++ ] ) {}
-    aggregationState = &fis::inferenceConsequent;
+    while ( Q_FIS_THEN != xRules[ i++ ] ) {}
+    aggregationState = &fis::instance::inferenceConsequent;
 
     return --i;
 }
 /*============================================================================*/
-size_t fis::inferenceConsequent( size_t i ) noexcept
+size_t fis::instance::inferenceConsequent( size_t i ) noexcept
 {
-    fisRules outIndex, MFOutIndex, connector;
+    fis::rules outIndex, MFOutIndex, connector;
     bool neg = false;
 
-    outIndex = rules[ i ];
+    outIndex = xRules[ i ];
     /*cstat -CERT-INT30-C_a*/
-    MFOutIndex = rules[ i + 1U ];
-    connector = ( nOutputs > 1U )? rules[ i + 2U ] : -1;
+    MFOutIndex = xRules[ i + 1U ];
+    connector = ( nOutputs > 1U )? xRules[ i + 2U ] : -1;
     /*cstat +CERT-INT30-C_a*/
     if ( MFOutIndex < 0 ) {
         MFOutIndex = -MFOutIndex;
@@ -375,11 +377,11 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
 
     if ( wi[ ruleCount ] > 0.0_re ) {
         /*cstat -CERT-STR34-C*/
-        fisOutput &o = output[ outIndex ];
-        fisMF &m = outMF[ MFOutIndex ];
+        fis::output &o = xOutput[ outIndex ];
+        fis::mf &m = outMF[ MFOutIndex ];
         /*cstat +CERT-STR34-C*/
         
-        if ( Mamdani == type ) {
+        if ( Mamdani == xType ) {
             real_t v;
             v = m.evalMF( o );
             v = ( neg )? ( 1.0_re - v ) : v;
@@ -387,7 +389,7 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
         }
         else { /* Sugeno and Tsukamoto*/
             real_t zi;
-            zi = m.evalMF( input, nInputs );
+            zi = m.evalMF( xInput, nInputs );
             o.v[ sum_wz ] += zi*wi[ ruleCount ];
             o.v[ sum_w ] += wi[ ruleCount ];
         }
@@ -395,7 +397,7 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
 
     i += 2U;
     if ( Q_FIS_AND != connector ) {
-        aggregationState = &fis::aggregationFindConsequent;
+        aggregationState = &fis::instance::aggregationFindConsequent;
         ++ruleCount;
         --i;
     }
@@ -403,14 +405,14 @@ size_t fis::inferenceConsequent( size_t i ) noexcept
     return i;
 }
 /*============================================================================*/
-void fis::fuzzyAggregate( void ) noexcept
+void fis::instance::fuzzyAggregate( void ) noexcept
 {
-    if ( Q_FIS_RULES_BEGIN == rules[ 0 ] ) {
+    if ( Q_FIS_RULES_BEGIN == xRules[ 0 ] ) {
         size_t i = 1U;
 
-        aggregationState = &fis::aggregationFindConsequent;
+        aggregationState = &fis::instance::aggregationFindConsequent;
         ruleCount = 0U;
-        while ( ( Q_FIS_RULES_END != rules[ i ] ) && ( ruleCount < nRules ) ) {
+        while ( ( Q_FIS_RULES_END != xRules[ i ] ) && ( ruleCount < nRules ) ) {
             i = (this->*aggregationState)( i );
             if ( INFERENCE_ERROR == i ) {
                 break;
@@ -420,48 +422,48 @@ void fis::fuzzyAggregate( void ) noexcept
     }
 }
 /*============================================================================*/
-bool fis::deFuzzify( void ) noexcept
+bool fis::instance::deFuzzify( void ) noexcept
 {
     bool retValue = false;
 
-    if ( ( nullptr != output ) && ( nullptr != outMF ) ) {
+    if ( ( nullptr != xOutput ) && ( nullptr != outMF ) ) {
         size_t i;
 
         for ( i = 0U ; i < nOutputs ; ++i ) {
-            deFuzz( &output[ i ] , FIS_DEFUZZ_INIT );
+            deFuzz( &xOutput[ i ] , FIS_DEFUZZ_INIT );
         }
-        if ( Mamdani == type ) {
+        if ( Mamdani == xType ) {
             size_t k;
 
             for ( k = 0U ; k < nPoints ; ++k ) {
                 for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
-                    output[ i ].y = 0.0_re;
-                    output[ i ].getNextX( k );
-                    output[ i ].value = output[ i ].x;
+                    xOutput[ i ].y = 0.0_re;
+                    xOutput[ i ].getNextX( k );
+                    xOutput[ i ].value = xOutput[ i ].x;
                 }
                 fuzzyAggregate();
                 for ( i = 0U ; i < nOutputs ; ++i ) {
-                    deFuzz( &output[ i ] , FIS_DEFUZZ_COMPUTE );
-                    if ( nullptr != output[ i ].xag ) { /*store aggregated*/
-                        output[ i ].xag[ k ] = output[ i ].x;
-                        output[ i ].yag[ k ] = output[ i ].y;
+                    deFuzz( &xOutput[ i ] , FIS_DEFUZZ_COMPUTE );
+                    if ( nullptr != xOutput[ i ].xag ) { /*store aggregated*/
+                        xOutput[ i ].xag[ k ] = xOutput[ i ].x;
+                        xOutput[ i ].yag[ k ] = xOutput[ i ].y;
                     }
                 }
             }
         }
         else { /*Sugeno and Tsukamoto systems*/
             for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
-                output[ i ].v[ sum_wz ] = 0.0_re; /*store sum wi*/
-                output[ i ].v[ sum_w ] = 0.0_re; /*store sum zi*wi*/
+                xOutput[ i ].v[ sum_wz ] = 0.0_re; /*store sum wi*/
+                xOutput[ i ].v[ sum_w ] = 0.0_re; /*store sum zi*wi*/
             }
             fuzzyAggregate();
             for ( i = 0U ; i < nOutputs ; ++i ) { /* initialize*/
-                deFuzz( &output[ i ] , FIS_DEFUZZ_COMPUTE );
+                deFuzz( &xOutput[ i ] , FIS_DEFUZZ_COMPUTE );
             }
         }
         for ( i = 0U ; i < nOutputs ; ++i ) {
-            output[ i ].value = deFuzz( &output[ i ] , FIS_DEFUZZ_END );
-            output[ i ].value = bound( output[ i ].value, output[ i ].min, output[ i ].max );
+            xOutput[ i ].value = deFuzz( &xOutput[ i ] , FIS_DEFUZZ_END );
+            xOutput[ i ].value = bound( xOutput[ i ].value, xOutput[ i ].min, xOutput[ i ].max );
         }
         retValue = true;
     }
@@ -469,7 +471,7 @@ bool fis::deFuzzify( void ) noexcept
     return retValue;
 }
 /*============================================================================*/
-bool fis::setRuleWeights( real_t *rWeights ) noexcept
+bool fis::instance::setRuleWeights( real_t *rWeights ) noexcept
 {
     bool retValue = false;
     if ( nullptr != rWeights ) {
@@ -480,20 +482,20 @@ bool fis::setRuleWeights( real_t *rWeights ) noexcept
     return retValue;
 }
 /*============================================================================*/
-bool fis::inference( void ) noexcept
+bool fis::instance::inference( void ) noexcept
 {
     bool retValue = false;
 
-    if ( nullptr != rules  ) {
+    if ( nullptr != xRules  ) {
         size_t i = 0U;
 
-        if ( Q_FIS_RULES_BEGIN == rules[ 0 ] ) {
-            inferenceState = &fis::inferenceAntecedent;
+        if ( Q_FIS_RULES_BEGIN == xRules[ 0 ] ) {
+            inferenceState = &fis::instance::inferenceAntecedent;
             rStrength = 0.0_re;
             lastConnector = -1;
             ruleCount = 0U;
             i = 1U;
-            while ( ( Q_FIS_RULES_END != rules[ i ] ) && ( ruleCount < nRules ) ) {
+            while ( ( Q_FIS_RULES_END != xRules[ i ] ) && ( ruleCount < nRules ) ) {
                 i = (this->*inferenceState)( i );
                 if ( INFERENCE_ERROR == i ) {
                     break;
@@ -501,7 +503,7 @@ bool fis::inference( void ) noexcept
                 ++i;
             }
         }
-        if ( ( Q_FIS_RULES_END == rules[ i ] ) && ( ruleCount == nRules) ) {
+        if ( ( Q_FIS_RULES_END == xRules[ i ] ) && ( ruleCount == nRules) ) {
             retValue = true;
         }
     }

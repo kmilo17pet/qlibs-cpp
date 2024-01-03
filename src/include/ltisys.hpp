@@ -124,7 +124,7 @@ namespace qlibs {
 
             /**
             * @brief Set the initial states for the given system
-            * @pre System should be previously initialized by using ::setup() method
+            * @pre System should be previously initialized by using the @c setup() method
             * @param[in] xi An array of n-elements with the initial state values. User
             * can pass @c nullptr as argument to set initial conditions equal to zero.
             * @return @c true on success, otherwise return @c false.

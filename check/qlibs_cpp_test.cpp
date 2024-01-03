@@ -5,11 +5,60 @@ using namespace std;
 
 void test_fis( void );
 void test_fis2( void );
+void test_fis3( void );
 void test_tdl( void );
 void test_fp16( void );
 void test_crc( void );
 void test_ltisys( void );
 void test_ffmath( void );
+
+
+void test_fis3( void )
+{
+     cout << "FIS2 TEST3"<< endl; 
+
+    enum { input1, input2 };
+    enum { output1, output2 };
+    /* I/O Membership functions tags */
+    enum { input1_Neg, input1_Pos, input2_Small, input2_Big };
+    enum { output1_mf1, output2_mf1, output2_mf2, output2_mf3, output2_mf4 };
+
+    fis::system<fis::Sugeno,2, 2, 4, 5, 4> takaji = {
+        (const fis::rules[]) {
+            FIS_RULES_BEGIN
+                IF input1 IS input1_Neg AND input2 IS input2_Small THEN output1 IS output1_mf1 AND output2 IS output2_mf4 END
+                IF input1 IS input1_Neg AND input2 IS input2_Big THEN output1 IS output1_mf1 AND output2 IS output2_mf3 END
+                IF input1 IS input1_Pos AND input2 IS input2_Small THEN output1 IS output1_mf1 AND output2 IS output2_mf2 END
+                IF input1 IS input1_Pos AND input2 IS input2_Big THEN output1 IS output1_mf1 AND output2 IS output2_mf1 END
+            FIS_RULES_END
+        }
+    };
+    
+    takaji.setup();
+    takaji.setupInput( input1, 0.5000f, 3.5000f );
+    takaji.setupInput( input2, -1.0000f, 4.0000f );
+    takaji.setupOutput( output1, 0.0000f, 1.0000f );
+    takaji.setupOutput( output2, 0.0000f, 1.0000f );
+
+    /* Add membership functions to the inputs */
+    takaji.setupInputMF( input1, input1_Neg, fis::trimf, (const real_t []){ 0.5000f, 0.5000f, 3.5000f } );
+    takaji.setupInputMF( input1, input1_Pos, fis::trimf, (const real_t []){ 0.5000f, 3.5000f, 3.5000f } );
+    takaji.setupInputMF( input2, input2_Small, fis::trimf, (const real_t []){ -1.0000f, -1.0000f, 4.0000f} );
+    takaji.setupInputMF( input2, input2_Big, fis::trimf, (const real_t []){ -1.0000f, 4.0000f, 4.0000f } );
+    /* Add membership functions to the outputs */
+    takaji.setupOutputMF( output1, output1_mf1, fis::linearmf, (const real_t []){ 0.0000f, 1.0000f, 0.0000f } );
+    takaji.setupOutputMF( output2, output2_mf1, fis::linearmf, (const real_t []){ 3.5000f, 4.0000f, 0.0000f } );
+    takaji.setupOutputMF( output2, output2_mf2, fis::linearmf, (const real_t []){ 3.5000f, -1.0000f, 0.0000f });
+    takaji.setupOutputMF( output2, output2_mf3, fis::linearmf, (const real_t []){ 0.5000f, 4.0000f, 0.0000f } );
+    takaji.setupOutputMF( output2, output2_mf4, fis::linearmf, (const real_t []){ 0.5000f, -1.0000f, 0.0000f } );
+
+    takaji << input1 << 0 << input2;
+    takaji.fuzzify();
+    if ( takaji.inference() ) {
+        takaji.deFuzzify();
+    }
+    cout << "output1 = " << takaji[ output1 ] << " output2 = " << takaji[ output2 ] << endl;
+}
 
 void test_tdl( void )
 {
@@ -40,13 +89,13 @@ void test_tdl( void )
 void test_fis2( void )
 {
     cout << "FIS2 TEST"<< endl; 
-    enum : fisTag { wt, dax, day, ae };
-    enum : fisTag { phit, thetat };
-    enum : fisTag { wtSLOW, wtMED, wtFAST, daxLOW, daxMED, daxHIGH, dayLOW, dayMED, dayHIGH, aeLOW, aeMED, aeHIGH };
-    enum : fisTag { phitGYRO, phitBOTH, phitACCEL, thetatGYRO, thetatBOTH, thetatACCEL };
+    enum : fis::tag { wt, dax, day, ae };
+    enum : fis::tag { phit, thetat };
+    enum : fis::tag { wtSLOW, wtMED, wtFAST, daxLOW, daxMED, daxHIGH, dayLOW, dayMED, dayHIGH, aeLOW, aeMED, aeHIGH };
+    enum : fis::tag { phitGYRO, phitBOTH, phitACCEL, thetatGYRO, thetatBOTH, thetatACCEL };
 
-    fisSystem<Mamdani,4, 2, 12, 6, 15> flexnav = {
-        (const fisRules[]) {
+    fis::system<fis::Mamdani,4, 2, 12, 6, 15> flexnav = {
+        (const fis::rules[]) {
             FIS_RULES_BEGIN
                 IF wt IS_NOT wtSLOW THEN phit IS phitGYRO AND thetat IS thetatGYRO END
                 IF dax IS daxHIGH THEN thetat IS thetatGYRO END
@@ -74,25 +123,25 @@ void test_fis2( void )
     flexnav.setupInput( ae, 0.0f, 20.0f );
     flexnav.setupOutput( phit, 0.0f, 1.0f );
     flexnav.setupOutput( thetat, 0.0f, 1.0f );
-    flexnav.setInputMF( wt, wtSLOW, trimf, (const real_t []){ -0.2f ,0.0f ,0.2f } );
-    flexnav.setInputMF( wt, wtMED, trimf, (const real_t []){ 0.1f ,0.25f , 0.4f } );
-    flexnav.setInputMF( wt, wtFAST, trimf, (const real_t []){ 0.3f ,0.5f ,0.7f });
-    flexnav.setInputMF( dax, daxLOW, trimf, (const real_t []){ -1.0f ,0.0f ,2.0f } );
-    flexnav.setInputMF( dax, daxMED, trimf, (const real_t []){ 1.0f , 2.5f , 4.0f } );
-    flexnav.setInputMF( dax, daxHIGH, trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
-    flexnav.setInputMF( day, dayLOW, trimf, (const real_t []){ -2.0f ,0.0f , 2.0f } );
-    flexnav.setInputMF( day, dayMED, trimf, (const real_t []){ 1.0f ,2.5f ,4.0f } );
-    flexnav.setInputMF( day, dayHIGH, trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
-    flexnav.setInputMF( ae, aeLOW, trimf, (const real_t []){ -8.0f ,0.0f ,8.0f } );
-    flexnav.setInputMF( ae, aeMED, trimf, (const real_t []){ 5.0f ,10.0f , 15.0f } );
-    flexnav.setInputMF( ae, aeHIGH, trimf, (const real_t []){ 12.0f ,20.0f ,28.0f } );
+    flexnav.setupInputMF( wt, wtSLOW, fis::trimf, (const real_t []){ -0.2f ,0.0f ,0.2f } );
+    flexnav.setupInputMF( wt, wtMED, fis::trimf, (const real_t []){ 0.1f ,0.25f , 0.4f } );
+    flexnav.setupInputMF( wt, wtFAST, fis::trimf, (const real_t []){ 0.3f ,0.5f ,0.7f });
+    flexnav.setupInputMF( dax, daxLOW, fis::trimf, (const real_t []){ -1.0f ,0.0f ,2.0f } );
+    flexnav.setupInputMF( dax, daxMED, fis::trimf, (const real_t []){ 1.0f , 2.5f , 4.0f } );
+    flexnav.setupInputMF( dax, daxHIGH, fis::trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
+    flexnav.setupInputMF( day, dayLOW, fis::trimf, (const real_t []){ -2.0f ,0.0f , 2.0f } );
+    flexnav.setupInputMF( day, dayMED, fis::trimf, (const real_t []){ 1.0f ,2.5f ,4.0f } );
+    flexnav.setupInputMF( day, dayHIGH, fis::trimf, (const real_t []){ 3.0f ,5.0f , 7.0f } );
+    flexnav.setupInputMF( ae, aeLOW, fis::trimf, (const real_t []){ -8.0f ,0.0f ,8.0f } );
+    flexnav.setupInputMF( ae, aeMED, fis::trimf, (const real_t []){ 5.0f ,10.0f , 15.0f } );
+    flexnav.setupInputMF( ae, aeHIGH, fis::trimf, (const real_t []){ 12.0f ,20.0f ,28.0f } );
     
-    flexnav.setOutputMF( phit, phitGYRO, trimf, (const real_t []){ -0.4f ,0.0f ,0.4f } );
-    flexnav.setOutputMF( phit, phitBOTH, trimf, (const real_t []){ 0.2f , 0.5f , 0.8f } );
-    flexnav.setOutputMF( phit, phitACCEL, trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
-    flexnav.setOutputMF( thetat, thetatGYRO, trimf, (const real_t []){ -0.4f ,0.0f , 0.4f } );
-    flexnav.setOutputMF( thetat, thetatBOTH, trimf, (const real_t []){ 0.2f , 0.5f, 0.8f } );
-    flexnav.setOutputMF( thetat, thetatACCEL, trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
+    flexnav.setupOutputMF( phit, phitGYRO, fis::trimf, (const real_t []){ -0.4f ,0.0f ,0.4f } );
+    flexnav.setupOutputMF( phit, phitBOTH, fis::trimf, (const real_t []){ 0.2f , 0.5f , 0.8f } );
+    flexnav.setupOutputMF( phit, phitACCEL, fis::trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
+    flexnav.setupOutputMF( thetat, thetatGYRO, fis::trimf, (const real_t []){ -0.4f ,0.0f , 0.4f } );
+    flexnav.setupOutputMF( thetat, thetatBOTH, fis::trimf, (const real_t []){ 0.2f , 0.5f, 0.8f } );
+    flexnav.setupOutputMF( thetat, thetatACCEL, fis::trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
 
     flexnav << wt << 0 << dax << 0 << day << 3 << ae << 0;
     flexnav.fuzzify();
@@ -108,20 +157,20 @@ void test_fis( void )
     cout << "FIS TEST"<< endl; 
     real_t xag[ 100 ], yag[ 100 ];
     // I/O Names
-    enum : fisTag { service, food};
-    enum : fisTag { tip};
+    enum : fis::tag { service, food};
+    enum : fis::tag { tip};
     // I/O Membership functions tags
-    enum : fisTag { poor, good, excellent, rancid, delicious };
-    enum : fisTag { cheap, average, generous};
+    enum : fis::tag { poor, good, excellent, rancid, delicious };
+    enum : fis::tag { cheap, average, generous};
 
-    fis tipper;
+    fis::instance tipper;
     // I/O Fuzzy Objects
-    fisInput tipper_inputs[ 2 ];
-    fisOutput tipper_outputs[ 1 ];
+    fis::input tipper_inputs[ 2 ];
+    fis::output tipper_outputs[ 1 ];
     // I/O Membership Objects
-    fisMF MFin[5], MFout[3];
+    fis::mf MFin[5], MFout[3];
 
-    const fisRules rules[] = { 
+    const fis::rules rules[] = { 
         FIS_RULES_BEGIN
             IF service IS poor OR food IS rancid THEN tip IS cheap END
             IF service IS good THEN tip IS average END
@@ -130,18 +179,18 @@ void test_fis( void )
     };
     real_t rulesStrength[ 3 ];
 
-    tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
+    tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
     tipper.setupInput( service, 0.0f, 1.0f );
     tipper.setupInput( food, 0.0f, 10.0f );
     tipper.setupOutput( tip, 0.0f, 30.0f );
-    tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
-    tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
-    tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
-    tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
-    tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0, 10.0f, 10.0f } );
-    tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
-    tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
-    tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
+    tipper.setupInputMF( service, poor, fis::gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+    tipper.setupInputMF( service, good, fis::gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+    tipper.setupInputMF( service, excellent, fis::gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+    tipper.setupInputMF( food, rancid, fis::trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+    tipper.setupInputMF( food, delicious, fis::trapmf, (const real_t[]){ 7.0f, 9.0, 10.0f, 10.0f } );
+    tipper.setupOutputMF( tip, cheap, fis::trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+    tipper.setupOutputMF( tip, average, fis::trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
+    tipper.setupOutputMF( tip, generous, fis::trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
     tipper_outputs[ tip ].storeAggregatedRegion( xag, yag );
 
 
@@ -248,6 +297,9 @@ void test_ffmath(void)
     cout << ffmath::tanh( 0.5f ) << endl;
     cout << ffmath::atan2( 0.1f, 0.2f ) << endl;
     cout << ffmath::pow( 3.8f, 2.5f ) << endl;
+    cout << ffmath::mod( 3.1f, 2.5f ) << endl;
+    cout << ffmath::rem( 3.1f, 2.5f ) << endl;
+    cout << ffmath::wrapToPi( -4.5 ) << endl;
     cout << ffmath::getNan() << endl;
     cout << ffmath::getInf() << endl;
 }
@@ -260,6 +312,7 @@ int main()
     test_tdl();
     test_fis();
     test_fis2();
+    test_fis3();
     test_ffmath();
     return 0;
 }

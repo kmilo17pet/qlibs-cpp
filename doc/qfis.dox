@@ -16,7 +16,7 @@
 * The FIS Fuzzy Inference System engine provides an API for building and
 * evaluation of type-1 fuzzy logic inference systems. 
 * 
-* The types of inferences supported by FIS are listed in the \ref qlibs::fisType enum
+* The types of inferences supported by FIS are listed in the \ref qlibs::fis::type enum
 * and are detailed below:
 *
 * @section qfis_mamdani Mamdani
@@ -31,8 +31,8 @@
 * combined into a single fuzzy set using the aggregation method of the FIS.
 * Then, to compute a final crisp output value, the combined output fuzzy set is
 * defuzzified using one of the methods described in Defuzzification Methods.
-* To specify a FIS of this type use the \ref qlibs::Mamdani enum definition when calling
-* \ref qlibs::fis::setup().
+* To specify a FIS of this type use the \ref qlibs::fis::Mamdani enum definition when calling
+* \ref qlibs::fis::instance::setup().
 *
 * <center>
 * @htmlonly
@@ -80,8 +80,8 @@
 * controllers that are to be applied, respectively, to different operating 
 * conditions of a dynamic nonlinear system.
 *
-* To specificy a FIS of this type,  use the \ref qlibs::Sugeno enum definition when
-* calling \ref qlibs::fis::setup().
+* To specificy a FIS of this type,  use the \ref qlibs::fis::Sugeno enum definition when
+* calling \ref qlibs::fis::instance::setup().
 *
 * <center>
 * @htmlonly
@@ -111,8 +111,8 @@
 * each rule's output by the method of weighted average and thus avoids the
 * time-consuming process of defuzzification.
 *
-* To specify a FIS of this type, use the \ref qlibs::Tsukamoto enum definition when
-* calling \ref qlibs::fis::setup() .
+* To specify a FIS of this type, use the \ref qlibs::fis::Tsukamoto enum definition when
+* calling \ref qlibs::fis::instance::setup() .
 *
 * <center>
 * @htmlonly
@@ -132,10 +132,10 @@
 *
 * @section qfis_defuzz Defuzzification Methods
 * 
-* FIS supports five different methods, as listed in the \ref qlibs::fisDeFuzzMethod enum
+* FIS supports five different methods, as listed in the \ref qlibs::fis::deFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# \ref qlibs::centroid (default): this method applies only to \ref qlibs::Mamdani 
+*  -# \ref qlibs::fis::centroid (default): this method applies only to \ref qlibs::fis::Mamdani 
 * systems and returns the center of gravity of the fuzzy set along the x-axis. 
 * If you think of the area as a plate with uniform thickness and density, the 
 * centroid is the point along the x-axis about which the fuzzy set would balance.
@@ -145,25 +145,25 @@
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# \ref qlibs::bisector : this method applies only for \ref qlibs::Mamdani systems and finds the 
+*  -# \ref qlibs::fis::bisector : this method applies only for \ref qlibs::fis::Mamdani systems and finds the 
 * vertical line that divides the fuzzy set into two sub-regions of equal area. 
 * It is sometimes, but not always, coincident with the centroid line.
 *
-*  -# \ref qlibs::mom : Middle of Maximum. Only for \ref qlibs::Mamdani systems.
+*  -# \ref qlibs::fis::mom : Middle of Maximum. Only for \ref qlibs::fis::Mamdani systems.
 *
-*  -# \ref qlibs::som : Smallest of Maximum. Only for \ref qlibs::Mamdani systems.
+*  -# \ref qlibs::fis::som : Smallest of Maximum. Only for \ref qlibs::fis::Mamdani systems.
 *
-*  -# \ref qlibs::lom : Largest of Maximum. Only for \ref qlibs::Mamdani systems.
+*  -# \ref qlibs::fis::lom : Largest of Maximum. Only for \ref qlibs::fis::Mamdani systems.
 *
-*  -# \ref qlibs::wtaver (default): Weighted average of all rule outputs. This method applies only 
-* for \ref Sugeno and \ref qlibs::Tsukamoto systems.
+*  -# \ref qlibs::fis::wtaver (default): Weighted average of all rule outputs. This method applies only 
+* for \ref qlibs::fis::Sugeno and \ref qlibs::fis::Tsukamoto systems.
 *
-*  -# \ref qlibs::wtsum:  Weighted sum of all rule outputs. This method applies only 
-* for \ref qlibs::Sugeno and \ref qlibs::Tsukamoto systems.
+*  -# \ref qlibs::fis::wtsum :  Weighted sum of all rule outputs. This method applies only 
+* for \ref qlibs::fis::Sugeno and \ref qlibs::fis::Tsukamoto systems.
 *
 * @note The defuzzification method is selected by default when setting up the 
-* FIS instance with \ref qlibs::fis::setup(). However, the user can later change the default
-* method using the \ref qlibs::fis::setDeFuzzMethod() function.
+* FIS instance with \ref qlibs::fis::instance::setup(). However, the user can later change the default
+* method using the \ref qlibs::fis::instance::setDeFuzzMethod() function.
 *
 * @section qfis_buildfis Building a Mamdani FIS
 *
@@ -236,24 +236,24 @@
 * </center>
 *
 * To build the fuzzy system, you must first instantiate an abstract object of
-* type \ref fis that represents the fuzzy inference system, then the input and
+* type \ref qlibs::fis::instance that represents the fuzzy inference system, then the input and
 * output vectors, fuzzy set vectors for inputs and outputs, and enumerations with
 * the tags for all of them. Let's take a look :
 *
 *  @code{.c}
 *  // I/O Names
-*  enum { service, food};
-*  enum { tip};
+*  enum : fis::tag { service, food};
+*  enum : fis::tag { tip};
 *  // I/O Membership functions tags
-*  enum { service_poor, service_good, service_excellent, food_rancid, food_delicious};
-*  enum { tip_cheap, tip_average, tip_generous};
+*  enum : fis::tag { service_poor, service_good, service_excellent, food_rancid, food_delicious};
+*  enum : fis::tag { tip_cheap, tip_average, tip_generous};
 *  // FIS Object
-*  static fis tipper;
+*  static fis::instance tipper;
 *  // I/O Fuzzy Objects
-*  static fisInput tipper_inputs[ 2 ];
-*  static fisOutput tipper_outputs[ 1 ];
+*  static fis::input tipper_inputs[ 2 ];
+*  static fis::output tipper_outputs[ 1 ];
 *  // I/O Membership Objects
-*  static fisMF MFin[5], MFout[3];
+*  static fis::mf MFin[5], MFout[3];
 *  @endcode
 *
 * @attention
@@ -261,7 +261,7 @@
 *
 * Then, we will define the rules of 
 * the fuzzy system using the previously defined tags. Rules should be defined as
-* an array of type \ref qlibs::fisRules and the contents should be rules constructed
+* an array of type \ref qlibs::fis::rules and the contents should be rules constructed
 * with the provided statements: 
 * 
 * - \ref #FIS_RULES_BEGIN to start the rules set
@@ -275,7 +275,7 @@
 * Let's apply some of these statements to build the rule set.
 *
 *  @code{.c}
-*  static const fisRules rules[] = { 
+*  static const fis::rules rules[] = { 
 *      FIS_RULES_BEGIN
 *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
 *         IF service IS service_good THEN tip IS tip_average END
@@ -293,15 +293,15 @@
 *  @endcode
 *
 * First step is to configure the instance that represents the fuzzy 
-* system using the \ref fis::setup() API:
+* system using the \ref qlibs::fis::instance::setup() API:
 *
 *  @code{.c}
-*  tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
+*  tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
 *  @endcode
 *
 * Then, we can proceed to the construction of the fuzzy system. First, we must
 * configure the inputs and outputs by setting the ranges of each. For this, we 
-* will use the \ref qlibs::fis::setupInput() and \ref qlibs::fis::setupOutput() 
+* will use the \ref qlibs::fis::instance::setupInput() and \ref qlibs::fis::instance::setupOutput() 
 * methods as follows:
 *
 *  @code{.c}
@@ -311,19 +311,19 @@
 *  @endcode
 *
 * The next step is to configure the membership functions by relating I/O, 
-* tags, shape and parameters one by one by using the \ref qlibs::fis::setInputMF() and 
-* \ref qlibs::fis::setOutputMF() methods as follows:
+* tags, shape and parameters one by one by using the \ref qlibs::fis::instance::setupInputMF() and 
+* \ref qlibs::fis::instance::setupOutputMF() methods as follows:
 * Then, let's define the parameters of all the membership functions:
 *
 *  @code{.c}
-*  tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
-*  tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
-*  tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
-*  tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
-*  tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
-*  tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
-*  tipper.setOutputMF( tip, average, trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
-*  tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
+*  tipper.setupInputMF( service, poor, fis::gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+*  tipper.setupInputMF( service, good, fis::gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+*  tipper.setupInputMF( service, excellent, fis::gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+*  tipper.setupInputMF( food, rancid, fis::trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+*  tipper.setupInputMF( food, delicious, fis::trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
+*  tipper.setupOutputMF( tip, cheap, fis::trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+*  tipper.setupOutputMF( tip, average, fis::trimf, (const real_t[]){10.0f, 15.0f, 20.0f } );
+*  tipper.setupOutputMF( tip, generous, fis::trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
 *  @endcode
 *
 * @note
@@ -331,11 +331,11 @@
 *
 * @section qfis_eval Evaluating a Fuzzy Inference System
 *
-* If we already have a fuzzy system configured with \ref qlibs::fis::setup(), we can 
-* evaluate it by using \ref qlibs::fis::fuzzify(), \ref qlibs::fis::inference() and 
-* \ref qlibs::fis::deFuzzify(). 
-* Input values can be set with \ref qlibs::fis::setInput() and output values can be 
-* obtained with \ref qlibs::fis::getOutput(). Also you can use the stream operator @c <<
+* If we already have a fuzzy system configured with \ref qlibs::fis::instance::setup(), we can 
+* evaluate it by using \ref qlibs::fis::instance::fuzzify(), \ref qlibs::fis::instance::inference() and 
+* \ref qlibs::fis::instance::deFuzzify(). 
+* Input values can be set with \ref qlibs::fis::instance::setInput() and output values can be 
+* obtained with \ref qlibs::fis::instance::getOutput(). Also you can use the stream operator @c <<
 * to set the inputs and the index operator [] to get the outputs of the FIS
 * system (see example bellow).
 *
@@ -349,20 +349,20 @@
 *  #include "qfis.h"
 *  
 *  // I/O Names
-*  enum { service, food};
-*  enum { tip};
+*  enum : fis::tag { service, food};
+*  enum : fis::tag { tip};
 *  // I/O Membership functions tags
-*  enum { service_poor, service_good, service_excellent, food_rancid, food_delicious};
-*  enum { tip_cheap, tip_average, tip_generous};
+*  enum : fis::tag { service_poor, service_good, service_excellent, food_rancid, food_delicious};
+*  enum : fis::tag { tip_cheap, tip_average, tip_generous};
 *  // FIS Object
-*  static fis tipper;
+*  static fis::instance tipper;
 *  // I/O Fuzzy Objects
-*  static fisInput tipper_inputs[ 2 ];
-*  static fisOutput tipper_outputs[ 1 ];
+*  static fis::input tipper_inputs[ 2 ];
+*  static fis::output tipper_outputs[ 1 ];
 *  // I/O Membership Objects
-*  static fisMF MFin[5], MFout[3];
+*  static fis::mf MFin[5], MFout[3];
 *  // Rules of the inference system
-*  static const fisRules rules[] = {
+*  static const fis::rules rules[] = {
 *      FIS_RULES_BEGIN
 *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
 *         IF service IS service_good THEN tip IS tip_average END
@@ -375,18 +375,18 @@
 *  
 *  void tipper_init( void )
 *  {
-*      tipper.setup( Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );
+*      tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );
 *      tipper.setupInput( service, 0.0f, 1.0f );
 *      tipper.setupInput( food, 0.0f, 10.0f );
 *      tipper.setupOutput( tip, 0.0f, 30.0f );
-*      tipper.setInputMF( service, poor, gaussmf, (const real_t[]){ 1.5f, 0.0f } );
-*      tipper.setInputMF( service, good, gaussmf, (const real_t[]){ 1.5f, 5.0f } );
-*      tipper.setInputMF( service, excellent, gaussmf, (const real_t[]){ 1.5f, 10.0f } );
-*      tipper.setInputMF( food, rancid, trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
-*      tipper.setInputMF( food, delicious, trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
-*      tipper.setOutputMF( tip, cheap, trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
-*      tipper.setOutputMF( tip, average, trimf, (const real_t[]){ 10.0f, 15.0f, 20.0f } );
-*      tipper.setOutputMF( tip, generous, trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
+*      tipper.setupInputMF( service, poor, fis::gaussmf, (const real_t[]){ 1.5f, 0.0f } );
+*      tipper.setupInputMF( service, good, fis::gaussmf, (const real_t[]){ 1.5f, 5.0f } );
+*      tipper.setupInputMF( service, excellent, fis::gaussmf, (const real_t[]){ 1.5f, 10.0f } );
+*      tipper.setupInputMF( food, rancid, fis::trapmf, (const real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );
+*      tipper.setupInputMF( food, delicious, fis::trapmf, (const real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );
+*      tipper.setupOutputMF( tip, cheap, fis::trimf, (const real_t[]){ 0.0f, 5.0f, 10.0f } );
+*      tipper.setupOutputMF( tip, average, fis::trimf, (const real_t[]){ 10.0f, 15.0f, 20.0f } );
+*      tipper.setupOutputMF( tip, generous, fis::trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
 *  }
 *  
 *  void tipper_run( real_t *inputs, real_t *outputs )
