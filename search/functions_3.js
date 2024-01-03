@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['defuzzify_0',['deFuzzify',['../classqlibs_1_1fis.html#aabd318e5a87227a2cedc939c23f4d53d',1,'qlibs::fis::deFuzzify()'],['../classqlibs_1_1fis_system.html#ace2e7212bf20fd5fa97fcf910df5bf58',1,'qlibs::fisSystem::deFuzzify()']]],
+  ['defuzzify_0',['deFuzzify',['../classqlibs_1_1fis_1_1instance.html#a2448948c0db254775d8a2767bc6178d4',1,'qlibs::fis::instance::deFuzzify()'],['../classqlibs_1_1fis_1_1system.html#ad31a3a11db2f7bfbb81a8e956972eb9a',1,'qlibs::fis::system::deFuzzify()']]],
   ['degtorad_1',['degToRad',['../classqlibs_1_1fp16.html#a2e55430fe727ba9f11896ebeaee99123',1,'qlibs::fp16']]],
   ['derivative_2',['derivative',['../classqlibs_1_1state.html#a3339dd9366c86fe9fef4caa13c89cd4c',1,'qlibs::state']]],
   ['discretesystem_3',['discreteSystem',['../classqlibs_1_1discrete_system.html#ae6c662c10b640e391d8b7f19a7bb4f75',1,'qlibs::discreteSystem::discreteSystem(real_t *num, real_t *den, real_t *x, const size_t n_b, const size_t n_a) noexcept'],['../classqlibs_1_1discrete_system.html#aee816b304c8aafdf6e8d92b7ba35d597',1,'qlibs::discreteSystem::discreteSystem(real_t(&amp;num)[NB], real_t(&amp;den)[NA], real_t *x) noexcept'],['../classqlibs_1_1discrete_system.html#a568a5c4467fbbad2cbb1fe59a66182d1',1,'qlibs::discreteSystem::discreteSystem(discreteTF&lt; NB, NA &gt; &amp;dtf) noexcept']]],

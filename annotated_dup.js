@@ -1,19 +1,21 @@
 var annotated_dup =
 [
     [ "qlibs", "namespaceqlibs.html", [
+      [ "fis", "namespaceqlibs_1_1fis.html", [
+        [ "core", "classqlibs_1_1fis_1_1core.html", null ],
+        [ "input", "classqlibs_1_1fis_1_1input.html", "classqlibs_1_1fis_1_1input" ],
+        [ "instance", "classqlibs_1_1fis_1_1instance.html", "classqlibs_1_1fis_1_1instance" ],
+        [ "ioBase", "classqlibs_1_1fis_1_1io_base.html", "classqlibs_1_1fis_1_1io_base" ],
+        [ "mf", "classqlibs_1_1fis_1_1mf.html", "classqlibs_1_1fis_1_1mf" ],
+        [ "output", "classqlibs_1_1fis_1_1output.html", "classqlibs_1_1fis_1_1output" ],
+        [ "system", "classqlibs_1_1fis_1_1system.html", "classqlibs_1_1fis_1_1system" ]
+      ] ],
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
       [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
       [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],
       [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
       [ "discreteTF", "structqlibs_1_1discrete_t_f.html", "structqlibs_1_1discrete_t_f" ],
-      [ "fis", "classqlibs_1_1fis.html", "classqlibs_1_1fis" ],
-      [ "fisCore", "classqlibs_1_1fis_core.html", null ],
-      [ "fisInput", "classqlibs_1_1fis_input.html", "classqlibs_1_1fis_input" ],
-      [ "fisIOBase", "classqlibs_1_1fis_i_o_base.html", "classqlibs_1_1fis_i_o_base" ],
-      [ "fisMF", "classqlibs_1_1fis_m_f.html", "classqlibs_1_1fis_m_f" ],
-      [ "fisOutput", "classqlibs_1_1fis_output.html", "classqlibs_1_1fis_output" ],
-      [ "fisSystem", "classqlibs_1_1fis_system.html", "classqlibs_1_1fis_system" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
@@ -34,6 +36,5 @@ var annotated_dup =
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
       [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
-    ] ],
-    [ "sortStackNode", "structsort_stack_node.html", "structsort_stack_node" ]
+    ] ]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wtaver_0',['wtaver',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a1d0b957a516b0c7b3814e55ea36854cc',1,'qlibs']]],
-  ['wtsum_1',['wtsum',['../group__qfis.html#gga03e1de6d8325b634bd035477ccfe45b0a5d99257e412433da4f3c932046a26954',1,'qlibs']]]
+  ['wtaver_0',['wtaver',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a95c4e8e5136295f5e4e8b174e0b0e165',1,'qlibs::fis']]],
+  ['wtsum_1',['wtsum',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a56bcfc2e50051b70cf52f4d7b8116665',1,'qlibs::fis']]]
 ];

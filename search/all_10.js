@@ -8,12 +8,12 @@ var searchData=
   ['readuintn_5',['readUINTn',['../classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e',1,'qlibs::bitfield']]],
   ['real_5ft_6',['real_t',['../namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c',1,'qlibs']]],
   ['recip_7',['recip',['../group__qffmath.html#ga48c227d95bcf981020c47e711f9c5e34',1,'qlibs::ffmath']]],
-  ['rectmf_8',['rectmf',['../group__qfis.html#ggaebd802f8dce229bc2aefe22c89ad1bdba3f378bc901be790a07c625955bcc4ac0',1,'qlibs']]],
+  ['rectmf_8',['rectmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84afa1c9fbaff2a0ff116ff7ce30f47062d',1,'qlibs::fis']]],
   ['recursive_20lti_20systems_20evaluation_20by_20transfer_20functions_2e_9',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]],
   ['recursive_20root_20mean_20square_20estimator_10',['Recursive Root Mean Square estimator',['../qrms_desc.html',1,'index']]],
-  ['remainder_11',['remainder',['../group__qffmath.html#gad8d920273d3aa4514fdff91bc40564f1',1,'qlibs::ffmath']]],
+  ['rem_11',['rem',['../group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7',1,'qlibs::ffmath']]],
   ['removemodelreferencecontrol_12',['removeModelReferenceControl',['../classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6',1,'qlibs::pidController']]],
-  ['reset_13',['reset',['../classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1',1,'qlibs::pidController::reset()'],['../classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32',1,'qlibs::smoother::reset()']]],
+  ['reset_13',['reset',['../classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32',1,'qlibs::smoother::reset()'],['../classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1',1,'qlibs::pidController::reset()']]],
   ['reverse_14',['reverse',['../group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8',1,'qlibs::generic']]],
   ['rexp_15',['rexp',['../group__qffmath.html#ga9a2da57b2b1a7e30b7b8c6f3011c7810',1,'qlibs::ffmath']]],
   ['rms_16',['rms',['../classqlibs_1_1rms.html',1,'qlibs']]],
@@ -21,5 +21,6 @@ var searchData=
   ['rms_18',['rms',['../classqlibs_1_1rms.html#a393a522e384b153c716dc953eafe4352',1,'qlibs::rms']]],
   ['rotate_19',['rotate',['../group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9',1,'qlibs::generic']]],
   ['rounding_20',['rounding',['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16::rounding()'],['../group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8',1,'qlibs::ffmath::rounding(float x)']]],
-  ['rsqrt_21',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]]
+  ['rsqrt_21',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]],
+  ['rules_22',['rules',['../group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555',1,'qlibs::fis']]]
 ];

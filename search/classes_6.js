@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rms_0',['rms',['../classqlibs_1_1rms.html',1,'qlibs']]]
+  ['mf_0',['mf',['../classqlibs_1_1fis_1_1mf.html',1,'qlibs::fis']]]
 ];

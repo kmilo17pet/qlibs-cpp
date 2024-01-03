@@ -174,6 +174,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa048dfd68ecbbaff6671f437c9115352"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaa048dfd68ecbbaff6671f437c9115352">qlibs::ffmath::isNormal</a> (const float x)</td></tr>
 <tr class="memdesc:gaa048dfd68ecbbaff6671f437c9115352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the given floating point number <em>x</em> is normal, i.e. is neither zero, subnormal, infinite, or NaN.  <a href="group__qffmath.html#gaa048dfd68ecbbaff6671f437c9115352">More...</a><br /></td></tr>
 <tr class="separator:gaa048dfd68ecbbaff6671f437c9115352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2074aae4bee3cf93a94577fc2acff42"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaa2074aae4bee3cf93a94577fc2acff42">qlibs::ffmath::sign</a> (float x)</td></tr>
+<tr class="memdesc:gaa2074aae4bee3cf93a94577fc2acff42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sign function ( signum function).  <a href="group__qffmath.html#gaa2074aae4bee3cf93a94577fc2acff42">More...</a><br /></td></tr>
+<tr class="separator:gaa2074aae4bee3cf93a94577fc2acff42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae832095f4975240fb86603a6439cb74c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gae832095f4975240fb86603a6439cb74c">qlibs::ffmath::absf</a> (float x)</td></tr>
 <tr class="memdesc:gae832095f4975240fb86603a6439cb74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the absolute value of a floating point value <em>x</em>.  <a href="group__qffmath.html#gae832095f4975240fb86603a6439cb74c">More...</a><br /></td></tr>
 <tr class="separator:gae832095f4975240fb86603a6439cb74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,11 +210,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3fe71e414943b548d1b41116db40621e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga3fe71e414943b548d1b41116db40621e">qlibs::ffmath::frac</a> (float x)</td></tr>
 <tr class="memdesc:ga3fe71e414943b548d1b41116db40621e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the fractional part of <em>x</em>.  <a href="group__qffmath.html#ga3fe71e414943b548d1b41116db40621e">More...</a><br /></td></tr>
 <tr class="separator:ga3fe71e414943b548d1b41116db40621e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8d920273d3aa4514fdff91bc40564f1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad8d920273d3aa4514fdff91bc40564f1">qlibs::ffmath::remainder</a> (float x, float y)</td></tr>
-<tr class="memdesc:gad8d920273d3aa4514fdff91bc40564f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the IEEE remainder of the floating point division operation <code>x/y</code>.  <a href="group__qffmath.html#gad8d920273d3aa4514fdff91bc40564f1">More...</a><br /></td></tr>
-<tr class="separator:gad8d920273d3aa4514fdff91bc40564f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ba58ca696cc874fa1f2b99fb7001fc7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7">qlibs::ffmath::rem</a> (float x, float y)</td></tr>
+<tr class="memdesc:ga5ba58ca696cc874fa1f2b99fb7001fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the floating point remainder after division of <em>x</em> by <em>y</em>, where <em>x</em> is the dividend and <em>y</em> is the divisor. This function is often called the remainder operation, which can be expressed as <code>r=a-</code>(b*trunc(a/b)) . This function follows the convention that <code>rem(x,0)</code> is <code>nan</code>.  <a href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7">More...</a><br /></td></tr>
+<tr class="separator:ga5ba58ca696cc874fa1f2b99fb7001fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga39224ff83a567d5c2966ce2b1c23ae03"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03">qlibs::ffmath::mod</a> (float x, float y)</td></tr>
-<tr class="memdesc:ga39224ff83a567d5c2966ce2b1c23ae03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the floating-point remainder of the division operation <code>x/y</code>.  <a href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03">More...</a><br /></td></tr>
+<tr class="memdesc:ga39224ff83a567d5c2966ce2b1c23ae03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the floating point remainder after division of <em>x</em> by <em>y</em>, where <em>x</em> is the dividend and <em>y</em> is the divisor. This function is often called the modulo operation, which can be expressed as <code>b=a-m*floor</code>(a/m) . This function follows the convention that <code>mod(x,0)</code> returns x.  <a href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03">More...</a><br /></td></tr>
 <tr class="separator:ga39224ff83a567d5c2966ce2b1c23ae03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3e8338c79cd9c5ada93547e60ddb4a0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad3e8338c79cd9c5ada93547e60ddb4a0">qlibs::ffmath::sin</a> (float x)</td></tr>
 <tr class="memdesc:gad3e8338c79cd9c5ada93547e60ddb4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sine of <em>x</em> (measured in radians).  <a href="group__qffmath.html#gad3e8338c79cd9c5ada93547e60ddb4a0">More...</a><br /></td></tr>
@@ -273,6 +276,18 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf8e811b8eefd476a5322c05fc7cf703f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf8e811b8eefd476a5322c05fc7cf703f">qlibs::ffmath::atanh</a> (float x)</td></tr>
 <tr class="memdesc:gaf8e811b8eefd476a5322c05fc7cf703f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the inverse hyperbolic tangent of <em>x</em>.  <a href="group__qffmath.html#gaf8e811b8eefd476a5322c05fc7cf703f">More...</a><br /></td></tr>
 <tr class="separator:gaf8e811b8eefd476a5322c05fc7cf703f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab10df9dbeb133e398476e21646a447b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gab10df9dbeb133e398476e21646a447b1">qlibs::ffmath::wrapToPi</a> (float x)</td></tr>
+<tr class="memdesc:gab10df9dbeb133e398476e21646a447b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps angle <em>x</em>, in radians, to the interval [−pi, pi] such that pi maps to pi and −pi maps to −pi. In general, odd, positive multiples of pi map to pi and odd, negative multiples of pi map to −pi.  <a href="group__qffmath.html#gab10df9dbeb133e398476e21646a447b1">More...</a><br /></td></tr>
+<tr class="separator:gab10df9dbeb133e398476e21646a447b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4b37186479d8010d8aa796e837ff5b2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad4b37186479d8010d8aa796e837ff5b2">qlibs::ffmath::wrapTo2Pi</a> (float x)</td></tr>
+<tr class="memdesc:gad4b37186479d8010d8aa796e837ff5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps angle <em>x</em>, in radians, to the interval [0, 2*pi] such that 0 maps to 0 and 2*pi and 2*pi maps to 2*pi. In general, positive multiples of 2*pi map to 2*pi and negative multiples of 2*pi map to 0.  <a href="group__qffmath.html#gad4b37186479d8010d8aa796e837ff5b2">More...</a><br /></td></tr>
+<tr class="separator:gad4b37186479d8010d8aa796e837ff5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab66aac067050760eb105ef45bbba5319"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gab66aac067050760eb105ef45bbba5319">qlibs::ffmath::wrapTo180</a> (float x)</td></tr>
+<tr class="memdesc:gab66aac067050760eb105ef45bbba5319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps angle <em>x</em>, in degrees, to the interval [–180, 180] such that 180 maps to 180 and –180 maps to –180. In general, odd, positive multiples of 180 map to 180 and odd, negative multiples of 180 map to –180.  <a href="group__qffmath.html#gab66aac067050760eb105ef45bbba5319">More...</a><br /></td></tr>
+<tr class="separator:gab66aac067050760eb105ef45bbba5319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga199168076c63621f3b059f21c5a658de"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga199168076c63621f3b059f21c5a658de">qlibs::ffmath::wrapTo360</a> (float x)</td></tr>
+<tr class="memdesc:ga199168076c63621f3b059f21c5a658de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps angle <em>x</em>, in degrees, to the interval [0, 360] such that 0 maps to 0 and 360 maps to 360. In general, positive multiples of 360 map to 360 and negative multiples of 360 map to zero.  <a href="group__qffmath.html#ga199168076c63621f3b059f21c5a658de">More...</a><br /></td></tr>
+<tr class="separator:ga199168076c63621f3b059f21c5a658de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga74eff75b64924b94dbd85e58eec80d65"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65">qlibs::ffmath::erf</a> (float x)</td></tr>
 <tr class="memdesc:ga74eff75b64924b94dbd85e58eec80d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the error function of <em>x</em>.  <a href="group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65">More...</a><br /></td></tr>
 <tr class="separator:ga74eff75b64924b94dbd85e58eec80d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1297,7 +1312,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the floating-point remainder of the division operation <code>x/y</code>. </p>
+<p>Computes the floating point remainder after division of <em>x</em> by <em>y</em>, where <em>x</em> is the dividend and <em>y</em> is the divisor. This function is often called the modulo operation, which can be expressed as <code>b=a-m*floor</code>(a/m) . This function follows the convention that <code>mod(x,0)</code> returns x. </p>
+<dl class="section note"><dt>Note</dt><dd>The concept of remainder after division is not uniquely defined, and the two functions <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> and <a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::rem()</a> each compute a different variation. The <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> function produces a result that is either zero or has the same sign as the divisor. The <a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::rem()</a> function produces a result that is either zero or has the same sign as the dividend. Another difference is the convention when the divisor is zero. The <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> function follows the convention that <code>mod(x,0)</code> returns <code>x</code>, whereas the rem function follows the convention that <code>rem(x,0)</code> returns <code>nan</code>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating point value </td></tr>
@@ -1305,7 +1321,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If successful, returns the floating-point remainder of the division <code>x/y</code>. If a domain error occurs, a <code>nan</code> value is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful, returns the IEEE floating-point remainder of the division <code>x/y</code>. If a domain error occurs, a <code>nan</code> value is returned. </dd></dl>
 
 </div>
 </div>
@@ -1439,14 +1455,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gad8d920273d3aa4514fdff91bc40564f1" name="gad8d920273d3aa4514fdff91bc40564f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad8d920273d3aa4514fdff91bc40564f1">&#9670;&nbsp;</a></span>remainder()</h2>
+<a id="ga5ba58ca696cc874fa1f2b99fb7001fc7" name="ga5ba58ca696cc874fa1f2b99fb7001fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ba58ca696cc874fa1f2b99fb7001fc7">&#9670;&nbsp;</a></span>rem()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float qlibs::ffmath::remainder </td>
+          <td class="memname">float qlibs::ffmath::rem </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -1465,7 +1481,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the IEEE remainder of the floating point division operation <code>x/y</code>. </p>
+<p>Computes the floating point remainder after division of <em>x</em> by <em>y</em>, where <em>x</em> is the dividend and <em>y</em> is the divisor. This function is often called the remainder operation, which can be expressed as <code>r=a-</code>(b*trunc(a/b)) . This function follows the convention that <code>rem(x,0)</code> is <code>nan</code>. </p>
+<dl class="section note"><dt>Note</dt><dd>The concept of remainder after division is not uniquely defined, and the two functions <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> and <a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::rem()</a> each compute a different variation. The <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> function produces a result that is either zero or has the same sign as the divisor. The <a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::rem()</a> function produces a result that is either zero or has the same sign as the dividend. Another difference is the convention when the divisor is zero. The <a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03" title="Computes the floating point remainder after division of x by y, where x is the dividend and y is the ...">ffmath::mod()</a> function follows the convention that <code>mod(x,0)</code> returns <code>x</code>, whereas the rem function follows the convention that <code>rem(x,0)</code> returns <code>nan</code>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating point value </td></tr>
@@ -1566,6 +1583,33 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If no errors occur, the reciprocal square root of <em>x</em>, is returned. If a domain error occurs <code>nan</code> is returned </dd></dl>
+
+</div>
+</div>
+<a id="gaa2074aae4bee3cf93a94577fc2acff42" name="gaa2074aae4bee3cf93a94577fc2acff42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2074aae4bee3cf93a94577fc2acff42">&#9670;&nbsp;</a></span>sign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::sign </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the sign function ( signum function). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating point value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sign function of <em>x</em> </dd></dl>
 
 </div>
 </div>
@@ -1728,6 +1772,114 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The nearest integer value not greater in magnitude than <em>x</em> (in other words, <em>x</em> rounded towards zero) </dd></dl>
+
+</div>
+</div>
+<a id="gab66aac067050760eb105ef45bbba5319" name="gab66aac067050760eb105ef45bbba5319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab66aac067050760eb105ef45bbba5319">&#9670;&nbsp;</a></span>wrapTo180()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::wrapTo180 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wraps angle <em>x</em>, in degrees, to the interval [–180, 180] such that 180 maps to 180 and –180 maps to –180. In general, odd, positive multiples of 180 map to 180 and odd, negative multiples of 180 map to –180. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The angle in degrees </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle <em>x</em> wrapped to the [-pi, pi] interval </dd></dl>
+
+</div>
+</div>
+<a id="gad4b37186479d8010d8aa796e837ff5b2" name="gad4b37186479d8010d8aa796e837ff5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4b37186479d8010d8aa796e837ff5b2">&#9670;&nbsp;</a></span>wrapTo2Pi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::wrapTo2Pi </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wraps angle <em>x</em>, in radians, to the interval [0, 2*pi] such that 0 maps to 0 and 2*pi and 2*pi maps to 2*pi. In general, positive multiples of 2*pi map to 2*pi and negative multiples of 2*pi map to 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The angle in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle <em>x</em> wrapped to the [0, 2*pi] interval </dd></dl>
+
+</div>
+</div>
+<a id="ga199168076c63621f3b059f21c5a658de" name="ga199168076c63621f3b059f21c5a658de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga199168076c63621f3b059f21c5a658de">&#9670;&nbsp;</a></span>wrapTo360()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::wrapTo360 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wraps angle <em>x</em>, in degrees, to the interval [0, 360] such that 0 maps to 0 and 360 maps to 360. In general, positive multiples of 360 map to 360 and negative multiples of 360 map to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The angle in degrees </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle <em>x</em> wrapped to the [0, 360] interval </dd></dl>
+
+</div>
+</div>
+<a id="gab10df9dbeb133e398476e21646a447b1" name="gab10df9dbeb133e398476e21646a447b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab10df9dbeb133e398476e21646a447b1">&#9670;&nbsp;</a></span>wrapToPi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::wrapToPi </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wraps angle <em>x</em>, in radians, to the interval [−pi, pi] such that pi maps to pi and −pi maps to −pi. In general, odd, positive multiples of pi map to pi and odd, negative multiples of pi map to −pi. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The angle in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle <em>x</em> wrapped to the [-pi, pi] interval </dd></dl>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['n_0',['n',['../classqlibs_1_1ltisys.html#a9474f6c5d9ddb11ee2709406620424fb',1,'qlibs::ltisys']]],
-  ['na_1',['na',['../classqlibs_1_1ltisys.html#a20bb42c323d39ebc7d4c2981165247e2',1,'qlibs::ltisys']]],
-  ['nb_2',['nb',['../classqlibs_1_1ltisys.html#a12f763b9ffd67fe4f9d6e12542b76044',1,'qlibs::ltisys']]],
-  ['num_3',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]]
+  ['p00_0',['p00',['../classqlibs_1_1pid_auto_tuning.html#a1889baeeee51b5cbd8fa1ce5503fd431',1,'qlibs::pidAutoTuning']]],
+  ['p01_1',['p01',['../classqlibs_1_1pid_auto_tuning.html#a4a1f05c5cea0433940c1602892a198bf',1,'qlibs::pidAutoTuning']]],
+  ['p10_2',['p10',['../classqlibs_1_1pid_auto_tuning.html#a1bf88506dac6e180fc80c9528f5f5a7d',1,'qlibs::pidAutoTuning']]],
+  ['p11_3',['p11',['../classqlibs_1_1pid_auto_tuning.html#a6b8b1902364f051fd32307e5425e8e21',1,'qlibs::pidAutoTuning']]]
 ];

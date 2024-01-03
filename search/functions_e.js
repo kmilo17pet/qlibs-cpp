@@ -7,7 +7,7 @@ var searchData=
   ['readfloat_4',['readFloat',['../classqlibs_1_1bitfield.html#aae351d60490ae87b58a77e6dd85ff9e8',1,'qlibs::bitfield']]],
   ['readuintn_5',['readUINTn',['../classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e',1,'qlibs::bitfield']]],
   ['recip_6',['recip',['../group__qffmath.html#ga48c227d95bcf981020c47e711f9c5e34',1,'qlibs::ffmath']]],
-  ['remainder_7',['remainder',['../group__qffmath.html#gad8d920273d3aa4514fdff91bc40564f1',1,'qlibs::ffmath']]],
+  ['rem_7',['rem',['../group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7',1,'qlibs::ffmath']]],
   ['removemodelreferencecontrol_8',['removeModelReferenceControl',['../classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6',1,'qlibs::pidController']]],
   ['reset_9',['reset',['../classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1',1,'qlibs::pidController::reset()'],['../classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32',1,'qlibs::smoother::reset()']]],
   ['reverse_10',['reverse',['../group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8',1,'qlibs::generic']]],

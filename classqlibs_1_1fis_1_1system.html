@@ -1,0 +1,1197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classqlibs_1_1fis_1_1system.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classqlibs_1_1fis_1_1system-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__qfis.html">FIS - Fuzzy Inference System</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A wrapper for the FIS object.  
+ <a href="classqlibs_1_1fis_1_1system.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="fis_8hpp_source.html">fis.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a86ddeb9b68e5993ab8b277296b602f32"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a86ddeb9b68e5993ab8b277296b602f32">system</a> (const <a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">rules</a> *r)</td></tr>
+<tr class="separator:a86ddeb9b68e5993ab8b277296b602f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f161472242b2ed56c34495968a839e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a28f161472242b2ed56c34495968a839e">setup</a> (void)</td></tr>
+<tr class="memdesc:a28f161472242b2ed56c34495968a839e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize the FIS instance.  <a href="classqlibs_1_1fis_1_1system.html#a28f161472242b2ed56c34495968a839e">More...</a><br /></td></tr>
+<tr class="separator:a28f161472242b2ed56c34495968a839e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2eb250daaaa67159ebbb88a19778e5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#af2eb250daaaa67159ebbb88a19778e5f">setupInput</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> t, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Min, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Max) noexcept</td></tr>
+<tr class="memdesc:af2eb250daaaa67159ebbb88a19778e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the input with the specified tag and set limits for it.  <a href="classqlibs_1_1fis_1_1system.html#af2eb250daaaa67159ebbb88a19778e5f">More...</a><br /></td></tr>
+<tr class="separator:af2eb250daaaa67159ebbb88a19778e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab298e1ccfe3f81ef799d81809382ccad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#ab298e1ccfe3f81ef799d81809382ccad">setupOutput</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> t, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Min, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Max) noexcept</td></tr>
+<tr class="memdesc:ab298e1ccfe3f81ef799d81809382ccad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output with the specified tag and set limits for it.  <a href="classqlibs_1_1fis_1_1system.html#ab298e1ccfe3f81ef799d81809382ccad">More...</a><br /></td></tr>
+<tr class="separator:ab298e1ccfe3f81ef799d81809382ccad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a32305b3ff087b2ecc9b87cbaad4e53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a0a32305b3ff087b2ecc9b87cbaad4e53">setupInputMF</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> io, const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> <a class="el" href="classqlibs_1_1fis_1_1mf.html">mf</a>, const <a class="el" href="group__qfis.html#ga9dbb7ad4f4d6111e49be796105f1fd84">shapeMF</a> s, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *cp, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> h=1.0_re) noexcept</td></tr>
+<tr class="memdesc:a0a32305b3ff087b2ecc9b87cbaad4e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the input tag and points for the specified membership function.  <a href="classqlibs_1_1fis_1_1system.html#a0a32305b3ff087b2ecc9b87cbaad4e53">More...</a><br /></td></tr>
+<tr class="separator:a0a32305b3ff087b2ecc9b87cbaad4e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c30c24853e26b5090584dbf6732e22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a03c30c24853e26b5090584dbf6732e22">setupInputMF</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> io, const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> <a class="el" href="classqlibs_1_1fis_1_1mf.html">mf</a>, mfFunction customMfs, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *cp, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> h=1.0_re) noexcept</td></tr>
+<tr class="memdesc:a03c30c24853e26b5090584dbf6732e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the input tag and points for the specified membership function.  <a href="classqlibs_1_1fis_1_1system.html#a03c30c24853e26b5090584dbf6732e22">More...</a><br /></td></tr>
+<tr class="separator:a03c30c24853e26b5090584dbf6732e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5fdb1c39acb6193b929105265d673e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a4f5fdb1c39acb6193b929105265d673e">setupOutputMF</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> io, const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> <a class="el" href="classqlibs_1_1fis_1_1mf.html">mf</a>, const <a class="el" href="group__qfis.html#ga9dbb7ad4f4d6111e49be796105f1fd84">shapeMF</a> s, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *cp, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> h=1.0_re) noexcept</td></tr>
+<tr class="memdesc:a4f5fdb1c39acb6193b929105265d673e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="classqlibs_1_1fis_1_1system.html#a4f5fdb1c39acb6193b929105265d673e">More...</a><br /></td></tr>
+<tr class="separator:a4f5fdb1c39acb6193b929105265d673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008fb7fbb8886bb2875e572e381d5a3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a008fb7fbb8886bb2875e572e381d5a3e">setupOutputMF</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> io, const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> <a class="el" href="classqlibs_1_1fis_1_1mf.html">mf</a>, mfFunction customMfs, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *cp, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> h=1.0_re) noexcept</td></tr>
+<tr class="memdesc:a008fb7fbb8886bb2875e572e381d5a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the output tag and points for the specified membership function.  <a href="classqlibs_1_1fis_1_1system.html#a008fb7fbb8886bb2875e572e381d5a3e">More...</a><br /></td></tr>
+<tr class="separator:a008fb7fbb8886bb2875e572e381d5a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52403c56b8b91b03a56dd349cf084e8e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e">fuzzify</a> (void) noexcept</td></tr>
+<tr class="memdesc:a52403c56b8b91b03a56dd349cf084e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the fuzzification operation over the crisp inputs on the requested FIS object.  <a href="classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e">More...</a><br /></td></tr>
+<tr class="separator:a52403c56b8b91b03a56dd349cf084e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31a3a11db2f7bfbb81a8e956972eb9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#ad31a3a11db2f7bfbb81a8e956972eb9a">deFuzzify</a> (void) noexcept</td></tr>
+<tr class="memdesc:ad31a3a11db2f7bfbb81a8e956972eb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the de-Fuzzification operation to compute the crisp outputs.  <a href="classqlibs_1_1fis_1_1system.html#ad31a3a11db2f7bfbb81a8e956972eb9a">More...</a><br /></td></tr>
+<tr class="separator:ad31a3a11db2f7bfbb81a8e956972eb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d94c043abf760d006ae6a8f0551e5d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a7d94c043abf760d006ae6a8f0551e5d0">inference</a> (void) noexcept</td></tr>
+<tr class="memdesc:a7d94c043abf760d006ae6a8f0551e5d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the inference process on the FIS object.  <a href="classqlibs_1_1fis_1_1system.html#a7d94c043abf760d006ae6a8f0551e5d0">More...</a><br /></td></tr>
+<tr class="separator:a7d94c043abf760d006ae6a8f0551e5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af766a1b22b1ff0718a05763bfba0faa4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#af766a1b22b1ff0718a05763bfba0faa4">setInput</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> t, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> value) noexcept</td></tr>
+<tr class="memdesc:af766a1b22b1ff0718a05763bfba0faa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a crisp value of the input with the specified tag.  <a href="classqlibs_1_1fis_1_1system.html#af766a1b22b1ff0718a05763bfba0faa4">More...</a><br /></td></tr>
+<tr class="separator:af766a1b22b1ff0718a05763bfba0faa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf18ace703598a1e962ac5715d7fda1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1">getOutput</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> t, <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;value) const noexcept</td></tr>
+<tr class="memdesc:aadf18ace703598a1e962ac5715d7fda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1">More...</a><br /></td></tr>
+<tr class="separator:aadf18ace703598a1e962ac5715d7fda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33adf57a681c2b6ad9be86412c0c156c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a33adf57a681c2b6ad9be86412c0c156c">setParameter</a> (const <a class="el" href="group__qfis.html#ga2da6415f8f3a941b38888831813a7296">parameter</a> p, const <a class="el" href="group__qfis.html#ga58e4c5e17f2fb0200c3aaef612abbf29">paramValue</a> x) noexcept</td></tr>
+<tr class="memdesc:a33adf57a681c2b6ad9be86412c0c156c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parameters of the FIS instance.  <a href="classqlibs_1_1fis_1_1system.html#a33adf57a681c2b6ad9be86412c0c156c">More...</a><br /></td></tr>
+<tr class="separator:a33adf57a681c2b6ad9be86412c0c156c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6af83cf072f9ec9cfb426d71dc2aa1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#abd6af83cf072f9ec9cfb426d71dc2aa1">setDeFuzzMethod</a> (<a class="el" href="group__qfis.html#gaaa87572cbd0f5fda216c13ce2e68ce26">deFuzzMethod</a> m) noexcept</td></tr>
+<tr class="memdesc:abd6af83cf072f9ec9cfb426d71dc2aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the default de-Fuzzification method of the FIS instance.  <a href="classqlibs_1_1fis_1_1system.html#abd6af83cf072f9ec9cfb426d71dc2aa1">More...</a><br /></td></tr>
+<tr class="separator:abd6af83cf072f9ec9cfb426d71dc2aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe053690539460f491306618ce92a7a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#afe053690539460f491306618ce92a7a3">setRuleWeights</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *rWeights) noexcept</td></tr>
+<tr class="memdesc:afe053690539460f491306618ce92a7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set weights to the rules of the inference system.  <a href="classqlibs_1_1fis_1_1system.html#afe053690539460f491306618ce92a7a3">More...</a><br /></td></tr>
+<tr class="separator:afe053690539460f491306618ce92a7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d6294fe569ae490f4aad7abf1bb2a8d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d">getNumberOfPoints</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a8d6294fe569ae490f4aad7abf1bb2a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of points used on Mamdani to perform the de-fuzzification proccess.  <a href="classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d">More...</a><br /></td></tr>
+<tr class="separator:a8d6294fe569ae490f4aad7abf1bb2a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75835b4379528325ba1296176bbe815f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a75835b4379528325ba1296176bbe815f">operator[]</a> (<a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> outTag) const</td></tr>
+<tr class="memdesc:a75835b4379528325ba1296176bbe815f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the de-fuzzified crisp value from the output with the specified tag.  <a href="classqlibs_1_1fis_1_1system.html#a75835b4379528325ba1296176bbe815f">More...</a><br /></td></tr>
+<tr class="separator:a75835b4379528325ba1296176bbe815f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33ae3f0b477a79424d07fe0b9a70c12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#ad33ae3f0b477a79424d07fe0b9a70c12">operator&lt;&lt;</a> (const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> &amp;t)</td></tr>
+<tr class="memdesc:ad33ae3f0b477a79424d07fe0b9a70c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the input to set using with the specified tag.  <a href="classqlibs_1_1fis_1_1system.html#ad33ae3f0b477a79424d07fe0b9a70c12">More...</a><br /></td></tr>
+<tr class="separator:ad33ae3f0b477a79424d07fe0b9a70c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1367a0c5c30bc795189b3b2eed05b4b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a1367a0c5c30bc795189b3b2eed05b4b3">operator&lt;&lt;</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a1367a0c5c30bc795189b3b2eed05b4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="classqlibs_1_1fis_1_1system.html#a1367a0c5c30bc795189b3b2eed05b4b3">More...</a><br /></td></tr>
+<tr class="separator:a1367a0c5c30bc795189b3b2eed05b4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984f0179f3cff29e1b2dcd1d26c228d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fis_1_1system.html#a984f0179f3cff29e1b2dcd1d26c228d9">operator&lt;&lt;</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;value)</td></tr>
+<tr class="memdesc:a984f0179f3cff29e1b2dcd1d26c228d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to set the previously selected input.  <a href="classqlibs_1_1fis_1_1system.html#a984f0179f3cff29e1b2dcd1d26c228d9">More...</a><br /></td></tr>
+<tr class="separator:a984f0179f3cff29e1b2dcd1d26c228d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt;<br />
+class qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;</div><p >A wrapper for the FIS object. </p>
+<p >The instance should be initialized using the fisSystem::setup() method. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">fType</td><td>Type of inference <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350ac708753f41f5d485a63a603c15dd439a">Mamdani</a>, <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> or <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a>. </td></tr>
+    <tr><td class="paramname">numberOfInputs</td><td>The number of inputs of the FIS system. </td></tr>
+    <tr><td class="paramname">numberOfOutputs</td><td>The number of outputs of the FIS system. </td></tr>
+    <tr><td class="paramname">numberOfInputSets</td><td>The number of sets/membership functions for the inputs. </td></tr>
+    <tr><td class="paramname">numberOfOutputSets</td><td>The number of sets/membership functions for the outputs. </td></tr>
+    <tr><td class="paramname">numberOfRules</td><td>Number of rules </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a86ddeb9b68e5993ab8b277296b602f32" name="a86ddeb9b68e5993ab8b277296b602f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ddeb9b68e5993ab8b277296b602f32">&#9670;&nbsp;</a></span>system()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::<a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">rules</a> *&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad31a3a11db2f7bfbb81a8e956972eb9a" name="ad31a3a11db2f7bfbb81a8e956972eb9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31a3a11db2f7bfbb81a8e956972eb9a">&#9670;&nbsp;</a></span>deFuzzify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::deFuzzify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the de-Fuzzification operation to compute the crisp outputs. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>The instance should have already invoked the inference process successfully with <a class="el" href="classqlibs_1_1fis_1_1system.html#a7d94c043abf760d006ae6a8f0551e5d0" title="Perform the inference process on the FIS object.">system::inference()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, this method, uses the Centroid method on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350ac708753f41f5d485a63a603c15dd439a">Mamdani</a> type FIS and weight-average on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> type FIS. To change the default settings use the <a class="el" href="classqlibs_1_1fis_1_1system.html#abd6af83cf072f9ec9cfb426d71dc2aa1" title="Change the default de-Fuzzification method of the FIS instance.">system::setDeFuzzMethod()</a> function. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a52403c56b8b91b03a56dd349cf084e8e" name="a52403c56b8b91b03a56dd349cf084e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52403c56b8b91b03a56dd349cf084e8e">&#9670;&nbsp;</a></span>fuzzify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::fuzzify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the fuzzification operation over the crisp inputs on the requested FIS object. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I/Os and fuzzy sets must be previously initialized by <a class="el" href="classqlibs_1_1fis_1_1system.html#af2eb250daaaa67159ebbb88a19778e5f" title="Setup the input with the specified tag and set limits for it.">system::setupInput()</a>, <a class="el" href="classqlibs_1_1fis_1_1system.html#ab298e1ccfe3f81ef799d81809382ccad" title="Setup the output with the specified tag and set limits for it.">system::setupOutput()</a>, <a class="el" href="classqlibs_1_1fis_1_1system.html#a0a32305b3ff087b2ecc9b87cbaad4e53" title="Setup the input tag and points for the specified membership function.">system::setupInputMF()</a>, <a class="el" href="classqlibs_1_1fis_1_1system.html#a4f5fdb1c39acb6193b929105265d673e" title="Set the output tag and points for the specified membership function.">system::setupOutputMF</a> and <a class="el" href="classqlibs_1_1fis_1_1system.html#a28f161472242b2ed56c34495968a839e" title="Setup and initialize the FIS instance.">system::setup()</a> respectively. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a8d6294fe569ae490f4aad7abf1bb2a8d" name="a8d6294fe569ae490f4aad7abf1bb2a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d6294fe569ae490f4aad7abf1bb2a8d">&#9670;&nbsp;</a></span>getNumberOfPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::getNumberOfPoints </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of points used on Mamdani to perform the de-fuzzification proccess. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number for points for de-fuzzification. </dd></dl>
+
+</div>
+</div>
+<a id="aadf18ace703598a1e962ac5715d7fda1" name="aadf18ace703598a1e962ac5715d7fda1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadf18ace703598a1e962ac5715d7fda1">&#9670;&nbsp;</a></span>getOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::getOutput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the de-fuzzified crisp value from the output with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The output tag </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>The variable where the output will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested de-fuzzified crisp value. </dd></dl>
+
+</div>
+</div>
+<a id="a7d94c043abf760d006ae6a8f0551e5d0" name="a7d94c043abf760d006ae6a8f0551e5d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d94c043abf760d006ae6a8f0551e5d0">&#9670;&nbsp;</a></span>inference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::inference </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the inference process on the FIS object. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>The instance should have already invoked the fuzzification operation successfully with <a class="el" href="classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e" title="Perform the fuzzification operation over the crisp inputs on the requested FIS object.">system::fuzzify()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a1367a0c5c30bc795189b3b2eed05b4b3" name="a1367a0c5c30bc795189b3b2eed05b4b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1367a0c5c30bc795189b3b2eed05b4b3">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp; <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value to set the previously selected input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classqlibs_1_1fis_1_1system.html" title="A wrapper for the FIS object.">fis::system</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="a984f0179f3cff29e1b2dcd1d26c228d9" name="a984f0179f3cff29e1b2dcd1d26c228d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a984f0179f3cff29e1b2dcd1d26c228d9">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp; <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value to set the previously selected input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classqlibs_1_1fis_1_1system.html" title="A wrapper for the FIS object.">fis::system</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="ad33ae3f0b477a79424d07fe0b9a70c12" name="ad33ae3f0b477a79424d07fe0b9a70c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33ae3f0b477a79424d07fe0b9a70c12">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a> &amp; <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select the input to set using with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The input tag </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classqlibs_1_1fis_1_1system.html" title="A wrapper for the FIS object.">fis::system</a> object you invoked &lt;&lt; upon. </dd></dl>
+
+</div>
+</div>
+<a id="a75835b4379528325ba1296176bbe815f" name="a75835b4379528325ba1296176bbe815f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75835b4379528325ba1296176bbe815f">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>outTag</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the de-fuzzified crisp value from the output with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">outTag</td><td>The output tag </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested de-fuzzified crisp value. </dd></dl>
+
+</div>
+</div>
+<a id="abd6af83cf072f9ec9cfb426d71dc2aa1" name="abd6af83cf072f9ec9cfb426d71dc2aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6af83cf072f9ec9cfb426d71dc2aa1">&#9670;&nbsp;</a></span>setDeFuzzMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setDeFuzzMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qfis.html#gaaa87572cbd0f5fda216c13ce2e68ce26">deFuzzMethod</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the default de-Fuzzification method of the FIS instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The de-fuzzification method: use one of the following : <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a7682c34d8a2e8186a0909712007ba769">centroid</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a885e8915d14138fcfffb04804c433235">bisector</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2">mom</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ab151da20bd858f1adb6f610527a9af19">lom</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ac2e2ea78bd7006e1affc74c87f66a609">som</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a95c4e8e5136295f5e4e8b174e0b0e165">wtaver</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a56bcfc2e50051b70cf52f4d7b8116665">wtsum</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a7682c34d8a2e8186a0909712007ba769">centroid</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a885e8915d14138fcfffb04804c433235">bisector</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2">mom</a>, <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ab151da20bd858f1adb6f610527a9af19">lom</a> and <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ac2e2ea78bd7006e1affc74c87f66a609">som</a> only apply for a <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350ac708753f41f5d485a63a603c15dd439a">Mamdani</a> FIS </dd>
+<dd>
+<a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a95c4e8e5136295f5e4e8b174e0b0e165">wtaver</a> and <a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a56bcfc2e50051b70cf52f4d7b8116665">wtsum</a> only apply for a <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> FIS. </dd>
+<dd>
+<a class="el" href="group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a95c4e8e5136295f5e4e8b174e0b0e165">wtaver</a> only apply for a <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> FIS </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code> </dd></dl>
+
+</div>
+</div>
+<a id="af766a1b22b1ff0718a05763bfba0faa4" name="af766a1b22b1ff0718a05763bfba0faa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af766a1b22b1ff0718a05763bfba0faa4">&#9670;&nbsp;</a></span>setInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setInput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a crisp value of the input with the specified tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The input tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The crisp value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a33adf57a681c2b6ad9be86412c0c156c" name="a33adf57a681c2b6ad9be86412c0c156c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33adf57a681c2b6ad9be86412c0c156c">&#9670;&nbsp;</a></span>setParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setParameter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#ga2da6415f8f3a941b38888831813a7296">parameter</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#ga58e4c5e17f2fb0200c3aaef612abbf29">paramValue</a>&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set parameters of the FIS instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>The requested parameter to change/set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The value of the parameter to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="afe053690539460f491306618ce92a7a3" name="afe053690539460f491306618ce92a7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe053690539460f491306618ce92a7a3">&#9670;&nbsp;</a></span>setRuleWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setRuleWeights </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td>
+          <td class="paramname"><em>rWeights</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set weights to the rules of the inference system. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I/Os and fuzzy sets must be previously initialized by <a class="el" href="classqlibs_1_1fis_1_1system.html#af2eb250daaaa67159ebbb88a19778e5f" title="Setup the input with the specified tag and set limits for it.">system::setupInput()</a>, <a class="el" href="classqlibs_1_1fis_1_1system.html#ab298e1ccfe3f81ef799d81809382ccad" title="Setup the output with the specified tag and set limits for it.">system::setupOutput()</a>, system::setInputMF(), system::setOutputMF and <a class="el" href="classqlibs_1_1fis_1_1system.html#a28f161472242b2ed56c34495968a839e" title="Setup and initialize the FIS instance.">system::setup()</a> respectively. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rWeights</td><td>An array with the values of every rule weight; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a28f161472242b2ed56c34495968a839e" name="a28f161472242b2ed56c34495968a839e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f161472242b2ed56c34495968a839e">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setup </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize the FIS instance. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="af2eb250daaaa67159ebbb88a19778e5f" name="af2eb250daaaa67159ebbb88a19778e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2eb250daaaa67159ebbb88a19778e5f">&#9670;&nbsp;</a></span>setupInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupInput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the input with the specified tag and set limits for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The input tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Min</td><td>Minimum allowed value for this input </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Max</td><td>Max allowed value for this input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a0a32305b3ff087b2ecc9b87cbaad4e53" name="a0a32305b3ff087b2ecc9b87cbaad4e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a32305b3ff087b2ecc9b87cbaad4e53">&#9670;&nbsp;</a></span>setupInputMF() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupInputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#ga9dbb7ad4f4d6111e49be796105f1fd84">shapeMF</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0_re</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the input tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The input tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The wanted shape/form for this membership function, can be one of the following: <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a6e4cec7cbe2e399c014f158784aa6199">trimf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ac2d88ff9dde26d59f299d26774423af5">trapmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a210a8d8fcd230d8eda3f9ae00c35d94d">gbellmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a2cd5ad5872e0538572d96e9039d9557b">gaussmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a84355a66ae96a1b2996691f1e48d4831">gauss2mf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a165eb8fbf451ef6869206ab9d5bd343a">sigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a805ad69cf52856d32baa079adee10552">dsigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a5c71993849d33ed5299b83c8086bcb4f">psigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a36bb1485280fc2c1706b685ade28eecd">pimf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a76e26680333ed1a28217d73c821d110f">smf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84abead0e10a3cbe3a6497eb4bd0bdeb93f">zmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a1abc12fcac5df99a54abecc6089da020">singletonmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a53c15b451933ff2d7f3f08f05df6ba07">concavemf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a9f394de20fd36b8d751d2328bf447bbd">spikemf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ab1e5fcb2978ab0fc4fe4225cb983b8b5">linsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a7ebdfb8acbbd362e9e6dd4fc520cb478">linzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84afa1c9fbaff2a0ff116ff7ce30f47062d">rectmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a6ae7e23baee8fd4ea833f6be07a5bc84">cosmf</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>For <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> FIS, an output membership function should be one of the following: <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a238e1179591b95487b920e58e7081152">constantmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ae451d74fd630689b1afdb5b4479bdd58">linearmf</a>. </dd>
+<dd>
+For <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> FIS, an output membership function should be one the following monotonic functions : <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a289433cd46f4a5292faa95e5f3699cc1">tlinsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a5dee3718a23f03172988eddfc8716b5b">tlinzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a80ff64b2f682cdeb6f4ae446f4fa3f1a">tsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a651925df727fa8a050e0f6f933331047">tzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a528e5dabe49eb4ae12424ba5639ce107">tconcavemf</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> and <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a03c30c24853e26b5090584dbf6732e22" name="a03c30c24853e26b5090584dbf6732e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c30c24853e26b5090584dbf6732e22">&#9670;&nbsp;</a></span>setupInputMF() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupInputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfFunction&#160;</td>
+          <td class="paramname"><em>customMfs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0_re</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the input tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The input tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">customMfs</td><td>Custom user-defined membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> and <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ab298e1ccfe3f81ef799d81809382ccad" name="ab298e1ccfe3f81ef799d81809382ccad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab298e1ccfe3f81ef799d81809382ccad">&#9670;&nbsp;</a></span>setupOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupOutput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the output with the specified tag and set limits for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The output tag </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Min</td><td>Minimum allowed value for this output </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Max</td><td>Max allowed value for this output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a4f5fdb1c39acb6193b929105265d673e" name="a4f5fdb1c39acb6193b929105265d673e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5fdb1c39acb6193b929105265d673e">&#9670;&nbsp;</a></span>setupOutputMF() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupOutputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#ga9dbb7ad4f4d6111e49be796105f1fd84">shapeMF</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0_re</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the output tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The output tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The wanted shape/form for this membership function, can be one of the following: <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a6e4cec7cbe2e399c014f158784aa6199">trimf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ac2d88ff9dde26d59f299d26774423af5">trapmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a210a8d8fcd230d8eda3f9ae00c35d94d">gbellmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a2cd5ad5872e0538572d96e9039d9557b">gaussmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a84355a66ae96a1b2996691f1e48d4831">gauss2mf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a165eb8fbf451ef6869206ab9d5bd343a">sigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a805ad69cf52856d32baa079adee10552">dsigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a5c71993849d33ed5299b83c8086bcb4f">psigmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a36bb1485280fc2c1706b685ade28eecd">pimf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a76e26680333ed1a28217d73c821d110f">smf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84abead0e10a3cbe3a6497eb4bd0bdeb93f">zmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a1abc12fcac5df99a54abecc6089da020">singletonmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a53c15b451933ff2d7f3f08f05df6ba07">concavemf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a9f394de20fd36b8d751d2328bf447bbd">spikemf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ab1e5fcb2978ab0fc4fe4225cb983b8b5">linsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a7ebdfb8acbbd362e9e6dd4fc520cb478">linzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84afa1c9fbaff2a0ff116ff7ce30f47062d">rectmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a6ae7e23baee8fd4ea833f6be07a5bc84">cosmf</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>For <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> FIS, an output membership function should be one of the following: <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a238e1179591b95487b920e58e7081152">constantmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ae451d74fd630689b1afdb5b4479bdd58">linearmf</a>. </dd>
+<dd>
+For <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> FIS, an output membership function should be one the following monotonic functions : <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a289433cd46f4a5292faa95e5f3699cc1">tlinsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a5dee3718a23f03172988eddfc8716b5b">tlinzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a80ff64b2f682cdeb6f4ae446f4fa3f1a">tsmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a651925df727fa8a050e0f6f933331047">tzmf</a>, <a class="el" href="group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a528e5dabe49eb4ae12424ba5639ce107">tconcavemf</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> and <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a008fb7fbb8886bb2875e572e381d5a3e" name="a008fb7fbb8886bb2875e572e381d5a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008fb7fbb8886bb2875e572e381d5a3e">&#9670;&nbsp;</a></span>setupOutputMF() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__qfis.html#ga586122d18868caf25eefe84cb2421350">type</a> fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqlibs_1_1fis_1_1system.html">qlibs::fis::system</a>&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;::setupOutputMF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">tag</a>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfFunction&#160;</td>
+          <td class="paramname"><em>customMfs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>h</em> = <code>1.0_re</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the output tag and points for the specified membership function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">io</td><td>The output tag related with this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>The user-defined tag for this membership function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">customMfs</td><td>Custom user-defined membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cp</td><td>Points or coefficients of the membership function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of the membership function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Height parameter <em>h</em> does not apply for output membership functions on <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a031f47d8fea73c25edb3a077d8d08b7a">Sugeno</a> and <a class="el" href="group__qfis.html#gga586122d18868caf25eefe84cb2421350a30c785553b3c082696dbf1eeb3313b46">Tsukamoto</a> inference systems. [ 0 &lt;= h &lt;= 1] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceqlibs.html">qlibs</a></li><li class="navelem"><a class="el" href="namespaceqlibs_1_1fis.html">fis</a></li><li class="navelem"><a class="el" href="classqlibs_1_1fis_1_1system.html">system</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,21 +1,20 @@
 var hierarchy =
 [
     [ "qlibs::continuousTF< order >", "structqlibs_1_1continuous_t_f.html", null ],
+    [ "qlibs::fis::core", "classqlibs_1_1fis_1_1core.html", [
+      [ "qlibs::fis::instance", "classqlibs_1_1fis_1_1instance.html", null ]
+    ] ],
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
     [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
-    [ "qlibs::fisCore", "classqlibs_1_1fis_core.html", [
-      [ "qlibs::fis", "classqlibs_1_1fis.html", null ]
-    ] ],
-    [ "qlibs::fisIOBase", "classqlibs_1_1fis_i_o_base.html", [
-      [ "qlibs::fisInput", "classqlibs_1_1fis_input.html", null ],
-      [ "qlibs::fisOutput", "classqlibs_1_1fis_output.html", null ]
-    ] ],
-    [ "qlibs::fisMF", "classqlibs_1_1fis_m_f.html", null ],
-    [ "qlibs::fisSystem< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classqlibs_1_1fis_system.html", null ],
     [ "qlibs::fp16", "classqlibs_1_1fp16.html", null ],
+    [ "qlibs::fis::ioBase", "classqlibs_1_1fis_1_1io_base.html", [
+      [ "qlibs::fis::input", "classqlibs_1_1fis_1_1input.html", null ],
+      [ "qlibs::fis::output", "classqlibs_1_1fis_1_1output.html", null ]
+    ] ],
+    [ "qlibs::fis::mf", "classqlibs_1_1fis_1_1mf.html", null ],
     [ "nonCopyable", null, [
       [ "qlibs::bitfield", "classqlibs_1_1bitfield.html", null ],
-      [ "qlibs::fis", "classqlibs_1_1fis.html", null ],
+      [ "qlibs::fis::instance", "classqlibs_1_1fis_1_1instance.html", null ],
       [ "qlibs::pidController", "classqlibs_1_1pid_controller.html", null ],
       [ "qlibs::smootherALNF", "classqlibs_1_1smoother_a_l_n_f.html", null ],
       [ "qlibs::smootherGMWF", "classqlibs_1_1smoother_g_m_w_f.html", null ],
@@ -53,6 +52,6 @@ var hierarchy =
       [ "qlibs::smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", null ],
       [ "qlibs::smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", null ]
     ] ],
-    [ "sortStackNode", "structsort_stack_node.html", null ],
-    [ "qlibs::state", "classqlibs_1_1state.html", null ]
+    [ "qlibs::state", "classqlibs_1_1state.html", null ],
+    [ "qlibs::fis::system< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classqlibs_1_1fis_1_1system.html", null ]
 ];
