@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: Class Members</title>
+<title>API Reference: Matrix library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,7 +107,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_n.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__qmat.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -125,17 +125,55 @@ $(document).ready(function(){initNavTree('functions_n.html',''); initResizable()
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle"><div class="title">Matrix library</div></div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
-<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>n&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a9474f6c5d9ddb11ee2709406620424fb">qlibs::ltisys</a></li>
-<li>na&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a20bb42c323d39ebc7d4c2981165247e2">qlibs::ltisys</a></li>
-<li>nb&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a12f763b9ffd67fe4f9d6e12542b76044">qlibs::ltisys</a></li>
-<li>normalizeTransferFunction()&#160;:&#160;<a class="el" href="classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4">qlibs::ltisys</a></li>
-<li>normInf()&#160;:&#160;<a class="el" href="classqlibs_1_1mat.html#aeacda8230e3ebecd3746ee77229d183e">qlibs::mat&lt; Rows, Cols &gt;</a></li>
-<li>num&#160;:&#160;<a class="el" href="structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b">qlibs::continuousTF&lt; order &gt;</a>, <a class="el" href="structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2">qlibs::discreteTF&lt; NB, NA &gt;</a></li>
-</ul>
+<p>Class for Recursive Root Mean Square RMS estimation.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html">qlibs::mat&lt; Rows, Cols &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix object.  <a href="classqlibs_1_1mat.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga9e19221783d7af35b19059c1c0e14511"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qmat.html#ga9e19221783d7af35b19059c1c0e14511">qlibs::matSpecial</a> { <a class="el" href="group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b">qlibs::MAT_ZERO</a>
+, <a class="el" href="group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc">qlibs::MAT_IDENTITY</a>
+, <a class="el" href="group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a2772dc72da868e89d69492e49d67425e">qlibs::MAT_ALL</a>
+, <a class="el" href="group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a">qlibs::MAT_MAGIC</a>
+ }</td></tr>
+<tr class="separator:ga9e19221783d7af35b19059c1c0e14511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p >Class for Recursive Root Mean Square RMS estimation. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga9e19221783d7af35b19059c1c0e14511" name="ga9e19221783d7af35b19059c1c0e14511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e19221783d7af35b19059c1c0e14511">&#9670;&nbsp;</a></span>matSpecial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qmat.html#ga9e19221783d7af35b19059c1c0e14511">qlibs::matSpecial</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b" name="gga9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b"></a>MAT_ZERO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc" name="gga9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc"></a>MAT_IDENTITY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga9e19221783d7af35b19059c1c0e14511a2772dc72da868e89d69492e49d67425e" name="gga9e19221783d7af35b19059c1c0e14511a2772dc72da868e89d69492e49d67425e"></a>MAT_ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a" name="gga9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a"></a>MAT_MAGIC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

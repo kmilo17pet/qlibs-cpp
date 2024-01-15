@@ -1,0 +1,1170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: qlibs::mat&lt; Rows, Cols &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classqlibs_1_1mat.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classqlibs_1_1mat-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::mat&lt; Rows, Cols &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__qmat.html">Matrix library</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Matrix object.  
+ <a href="classqlibs_1_1mat.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mat_8hpp_source.html">mat.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3c3b5d94a58686e65b3146611d9fa81b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a3c3b5d94a58686e65b3146611d9fa81b">mat</a> ()</td></tr>
+<tr class="separator:a3c3b5d94a58686e65b3146611d9fa81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a32297b1acf7a0fe7039c3607ad88f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a29a32297b1acf7a0fe7039c3607ad88f">mat</a> (const <a class="el" href="group__qmat.html#ga9e19221783d7af35b19059c1c0e14511">matSpecial</a> type, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> value=1.0_re)</td></tr>
+<tr class="separator:a29a32297b1acf7a0fe7039c3607ad88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa89ac7510d4258cbf51039a52c9267"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a3fa89ac7510d4258cbf51039a52c9267"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a3fa89ac7510d4258cbf51039a52c9267">mat</a> (Args... args)</td></tr>
+<tr class="separator:a3fa89ac7510d4258cbf51039a52c9267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00eeb622555c6f7e3ff9c1183d7d99b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a00eeb622555c6f7e3ff9c1183d7d99b3">operator()</a> (size_t row, size_t col)</td></tr>
+<tr class="separator:a00eeb622555c6f7e3ff9c1183d7d99b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42543868e67cd04fc24cc596b4c5ea7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a42543868e67cd04fc24cc596b4c5ea7b">operator()</a> (size_t index)</td></tr>
+<tr class="separator:a42543868e67cd04fc24cc596b4c5ea7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e49dfded94f97751c2f01936cfb940e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a5e49dfded94f97751c2f01936cfb940e">operator()</a> (size_t index) const</td></tr>
+<tr class="separator:a5e49dfded94f97751c2f01936cfb940e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dea17f41292fa517fb48f0ce9a7bc4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a2dea17f41292fa517fb48f0ce9a7bc4e">mat</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other)</td></tr>
+<tr class="separator:a2dea17f41292fa517fb48f0ce9a7bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f4217ea30730ad6463fffef33c68c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a64f4217ea30730ad6463fffef33c68c5">operator+</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other) const</td></tr>
+<tr class="separator:a64f4217ea30730ad6463fffef33c68c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec496c3f1d88bed18d9286a8615c9a2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#aec496c3f1d88bed18d9286a8615c9a2e">operator-</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other) const</td></tr>
+<tr class="separator:aec496c3f1d88bed18d9286a8615c9a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828cde08cec04d3f0f7d034174c89dbd"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a828cde08cec04d3f0f7d034174c89dbd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a828cde08cec04d3f0f7d034174c89dbd">operator*</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, N &gt; &amp;other) const</td></tr>
+<tr class="separator:a828cde08cec04d3f0f7d034174c89dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0546aec5a0ccfb467d1caf2fa2403cf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a0546aec5a0ccfb467d1caf2fa2403cf2">operator*</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar) const</td></tr>
+<tr class="separator:a0546aec5a0ccfb467d1caf2fa2403cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53bda5b540472aaf2c15e266c4e1a4bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a53bda5b540472aaf2c15e266c4e1a4bb">operator/</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar) const</td></tr>
+<tr class="separator:a53bda5b540472aaf2c15e266c4e1a4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3185e53da1ca3842b3dcdd09ad9c8d6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a3185e53da1ca3842b3dcdd09ad9c8d6e">operator+</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar) const</td></tr>
+<tr class="separator:a3185e53da1ca3842b3dcdd09ad9c8d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761a11571b547e963c7f3ea2a8031442"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a761a11571b547e963c7f3ea2a8031442">operator++</a> ()</td></tr>
+<tr class="separator:a761a11571b547e963c7f3ea2a8031442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7dc3b75c19c536face5e60622ce52e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#ab7dc3b75c19c536face5e60622ce52e6">operator++</a> (int)</td></tr>
+<tr class="separator:ab7dc3b75c19c536face5e60622ce52e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad652e1b0f068c342cb6d7b2f58dd99c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#ad652e1b0f068c342cb6d7b2f58dd99c5">operator-</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar) const</td></tr>
+<tr class="separator:ad652e1b0f068c342cb6d7b2f58dd99c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ffdaa782d463231e28a57a1d5973b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a53ffdaa782d463231e28a57a1d5973b6">operator--</a> ()</td></tr>
+<tr class="separator:a53ffdaa782d463231e28a57a1d5973b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dfec13bf708343a943184b553e112f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a31dfec13bf708343a943184b553e112f">operator--</a> (int)</td></tr>
+<tr class="separator:a31dfec13bf708343a943184b553e112f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5552c0a09d83507a95fdd9c952d475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#afd5552c0a09d83507a95fdd9c952d475">operator+=</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other)</td></tr>
+<tr class="separator:afd5552c0a09d83507a95fdd9c952d475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa923dcc41c58722edb2775e9f044ec09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#aa923dcc41c58722edb2775e9f044ec09">operator-=</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other)</td></tr>
+<tr class="separator:aa923dcc41c58722edb2775e9f044ec09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fec75edb45a07b3fd8c7d31001428c2"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a7fec75edb45a07b3fd8c7d31001428c2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, N &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a7fec75edb45a07b3fd8c7d31001428c2">operator*=</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, N &gt; &amp;other)</td></tr>
+<tr class="separator:a7fec75edb45a07b3fd8c7d31001428c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90802f349b76f138ab6de1dc15b10aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a90802f349b76f138ab6de1dc15b10aae">operator*=</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar)</td></tr>
+<tr class="separator:a90802f349b76f138ab6de1dc15b10aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6e0aaba48f30e029a2a60bd71176c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a6e6e0aaba48f30e029a2a60bd71176c0">operator/=</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar)</td></tr>
+<tr class="separator:a6e6e0aaba48f30e029a2a60bd71176c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade32a985b4ea13889620d796998e0d87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#ade32a985b4ea13889620d796998e0d87">operator+=</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar)</td></tr>
+<tr class="separator:ade32a985b4ea13889620d796998e0d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379933358c586ac844751f5c0ad153d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a379933358c586ac844751f5c0ad153d3">operator-=</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;scalar)</td></tr>
+<tr class="separator:a379933358c586ac844751f5c0ad153d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adceb7088dd0013eb5a9c64f72832fc6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#adceb7088dd0013eb5a9c64f72832fc6c">operator=</a> (const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;other)</td></tr>
+<tr class="separator:adceb7088dd0013eb5a9c64f72832fc6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e476f1809a46e277a11378317d3d05e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a0e476f1809a46e277a11378317d3d05e">operator-</a> () const</td></tr>
+<tr class="separator:a0e476f1809a46e277a11378317d3d05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4373c43beafdcab6e9c3385c2dcb12fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a4373c43beafdcab6e9c3385c2dcb12fd">display</a> () const</td></tr>
+<tr class="separator:a4373c43beafdcab6e9c3385c2dcb12fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe3181996a31366c3b8ec5eca08b396"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, Rows &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#adfe3181996a31366c3b8ec5eca08b396">operator!</a> () const</td></tr>
+<tr class="separator:adfe3181996a31366c3b8ec5eca08b396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452cee764f17a843dbd0cdfb71fc611a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a452cee764f17a843dbd0cdfb71fc611a">operator[]</a> (size_t index)</td></tr>
+<tr class="separator:a452cee764f17a843dbd0cdfb71fc611a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476b01cf8b806e333d1ddd515ebd0409"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a476b01cf8b806e333d1ddd515ebd0409">operator[]</a> (size_t index) const</td></tr>
+<tr class="separator:a476b01cf8b806e333d1ddd515ebd0409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb68580ae09eb7384bcb6fb266a195f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Rows &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#a6fb68580ae09eb7384bcb6fb266a195f">inv</a> () const</td></tr>
+<tr class="separator:a6fb68580ae09eb7384bcb6fb266a195f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeacda8230e3ebecd3746ee77229d183e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html#aeacda8230e3ebecd3746ee77229d183e">normInf</a> () const</td></tr>
+<tr class="separator:aeacda8230e3ebecd3746ee77229d183e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;size_t Rows, size_t Cols&gt;<br />
+class qlibs::mat&lt; Rows, Cols &gt;</div><p >Matrix object. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3c3b5d94a58686e65b3146611d9fa81b" name="a3c3b5d94a58686e65b3146611d9fa81b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3b5d94a58686e65b3146611d9fa81b">&#9670;&nbsp;</a></span>mat() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::<a class="el" href="classqlibs_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29a32297b1acf7a0fe7039c3607ad88f" name="a29a32297b1acf7a0fe7039c3607ad88f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a32297b1acf7a0fe7039c3607ad88f">&#9670;&nbsp;</a></span>mat() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::<a class="el" href="classqlibs_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qmat.html#ga9e19221783d7af35b19059c1c0e14511">matSpecial</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>1.0_re</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fa89ac7510d4258cbf51039a52c9267" name="a3fa89ac7510d4258cbf51039a52c9267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa89ac7510d4258cbf51039a52c9267">&#9670;&nbsp;</a></span>mat() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::<a class="el" href="classqlibs_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dea17f41292fa517fb48f0ce9a7bc4e" name="a2dea17f41292fa517fb48f0ce9a7bc4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dea17f41292fa517fb48f0ce9a7bc4e">&#9670;&nbsp;</a></span>mat() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::<a class="el" href="classqlibs_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4373c43beafdcab6e9c3385c2dcb12fd" name="a4373c43beafdcab6e9c3385c2dcb12fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4373c43beafdcab6e9c3385c2dcb12fd">&#9670;&nbsp;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::display </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6fb68580ae09eb7384bcb6fb266a195f" name="a6fb68580ae09eb7384bcb6fb266a195f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb68580ae09eb7384bcb6fb266a195f">&#9670;&nbsp;</a></span>inv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Rows &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::inv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeacda8230e3ebecd3746ee77229d183e" name="aeacda8230e3ebecd3746ee77229d183e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacda8230e3ebecd3746ee77229d183e">&#9670;&nbsp;</a></span>normInf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::normInf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfe3181996a31366c3b8ec5eca08b396" name="adfe3181996a31366c3b8ec5eca08b396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe3181996a31366c3b8ec5eca08b396">&#9670;&nbsp;</a></span>operator!()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, Rows &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator! </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42543868e67cd04fc24cc596b4c5ea7b" name="a42543868e67cd04fc24cc596b4c5ea7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42543868e67cd04fc24cc596b4c5ea7b">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e49dfded94f97751c2f01936cfb940e" name="a5e49dfded94f97751c2f01936cfb940e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e49dfded94f97751c2f01936cfb940e">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00eeb622555c6f7e3ff9c1183d7d99b3" name="a00eeb622555c6f7e3ff9c1183d7d99b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00eeb622555c6f7e3ff9c1183d7d99b3">&#9670;&nbsp;</a></span>operator()() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a828cde08cec04d3f0f7d034174c89dbd" name="a828cde08cec04d3f0f7d034174c89dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828cde08cec04d3f0f7d034174c89dbd">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, N &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0546aec5a0ccfb467d1caf2fa2403cf2" name="a0546aec5a0ccfb467d1caf2fa2403cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0546aec5a0ccfb467d1caf2fa2403cf2">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fec75edb45a07b3fd8c7d31001428c2" name="a7fec75edb45a07b3fd8c7d31001428c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fec75edb45a07b3fd8c7d31001428c2">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, N &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Cols, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90802f349b76f138ab6de1dc15b10aae" name="a90802f349b76f138ab6de1dc15b10aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90802f349b76f138ab6de1dc15b10aae">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64f4217ea30730ad6463fffef33c68c5" name="a64f4217ea30730ad6463fffef33c68c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f4217ea30730ad6463fffef33c68c5">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3185e53da1ca3842b3dcdd09ad9c8d6e" name="a3185e53da1ca3842b3dcdd09ad9c8d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3185e53da1ca3842b3dcdd09ad9c8d6e">&#9670;&nbsp;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a761a11571b547e963c7f3ea2a8031442" name="a761a11571b547e963c7f3ea2a8031442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761a11571b547e963c7f3ea2a8031442">&#9670;&nbsp;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7dc3b75c19c536face5e60622ce52e6" name="ab7dc3b75c19c536face5e60622ce52e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dc3b75c19c536face5e60622ce52e6">&#9670;&nbsp;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd5552c0a09d83507a95fdd9c952d475" name="afd5552c0a09d83507a95fdd9c952d475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5552c0a09d83507a95fdd9c952d475">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade32a985b4ea13889620d796998e0d87" name="ade32a985b4ea13889620d796998e0d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade32a985b4ea13889620d796998e0d87">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e476f1809a46e277a11378317d3d05e" name="a0e476f1809a46e277a11378317d3d05e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e476f1809a46e277a11378317d3d05e">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec496c3f1d88bed18d9286a8615c9a2e" name="aec496c3f1d88bed18d9286a8615c9a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec496c3f1d88bed18d9286a8615c9a2e">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad652e1b0f068c342cb6d7b2f58dd99c5" name="ad652e1b0f068c342cb6d7b2f58dd99c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad652e1b0f068c342cb6d7b2f58dd99c5">&#9670;&nbsp;</a></span>operator-() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53ffdaa782d463231e28a57a1d5973b6" name="a53ffdaa782d463231e28a57a1d5973b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ffdaa782d463231e28a57a1d5973b6">&#9670;&nbsp;</a></span>operator--() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31dfec13bf708343a943184b553e112f" name="a31dfec13bf708343a943184b553e112f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31dfec13bf708343a943184b553e112f">&#9670;&nbsp;</a></span>operator--() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa923dcc41c58722edb2775e9f044ec09" name="aa923dcc41c58722edb2775e9f044ec09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa923dcc41c58722edb2775e9f044ec09">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a379933358c586ac844751f5c0ad153d3" name="a379933358c586ac844751f5c0ad153d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379933358c586ac844751f5c0ad153d3">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53bda5b540472aaf2c15e266c4e1a4bb" name="a53bda5b540472aaf2c15e266c4e1a4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53bda5b540472aaf2c15e266c4e1a4bb">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e6e0aaba48f30e029a2a60bd71176c0" name="a6e6e0aaba48f30e029a2a60bd71176c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6e0aaba48f30e029a2a60bd71176c0">&#9670;&nbsp;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adceb7088dd0013eb5a9c64f72832fc6c" name="adceb7088dd0013eb5a9c64f72832fc6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adceb7088dd0013eb5a9c64f72832fc6c">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp; <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classqlibs_1_1mat.html">mat</a>&lt; Rows, Cols &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a452cee764f17a843dbd0cdfb71fc611a" name="a452cee764f17a843dbd0cdfb71fc611a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452cee764f17a843dbd0cdfb71fc611a">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> * <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a476b01cf8b806e333d1ddd515ebd0409" name="a476b01cf8b806e333d1ddd515ebd0409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476b01cf8b806e333d1ddd515ebd0409">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Rows, size_t Cols&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> * <a class="el" href="classqlibs_1_1mat.html">qlibs::mat</a>&lt; Rows, Cols &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceqlibs.html">qlibs</a></li><li class="navelem"><a class="el" href="classqlibs_1_1mat.html">mat</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

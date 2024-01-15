@@ -19,6 +19,7 @@ var annotated_dup =
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
       [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
+      [ "mat", "classqlibs_1_1mat.html", "classqlibs_1_1mat" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
       [ "pidController", "classqlibs_1_1pid_controller.html", "classqlibs_1_1pid_controller" ],
       [ "pidGains", "structqlibs_1_1pid_gains.html", "structqlibs_1_1pid_gains" ],

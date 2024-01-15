@@ -12,6 +12,7 @@ var hierarchy =
       [ "qlibs::fis::input", "classqlibs_1_1fis_1_1input.html", null ],
       [ "qlibs::fis::output", "classqlibs_1_1fis_1_1output.html", null ]
     ] ],
+    [ "qlibs::mat< Rows, Cols >", "classqlibs_1_1mat.html", null ],
     [ "qlibs::fis::mf", "classqlibs_1_1fis_1_1mf.html", null ],
     [ "nonCopyable", null, [
       [ "qlibs::bitfield", "classqlibs_1_1bitfield.html", null ],

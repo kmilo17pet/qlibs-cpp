@@ -6,5 +6,6 @@ var searchData=
   ['nextafter_3',['nextAfter',['../group__qffmath.html#ga32e1fcbf545fc4dc441c00982c512498',1,'qlibs::ffmath']]],
   ['normalize_4',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]],
   ['normalizetransferfunction_5',['normalizeTransferFunction',['../classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4',1,'qlibs::ltisys']]],
-  ['num_6',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]]
+  ['norminf_6',['normInf',['../classqlibs_1_1mat.html#aeacda8230e3ebecd3746ee77229d183e',1,'qlibs::mat']]],
+  ['num_7',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]]
 ];
