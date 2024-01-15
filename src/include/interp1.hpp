@@ -51,7 +51,7 @@ namespace qlibs {
                                              const size_t tableSize );
             const real_t *xData{ nullptr };
             const real_t *yData{ nullptr };
-            const size_t dataSize{ 0U };
+            size_t dataSize{ 0U };
             interp1Fcn_t method{ &linear };
             static real_t slope( const real_t * const tx,
                                  const real_t * const ty,
