@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['operator_22_22_5ffp_0',['operator&quot;&quot;_fp',['../classqlibs_1_1fp16.html#a9c1228e71b6c18530940ca74783cd864',1,'qlibs::fp16::operator&quot;&quot;_fp()'],['../classqlibs_1_1fp16.html#ae3978e8f23b5b68325268c1d22663bc7',1,'qlibs::fp16::operator&quot;&quot;_fp()']]],
-  ['operator_28_29_1',['operator()',['../classqlibs_1_1state.html#a739d28cdb5eeda949f8ee97d05541a71',1,'qlibs::state::operator()()'],['../classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d',1,'qlibs::tdl::operator()()']]],
-  ['operator_3c_3c_2',['operator&lt;&lt;',['../classqlibs_1_1fis_1_1system.html#ad33ae3f0b477a79424d07fe0b9a70c12',1,'qlibs::fis::system::operator&lt;&lt;(const tag &amp;t)'],['../classqlibs_1_1fis_1_1system.html#a984f0179f3cff29e1b2dcd1d26c228d9',1,'qlibs::fis::system::operator&lt;&lt;(const real_t &amp;value)'],['../classqlibs_1_1fis_1_1system.html#a1367a0c5c30bc795189b3b2eed05b4b3',1,'qlibs::fis::system::operator&lt;&lt;(const int &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a8bfed162c9921602ee2f644dc9678c98',1,'qlibs::fis::instance::operator&lt;&lt;(const real_t &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a51f0004a5cc5da7360d34f8638b8a5cd',1,'qlibs::fis::instance::operator&lt;&lt;(const int &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a91a60b9d7b59dc146295141ecfccfb37',1,'qlibs::fis::instance::operator&lt;&lt;(const tag &amp;t)']]],
-  ['operator_5b_5d_3',['operator[]',['../classqlibs_1_1fis_1_1instance.html#aeba9e6235d84f0206a2602324a5488d7',1,'qlibs::fis::instance::operator[]()'],['../classqlibs_1_1fis_1_1system.html#a75835b4379528325ba1296176bbe815f',1,'qlibs::fis::system::operator[]()'],['../classqlibs_1_1tdl.html#ac26718543f38a1ff23e8fa701fc79702',1,'qlibs::tdl::operator[]()']]],
-  ['or_4',['OR',['../group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991',1,'fis.hpp']]],
-  ['output_5',['output',['../classqlibs_1_1fis_1_1output.html#a74af332ca8944b1bee33f82335326ca4',1,'qlibs::fis::output::output()'],['../classqlibs_1_1fis_1_1output.html',1,'qlibs::fis::output']]],
-  ['overview_6',['Overview',['../index.html',1,'']]]
+  ['n_0',['n',['../classqlibs_1_1ltisys.html#a9474f6c5d9ddb11ee2709406620424fb',1,'qlibs::ltisys']]],
+  ['na_1',['na',['../classqlibs_1_1ltisys.html#a20bb42c323d39ebc7d4c2981165247e2',1,'qlibs::ltisys']]],
+  ['nb_2',['nb',['../classqlibs_1_1ltisys.html#a12f763b9ffd67fe4f9d6e12542b76044',1,'qlibs::ltisys']]],
+  ['nextafter_3',['nextAfter',['../group__qffmath.html#ga32e1fcbf545fc4dc441c00982c512498',1,'qlibs::ffmath']]],
+  ['normalize_4',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]],
+  ['normalizetransferfunction_5',['normalizeTransferFunction',['../classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4',1,'qlibs::ltisys']]],
+  ['num_6',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]]
 ];

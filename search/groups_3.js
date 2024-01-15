@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['lti_20systems_0',['LTI Systems',['../group__qltisys.html',1,'']]]
+  ['fis_20_2d_20fuzzy_20inference_20system_0',['FIS - Fuzzy Inference System',['../group__qfis.html',1,'']]],
+  ['fixed_2dpoint_20q16_2e16_20math_1',['Fixed-Point Q16.16 math',['../group__qfp16.html',1,'']]],
+  ['float_20fast_2dmath_2',['Float Fast-Math',['../group__qffmath.html',1,'']]]
 ];

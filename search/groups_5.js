@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pid_20controller_0',['PID Controller',['../group__qpid.html',1,'']]]
+  ['math_20extra_0',['Math extra',['../group__qfmathex.html',1,'']]]
 ];

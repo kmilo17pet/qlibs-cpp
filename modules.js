@@ -11,5 +11,6 @@ var modules =
     [ "Tapped Delay Line", "group__qtdl.html", "group__qtdl" ],
     [ "Float Fast-Math", "group__qffmath.html", "group__qffmath" ],
     [ "Type-generic utilities", "group__qtypegeneric.html", "group__qtypegeneric" ],
+    [ "1D Interpolation", "group__qinterp1.html", "group__qinterp1" ],
     [ "Math extra", "group__qfmathex.html", "group__qfmathex" ]
 ];

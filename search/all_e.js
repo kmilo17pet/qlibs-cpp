@@ -1,22 +1,10 @@
 var searchData=
 [
-  ['p00_0',['p00',['../classqlibs_1_1pid_auto_tuning.html#a1889baeeee51b5cbd8fa1ce5503fd431',1,'qlibs::pidAutoTuning']]],
-  ['p01_1',['p01',['../classqlibs_1_1pid_auto_tuning.html#a4a1f05c5cea0433940c1602892a198bf',1,'qlibs::pidAutoTuning']]],
-  ['p10_2',['p10',['../classqlibs_1_1pid_auto_tuning.html#a1bf88506dac6e180fc80c9528f5f5a7d',1,'qlibs::pidAutoTuning']]],
-  ['p11_3',['p11',['../classqlibs_1_1pid_auto_tuning.html#a6b8b1902364f051fd32307e5425e8e21',1,'qlibs::pidAutoTuning']]],
-  ['parameter_4',['parameter',['../group__qfis.html#ga2da6415f8f3a941b38888831813a7296',1,'qlibs::fis']]],
-  ['paramvalue_5',['paramValue',['../group__qfis.html#ga58e4c5e17f2fb0200c3aaef612abbf29',1,'qlibs::fis']]],
-  ['pid_20controller_6',['PID Controller',['../group__qpid.html',1,'(Global Namespace)'],['../qpid_desc.html',1,'index']]],
-  ['pid_5fautomatic_7',['PID_AUTOMATIC',['../group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4',1,'qlibs']]],
-  ['pid_5fbackward_8',['PID_BACKWARD',['../group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2',1,'qlibs']]],
-  ['pid_5fforward_9',['PID_FORWARD',['../group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2',1,'qlibs']]],
-  ['pid_5fmanual_10',['PID_MANUAL',['../group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3',1,'qlibs']]],
-  ['pidautotuning_11',['pidAutoTuning',['../classqlibs_1_1pid_auto_tuning.html#a6c31332f466c91e8e2827a4fa9dead5c',1,'qlibs::pidAutoTuning::pidAutoTuning()'],['../classqlibs_1_1pid_auto_tuning.html',1,'qlibs::pidAutoTuning']]],
-  ['pidcontroller_12',['pidController',['../classqlibs_1_1pid_controller.html#a97ee0e04c71c2cdd4a6c229bd0b2d14b',1,'qlibs::pidController::pidController()'],['../classqlibs_1_1pid_controller.html',1,'qlibs::pidController']]],
-  ['piddirection_13',['pidDirection',['../group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106',1,'qlibs']]],
-  ['pidgains_14',['pidGains',['../structqlibs_1_1pid_gains.html',1,'qlibs']]],
-  ['pidmode_15',['pidMode',['../group__qpid.html#ga723e93113c48dc2437680a245624d0f3',1,'qlibs']]],
-  ['pimf_16',['pimf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a36bb1485280fc2c1706b685ade28eecd',1,'qlibs::fis']]],
-  ['pow_17',['pow',['../classqlibs_1_1fp16.html#a7c20d51e0a866d2969b5df05dfe2202b',1,'qlibs::fp16::pow()'],['../group__qffmath.html#gabb0e6c2362bfc556e1a839a4c2b16633',1,'qlibs::ffmath::pow()']]],
-  ['psigmf_18',['psigmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a5c71993849d33ed5299b83c8086bcb4f',1,'qlibs::fis']]]
+  ['operator_22_22_5ffp_0',['operator&quot;&quot;_fp',['../classqlibs_1_1fp16.html#a9c1228e71b6c18530940ca74783cd864',1,'qlibs::fp16::operator&quot;&quot;_fp()'],['../classqlibs_1_1fp16.html#ae3978e8f23b5b68325268c1d22663bc7',1,'qlibs::fp16::operator&quot;&quot;_fp()']]],
+  ['operator_28_29_1',['operator()',['../classqlibs_1_1state.html#a739d28cdb5eeda949f8ee97d05541a71',1,'qlibs::state::operator()()'],['../classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d',1,'qlibs::tdl::operator()()']]],
+  ['operator_3c_3c_2',['operator&lt;&lt;',['../classqlibs_1_1fis_1_1system.html#ad33ae3f0b477a79424d07fe0b9a70c12',1,'qlibs::fis::system::operator&lt;&lt;(const tag &amp;t)'],['../classqlibs_1_1fis_1_1system.html#a984f0179f3cff29e1b2dcd1d26c228d9',1,'qlibs::fis::system::operator&lt;&lt;(const real_t &amp;value)'],['../classqlibs_1_1fis_1_1system.html#a1367a0c5c30bc795189b3b2eed05b4b3',1,'qlibs::fis::system::operator&lt;&lt;(const int &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a8bfed162c9921602ee2f644dc9678c98',1,'qlibs::fis::instance::operator&lt;&lt;(const real_t &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a51f0004a5cc5da7360d34f8638b8a5cd',1,'qlibs::fis::instance::operator&lt;&lt;(const int &amp;value)'],['../classqlibs_1_1fis_1_1instance.html#a91a60b9d7b59dc146295141ecfccfb37',1,'qlibs::fis::instance::operator&lt;&lt;(const tag &amp;t)']]],
+  ['operator_5b_5d_3',['operator[]',['../classqlibs_1_1fis_1_1instance.html#aeba9e6235d84f0206a2602324a5488d7',1,'qlibs::fis::instance::operator[]()'],['../classqlibs_1_1fis_1_1system.html#a75835b4379528325ba1296176bbe815f',1,'qlibs::fis::system::operator[]()'],['../classqlibs_1_1tdl.html#ac26718543f38a1ff23e8fa701fc79702',1,'qlibs::tdl::operator[]()']]],
+  ['or_4',['OR',['../group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991',1,'fis.hpp']]],
+  ['output_5',['output',['../classqlibs_1_1fis_1_1output.html#a74af332ca8944b1bee33f82335326ca4',1,'qlibs::fis::output::output()'],['../classqlibs_1_1fis_1_1output.html',1,'qlibs::fis::output']]],
+  ['overview_6',['Overview',['../index.html',1,'']]]
 ];

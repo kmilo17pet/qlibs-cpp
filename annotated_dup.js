@@ -17,6 +17,7 @@ var annotated_dup =
       [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
       [ "discreteTF", "structqlibs_1_1discrete_t_f.html", "structqlibs_1_1discrete_t_f" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
+      [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
       [ "pidController", "classqlibs_1_1pid_controller.html", "classqlibs_1_1pid_controller" ],

@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['mamdani_0',['Mamdani',['../group__qfis.html#gga586122d18868caf25eefe84cb2421350ac708753f41f5d485a63a603c15dd439a',1,'qlibs::fis']]],
-  ['mapminmax_1',['mapMinMax',['../group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1',1,'qlibs']]],
-  ['math_20extra_2',['Math extra',['../group__qfmathex.html',1,'']]],
-  ['max_3',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
-  ['mf_4',['mf',['../classqlibs_1_1fis_1_1mf.html#a449bc5fb79eed493ab499fbe8fcbac3d',1,'qlibs::fis::mf::mf()'],['../classqlibs_1_1fis_1_1mf.html',1,'qlibs::fis::mf']]],
-  ['min_5',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
-  ['mod_6',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
-  ['mom_7',['mom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2',1,'qlibs::fis']]],
-  ['mu_8',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
+  ['l_0',['l',['../classqlibs_1_1pid_auto_tuning.html#a1eff6d599a6701eebe48e4e4bddb3224',1,'qlibs::pidAutoTuning']]],
+  ['ldexp_1',['ldexp',['../group__qffmath.html#ga396c804d2c8d8049d9eb2480beda1f3d',1,'qlibs::ffmath']]],
+  ['linearmf_2',['linearmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ae451d74fd630689b1afdb5b4479bdd58',1,'qlibs::fis']]],
+  ['linsmf_3',['linsmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ab1e5fcb2978ab0fc4fe4225cb983b8b5',1,'qlibs::fis']]],
+  ['linzmf_4',['linzmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a7ebdfb8acbbd362e9e6dd4fc520cb478',1,'qlibs::fis']]],
+  ['log_5',['log',['../group__qffmath.html#ga7c6be9db5e289422258bda96feff3ae0',1,'qlibs::ffmath::log()'],['../classqlibs_1_1fp16.html#a325dc2b5743e84fdb336334f4a54e7b4',1,'qlibs::fp16::log()']]],
+  ['log10_6',['log10',['../group__qffmath.html#ga416c235d8648c8c2ca0053ee994bc0ae',1,'qlibs::ffmath']]],
+  ['log2_7',['log2',['../classqlibs_1_1fp16.html#a2052d8e7f87a522b46d423745f53d1a5',1,'qlibs::fp16::log2()'],['../group__qffmath.html#gaecd913f2dc2799c6dc09b1525da84fd6',1,'qlibs::ffmath::log2()']]],
+  ['lom_8',['lom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ab151da20bd858f1adb6f610527a9af19',1,'qlibs::fis']]],
+  ['lsearch_9',['lSearch',['../group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e',1,'qlibs::generic']]],
+  ['lti_20systems_10',['LTI Systems',['../group__qltisys.html',1,'']]],
+  ['ltisys_11',['ltisys',['../classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59',1,'qlibs::ltisys::ltisys()'],['../classqlibs_1_1ltisys.html',1,'qlibs::ltisys']]],
+  ['ltisys_5ftype_5fcontinuous_12',['LTISYS_TYPE_CONTINUOUS',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd',1,'qlibs']]],
+  ['ltisys_5ftype_5fdiscrete_13',['LTISYS_TYPE_DISCRETE',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b',1,'qlibs']]],
+  ['ltisys_5ftype_5funknown_14',['LTISYS_TYPE_UNKNOWN',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18',1,'qlibs']]],
+  ['ltisystype_15',['ltisysType',['../group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa',1,'qlibs']]]
 ];

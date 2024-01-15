@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>API Reference: Class Members - Functions</title>
+<title>API Reference: 1D Interpolation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,7 +107,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_func_i.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__qinterp1.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -125,24 +125,83 @@ $(document).ready(function(){initNavTree('functions_func_i.html',''); initResiza
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle"><div class="title">1D Interpolation</div></div>
+</div><!--header-->
 <div class="contents">
-&#160;
 
-<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>inference()&#160;:&#160;<a class="el" href="classqlibs_1_1fis_1_1instance.html#a9d995e59a148a40a9642e20446bbca8c">qlibs::fis::instance</a>, <a class="el" href="classqlibs_1_1fis_1_1system.html#a7d94c043abf760d006ae6a8f0551e5d0">qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;</a></li>
-<li>init()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#a7e0b818ffda8c41544cbfbc9442aa817">qlibs::state</a></li>
-<li>input()&#160;:&#160;<a class="el" href="classqlibs_1_1fis_1_1input.html#a1fcfd711bba511c572eda1e92b3f8c6d">qlibs::fis::input</a></li>
-<li>insertSample()&#160;:&#160;<a class="el" href="classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5">qlibs::tdl</a></li>
-<li>instance()&#160;:&#160;<a class="el" href="classqlibs_1_1fis_1_1instance.html#a466dbdbac4c947e4667c7b585f5c3384">qlibs::fis::instance</a></li>
-<li>integrate()&#160;:&#160;<a class="el" href="classqlibs_1_1state.html#af43a687385cc3b12038c8c44f8fca9c6">qlibs::state</a></li>
-<li>interp1()&#160;:&#160;<a class="el" href="classqlibs_1_1interp1.html#aa004ab7066bc6905915955b095b1e58e">qlibs::interp1</a></li>
-<li>ioBase()&#160;:&#160;<a class="el" href="classqlibs_1_1fis_1_1io_base.html#a6ba77a504578b09fd0b756a20c7a160a">qlibs::fis::ioBase</a></li>
-<li>isAutoTuningComplete()&#160;:&#160;<a class="el" href="classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131">qlibs::pidController</a></li>
-<li>isExpMax()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#ad369475aa239d84820c14f02a7cbc631">qlibs::fp16</a></li>
-<li>isInitialized()&#160;:&#160;<a class="el" href="classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef">qlibs::continuousSystem</a>, <a class="el" href="classqlibs_1_1discrete_system.html#afae7d9eb20e3f5e4318df953dd5393c3">qlibs::discreteSystem</a>, <a class="el" href="classqlibs_1_1ltisys.html#a5700dfd0f718292a6d9da75d8211ab90">qlibs::ltisys</a>, <a class="el" href="classqlibs_1_1smoother.html#aec30c8dbc4317e6e36fbebe8e84a0b29">qlibs::smoother</a>, <a class="el" href="classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c">qlibs::tdl</a></li>
-<li>isOverflow()&#160;:&#160;<a class="el" href="classqlibs_1_1fp16.html#a06adef7d29621413668fc9a3ffd3f910">qlibs::fp16</a></li>
-<li>isValidValue()&#160;:&#160;<a class="el" href="classqlibs_1_1pid_auto_tuning.html#a042cd2bd6c9639a3df8229d23334a8fd">qlibs::pidAutoTuning</a></li>
-</ul>
+<p>One-dimensional interpolation class.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html">qlibs::interp1</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 1D interpolation object.  <a href="classqlibs_1_1interp1.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga3b97e7424eae482b8b70649d8ab22016"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">qlibs::interp1Method</a> { <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373">qlibs::INTERP1_NEXT</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1">qlibs::INTERP1_PREVIOUS</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17">qlibs::INTERP1_NEAREST</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a22f483d14462af57c9222997156184bf">qlibs::INTERP1_LINEAR</a>
+, <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc">qlibs::INTERP1_SINE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e">qlibs::INTERP1_CUBIC</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896">qlibs::INTERP1_HERMITE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09">qlibs::INTERP1_SPLINE</a>
+, <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4">qlibs::INTERP1_CONSTRAINED_SPLINE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661">qlibs::INTERP1_MAX</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga3b97e7424eae482b8b70649d8ab22016"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum with all the available interpolation methods.  <a href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">More...</a><br /></td></tr>
+<tr class="separator:ga3b97e7424eae482b8b70649d8ab22016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p >One-dimensional interpolation class. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga3b97e7424eae482b8b70649d8ab22016" name="ga3b97e7424eae482b8b70649d8ab22016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b97e7424eae482b8b70649d8ab22016">&#9670;&nbsp;</a></span>interp1Method</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">qlibs::interp1Method</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An enum with all the available interpolation methods. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373" name="gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373"></a>INTERP1_NEXT&#160;</td><td class="fielddoc"><p >Return the next neighbor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1" name="gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1"></a>INTERP1_PREVIOUS&#160;</td><td class="fielddoc"><p >Return the previous neighbor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17" name="gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17"></a>INTERP1_NEAREST&#160;</td><td class="fielddoc"><p >Return the nearest neighbor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a22f483d14462af57c9222997156184bf" name="gga3b97e7424eae482b8b70649d8ab22016a22f483d14462af57c9222997156184bf"></a>INTERP1_LINEAR&#160;</td><td class="fielddoc"><p >Linear interpolation from nearest neighbors. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc" name="gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc"></a>INTERP1_SINE&#160;</td><td class="fielddoc"><p >Sine interpolation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e" name="gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e"></a>INTERP1_CUBIC&#160;</td><td class="fielddoc"><p >Cubic interpolation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896" name="gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896"></a>INTERP1_HERMITE&#160;</td><td class="fielddoc"><p >Piecewise cubic Hermite interpolation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09" name="gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09"></a>INTERP1_SPLINE&#160;</td><td class="fielddoc"><p >Catmull spline interpolation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4" name="gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4"></a>INTERP1_CONSTRAINED_SPLINE&#160;</td><td class="fielddoc"><p >A special kind of spline that doesn't overshoot. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661" name="gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661"></a>INTERP1_MAX&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

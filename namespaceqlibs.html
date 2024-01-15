@@ -174,6 +174,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1fp16.html">fp16</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed-point Q16.16 type with width of exactly 32 bits.  <a href="classqlibs_1_1fp16.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html">interp1</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 1D interpolation object.  <a href="classqlibs_1_1interp1.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html">ltisys</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A LTI system base class.  <a href="classqlibs_1_1ltisys.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,6 +256,23 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga5b194c56447214ee3207b107e549cad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration with all the supported cyclic redundancy checks.  <a href="group__qcrc.html#ga5b194c56447214ee3207b107e549cad5">More...</a><br /></td></tr>
 <tr class="separator:ga5b194c56447214ee3207b107e549cad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b97e7424eae482b8b70649d8ab22016"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">interp1Method</a> { <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373">INTERP1_NEXT</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1">INTERP1_PREVIOUS</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17">INTERP1_NEAREST</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a22f483d14462af57c9222997156184bf">INTERP1_LINEAR</a>
+, <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc">INTERP1_SINE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e">INTERP1_CUBIC</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896">INTERP1_HERMITE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09">INTERP1_SPLINE</a>
+, <br />
+&#160;&#160;<a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4">INTERP1_CONSTRAINED_SPLINE</a>
+, <a class="el" href="group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661">INTERP1_MAX</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga3b97e7424eae482b8b70649d8ab22016"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum with all the available interpolation methods.  <a href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">More...</a><br /></td></tr>
+<tr class="separator:ga3b97e7424eae482b8b70649d8ab22016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">ltisysType</a> { <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18">LTISYS_TYPE_UNKNOWN</a>
 , <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd">LTISYS_TYPE_CONTINUOUS</a>
 , <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b">LTISYS_TYPE_DISCRETE</a>

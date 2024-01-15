@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['b_0',['b',['../classqlibs_1_1ltisys.html#aa949a80f4c90f8bfbeac3f8cece3d706',1,'qlibs::ltisys']]],
-  ['b0_1',['b0',['../classqlibs_1_1ltisys.html#a82ed0fcd744b53d7744c77b0c6e8ec2e',1,'qlibs::ltisys']]],
-  ['b1_2',['b1',['../classqlibs_1_1pid_auto_tuning.html#a928a8e16f444388cfdcd059607846ac2',1,'qlibs::pidAutoTuning']]],
-  ['bindautotuning_3',['bindAutoTuning',['../classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c',1,'qlibs::pidController']]],
-  ['bisector_4',['bisector',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a885e8915d14138fcfffb04804c433235',1,'qlibs::fis']]],
-  ['bit_2dfield_5',['Bit-Field',['../group__qbitfield.html',1,'']]],
-  ['bit_2dfield_20manipulation_20library_6',['Bit-Field manipulation library',['../qbitfield_desc.html',1,'index']]],
-  ['bitfield_7',['bitfield',['../classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa',1,'qlibs::bitfield::bitfield()'],['../classqlibs_1_1bitfield.html',1,'qlibs::bitfield']]],
-  ['bitfield_5fsize_8',['bitfield_size',['../group__qbitfield.html#ga3645c015d457782880b34f38777f5067',1,'qlibs']]],
-  ['bsearch_9',['bSearch',['../group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0',1,'qlibs::generic']]]
+  ['a_0',['a',['../classqlibs_1_1ltisys.html#af3a5d92631d8bd493942412a6a152339',1,'qlibs::ltisys']]],
+  ['a1_1',['a1',['../classqlibs_1_1pid_auto_tuning.html#a31a5873af8a0fc022ac86a522da97b02',1,'qlibs::pidAutoTuning']]],
+  ['absf_2',['absf',['../group__qffmath.html#gae832095f4975240fb86603a6439cb74c',1,'qlibs::ffmath']]],
+  ['absolute_3',['absolute',['../classqlibs_1_1fp16.html#a0de6955cbb25cfc1b6cf0811455f0460',1,'qlibs::fp16']]],
+  ['acos_4',['acos',['../group__qffmath.html#gacf414cd52c51a4bcb8312db2340753ad',1,'qlibs::ffmath::acos()'],['../classqlibs_1_1fp16.html#a26ad7e600ba8283c649cfaa63655bb1b',1,'qlibs::fp16::acos()']]],
+  ['acosh_5',['acosh',['../group__qffmath.html#gab98f3261c25832ccb514e482c53bcdfe',1,'qlibs::ffmath']]],
+  ['and_6',['AND',['../group__qfis.html#gacd1b97556dfbbac61063a63031d2f91d',1,'fis.hpp']]],
+  ['arduino_20support_7',['Arduino support',['../_arduino_01support.html',1,'']]],
+  ['asin_8',['asin',['../classqlibs_1_1fp16.html#a945f9056772398811c2f6113f387a3d6',1,'qlibs::fp16::asin()'],['../group__qffmath.html#gad16cd39ff72e545da900e0e2426ecb58',1,'qlibs::ffmath::asin(float x)']]],
+  ['asinh_9',['asinh',['../group__qffmath.html#ga4f9ac91888223d0eb01e24706dc1e61f',1,'qlibs::ffmath']]],
+  ['atan_10',['atan',['../classqlibs_1_1fp16.html#a3efcd9ed0515976af80007720abb66e2',1,'qlibs::fp16::atan()'],['../group__qffmath.html#gae93342ca16d2bf0af5522e8fed73c725',1,'qlibs::ffmath::atan()']]],
+  ['atan2_11',['atan2',['../classqlibs_1_1fp16.html#a4534b82edb0fd7e05e1c572ae7dc4573',1,'qlibs::fp16::atan2()'],['../group__qffmath.html#gacecf132196149ecb64f9f5764a702270',1,'qlibs::ffmath::atan2(float y, float x)']]],
+  ['atanh_12',['atanh',['../group__qffmath.html#gaf8e811b8eefd476a5322c05fc7cf703f',1,'qlibs::ffmath']]]
 ];
