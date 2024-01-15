@@ -21,6 +21,7 @@ target_sources( ${PROJECT_NAME} INTERFACE
              "${CMAKE_CURRENT_LIST_DIR}/bitfield.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/generic.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/ffmath.cpp"
+             "${CMAKE_CURRENT_LIST_DIR}/interp1.cpp"
            )
 
 target_compile_options( ${PROJECT_NAME} INTERFACE

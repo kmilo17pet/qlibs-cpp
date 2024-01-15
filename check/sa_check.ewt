@@ -2869,7 +2869,13 @@
             <name>$PROJ_DIR$\..\src\include\generic.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\include\interp1.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\include\ltisys.hpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\include\mat.hpp</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\include\mathex.hpp</name>
@@ -2913,6 +2919,9 @@
     </file>
     <file>
         <name>$PROJ_DIR$\..\src\generic.cpp</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\..\src\interp1.cpp</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\src\ltisys.cpp</name>

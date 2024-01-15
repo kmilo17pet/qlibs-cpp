@@ -11,7 +11,8 @@ void test_fp16( void );
 void test_crc( void );
 void test_ltisys( void );
 void test_ffmath( void );
-
+void test_mat( void );
+void test_interp1( void );
 
 void test_fis3( void )
 {
@@ -304,6 +305,108 @@ void test_ffmath(void)
     cout << ffmath::getInf() << endl;
 }
 
+void test_mat( void )
+{
+    cout<<"MAT TEST"<<endl;
+    mat<2,2> x( 
+                1.0f, 2.0f,
+                3.0f, 4.0f
+              );
+    mat<2,1> y(
+                1.0f,
+                3.0f
+              );
+    mat<2,1> z( 
+                2.0f,
+                2.0f
+              );
+
+    mat<2,1> result = 4.5 - z - 2.0f*x*y - 3;
+    mat<4,4> I( MAT_IDENTITY );
+    x*=x;
+    result.display();
+    x.display();
+    cout<< x(2) << endl;
+    auto j = !y;
+    j.display();
+    I.display();
+    auto ix = x.inv();
+    x.display();
+    ix.display();
+    (x*ix).display();
+
+}
+
+void test_interp1( void )
+{
+    real_t tx[] = { 1.0f, 2.0f, 3.0f, 4.0f };
+    real_t ty[] = { 5.0f, 9.0f, 12.0f, 15.0f };
+    interp1 interpolation( tx, ty );
+
+    cout << "linear" << endl;
+    interpolation.setMethod( INTERP1_LINEAR );
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+    
+    cout << "sine" << endl;
+    interpolation.setMethod( INTERP1_SINE );
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "cubic" << endl;
+    interpolation.setMethod( INTERP1_CUBIC );
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "hermite" << endl;
+    interpolation.setMethod( INTERP1_HERMITE );
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "nearest" << endl;
+    interpolation.setMethod( INTERP1_NEAREST);
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "next" << endl;
+    interpolation.setMethod( INTERP1_NEXT);
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+    
+    cout << "previous" << endl;
+    interpolation.setMethod( INTERP1_PREVIOUS);
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "spline" << endl;
+    interpolation.setMethod( INTERP1_SPLINE);
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+
+    cout << "cspline" << endl;
+    interpolation.setMethod( INTERP1_CONSTRAINED_SPLINE);
+    cout << interpolation.get( 2.5 ) << endl;
+    cout << interpolation.get( 3.1 ) << endl;
+    cout << interpolation.get( 0.5 ) << endl;
+    cout << interpolation.get( 5.0 ) << endl;
+}
+
 int main()
 {
     test_crc();
@@ -314,5 +417,7 @@ int main()
     test_fis2();
     test_fis3();
     test_ffmath();
+    test_mat();
+    test_interp1();
     return 0;
 }

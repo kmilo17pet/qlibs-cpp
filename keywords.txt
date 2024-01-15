@@ -6,6 +6,8 @@
 # Datatypes(KEYWORD1)
 #######################################
 
+interp1	KEYWORD1
+interp1Method	KEYWORD1
 real_t	KEYWORD1
 bitfield	KEYWORD1
 crc	KEYWORD1
@@ -65,6 +67,7 @@ tdl	KEYWORD1
 # Methods and Functions(KEYWORD2)
 #######################################
 
+setMethod	KEYWORD2
 bitfield_size	KEYWORD2
 setup	KEYWORD2
 clearAll	KEYWORD2
@@ -224,7 +227,15 @@ insertSample	KEYWORD2
 
 #######################################
 # Constants(LITERAL1)
-
+INTERP1_NEXT	LITERAL1
+INTERP1_PREVIOUS	LITERAL1
+INTERP1_NEAREST	LITERAL1
+INTERP1_LINEAR	LITERAL1
+INTERP1_SINE	LITERAL1
+INTERP1_CUBIC	LITERAL1
+INTERP1_HERMITE	LITERAL1
+INTERP1_SPLINE	LITERAL1
+INTERP1_CONSTRAINED_SPLINE	LITERAL1
 CRC8	LITERAL1
 CRC16	LITERAL1
 CRC32	LITERAL1

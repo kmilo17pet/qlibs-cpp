@@ -102,8 +102,9 @@ real_t smootherMWM1::smooth( const real_t x )
         windowSet( w, wsize, x );
         init = false;
     }
-
+    /*cstat -CERT-FLP36-C*/
     return discreteSystem::updateFIR( w, wsize, x )/static_cast<real_t>( wsize );
+    /*cstat +CERT-FLP36-C*/
 }
 /*============================================================================*/
 bool smootherMWM2::setup( real_t *window,
@@ -121,8 +122,9 @@ bool smootherMWM2::setup( real_t *window,
 /*============================================================================*/
 real_t smootherMWM2::smooth( const real_t x )
 {
+    /*cstat -CERT-FLP36-C*/
     const real_t wsize = static_cast<real_t>( itemCount );
-
+    /*cstat +CERT-FLP36-C*/
     if ( init ) {
         flush( x );
         sum = x*wsize;
@@ -165,7 +167,9 @@ real_t smootherMOR1::smooth( const real_t x )
         w[ 0 ] = m; /*replace the outlier with the dynamic median*/
     }
     /*compute new mean for next iteration*/
+    /*cstat -CERT-FLP36-C*/
     m = ( mc + w[ 0 ] ) / static_cast<real_t>( wsize );
+    /*cstat +CERT-FLP36-C*/
     return w[ 0 ];
 }
 /*============================================================================*/
@@ -189,8 +193,9 @@ bool smootherMOR2::setup( real_t *window,
 real_t smootherMOR2::smooth( const real_t x )
 {
     real_t xx = x;
+    /*cstat -CERT-FLP36-C*/
     const real_t wsize = static_cast<real_t>( itemCount );
-
+    /*cstat +CERT-FLP36-C*/
     if ( init ) {
         flush( x );
         sum = wsize*x;
@@ -216,20 +221,20 @@ bool smootherGMWF::setup( const real_t sg,
 {
     bool retValue = false;
     const size_t ws = wk_size;
-
+    /*cstat -CERT-FLP36-C*/
     if ( ( nullptr != window ) && ( wk_size > 0U ) && ( c < static_cast<real_t>( ws ) ) && ( sg > 0.0_re ) ) {
         real_t r, sum = 0.0_re;
         size_t i;
         real_t l, center;
         /*cstat -MISRAC++2008-5-0-7*/
         l = static_cast<real_t>( wk_size - 1U );
-        /*cstat +MISRAC++2008-5-0-7*/
+        /*cstat +MISRAC++2008-5-0-7 +CERT-FLP36-C*/
         center = c - l;
         r = 2.0_re*sg*sg;
         for ( i = 0U ; i < ws ; ++i ) {
-            /*cstat -MISRAC++2008-5-0-7*/
+            /*cstat -MISRAC++2008-5-0-7 -CERT-FLP36-C*/
             real_t d = static_cast<real_t>( i ) - l; /*symmetry*/
-            /*cstat +MISRAC++2008-5-0-7*/
+            /*cstat +MISRAC++2008-5-0-7 +CERT-FLP36-C*/
             d -= center;
             /*cstat -CERT-FLP32-C_b*/
             kernel[ i ] = ffmath::exp( -( d*d )/r );
@@ -334,7 +339,9 @@ bool smootherDESF::setup( const real_t a,
     if ( ( a > 0.0_re ) && ( a < 1.0_re ) && ( b > 0.0_re ) && ( b < 1.0_re ) ) {
         alpha = a;
         beta = b;
+        /*cstat -CERT-FLP36-C */
         n = static_cast<real_t>( nS );
+        /*cstat +CERT-FLP36-C */
         retValue = reset();
     }
 
@@ -382,8 +389,9 @@ real_t smootherALNF::smooth( const real_t x )
     real_t xe;
 
     if ( init ) {
+        /*cstat -CERT-FLP36-C */
         const real_t np = 1.0_re/static_cast<real_t>( n );
-
+        /*cstat +CERT-FLP36-C */
         windowSet( xx, n, x );
         windowSet( w, n, np );
         if ( nullptr != w_1 ) {

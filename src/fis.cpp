@@ -145,8 +145,9 @@ bool fis::instance::setupOutput( const fis::tag t,
         /*cstat -CERT-STR34-C*/
         xOutput[ t ].min = Min;
         xOutput[ t ].max = Max;
+        /*cstat -CERT-FLP36-C*/
         xOutput[ t ].res = ( xOutput[ t ].max - xOutput[ t ].min )/static_cast<real_t>( nPoints );
-        /*cstat +CERT-STR34-C*/
+        /*cstat +CERT-STR34-C +CERT-FLP36-C*/
         retVal = true;
     }
 
