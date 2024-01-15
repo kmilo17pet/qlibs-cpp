@@ -60,7 +60,6 @@ This file is part of the QuarkTS++ OS distribution.
 #include <include/ffmath.hpp>
 #include <include/bitfield.hpp>
 #include <include/interp1.hpp>
-#include <include/mat.hpp>
 
 using namespace qlibs;
 
