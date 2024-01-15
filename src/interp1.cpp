@@ -6,10 +6,10 @@ using namespace qlibs;
 
 /*cstat -CERT-INT30-C_a*/
 /*============================================================================*/
-bool interp1::setMethod( const interp1Method m )
+bool interp1::setMethod( const interp1Method m ) noexcept
 {
     bool retValue = false;
-    static const interp1Fcn_t im[ ] = {
+    static const interp1Fcn_t im[ INTERP1_MAX ] = {
         &interp1::next,
         &interp1::previous,
         &interp1::nearest,
@@ -45,7 +45,7 @@ real_t interp1::next( const real_t x,
                 break;
             }
         }
-        
+
         if ( x >= tx[ tableSize - 1U ] ) {
             y = ty[ tableSize - 1U ];
         }
@@ -172,9 +172,9 @@ real_t interp1::sine( const real_t x,
         else {
             for ( size_t i = 1; i < tableSize; ++i ) {
                 if ( x <= tx[ i ] ) {
-                    const real_t x0 = tx[ i - 1 ];
+                    const real_t x0 = tx[ i - 1U ];
                     const real_t x1 = tx[ i ];
-                    const real_t y0 = ty[ i - 1 ];
+                    const real_t y0 = ty[ i - 1U ];
                     const real_t y1 = ty[ i];
                     const real_t w = 0.5_re - 0.5_re*ffmath::cos( ffmath::FFP_PI*( x - x0 )/( x1 - x0 ) );
                     y = y0 + w*( y1 - y0 );
@@ -302,25 +302,27 @@ real_t interp1::spline( const real_t x,
             i = tableSize - 2U; /* Use the last interval for extrapolation*/
         }
         else {
-          while ( x >= tx[ i + 1U ] ) { 
-            i++;
-          }
+            while ( x >= tx[ i + 1U ] ) {
+                i++;
+            }
         }
 
-        if ( isEqual( x , tx[ i + 1U ] ) ) { 
+        if ( isEqual( x , tx[ i + 1U ] ) ) {
             y = ty[ i + 1U ];
         }
         else {
             const real_t t = ( x - tx[ i ] )/( tx[ i + 1U ] - tx[ i ] );
             const real_t t_2 = t*t;
             const real_t t_3 = t_2*t;
-            const real_t h00 = 2.0_re*t_3 - 3.0_re*t_2 + 1.0_re;
+            const real_t tt_3 = 2.0_re*t_3;
+            const real_t tt_2 = 3.0_re*t_2;
+            const real_t h01 = tt_2 - tt_3;
+            const real_t h00 = 1.0_re - h01;
             const real_t h10 = t_3 - 2.0_re*t_2 + t;
-            const real_t h01 = 3.0_re * t_2 - 2.0_re*t_3;
             const real_t h11 = t_3 - t_2;
             const real_t x1_x0 = tx[ i + 1U ] - tx[ i ];
             const real_t y0 = ty[ i ];
-            const real_t y1 = ty[ i + 1 ];
+            const real_t y1 = ty[ i + 1U ];
             real_t m0, m1;
 
             if ( 0U == i ) {
@@ -359,11 +361,11 @@ real_t interp1::cSpline( const real_t x,
             i = tableSize - 2U; /* Use the last interval for extrapolation*/
         }
         else {
-          while ( x >= tx[ i + 1U ] ) {
-            i++;
-          }
+            while ( x >= tx[ i + 1U ] ) {
+                i++;
+            }
         }
-        
+
         if ( isEqual( x , tx[ i + 1U ] ) ) {
             y = ty[ i + 1U ];
         }
@@ -372,16 +374,17 @@ real_t interp1::cSpline( const real_t x,
             const real_t x1 = tx[ i + 1U ];
             const real_t y0 = ty[ i ];
             const real_t y1 = ty[ i + 1U ];
-            const real_t fd2i_xl1 = leftSecondDerivate( tx, ty, tableSize - 1, i + 1 );
-            const real_t fd2i_x = rightSecondDerivate( tx, ty, tableSize - 1, i + 1 );
+            const real_t fd2i_xl1 = leftSecondDerivate( tx, ty, tableSize - 1U, i + 1U );
+            const real_t fd2i_x = rightSecondDerivate( tx, ty, tableSize - 1U, i + 1U );
             const real_t x0_x1 = x0 - x1;
             const real_t x1_2 = x1*x1;
             const real_t x1_3 = x1_2*x1;
             const real_t x0_2 = x0*x0;
             const real_t x0_3 = x0_2*x0;
-            const real_t d = ( fd2i_x - fd2i_xl1 )/( 6.0_re*x0_x1 );
-            const real_t c = ( ( x0*fd2i_xl1 ) - ( x1*fd2i_x ) )/( 2.0_re*x0_x1 );
-            const real_t b = ( y0 - y1 - c*( x0_2 - x1_2 ) - d*( x0_3 - x1_3 ) )/x0_x1;
+            const real_t inv_x0_x1 = 1.0_re/x0_x1;
+            const real_t d = ( fd2i_x - fd2i_xl1 )*( 0.166666667_re*inv_x0_x1 );
+            const real_t c = ( ( x0*fd2i_xl1 ) - ( x1*fd2i_x ) )*( 0.5_re*inv_x0_x1 );
+            const real_t b = ( y0 - y1 - c*( x0_2 - x1_2 ) - d*( x0_3 - x1_3 ) )*inv_x0_x1;
             const real_t a = y1 - ( b*x1 ) - ( c*x1_2 ) - ( d*x1_3 );
             y = a + x*( b + x*( c + ( x*d ) ) );
         }
@@ -413,26 +416,26 @@ real_t interp1::firstDerivate( const real_t * const tx,
 {
     real_t fd1_x;
 
-    if ( 0 == i ) {
+    if ( 0U == i ) {
         const real_t dx = tx[ 1 ] - tx[ 0 ];
         const real_t dy = ty[ 1 ] - ty[ 0 ];
         fd1_x = 1.5_re*( dy/dx );
         fd1_x -= 1.0_re/( ( tx[ 2 ] - tx[ 0 ] )/( ty[ 2 ] - ty[ 0 ] ) + dx/dy );
     }
     else if ( n == i ) {
-        const real_t dx = tx[ n ] - tx[ n - 1 ];
-        const real_t dy = ty[ n ] - ty[ n - 1 ];
+        const real_t dx = tx[ n ] - tx[ n - 1U ];
+        const real_t dy = ty[ n ] - ty[ n - 1U ];
         fd1_x = 1.5_re*( dy/dx );
-        fd1_x -= 1.0_re/( ( tx[ n ] - tx[ n - 2 ] )/( ty[ n ] - ty[ n - 2 ] ) + ( dx/dy ) );
+        fd1_x -= 1.0_re/( ( tx[ n ] - tx[ n - 2U ] )/( ty[ n ] - ty[ n - 2U ] ) + ( dx/dy ) );
     }
     else {
-        const real_t tmp1 = ( tx[ i + 1 ] - tx[ i ] )/( ty[ i + 1 ] - ty[ i ] );
-        const real_t tmp2 = ( tx[ i ] - tx[ i - 1 ] )/( ty[ i ] - ty[ i - 1 ] );
+        const real_t tmp1 = ( tx[ i + 1U ] - tx[ i ] )/( ty[ i + 1U ] - ty[ i ] );
+        const real_t tmp2 = ( tx[ i ] - tx[ i - 1U ] )/( ty[ i ] - ty[ i - 1U ] );
 
         if ( ( tmp1*tmp2 ) < 0.0_re ) {
             fd1_x = 0.0_re;
         }
-        else{
+        else {
             fd1_x = 2.0_re/( tmp1 + tmp2 );
         }
     }

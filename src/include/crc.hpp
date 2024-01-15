@@ -23,7 +23,7 @@ namespace qlibs {
 
     /**
     * @brief Enumeration with all the supported cyclic redundancy checks
-    */ 
+    */
     enum crcMode {
         CRC8 = 0,    /*!< 8-Bit Cyclic Redundancy Check*/
         CRC16,       /*!< 16-Bit Cyclic Redundancy Check*/
@@ -99,7 +99,7 @@ namespace qlibs {
 
             /**
             * @brief CRC-8/DVS-S2 with poly = 0xD5 init = 0x00 refIn = false
-            * refOut = false xorOut= 0x00 
+            * refOut = false xorOut= 0x00
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -111,7 +111,7 @@ namespace qlibs {
 
             /**
             * @brief CRC-8/EBU with poly = 0x1D init = 0xFF refIn = true refOut = true
-            * xorOut= 0x00 
+            * xorOut= 0x00
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -146,7 +146,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-8/MAXIM with poly = 0x31 init = 0x00 refIn = true 
+            * @brief CRC-8/MAXIM with poly = 0x31 init = 0x00 refIn = true
             * refOut = true  xorOut= 0x00
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -158,7 +158,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-8/ROHC with poly = 0x07 init = 0xFF refIn = true 
+            * @brief CRC-8/ROHC with poly = 0x07 init = 0xFF refIn = true
             * refOut = true  xorOut= 0x00
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -170,8 +170,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-8/WCDMA with poly = 0x9B init = 0x00 refIn = true 
-            * refOut = true  xorOut= 0x00 
+            * @brief CRC-8/WCDMA with poly = 0x9B init = 0x00 refIn = true
+            * refOut = true  xorOut= 0x00
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -182,7 +182,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/CCITT-FALSE with poly = 0x1021 init = 0xFFFF 
+            * @brief CRC-16/CCITT-FALSE with poly = 0x1021 init = 0xFFFF
             * refIn = false refOut = false  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -194,8 +194,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/ARC with poly = 0x8005 init = 0x0000 refIn = true 
-            * refOut = true  xorOut= 0x0000 
+            * @brief CRC-16/ARC with poly = 0x8005 init = 0x0000 refIn = true
+            * refOut = true  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -255,7 +255,7 @@ namespace qlibs {
 
             /**
             * @brief CRC-16/DECT-R with poly = 0x0589 init = 0x0000 refIn = false
-            * refOut = false  xorOut= 0x0001 
+            * refOut = false  xorOut= 0x0001
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -278,7 +278,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/DNP with poly = 0x3D98 init = 0x0000 refIn = true 
+            * @brief CRC-16/DNP with poly = 0x3D98 init = 0x0000 refIn = true
             * refOut = true xorOut= 0xFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -302,7 +302,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/GENIBUS with poly = 0x1021 init = 0xFFFF refIn = false 
+            * @brief CRC-16/GENIBUS with poly = 0x1021 init = 0xFFFF refIn = false
             * refOut = false  xorOut= 0xFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -314,7 +314,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/MAXIM with poly = 0x8005 init = 0x0000 refIn = true 
+            * @brief CRC-16/MAXIM with poly = 0x8005 init = 0x0000 refIn = true
             * refOut = true xorOut= 0xFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -326,7 +326,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/MCRF4XX with poly = 0x1021 init = 0xFFFF refIn = true 
+            * @brief CRC-16/MCRF4XX with poly = 0x1021 init = 0xFFFF refIn = true
             * refOut = true xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -338,7 +338,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/RIELLO with poly = 0x1021 init = 0xB2AA refIn = true 
+            * @brief CRC-16/RIELLO with poly = 0x1021 init = 0xB2AA refIn = true
             * refOut = true  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -350,7 +350,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/DECT-X with poly = 0x8bb7 init = 0x0000 refIn = false 
+            * @brief CRC-16/DECT-X with poly = 0x8bb7 init = 0x0000 refIn = false
             * refOut = false  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -362,7 +362,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/TELEDISK with poly = 0xA097 init = 0x0000 refIn = false 
+            * @brief CRC-16/TELEDISK with poly = 0xA097 init = 0x0000 refIn = false
             * refOut = false  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -374,7 +374,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/TMS37157 with poly = 0x1021 init = 0x89EC refIn = true 
+            * @brief CRC-16/TMS37157 with poly = 0x1021 init = 0x89EC refIn = true
             * refOut = true  xorOut= 0x000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -386,7 +386,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/USB with poly = 0x8005 init = 0xFFFF refIn = true 
+            * @brief CRC-16/USB with poly = 0x8005 init = 0xFFFF refIn = true
             * refOut = true  xorOut= 0xFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -398,7 +398,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-A with poly = 0x1021 init = 0xC6C6 refIn = true 
+            * @brief CRC-A with poly = 0x1021 init = 0xC6C6 refIn = true
             * refOut = true  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -410,7 +410,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/KERMIT with poly = 0x1021 init = 0x0000 refIn = true 
+            * @brief CRC-16/KERMIT with poly = 0x1021 init = 0x0000 refIn = true
             * refOut = true  xorOut= 0x000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -422,7 +422,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/MODBUS with poly = 0x8005 init = 0xFFFF refIn = true 
+            * @brief CRC-16/MODBUS with poly = 0x8005 init = 0xFFFF refIn = true
             * refOut = true  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -434,7 +434,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/X-25 with poly = 0x1021 init = 0xFFFF refIn = true 
+            * @brief CRC-16/X-25 with poly = 0x1021 init = 0xFFFF refIn = true
             * refOut = true  xorOut= 0xFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -446,8 +446,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-16/XMODEM with poly = 0x1021 init = 0x0000 refIn = false 
-            * refOut = false  xorOut= 0x0000 
+            * @brief CRC-16/XMODEM with poly = 0x1021 init = 0x0000 refIn = false
+            * refOut = false  xorOut= 0x0000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -458,7 +458,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true 
+            * @brief CRC-32 with poly = 0x04C11DB7 init = 0xFFFFFFFF refIn = true
             * refOut = true xorOut= 0xFFFFFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -470,8 +470,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32/BZIP2 with poly = 0x04C11DB7 init = 0xFFFFFFFF 
-            * refIn = false refOut = false xorOut= 0xFFFFFFFF 
+            * @brief CRC-32/BZIP2 with poly = 0x04C11DB7 init = 0xFFFFFFFF
+            * refIn = false refOut = false xorOut= 0xFFFFFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -482,7 +482,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32C with poly = 0x1EDC6F41 init = 0xFFFFFFFF refIn = true 
+            * @brief CRC-32C with poly = 0x1EDC6F41 init = 0xFFFFFFFF refIn = true
             * refOut = true  xorOut= 0xFFFFFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -494,8 +494,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32D with poly = 0xA833982B init = 0xFFFFFFFF refIn = true 
-            * refOut = true  xorOut= 0xFFFFFFFF 
+            * @brief CRC-32D with poly = 0xA833982B init = 0xFFFFFFFF refIn = true
+            * refOut = true  xorOut= 0xFFFFFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -506,7 +506,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32/JAMCRC with poly = 0x04C11DB7 init = 0xFFFFFFFF 
+            * @brief CRC-32/JAMCRC with poly = 0x04C11DB7 init = 0xFFFFFFFF
             * refIn = true refOut = true  xorOut= 0x00000000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -518,7 +518,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32/MPEG2 with poly = 0x04C11DB7 init = 0xFFFFFFFF 
+            * @brief CRC-32/MPEG2 with poly = 0x04C11DB7 init = 0xFFFFFFFF
             * refIn = false refOut = false  xorOut= 0x00000000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -530,8 +530,8 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32/POSIX with poly = 0x04C11DB7 init = 0x00000000 
-            * refIn = false refOut = false  xorOut= 0xFFFFFFFF 
+            * @brief CRC-32/POSIX with poly = 0x04C11DB7 init = 0x00000000
+            * refIn = false refOut = false  xorOut= 0xFFFFFFFF
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
             * @return The CRC value for @a data.
@@ -542,7 +542,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32Q with poly = 0x814141AB init = 0x00000000 
+            * @brief CRC-32Q with poly = 0x814141AB init = 0x00000000
             * refIn = false refOut = false  xorOut= 0x00000000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.
@@ -554,7 +554,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief CRC-32/XFER with poly = 0x000000AF init = 0x00000000 
+            * @brief CRC-32/XFER with poly = 0x000000AF init = 0x00000000
             * refIn = false refOut = false  xorOut= 0x00000000
             * @param[in] pData A pointer to the block of data.
             * @param[in] length The number of bytes in @a data.

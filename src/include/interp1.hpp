@@ -115,7 +115,7 @@ namespace qlibs {
             interp1( const real_t * const xTable,
                      const real_t * const yTabLe,
                      const size_t sizeTable ) : xData( xTable ), yData( yTabLe ), dataSize( sizeTable ) {}
-            
+
             /**
             * @brief Constructor for the 1D interpolation instance.
             * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
@@ -130,7 +130,7 @@ namespace qlibs {
             * @param[in] m The interpolation method.
             * @return @c true on success otherwise @c false.
             */
-            bool setMethod( const interp1Method m );
+            bool setMethod( const interp1Method m ) noexcept;
             template <typename T>
 
             /**
@@ -139,7 +139,7 @@ namespace qlibs {
             * the endpoints, extrapolation is performed using the current method.
             * @return @c The interpolated-extrapolated @a y value.
             */
-            inline real_t get( const T x )
+            inline real_t get( const T x ) noexcept
             {
                 return method( static_cast<real_t>( x ), xData, yData, dataSize );
             }

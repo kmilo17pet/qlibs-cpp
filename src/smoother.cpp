@@ -265,7 +265,7 @@ real_t smootherGMWF::smooth( const real_t x )
 bool smootherEXPW::setup( const real_t lam )
 {
     bool retValue = false;
-    
+
     if ( ( lam > 0.0_re ) && ( lam < 1.0_re ) ) {
         lambda = lam;
         m = 0.0_re;
@@ -406,7 +406,7 @@ real_t smootherALNF::smooth( const real_t x )
         for ( size_t i = 0U ; i < n ; ++i ) {
             const real_t w0 = w[ i ];
             const real_t w1 = ww_1[ i ];
- 
+
             w[ i ] += ( alpha*( x - xe )*xx[ i ] ) + ( mu*( w0 - w1 ) );
             w_1[ i ] = w0;
         }

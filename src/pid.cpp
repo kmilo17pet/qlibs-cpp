@@ -236,7 +236,7 @@ bool pidController::setModelReferenceControl( const real_t &modelRef,
 bool pidController::removeModelReferenceControl( void ) noexcept
 {
     bool retValue = false;
-    
+
     if ( init ) {
         yr = nullptr;
         retValue = true;

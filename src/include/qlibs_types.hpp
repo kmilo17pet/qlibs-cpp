@@ -20,7 +20,7 @@
     #include <stdlib.h>
     #include <string.h>
     #include <ctype.h>
-#else 
+#else
     #include <cstddef>
     #include <cstdint>
     #include <cstdlib>
@@ -54,7 +54,7 @@ namespace qlibs {
     constexpr real_t REAL_MAX = 3.402823466e+38F;        // max value
     constexpr real_t REAL_MIN = 1.175494351e-38F;        // min normalized positive value
     /*cstat +MISRAC++2008-0-1-4_b*/
-    
+
     class nonCopyable {
         protected:
             nonCopyable() {}

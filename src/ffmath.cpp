@@ -22,13 +22,13 @@ static float getAbnormal( const int i )
     static const uint32_t u_ab[ 2 ] = { 0x7F800000U, 0x7FBFFFFFU };
     static float f_ab[ 2 ] = { 0.0F, 0.0F };
     static bool init = true;
-    
+
     if ( init ) {
         cast_reinterpret( f_ab, u_ab );
         init = false;
     }
-    
-    return f_ab[ i ]; 
+
+    return f_ab[ i ];
 }
 /*============================================================================*/
 float ffmath::getInf( void )
@@ -533,7 +533,7 @@ float ffmath::hypot( float x, float y )
                    ( classification::FFP_INFINITE == yClass )  ) ? ffmath::getInf()
                                                                  : ffmath::getNan();
     }
-    
+
     return retVal;
 }
 /*============================================================================*/

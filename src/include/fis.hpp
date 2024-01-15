@@ -117,7 +117,7 @@ namespace qlibs {
             FIS_DEFUZZ_END
         };
         /*! @endcond  */
-    
+
         /*! @cond  */
         class core;
         class instance;
@@ -325,7 +325,7 @@ namespace qlibs {
 
         /**
         * @brief A FIS Membership Function
-        * @details The instance should be initialized using the \ref instance::setupInputMF() 
+        * @details The instance should be initialized using the \ref instance::setupInputMF()
         * or \ref instance::setupOutputMF() methods.
         */
         class mf {
@@ -371,13 +371,13 @@ namespace qlibs {
             * @brief Type definition to instantiate a set of fuzzy rules
             * @details Rules are defined by combining I/O and membership function tags
             * with the following statements:
-            * 
+            *
             * #FIS_RULES_BEGIN, #IF, #IS, #IS_NOT, #AND, #OR, #THEN, #END and
             * #FIS_RULES_END
-            * 
+            *
             * Example:
             * @code{.c}
-            * static const fis::rules Rules[] = { 
+            * static const fis::rules Rules[] = {
             *     FIS_RULES_BEGIN
             *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
             *         IF service IS service_good THEN tip IS tip_average END
@@ -395,13 +395,13 @@ namespace qlibs {
             * @brief Type definition to instantiate a set of fuzzy rules
             * @details Rules are defined by combining I/O and membership function tags
             * with the following statements:
-            * 
+            *
             * #FIS_RULES_BEGIN, #IF, #IS, #IS_NOT, #AND, #OR, #THEN, #END and
             * #FIS_RULES_END
-            * 
+            *
             * Example:
             * @code{.c}
-            * static const fis::rules Rules[] = { 
+            * static const fis::rules Rules[] = {
             *     FIS_RULES_BEGIN
             *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
             *         IF service IS service_good THEN tip IS tip_average END
@@ -418,7 +418,7 @@ namespace qlibs {
 
         /**
         * @brief Used to define an enum of fis tags
-        * @details Tags for I/O and set/membership functions should be defined 
+        * @details Tags for I/O and set/membership functions should be defined
         * within enums of this type
         * Example:
         * @code{.c}
@@ -450,13 +450,13 @@ namespace qlibs {
         * #FIS_RULES_END declare the end of the FIS rule set.
         * @see #FIS_RULES_END
         * @warning Only one segment is allowed inside a fuzzy rule set.
-        * @note It must always be used together with a matching #FIS_RULES_END 
+        * @note It must always be used together with a matching #FIS_RULES_END
         * statement.
         * Example:
         * @code{.c}
-        * static const fis::rules Rules[] = { 
+        * static const fis::rules Rules[] = {
         *     FIS_RULES_BEGIN
-        *       
+        *
         *     FIS_RULES_END
         * };
         * @endcode
@@ -464,18 +464,18 @@ namespace qlibs {
         #define FIS_RULES_BEGIN         fis::Q_FIS_RULES_BEGIN
         /**
         * @brief Ends a Fuzzy rule set.
-        * The #FIS_RULES_END statement is used to finalize the declaration of a 
+        * The #FIS_RULES_END statement is used to finalize the declaration of a
         * FIS rule set. It should be placed at the end of the rules enumeration.
         * #FIS_RULES_BEGIN declare the start point of the FIS rule set.
         * @see #FIS_RULES_BEGIN
         * @warning Only one segment is allowed inside a fuzzy rule set.
-        * @note It must always be used together with a matching #FIS_RULES_BEGIN 
+        * @note It must always be used together with a matching #FIS_RULES_BEGIN
         * statement.
         * Example:
         * @code{.c}
-        * static const fis::rules Rules[] = { 
+        * static const fis::rules Rules[] = {
         *     FIS_RULES_BEGIN
-        *       
+        *
         *     FIS_RULES_END
         * };
         * @endcode
@@ -509,7 +509,7 @@ namespace qlibs {
 
         template<type fType, size_t numberOfInputs, size_t numberOfOutputs, size_t numberOfInputSets, size_t numberOfOutputSets, size_t numberOfRules>
         friend class system;
-        
+
         private:
             input *xInput{ nullptr };
             output *xOutput{ nullptr };
@@ -657,7 +657,7 @@ namespace qlibs {
             * @note For ::Sugeno FIS, an output membership function should be one of the
             * following: ::constantmf, ::linearmf.
             * @note For ::Tsukamoto FIS, an output membership function should be one the
-            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf,
             * ::tconcavemf
             * @param[in] cp Points or coefficients of the membership function.
             * @param[in] h Height of the membership function.
@@ -708,7 +708,7 @@ namespace qlibs {
             * @note For ::Sugeno FIS, an output membership function should be one of the
             * following: ::constantmf, ::linearmf.
             * @note For ::Tsukamoto FIS, an output membership function should be one the
-            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf,
             * ::tconcavemf
             * @param[in] cp Points or coefficients of the membership function.
             * @param[in] h Height of the membership function.
@@ -722,7 +722,7 @@ namespace qlibs {
                                 const real_t *cp,
                                 const real_t h = 1.0_re ) noexcept
             {
-                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false; 
+                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false;
             }
 
             /**
@@ -743,7 +743,7 @@ namespace qlibs {
                                 const real_t *cp,
                                 const real_t h = 1.0_re ) noexcept
             {
-                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false; 
+                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false;
             }
 
             /**
@@ -797,7 +797,7 @@ namespace qlibs {
 
             /**
             * @brief Perform the de-Fuzzification operation to compute the crisp outputs.
-            * @pre The instance should have already invoked the inference process 
+            * @pre The instance should have already invoked the inference process
             * successfully with fis::inference()
             * @note By default, this method, uses the Centroid method on
             * ::Mamdani type FIS and weight-average on ::Sugeno type FIS. To change
@@ -808,7 +808,7 @@ namespace qlibs {
 
             /**
             * @brief Perform the inference process on the FIS object
-            * @pre The instance should have already invoked the fuzzification operation 
+            * @pre The instance should have already invoked the fuzzification operation
             * successfully with instance::fuzzify()
             * @return @c true on success, otherwise return @c false.
             */
@@ -824,7 +824,7 @@ namespace qlibs {
             bool setRuleWeights( real_t *rWeights ) noexcept;
 
             /**
-            * @brief Get the number of points used on Mamdani to perform the 
+            * @brief Get the number of points used on Mamdani to perform the
             * de-fuzzification proccess
             * @return The number for points for de-fuzzification.
             */
@@ -891,9 +891,9 @@ namespace qlibs {
     * @tparam fType Type of inference ::Mamdani, ::Sugeno or ::Tsukamoto.
     * @tparam numberOfInputs The number of inputs of the FIS system.
     * @tparam numberOfOutputs The number of outputs of the FIS system.
-    * @tparam numberOfInputSets The number of sets/membership functions for 
+    * @tparam numberOfInputSets The number of sets/membership functions for
     * the inputs.
-    * @tparam numberOfOutputSets The number of sets/membership functions for 
+    * @tparam numberOfOutputSets The number of sets/membership functions for
     * the outputs.
     * @tparam numberOfRules Number of rules
     */
@@ -965,7 +965,7 @@ namespace qlibs {
             * @note For ::Sugeno FIS, an output membership function should be one of the
             * following: ::constantmf, ::linearmf.
             * @note For ::Tsukamoto FIS, an output membership function should be one the
-            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf,
             * ::tconcavemf
             * @param[in] cp Points or coefficients of the membership function.
             * @param[in] h Height of the membership function.
@@ -1016,7 +1016,7 @@ namespace qlibs {
             * @note For ::Sugeno FIS, an output membership function should be one of the
             * following: ::constantmf, ::linearmf.
             * @note For ::Tsukamoto FIS, an output membership function should be one the
-            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf, 
+            * following monotonic functions : ::tlinsmf, ::tlinzmf, ::tsmf, ::tzmf,
             * ::tconcavemf
             * @param[in] cp Points or coefficients of the membership function.
             * @param[in] h Height of the membership function.
@@ -1058,7 +1058,7 @@ namespace qlibs {
             * @brief Perform the fuzzification operation over the crisp inputs on the
             * requested FIS object
             * @pre I/Os and fuzzy sets must be previously initialized by system::setupInput(),
-            * system::setupOutput(), system::setupInputMF(), system::setupOutputMF 
+            * system::setupOutput(), system::setupInputMF(), system::setupOutputMF
             * and system::setup() respectively.
             * @return @c true on success, otherwise return @c false.
             */
@@ -1069,7 +1069,7 @@ namespace qlibs {
 
             /**
             * @brief Perform the de-Fuzzification operation to compute the crisp outputs.
-            * @pre The instance should have already invoked the inference process 
+            * @pre The instance should have already invoked the inference process
             * successfully with system::inference()
             * @note By default, this method, uses the Centroid method on
             * ::Mamdani type FIS and weight-average on ::Sugeno type FIS. To change
@@ -1083,7 +1083,7 @@ namespace qlibs {
 
             /**
             * @brief Perform the inference process on the FIS object
-            * @pre The instance should have already invoked the fuzzification operation 
+            * @pre The instance should have already invoked the fuzzification operation
             * successfully with system::fuzzify()
             * @return @c true on success, otherwise return @c false.
             */
@@ -1146,9 +1146,9 @@ namespace qlibs {
 
             /**
             * @brief Set weights to the rules of the inference system.
-            * @pre I/Os and fuzzy sets must be previously initialized by 
-            * system::setupInput(), system::setupOutput(), 
-            * system::setInputMF(), system::setOutputMF and 
+            * @pre I/Os and fuzzy sets must be previously initialized by
+            * system::setupInput(), system::setupOutput(),
+            * system::setInputMF(), system::setOutputMF and
             * system::setup() respectively.
             * @param[in] rWeights An array with the values of every rule weight;
             * @return @c true on success, otherwise return @c false.
@@ -1159,7 +1159,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief Get the number of points used on Mamdani to perform the 
+            * @brief Get the number of points used on Mamdani to perform the
             * de-fuzzification proccess
             * @return The number for points for de-fuzzification.
             */

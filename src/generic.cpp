@@ -62,7 +62,7 @@ void generic::sort( void * const pbase,
             while ( stack < top ) {
                 uint8_t *left_ptr, *right_ptr;
                 uint8_t *mid = &lo[ size*( ( static_cast<size_t>( hi - lo )/size ) >> 1U ) ];
-                
+
                 if ( cmp( mid, lo, arg ) < 0 ) {
                     generic::swap( mid, lo, size );
                 }
@@ -179,7 +179,7 @@ void generic::reverse( void * const pbase,
     if ( ( nullptr != pbase ) && ( size > 0U ) && ( end > init ) ) {
         size_t s = size*init, e = size*end;
         uint8_t * const v = static_cast<uint8_t*>( pbase );
-        
+
         while( s < e ) {
             generic::swap( &v[ s ], &v[ e ], size );
             s += size;
@@ -297,7 +297,7 @@ int generic::forEach( void *pbase,
 
     if ( ( nullptr != pbase ) && ( nullptr != f ) && ( n > 0U ) ) {
         uint8_t * const pb = static_cast<uint8_t *>( pbase );
-        
+
         if ( 1 != f( -1, nullptr, arg ) ) {
             size_t i;
             uint8_t *element;

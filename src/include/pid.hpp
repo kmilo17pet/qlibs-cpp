@@ -199,7 +199,7 @@ namespace qlibs {
                                 const real_t Max ) noexcept;
 
             /**
-            * @brief Convert the controller gains to conform the series or 
+            * @brief Convert the controller gains to conform the series or
             * interacting form.
             * @return @c true on success, otherwise return @c false.
             */
@@ -225,7 +225,7 @@ namespace qlibs {
             * will be used as the control signal for the process. In
             * pidMode::PID_MANUAL mode, the manual input will be used as the control
             * signal for the process and the PID controller loop will continue
-            * operating to guarantee the bumpless-transfer when a switch to 
+            * operating to guarantee the bumpless-transfer when a switch to
             * the pidMode::PID_AUTOMATIC its performed;
             * @param[in] Mode The desired operational mode.
             * @return @c true on success, otherwise return @c false.
@@ -234,9 +234,9 @@ namespace qlibs {
 
             /**
             * @brief Set the PID Reference(Set-Point) Weighting. This value is used in
-            * order to avoid the increase of the rise time due to the smoothing of the 
+            * order to avoid the increase of the rise time due to the smoothing of the
             * reference signal applied to the closed-loop system
-            * @note A value close to zero en @a gc can be used to eliminate the 
+            * @note A value close to zero en @a gc can be used to eliminate the
             * reduce the effect of the phenomena called "derivative-kick"
             * @param[in] gb The reference weight value for the proportional element.
             * @param[in] gc The reference weight value for the derivative element.
@@ -266,7 +266,7 @@ namespace qlibs {
                                            const real_t Alpha = 0.01_re ) noexcept;
 
             /**
-            * @brief Removes the Enable the additive 
+            * @brief Removes the Enable the additive
             * MRAC(Model Reference Adaptive Control) feature from the control loop.
             * @return @c true on success, otherwise return @c false.
             */

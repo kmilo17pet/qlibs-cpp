@@ -23,7 +23,7 @@ namespace qlibs {
 
 
      /**
-    * @brief Scales the given input @a x in value range given by  @a xMin and 
+    * @brief Scales the given input @a x in value range given by  @a xMin and
     * @a xMax to value range specified by the @a yMin and @a yMax.
     * @param[in] x Input
     * @param[in] xMin Input minimum value for range
@@ -38,7 +38,7 @@ namespace qlibs {
                       const real_t yMin,
                       const real_t yMax ) noexcept;
      /**
-    * @brief Normalize the given input @a x in value range given by @a xMin and 
+    * @brief Normalize the given input @a x in value range given by @a xMin and
     * @a xMax to value range between 0 and 1.
     * @param[in] x Input
     * @param[in] xMin Input minimum value for range
@@ -49,13 +49,13 @@ namespace qlibs {
                       const real_t xMin,
                       const real_t xMax ) noexcept;
     /**
-    * @brief Determines if the value pointed by @a x falls within a range 
+    * @brief Determines if the value pointed by @a x falls within a range
     * specified by the upper limit and lower limit inputs and coerces the value
     * to fall within the range
     * @param[in,out] x Input
     * @param[in] lowerL Lower limit.
     * @param[in] upperL Upper limit.
-    * @return @c true when the value falls within the specified range, otherwise 
+    * @return @c true when the value falls within the specified range, otherwise
     * false
     */
     bool inRangeCoerce( real_t &x,
@@ -63,7 +63,7 @@ namespace qlibs {
                         const real_t upperL ) noexcept;
 
     /**
-    * @brief Determines if the parameters given as double-precision 
+    * @brief Determines if the parameters given as double-precision
     * floating-point values are approximately equal.
     * @param[in] a Input to be compared.
     * @param[in] b Input to be compared.
@@ -78,11 +78,11 @@ namespace qlibs {
     * @brief Determines if the point at ( @a x, @a y ) is inside the polygon
     * given by the set of points on  @a px and @a py.
     * @param[in] x Point x-coordinate
-    * @param[in] y Point y-coordinate 
-    * @param[in] px x-coordinate points of the polygon 
-    * @param[in] py y-coordinate points of the polygon 
-    * @param[in] p Number of points that represent the polygon 
-    * @return @c true when the given point is inside the polygon 
+    * @param[in] y Point y-coordinate
+    * @param[in] px x-coordinate points of the polygon
+    * @param[in] py y-coordinate points of the polygon
+    * @param[in] p Number of points that represent the polygon
+    * @return @c true when the given point is inside the polygon
     */
     bool inPolygon( const real_t x,
                     const real_t y,
@@ -91,14 +91,14 @@ namespace qlibs {
                     const size_t p ) noexcept;
 
     /**
-    * @brief Determines if the point at ( @a x, @a y) is inside the circle 
+    * @brief Determines if the point at ( @a x, @a y) is inside the circle
     * with radius @a r located at @a cx and @a cy.
     * @param[in] x Point x-coordinate
     * @param[in] y Point y-coordinate
     * @param[in] cx X-location of the circle
     * @param[in] cy Y-location of the circle
-    * @param[in] r Radio of the circle 
-    * @return @c true when the given point is inside the circle 
+    * @param[in] r Radio of the circle
+    * @return @c true when the given point is inside the circle
     */
     bool inCircle( const real_t x,
                    const real_t y,

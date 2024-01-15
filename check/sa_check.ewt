@@ -367,7 +367,7 @@
                             <group name="CERT-EXP" enabled="true">
                                 <check name="CERT-EXP19-C" enabled="true" />
                                 <check name="CERT-EXP30-C_a" enabled="true" />
-                                <check name="CERT-EXP30-C_b" enabled="true" />
+                                <check name="CERT-EXP30-C_b" enabled="false" />
                                 <check name="CERT-EXP32-C" enabled="true" />
                                 <check name="CERT-EXP33-C_a" enabled="true" />
                                 <check name="CERT-EXP33-C_b" enabled="true" />

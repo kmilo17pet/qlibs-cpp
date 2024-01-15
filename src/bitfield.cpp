@@ -181,7 +181,7 @@ bool bitfield::writeFloat( const size_t index,
 
     if ( nullptr != field ) {
         uint32_t fval = 0U;
-        
+
         (void)memcpy( &fval, &value, sizeof(float) );
         write_uint32( index, fval );
         retValue = true;

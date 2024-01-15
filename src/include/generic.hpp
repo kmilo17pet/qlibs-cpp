@@ -44,25 +44,25 @@ namespace qlibs {
                    size_t n ) noexcept;
 
         /**
-        * @brief Sorts the given array pointed to by @a pbase in ascending order. 
+        * @brief Sorts the given array pointed to by @a pbase in ascending order.
         * The array contains @a n elements of @a size bytes. Function pointed to
         * by @a cmp is used for object comparison.
-        * @remark This algorithm uses a non-recursive variant of the quicksort 
+        * @remark This algorithm uses a non-recursive variant of the quicksort
         * algorithm.
         * @param[in,out] pbase Pointer to the array to sort.
         * @param[in] n Number of elements in the array.
         * @param[in] size size of each element in the array in bytes
         * @param[in] cmp Comparison function which returns ​a negative integer value
-        * if the first argument is less than the second, a positive integer value 
+        * if the first argument is less than the second, a positive integer value
         * if the first argument is greater than the second and zero if the arguments
         * are equivalent.
-        * The signature of the comparison function should be equivalent to the 
+        * The signature of the comparison function should be equivalent to the
         * following:
         * @code{.c}
         *  int cmp( const void *a, const void *b, void *arg );
         * @endcode
-        * The function must not modify the objects passed to it and must return 
-        * consistent results when called for the same objects, regardless of their 
+        * The function must not modify the objects passed to it and must return
+        * consistent results when called for the same objects, regardless of their
         * positions in the array.
         * @param[in] arg Additional information (e.g., collating sequence), passed
         * to @c cmp as the third argument
@@ -76,7 +76,7 @@ namespace qlibs {
 
         /**
         * @brief Reverse the given array pointed to by @a pbase.
-        * Operation takes place on the portion of the array that starts at position 
+        * Operation takes place on the portion of the array that starts at position
         * @a init to position @a end.
         * @param[in,out] pbase Pointer to the array to reverse.
         * @param[in] size Size of each element in the array in bytes
@@ -106,7 +106,7 @@ namespace qlibs {
                      const int k ) noexcept;
 
         /**
-        * @brief Set the data pointed by @a ref to every element of the array 
+        * @brief Set the data pointed by @a ref to every element of the array
         * pointed by @a pbase. The array contains @a n elements of @a size bytes
         * @param[in,out] pbase Pointer to the array to reverse.
         * @param[in] size Size of each element in the array in bytes
@@ -120,8 +120,8 @@ namespace qlibs {
                    const void * const ref ) noexcept;
 
         /**
-        * @brief Performs a linear search over an array of @a n elements 
-        * pointed to by @a pbase for an element that matches the object pointed to 
+        * @brief Performs a linear search over an array of @a n elements
+        * pointed to by @a pbase for an element that matches the object pointed to
         * by @a key.
         * The size of each element is specified by @a size. The array contents
         * should be sorted in ascending order according to the @a compar
@@ -129,30 +129,30 @@ namespace qlibs {
         * the @a key and to an array element, in that order, and should return an
         * integer less than, equal to, or greater than zero if the @a key object
         * is respectively less than, matching, or greater than the array element.
-        * @param[in] key This is the pointer to the object that serves as key for 
+        * @param[in] key This is the pointer to the object that serves as key for
         * the search, type-casted as a @c void*.
-        * @param[in] pbase This is the pointer to the first object of the array 
+        * @param[in] pbase This is the pointer to the first object of the array
         * where the search is performed, type-casted as a @c void*.
-        * @param[in] n This is the number of elements in the array pointed by 
+        * @param[in] n This is the number of elements in the array pointed by
         * @a pbase.
         * @param[in] size This is the size in bytes of each element in the array.
         * @param[in] compar This is the function that compares two elements.
-        * The signature of the comparison function should be equivalent to the 
+        * The signature of the comparison function should be equivalent to the
         * following:
         * @code{.c}
         *  int compar( const void *a, const void *b, void *arg );
         * @endcode
-        * Comparison function which returns ​a negative integer value if the first 
-        * argument is less than the second, a positive integer value if the first 
-        * argument is greater than the second and zero if the arguments are 
-        * equivalent. @a key is passed as the first argument, an element from the 
+        * Comparison function which returns ​a negative integer value if the first
+        * argument is less than the second, a positive integer value if the first
+        * argument is greater than the second and zero if the arguments are
+        * equivalent. @a key is passed as the first argument, an element from the
         * array as the second.
-        * The function must not modify the objects passed to it and must return 
-        * consistent results when called for the same objects, regardless of their 
+        * The function must not modify the objects passed to it and must return
+        * consistent results when called for the same objects, regardless of their
         * positions in the array.
         * @param[in] arg Additional information (e.g., collating sequence), passed
         * to @a compar as the third argument
-        * @return This function returns a pointer to an entry in the array that 
+        * @return This function returns a pointer to an entry in the array that
         * matches the search key. If key is not found, a @c nullptr pointer is returned.
         */
         void* lSearch( const void *key,
@@ -163,8 +163,8 @@ namespace qlibs {
                        void *arg = nullptr ) noexcept;
 
         /**
-        * @brief Performs a binary search over an array of @a n elements 
-        * pointed to by @a pbase for an element that matches the object pointed to 
+        * @brief Performs a binary search over an array of @a n elements
+        * pointed to by @a pbase for an element that matches the object pointed to
         * by @a key.
         * The size of each element is specified by @a size. The array contents
         * should be sorted in ascending order according to the @a compar
@@ -172,30 +172,30 @@ namespace qlibs {
         * the @a key and to an array element, in that order, and should return an
         * integer less than, equal to, or greater than zero if the @a key object
         * is respectively less than, matching, or greater than the array element.
-        * @param[in] key This is the pointer to the object that serves as key for 
+        * @param[in] key This is the pointer to the object that serves as key for
         * the search, type-casted as a @c void*.
-        * @param[in] pbase This is the pointer to the first object of the array 
+        * @param[in] pbase This is the pointer to the first object of the array
         * where the search is performed, type-casted as a @c void*.
-        * @param[in] n This is the number of elements in the array pointed by 
+        * @param[in] n This is the number of elements in the array pointed by
         * @a base.
         * @param[in] size This is the size in bytes of each element in the array.
         * @param[in] compar This is the function that compares two elements.
-        * The signature of the comparison function should be equivalent to the 
+        * The signature of the comparison function should be equivalent to the
         * following:
         * @code{.c}
         *  int compar( const void *a, const void *b, void *arg );
         * @endcode
-        * Comparison function which returns ​a negative integer value if the first 
-        * argument is less than the second, a positive integer value if the first 
-        * argument is greater than the second and zero if the arguments are 
-        * equivalent. @a key is passed as the first argument, an element from the 
+        * Comparison function which returns ​a negative integer value if the first
+        * argument is less than the second, a positive integer value if the first
+        * argument is greater than the second and zero if the arguments are
+        * equivalent. @a key is passed as the first argument, an element from the
         * array as the second.
-        * The function must not modify the objects passed to it and must return 
-        * consistent results when called for the same objects, regardless of their 
+        * The function must not modify the objects passed to it and must return
+        * consistent results when called for the same objects, regardless of their
         * positions in the array.
         * @param[in] arg Additional information (e.g., collating sequence), passed
         * to @a compar as the third argument
-        * @return This function returns a pointer to an entry in the array that 
+        * @return This function returns a pointer to an entry in the array that
         * matches the search key. If key is not found, a @c nullptr pointer is returned.
         */
         void* bSearch( const void *key,
@@ -209,25 +209,25 @@ namespace qlibs {
         * @brief Iterates @a n elements of the array pointed to by @a pbase.
         * The size of each element is specified by @a size. Every element should be
         * handled by function @a f. The iteration loop can be aborted by returning 1.
-        * @param[in] pbase This is the pointer to the first object of the array 
+        * @param[in] pbase This is the pointer to the first object of the array
         * type-casted as a @c void*.
-        * @param[in] n This is the number of elements in the array pointed by 
+        * @param[in] n This is the number of elements in the array pointed by
         * @a pbase.
         * @param[in] size This is the size in bytes of each element in the array.
         * @param[in] f The function that will handle each element of the array
-        * The signature of this handling function should be equivalent to the 
+        * The signature of this handling function should be equivalent to the
         * following:
         * @code{.c}
         * int iterFcn( int i, void *element, void *arg );
         * @endcode
         * The argument @a i is used to keep track of the iteration in which the loop
         * is.
-        * - <tt>i < 0</tt> Loop its a about to start (pre-loop invocation). The 
-        * @a element argument at this stage its passed as @c NULL and should not be 
+        * - <tt>i < 0</tt> Loop its a about to start (pre-loop invocation). The
+        * @a element argument at this stage its passed as @c NULL and should not be
         * dereferenced.
-        * - <tt>[ 0 <= i < n ]</tt> Loop its iterating and the @a element argument 
+        * - <tt>[ 0 <= i < n ]</tt> Loop its iterating and the @a element argument
         * is pointing to the array at index @a i.
-        * - <tt>i == n</tt> Loop has ended (pos-loop invocation). The @a element 
+        * - <tt>i == n</tt> Loop has ended (pos-loop invocation). The @a element
         * argument at this stage its passed as @c NULL and should not be dereferenced.
         * @param[in] dir Pass @c true to iterate the array backwards.
         * @param[in] arg Additional information (e.g., collating sequence), passed

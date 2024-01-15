@@ -60,7 +60,7 @@ bool fis::instance::setDeFuzzMethod( fis::deFuzzMethod m ) noexcept
 
     if ( m < FIS_NUM_DEFUZZ ) {
         /*cppcheck-suppress knownConditionTrueFalse */
-        if ( ( ( Mamdani == xType ) && ( m <= som ) ) || 
+        if ( ( ( Mamdani == xType ) && ( m <= som ) ) ||
              ( ( Sugeno == xType ) && ( m >= wtaver ) && ( m <= wtsum ) ) ||
              ( ( Tsukamoto == xType ) && ( wtaver == m ) ) ) {
             deFuzz = method[ m ];
@@ -85,9 +85,9 @@ bool fis::instance::setup( const fis::type t,
 {
     bool retValue = false;
 
-    if ( ( t <= Tsukamoto ) && 
-         ( nullptr != inputs ) && ( ni > 0U ) && 
-         ( nullptr != outputs) && ( no > 0U ) && 
+    if ( ( t <= Tsukamoto ) &&
+         ( nullptr != inputs ) && ( ni > 0U ) &&
+         ( nullptr != outputs) && ( no > 0U ) &&
          ( nullptr != mf_inputs) && ( nmi > 0U ) &&
          ( nullptr != mf_outputs) && ( nmo > 0U ) &&
          ( nullptr != r ) && ( n > 0U )
@@ -288,7 +288,7 @@ fis::fuzzyOperator fis::instance::getFuzzOperator( void ) noexcept
         case Q_FIS_OR:
             oper = orOp;
             break;
-        default: 
+        default:
             oper = &Sum;
             break;
     }
@@ -308,7 +308,7 @@ size_t fis::instance::inferenceAntecedent( size_t i ) noexcept
     /*cstat +CERT-INT30-C_a*/
     op = getFuzzOperator();
     rStrength = op( rStrength, parseFuzzValue( inMF, MFInIndex ) );
- 
+
     if ( ( inIndex < 0 ) || ( static_cast<size_t>( inIndex ) > nInputs ) ) {
         i = INFERENCE_ERROR;
     }
@@ -381,7 +381,7 @@ size_t fis::instance::inferenceConsequent( size_t i ) noexcept
         fis::output &o = xOutput[ outIndex ];
         fis::mf &m = outMF[ MFOutIndex ];
         /*cstat +CERT-STR34-C*/
-        
+
         if ( Mamdani == xType ) {
             real_t v;
             v = m.evalMF( o );

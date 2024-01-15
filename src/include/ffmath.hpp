@@ -3,7 +3,7 @@
  * @author J. Camilo Gomez C.
  * @version 1.06
  * @note This file is part of the qLibs++ distribution.
- * @brief Fast floating-point math library for applications where speed is more 
+ * @brief Fast floating-point math library for applications where speed is more
  * important than accuracy
  **/
 
@@ -22,12 +22,12 @@ namespace qlibs {
 
 
         /** @addtogroup  qffmath Float Fast-Math
-        * @brief Fast floating-point math library for applications where speed is 
+        * @brief Fast floating-point math library for applications where speed is
         * more important than accuracy
         *  @{
         */
 
-       /** 
+       /**
         * @brief  Enum with the possible categorizations of a 32-bit floating-point number
         */
         enum class classification {
@@ -51,11 +51,11 @@ namespace qlibs {
         float getNan( void );
 
         /**
-        * @brief Categorizes the floating-point number @a x. This function 
-        * determines whether its argument is a normal floating-point number, or one 
-        * of several special categories of values, including NaN (not a number), 
-        * infinity, subnormal floating-point values or zero. To determine what 
-        * category the argument belongs to, compare the return value with the 
+        * @brief Categorizes the floating-point number @a x. This function
+        * determines whether its argument is a normal floating-point number, or one
+        * of several special categories of values, including NaN (not a number),
+        * infinity, subnormal floating-point values or zero. To determine what
+        * category the argument belongs to, compare the return value with the
         * any of the following number classification macros:
         * - classification::FFP_ZERO
         * - classification::FFP_SUBNORMAL
@@ -63,15 +63,15 @@ namespace qlibs {
         * - classification::FFP_INFINITE
         * - classification::FFP_NAN
         * @param[in] f The number you want to test.
-        * @return One of the items in the ffmath::classification enumeration, 
+        * @return One of the items in the ffmath::classification enumeration,
         * specifying the category of @a x.
         */
         classification classify( const float f );
 
         /**
-        * @brief Determine if @a x is Not-A-Number (NaN) 
+        * @brief Determine if @a x is Not-A-Number (NaN)
         * @param[in] x The number you want to test.
-        * @return true if the value of @a x is (NaN), otherwise 
+        * @return true if the value of @a x is (NaN), otherwise
         * returns false.
         */
         inline bool isNan( const float x )
@@ -90,7 +90,7 @@ namespace qlibs {
         }
 
         /**
-        * @brief Determines if the given floating point number @a x has finite 
+        * @brief Determines if the given floating point number @a x has finite
         * value i.e. it is normal, subnormal or zero, but not infinite or NaN.
         * @param[in] x The number you want to test.
         * @return true if @a x has a finite value, false otherwise
@@ -101,7 +101,7 @@ namespace qlibs {
         }
 
         /**
-        * @brief Determines if the given floating point number @a x is normal, i.e. 
+        * @brief Determines if the given floating point number @a x is normal, i.e.
         * is neither zero, subnormal, infinite, or NaN.
         * @param[in] x The number you want to test.
         * @return true if @a x has a normal value, false otherwise
@@ -126,7 +126,7 @@ namespace qlibs {
         float absf( float x );
 
         /**
-        * @brief Computes the multiplicative inverse or reciprocal for the value 
+        * @brief Computes the multiplicative inverse or reciprocal for the value
         * @a x, denoted by @c 1/x or <tt>x^(−1)</tt>
         * @param[in] x The floating point value
         * @return The reciprocal value of @a x
@@ -142,10 +142,10 @@ namespace qlibs {
         float sqrt( float x );
 
         /**
-        * @brief Computes the reciprocal square-root of @a x denoted as 
+        * @brief Computes the reciprocal square-root of @a x denoted as
         * <tt>1/sqrt(x)</tt>
         * @param[in] x The floating point value
-        * @return If no errors occur, the reciprocal square root of @a x, is 
+        * @return If no errors occur, the reciprocal square root of @a x, is
         * returned. If a domain error occurs @c nan is returned
         */
         float rSqrt( float x );
@@ -159,19 +159,19 @@ namespace qlibs {
         float cbrt( float x );
 
         /**
-        * @brief Computes the reciprocal cubic-root of @a x denoted as 
+        * @brief Computes the reciprocal cubic-root of @a x denoted as
         * <tt>1/cbrt(x)</tt>
         * @param[in] x The floating point value
-        * @return If no errors occur, the reciprocal cubic root of @a x, is 
+        * @return If no errors occur, the reciprocal cubic root of @a x, is
         * returned. If a domain error occurs @c nan is returned
         */
         float rCbrt( float x );
 
         /**
-        * @brief Computes the nearest integer value to @a x (in floating-point 
+        * @brief Computes the nearest integer value to @a x (in floating-point
         * format), rounding halfway cases away from zero.
         * @param[in] x The floating point value
-        * @return The nearest integer value to @a x, rounding halfway cases away 
+        * @return The nearest integer value to @a x, rounding halfway cases away
         * from zero
         */
         float rounding( float x );
@@ -193,7 +193,7 @@ namespace qlibs {
         /**
         * @brief  Computes the nearest integer not greater in magnitude than @a x.
         * @param[in] x The floating point value
-        * @return The nearest integer value not greater in magnitude than @a x 
+        * @return The nearest integer value not greater in magnitude than @a x
         * (in other words, @a x rounded towards zero)
         */
         float trunc( float x );
@@ -206,47 +206,47 @@ namespace qlibs {
         float frac( float x );
 
         /**
-        * @brief Computes the floating point remainder after division of @a x 
-        * by @a y, where  @a x is the dividend and @a y is the divisor. This 
-        * function is often called the remainder operation, which can be 
-        * expressed as @c r=a-(b*trunc(a/b)) . This function follows the 
+        * @brief Computes the floating point remainder after division of @a x
+        * by @a y, where  @a x is the dividend and @a y is the divisor. This
+        * function is often called the remainder operation, which can be
+        * expressed as @c r=a-(b*trunc(a/b)) . This function follows the
         * convention that @c rem(x,0) is @c nan.
         * @note The concept of remainder after division is not uniquely defined,
-        * and the two functions ffmath::mod() and ffmath::rem() each compute a 
+        * and the two functions ffmath::mod() and ffmath::rem() each compute a
         * different variation.
-        * The ffmath::mod() function produces a result that is either zero or 
-        * has the same sign as the divisor. The ffmath::rem() function produces 
+        * The ffmath::mod() function produces a result that is either zero or
+        * has the same sign as the divisor. The ffmath::rem() function produces
         * a result that is either zero or has the same sign as the dividend.
-        * Another difference is the convention when the divisor is zero. The 
-        * ffmath::mod() function follows the convention that @c mod(x,0) 
-        * returns @c x, whereas the rem function follows the convention that 
+        * Another difference is the convention when the divisor is zero. The
+        * ffmath::mod() function follows the convention that @c mod(x,0)
+        * returns @c x, whereas the rem function follows the convention that
         * @c rem(x,0) returns @c nan.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
-        * @return If successful, returns the IEEE floating-point remainder of the 
+        * @return If successful, returns the IEEE floating-point remainder of the
         * division @c x/y. If a domain error occurs, a @c nan value is returned.
         */
         float rem( float x, float y );
 
         /**
-        * @brief Computes the floating point remainder after division of @a x 
-        * by @a y, where  @a x is the dividend and @a y is the divisor. This 
-        * function is often called the modulo operation, which can be expressed 
-        * as @c b=a-m*floor(a/m) . This function follows the convention that 
+        * @brief Computes the floating point remainder after division of @a x
+        * by @a y, where  @a x is the dividend and @a y is the divisor. This
+        * function is often called the modulo operation, which can be expressed
+        * as @c b=a-m*floor(a/m) . This function follows the convention that
         * @c mod(x,0) returns x.
         * @note The concept of remainder after division is not uniquely defined,
-        * and the two functions ffmath::mod() and ffmath::rem() each compute a 
+        * and the two functions ffmath::mod() and ffmath::rem() each compute a
         * different variation.
-        * The ffmath::mod() function produces a result that is either zero or 
-        * has the same sign as the divisor. The ffmath::rem() function produces 
+        * The ffmath::mod() function produces a result that is either zero or
+        * has the same sign as the divisor. The ffmath::rem() function produces
         * a result that is either zero or has the same sign as the dividend.
-        * Another difference is the convention when the divisor is zero. The 
-        * ffmath::mod() function follows the convention that @c mod(x,0) 
-        * returns @c x, whereas the rem function follows the convention that 
+        * Another difference is the convention when the divisor is zero. The
+        * ffmath::mod() function follows the convention that @c mod(x,0)
+        * returns @c x, whereas the rem function follows the convention that
         * @c rem(x,0) returns @c nan.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
-        * @return If successful, returns the IEEE floating-point remainder of the 
+        * @return If successful, returns the IEEE floating-point remainder of the
         * division @c x/y. If a domain error occurs, a @c nan value is returned.
         */
         float mod( float x, float y );
@@ -254,8 +254,8 @@ namespace qlibs {
         /**
         * @brief Computes the sine of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If no errors occur, the sine of @a x @c sin(x) in the range 
-        * [-1 ; +1], is returned. If a domain error occurs, a @c nan value is 
+        * @return If no errors occur, the sine of @a x @c sin(x) in the range
+        * [-1 ; +1], is returned. If a domain error occurs, a @c nan value is
         * returned.
         */
         float sin( float x );
@@ -263,8 +263,8 @@ namespace qlibs {
         /**
         * @brief Computes the cosine of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If no errors occur, the cosine of @a x @c cos(x) in the range 
-        * [-1 ; +1], is returned. If a domain error occurs, a @c nan value is 
+        * @return If no errors occur, the cosine of @a x @c cos(x) in the range
+        * [-1 ; +1], is returned. If a domain error occurs, a @c nan value is
         * returned.
         */
         float cos( float x );
@@ -272,7 +272,7 @@ namespace qlibs {
         /**
         * @brief Computes the tangent of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If no errors occur, the tangent of @a x @c tan(x) is returned. If 
+        * @return If no errors occur, the tangent of @a x @c tan(x) is returned. If
         * a domain error occurs, a @c nan value is returned.
         */
         float tan( float x );
@@ -289,7 +289,7 @@ namespace qlibs {
         /**
         * @brief Computes the principal value of the arc cosine of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the arc cosine of @a x @c arccos(x) in the 
+        * @return If no errors occur, the arc cosine of @a x @c arccos(x) in the
         * range [0 ; pi]. is returned.If a domain error occurs, a @c nan value is
         * returned.
         */
@@ -305,12 +305,12 @@ namespace qlibs {
         float atan( float x );
 
         /**
-        * @brief Computes the arc tangent of y/x using the signs of arguments to 
+        * @brief Computes the arc tangent of y/x using the signs of arguments to
         * determine the correct quadrant.
         * @param[in] y The floating point value
         * @param[in] x The floating point value
         * @return If no errors occur, the arc tangent of @c y/x <tt>arctan(y/x)</tt>
-        * in the range [-pi ; +pi] radians, is returned. If a domain error occurs, 
+        * in the range [-pi ; +pi] radians, is returned. If a domain error occurs,
         * a @c nan value is returned.
         */
         float atan2( float y, float x );
@@ -318,8 +318,8 @@ namespace qlibs {
         /**
         * @brief Computes 2 raised to the given power @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the base-2 exponential of @a x <tt>2^x</tt> is 
-        * returned. If a range error due to overflow occurs, @c inf is 
+        * @return If no errors occur, the base-2 exponential of @a x <tt>2^x</tt> is
+        * returned. If a range error due to overflow occurs, @c inf is
         * returned.
         */
         float exp2( float x );
@@ -327,8 +327,8 @@ namespace qlibs {
         /**
         * @brief Computes the base 2 logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the base-2 logarithm of @a x @c log_2(x) is 
-        * returned. If a domain error occurs, a @c nan value is returned. If a 
+        * @return If no errors occur, the base-2 logarithm of @a x @c log_2(x) is
+        * returned. If a domain error occurs, a @c nan value is returned. If a
         * pole error occurs, @c -inf is returned.
         */
         float log2( float x );
@@ -337,8 +337,8 @@ namespace qlibs {
         * @brief Computes the e (Euler's number, 2.7182818) raised to the given
         * power @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the base-e exponential of @a x <tt>e^(x)</tt> 
-        * is returned. If a range error due to overflow occurs, @c +inf is 
+        * @return If no errors occur, the base-e exponential of @a x <tt>e^(x)</tt>
+        * is returned. If a range error due to overflow occurs, @c +inf is
         * returned.
         */
         float exp( float x );
@@ -346,7 +346,7 @@ namespace qlibs {
         /**
         * @brief Computes the value of 10 raised to the power of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the base-e exponential of @a x <tt>10^(x)</tt> 
+        * @return If no errors occur, the base-e exponential of @a x <tt>10^(x)</tt>
         * is returned. If a range error due to overflow occurs, @c ±inf or
         * @c nan is returned.
         */
@@ -355,8 +355,8 @@ namespace qlibs {
         /**
         * @brief Computes the natural (base e) logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the natural (base-e) logarithm of @a x 
-        * @c ln(x) is returned. If a domain error occurs, a @c nan value is 
+        * @return If no errors occur, the natural (base-e) logarithm of @a x
+        * @c ln(x) is returned. If a domain error occurs, a @c nan value is
         * returned. If a pole error occurs, @c -inf is returned.
         */
         float log( float x );
@@ -364,8 +364,8 @@ namespace qlibs {
         /**
         * @brief Computes the common (base-10) logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the common (base-10) logarithm of @a x 
-        * @c log_10(x) is returned. If a domain error occurs, a @c nan value is 
+        * @return If no errors occur, the common (base-10) logarithm of @a x
+        * @c log_10(x) is returned. If a domain error occurs, a @c nan value is
         * returned. If a pole error occurs, @c -inf is returned.
         */
         float log10( float x );
@@ -374,9 +374,9 @@ namespace qlibs {
         * @brief Computes the value of @a b raised to the power @a e.
         * @param[in] b Base as floating point value
         * @param[in] e Exponent as floating point value
-        * @return If no errors occur, @a b raised to the power of @a e @c b^e is 
-        * returned. If a domain error occurs, a @c nan value is returned. If a 
-        * pole error or a range error due to overflow occurs, @c ±inf is 
+        * @return If no errors occur, @a b raised to the power of @a e @c b^e is
+        * returned. If a domain error occurs, a @c nan value is returned. If a
+        * pole error or a range error due to overflow occurs, @c ±inf is
         * returned.
         */
         float pow( float b, float e );
@@ -384,8 +384,8 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic sine of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the hyperbolic sine of @a x @c sinh(x) is 
-        * returned. If a range error occurs, a @c ±inf is value is 
+        * @return If no errors occur, the hyperbolic sine of @a x @c sinh(x) is
+        * returned. If a range error occurs, a @c ±inf is value is
         * returned.
         */
         float sinh( float x );
@@ -393,7 +393,7 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic cosine of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the hyperbolic cosine of @a x @c cosh(x) is 
+        * @return If no errors occur, the hyperbolic cosine of @a x @c cosh(x) is
         * returned. If a range error occurs, a @c inf value is returned.
         */
         float cosh( float x );
@@ -401,7 +401,7 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic tangent of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the hyperbolic tangent of @a x @c tanh(x) is 
+        * @return If no errors occur, the hyperbolic tangent of @a x @c tanh(x) is
         * returned.
         */
         float tanh( float x );
@@ -409,7 +409,7 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic sine of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the inverse hyperbolic sine of @a x 
+        * @return If no errors occur, the inverse hyperbolic sine of @a x
         * <tt>sinh^-1(x)</tt> is returned.
         */
         float asinh( float x );
@@ -417,7 +417,7 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic cosine of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the inverse hyperbolic cosine of @a x 
+        * @return If no errors occur, the inverse hyperbolic cosine of @a x
         * <tt>cosh^-1(x)</tt> is returned.
         */
         float acosh( float x );
@@ -425,8 +425,8 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic tangent of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, the inverse hyperbolic tangent of @a x 
-        * <tt>tanh^-1(x)</tt> is returned. If a domain error occurs, a @c nan 
+        * @return If no errors occur, the inverse hyperbolic tangent of @a x
+        * <tt>tanh^-1(x)</tt> is returned. If a domain error occurs, a @c nan
         * value is returned. If a pole error occurs, @c ±inf is returned.
         */
         float atanh( float x );
@@ -450,8 +450,8 @@ namespace qlibs {
         float wrapTo2Pi( float x );
 
         /**
-        * @brief Wraps angle @a x, in degrees, to the interval [–180, 180] such 
-        * that 180 maps to 180 and –180 maps to –180. In general, odd, positive 
+        * @brief Wraps angle @a x, in degrees, to the interval [–180, 180] such
+        * that 180 maps to 180 and –180 maps to –180. In general, odd, positive
         * multiples of 180 map to 180 and odd, negative multiples of 180 map to –180.
         * @param x The angle in degrees
         * @return The angle @a x wrapped to the [-pi, pi] interval
@@ -459,7 +459,7 @@ namespace qlibs {
         float wrapTo180( float x );
 
         /**
-        * @brief Wraps angle @a x, in degrees, to the interval [0, 360] such 
+        * @brief Wraps angle @a x, in degrees, to the interval [0, 360] such
         * that 0 maps to 0 and 360 maps to 360. In general, positive multiples
         * of 360 map to 360 and negative multiples of 360 map to zero.
         * @param x The angle in degrees
@@ -477,32 +477,32 @@ namespace qlibs {
         /**
         * @brief Computes the complementary error function of @a x.
         * @param[in] x The floating point value
-        * @return If no errors occur, value the complementary error function is 
+        * @return If no errors occur, value the complementary error function is
         * returned.
         */
         float erfc( float x );
 
         /**
-        * @brief Decomposes given floating point value @a x into a normalized 
+        * @brief Decomposes given floating point value @a x into a normalized
         * fraction and an integral power of two.
         * @param[in] x The floating point value
         * @param[in] pw2 Pointer to integer value to store the exponent to
         * @return If @a x is zero, returns zero and stores zero in @a pw2. Otherwise
-        * (if @a x is not zero), if no errors occur, returns the value @a y in the 
-        * range (-1;-0.5], [0.5; 1) and stores an integer value in @a pw2 such that 
-        * <tt>y×2^(pw2) = x</tt> . If the value to be stored in @a pw2 is outside 
-        * the range of an @c int, the behavior is unspecified. If @a x is not a 
+        * (if @a x is not zero), if no errors occur, returns the value @a y in the
+        * range (-1;-0.5], [0.5; 1) and stores an integer value in @a pw2 such that
+        * <tt>y×2^(pw2) = x</tt> . If the value to be stored in @a pw2 is outside
+        * the range of an @c int, the behavior is unspecified. If @a x is not a
         * floating-point number, the behavior is unspecified.
         */
         float rexp( float x, int32_t *pw2 );
 
         /**
-        * @brief Multiplies a floating point value @a x by the number 2 raised to 
+        * @brief Multiplies a floating point value @a x by the number 2 raised to
         * the @a pw2 power.
         * @param[in] x The floating point value
         * @param[in] pw2 Integer value
-        * @return If no errors occur, @a x multiplied by 2 to the power of @a pw2 
-        * <tt>x×2^pwd</tt> is returned. If a range error due to overflow occurs, 
+        * @return If no errors occur, @a x multiplied by 2 to the power of @a pw2
+        * <tt>x×2^pwd</tt> is returned. If a range error due to overflow occurs,
         * @c ±inf is returned. If a range error due to underflow occurs,
         * the correct result (after rounding) is returned.
         */
@@ -510,13 +510,13 @@ namespace qlibs {
 
         /**
         * @brief Computes the square root of the sum of the squares of @a x and @a y,
-        * without undue overflow or underflow at intermediate stages of the 
+        * without undue overflow or underflow at intermediate stages of the
         * computation.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
-        * @return If no errors occur, the hypotenuse of a right-angled triangle, 
-        * <tt>sqrt(x^2 + y^2)</tt>, is returned. If a range error due to overflow 
-        * occurs, @c +inf is returned. If a range error due to underflow 
+        * @return If no errors occur, the hypotenuse of a right-angled triangle,
+        * <tt>sqrt(x^2 + y^2)</tt>, is returned. If a range error due to overflow
+        * occurs, @c +inf is returned. If a range error due to underflow
         * occurs, the correct result (after rounding) is returned.
         */
         float hypot( float x, float y );
@@ -526,9 +526,9 @@ namespace qlibs {
         * @a y. If @a x equals to @a y, @a y is returned.
         * @param[in] x The floating point value
         * @param[in] y The floating point value
-        * @return If no errors occur, the next representable value of @a x in the 
+        * @return If no errors occur, the next representable value of @a x in the
         * direction of @a y is returned. If @a x equals @a y, then @a yis returned.
-        * If a range error due to overflow occurs, @c ±inf is returned 
+        * If a range error due to overflow occurs, @c ±inf is returned
         * (with the same sign as @a x). If a range error occurs due to underflow,
         * the correct result is returned.
         */

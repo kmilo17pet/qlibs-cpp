@@ -37,7 +37,7 @@ namespace qlibs {
 
             /**
             * @brief Check if the smoother filter is initialized.
-            * @return @c true if the smoother has been initialized, otherwise 
+            * @return @c true if the smoother has been initialized, otherwise
             * return @c false.
             */
             bool isInitialized( void ) const;
@@ -75,7 +75,7 @@ namespace qlibs {
 
             /**
             * @brief Setup an initialize the 1st order Low-Pass Filter.
-            * @param[in] a The filter adjustment parameter. 
+            * @param[in] a The filter adjustment parameter.
             * A value between  [ 0 < @a alpha < 1 ]
             * @return @c true on success, otherwise return @c false.
             */
@@ -110,7 +110,7 @@ namespace qlibs {
 
             /**
             * @brief Setup an initialize the 2nd order Low-Pass Filter.
-            * @param[in] a The filter adjustment parameter. 
+            * @param[in] a The filter adjustment parameter.
             * A value between  [ 0 < @a a < 1 ]
             * @return @c true on success, otherwise return @c false.
             */

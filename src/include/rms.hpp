@@ -46,9 +46,9 @@ namespace qlibs {
             real_t update( const real_t x ) noexcept;
 
             /**
-            * @brief Initialize the RMS instance by setting the default optimal 
+            * @brief Initialize the RMS instance by setting the default optimal
             * parameters.
-            * @param[in] window A pointer to the window storage, an array of 
+            * @param[in] window A pointer to the window storage, an array of
             * @a wsize elements.
             * @param[in] wsize The window size.
             * @return @c true on success, otherwise returns @c false.
@@ -57,9 +57,9 @@ namespace qlibs {
                         const size_t wsize ) noexcept;
 
             /**
-            * @brief Initialize the RMS instance by setting the default optimal 
+            * @brief Initialize the RMS instance by setting the default optimal
             * parameters.
-            * @param[in] win The array for the window storage 
+            * @param[in] win The array for the window storage
             * @return @c true on success, otherwise returns @c false.
             */
             template <size_t windowSize>

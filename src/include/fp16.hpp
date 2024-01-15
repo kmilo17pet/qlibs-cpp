@@ -91,7 +91,7 @@ namespace qlibs {
                                    fp16Raw_t y ) noexcept;
             static fp16Raw_t pow( fp16Raw_t x,
                                   fp16Raw_t y ) noexcept;
-            static char* itoa( char *buf, 
+            static char* itoa( char *buf,
                                uint32_t scale,
                                uint32_t val,
                                uint8_t skip ) noexcept;
@@ -119,7 +119,7 @@ namespace qlibs {
 
             /**
             * @brief Check for (q16.16) fixed-point fp16::exp() operation reaches
-            * the @c EXP_MAX value 
+            * the @c EXP_MAX value
             * @return @c true if the fixed-point has reached @c EXP_MAX,
             * otherwise @c false.
             */

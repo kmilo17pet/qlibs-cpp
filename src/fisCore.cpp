@@ -53,7 +53,7 @@ real_t fis::core::GBellMF( const fis::ioBase * const in,
     a = p[ 0 ];
     b = p[ 1 ];
     c = p[ 2 ];
-    
+
     return ( 1.0_re/( 1.0_re + ffmath::pow( ffmath::absf( ( x - c )/a ) , 2.0_re*b ) ) );
 }
 /*============================================================================*/
