@@ -16,7 +16,7 @@ var searchData=
   ['setinput_13',['setInput',['../classqlibs_1_1fis_1_1instance.html#ac4dc4134b8a201d3c3b7b86142e3bd79',1,'qlibs::fis::instance::setInput()'],['../classqlibs_1_1fis_1_1system.html#af766a1b22b1ff0718a05763bfba0faa4',1,'qlibs::fis::system::setInput()']]],
   ['setintegrationmethod_14',['setIntegrationMethod',['../classqlibs_1_1continuous_system.html#aed8172e8447f970991a5e4a4525e3018',1,'qlibs::continuousSystem::setIntegrationMethod()'],['../classqlibs_1_1state.html#a05a2e93253f355f1102c1a59c107440f',1,'qlibs::state::setIntegrationMethod()']]],
   ['setmanualinput_15',['setManualInput',['../classqlibs_1_1pid_controller.html#a1c1ab27029df2b125f3c658534235fdc',1,'qlibs::pidController']]],
-  ['setmethod_16',['setMethod',['../classqlibs_1_1interp1.html#a01d3aa470aba779d93a1c428e0bdffb8',1,'qlibs::interp1']]],
+  ['setmethod_16',['setMethod',['../classqlibs_1_1interp1.html#a9f8f95599043a5af8f94a3192393a302',1,'qlibs::interp1']]],
   ['setmode_17',['setMode',['../classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3',1,'qlibs::pidController']]],
   ['setmodelreferencecontrol_18',['setModelReferenceControl',['../classqlibs_1_1pid_controller.html#a7d6482d7d31956365ef120629e61fbe2',1,'qlibs::pidController']]],
   ['setparameter_19',['setParameter',['../classqlibs_1_1fis_1_1instance.html#a688e9961b277e375ab653bfb3be421a9',1,'qlibs::fis::instance::setParameter()'],['../classqlibs_1_1fis_1_1system.html#a33adf57a681c2b6ad9be86412c0c156c',1,'qlibs::fis::system::setParameter()']]],

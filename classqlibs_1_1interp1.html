@@ -149,13 +149,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c88e602f639f90c815c8ec23786e0c9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html#a6c88e602f639f90c815c8ec23786e0c9">interp1</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>(&amp;xTable)[sizeTable], <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>(&amp;yTable)[sizeTable])</td></tr>
 <tr class="memdesc:a6c88e602f639f90c815c8ec23786e0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the 1D interpolation instance.  <a href="classqlibs_1_1interp1.html#a6c88e602f639f90c815c8ec23786e0c9">More...</a><br /></td></tr>
 <tr class="separator:a6c88e602f639f90c815c8ec23786e0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d3aa470aba779d93a1c428e0bdffb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html#a01d3aa470aba779d93a1c428e0bdffb8">setMethod</a> (const <a class="el" href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">interp1Method</a> m)</td></tr>
-<tr class="memdesc:a01d3aa470aba779d93a1c428e0bdffb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the interpolation method to use.  <a href="classqlibs_1_1interp1.html#a01d3aa470aba779d93a1c428e0bdffb8">More...</a><br /></td></tr>
-<tr class="separator:a01d3aa470aba779d93a1c428e0bdffb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe971f4eaa41e9e5ad6fe8d5998f8745"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afe971f4eaa41e9e5ad6fe8d5998f8745"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html#afe971f4eaa41e9e5ad6fe8d5998f8745">get</a> (const T x)</td></tr>
-<tr class="memdesc:afe971f4eaa41e9e5ad6fe8d5998f8745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate input point <em>x</em> to determine the value of <em>y</em> at the points <em>xi</em> using the current method. If value if beyond the endpoints, extrapolation is performed using the current method.  <a href="classqlibs_1_1interp1.html#afe971f4eaa41e9e5ad6fe8d5998f8745">More...</a><br /></td></tr>
-<tr class="separator:afe971f4eaa41e9e5ad6fe8d5998f8745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8f95599043a5af8f94a3192393a302"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html#a9f8f95599043a5af8f94a3192393a302">setMethod</a> (const <a class="el" href="group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016">interp1Method</a> m) noexcept</td></tr>
+<tr class="memdesc:a9f8f95599043a5af8f94a3192393a302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the interpolation method to use.  <a href="classqlibs_1_1interp1.html#a9f8f95599043a5af8f94a3192393a302">More...</a><br /></td></tr>
+<tr class="separator:a9f8f95599043a5af8f94a3192393a302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a093280adefe993cadb1933ffd178f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a72a093280adefe993cadb1933ffd178f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1interp1.html#a72a093280adefe993cadb1933ffd178f">get</a> (const T x) noexcept</td></tr>
+<tr class="memdesc:a72a093280adefe993cadb1933ffd178f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate input point <em>x</em> to determine the value of <em>y</em> at the points <em>xi</em> using the current method. If value if beyond the endpoints, extrapolation is performed using the current method.  <a href="classqlibs_1_1interp1.html#a72a093280adefe993cadb1933ffd178f">More...</a><br /></td></tr>
+<tr class="separator:a72a093280adefe993cadb1933ffd178f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A 1D interpolation object. </p>
@@ -285,8 +285,8 @@ template&lt;size_t sizeTable&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afe971f4eaa41e9e5ad6fe8d5998f8745" name="afe971f4eaa41e9e5ad6fe8d5998f8745"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe971f4eaa41e9e5ad6fe8d5998f8745">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a72a093280adefe993cadb1933ffd178f" name="a72a093280adefe993cadb1933ffd178f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a093280adefe993cadb1933ffd178f">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +306,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -316,11 +316,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a01d3aa470aba779d93a1c428e0bdffb8" name="a01d3aa470aba779d93a1c428e0bdffb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d3aa470aba779d93a1c428e0bdffb8">&#9670;&nbsp;</a></span>setMethod()</h2>
+<a id="a9f8f95599043a5af8f94a3192393a302" name="a9f8f95599043a5af8f94a3192393a302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f8f95599043a5af8f94a3192393a302">&#9670;&nbsp;</a></span>setMethod()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool interp1::setMethod </td>
@@ -330,6 +333,11 @@ template&lt;typename T &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Specify the interpolation method to use. </p>
