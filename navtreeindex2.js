@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"group__qffmath.html#gab1d70c1548fbb2d4a5c11ab864e02b67":[2,9,23],
+"group__qffmath.html#gab66aac067050760eb105ef45bbba5319":[2,9,48],
 "group__qffmath.html#gab98f3261c25832ccb514e482c53bcdfe":[2,9,3],
 "group__qffmath.html#gabb0e6c2362bfc556e1a839a4c2b16633":[2,9,34],
 "group__qffmath.html#gac5e1a21d38dc1e3765cc9a29cf9ed353":[2,9,45],
@@ -209,6 +211,8 @@ var NAVTREEINDEX2 =
 "qfp16_desc.html#qfp16_functions":[0,4,1],
 "qfp16_desc.html#qfp16_literal":[0,4,1,4],
 "qfp16_desc.html#qfp16_trig_functions":[0,4,1,3],
+"qinterp1_desc.html":[0,9],
+"qinterp1_desc.html#qinterp1_ex1":[0,9,0],
 "qltisys_desc.html":[0,3],
 "qltisys_desc.html#qltisys_cont":[0,3,0],
 "qltisys_desc.html#qltisys_disc":[0,3,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "qssmoother_desc.html#qssmoother_klmn":[0,0,8],
 "qssmoother_desc.html#qssmoother_lpf1":[0,0,0],
 "qssmoother_desc.html#qssmoother_lpf2":[0,0,1],
-"qssmoother_desc.html#qssmoother_mor1":[0,0,4],
-"qssmoother_desc.html#qssmoother_mor2":[0,0,5],
-"qssmoother_desc.html#qssmoother_mwm1":[0,0,2],
-"qssmoother_desc.html#qssmoother_mwm2":[0,0,3],
-"qtdl_desc.html":[0,8]
+"qssmoother_desc.html#qssmoother_mor1":[0,0,4]
 };

@@ -9,7 +9,7 @@ var searchData=
   ['insertsample_6',['insertSample',['../classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5',1,'qlibs::tdl']]],
   ['instance_7',['instance',['../classqlibs_1_1fis_1_1instance.html#a466dbdbac4c947e4667c7b585f5c3384',1,'qlibs::fis::instance']]],
   ['integrate_8',['integrate',['../classqlibs_1_1state.html#af43a687385cc3b12038c8c44f8fca9c6',1,'qlibs::state']]],
-  ['interp1_9',['interp1',['../classqlibs_1_1interp1.html#aa004ab7066bc6905915955b095b1e58e',1,'qlibs::interp1::interp1(const real_t *const xTable, const real_t *const yTabLe, const size_t sizeTable)'],['../classqlibs_1_1interp1.html#a6c88e602f639f90c815c8ec23786e0c9',1,'qlibs::interp1::interp1(real_t(&amp;xTable)[sizeTable], real_t(&amp;yTable)[sizeTable])']]],
+  ['interp1_9',['interp1',['../classqlibs_1_1interp1.html#afe5a03475b14f998daf9006f30ad7c08',1,'qlibs::interp1::interp1(const real_t *const xTable, const real_t *const yTable, const size_t sizeTable)'],['../classqlibs_1_1interp1.html#a6c88e602f639f90c815c8ec23786e0c9',1,'qlibs::interp1::interp1(real_t(&amp;xTable)[sizeTable], real_t(&amp;yTable)[sizeTable])']]],
   ['inv_10',['inv',['../classqlibs_1_1mat.html#a6fb68580ae09eb7384bcb6fb266a195f',1,'qlibs::mat']]],
   ['iobase_11',['ioBase',['../classqlibs_1_1fis_1_1io_base.html#a6ba77a504578b09fd0b756a20c7a160a',1,'qlibs::fis::ioBase']]],
   ['isautotuningcomplete_12',['isAutoTuningComplete',['../classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131',1,'qlibs::pidController']]],

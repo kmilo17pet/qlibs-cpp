@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arduino_20support_0',['Arduino support',['../_arduino_01support.html',1,'']]]
+  ['1d_20interpolation_20class_0',['1D Interpolation class',['../qinterp1_desc.html',1,'index']]]
 ];

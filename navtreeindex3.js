@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"qssmoother_desc.html#qssmoother_mor2":[0,0,5],
+"qssmoother_desc.html#qssmoother_mwm1":[0,0,2],
+"qssmoother_desc.html#qssmoother_mwm2":[0,0,3],
+"qtdl_desc.html":[0,8],
 "qtdl_desc.html#qtdl_ex1":[0,8,0],
 "structqlibs_1_1continuous_t_f.html":[2,3,0],
 "structqlibs_1_1continuous_t_f.html#a8e56f1f7dc3b9e7c07e88df5c29a8c95":[2,3,0,0],
