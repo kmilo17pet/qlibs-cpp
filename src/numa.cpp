@@ -3,7 +3,7 @@
 using namespace qlibs;
 
 /*===========================================================================*/
-void state::init( const real_t x0,
+void nState::init( const real_t x0,
                   const real_t sn_1,
                   const real_t sn_2 ) noexcept
 {
@@ -12,7 +12,7 @@ void state::init( const real_t x0,
     x[ 2 ] = sn_2;
 }
 /*===========================================================================*/
-real_t state::integrate( const real_t s,
+real_t nState::integrate( const real_t s,
                          const real_t dt ) noexcept
 {
     switch( iMethod ) {
@@ -36,8 +36,8 @@ real_t state::integrate( const real_t s,
     return x[ 0 ];
 }
 /*===========================================================================*/
-real_t state::derivative( const real_t s,
-                          const real_t dt ) noexcept
+real_t nState::derive( const real_t s,
+                       const real_t dt ) noexcept
 {
     switch( dMethod ) {
         case DERIVATION_2POINTS:

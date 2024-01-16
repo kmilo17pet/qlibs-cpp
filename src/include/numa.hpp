@@ -16,6 +16,15 @@
 */
 namespace qlibs {
 
+    /** @addtogroup qnuma Numerical state class
+    * @brief Class to compute in real-time the numerical approximations of
+    * integral and derivative operations for data values sampled periodically.
+    *  @{
+    */
+
+    /**
+    * @brief An enum with all the available integration methods.
+    */
     enum integrationMethod {
         INTEGRATION_RECTANGULAR,    /*!< Numerical integration using the rectangular rule*/
         INTEGRATION_TRAPEZOIDAL,    /*!< Numerical integration using the trapezoidal rectangular rule*/
@@ -23,12 +32,22 @@ namespace qlibs {
         INTEGRATION_QUADRATIC,      /*!< Numerical integration using a parabola fit to three points.*/
     };
 
+    /**
+    * @brief An enum with all the available derivation methods.
+    */
     enum derivationMethod {
         DERIVATION_2POINTS,         /*!< Numerical derivation using two points*/
         DERIVATION_BACKWARD,        /*!< Numerical derivation using the three-point backward difference.*/
         DERIVATION_FORWARD,         /*!< Numerical derivation using the three-point forward difference.*/
     };
-    class state {
+
+    /**
+    * @brief A numerical state object.
+    * @details A numerical state object can be used to compute in real-time the
+    * numerical approximations of integral and derivative operations for data
+    * values sampled periodically.
+    */
+    class nState {
         private:
             real_t x[ 3 ] = { 0.0_re, 0.0_re, 0.0_re };
             void inline update( const real_t &s )
@@ -39,7 +58,7 @@ namespace qlibs {
             integrationMethod iMethod{ INTEGRATION_TRAPEZOIDAL };
             derivationMethod dMethod{ DERIVATION_2POINTS };
         public:
-            virtual ~state() {}
+            virtual ~nState() {}
 
             /**
             * @brief Constructor for the state object
@@ -48,9 +67,9 @@ namespace qlibs {
             * @param[in] sn_2 initial condition at time (t-2)
             * @return none
             */
-            state( const real_t x0 = 0.0_re,
-                   const real_t sn_1 = 0.0_re,
-                   const real_t sn_2 = 0.0_re ) noexcept
+            nState( const real_t x0 = 0.0_re,
+                    const real_t sn_1 = 0.0_re,
+                    const real_t sn_2 = 0.0_re ) noexcept
             {
                 init( x0, sn_1, sn_2 );
             }
@@ -81,8 +100,8 @@ namespace qlibs {
             * @param[in] dt The time-step given in seconds.
             * @return The current value of the derivation step.
             */
-            real_t derivative( const real_t s,
-                               const real_t dt ) noexcept;
+            real_t derive( const real_t s,
+                           const real_t dt ) noexcept;
 
             /**
             * @brief Set integration method .
@@ -104,7 +123,7 @@ namespace qlibs {
             }
 
             /**
-            * @brief Set derivation method .
+            * @brief Set derivation method.
             * @param[in] m The desired derivation method. Use one of the following:
             *
             * @c ::DERIVATION_2POINTS : (default) Derivative using two points.
@@ -147,39 +166,40 @@ namespace qlibs {
                 return x[ 0 ] - rValue;
             }
             friend real_t operator*( real_t rValue,
-                                     const state& s ) noexcept;
+                                     const nState& s ) noexcept;
             friend real_t operator/( real_t rValue,
-                                     const state& s ) noexcept;
+                                     const nState& s ) noexcept;
             friend real_t operator+( real_t rValue,
-                                     const state& s ) noexcept;
+                                     const nState& s ) noexcept;
             friend real_t operator-( real_t rValue,
-                                     const state& s ) noexcept;
+                                     const nState& s ) noexcept;
             /*! @endcond  */
     };
 
     /*! @cond  */
     inline real_t operator*( real_t rValue,
-                             const state& s ) noexcept
+                             const nState& s ) noexcept
     {
         return rValue*s.x[ 0 ];
     }
     inline real_t operator/( real_t rValue,
-                             const state& s ) noexcept
+                             const nState& s ) noexcept
     {
         return rValue/s.x[ 0 ];
     }
     inline real_t operator+( real_t rValue,
-                             const state& s ) noexcept
+                             const nState& s ) noexcept
     {
         return rValue + s.x[ 0 ];
     }
     inline real_t operator-( real_t rValue,
-                             const state& s ) noexcept
+                             const nState& s ) noexcept
     {
         return rValue - s.x[ 0 ];
     }
     /*! @endcond  */
 
+    /** @}*/
 }
 
 #endif /*QLIBS_NUMA*/

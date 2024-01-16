@@ -40,7 +40,7 @@ discreteTF	KEYWORD1
 ltisys	KEYWORD1
 discreteSystem	KEYWORD1
 continuousSystem	KEYWORD1
-state	KEYWORD1
+nState	KEYWORD1
 integrationMethod	KEYWORD1
 pidMode	KEYWORD1
 pidDirection	KEYWORD1
@@ -194,7 +194,7 @@ inPolygon	KEYWORD2
 inCircle	KEYWORD2
 init	KEYWORD2
 integrate	KEYWORD2
-derivative	KEYWORD2
+derive	KEYWORD2
 setIntegrationMethod	KEYWORD2
 getEstimates	KEYWORD2
 setDirection	KEYWORD2

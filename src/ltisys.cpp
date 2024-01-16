@@ -162,7 +162,7 @@ real_t discreteSystem::update( const real_t u )
 /*============================================================================*/
 bool continuousSystem::setup( real_t *num,
                               real_t *den,
-                              state *x,
+                              nState *x,
                               const size_t nD,
                               const real_t dT ) noexcept
 {

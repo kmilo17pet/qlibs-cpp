@@ -24,6 +24,9 @@ namespace qlibs {
     * @{
     */
 
+    /**
+    * @brief All the possible natures of a LTI system.
+    */
     enum ltisysType {
         LTISYS_TYPE_UNKNOWN = 0,
         LTISYS_TYPE_CONTINUOUS,
@@ -34,7 +37,7 @@ namespace qlibs {
     * @brief Type to specify continuous states
     */
     template<size_t order>
-    using continuousStates = state[ order ];
+    using continuousStates = nState[ order ];
 
     /**
     * @brief Type to specify discrete states
@@ -367,7 +370,7 @@ namespace qlibs {
     class continuousSystem : public ltisys {
         private:
             real_t dt{ 1.0_re };
-            state *xc{ nullptr };
+            nState *xc{ nullptr };
             real_t update( const real_t u ) override;
         public:
             virtual ~continuousSystem() {}
@@ -397,7 +400,7 @@ namespace qlibs {
             */
             continuousSystem( real_t *num,
                               real_t *den,
-                              state *x,
+                              nState *x,
                               const size_t nD,
                               const real_t dT ) noexcept
             {
@@ -439,7 +442,7 @@ namespace qlibs {
             template<size_t systemOrder>
             continuousSystem( real_t (&num)[ systemOrder+1 ],
                               real_t (&den)[ systemOrder+1 ],
-                              state (&x)[ systemOrder ],
+                              nState (&x)[ systemOrder ],
                               const real_t dT ) noexcept
             {
                 (void)setup( num, den, x, systemOrder, dT );
@@ -471,7 +474,7 @@ namespace qlibs {
             */
             bool setup( real_t *num,
                         real_t *den,
-                        state *x,
+                        nState *x,
                         const size_t nD,
                         const real_t dT ) noexcept;
 
@@ -499,7 +502,7 @@ namespace qlibs {
             template<size_t systemOrder>
             bool setup( real_t (&num)[ systemOrder+1 ],
                         real_t (&den)[ systemOrder+1 ],
-                        state (&x)[ systemOrder ],
+                        nState (&x)[ systemOrder ],
                         const real_t dT ) noexcept
             {
                 return setup( num, den, x, systemOrder, dT );

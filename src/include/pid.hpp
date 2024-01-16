@@ -101,9 +101,9 @@ namespace qlibs {
             real_t m, mInput;
             const real_t *yr{ nullptr };
             real_t alpha, gamma; /*MRAC additive controller parameters*/
-            state c_state; /*controller integral & derivative state*/
-            state m_state; /*MRAC additive controller state*/
-            state b_state; /*Bumpless-transfer state*/
+            nState c_state; /*controller integral & derivative state*/
+            nState m_state; /*MRAC additive controller state*/
+            nState b_state; /*Bumpless-transfer state*/
             pidAutoTuning *adapt{ nullptr };
             pidMode mode{ pidMode::PID_AUTOMATIC };
             pidDirection dir{ pidDirection::PID_FORWARD };
