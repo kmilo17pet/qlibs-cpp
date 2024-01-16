@@ -1,0 +1,95 @@
+/*! @page qffmath_desc Fast floating point math library and extensions
+* qLibs provides its own math library with a set of APIs to compute common
+* mathematical functions and transformations. The \ref qlibs::ffmath can
+* replace a default math floating-point library, delivering better performance
+* with less code delivering a very close aproximations to the standard library.
+* \ref qlibs::ffmath is Very fast and very small, it delivers FPU-like performance
+* in pure software. Where available, it even boosts the performance of an FPU for
+* complex mathematical functions.
+*
+* The list of provided functions and constants:
+*
+* @subsection  qffmath_classify Classification
+* - \ref qlibs::ffmath::classify() Categorizes the floating-point number
+* - \ref qlibs::ffmath::isNan() Determine if argument is Not-A-Number (NaN)
+* - \ref qlibs::ffmath::isInf() Determine if argument is Infinity.
+* - \ref qlibs::ffmath::isFinite() Determines if the given floating point number has finite value.
+* - \ref qlibs::ffmath::isNormal() Determines if the given floating point number is normal
+*
+* @subsection  qffmath_basic Basic functions
+* - \ref qlibs::ffmath::sign() Computes the sign function
+* - \ref qlibs::ffmath::absf() Computes the absolute value
+* - \ref qlibs::ffmath::recip() Computes the multiplicative inverse or reciprocal
+* - \ref qlibs::ffmath::sqrt() Computes the square-root
+* - \ref qlibs::ffmath::rSqrt() Computes the reciprocal square-root
+* - \ref qlibs::ffmath::cbrt() Computes the cubic-root
+* - \ref qlibs::ffmath::rCbrt() Computes the reciprocal cubic-root
+* - \ref qlibs::ffmath::rounding() Computes the nearest integer rounding halfway cases away from zero.
+* - \ref qlibs::ffmath::floor() Computes the largest integer value not greater than the given argument.
+* - \ref qlibs::ffmath::ceil() Computes the smallet integer value not greater than the given argument.
+* - \ref qlibs::ffmath::trunc() Computes the nearest integer not greater in magnitude than the given argument.
+* - \ref qlibs::ffmath::frac() Obtain the fractional part
+* - \ref qlibs::ffmath::rem() Computes the floating point remainder after division
+* - \ref qlibs::ffmath::mod() Computes the floating point remainder after division
+*
+* @subsection  qffmath_trig Trigonometric functions
+* - \ref qlibs::ffmath::sin() Computes the sine in radians
+* - \ref qlibs::ffmath::cos() Computes the cosine in radians
+* - \ref qlibs::ffmath::tan() Computes the tangent in radians
+* - \ref qlibs::ffmath::asin() Computes the principal value of the arc sine
+* - \ref qlibs::ffmath::acos() Computes the principal value of the arc cosine
+* - \ref qlibs::ffmath::atan() Computes the principal value of the arc tangent
+* - \ref qlibs::ffmath::atan2() Computes the arc tangent
+* - \ref qlibs::ffmath::sinh() Computes hyperbolic sine
+* - \ref qlibs::ffmath::cosh() Computes hyperbolic cosine
+* - \ref qlibs::ffmath::tanh() Computes hyperbolic tangent
+* - \ref qlibs::ffmath::asinh() Computes the inverse hyperbolic sine
+* - \ref qlibs::ffmath::acosh() Computes the inverse hyperbolic cosine
+* - \ref qlibs::ffmath::atanh() Computes the inverse hyperbolic tangent
+* - \ref qlibs::ffmath::wrapToPi() Wraps angle in radians, to the interval [−pi, pi]
+* - \ref qlibs::ffmath::wrapTo2Pi() Wraps angle in radians, to the interval [0, 2*pi]
+* - \ref qlibs::ffmath::wrapTo180() Wraps angle in degrees, to the interval [−180, 180]
+* - \ref qlibs::ffmath::wrapTo360() Wraps angle in degrees, to the interval [0, 360]
+*
+* @subsection  qffmath_exp Exponential functions
+* - \ref qlibs::ffmath::exp2() Computes 2 raised to the given power
+* - \ref qlibs::ffmath::log2() Computes the base 2 logarithm
+* - \ref qlibs::ffmath::exp() Computes the e (Euler's number) raised to the given power
+* - \ref qlibs::ffmath::exp10() Computes the value of 10 raised to the power
+* - \ref qlibs::ffmath::log() Computes the natural (base e) logarithm
+* - \ref qlibs::ffmath::log10() Computes the common (base-10) logarithm
+* - \ref qlibs::ffmath::pow() Computes the power raised to the base number
+*
+* @subsection  qffmath_exp Other functions
+* - \ref qlibs::ffmath::erf() Computes the error function
+* - \ref qlibs::ffmath::erfc() Computes the complementary error function
+* - \ref qlibs::ffmath::rexp() Decomposes given floating point value into a normalized fraction and an integral power of two.
+* - \ref qlibs::ffmath::ldexp() Multiplies a floating point value by the number 2 raised to the power.
+* - \ref qlibs::ffmath::hypot() Computes the square root of the sum of the squares
+* - \ref qlibs::ffmath::nextAfter() Compute the next representable floating-point value following x in the direction of y
+*
+* @subsection  qffmath_const Constants
+* - \ref qlibs::ffmath::getInf() Returns positive infinity @c inf as a 32-bit floating point number
+* - \ref qlibs::ffmath::getNan() Returns Not a Number (NaN) @c nan as a 32-bit floating point number
+* - \ref qlibs::ffmath::FFP_E The base of natural logarithms ( e )
+* - \ref qlibs::ffmath::FFP_LOG2E The base 2 logarithm of e
+* - \ref qlibs::ffmath::FFP_LOG10E The base 10 logarithm of e
+* - \ref qlibs::ffmath::FFP_LN2 The natural logarithm of 2
+* - \ref qlibs::ffmath::FFP_LN10 The natural logarithm of 10
+* - \ref qlibs::ffmath::FFP_PI The circumference of a circle with diameter 1
+* - \ref qlibs::ffmath::FFP_PI_2 Half of π
+* - \ref qlibs::ffmath::FFP_PI_4 A quarter of π
+* - \ref qlibs::ffmath::FFP_1_PI The inverse of π
+* - \ref qlibs::ffmath::FFP_2_PI Twice the inverse of π
+* - \ref qlibs::ffmath::FFP_2_SQRTPI The inverse of the square root of π
+* - \ref qlibs::ffmath::FFP_SQRT2 The square root of 2
+* - \ref qlibs::ffmath::FFP_SQRT1_2 The inverse of square root of 2
+*
+* @subsection  qmatext Math extra
+* - \ref qlibs::mapMinMax Scales the given input from a range to another
+* - \ref qlibs::normalize Normalize the given input to value range between 0 and 1.
+* - \ref qlibs::inRangeCoerce Determines if a value falls within a range and coerces the value to fall within the range
+* - \ref qlibs::isEqual Determines if the parameters given as floating-point values are approximately equal.
+* - \ref qlibs::inPolygon Determines if a point is inside a polygon
+* - \ref qlibs::inCircle Determines if a point is inside a circle
+*/

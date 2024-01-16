@@ -38,7 +38,7 @@
 * - @subpage qcrc_desc "CRC : Generic Cyclic Redundancy Check (CRC) calculator"
 * - @subpage qtdl_desc "TDL : Tapped Delay Line in O(1)"
 * - Type-generic utilities
-* - Fast floating-point math library
+* - @subpage qffmath_desc "Fast floating-point math library and extensions"
 * - @subpage qinterp1_desc "1D Interpolation class"
 */
 

@@ -16,7 +16,7 @@
 * - qlibs::INTERP1_SPLINE : Catmull spline interpolation.
 * - qlibs::INTERP1_CONSTRAINED_SPLINE : A special kind of spline that doesn't overshoot.
 *
-* If value if beyond the endpoints, extrapolation is performed using the current
+* If value is beyond the endpoints, extrapolation is performed using the current
 * method.
 *
 * @section qinterp1_ex1 Example : Code snippet that demonstrates the spline interpolation .

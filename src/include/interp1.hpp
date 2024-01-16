@@ -168,7 +168,7 @@ namespace qlibs {
 
             /**
             * @brief Interpolate input point @a x to determine the value of @a y
-            * at the points @a xi using the current method. If value if beyond
+            * at the points @a xi using the current method. If value is beyond
             * the endpoints, extrapolation is performed using the current method.
             * @return @c The interpolated-extrapolated @a y value.
             */

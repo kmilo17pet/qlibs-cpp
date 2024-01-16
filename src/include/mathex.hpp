@@ -63,8 +63,8 @@ namespace qlibs {
                         const real_t upperL ) noexcept;
 
     /**
-    * @brief Determines if the parameters given as double-precision
-    * floating-point values are approximately equal.
+    * @brief Determines if the parameters given as floating-point values are
+    * approximately equal.
     * @param[in] a Input to be compared.
     * @param[in] b Input to be compared.
     * @param[in] tol Tolerance
