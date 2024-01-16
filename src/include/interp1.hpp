@@ -109,21 +109,54 @@ namespace qlibs {
             /**
             * @brief Constructor for the 1D interpolation instance.
             * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
-            * @param[in] yTabLe An array of size @a sizeTable with the y points.
+            * @param[in] yTable An array of size @a sizeTable with the y points.
             * @param[in] sizeTable The number of points in @a xTable @a yTable
             */
             interp1( const real_t * const xTable,
-                     const real_t * const yTabLe,
-                     const size_t sizeTable ) : xData( xTable ), yData( yTabLe ), dataSize( sizeTable ) {}
+                     const real_t * const yTable,
+                     const size_t sizeTable ) : xData( xTable ), yData( yTable ), dataSize( sizeTable ) {}
 
             /**
             * @brief Constructor for the 1D interpolation instance.
             * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
-            * @param[in] yTabLe An array of size @a sizeTable with the y points.
+            * @param[in] yTable An array of size @a sizeTable with the y points.
             */
             template <size_t sizeTable>
             interp1( real_t (&xTable)[ sizeTable ],
                      real_t (&yTable)[ sizeTable ] ) : interp1( xTable, yTable, sizeTable ) {}
+
+            /**
+            * @brief Set the data table for the 1D interpolation instance.
+            * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
+            * @param[in] yTable An array of size @a sizeTable with the y points.
+            * @param[in] sizeTable The number of points in @a xTable @a yTable
+            */
+            bool setData( const real_t * const xTable,
+                          const real_t * const yTable,
+                          const size_t sizeTable )
+            {
+                bool retValue = false;
+
+                if ( ( nullptr != xTable ) && ( nullptr != yTable ) && ( sizeTable >= 4U ) ) {
+                    xData = xTable;
+                    yData = yTable;
+                    dataSize = sizeTable;
+                    retValue = true;
+                }
+                return retValue;
+            }
+
+            /**
+            * @brief Set the data for the 1D interpolation instance.
+            * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
+            * @param[in] yTable An array of size @a sizeTable with the y points.
+            */
+            template <size_t sizeTable>
+            bool setData( real_t (&xTable)[ sizeTable ],
+                          real_t (&yTable)[ sizeTable ] )
+            {
+                return setData( xTable, yTable, sizeTable );
+            }
 
             /**
             * @brief Specify the interpolation method to use.

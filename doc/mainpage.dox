@@ -39,7 +39,7 @@
 * - @subpage qtdl_desc "TDL : Tapped Delay Line in O(1)"
 * - Type-generic array operations
 * - Fast floating-point math library
-* - 1D Interpolation class
+* - @subpage qinterp1_desc "1D Interpolation class"
 */
 
 /**

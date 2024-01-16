@@ -1,0 +1,32 @@
+/*! @page qinterp1_desc 1D Interpolation class
+* The \ref qlibs::interp1 class provides a simple, consistent interface for a set of
+* one-dimensional interpolators. The class recieves X-Values and Y-Values and
+* the size of this arrays to setup the instance. The user can later pass the
+* X point to interpolate, and the interpolator instance return the estimated Y
+* at the point X using the specified method.
+*
+* The current supported methods are:
+* - qlibs::INTERP1_NEXT : Return the next neighbor.
+* - qlibs::INTERP1_PREVIOUS : Return the previous neighbor.
+* - qlibs::INTERP1_NEAREST : Return the nearest neighbor.
+* - qlibs::INTERP1_LINEAR : Linear interpolation from nearest neighbors.
+* - qlibs::INTERP1_SINE : Sine interpolation.
+* - qlibs::INTERP1_CUBIC : Cubic interpolation.
+* - qlibs::INTERP1_HERMITE : Piecewise cubic Hermite interpolation.
+* - qlibs::INTERP1_SPLINE : Catmull spline interpolation.
+* - qlibs::INTERP1_CONSTRAINED_SPLINE : A special kind of spline that doesn't overshoot.
+*
+* If value if beyond the endpoints, extrapolation is performed using the current
+* method.
+*
+* @section qinterp1_ex1 Example : Code snippet that demonstrates the spline interpolation .
+*
+*  @code{.c}
+*  real_t xdat[] = { 1.0f, 6.0f, 11.0f, 16.0f, 21.0f, 26.0f, 31.0f, 36.0f };
+*  real_t ydat[] = { 59.6870f,  44.5622f, -0.8642f , 0.8725f, -2.3016f, -50.3095f, -54.5966f, 37.9036f };
+*  interp1 interpolator( xdat, ydat );
+*  interpolator.setMethod( INTERP1_SPLINE );
+*  auto ye = interpolator.get( 18.5f ); //interpolated value at 18.5
+*  @endcode
+*
+*/

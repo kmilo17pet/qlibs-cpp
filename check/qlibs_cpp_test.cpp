@@ -405,6 +405,17 @@ void test_interp1( void )
     cout << interpolation.get( 3.1 ) << endl;
     cout << interpolation.get( 0.5 ) << endl;
     cout << interpolation.get( 5.0 ) << endl;
+
+
+    real_t xdat[] = { 1.0f, 6.0f, 11.0f, 16.0f, 21.0f, 26.0f, 31.0f, 36.0f };
+    real_t ydat[] = { 59.6870f,  44.5622f, -0.8642f , 0.8725f, -2.3016f, -50.3095f, -54.5966f, 37.9036f };
+    interp1 interpolation2( xdat, ydat );
+    interpolation2.setMethod( INTERP1_HERMITE );
+    cout << "spline test 2" << endl;
+    for( int i = 1; i<36;i++) {
+
+        cout << i << "  " <<  interpolation2.get( i ) << endl;
+    }
 }
 
 int main()
