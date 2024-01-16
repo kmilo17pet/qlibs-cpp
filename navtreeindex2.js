@@ -232,6 +232,7 @@ var NAVTREEINDEX2 =
 "qbitfield_desc.html#qbitfield_structure":[0,5,0],
 "qbitfield_desc.html#qbitfield_workingwith":[0,5,2],
 "qcrc_desc.html":[0,7],
+"qffmath_desc.html":[0,9],
 "qfis_desc.html":[0,1],
 "qfis_desc.html#qfis_buildfis":[0,1,4],
 "qfis_desc.html#qfis_defuzz":[0,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "qfp16_desc.html#qfp16_functions":[0,4,1],
 "qfp16_desc.html#qfp16_literal":[0,4,1,4],
 "qfp16_desc.html#qfp16_trig_functions":[0,4,1,3],
-"qinterp1_desc.html":[0,9],
-"qinterp1_desc.html#qinterp1_ex1":[0,9,0]
+"qinterp1_desc.html":[0,10]
 };

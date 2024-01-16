@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>API Reference: Fast floating point math library and extensions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">API Reference
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">A collection of useful libraries for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('qffmath_desc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Fast floating point math library and extensions </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >qLibs provides its own math library with a set of APIs to compute common mathematical functions and transformations. The <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> can replace a default math floating-point library, delivering better performance with less code delivering a very close aproximations to the standard library. <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> is Very fast and very small, it delivers FPU-like performance in pure software. Where available, it even boosts the performance of an FPU for complex mathematical functions.</p>
+<p >The list of provided functions and constants:</p>
+<h2><a class="anchor" id="qffmath_classify"></a>
+Classification</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb">qlibs::ffmath::classify()</a> Categorizes the floating-point number</li>
+<li><a class="el" href="group__qffmath.html#gadb57fa2be222cd1aaf4a6c926e4e78c0">qlibs::ffmath::isNan()</a> Determine if argument is Not-A-Number (NaN)</li>
+<li><a class="el" href="group__qffmath.html#ga4f15ffe8a2f756a3f721fcbd1b9c3366">qlibs::ffmath::isInf()</a> Determine if argument is Infinity.</li>
+<li><a class="el" href="group__qffmath.html#ga77d4205c6ebf3abb305ea44f317ea9e3">qlibs::ffmath::isFinite()</a> Determines if the given floating point number has finite value.</li>
+<li><a class="el" href="group__qffmath.html#gaa048dfd68ecbbaff6671f437c9115352">qlibs::ffmath::isNormal()</a> Determines if the given floating point number is normal</li>
+</ul>
+<h2><a class="anchor" id="qffmath_basic"></a>
+Basic functions</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#gaa2074aae4bee3cf93a94577fc2acff42">qlibs::ffmath::sign()</a> Computes the sign function</li>
+<li><a class="el" href="group__qffmath.html#gae832095f4975240fb86603a6439cb74c">qlibs::ffmath::absf()</a> Computes the absolute value</li>
+<li><a class="el" href="group__qffmath.html#ga48c227d95bcf981020c47e711f9c5e34">qlibs::ffmath::recip()</a> Computes the multiplicative inverse or reciprocal</li>
+<li><a class="el" href="group__qffmath.html#ga9666a5106ea3273157a3dbbad8c79608">qlibs::ffmath::sqrt()</a> Computes the square-root</li>
+<li><a class="el" href="group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b">qlibs::ffmath::rSqrt()</a> Computes the reciprocal square-root</li>
+<li><a class="el" href="group__qffmath.html#gaf18e88de5826cdd157ebab26bc10610b">qlibs::ffmath::cbrt()</a> Computes the cubic-root</li>
+<li><a class="el" href="group__qffmath.html#ga4955afb06260bb28fe601a6465173eee">qlibs::ffmath::rCbrt()</a> Computes the reciprocal cubic-root</li>
+<li><a class="el" href="group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8">qlibs::ffmath::rounding()</a> Computes the nearest integer rounding halfway cases away from zero.</li>
+<li><a class="el" href="group__qffmath.html#ga5cd6eb6bb4d2c79eb7aef931f17ad0ee">qlibs::ffmath::floor()</a> Computes the largest integer value not greater than the given argument.</li>
+<li><a class="el" href="group__qffmath.html#gadefdafbf62716ed459a54ab7405cf080">qlibs::ffmath::ceil()</a> Computes the smallet integer value not greater than the given argument.</li>
+<li><a class="el" href="group__qffmath.html#ga8fb7108960e6278afba8f4a59469436d">qlibs::ffmath::trunc()</a> Computes the nearest integer not greater in magnitude than the given argument.</li>
+<li><a class="el" href="group__qffmath.html#ga3fe71e414943b548d1b41116db40621e">qlibs::ffmath::frac()</a> Obtain the fractional part</li>
+<li><a class="el" href="group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7">qlibs::ffmath::rem()</a> Computes the floating point remainder after division</li>
+<li><a class="el" href="group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03">qlibs::ffmath::mod()</a> Computes the floating point remainder after division</li>
+</ul>
+<h2><a class="anchor" id="qffmath_trig"></a>
+Trigonometric functions</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#gad3e8338c79cd9c5ada93547e60ddb4a0">qlibs::ffmath::sin()</a> Computes the sine in radians</li>
+<li><a class="el" href="group__qffmath.html#gaa083609d7a29f69608f3b5b3584777a2">qlibs::ffmath::cos()</a> Computes the cosine in radians</li>
+<li><a class="el" href="group__qffmath.html#gac5e1a21d38dc1e3765cc9a29cf9ed353">qlibs::ffmath::tan()</a> Computes the tangent in radians</li>
+<li><a class="el" href="group__qffmath.html#gad16cd39ff72e545da900e0e2426ecb58">qlibs::ffmath::asin()</a> Computes the principal value of the arc sine</li>
+<li><a class="el" href="group__qffmath.html#gacf414cd52c51a4bcb8312db2340753ad">qlibs::ffmath::acos()</a> Computes the principal value of the arc cosine</li>
+<li><a class="el" href="group__qffmath.html#gae93342ca16d2bf0af5522e8fed73c725">qlibs::ffmath::atan()</a> Computes the principal value of the arc tangent</li>
+<li><a class="el" href="group__qffmath.html#gacecf132196149ecb64f9f5764a702270">qlibs::ffmath::atan2()</a> Computes the arc tangent</li>
+<li><a class="el" href="group__qffmath.html#ga86da463c6e72e9724ae1af3728b44b74">qlibs::ffmath::sinh()</a> Computes hyperbolic sine</li>
+<li><a class="el" href="group__qffmath.html#gae886198bdebc0e005dd1c710a943bc00">qlibs::ffmath::cosh()</a> Computes hyperbolic cosine</li>
+<li><a class="el" href="group__qffmath.html#ga2c7dbd9a484ea51397a316e1d623eab3">qlibs::ffmath::tanh()</a> Computes hyperbolic tangent</li>
+<li><a class="el" href="group__qffmath.html#ga4f9ac91888223d0eb01e24706dc1e61f">qlibs::ffmath::asinh()</a> Computes the inverse hyperbolic sine</li>
+<li><a class="el" href="group__qffmath.html#gab98f3261c25832ccb514e482c53bcdfe">qlibs::ffmath::acosh()</a> Computes the inverse hyperbolic cosine</li>
+<li><a class="el" href="group__qffmath.html#gaf8e811b8eefd476a5322c05fc7cf703f">qlibs::ffmath::atanh()</a> Computes the inverse hyperbolic tangent</li>
+<li><a class="el" href="group__qffmath.html#gab10df9dbeb133e398476e21646a447b1">qlibs::ffmath::wrapToPi()</a> Wraps angle in radians, to the interval [−pi, pi]</li>
+<li><a class="el" href="group__qffmath.html#gad4b37186479d8010d8aa796e837ff5b2">qlibs::ffmath::wrapTo2Pi()</a> Wraps angle in radians, to the interval [0, 2*pi]</li>
+<li><a class="el" href="group__qffmath.html#gab66aac067050760eb105ef45bbba5319">qlibs::ffmath::wrapTo180()</a> Wraps angle in degrees, to the interval [−180, 180]</li>
+<li><a class="el" href="group__qffmath.html#ga199168076c63621f3b059f21c5a658de">qlibs::ffmath::wrapTo360()</a> Wraps angle in degrees, to the interval [0, 360]</li>
+</ul>
+<h2><a class="anchor" id="qffmath_exp"></a>
+Exponential functions</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf">qlibs::ffmath::exp2()</a> Computes 2 raised to the given power</li>
+<li><a class="el" href="group__qffmath.html#gaecd913f2dc2799c6dc09b1525da84fd6">qlibs::ffmath::log2()</a> Computes the base 2 logarithm</li>
+<li><a class="el" href="group__qffmath.html#ga582ddbcb70a87c003aa6bbd0c57601ba">qlibs::ffmath::exp()</a> Computes the e (Euler's number) raised to the given power</li>
+<li><a class="el" href="group__qffmath.html#ga0bf4ade7dad579b2000f591f4ae15a89">qlibs::ffmath::exp10()</a> Computes the value of 10 raised to the power</li>
+<li><a class="el" href="group__qffmath.html#ga7c6be9db5e289422258bda96feff3ae0">qlibs::ffmath::log()</a> Computes the natural (base e) logarithm</li>
+<li><a class="el" href="group__qffmath.html#ga416c235d8648c8c2ca0053ee994bc0ae">qlibs::ffmath::log10()</a> Computes the common (base-10) logarithm</li>
+<li><a class="el" href="group__qffmath.html#gabb0e6c2362bfc556e1a839a4c2b16633">qlibs::ffmath::pow()</a> Computes the power raised to the base number</li>
+</ul>
+<h2><a class="anchor" id="qffmath_exp"></a>
+Exponential functions</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65">qlibs::ffmath::erf()</a> Computes the error function</li>
+<li><a class="el" href="group__qffmath.html#ga4d271241abb1bfd4aab9ce2708556174">qlibs::ffmath::erfc()</a> Computes the complementary error function</li>
+<li><a class="el" href="group__qffmath.html#ga9a2da57b2b1a7e30b7b8c6f3011c7810">qlibs::ffmath::rexp()</a> Decomposes given floating point value into a normalized fraction and an integral power of two.</li>
+<li><a class="el" href="group__qffmath.html#ga396c804d2c8d8049d9eb2480beda1f3d">qlibs::ffmath::ldexp()</a> Multiplies a floating point value by the number 2 raised to the power.</li>
+<li><a class="el" href="group__qffmath.html#gab1d70c1548fbb2d4a5c11ab864e02b67">qlibs::ffmath::hypot()</a> Computes the square root of the sum of the squares</li>
+<li><a class="el" href="group__qffmath.html#ga32e1fcbf545fc4dc441c00982c512498">qlibs::ffmath::nextAfter()</a> Compute the next representable floating-point value following x in the direction of y</li>
+</ul>
+<h2><a class="anchor" id="qffmath_const"></a>
+Constants</h2>
+<ul>
+<li><a class="el" href="group__qffmath.html#gae97a1210db400b3f7334e0adb591afd6">qlibs::ffmath::getInf()</a> Returns positive infinity <code>inf</code> as a 32-bit floating point number</li>
+<li><a class="el" href="group__qffmath.html#gaa65082feae680669a122f16890263a67">qlibs::ffmath::getNan()</a> Returns Not a Number (NaN) <code>nan</code> as a 32-bit floating point number</li>
+<li><a class="el" href="group__qffmath.html#ga99fa262bab4cb63b6eb990651a6752c6">qlibs::ffmath::FFP_E</a> The base of natural logarithms ( e )</li>
+<li><a class="el" href="group__qffmath.html#gaa3d842758330fa5ce88672906d3ba802">qlibs::ffmath::FFP_LOG2E</a> The base 2 logarithm of e</li>
+<li><a class="el" href="group__qffmath.html#ga938424d025f3b854891222b7b232e5a5">qlibs::ffmath::FFP_LOG10E</a> The base 10 logarithm of e</li>
+<li><a class="el" href="group__qffmath.html#gaee6a9e29fdf2945d7c255bfaf54a342a">qlibs::ffmath::FFP_LN2</a> The natural logarithm of 2</li>
+<li><a class="el" href="group__qffmath.html#ga8a76a167faa16054a58bbfc8060fe0e9">qlibs::ffmath::FFP_LN10</a> The natural logarithm of 10</li>
+<li><a class="el" href="group__qffmath.html#ga4555327272c4af4b5dfd6213574a47a8">qlibs::ffmath::FFP_PI</a> The circumference of a circle with diameter 1</li>
+<li><a class="el" href="group__qffmath.html#gaecf61a36f13ab995e64d17eea01a10e3">qlibs::ffmath::FFP_PI_2</a> Half of π</li>
+<li><a class="el" href="group__qffmath.html#gaaa9c8f1b046a0e499f2eeb3e4c0c652d">qlibs::ffmath::FFP_PI_4</a> A quarter of π</li>
+<li><a class="el" href="group__qffmath.html#ga6310ab0c32ecc641f2406cb82115ad44">qlibs::ffmath::FFP_1_PI</a> The inverse of π</li>
+<li><a class="el" href="group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a">qlibs::ffmath::FFP_2_PI</a> Twice the inverse of π</li>
+<li><a class="el" href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">qlibs::ffmath::FFP_2_SQRTPI</a> The inverse of the square root of π</li>
+<li><a class="el" href="group__qffmath.html#ga81990ada2a31fba91c6e601bf9d069d4">qlibs::ffmath::FFP_SQRT2</a> The square root of 2</li>
+<li><a class="el" href="group__qffmath.html#gacdf60923b073c1afc6fa824e120a2083">qlibs::ffmath::FFP_SQRT1_2</a> The inverse of square root of 2</li>
+</ul>
+<h2><a class="anchor" id="qmatext"></a>
+Math extra</h2>
+<ul>
+<li><a class="el" href="group__qfmathex.html#ga47c7d5ef677e7aecb7f3127f564465e1">qlibs::mapMinMax</a> Scales the given input from a range to another</li>
+<li><a class="el" href="group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b">qlibs::normalize</a> Normalize the given input to value range between 0 and 1.</li>
+<li><a class="el" href="group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf">qlibs::inRangeCoerce</a> Determines if a value falls within a range and coerces the value to fall within the range</li>
+<li><a class="el" href="group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9">qlibs::isEqual</a> Determines if the parameters given as floating-point values are approximately equal.</li>
+<li><a class="el" href="group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8">qlibs::inPolygon</a> Determines if a point is inside a polygon</li>
+<li><a class="el" href="group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75">qlibs::inCircle</a> Determines if a point is inside a circle </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="index.html">Overview</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

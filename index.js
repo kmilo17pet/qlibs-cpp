@@ -91,6 +91,7 @@ var index =
     [ "Tapped Delay Line in O(1)", "qtdl_desc.html", [
       [ "Example : Code snippet to instantiate a TDL to hold up to 256 delays.", "qtdl_desc.html#qtdl_ex1", null ]
     ] ],
+    [ "Fast floating point math library and extensions", "qffmath_desc.html", null ],
     [ "1D Interpolation class", "qinterp1_desc.html", [
       [ "Example : Code snippet that demonstrates the spline interpolation .", "qinterp1_desc.html#qinterp1_ex1", null ]
     ] ]
