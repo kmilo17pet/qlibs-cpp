@@ -15,7 +15,7 @@ void state::init( const real_t x0,
 real_t state::integrate( const real_t s,
                          const real_t dt ) noexcept
 {
-    switch( intMethod ) {
+    switch( iMethod ) {
         case INTEGRATION_RECTANGULAR:
             x[ 0 ] += s*dt;
             break;
@@ -24,6 +24,9 @@ real_t state::integrate( const real_t s,
             break;
         case INTEGRATION_SIMPSON:
             x[ 0 ] += ( 1.0_re/6.0_re )*( s + ( 4.0_re*x[ 1 ] ) + x[ 2 ] )*dt;
+            break;
+        case INTEGRATION_QUADRATIC:
+            x[ 0 ] += ( 1.0_re/12.0_re )*( ( 5.0_re*s ) + ( 8.0_re*x[ 1 ] ) - x[ 2 ] )*dt;
             break;
         default:
             break;
@@ -36,7 +39,20 @@ real_t state::integrate( const real_t s,
 real_t state::derivative( const real_t s,
                           const real_t dt ) noexcept
 {
-    x[ 0 ] = ( s - x[ 1 ] )/dt;
+    switch( dMethod ) {
+        case DERIVATION_2POINTS:
+            x[ 0 ] = ( s - x[ 1 ] )/dt;
+            break;
+        case DERIVATION_BACKWARD:
+            x[ 0 ] = ( ( 3.0_re*s ) - ( 4.0_re*x[ 1 ] ) + x[ 2 ] )/( 2.0_re*dt );
+            break;
+        case DERIVATION_FORWARD:
+            x[ 0 ] = ( ( 4.0_re*x[ 1 ] ) - ( 3.0_re*x[ 2 ] ) - s )/( 2.0_re*dt );
+            break;
+        default:
+            break;
+    }
+
     update( s );
 
     return x[ 0 ];

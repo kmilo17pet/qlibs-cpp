@@ -1,6 +1,6 @@
 #include <iostream>
 #include <qlibs.h>
-
+#include <include/mat.hpp>
 using namespace std;
 
 void test_fis( void );
@@ -16,7 +16,7 @@ void test_interp1( void );
 
 void test_fis3( void )
 {
-     cout << "FIS2 TEST3"<< endl; 
+     cout << "FIS2 TEST3"<< endl;
 
     enum { input1, input2 };
     enum { output1, output2 };
@@ -34,7 +34,7 @@ void test_fis3( void )
             FIS_RULES_END
         }
     };
-    
+
     takaji.setup();
     takaji.setupInput( input1, 0.5000f, 3.5000f );
     takaji.setupInput( input2, -1.0000f, 4.0000f );
@@ -63,7 +63,7 @@ void test_fis3( void )
 
 void test_tdl( void )
 {
-    cout << "TDL TEST"<< endl; 
+    cout << "TDL TEST"<< endl;
 
     real_t delays[ 10 ];
     tdl delayLine( delays );
@@ -89,7 +89,7 @@ void test_tdl( void )
 
 void test_fis2( void )
 {
-    cout << "FIS2 TEST"<< endl; 
+    cout << "FIS2 TEST"<< endl;
     enum : fis::tag { wt, dax, day, ae };
     enum : fis::tag { phit, thetat };
     enum : fis::tag { wtSLOW, wtMED, wtFAST, daxLOW, daxMED, daxHIGH, dayLOW, dayMED, dayHIGH, aeLOW, aeMED, aeHIGH };
@@ -136,7 +136,7 @@ void test_fis2( void )
     flexnav.setupInputMF( ae, aeLOW, fis::trimf, (const real_t []){ -8.0f ,0.0f ,8.0f } );
     flexnav.setupInputMF( ae, aeMED, fis::trimf, (const real_t []){ 5.0f ,10.0f , 15.0f } );
     flexnav.setupInputMF( ae, aeHIGH, fis::trimf, (const real_t []){ 12.0f ,20.0f ,28.0f } );
-    
+
     flexnav.setupOutputMF( phit, phitGYRO, fis::trimf, (const real_t []){ -0.4f ,0.0f ,0.4f } );
     flexnav.setupOutputMF( phit, phitBOTH, fis::trimf, (const real_t []){ 0.2f , 0.5f , 0.8f } );
     flexnav.setupOutputMF( phit, phitACCEL, fis::trimf, (const real_t []){ 0.6f , 1.0f , 1.4f } );
@@ -155,7 +155,7 @@ void test_fis2( void )
 
 void test_fis( void )
 {
-    cout << "FIS TEST"<< endl; 
+    cout << "FIS TEST"<< endl;
     real_t xag[ 100 ], yag[ 100 ];
     // I/O Names
     enum : fis::tag { service, food};
@@ -171,7 +171,7 @@ void test_fis( void )
     // I/O Membership Objects
     fis::mf MFin[5], MFout[3];
 
-    const fis::rules rules[] = { 
+    const fis::rules rules[] = {
         FIS_RULES_BEGIN
             IF service IS poor OR food IS rancid THEN tip IS cheap END
             IF service IS good THEN tip IS average END
@@ -249,15 +249,15 @@ void test_fp16( void )
 
 void test_crc( void )
 {
-    cout << "CRC TEST"<< endl; 
+    cout << "CRC TEST"<< endl;
     auto res = crc::crc16_A( "hello world", 11 );
     cout << sizeof(crc) << " res = "<< res << endl;
 }
 
 void test_ltisys( void )
 {
-    cout << "LTISYS TEST"<< endl; 
-    cout << "continuousSystem"<< endl; 
+    cout << "LTISYS TEST"<< endl;
+    cout << "continuousSystem"<< endl;
     continuousTF<3> ctf= {
         { 0.0f, 2.0f, 3.0f, 6.0f },
         { 1.0f, 6.0f, 11.0f, 16.0f },
@@ -267,7 +267,7 @@ void test_ltisys( void )
         cout << gc.excite( 1.0f ) << endl;
     }
 
-    cout << "discreteSystem"<< endl; 
+    cout << "discreteSystem"<< endl;
     //discreteTF<3,3> dtf= {
     //    { 0.1f, 0.2f, 0.3f },
     //    { 1.0f, -0.85f, 0.02f },
@@ -308,7 +308,7 @@ void test_ffmath(void)
 void test_mat( void )
 {
     cout<<"MAT TEST"<<endl;
-    mat<2,2> x( 
+    mat<2,2> x(
                 1.0f, 2.0f,
                 3.0f, 4.0f
               );
@@ -316,7 +316,7 @@ void test_mat( void )
                 1.0f,
                 3.0f
               );
-    mat<2,1> z( 
+    mat<2,1> z(
                 2.0f,
                 2.0f
               );
@@ -349,7 +349,7 @@ void test_interp1( void )
     cout << interpolation.get( 3.1 ) << endl;
     cout << interpolation.get( 0.5 ) << endl;
     cout << interpolation.get( 5.0 ) << endl;
-    
+
     cout << "sine" << endl;
     interpolation.setMethod( INTERP1_SINE );
     cout << interpolation.get( 2.5 ) << endl;
@@ -384,7 +384,7 @@ void test_interp1( void )
     cout << interpolation.get( 3.1 ) << endl;
     cout << interpolation.get( 0.5 ) << endl;
     cout << interpolation.get( 5.0 ) << endl;
-    
+
     cout << "previous" << endl;
     interpolation.setMethod( INTERP1_PREVIOUS);
     cout << interpolation.get( 2.5 ) << endl;

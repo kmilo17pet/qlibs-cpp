@@ -265,7 +265,7 @@ real_t pidController::control( const real_t w,
             e = 0.0_re;
         }
         ie = c_state.integrate( e + u1, dt );
-        de = c_state.derivative( ( c*w )- y , dt );
+        de = c_state.derivative( ( c*w ) - y , dt );
         D = de + beta*( D - de ); /*derivative filtering*/
         v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
         if ( nullptr != yr ) {

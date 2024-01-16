@@ -20,8 +20,14 @@ namespace qlibs {
         INTEGRATION_RECTANGULAR,    /*!< Numerical integration using the rectangular rule*/
         INTEGRATION_TRAPEZOIDAL,    /*!< Numerical integration using the trapezoidal rectangular rule*/
         INTEGRATION_SIMPSON,        /*!< Numerical integration using the Simpson's 1/3 rule.*/
+        INTEGRATION_QUADRATIC,      /*!< Numerical integration using a parabola fit to three points.*/
     };
 
+    enum derivationMethod {
+        DERIVATION_2POINTS,         /*!< Numerical derivation using two points*/
+        DERIVATION_BACKWARD,        /*!< Numerical derivation using the three-point backward difference.*/
+        DERIVATION_FORWARD,         /*!< Numerical derivation using the three-point forward difference.*/
+    };
     class state {
         private:
             real_t x[ 3 ] = { 0.0_re, 0.0_re, 0.0_re };
@@ -30,7 +36,8 @@ namespace qlibs {
                 x[ 2 ] = x[ 1 ];
                 x[ 1 ] = s;
             }
-            integrationMethod intMethod{ INTEGRATION_TRAPEZOIDAL };
+            integrationMethod iMethod{ INTEGRATION_TRAPEZOIDAL };
+            derivationMethod dMethod{ DERIVATION_2POINTS };
         public:
             virtual ~state() {}
 
@@ -87,11 +94,30 @@ namespace qlibs {
             *
             * @c ::INTEGRATION_SIMPSON : Integrate using the Simpson's 1/3 rule.
             *
+            * @c ::INTEGRATION_QUADRATIC : Integrate using a parabola fit to three points.
+            *
             * @return @c true on success, otherwise return @c false.
             */
             inline void setIntegrationMethod( integrationMethod m ) noexcept
             {
-                intMethod = m;
+                iMethod = m;
+            }
+
+            /**
+            * @brief Set derivation method .
+            * @param[in] m The desired derivation method. Use one of the following:
+            *
+            * @c ::DERIVATION_2POINTS : (default) Derivative using two points.
+            *
+            * @c ::DERIVATION_BACKWARD : Derivative using the three-point backward-difference.
+            *
+            * @c ::DERIVATION_FORWARD : Derivative using the three-point forward-difference.
+            *
+            * @return @c true on success, otherwise return @c false.
+            */
+            inline void setDerivationMethod( derivationMethod m ) noexcept
+            {
+                dMethod = m;
             }
 
              /**
@@ -108,13 +134,25 @@ namespace qlibs {
             {
                 return x[ 0 ]*rValue;
             }
+            real_t operator/( real_t rValue) const noexcept
+            {
+                return x[ 0 ]/rValue;
+            }
             real_t operator+( real_t rValue) const noexcept
             {
-                return x[ 0 ]+rValue;
+                return x[ 0 ] + rValue;
+            }
+            real_t operator-( real_t rValue) const noexcept
+            {
+                return x[ 0 ] - rValue;
             }
             friend real_t operator*( real_t rValue,
                                      const state& s ) noexcept;
+            friend real_t operator/( real_t rValue,
+                                     const state& s ) noexcept;
             friend real_t operator+( real_t rValue,
+                                     const state& s ) noexcept;
+            friend real_t operator-( real_t rValue,
                                      const state& s ) noexcept;
             /*! @endcond  */
     };
@@ -125,10 +163,20 @@ namespace qlibs {
     {
         return rValue*s.x[ 0 ];
     }
+    inline real_t operator/( real_t rValue,
+                             const state& s ) noexcept
+    {
+        return rValue/s.x[ 0 ];
+    }
     inline real_t operator+( real_t rValue,
                              const state& s ) noexcept
     {
-        return rValue+s.x[ 0 ];
+        return rValue + s.x[ 0 ];
+    }
+    inline real_t operator-( real_t rValue,
+                             const state& s ) noexcept
+    {
+        return rValue - s.x[ 0 ];
     }
     /*! @endcond  */
 

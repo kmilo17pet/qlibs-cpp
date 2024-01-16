@@ -36,7 +36,7 @@ Below is the list of the classes and modules provided and their features:
   - Derivative filter
   - Anti-Windup
   - Tracking Mode
-  - Auto-tunning 
+  - Auto-tunning
   - Additive MRAC
 - ltisys : Recursive LTI systems evaluation by transfer functions
   - Continuous
@@ -54,8 +54,8 @@ Below is the list of the classes and modules provided and their features:
   - CRC16
   - CRC32
 - bitfield: A bit-field manipulation library
-- tdl : Tapped Delay Line in O(1). 
+- tdl : Tapped Delay Line in O(1).
 - rms : Recursive Root Mean Square(RMS) calculation of a signal.
 - Type-generic array operations
-- Single precision floating-point vector(1D-Array) operations
-- Fast single precision floating-point math
+- Fast single-precision floating-point math
+- 1D Interpolation class
