@@ -392,8 +392,8 @@
 *  void tipper_run( real_t *inputs, real_t *outputs )
 *  {
 *      // Set the crips inputs
-*      tipper << service << inputs[ service ] << food << inputs[ food ];
-*
+*      tipper.setInput( service, inputs[ service ]  );
+*      tipper.setInput( food, inputs[ food ] );
 *      tipper.fuzzify();
 *      if ( tipper.inference() ) {
 *          tipper.deFuzzify();
