@@ -12,6 +12,5 @@ var modules =
     [ "Float Fast-Math", "group__qffmath.html", "group__qffmath" ],
     [ "Type-generic utilities", "group__qtypegeneric.html", "group__qtypegeneric" ],
     [ "1D Interpolation", "group__qinterp1.html", "group__qinterp1" ],
-    [ "Matrix library", "group__qmat.html", "group__qmat" ],
     [ "Math extra", "group__qfmathex.html", "group__qfmathex" ]
 ];

@@ -148,11 +148,11 @@ var namespaceqlibs =
       [ "LTISYS_TYPE_CONTINUOUS", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd", null ],
       [ "LTISYS_TYPE_DISCRETE", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b", null ]
     ] ],
-    [ "matSpecial", "group__qmat.html#ga9e19221783d7af35b19059c1c0e14511", [
-      [ "MAT_ZERO", "group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b", null ],
-      [ "MAT_IDENTITY", "group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc", null ],
-      [ "MAT_ALL", "group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a2772dc72da868e89d69492e49d67425e", null ],
-      [ "MAT_MAGIC", "group__qmat.html#gga9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a", null ]
+    [ "matSpecial", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511", [
+      [ "MAT_ZERO", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b", null ],
+      [ "MAT_IDENTITY", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc", null ],
+      [ "MAT_ALL", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a2772dc72da868e89d69492e49d67425e", null ],
+      [ "MAT_MAGIC", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a", null ]
     ] ],
     [ "pidDirection", "group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106", [
       [ "PID_FORWARD", "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa9b54388ac530650449e65cc829a1ea2", null ],
