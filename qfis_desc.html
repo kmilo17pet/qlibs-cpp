@@ -373,8 +373,8 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line"><span class="keywordtype">void</span> tipper_run( real_t *inputs, real_t *outputs )</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Set the crips inputs</span></div>
-<div class="line">    tipper &lt;&lt; service &lt;&lt; inputs[ service ] &lt;&lt; food &lt;&lt; inputs[ food ];</div>
-<div class="line"> </div>
+<div class="line">    tipper.setInput( service, inputs[ service ]  );</div>
+<div class="line">    tipper.setInput( food, inputs[ food ] );</div>
 <div class="line">    tipper.fuzzify();</div>
 <div class="line">    <span class="keywordflow">if</span> ( tipper.inference() ) {</div>
 <div class="line">        tipper.deFuzzify();</div>
