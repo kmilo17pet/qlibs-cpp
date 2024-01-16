@@ -154,6 +154,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a05a2e93253f355f1102c1a59c107440f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1state.html#a05a2e93253f355f1102c1a59c107440f">setIntegrationMethod</a> (<a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2">integrationMethod</a> m) noexcept</td></tr>
 <tr class="memdesc:a05a2e93253f355f1102c1a59c107440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set integration method .  <a href="classqlibs_1_1state.html#a05a2e93253f355f1102c1a59c107440f">More...</a><br /></td></tr>
 <tr class="separator:a05a2e93253f355f1102c1a59c107440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef905417839095147f121388a68f7a43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1state.html#aef905417839095147f121388a68f7a43">setDerivationMethod</a> (<a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a> m) noexcept</td></tr>
+<tr class="memdesc:aef905417839095147f121388a68f7a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set derivation method .  <a href="classqlibs_1_1state.html#aef905417839095147f121388a68f7a43">More...</a><br /></td></tr>
+<tr class="separator:aef905417839095147f121388a68f7a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739d28cdb5eeda949f8ee97d05541a71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1state.html#a739d28cdb5eeda949f8ee97d05541a71">operator()</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a739d28cdb5eeda949f8ee97d05541a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the state.  <a href="classqlibs_1_1state.html#a739d28cdb5eeda949f8ee97d05541a71">More...</a><br /></td></tr>
 <tr class="separator:a739d28cdb5eeda949f8ee97d05541a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,6 +415,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aef905417839095147f121388a68f7a43" name="aef905417839095147f121388a68f7a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef905417839095147f121388a68f7a43">&#9670;&nbsp;</a></span>setDerivationMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void qlibs::state::setDerivationMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set derivation method . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The desired derivation method. Use one of the following:</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><code><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c">DERIVATION_2POINTS</a></code> : (default) Derivative using two points.</p>
+<p ><code><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3">DERIVATION_BACKWARD</a></code> : Derivative using the three-point backward-difference.</p>
+<p ><code><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d">DERIVATION_FORWARD</a></code> : Derivative using the three-point forward-difference.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a05a2e93253f355f1102c1a59c107440f" name="a05a2e93253f355f1102c1a59c107440f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05a2e93253f355f1102c1a59c107440f">&#9670;&nbsp;</a></span>setIntegrationMethod()</h2>
 
@@ -446,6 +487,7 @@ Public Member Functions</h2></td></tr>
 <p><code><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c">INTEGRATION_RECTANGULAR</a></code> : Integrate using the Rectangular rule.</p>
 <p ><code><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156">INTEGRATION_TRAPEZOIDAL</a></code> : (default) Integrate using the Trapezoidal rule.</p>
 <p ><code><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce">INTEGRATION_SIMPSON</a></code> : Integrate using the Simpson's 1/3 rule.</p>
+<p ><code><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215">INTEGRATION_QUADRATIC</a></code> : Integrate using a parabola fit to three points.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
 
 </div>

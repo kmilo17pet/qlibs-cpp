@@ -120,10 +120,16 @@ var namespaceqlibs =
       [ "CRC16", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5ad552ccca252f2622494742a8341393c6", null ],
       [ "CRC32", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a80eef496a6b73673ecd6f0b285304829", null ]
     ] ],
+    [ "derivationMethod", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4", [
+      [ "DERIVATION_2POINTS", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c", null ],
+      [ "DERIVATION_BACKWARD", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3", null ],
+      [ "DERIVATION_FORWARD", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d", null ]
+    ] ],
     [ "integrationMethod", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2", [
       [ "INTEGRATION_RECTANGULAR", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c", null ],
       [ "INTEGRATION_TRAPEZOIDAL", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156", null ],
-      [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ]
+      [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ],
+      [ "INTEGRATION_QUADRATIC", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215", null ]
     ] ],
     [ "interp1Method", "group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016", [
       [ "INTERP1_NEXT", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373", null ],

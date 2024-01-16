@@ -290,8 +290,14 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a867953a85c4e25b6edbb282446413cf2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2">integrationMethod</a> { <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c">INTEGRATION_RECTANGULAR</a>
 , <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156">INTEGRATION_TRAPEZOIDAL</a>
 , <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce">INTEGRATION_SIMPSON</a>
+, <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215">INTEGRATION_QUADRATIC</a>
  }</td></tr>
 <tr class="separator:a867953a85c4e25b6edbb282446413cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1407622c3f944440d8d0aac8393dbcc4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a> { <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c">DERIVATION_2POINTS</a>
+, <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3">DERIVATION_BACKWARD</a>
+, <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d">DERIVATION_FORWARD</a>
+ }</td></tr>
+<tr class="separator:a1407622c3f944440d8d0aac8393dbcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga723e93113c48dc2437680a245624d0f3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> { <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>
 , <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a>
  }</td></tr>
@@ -389,6 +395,28 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a1407622c3f944440d8d0aac8393dbcc4" name="a1407622c3f944440d8d0aac8393dbcc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1407622c3f944440d8d0aac8393dbcc4">&#9670;&nbsp;</a></span>derivationMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">qlibs::derivationMethod</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c" name="a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c"></a>DERIVATION_2POINTS&#160;</td><td class="fielddoc"><p >Numerical derivation using two points </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3" name="a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3"></a>DERIVATION_BACKWARD&#160;</td><td class="fielddoc"><p >Numerical derivation using the three-point backward difference. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d" name="a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d"></a>DERIVATION_FORWARD&#160;</td><td class="fielddoc"><p >Numerical derivation using the three-point forward difference. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a867953a85c4e25b6edbb282446413cf2" name="a867953a85c4e25b6edbb282446413cf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a867953a85c4e25b6edbb282446413cf2">&#9670;&nbsp;</a></span>integrationMethod</h2>
 
@@ -406,6 +434,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156" name="a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156"></a>INTEGRATION_TRAPEZOIDAL&#160;</td><td class="fielddoc"><p >Numerical integration using the trapezoidal rectangular rule </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce" name="a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce"></a>INTEGRATION_SIMPSON&#160;</td><td class="fielddoc"><p >Numerical integration using the Simpson's 1/3 rule. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215" name="a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215"></a>INTEGRATION_QUADRATIC&#160;</td><td class="fielddoc"><p >Numerical integration using a parabola fit to three points. </p>
 </td></tr>
 </table>
 
