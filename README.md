@@ -56,6 +56,6 @@ Below is the list of the classes and modules provided and their features:
 - bitfield: A bit-field manipulation library
 - tdl : Tapped Delay Line in O(1).
 - rms : Recursive Root Mean Square(RMS) calculation of a signal.
-- Type-generic array operations
+- Type-generic utilities
 - Fast single-precision floating-point math
 - 1D Interpolation class

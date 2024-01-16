@@ -3,8 +3,7 @@
  * @author J. Camilo Gomez C.
  * @version 1.01
  * @note This file is part of the qLibs-cpp distribution.
- * @brief Computes the RMS (Root Mean Square) of a signal using a 2-step
- * recursive average specially designed for micro-controllers with FPU.
+ * @brief Matrix library : under construction
  **/
 
 #ifndef QLIBS_MAT
@@ -17,11 +16,6 @@
 * @brief The qLibs++ library namespace.
 */
 namespace qlibs {
-
-    /** @addtogroup qmat Matrix library
-    * @brief Class for Recursive Root Mean Square RMS estimation
-    *  @{
-    */
 
     enum matSpecial {
         MAT_ZERO,
@@ -202,7 +196,7 @@ namespace qlibs {
                 return result;
             }
 
-            // Overload the divison operator for scalar / matrix
+            // Overload the division operator for scalar / matrix
             //friend mat<Rows, Cols> operator/(const real_t& scalar, const mat<Rows, Cols>& matrix)
             //{
             //    mat<Rows, Cols> result;

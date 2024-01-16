@@ -37,7 +37,7 @@
 * - @subpage qrms_desc "RMS : Recursive Root Mean Square (RMS) calculation"
 * - @subpage qcrc_desc "CRC : Generic Cyclic Redundancy Check (CRC) calculator"
 * - @subpage qtdl_desc "TDL : Tapped Delay Line in O(1)"
-* - Type-generic array operations
+* - Type-generic utilities
 * - Fast floating-point math library
 * - @subpage qinterp1_desc "1D Interpolation class"
 */
