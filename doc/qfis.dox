@@ -6,7 +6,7 @@
 * using @c AND or @c OR logical connectives.
 *
 * Fuzzy inference works by sending any process's crisp input to the fuzzifier,
-* which applies a fuzzy membership function and maps the actual readings into 
+* which applies a fuzzy membership function and maps the actual readings into
 * fuzzy values. The inference engine applies fuzzy rules from the knowledge base
 * and produces the fuzzy output. This output can not be used directly in any
 * process or system. It needs to be mapped into the original domain. For this,
@@ -14,8 +14,8 @@
 * converts the fuzzy output into crisp output, which can be fed to the process.
 *
 * The FIS Fuzzy Inference System engine provides an API for building and
-* evaluation of type-1 fuzzy logic inference systems. 
-* 
+* evaluation of type-1 fuzzy logic inference systems.
+*
 * The types of inferences supported by FIS are listed in the \ref qlibs::fis::type enum
 * and are detailed below:
 *
@@ -24,7 +24,7 @@
 * In a Mamdani system, the output of each rule is a fuzzy set. Since Mamdani
 * systems have more intuitive and easier to understand rule bases, they are
 * well-suited to expert system applications where the rules are created
-* from human expert knowledge. 
+* from human expert knowledge.
 *
 * The output of each rule is a fuzzy set derived from the output membership
 * function and the implication method of the FIS. These output fuzzy sets are
@@ -65,19 +65,19 @@
 * function of the input values.
 *
 * and \f$w_i\f$, the rule firing strength, that is determined by the rule antecedent
-* 
+*
 * The output of each rule is the weighted output level, which is the product of
 * \f$w_i\f$ and \f$u_i\f$.
-* 
+*
 * The final output of the system is the weighted average/sum over all rule outputs:
 *
 * <center> \f$out= \frac{ \sum_{i=1}^{N}w_{i}u_{i} }{ \sum_{i=1}^{N}w_{i}} \f$  </center>
-* 
+*
 * where \f$N\f$  is the number of rules.
 *
-* Because of the linear dependence of each rule on the input variables, the Sugeno 
-* method is ideal for acting as an interpolating supervisor of multiple linear 
-* controllers that are to be applied, respectively, to different operating 
+* Because of the linear dependence of each rule on the input variables, the Sugeno
+* method is ideal for acting as an interpolating supervisor of multiple linear
+* controllers that are to be applied, respectively, to different operating
 * conditions of a dynamic nonlinear system.
 *
 * To specificy a FIS of this type,  use the \ref qlibs::fis::Sugeno enum definition when
@@ -104,7 +104,7 @@
 * In the Tsukamoto inference system, the consequent of each fuzzy if-then rule
 * is represented by a fuzzy set with a monotonical membership function, As a result,
 * the inferred output of each rule is defined as a crisp value induced by the
-* rule's firing strength. 
+* rule's firing strength.
 *
 * The overall output is taken as the weighted average of each rule's output.
 * Since each rule infers a crisp output, the Tsukamoto fuzzy model aggregates
@@ -131,22 +131,22 @@
 * </center>
 *
 * @section qfis_defuzz Defuzzification Methods
-* 
+*
 * FIS supports five different methods, as listed in the \ref qlibs::fis::deFuzzMethod enum
 * for computing a single crisp output value for such a fuzzy set.
 *
-*  -# \ref qlibs::fis::centroid (default): this method applies only to \ref qlibs::fis::Mamdani 
-* systems and returns the center of gravity of the fuzzy set along the x-axis. 
-* If you think of the area as a plate with uniform thickness and density, the 
+*  -# \ref qlibs::fis::centroid (default): this method applies only to \ref qlibs::fis::Mamdani
+* systems and returns the center of gravity of the fuzzy set along the x-axis.
+* If you think of the area as a plate with uniform thickness and density, the
 * centroid is the point along the x-axis about which the fuzzy set would balance.
-* The centroid is computed using the following formula, where \f$\mu(x)\f$ is 
+* The centroid is computed using the following formula, where \f$\mu(x)\f$ is
 * the membership value for point \f$x_i\f$ in the universe of discourse.
 *
 *
 * <center> \f$\text{centroid}= \frac{ \sum_{i=1}\mu(x_{i})x_{i} }{ \sum_{i=1}\mu(x_{i})} \f$  </center>
 *
-*  -# \ref qlibs::fis::bisector : this method applies only for \ref qlibs::fis::Mamdani systems and finds the 
-* vertical line that divides the fuzzy set into two sub-regions of equal area. 
+*  -# \ref qlibs::fis::bisector : this method applies only for \ref qlibs::fis::Mamdani systems and finds the
+* vertical line that divides the fuzzy set into two sub-regions of equal area.
 * It is sometimes, but not always, coincident with the centroid line.
 *
 *  -# \ref qlibs::fis::mom : Middle of Maximum. Only for \ref qlibs::fis::Mamdani systems.
@@ -155,13 +155,13 @@
 *
 *  -# \ref qlibs::fis::lom : Largest of Maximum. Only for \ref qlibs::fis::Mamdani systems.
 *
-*  -# \ref qlibs::fis::wtaver (default): Weighted average of all rule outputs. This method applies only 
+*  -# \ref qlibs::fis::wtaver (default): Weighted average of all rule outputs. This method applies only
 * for \ref qlibs::fis::Sugeno and \ref qlibs::fis::Tsukamoto systems.
 *
-*  -# \ref qlibs::fis::wtsum :  Weighted sum of all rule outputs. This method applies only 
+*  -# \ref qlibs::fis::wtsum :  Weighted sum of all rule outputs. This method applies only
 * for \ref qlibs::fis::Sugeno and \ref qlibs::fis::Tsukamoto systems.
 *
-* @note The defuzzification method is selected by default when setting up the 
+* @note The defuzzification method is selected by default when setting up the
 * FIS instance with \ref qlibs::fis::instance::setup(). However, the user can later change the default
 * method using the \ref qlibs::fis::instance::setDeFuzzMethod() function.
 *
@@ -188,7 +188,7 @@
 * -# <tt> IF the service IS excellent OR the food IS delicious, THEN the tip IS generous. </tt>
 *
 * This leads to a system with 2 inputs : @c service and @c food and 1 output: @c tip
-* 
+*
 * <center>
 * @htmlonly
 * <!DOCTYPE html>
@@ -213,7 +213,7 @@
 * -# (food)rancid : A @a trapezoidal membership function with points located on <tt> [0 0 1 3] </tt>
 * -# (food)delicious : A @a trapezoidal membership function with points located on <tt> [7 9 10 10] </tt>
 *
-* and 3 membership functions for the output 
+* and 3 membership functions for the output
 *
 * -# (tip)cheap : A @a triangular membership function with points located on <tt> [0 5 10] </tt>
 * -# (tip)average : A @a triangular membership function with points located on <tt> [10 15 20] </tt>
@@ -257,13 +257,13 @@
 *  @endcode
 *
 * @attention
-* Please note that all tag names are unique. 
+* Please note that all tag names are unique.
 *
-* Then, we will define the rules of 
+* Then, we will define the rules of
 * the fuzzy system using the previously defined tags. Rules should be defined as
 * an array of type \ref qlibs::fis::rules and the contents should be rules constructed
-* with the provided statements: 
-* 
+* with the provided statements:
+*
 * - \ref #FIS_RULES_BEGIN to start the rules set
 * - \ref #FIS_RULES_END to end the rules set
 * - \ref #IF to start a rule sentence
@@ -275,7 +275,7 @@
 * Let's apply some of these statements to build the rule set.
 *
 *  @code{.c}
-*  static const fis::rules rules[] = { 
+*  static const fis::rules rules[] = {
 *      FIS_RULES_BEGIN
 *         IF service IS service_poor OR food IS food_rancid THEN tip IS tip_cheap END
 *         IF service IS service_good THEN tip IS tip_average END
@@ -285,14 +285,14 @@
 *  @endcode
 *
 * Additionally, we also need to define a vector where the firing strength of each
-* rule will be stored. The size of the vector will be the number of rules. In 
+* rule will be stored. The size of the vector will be the number of rules. In
 * this particular case, there will be only three.
 *
 *  @code{.c}
 *  static real_t rulesStrength[ 3 ];
 *  @endcode
 *
-* First step is to configure the instance that represents the fuzzy 
+* First step is to configure the instance that represents the fuzzy
 * system using the \ref qlibs::fis::instance::setup() API:
 *
 *  @code{.c}
@@ -300,8 +300,8 @@
 *  @endcode
 *
 * Then, we can proceed to the construction of the fuzzy system. First, we must
-* configure the inputs and outputs by setting the ranges of each. For this, we 
-* will use the \ref qlibs::fis::instance::setupInput() and \ref qlibs::fis::instance::setupOutput() 
+* configure the inputs and outputs by setting the ranges of each. For this, we
+* will use the \ref qlibs::fis::instance::setupInput() and \ref qlibs::fis::instance::setupOutput()
 * methods as follows:
 *
 *  @code{.c}
@@ -310,8 +310,8 @@
 *  tipper.setupOutput( tip, 0.0f, 30.0f );
 *  @endcode
 *
-* The next step is to configure the membership functions by relating I/O, 
-* tags, shape and parameters one by one by using the \ref qlibs::fis::instance::setupInputMF() and 
+* The next step is to configure the membership functions by relating I/O,
+* tags, shape and parameters one by one by using the \ref qlibs::fis::instance::setupInputMF() and
 * \ref qlibs::fis::instance::setupOutputMF() methods as follows:
 * Then, let's define the parameters of all the membership functions:
 *
@@ -331,23 +331,23 @@
 *
 * @section qfis_eval Evaluating a Fuzzy Inference System
 *
-* If we already have a fuzzy system configured with \ref qlibs::fis::instance::setup(), we can 
-* evaluate it by using \ref qlibs::fis::instance::fuzzify(), \ref qlibs::fis::instance::inference() and 
-* \ref qlibs::fis::instance::deFuzzify(). 
-* Input values can be set with \ref qlibs::fis::instance::setInput() and output values can be 
+* If we already have a fuzzy system configured with \ref qlibs::fis::instance::setup(), we can
+* evaluate it by using \ref qlibs::fis::instance::fuzzify(), \ref qlibs::fis::instance::inference() and
+* \ref qlibs::fis::instance::deFuzzify().
+* Input values can be set with \ref qlibs::fis::instance::setInput() and output values can be
 * obtained with \ref qlibs::fis::instance::getOutput(). Also you can use the stream operator @c <<
 * to set the inputs and the index operator [] to get the outputs of the FIS
 * system (see example bellow).
 *
-* To show its use, first we are going to put everything together in a single 
-* code snippet and we are going to create two functions, @c tipper_init() and 
-* @c tipper_run() that will be in charge of setting up the fuzzy inference 
+* To show its use, first we are going to put everything together in a single
+* code snippet and we are going to create two functions, @c tipper_init() and
+* @c tipper_run() that will be in charge of setting up the fuzzy inference
 * system and evaluating it respectively.
 *
 *  @code{.c}
 *  #include "tipper_fis.h"
-*  #include "qfis.h"
-*  
+*  #include <qlibs.h>
+*
 *  // I/O Names
 *  enum : fis::tag { service, food};
 *  enum : fis::tag { tip};
@@ -371,8 +371,8 @@
 *  };
 *  //Rule strengths
 *  real_t rStrength[ 3 ] = { 0.0f };
-*  
-*  
+*
+*
 *  void tipper_init( void )
 *  {
 *      tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );
@@ -388,12 +388,12 @@
 *      tipper.setupOutputMF( tip, average, fis::trimf, (const real_t[]){ 10.0f, 15.0f, 20.0f } );
 *      tipper.setupOutputMF( tip, generous, fis::trimf, (const real_t[]){ 20.0f, 25.0f, 30.0f } );
 *  }
-*  
+*
 *  void tipper_run( real_t *inputs, real_t *outputs )
 *  {
 *      // Set the crips inputs
 *      tipper << service << inputs[ service ] << food << inputs[ food ];
-*  
+*
 *      tipper.fuzzify();
 *      if ( tipper.inference() ) {
 *          tipper.deFuzzify();
@@ -401,7 +401,7 @@
 *      else {
 *          // Error!
 *      }
-*  
+*
 *      // Get the crips outputs
 *      outputs[ tip ] = tipper[ tip ];
 *  }

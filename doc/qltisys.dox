@@ -150,7 +150,7 @@
 *          { 0.1f, 0.2f, 0.3f },
 *          { 1.0f, -0.85f, 0.02f },
 *      };
-*      continuousSystem gc( dtf );
+*      discreteSystem gc( dtf );
 *      real_t uk, yk;
 *
 *      for( ;; ) {
