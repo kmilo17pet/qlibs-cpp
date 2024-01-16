@@ -33,6 +33,7 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "qlibs::nState", "classqlibs_1_1n_state.html", null ],
     [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
     [ "qlibs::pidGains", "structqlibs_1_1pid_gains.html", [
       [ "qlibs::pidController", "classqlibs_1_1pid_controller.html", null ]
@@ -54,6 +55,5 @@ var hierarchy =
       [ "qlibs::smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", null ],
       [ "qlibs::smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", null ]
     ] ],
-    [ "qlibs::state", "classqlibs_1_1state.html", null ],
     [ "qlibs::fis::system< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classqlibs_1_1fis_1_1system.html", null ]
 ];

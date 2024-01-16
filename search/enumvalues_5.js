@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['integration_5fquadratic_0',['INTEGRATION_QUADRATIC',['../namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215',1,'qlibs']]],
-  ['integration_5frectangular_1',['INTEGRATION_RECTANGULAR',['../namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c',1,'qlibs']]],
-  ['integration_5fsimpson_2',['INTEGRATION_SIMPSON',['../namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce',1,'qlibs']]],
-  ['integration_5ftrapezoidal_3',['INTEGRATION_TRAPEZOIDAL',['../namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156',1,'qlibs']]],
+  ['integration_5fquadratic_0',['INTEGRATION_QUADRATIC',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215',1,'qlibs']]],
+  ['integration_5frectangular_1',['INTEGRATION_RECTANGULAR',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c',1,'qlibs']]],
+  ['integration_5fsimpson_2',['INTEGRATION_SIMPSON',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce',1,'qlibs']]],
+  ['integration_5ftrapezoidal_3',['INTEGRATION_TRAPEZOIDAL',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156',1,'qlibs']]],
   ['interp1_5fconstrained_5fspline_4',['INTERP1_CONSTRAINED_SPLINE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4',1,'qlibs']]],
   ['interp1_5fcubic_5',['INTERP1_CUBIC',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e',1,'qlibs']]],
   ['interp1_5fhermite_6',['INTERP1_HERMITE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896',1,'qlibs']]],

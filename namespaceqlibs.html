@@ -183,6 +183,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1mat.html">mat</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix object.  <a href="classqlibs_1_1mat.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html">nState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A numerical state object.  <a href="classqlibs_1_1n_state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_auto_tuning.html">pidAutoTuning</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A PID Auto-tuning object.  <a href="classqlibs_1_1pid_auto_tuning.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,18 +234,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1smoother_m_w_m2.html">smootherMWM2</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Moving Window Median filter.  <a href="classqlibs_1_1smoother_m_w_m2.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1state.html">state</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html">tdl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Tapped Delay Line (TDL) object.  <a href="classqlibs_1_1tdl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga749ee6d3fc57211c4fa36d4108316d75"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
-<tr class="memitem:ga749ee6d3fc57211c4fa36d4108316d75"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75">continuousStates</a> = <a class="el" href="classqlibs_1_1state.html">state</a>[order]</td></tr>
-<tr class="memdesc:ga749ee6d3fc57211c4fa36d4108316d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify continuous states.  <a href="group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75">More...</a><br /></td></tr>
-<tr class="separator:ga749ee6d3fc57211c4fa36d4108316d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga133a514a9c835937ba3d6e92fadccaad"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
+<tr class="memitem:ga133a514a9c835937ba3d6e92fadccaad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad">continuousStates</a> = <a class="el" href="classqlibs_1_1n_state.html">nState</a>[order]</td></tr>
+<tr class="memdesc:ga133a514a9c835937ba3d6e92fadccaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify continuous states.  <a href="group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad">More...</a><br /></td></tr>
+<tr class="separator:ga133a514a9c835937ba3d6e92fadccaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
 <tr class="memitem:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">discreteStates</a> = <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>[order]</td></tr>
 <tr class="memdesc:ga1d7270ee26fea50834f73cab840fb2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify discrete states.  <a href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">More...</a><br /></td></tr>
@@ -280,6 +281,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd">LTISYS_TYPE_CONTINUOUS</a>
 , <a class="el" href="group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b">LTISYS_TYPE_DISCRETE</a>
  }</td></tr>
+<tr class="memdesc:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the possible natures of a LTI system.  <a href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">More...</a><br /></td></tr>
 <tr class="separator:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e19221783d7af35b19059c1c0e14511"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511">matSpecial</a> { <a class="el" href="namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b">MAT_ZERO</a>
 , <a class="el" href="namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc">MAT_IDENTITY</a>
@@ -287,17 +289,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a">MAT_MAGIC</a>
  }</td></tr>
 <tr class="separator:a9e19221783d7af35b19059c1c0e14511"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a867953a85c4e25b6edbb282446413cf2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2">integrationMethod</a> { <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c">INTEGRATION_RECTANGULAR</a>
-, <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156">INTEGRATION_TRAPEZOIDAL</a>
-, <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce">INTEGRATION_SIMPSON</a>
-, <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215">INTEGRATION_QUADRATIC</a>
+<tr class="memitem:ga867953a85c4e25b6edbb282446413cf2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qnuma.html#ga867953a85c4e25b6edbb282446413cf2">integrationMethod</a> { <a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c">INTEGRATION_RECTANGULAR</a>
+, <a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156">INTEGRATION_TRAPEZOIDAL</a>
+, <a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce">INTEGRATION_SIMPSON</a>
+, <a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215">INTEGRATION_QUADRATIC</a>
  }</td></tr>
-<tr class="separator:a867953a85c4e25b6edbb282446413cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1407622c3f944440d8d0aac8393dbcc4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a> { <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c">DERIVATION_2POINTS</a>
-, <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3">DERIVATION_BACKWARD</a>
-, <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d">DERIVATION_FORWARD</a>
+<tr class="memdesc:ga867953a85c4e25b6edbb282446413cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum with all the available integration methods.  <a href="group__qnuma.html#ga867953a85c4e25b6edbb282446413cf2">More...</a><br /></td></tr>
+<tr class="separator:ga867953a85c4e25b6edbb282446413cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1407622c3f944440d8d0aac8393dbcc4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qnuma.html#ga1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a> { <a class="el" href="group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c">DERIVATION_2POINTS</a>
+, <a class="el" href="group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3">DERIVATION_BACKWARD</a>
+, <a class="el" href="group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d">DERIVATION_FORWARD</a>
  }</td></tr>
-<tr class="separator:a1407622c3f944440d8d0aac8393dbcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga1407622c3f944440d8d0aac8393dbcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum with all the available derivation methods.  <a href="group__qnuma.html#ga1407622c3f944440d8d0aac8393dbcc4">More...</a><br /></td></tr>
+<tr class="separator:ga1407622c3f944440d8d0aac8393dbcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga723e93113c48dc2437680a245624d0f3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> { <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>
 , <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a>
  }</td></tr>
@@ -395,52 +399,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a1407622c3f944440d8d0aac8393dbcc4" name="a1407622c3f944440d8d0aac8393dbcc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1407622c3f944440d8d0aac8393dbcc4">&#9670;&nbsp;</a></span>derivationMethod</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4">qlibs::derivationMethod</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c" name="a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c"></a>DERIVATION_2POINTS&#160;</td><td class="fielddoc"><p >Numerical derivation using two points </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3" name="a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3"></a>DERIVATION_BACKWARD&#160;</td><td class="fielddoc"><p >Numerical derivation using the three-point backward difference. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d" name="a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d"></a>DERIVATION_FORWARD&#160;</td><td class="fielddoc"><p >Numerical derivation using the three-point forward difference. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a867953a85c4e25b6edbb282446413cf2" name="a867953a85c4e25b6edbb282446413cf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a867953a85c4e25b6edbb282446413cf2">&#9670;&nbsp;</a></span>integrationMethod</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2">qlibs::integrationMethod</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c" name="a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c"></a>INTEGRATION_RECTANGULAR&#160;</td><td class="fielddoc"><p >Numerical integration using the rectangular rule </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156" name="a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156"></a>INTEGRATION_TRAPEZOIDAL&#160;</td><td class="fielddoc"><p >Numerical integration using the trapezoidal rectangular rule </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce" name="a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce"></a>INTEGRATION_SIMPSON&#160;</td><td class="fielddoc"><p >Numerical integration using the Simpson's 1/3 rule. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215" name="a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215"></a>INTEGRATION_QUADRATIC&#160;</td><td class="fielddoc"><p >Numerical integration using a parabola fit to three points. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <a id="a9e19221783d7af35b19059c1c0e14511" name="a9e19221783d7af35b19059c1c0e14511"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e19221783d7af35b19059c1c0e14511">&#9670;&nbsp;</a></span>matSpecial</h2>
 

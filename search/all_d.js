@@ -7,5 +7,7 @@ var searchData=
   ['normalize_4',['normalize',['../group__qfmathex.html#gace2b8080d7f9f3d4fbb9f0271f7c207b',1,'qlibs']]],
   ['normalizetransferfunction_5',['normalizeTransferFunction',['../classqlibs_1_1ltisys.html#a2e7b0b94f9eb40fc22d124a6639bbfb4',1,'qlibs::ltisys']]],
   ['norminf_6',['normInf',['../classqlibs_1_1mat.html#aeacda8230e3ebecd3746ee77229d183e',1,'qlibs::mat']]],
-  ['num_7',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]]
+  ['nstate_7',['nState',['../classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f',1,'qlibs::nState::nState()'],['../classqlibs_1_1n_state.html',1,'qlibs::nState']]],
+  ['num_8',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]],
+  ['numerical_20state_20class_9',['Numerical state class',['../group__qnuma.html',1,'']]]
 ];

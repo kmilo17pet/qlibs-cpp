@@ -20,6 +20,7 @@ var annotated_dup =
       [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
       [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
       [ "mat", "classqlibs_1_1mat.html", "classqlibs_1_1mat" ],
+      [ "nState", "classqlibs_1_1n_state.html", "classqlibs_1_1n_state" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
       [ "pidController", "classqlibs_1_1pid_controller.html", "classqlibs_1_1pid_controller" ],
       [ "pidGains", "structqlibs_1_1pid_gains.html", "structqlibs_1_1pid_gains" ],
@@ -36,7 +37,6 @@ var annotated_dup =
       [ "smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", "classqlibs_1_1smoother_m_o_r2" ],
       [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
-      [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ]
 ];

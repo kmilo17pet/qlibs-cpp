@@ -94,6 +94,7 @@ var namespaceqlibs =
     [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
     [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
     [ "mat", "classqlibs_1_1mat.html", "classqlibs_1_1mat" ],
+    [ "nState", "classqlibs_1_1n_state.html", "classqlibs_1_1n_state" ],
     [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
     [ "pidController", "classqlibs_1_1pid_controller.html", "classqlibs_1_1pid_controller" ],
     [ "pidGains", "structqlibs_1_1pid_gains.html", "structqlibs_1_1pid_gains" ],
@@ -110,9 +111,8 @@ var namespaceqlibs =
     [ "smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", "classqlibs_1_1smoother_m_o_r2" ],
     [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
-    [ "state", "classqlibs_1_1state.html", "classqlibs_1_1state" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
-    [ "continuousStates", "group__qltisys.html#ga749ee6d3fc57211c4fa36d4108316d75", null ],
+    [ "continuousStates", "group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad", null ],
     [ "discreteStates", "group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1", null ],
     [ "real_t", "namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c", null ],
     [ "crcMode", "group__qcrc.html#ga5b194c56447214ee3207b107e549cad5", [
@@ -120,16 +120,16 @@ var namespaceqlibs =
       [ "CRC16", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5ad552ccca252f2622494742a8341393c6", null ],
       [ "CRC32", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a80eef496a6b73673ecd6f0b285304829", null ]
     ] ],
-    [ "derivationMethod", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4", [
-      [ "DERIVATION_2POINTS", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c", null ],
-      [ "DERIVATION_BACKWARD", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3", null ],
-      [ "DERIVATION_FORWARD", "namespaceqlibs.html#a1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d", null ]
+    [ "derivationMethod", "group__qnuma.html#ga1407622c3f944440d8d0aac8393dbcc4", [
+      [ "DERIVATION_2POINTS", "group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4aca8d97aad5301efbdb83ab5de4a3197c", null ],
+      [ "DERIVATION_BACKWARD", "group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4a62d31c41067ac82b4f1116318a2f99e3", null ],
+      [ "DERIVATION_FORWARD", "group__qnuma.html#gga1407622c3f944440d8d0aac8393dbcc4a1d4f6fe2384ec3c13a350085cac0161d", null ]
     ] ],
-    [ "integrationMethod", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2", [
-      [ "INTEGRATION_RECTANGULAR", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c", null ],
-      [ "INTEGRATION_TRAPEZOIDAL", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156", null ],
-      [ "INTEGRATION_SIMPSON", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ],
-      [ "INTEGRATION_QUADRATIC", "namespaceqlibs.html#a867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215", null ]
+    [ "integrationMethod", "group__qnuma.html#ga867953a85c4e25b6edbb282446413cf2", [
+      [ "INTEGRATION_RECTANGULAR", "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c", null ],
+      [ "INTEGRATION_TRAPEZOIDAL", "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156", null ],
+      [ "INTEGRATION_SIMPSON", "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce", null ],
+      [ "INTEGRATION_QUADRATIC", "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215", null ]
     ] ],
     [ "interp1Method", "group__qinterp1.html#ga3b97e7424eae482b8b70649d8ab22016", [
       [ "INTERP1_NEXT", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373", null ],
