@@ -28,7 +28,7 @@
 * by just calling \ref qlibs::continuousSystem::excite() .
 *
 * @attention
-* The user must ensure that the 
+* The user must ensure that the
 * evaluation of the system is executed periodically at the required time step.
 *
 * @subsection qltisys_ex1 Example: Evaluate the given continuous transfer function
@@ -41,28 +41,28 @@
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
-*  
+*
 *  void xTaskSystemSimulate( void )
 *  {
 *      const real_t dt = 0.05f; // Time step
 *      std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
 *      real_t num[] = { 0.0f, 2.0f, 3.0f, 6.0f };
 *      real_t den[] = { 1.0f, 6.0f, 11.0f, 16.0f };
-*      continuousStates x = { 0.0f, 0.0f, 0.0f }; // n = 3
+*      continuousStates<3> x = { 0.0f, 0.0f, 0.0f }; // n = 3
 *      continuousSystem gc( num, den, xC, dt );
 *      real_t ut, yt;
 *
 *      for( ;; ) {
 *          ut = BSP_InputGet();
 *          yt = gc.excite( ut );
-*          
+*
 *          std::this_thread::sleep_for(delay);
 *          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
 *      }
 *  }
 *  @endcode
 *
-* Alternatively, you can also use a simpler definition by employing the 
+* Alternatively, you can also use a simpler definition by employing the
 * \ref qlibs::continuousTF structure as follows:
 *
 *  @code{.c}
@@ -70,7 +70,7 @@
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
-*  
+*
 *  void xTaskSystemSimulate( void )
 *  {
 *      const real_t dt = 0.05f; // Time step
@@ -85,7 +85,7 @@
 *      for( ;; ) {
 *          ut = BSP_InputGet();
 *          yt = gc.excite( ut );
-*          
+*
 *          std::this_thread::sleep_for(delay);
 *          std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
 *      }
@@ -100,17 +100,17 @@
 * transfer function is similarly written as \f$ G(z^{-1}) \f$  and is often
 * referred to as the pulse-transfer function.
 *
-*  \f$ G(z^{-1}) = \frac{N(z^{-1})}{D(z^{-1})} = \frac{ b_{0} + b_{1}z^{-1} + b_{2}z^{-2} + ... +  b_{m}z^{-m} }{ 1 + a_{1}z^{-1} + a_{2}z^{-2} + ... +  a_{n}z^{-n} } \f$ 
+*  \f$ G(z^{-1}) = \frac{N(z^{-1})}{D(z^{-1})} = \frac{ b_{0} + b_{1}z^{-1} + b_{2}z^{-2} + ... +  b_{m}z^{-m} }{ 1 + a_{1}z^{-1} + a_{2}z^{-2} + ... +  a_{n}z^{-n} } \f$
 
 * Discrete systems are instantiated in a similar way to continuous systems,
 * but there are some differences. States are should be stored in an array of type
 * \ref qlibs::discreteStates. The size of polynomials can vary according to
 * their order.
 * Please take a look at the following example:
-* 
+*
 * @subsection qltisys_ex2 Example: Evaluate the given discrete transfer function
 *
-*  \f$ G(z^{-1}) = \frac{ 0.1 + 0.2z^{-1} + 0.3z^{-2} }{ 1 - 0.85z^{-1} + 0.02z^{-2} } \f$ 
+*  \f$ G(z^{-1}) = \frac{ 0.1 + 0.2z^{-1} + 0.3z^{-2} }{ 1 - 0.85z^{-1} + 0.02z^{-2} } \f$
 *
 *  @code{.c}
 *  #include <iostream>
@@ -122,8 +122,8 @@
 *  {
 *      real_t num[] = { 0.1f 0.2f, 0.3f };
 *      real_t den[] = { 1.0f, -0.85f, 0.02f };
-*      discreteStates xk[] = { 0.0f, 0.0f, 0.0f };
-*      discreteSystem gc( num, den, xC );
+*      discreteStates<3> xd = { 0.0f, 0.0f, 0.0f };
+*      discreteSystem gc( num, den, xd );
 *      real_t uk, yk;
 *
 *      for( ;; ) {
@@ -135,7 +135,7 @@
 *  }
 *  @endcode
 *
-* Alternatively, you can also use a simpler definition by employing the 
+* Alternatively, you can also use a simpler definition by employing the
 * \ref qlibs::discreteTF structure as follows:
 *
 *  @code{.c}
@@ -143,7 +143,7 @@
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
-*  
+*
 *  void xTaskSystemSimulate( void )
 *  {
 *      discreteTF<3,3> dtf= {
