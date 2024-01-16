@@ -1,10 +1,10 @@
 /** @mainpage Overview
 * @image html https://github.com/kmilo17pet/qlibs-cpp/assets/11412210/39608408-78ea-4d88-a854-f61befd845a5
-* A collection of useful libraries written in C++ for embedded systems. 
+* A collection of useful libraries written in C++ for embedded systems.
 *
 * @remark
 * qLibs++ complies with most of the Motor Industry Software Reliability
-* Association (MISRA) MISRA-C++:2008 and the SEI CERT C coding standards in 
+* Association (MISRA) MISRA-C++:2008 and the SEI CERT C coding standards in
 * order to provide a safe, reliable, and secure foundation for embedded applications.
 *
 * qLibs++ includes the following modules:
@@ -39,6 +39,7 @@
 * - @subpage qtdl_desc "TDL : Tapped Delay Line in O(1)"
 * - Type-generic array operations
 * - Fast floating-point math library
+* - 1D Interpolation class
 */
 
 /**
