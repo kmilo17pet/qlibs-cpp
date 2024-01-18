@@ -196,6 +196,7 @@ void test_fis( void )
 
 
     tipper << service << 1 << food << 9;
+
     tipper.fuzzify();
     if ( tipper.inference() ) {
         tipper.deFuzzify();
