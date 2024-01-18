@@ -227,6 +227,7 @@ var NAVTREEINDEX2 =
 "qffmath_desc.html":[0,9],
 "qfis_desc.html":[0,1],
 "qfis_desc.html#qfis_buildfis":[0,1,4],
+"qfis_desc.html#qfis_codegen":[0,1,6],
 "qfis_desc.html#qfis_defuzz":[0,1,3],
 "qfis_desc.html#qfis_eval":[0,1,5],
 "qfis_desc.html#qfis_mamdani":[0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "qltisys_desc.html#qltisys_disc":[0,3,1],
 "qltisys_desc.html#qltisys_ex1":[0,3,0,0],
 "qltisys_desc.html#qltisys_ex2":[0,3,1,0],
-"qpid_desc.html":[0,2],
-"qpid_desc.html#qfpid_usage":[0,2,3]
+"qpid_desc.html":[0,2]
 };

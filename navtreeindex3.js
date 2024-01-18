@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"qpid_desc.html#qfpid_usage":[0,2,3],
 "qpid_desc.html#qpid_approach":[0,2,0],
 "qpid_desc.html#qpid_autotune":[0,2,5],
 "qpid_desc.html#qpid_autotune_usage":[0,2,5,0],
