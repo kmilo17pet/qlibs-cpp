@@ -26,6 +26,7 @@ var namespaceqlibs =
       [ "exp", "group__qffmath.html#ga582ddbcb70a87c003aa6bbd0c57601ba", null ],
       [ "exp10", "group__qffmath.html#ga0bf4ade7dad579b2000f591f4ae15a89", null ],
       [ "exp2", "group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf", null ],
+      [ "factorial", "group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9", null ],
       [ "floor", "group__qffmath.html#ga5cd6eb6bb4d2c79eb7aef931f17ad0ee", null ],
       [ "frac", "group__qffmath.html#ga3fe71e414943b548d1b41116db40621e", null ],
       [ "getInf", "group__qffmath.html#gae97a1210db400b3f7334e0adb591afd6", null ],

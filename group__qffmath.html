@@ -315,6 +315,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gafdaf2ea66be09d7adf9f2895a636fe15"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gafdaf2ea66be09d7adf9f2895a636fe15">qlibs::ffmath::lgamma</a> (float x)</td></tr>
 <tr class="memdesc:gafdaf2ea66be09d7adf9f2895a636fe15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the natural logarithm of the absolute value of the gamma function of <em>x</em>.  <a href="group__qffmath.html#gafdaf2ea66be09d7adf9f2895a636fe15">More...</a><br /></td></tr>
 <tr class="separator:gafdaf2ea66be09d7adf9f2895a636fe15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">qlibs::ffmath::factorial</a> (float x)</td></tr>
+<tr class="memdesc:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the factorial of the integer part of <em>x</em>.  <a href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">More...</a><br /></td></tr>
+<tr class="separator:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -902,6 +905,36 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the base-2 exponential of <em>x</em> <code>2^x</code> is returned. If the range validation fails due to overflow, <code>inf</code> is returned. </dd></dl>
+
+</div>
+</div>
+<a id="ga7738f83c9e81e1a4ecedb540807d68e9" name="ga7738f83c9e81e1a4ecedb540807d68e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7738f83c9e81e1a4ecedb540807d68e9">&#9670;&nbsp;</a></span>factorial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::factorial </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the factorial of the integer part of <em>x</em>. </p>
+<dl class="section note"><dt>Note</dt><dd>The argument <em>x</em> needs to be positive </dd>
+<dd>
+This function overflows when <em>x</em> &gt; 34 </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating point value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Upon successful completion, this function shall return the factorial of the integer part of x. If x is non-positive, <a class="el" href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9" title="Return the factorial of the integer part of x.">factorial()</a> shall return NaN. If the correct value would cause overflow, <a class="el" href="group__qffmath.html#gafdaf2ea66be09d7adf9f2895a636fe15" title="Computes the natural logarithm of the absolute value of the gamma function of x.">lgamma()</a> shall return +Inf. </dd></dl>
 
 </div>
 </div>
