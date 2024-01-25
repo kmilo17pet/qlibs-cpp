@@ -585,7 +585,9 @@ namespace qlibs {
         /**
         * @brief Return the factorial of the integer part of @a x.
         * @note The argument @a x needs to be positive
-        * @note This function overflows when @a x > 34
+        * @warning For @a x values greater than @c 14, result is imprecise because of
+        * the limited precision of the 32-bit floating point data-type.
+        * With @a x values greater than @c 35, this function overflows.
         * @param[in] x The floating point value
         * @return Upon successful completion, this function shall return the
         * factorial of the integer part of x. If x is non-positive, factorial() shall
