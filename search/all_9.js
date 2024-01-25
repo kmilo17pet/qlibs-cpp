@@ -33,7 +33,7 @@ var searchData=
   ['is_30',['IS',['../group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06',1,'fis.hpp']]],
   ['is_5fnot_31',['IS_NOT',['../group__qfis.html#gab3262baea101d64a3d11969b9dd2e78d',1,'fis.hpp']]],
   ['isautotuningcomplete_32',['isAutoTuningComplete',['../classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131',1,'qlibs::pidController']]],
-  ['isequal_33',['isEqual',['../group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9',1,'qlibs']]],
+  ['isequal_33',['isEqual',['../group__qffmath.html#ga842b214291e210d472f95c596b5be1ca',1,'qlibs::ffmath']]],
   ['isexpmax_34',['isExpMax',['../classqlibs_1_1fp16.html#ad369475aa239d84820c14f02a7cbc631',1,'qlibs::fp16']]],
   ['isfinite_35',['isFinite',['../group__qffmath.html#ga77d4205c6ebf3abb305ea44f317ea9e3',1,'qlibs::ffmath']]],
   ['isinf_36',['isInf',['../group__qffmath.html#ga4f15ffe8a2f756a3f721fcbd1b9c3366',1,'qlibs::ffmath']]],

@@ -13,7 +13,7 @@ var searchData=
   ['inv_10',['inv',['../classqlibs_1_1mat.html#a6fb68580ae09eb7384bcb6fb266a195f',1,'qlibs::mat']]],
   ['iobase_11',['ioBase',['../classqlibs_1_1fis_1_1io_base.html#a6ba77a504578b09fd0b756a20c7a160a',1,'qlibs::fis::ioBase']]],
   ['isautotuningcomplete_12',['isAutoTuningComplete',['../classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131',1,'qlibs::pidController']]],
-  ['isequal_13',['isEqual',['../group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9',1,'qlibs']]],
+  ['isequal_13',['isEqual',['../group__qffmath.html#ga842b214291e210d472f95c596b5be1ca',1,'qlibs::ffmath']]],
   ['isexpmax_14',['isExpMax',['../classqlibs_1_1fp16.html#ad369475aa239d84820c14f02a7cbc631',1,'qlibs::fp16']]],
   ['isfinite_15',['isFinite',['../group__qffmath.html#ga77d4205c6ebf3abb305ea44f317ea9e3',1,'qlibs::ffmath']]],
   ['isinf_16',['isInf',['../group__qffmath.html#ga4f15ffe8a2f756a3f721fcbd1b9c3366',1,'qlibs::ffmath']]],

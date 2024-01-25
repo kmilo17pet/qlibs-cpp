@@ -61,7 +61,8 @@ var namespaceqlibs_1_1fis =
       [ "tconcavemf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a528e5dabe49eb4ae12424ba5639ce107", null ],
       [ "tsigmf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84ae8ac8b05c52a904fd87c76a2e9df243a", null ],
       [ "tsmf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a80ff64b2f682cdeb6f4ae446f4fa3f1a", null ],
-      [ "tzmf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a651925df727fa8a050e0f6f933331047", null ]
+      [ "tzmf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a651925df727fa8a050e0f6f933331047", null ],
+      [ "trampmf", "group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a9788dc248c79378bd80b18420e5f8288", null ]
     ] ],
     [ "type", "group__qfis.html#ga586122d18868caf25eefe84cb2421350", [
       [ "Mamdani", "group__qfis.html#gga586122d18868caf25eefe84cb2421350ac708753f41f5d485a63a603c15dd439a", null ],

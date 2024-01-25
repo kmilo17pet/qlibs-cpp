@@ -146,9 +146,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa7b2e00118e1370b05678aa5e8c2a5bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf">qlibs::inRangeCoerce</a> (<a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> &amp;x, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> lowerL, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> upperL) noexcept</td></tr>
 <tr class="memdesc:gaa7b2e00118e1370b05678aa5e8c2a5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the value pointed by <em>x</em> falls within a range specified by the upper limit and lower limit inputs and coerces the value to fall within the range.  <a href="group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf">More...</a><br /></td></tr>
 <tr class="separator:gaa7b2e00118e1370b05678aa5e8c2a5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae5030bf2607b96ff0e5b11036ec9dfb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9">qlibs::isEqual</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> a, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> b, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> tol=1.175494351e-38F) noexcept</td></tr>
-<tr class="memdesc:gae5030bf2607b96ff0e5b11036ec9dfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the parameters given as floating-point values are approximately equal.  <a href="group__qfmathex.html#gae5030bf2607b96ff0e5b11036ec9dfb9">More...</a><br /></td></tr>
-<tr class="separator:gae5030bf2607b96ff0e5b11036ec9dfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab064b0b79702d1ca904ede92900d3ff8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8">qlibs::inPolygon</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> x, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> y, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *const px, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *const py, const size_t p) noexcept</td></tr>
 <tr class="memdesc:gab064b0b79702d1ca904ede92900d3ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the point at ( <em>x</em>, <em>y</em> ) is inside the polygon given by the set of points on <em>px</em> and <em>py</em>.  <a href="group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8">More...</a><br /></td></tr>
 <tr class="separator:gab064b0b79702d1ca904ede92900d3ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -343,59 +340,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> when the value falls within the specified range, otherwise false </dd></dl>
-
-</div>
-</div>
-<a id="gae5030bf2607b96ff0e5b11036ec9dfb9" name="gae5030bf2607b96ff0e5b11036ec9dfb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae5030bf2607b96ff0e5b11036ec9dfb9">&#9670;&nbsp;</a></span>isEqual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool qlibs::isEqual </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
-          <td class="paramname"><em>tol</em> = <code>1.175494351e-38F</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines if the parameters given as floating-point values are approximately equal. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Input to be compared. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Input to be compared. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>Tolerance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> when both values are approximately equal. </dd></dl>
 
 </div>
 </div>
