@@ -925,9 +925,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the factorial of the integer part of <em>x</em>. </p>
-<dl class="section note"><dt>Note</dt><dd>The argument <em>x</em> needs to be positive </dd>
-<dd>
-This function overflows when <em>x</em> &gt; 34 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The argument <em>x</em> needs to be positive </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>For <em>x</em> values greater than <code>14</code>, result is imprecise because of the limited precision of the 32-bit floating point data-type. With <em>x</em> values greater than <code>35</code>, this function overflows. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The floating point value </td></tr>
