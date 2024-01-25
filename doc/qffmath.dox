@@ -60,13 +60,16 @@
 * - \ref qlibs::ffmath::log10() Computes the common (base-10) logarithm
 * - \ref qlibs::ffmath::pow() Computes the power raised to the base number
 *
-* @subsection  qffmath_exp Other functions
+* @subsection  qffmath_special Special functions
 * - \ref qlibs::ffmath::erf() Computes the error function
 * - \ref qlibs::ffmath::erfc() Computes the complementary error function
 * - \ref qlibs::ffmath::rexp() Decomposes given floating point value into a normalized fraction and an integral power of two.
 * - \ref qlibs::ffmath::ldexp() Multiplies a floating point value by the number 2 raised to the power.
 * - \ref qlibs::ffmath::hypot() Computes the square root of the sum of the squares
 * - \ref qlibs::ffmath::nextAfter() Compute the next representable floating-point value following x in the direction of y
+* - \ref qlibs::ffmath::tgamma() Computes the gamma function
+* - \ref qlibs::ffmath::lgamma() Computes the natural logarithm of the gamma function
+* - \ref qlibs::ffmath::factorial() Computes the factorial of the integer part
 *
 * @subsection  qffmath_const Constants
 * - \ref qlibs::ffmath::getInf() Returns positive infinity @c inf as a 32-bit floating point number
