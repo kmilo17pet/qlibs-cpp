@@ -588,7 +588,7 @@ float ffmath::tgamma( float x )
         result = getInf(); /* a huge value */
     }
     else if ( classification::FFP_INFINITE == fClass ) {
-        if ( x > 0.0f ) {
+        if ( x > 0.0F ) {
             result = getInf(); /* a huge value */
         }
         else {
@@ -760,13 +760,13 @@ static float lgamma_positive( float x )
                                 3.417476345507377132798597e+11F,
                                 4.463158187419713286462081e+11F };
     constexpr float pnt68 = 0.6796875F;
-    float result, y;
+    float result;
 
     if ( x > 171.624F ) {
         result = ffmath::getInf(); /* a huge value */
     }
     else {
-        float corrector, num, den;
+        float y, corrector, num, den;
 
         y = x;
         if ( y <= 1.19209290E-07F ) { /* y < eps */
@@ -860,14 +860,12 @@ float ffmath::lgamma( float x )
         result = getInf();
     }
     else {
-        float y;
-
         if ( x < 0.0F ) {
             if ( x <= -4503599627370496.0F ) { /* x < 2^52 */
                 result = getInf();
             }
             else {
-                float a, y1, isItAnInt;
+                float y, y1, isItAnInt;
 
                 y = -x;
                 y1 = ffmath::trunc( y );
@@ -876,6 +874,8 @@ float ffmath::lgamma( float x )
                     result = getInf();
                 }
                 else {
+                    float a;
+
                     a = sin( FFP_PI*isItAnInt );
                     result = ffmath::log( FFP_PI/ffmath::absf( a*x ) ) - lgamma_positive( -x );
                 }

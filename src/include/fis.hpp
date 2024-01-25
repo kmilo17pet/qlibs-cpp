@@ -339,7 +339,7 @@ namespace qlibs {
                 real_t fx{ 0.0_re };
                 real_t h{ 0.0_re };
                 size_t index{ 0U };
-                inline size_t getIndex( void )
+                inline size_t getIndex( void ) const
                 {
                     return index;
                 }
