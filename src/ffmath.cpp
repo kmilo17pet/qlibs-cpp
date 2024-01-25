@@ -5,7 +5,7 @@ using namespace qlibs;
 template<typename T1, typename T2>
 static inline void cast_reinterpret( T1 &f, const T2 &u )
 {
-    static_assert( sizeof(T1)==sizeof(T2), "Types must match sizes" );
+    static_assert( sizeof(T1) == sizeof(T2), "Types must match sizes" );
     (void)memcpy( &f, &u, sizeof(T2) );
 }
 
@@ -36,7 +36,7 @@ bool ffmath::isEqual( const float a,
                       const float b,
                       const float tol ) noexcept
 {
-    return ( ffmath::absf( a - b ) <= ffmath::absf( tol ) );
+    return ( absolute( a - b ) <= absolute( tol ) );
 }
 /*============================================================================*/
 float ffmath::getInf( void )
@@ -98,7 +98,7 @@ float ffmath::sign( float x )
 /*============================================================================*/
 float ffmath::absf( float x )
 {
-    return ( x < 0.0F ) ? -x : x;
+    return absolute( x );
 }
 /*============================================================================*/
 float ffmath::recip( float x )
@@ -130,7 +130,7 @@ float ffmath::sqrt( float x )
         cast_reinterpret( y, x );
         y = ( ( y - 0x00800000U ) >> 1U ) + 0x20000000U;
         cast_reinterpret( z, y );
-        retVal = ( ( x/z ) + z ) * 0.5F;
+        retVal = 0.5F*( ( x/z ) + z );
     }
 
     return retVal;
@@ -565,10 +565,10 @@ float ffmath::nextAfter( float x, float y )
             uxi = ( 0U == ay ) ? uyi : ( ( uyi & 0x80000000U ) | 1U );
         }
         else if ( ( ax > ay ) || ( 0U != ( ( uxi^uyi ) & 0x80000000U ) ) ) {
-            uxi--;
+            --uxi;
         }
         else {
-            uxi++;
+            ++uxi;
         }
         cast_reinterpret( retVal, uxi );
     }
@@ -588,12 +588,7 @@ float ffmath::tgamma( float x )
         result = getInf(); /* a huge value */
     }
     else if ( classification::FFP_INFINITE == fClass ) {
-        if ( x > 0.0F ) {
-            result = getInf(); /* a huge value */
-        }
-        else {
-            result = getNan();
-        }
+        result = ( x > 0.0F ) ? getInf() : getNan();
     }
     else {
         bool parity = false;
@@ -763,7 +758,7 @@ static float lgamma_positive( float x )
     float result;
 
     if ( x > 171.624F ) {
-        result = ffmath::getInf(); /* a huge value */
+        result = ffmath::getInf();
     }
     else {
         float y, corrector, num, den;
@@ -853,10 +848,7 @@ float ffmath::lgamma( float x )
     if ( classification::FFP_NAN == fClass ) {
         result = getNan();
     }
-    else if ( classification::FFP_ZERO == fClass ) {
-        result = getInf();
-    }
-    else if ( classification::FFP_INFINITE == fClass ) {
+    else if ( ( classification::FFP_ZERO == fClass ) || ( classification::FFP_INFINITE == fClass ) ) {
         result = getInf();
     }
     else {
@@ -877,7 +869,7 @@ float ffmath::lgamma( float x )
                     float a;
 
                     a = sin( FFP_PI*isItAnInt );
-                    result = ffmath::log( FFP_PI/ffmath::absf( a*x ) ) - lgamma_positive( -x );
+                    result = ffmath::log( FFP_PI/absolute( a*x ) ) - lgamma_positive( -x );
                 }
             }
         }
@@ -887,5 +879,44 @@ float ffmath::lgamma( float x )
     }
 
     return result;
+}
+/*============================================================================*/
+float ffmath::factorial( float x )
+{
+    constexpr float ft[ 35 ] = { 1.0F, 1.0F, 2.0F, 6.0F, 24.0F, 120.0F, 720.0F,
+                                 5040.0F, 40320.0F, 362880.0F, 3628800.0F,
+                                 39916800.0F, 479001600.0F, 6227020800.0F,
+                                 87178291200.0F, 1307674368000.0F,
+                                 20922789888000.0F, 355687428096000.0F,
+                                 6402373705728001.0F, 121645100408832000.0F,
+                                 2432902008176640000.0F, 51090942171709440000.0F,
+                                 1124000727777607680000.0F,
+                                 25852016738884978212864.0F,
+                                 620448401733239544217600.0F,
+                                 15511210043330988202786816.0F,
+                                 403291461126605719042260992.0F,
+                                 10888869450418351940239884288.0F,
+                                 304888344611713836734530715648.0F,
+                                 8841761993739700772720181510144.0F,
+                                 265252859812191104246398737973248.0F,
+                                 8222838654177921277277005322125312.0F,
+                                 263130836933693591553328612565319680.0F,
+                                 8683317618811885938715673895318323200.0F,
+                                 295232799039604119555149671006000381952.0F,
+                                 };
+    float y;
+
+    if ( x > 34.0F ) {
+        y = getInf();
+    }
+    else if ( x >= 0.0F ) {
+        const auto i = static_cast<size_t>( x );
+        y = ft[ i ];
+    }
+    else {
+        y = getNan();
+    }
+
+    return y;
 }
 /*============================================================================*/

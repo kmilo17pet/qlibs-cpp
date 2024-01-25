@@ -304,8 +304,8 @@ void test_ffmath(void)
     cout << ffmath::wrapToPi( -4.5 ) << endl;
     cout << ffmath::getNan() << endl;
     cout << ffmath::getInf() << endl;
-    cout << ffmath::tgamma( 12.5 ) << endl;
-    cout << ffmath::lgamma( 12.5 ) << endl;
+    cout << ffmath::tgamma( 2.5 ) << endl;
+    cout << ffmath::lgamma( 2.5 ) << endl;
 }
 
 void test_mat( void )

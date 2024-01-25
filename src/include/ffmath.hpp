@@ -582,6 +582,17 @@ namespace qlibs {
         */
         float lgamma( float x );
 
+        /**
+        * @brief Return the factorial of the integer part of @a x.
+        * @note The argument @a x needs to be positive
+        * @note This function overflows when @a x > 34
+        * @param[in] x The floating point value
+        * @return Upon successful completion, this function shall return the
+        * factorial of the integer part of x. If x is non-positive, factorial() shall
+        * return NaN. If the correct value would cause overflow, lgamma() shall
+        * return +Inf.
+        */
+        float factorial( float x );
 
         /*cstat -MISRAC++2008-0-1-4_b*/
 
@@ -613,6 +624,7 @@ namespace qlibs {
         constexpr float FFP_SQRT1_2         = ( 0.70710678118654752440F );
         /** @brief The natural logarithm of the square root of 2π given as a single-precision floating-point number */
         constexpr float FFP_LN_SQRT_2PI     = ( 0.9189385332046727417803297F );
+
 
 
         /*cstat +MISRAC++2008-0-1-4_b*/
