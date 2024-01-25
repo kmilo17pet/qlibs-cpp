@@ -113,7 +113,7 @@ real_t fis::core::TSigMF( const fis::ioBase * const in,
 
     a = p[ 0 ]; /*slope*/
     b = p[ 1 ]; /*inflection*/
-    if ( isEqual( x, 1.0_re ) ) {
+    if ( ffmath::isEqual( x, 1.0_re ) ) {
         if ( a >= 0.0_re ) {
             y = max;
         }
@@ -121,7 +121,7 @@ real_t fis::core::TSigMF( const fis::ioBase * const in,
             y = min;
         }
     }
-    else if ( isEqual( x, 0.0_re ) ) {
+    else if ( ffmath::isEqual( x, 0.0_re ) ) {
         if ( a >= 0.0_re ) {
             y = min;
         }
@@ -259,7 +259,7 @@ real_t fis::core::LinSMF( const fis::ioBase * const in,
             y = ( x - a )/( b - a );
         }
     }
-    else if ( isEqual( a, b ) ) {
+    else if ( ffmath::isEqual( a, b ) ) {
         y = ( x < a ) ? 0.0_re : 1.0_re;
     }
     else {
@@ -290,7 +290,7 @@ real_t fis::core::LinZMF( const fis::ioBase * const in,
             y = ( a - x )/( a - b );
         }
     }
-    else if ( isEqual( a, b ) ) {
+    else if ( ffmath::isEqual( a, b ) ) {
         y = ( x < a ) ? 1.0_re : 0.0_re;
     }
     else {
@@ -336,7 +336,7 @@ real_t fis::core::SingletonMF( const fis::ioBase * const in,
     const real_t x = in[ 0 ].value;
     (void)n;
 
-    return ( isEqual( x, p[ 0 ] ) ) ? 1.0_re : 0.0_re;
+    return ( ffmath::isEqual( x, p[ 0 ] ) ) ? 1.0_re : 0.0_re;
 }
 /*============================================================================*/
 real_t fis::core::ConcaveMF( const fis::ioBase * const in,
@@ -414,6 +414,20 @@ real_t fis::core::TLinZMF( const fis::ioBase * const in,
     b = p[ 1 ];
 
     return a - ( ( a - b )*x );
+}
+/*============================================================================*/
+real_t fis::core::TRampMF( const ioBase * const in,
+                           const real_t *p,
+                           const size_t n )
+{
+    const real_t x = in[ 0 ].value;
+    real_t a, b;
+    (void)n;
+
+    a = p[ 0 ];
+    b = p[ 1 ];
+
+    return ( b - a )*x + a;
 }
 /*============================================================================*/
 real_t fis::core::RectangleMF( const fis::ioBase * const in,
@@ -576,7 +590,7 @@ real_t fis::core::deFuzzBisector( fis::output * const o,
 }
 /*============================================================================*/
 real_t fis::core::deFuzzLOM( fis::output * const o,
-                           const fis::deFuzzState stage )
+                             const fis::deFuzzState stage )
 {
     real_t d = 0.0_re;
 
@@ -602,7 +616,7 @@ real_t fis::core::deFuzzLOM( fis::output * const o,
 }
 /*============================================================================*/
 real_t fis::core::deFuzzSOM( fis::output * const o,
-                           const fis::deFuzzState stage )
+                             const fis::deFuzzState stage )
 {
     real_t d = 0.0_re;
 
@@ -628,7 +642,7 @@ real_t fis::core::deFuzzSOM( fis::output * const o,
 }
 /*============================================================================*/
 real_t fis::core::deFuzzMOM( fis::output * const o,
-                           const fis::deFuzzState stage )
+                             const fis::deFuzzState stage )
 {
     real_t d = 0.0_re;
 
@@ -640,7 +654,7 @@ real_t fis::core::deFuzzMOM( fis::output * const o,
                 o->v[ xLargest ] = o->x;
                 o->v[ sp ] = 1.0_re;
             }
-            else if ( isEqual( o->y , o->v[ yMax ] ) && ( o->v[ sp ]  > 0.0_re ) ) {
+            else if ( ffmath::isEqual( o->y , o->v[ yMax ] ) && ( o->v[ sp ]  > 0.0_re ) ) {
                 o->v[ xLargest ] = o->x;
             }
             else if ( o->y < o->v[ yMax ] ) {
@@ -667,7 +681,7 @@ real_t fis::core::deFuzzMOM( fis::output * const o,
 }
 /*============================================================================*/
 real_t fis::core::deFuzzWtAverage( fis::output * const o,
-                                 const fis::deFuzzState stage )
+                                   const fis::deFuzzState stage )
 {
     real_t d = 0.0_re;
 
@@ -679,7 +693,7 @@ real_t fis::core::deFuzzWtAverage( fis::output * const o,
 }
 /*============================================================================*/
 real_t fis::core::deFuzzWtSum( fis::output * const o,
-                             const fis::deFuzzState stage )
+                               const fis::deFuzzState stage )
 {
     real_t d = 0.0_re;
 

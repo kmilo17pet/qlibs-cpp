@@ -44,13 +44,6 @@ bool inRangeCoerce( real_t &x,
     return retVal;
 }
 /*============================================================================*/
-bool isEqual( const real_t a,
-              const real_t b,
-              const real_t tol ) noexcept
-{
-    return ( ffmath::absf( a - b ) <= ffmath::absf( tol ) );
-}
-/*============================================================================*/
 bool inPolygon( const real_t x,
                 const real_t y,
                 const real_t * const px,

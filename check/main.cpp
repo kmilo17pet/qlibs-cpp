@@ -3,7 +3,7 @@
 using namespace qlibs;
 
 int main() {
-  
+    /*
     mat<2,2> x( 
                 1.0f, 2.0f,
                 3.0f, 4.0f
@@ -21,6 +21,6 @@ int main() {
     x*=x;
     result.display();
     x.display();
-  
+  */
   return 0;
 }

@@ -58,6 +58,7 @@ namespace qlibs {
             tsigmf,         /*!< Tsukamoto Sigmoid membership function @c f(a,c) [ Only for ::Tsukamoto FIS ]*/
             tsmf,           /*!< Tsukamoto S-Shape membership function @c f(a,b) [ Only for ::Tsukamoto FIS ]*/
             tzmf,           /*!< Tsukamoto Z-Shape membership function @c f(a,b) [ Only for ::Tsukamoto FIS ]*/
+            trampmf,        /*!< Tsukamoto ramp membership function @c f(a,b) [ Only for ::Tsukamoto FIS ]*/
             /*! @cond  */
             FIS_NUM_MFS        /*!< Number of supported membership functions*/
             /*! @endcond  */
@@ -192,8 +193,8 @@ namespace qlibs {
 
         /*! @cond  */
         using mfFunction = real_t (*)( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
         /*! @endcond  */
 
         class core {
@@ -214,61 +215,61 @@ namespace qlibs {
                 virtual ~core() {}
                 core() = default;
                 static real_t bound( real_t y,
-                                    const real_t minValue = 0.0_re,
-                                    const real_t maxValue= 1.0_re );
+                                     const real_t minValue = 0.0_re,
+                                     const real_t maxValue= 1.0_re );
                 static real_t Min( const real_t a,
-                                const real_t b );
+                                   const real_t b );
                 static real_t Prod( const real_t a,
                                     const real_t b );
                 static real_t Max( const real_t a,
-                                const real_t b );
+                                   const real_t b );
                 static real_t ProbOr( const real_t a,
-                                    const real_t b );
+                                      const real_t b );
                 static real_t Sum( const real_t a,
-                                const real_t b );
+                                   const real_t b );
 
                 static real_t TriMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                     const real_t *p,
+                                     const size_t n );
                 static real_t TrapMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t GBellMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
                 static real_t GaussMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
                 static real_t Gauss2MF( const ioBase * const in,
                                         const real_t *p,
                                         const size_t n );
                 static real_t SigMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                     const real_t *p,
+                                     const size_t n );
                 static real_t TSigMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t DSigMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t PSigMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t SMF( const ioBase * const in,
-                                const real_t *p,
-                                const size_t n );
+                                   const real_t *p,
+                                   const size_t n );
                 static real_t TSMF( const ioBase * const in,
                                     const real_t *p,
                                     const size_t n );
                 static real_t ZMF( const ioBase * const in,
-                                const real_t *p,
-                                const size_t n );
+                                   const real_t *p,
+                                   const size_t n );
                 static real_t LinSMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t LinZMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                      const real_t *p,
+                                      const size_t n );
                 static real_t TZMF( const ioBase * const in,
                                     const real_t *p,
                                     const size_t n );
@@ -276,32 +277,35 @@ namespace qlibs {
                                     const real_t *p,
                                     const size_t n );
                 static real_t SingletonMF( const ioBase * const in,
-                                        const real_t *p,
-                                        const size_t n );
+                                           const real_t *p,
+                                           const size_t n );
                 static real_t ConcaveMF( const ioBase * const in,
-                                        const real_t *p,
-                                        const size_t n );
+                                         const real_t *p,
+                                         const size_t n );
                 static real_t TConcaveMF( const ioBase * const in,
-                                        const real_t *p,
-                                        const size_t n );
+                                          const real_t *p,
+                                          const size_t n );
                 static real_t SpikeMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
                 static real_t TLinSMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
                 static real_t TLinZMF( const ioBase * const in,
-                                    const real_t *p,
-                                    const size_t n );
+                                       const real_t *p,
+                                       const size_t n );
+                static real_t TRampMF( const ioBase * const in,
+                                       const real_t *p,
+                                       const size_t n );
                 static real_t RectangleMF( const ioBase * const in,
-                                        const real_t *p,
-                                        const size_t n );
+                                           const real_t *p,
+                                           const size_t n );
                 static real_t CosineMF( const ioBase * const in,
                                         const real_t *p,
                                         const size_t n );
                 static real_t ConstantMF( const ioBase * const in,
-                                        const real_t *p,
-                                        const size_t n );
+                                          const real_t *p,
+                                          const size_t n );
                 static real_t LinearMF( const ioBase * const in,
                                         const real_t *p,
                                         const size_t n );
@@ -335,28 +339,15 @@ namespace qlibs {
                 real_t fx{ 0.0_re };
                 real_t h{ 0.0_re };
                 size_t index{ 0U };
-                inline void evalMFAtIndex( ioBase *io )
+                inline size_t getIndex( void )
                 {
-                    if ( nullptr != shape ) {
-                        fx = h*shape( &io[ index ], points, 1U );
-                    }
+                    return index;
                 }
-                inline real_t evalMF( ioBase &io )
+                inline real_t membership( const ioBase * const io,
+                                          size_t n = 1U )
                 {
-                    real_t y = 0.0_re;
-                    if ( nullptr != shape ) {
-                        y = h*shape( &io, points, 1U );
-                    }
-                    return y;
-                }
-                inline real_t evalMF( ioBase *io,
-                                    size_t n )
-                {
-                    real_t y = 0.0_re;
-                    if ( nullptr != shape ) {
-                        y = shape( io, points, n );
-                    }
-                    return y;
+                    fx = ( nullptr != shape ) ? h*shape( io, points, n ) : 0.0_re;
+                    return fx;
                 }
             public:
                 virtual ~mf() {};
@@ -543,8 +534,6 @@ namespace qlibs {
                         mfFunction customMf,
                         const real_t *cp,
                         const real_t h ) noexcept;
-            void evalInputMFs( void ) noexcept;
-            void truncateInputs( void ) noexcept;
             static real_t parseFuzzValue( mf * const mfIO,
                                           rules index ) noexcept;
             fuzzyOperator getFuzzOperator( void ) noexcept;
@@ -722,7 +711,7 @@ namespace qlibs {
                                 const real_t *cp,
                                 const real_t h = 1.0_re ) noexcept
             {
-                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, h ) : false;
+                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, s, nullptr, cp, ( ( Mamdani == xType ) ? h : 1.0_re ) ) : false;
             }
 
             /**
@@ -743,7 +732,7 @@ namespace qlibs {
                                 const real_t *cp,
                                 const real_t h = 1.0_re ) noexcept
             {
-                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, h ) : false;
+                return ( ( nullptr != outMF ) && ( nMFOutputs > 0U ) ) ? setMF( outMF, io, mf, custommf, customMfs, cp, ( ( Mamdani == xType ) ? h : 1.0_re ) ) : false;
             }
 
             /**

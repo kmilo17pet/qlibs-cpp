@@ -1,6 +1,5 @@
 #include <include/interp1.hpp>
 #include <include/ffmath.hpp>
-#include <include/mathex.hpp>
 
 using namespace qlibs;
 
@@ -307,7 +306,7 @@ real_t interp1::spline( const real_t x,
             }
         }
 
-        if ( isEqual( x , tx[ i + 1U ] ) ) {
+        if ( ffmath::isEqual( x , tx[ i + 1U ] ) ) {
             y = ty[ i + 1U ];
         }
         else {
@@ -366,7 +365,7 @@ real_t interp1::cSpline( const real_t x,
             }
         }
 
-        if ( isEqual( x , tx[ i + 1U ] ) ) {
+        if ( ffmath::isEqual( x , tx[ i + 1U ] ) ) {
             y = ty[ i + 1U ];
         }
         else {
@@ -399,7 +398,7 @@ real_t interp1::slope( const real_t * const tx,
 {
     real_t m;
 
-    if ( isEqual( tx[ i + 1U ], tx[ i - 1U ] ) ) {
+    if ( ffmath::isEqual( tx[ i + 1U ], tx[ i - 1U ] ) ) {
         m = 0.0_re;
     }
     else {

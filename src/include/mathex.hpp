@@ -63,18 +63,6 @@ namespace qlibs {
                         const real_t upperL ) noexcept;
 
     /**
-    * @brief Determines if the parameters given as floating-point values are
-    * approximately equal.
-    * @param[in] a Input to be compared.
-    * @param[in] b Input to be compared.
-    * @param[in] tol Tolerance
-    * @return @c true when both values are approximately equal.
-    */
-    bool isEqual( const real_t a,
-                  const real_t b,
-                  const real_t tol = 1.175494351e-38F ) noexcept;
-
-    /**
     * @brief Determines if the point at ( @a x, @a y ) is inside the polygon
     * given by the set of points on  @a px and @a py.
     * @param[in] x Point x-coordinate

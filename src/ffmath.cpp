@@ -11,6 +11,7 @@ static inline void cast_reinterpret( T1 &f, const T2 &u )
 
 static float getAbnormal( const int i );
 static float compute_cbrt( float x , bool r );
+static float lgamma_positive( float x );
 
 static inline float absolute( const float x )
 {
@@ -29,6 +30,13 @@ static float getAbnormal( const int i )
     }
 
     return f_ab[ i ];
+}
+/*============================================================================*/
+bool ffmath::isEqual( const float a,
+                      const float b,
+                      const float tol ) noexcept
+{
+    return ( ffmath::absf( a - b ) <= ffmath::absf( tol ) );
 }
 /*============================================================================*/
 float ffmath::getInf( void )
@@ -566,5 +574,318 @@ float ffmath::nextAfter( float x, float y )
     }
 
     return retVal;
+}
+/*============================================================================*/
+float ffmath::tgamma( float x )
+{
+    float result;
+
+    const auto fClass = ffmath::classify( x );
+    if ( classification::FFP_NAN == fClass ) {
+        result = getNan();
+    }
+    else if ( classification::FFP_ZERO == fClass ) {
+        result = getInf(); /* a huge value */
+    }
+    else if ( classification::FFP_INFINITE == fClass ) {
+        if ( x > 0.0f ) {
+            result = getInf(); /* a huge value */
+        }
+        else {
+            result = getNan();
+        }
+    }
+    else {
+        bool parity = false;
+        float fact = 1.0F;
+        float y = x;
+        float y1;
+
+        if ( y <= 0.0F ) {
+            float isItAnInt;
+
+            y = -x;
+            y1 = ffmath::trunc( y );
+            isItAnInt = y - y1;
+            if ( !ffmath::isEqual( 0.0F, isItAnInt ) ) {
+                const float tmp = 2.0F*ffmath::trunc( y1*0.5F );
+
+                if ( !ffmath::isEqual( y1, tmp ) ) {
+                    parity = true;
+                }
+                fact = -FFP_PI/ffmath::sin( FFP_PI*isItAnInt );
+                y += 1.0F;
+            }
+            else {
+                result = ffmath::getNan();
+                goto EXIT_TGAMMA;
+            }
+        }
+        if ( y < 1.19209290E-07F ) { /* y < eps */
+            if ( y >= 1.175494351e-38F ) { /* y >= MinimumX */
+                result = 1.0F/y;
+            }
+            else {
+                result = getInf();
+            }
+        }
+        else if ( y < 12.0F ) {
+            float num = 0.0F, den = 1.0F, z;
+            int n = 0;
+
+            y1 = y;
+            if ( y < 1.0F ) {
+                z = y;
+                y += 1.0F;
+            }
+            else {
+                n = static_cast<int>( y ) - 1;
+                /*cstat -CERT-FLP36-C */
+                y -= static_cast<float>( n );
+                /*cstat +CERT-FLP36-C */
+                z = y - 1.0F;
+            }
+
+            num = z*( num + -1.71618513886549492533811e+0F );
+            den = ( den*z ) -3.08402300119738975254353e+1F;
+            num = z*( num + 2.47656508055759199108314e+1F );
+            den = ( den*z ) + 3.15350626979604161529144e+2F;
+            num = z*( num - 3.79804256470945635097577e+2F );
+            den = ( den*z ) - 1.01515636749021914166146e+3F;
+            num = z*( num + 6.29331155312818442661052e+2F );
+            den = ( den*z ) - 3.10777167157231109440444e+3F;
+            num = z*( num + 8.66966202790413211295064e+2F );
+            den = ( den*z ) + 2.25381184209801510330112e+4F;
+            num = z*( num - 3.14512729688483675254357e+4F );
+            den = ( den*z ) + 4.75584627752788110767815e+3F;
+            num = z*( num - 3.61444134186911729807069e+4F );
+            den = ( den*z ) - 1.34659959864969306392456e+5F;
+            num = z*( num + 6.64561438202405440627855e+4F );
+            den = ( den*z ) - 1.15132259675553483497211e+5F;
+
+            result = ( num/den ) + 1.0F;
+            if ( y1 < y ) {
+                  result /= y1;
+            }
+            else if ( y1 > y ) {
+                for ( int i = 0; i < n ; ++i ) {
+                    result *= y;
+                    y += 1.0F;
+                }
+            }
+        }
+        else {
+            if ( x <= 171.624F ) { /* x <= xBig */
+                const float yy  = y*y;
+                float sum = 5.7083835261e-03F;
+
+                sum = ( sum/yy ) - 1.910444077728e-03F;
+                sum = ( sum/yy ) + 8.4171387781295e-04F;
+                sum = ( sum/yy ) - 5.952379913043012e-04F;
+                sum = ( sum/yy ) + 7.93650793500350248e-04F;
+                sum = ( sum/yy ) - 2.777777777777681622553e-03F;
+                sum = ( sum/yy ) + 8.333333333333333331554247e-02F;
+
+                sum = ( sum /y ) - y + FFP_LN_SQRT_2PI;
+                sum += ( y - 0.5F )*ffmath::log( y );
+                result = ffmath::exp( sum );
+            }
+            else {
+                result = ffmath::getInf();
+            }
+        }
+        if ( parity ) {
+            result = -result;
+        }
+        if ( !ffmath::isEqual( fact, 1.0F ) ) {
+            result = fact/result;
+        }
+    }
+
+    EXIT_TGAMMA:
+    return result;
+}
+/*============================================================================*/
+static float lgamma_positive( float x )
+{
+    constexpr float d1 = -5.772156649015328605195174e-1F;
+    constexpr float d2 = 4.227843350984671393993777e-1F;
+    constexpr float d4 = 1.791759469228055000094023e+0F;
+    constexpr float p1[ 8 ] = { 4.945235359296727046734888e+0F,
+                                2.018112620856775083915565e+2F,
+                                2.290838373831346393026739e+3F,
+                                1.131967205903380828685045e+4F,
+                                2.855724635671635335736389e+4F,
+                                3.848496228443793359990269e+4F,
+                                2.637748787624195437963534e+4F,
+                                7.225813979700288197698961e+3F };
+    constexpr float q1[ 8 ] = { 6.748212550303777196073036e+1F,
+                                1.113332393857199323513008e+3F,
+                                7.738757056935398733233834e+3F,
+                                2.763987074403340708898585e+4F,
+                                5.499310206226157329794414e+4F,
+                                6.161122180066002127833352e+4F,
+                                3.635127591501940507276287e+4F,
+                                8.785536302431013170870835e+3F };
+    constexpr float p2[ 8 ] = { 4.974607845568932035012064e+0F,
+                                5.424138599891070494101986e+2F,
+                                1.550693864978364947665077e+4F,
+                                1.847932904445632425417223e+5F,
+                                1.088204769468828767498470e+6F,
+                                3.338152967987029735917223e+6F,
+                                5.106661678927352456275255e+6F,
+                                3.074109054850539556250927e+6F };
+    constexpr float q2[ 8 ] = { 1.830328399370592604055942e+2F,
+                                7.765049321445005871323047e+3F,
+                                1.331903827966074194402448e+5F,
+                                1.136705821321969608938755e+6F,
+                                5.267964117437946917577538e+6F,
+                                1.346701454311101692290052e+7F,
+                                1.782736530353274213975932e+7F,
+                                9.533095591844353613395747e+6F };
+    constexpr float p4[ 8 ] = { 1.474502166059939948905062e+04F,
+                                2.426813369486704502836312e+06F,
+                                1.214755574045093227939592e+08F,
+                                2.663432449630976949898078e+09F,
+                                2.940378956634553899906876e+10F,
+                                1.702665737765398868392998e+11F,
+                                4.926125793377430887588120e+11F,
+                                5.606251856223951465078242e+11F };
+    constexpr float q4[ 8 ] = { 2.690530175870899333379843e+03F,
+                                6.393885654300092398984238e+05F,
+                                4.135599930241388052042842e+07F,
+                                1.120872109616147941376570e+09F,
+                                1.488613728678813811542398e+10F,
+                                1.016803586272438228077304e+11F,
+                                3.417476345507377132798597e+11F,
+                                4.463158187419713286462081e+11F };
+    constexpr float pnt68 = 0.6796875F;
+    float result, y;
+
+    if ( x > 171.624F ) {
+        result = ffmath::getInf(); /* a huge value */
+    }
+    else {
+        float corrector, num, den;
+
+        y = x;
+        if ( y <= 1.19209290E-07F ) { /* y < eps */
+            result = -ffmath::log( y );
+        }
+        else if ( y <= 1.5F ) {
+            float xMinus;
+
+            if ( y < pnt68 ) {
+                corrector = -ffmath::log( y );
+                xMinus = y;
+            }
+            else {
+                corrector = 0.0F;
+                xMinus = ( y - 0.5F ) - 0.5F;
+            }
+            if ( ( y <= 0.5F ) || ( y >= pnt68 ) ) {
+                den = 1.0F;
+                num = 0.0F;
+                for ( size_t i = 0U ; i < 8U ; ++i ) {
+                    num = ( num*xMinus ) + p1[ i ];
+                    den = ( den*xMinus ) + q1[ i ];
+                }
+                result = corrector + ( xMinus*( d1 + xMinus*( num/den ) ) );
+            }
+            else {
+                xMinus = ( y - 0.5F ) - 0.5F;
+                den = 1.0F;
+                num = 0.0F;
+                for ( size_t i = 0U; i < 8U ; ++i ) {
+                    num = num*xMinus + p2[ i ];
+                    den = den*xMinus + q2[ i ];
+                }
+                result = corrector + ( xMinus*( d2 + xMinus*( num/den ) ) );
+            }
+        }
+        else if ( y <= 4.0F ) {
+            const float xMinus = y - 2.0F;
+            den = 1.0F;
+            num = 0.0F;
+            for ( size_t i = 0U; i < 8U ; ++i ) {
+                num = num*xMinus + p2[ i ];
+                den = den*xMinus + q2[ i ];
+            }
+            result = xMinus*( d2 + xMinus*( num/den ) );
+        }
+        else if ( y <= 12.0F ) {
+            const float xMinus = y - 4.0F;
+            den = -1.0F;
+            num = 0.0F;
+            for ( size_t i = 0U; i < 8U ; ++i ) {
+                num = num*xMinus + p4[ i ];
+                den = den*xMinus + q4[ i ];
+            }
+            result = d4 + xMinus*( num/den );
+        }
+        else {
+            result = 0.0F;
+            if ( y <= 4294967296.87842273712158203125F ) { /* y < xBig^(1/4)*/
+                const float yy = y*y;
+                result = 5.7083835261e-03F;
+                result = ( result/yy ) - 1.910444077728e-03F;
+                result = ( result/yy ) + 8.4171387781295e-04F;
+                result = ( result/yy ) - 5.952379913043012e-04F;
+                result = ( result/yy ) + 7.93650793500350248e-04F;
+                result = ( result/yy ) - 2.777777777777681622553e-03F;
+                result = ( result/yy ) + 8.333333333333333331554247e-02F;
+            }
+            result /= y;
+            corrector = ffmath::log( y );
+            result += ffmath::FFP_LN_SQRT_2PI - ( 0.5F*corrector );
+            result += y*( corrector - 1.0F );
+        }
+    }
+
+    return result;
+}
+/*============================================================================*/
+float ffmath::lgamma( float x )
+{
+    float result;
+
+    const auto fClass = ffmath::classify( x );
+    if ( classification::FFP_NAN == fClass ) {
+        result = getNan();
+    }
+    else if ( classification::FFP_ZERO == fClass ) {
+        result = getInf();
+    }
+    else if ( classification::FFP_INFINITE == fClass ) {
+        result = getInf();
+    }
+    else {
+        float y;
+
+        if ( x < 0.0F ) {
+            if ( x <= -4503599627370496.0F ) { /* x < 2^52 */
+                result = getInf();
+            }
+            else {
+                float a, y1, isItAnInt;
+
+                y = -x;
+                y1 = ffmath::trunc( y );
+                isItAnInt = y - y1;
+                if ( ffmath::isEqual( 0.0F, isItAnInt ) ) {
+                    result = getInf();
+                }
+                else {
+                    a = sin( FFP_PI*isItAnInt );
+                    result = ffmath::log( FFP_PI/ffmath::absf( a*x ) ) - lgamma_positive( -x );
+                }
+            }
+        }
+        else {
+            result = lgamma_positive( x );
+        }
+    }
+
+    return result;
 }
 /*============================================================================*/

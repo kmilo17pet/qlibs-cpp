@@ -216,7 +216,7 @@ bool fis::instance::setMF( fis::mf *m,
         /* Only for Sugeno consequents*/
         &ConstantMF, &LinearMF,
         /* Only for Tsukamoto consequents*/
-        &TLinSMF, &TLinZMF, &TConcaveMF, &TSigMF, &TSMF, &TZMF
+        &TLinSMF, &TLinZMF, &TConcaveMF, &TSigMF, &TSMF, &TZMF, &TRampMF
     };
 
     if ( ( io >= 0 ) && ( mf >= 0 ) && ( s < FIS_NUM_MFS ) ) {
@@ -233,27 +233,20 @@ bool fis::instance::setMF( fis::mf *m,
     return retValue;
 }
 /*============================================================================*/
-void fis::instance::evalInputMFs( void ) noexcept
-{
-    for ( size_t i = 0U ; i < nMFInputs ; ++i ) {
-        inMF[ i ].evalMFAtIndex( xInput );
-    }
-}
-/*============================================================================*/
-void fis::instance::truncateInputs( void ) noexcept
-{
-    for ( size_t i = 0U ; i < nInputs ; ++i ) {
-        xInput[ i ].value = bound( xInput[ i ].value, xInput[ i ].min, xInput[ i ].max );
-    }
-}
-/*============================================================================*/
 bool fis::instance::fuzzify( void ) noexcept
 {
     bool retValue = false;
 
     if ( ( nullptr != xInput ) && ( nullptr != inMF ) ) {
-        truncateInputs();
-        evalInputMFs();
+        /* truncate inputs to its own range */
+        for ( size_t i = 0U ; i < nInputs ; ++i ) {
+            xInput[ i ].value = bound( xInput[ i ].value, xInput[ i ].min, xInput[ i ].max );
+        }
+        /* evaluate input membership functions */
+        for ( size_t i = 0U ; i < nMFInputs ; ++i ) {
+            const size_t mfIndex = inMF[ i ].getIndex();
+            (void)inMF[ i ].membership( &xInput[ mfIndex ] );
+        }
         retValue = true;
     }
 
@@ -356,8 +349,9 @@ size_t fis::instance::aggregationFindConsequent( size_t i ) noexcept
 {
     while ( Q_FIS_THEN != xRules[ i++ ] ) {}
     aggregationState = &fis::instance::inferenceConsequent;
+    --i;
 
-    return --i;
+    return i;
 }
 /*============================================================================*/
 size_t fis::instance::inferenceConsequent( size_t i ) noexcept
@@ -384,13 +378,13 @@ size_t fis::instance::inferenceConsequent( size_t i ) noexcept
 
         if ( Mamdani == xType ) {
             real_t v;
-            v = m.evalMF( o );
+            v = m.membership( &o );
             v = ( neg )? ( 1.0_re - v ) : v;
             o.y = aggregate( o.y, implicate( wi[ ruleCount ], v ) );
         }
         else { /* Sugeno and Tsukamoto*/
             real_t zi;
-            zi = m.evalMF( xInput, nInputs );
+            zi = m.membership( xInput, nInputs );
             o.v[ sum_wz ] += zi*wi[ ruleCount ];
             o.v[ sum_w ] += wi[ ruleCount ];
         }
