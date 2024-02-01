@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rms_0',['RMS',['../group__qrms.html',1,'']]]
+  ['smoothing_20filters_0',['Smoothing filters',['../group__qssmoother.html',1,'']]]
 ];

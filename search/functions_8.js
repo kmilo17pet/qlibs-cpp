@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['incircle_0',['inCircle',['../group__qfmathex.html#ga820d66c5c3ded982609ee93cf7eabf75',1,'qlibs']]],
+  ['incircle_0',['inCircle',['../group__qffmath.html#gacc5b654541d4e901db858638dc5e4686',1,'qlibs::ffmath']]],
   ['inference_1',['inference',['../classqlibs_1_1fis_1_1system.html#a7d94c043abf760d006ae6a8f0551e5d0',1,'qlibs::fis::system::inference()'],['../classqlibs_1_1fis_1_1instance.html#a9d995e59a148a40a9642e20446bbca8c',1,'qlibs::fis::instance::inference()']]],
   ['init_2',['init',['../classqlibs_1_1n_state.html#a8d12da7effe75a714ed9ec010d132202',1,'qlibs::nState']]],
-  ['inpolygon_3',['inPolygon',['../group__qfmathex.html#gab064b0b79702d1ca904ede92900d3ff8',1,'qlibs']]],
+  ['inpolygon_3',['inPolygon',['../group__qffmath.html#gae4e363f7f533fad80c32e1f623b670bf',1,'qlibs::ffmath']]],
   ['input_4',['input',['../classqlibs_1_1fis_1_1input.html#a1fcfd711bba511c572eda1e92b3f8c6d',1,'qlibs::fis::input']]],
-  ['inrangecoerce_5',['inRangeCoerce',['../group__qfmathex.html#gaa7b2e00118e1370b05678aa5e8c2a5bf',1,'qlibs']]],
+  ['inrangecoerce_5',['inRangeCoerce',['../group__qffmath.html#gaf9c395c971887baa6c243afc98d94a3f',1,'qlibs::ffmath']]],
   ['insertsample_6',['insertSample',['../classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5',1,'qlibs::tdl']]],
   ['instance_7',['instance',['../classqlibs_1_1fis_1_1instance.html#a466dbdbac4c947e4667c7b585f5c3384',1,'qlibs::fis::instance']]],
   ['integrate_8',['integrate',['../classqlibs_1_1n_state.html#a33dbf81c894e3c72f2eea4c3c154ee3e',1,'qlibs::nState']]],

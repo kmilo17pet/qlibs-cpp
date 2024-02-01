@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pid_20controller_0',['PID Controller',['../group__qpid.html',1,'']]]
+  ['rms_0',['RMS',['../group__qrms.html',1,'']]]
 ];

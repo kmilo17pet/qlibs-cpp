@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['math_20extra_0',['Math extra',['../group__qfmathex.html',1,'']]]
+  ['numerical_20state_20class_0',['Numerical state class',['../group__qnuma.html',1,'']]]
 ];
