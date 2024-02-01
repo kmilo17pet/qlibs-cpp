@@ -9,7 +9,7 @@
 *
 * The list of provided functions and constants:
 *
-* @subsection  qffmath_classify Classification
+* @subsection qffmath_classify Classification
 * - \ref qlibs::ffmath::classify() Categorizes the floating-point number
 * - \ref qlibs::ffmath::isNan() Determine if argument is Not-A-Number (NaN)
 * - \ref qlibs::ffmath::isInf() Determine if argument is Infinity.
@@ -70,6 +70,15 @@
 * - \ref qlibs::ffmath::tgamma() Computes the gamma function
 * - \ref qlibs::ffmath::lgamma() Computes the natural logarithm of the gamma function
 * - \ref qlibs::ffmath::factorial() Computes the factorial of the integer part
+* - \ref qlibs::ffmath::assoc_laguerre() Computes the associated Laguerre polynomials
+* - \ref qlibs::ffmath::assoc_legendre() Computes the associated Legendre polynomials
+* - \ref qlibs::ffmath::beta() Computes the Beta function
+* - \ref qlibs::ffmath::comp_ellint_1() Computes the complete elliptic integral of the first kind
+* - \ref qlibs::ffmath::comp_ellint_2() Computes the complete elliptic integral of the second kind
+* - \ref qlibs::ffmath::comp_ellint_3() Computes the complete elliptic integral of the third kind
+* - \ref qlibs::ffmath::ellint_1() Computes the incomplete elliptic integral of the first kind
+* - \ref qlibs::ffmath::ellint_2() Computes the incomplete elliptic integral of the second kind
+* - \ref qlibs::ffmath::ellint_3() Computes the incomplete elliptic integral of the third kind
 *
 * @subsection  qffmath_const Constants
 * - \ref qlibs::ffmath::getInf() Returns positive infinity @c inf as a 32-bit floating point number
@@ -89,10 +98,12 @@
 * - \ref qlibs::ffmath::FFP_SQRT1_2 The inverse of square root of 2
 *
 * @subsection  qmatext Math extra
-* - \ref qlibs::mapMinMax Scales the given input from a range to another
-* - \ref qlibs::normalize Normalize the given input to value range between 0 and 1.
-* - \ref qlibs::inRangeCoerce Determines if a value falls within a range and coerces the value to fall within the range
-* - \ref qlibs::isEqual Determines if the parameters given as floating-point values are approximately equal.
-* - \ref qlibs::inPolygon Determines if a point is inside a polygon
-* - \ref qlibs::inCircle Determines if a point is inside a circle
+* - \ref qlibs::ffmath::lerp() Linear interpolation
+* - \ref qlibs::ffmath::midpoint() Computes the midpoint of two floating-points
+* - \ref qlibs::ffmath::map() Scales the given input from a range to another
+* - \ref qlibs::ffmath::normalize() Normalize the given input to value range between 0 and 1.
+* - \ref qlibs::ffmath::inRangeCoerce() Determines if a value falls within a range and coerces the value to fall within the range
+* - \ref qlibs::ffmath::isEqual() Determines if the parameters given as floating-point values are approximately equal.
+* - \ref qlibs::ffmath::inPolygon() Determines if a point is inside a polygon
+* - \ref qlibs::ffmath::inCircle() Determines if a point is inside a circle
 */

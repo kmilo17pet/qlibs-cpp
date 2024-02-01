@@ -239,7 +239,8 @@ namespace qlibs {
         * @return If successful, returns the IEEE floating-point remainder of the
         * division @c x/y. If the domain validation fails, a @c nan value is returned.
         */
-        float rem( float x, float y );
+        float rem( float x,
+                   float y );
 
         /**
         * @brief Computes the floating point remainder after division of @a x
@@ -263,7 +264,8 @@ namespace qlibs {
         * division @c x/y. If the domain validation fails, a @c nan value is
         * returned.
         */
-        float mod( float x, float y );
+        float mod( float x,
+                   float y );
 
         /**
         * @brief Computes the sine of @a x (measured in radians).
@@ -278,7 +280,7 @@ namespace qlibs {
         * @brief Computes the cosine of @a x (measured in radians).
         * @param[in] x The floating point value
         * @return If all validations are ok, the cosine of @a x @c cos(x) in the range
-        * [-1 ; +1], is returned. If the domain validation fails, a @c nan value is
+        * <tt>[-1 ; +1]</tt>, is returned. If the domain validation fails, a @c nan value is
         * returned.
         */
         float cos( float x );
@@ -295,7 +297,7 @@ namespace qlibs {
         * @brief Computes the principal value of the arc sine of @a x.
         * @param[in] x The floating point value
         * @return If all validations are ok, the arc sine of @a x @c arcsin(x) in the range
-        * [-pi/2 ; pi/2]. is returned.If the domain validation fails, a @c nan value is
+        * <tt>[-pi/2 ; pi/2]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
         float asin( float x );
@@ -304,7 +306,7 @@ namespace qlibs {
         * @brief Computes the principal value of the arc cosine of @a x.
         * @param[in] x The floating point value
         * @return If all validations are ok, the arc cosine of @a x @c arccos(x) in the
-        * range [0 ; pi]. is returned.If the domain validation fails, a @c nan value is
+        * range <tt>[0 ; pi]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
         float acos( float x );
@@ -313,21 +315,22 @@ namespace qlibs {
         * @brief Computes the principal value of the arc tangent of @a x.
         * @param[in] x The floating point value
         * @return If all validations are ok, the arc sine of @a x @c arctan(x) in the range
-        * [-pi/2 ; pi/2]. is returned.If the domain validation fails, a @c nan value is
+        * <tt>[-pi/2 ; pi/2]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
         float atan( float x );
 
         /**
-        * @brief Computes the arc tangent of y/x using the signs of arguments to
+        * @brief Computes the arc tangent of @c y/x using the signs of arguments to
         * determine the correct quadrant.
         * @param[in] y The floating point value
         * @param[in] x The floating point value
         * @return If all validations are ok, the arc tangent of @c y/x <tt>arctan(y/x)</tt>
-        * in the range [-pi ; +pi] radians, is returned. If the domain validation fails,
+        * in the range <tt>[-pi ; +pi]</tt> radians, is returned. If the domain validation fails,
         * a @c nan value is returned.
         */
-        float atan2( float y, float x );
+        float atan2( float y,
+                     float x );
 
         /**
         * @brief Computes 2 raised to the given power @a x.
@@ -348,7 +351,7 @@ namespace qlibs {
         float log2( float x );
 
         /**
-        * @brief Computes the e (Euler's number, 2.7182818) raised to the given
+        * @brief Computes the @a e ( Euler's number, @c 2.7182818 ) raised to the given
         * power @a x.
         * @param[in] x The floating point value
         * @return If all validations are ok, the base-e exponential of @a x <tt>e^(x)</tt>
@@ -393,7 +396,8 @@ namespace qlibs {
         * the pole or range validation fails due to overflow, @c ±inf is
         * returned.
         */
-        float pow( float b, float e );
+        float pow( float b,
+                   float e );
 
         /**
         * @brief Computes hyperbolic sine of @a x.
@@ -482,6 +486,113 @@ namespace qlibs {
         float wrapTo360( float x );
 
         /**
+        * @brief Computes the midpoint of the floating-points @a  a and @a b.
+        * @param a A floating point value
+        * @param b A floating point value
+        * @return Half the sum of @a a and @a b. No overflow occurs. A at most
+        * one inexact operation occurs.
+        */
+        float midpoint( float a,
+                        float b );
+
+        /**
+        * @brief  Computes the linear interpolation between @a a and @a b, if
+        * the parameter t is inside [0, 1] (the linear extrapolation otherwise),
+        * i.e. the result of <tt> a+t*(b-a) </tt> with accounting for floating-point
+        * calculation imprecision.
+        * @param a A floating point value
+        * @param b A floating point value
+        * @param t A floating point value
+        * @return Return <tt> a+t*(b-a) </tt>. When both @a a and @a b are finite, the
+        * following properties are guaranteed:
+        * If @c t==0, the result is equal to @a a.
+        * If @c t==1, the result is equal to @a b.
+        * If @c t>=0 and @c t<=1, the result is finite.
+        * If @a t is finite and @c a==b, the result is equal to @a a.
+        * If @a t is finite or <tt> (a-b)!=0</tt> with @a t infinity, the result
+        * is not @c nan.
+        * Let @c CMP(x,y) be @c 1 if @c x>y, @c -1 if @c x<y, and @c 0 otherwise.
+        * For any @c t1 and @c t2, the product of: <tt> CMP(lerp(a,b,t2)</tt>,
+        * <tt>lerp(a,b,t1)</tt>, <tt> CMP(t2,t1)</tt> , and @c CMP(b,a) is non-negative.
+        * (That is, lerp() is monotonic.).
+        */
+        float lerp( float a,
+                    float b,
+                    float t );
+
+        /**
+        * @brief Scales the given input @a x in value range given by  @a xMin and
+        * @a xMax to value range specified by the @a yMin and @a yMax.
+        * @param[in] x Input
+        * @param[in] xMin Input minimum value for range
+        * @param[in] xMax Input maximum  value for range
+        * @param[in] yMin Output minimum value for range
+        * @param[in] yMax Output maximum value for range
+        * @return The scaled value in range @a yMin and @a yMax.
+        */
+        float map( const float x,
+                   const float xMin,
+                   const float xMax,
+                   const float yMin,
+                   const float yMax ) noexcept;
+        /**
+        * @brief Normalize the given input @a x in value range given by @a xMin and
+        * @a xMax to value range between 0 and 1.
+        * @param[in] x Input
+        * @param[in] xMin Input minimum value for range
+        * @param[in] xMax Input maximum  value for range
+        * @return The scaled value in range [0 - 1].
+        */
+        real_t normalize( const float x,
+                          const float xMin,
+                          const float xMax ) noexcept;
+        /**
+        * @brief Determines if the value pointed by @a x falls within a range
+        * specified by the upper limit and lower limit inputs and coerces the value
+        * to fall within the range
+        * @param[in,out] x Input
+        * @param[in] lowerL Lower limit.
+        * @param[in] upperL Upper limit.
+        * @return @c true when the value falls within the specified range, otherwise
+        * false
+        */
+        bool inRangeCoerce( float &x,
+                            const float lowerL,
+                            const float upperL ) noexcept;
+
+        /**
+        * @brief Determines if the point at ( @a x, @a y ) is inside the polygon
+        * given by the set of points on  @a px and @a py.
+        * @param[in] x Point x-coordinate
+        * @param[in] y Point y-coordinate
+        * @param[in] px x-coordinate points of the polygon
+        * @param[in] py y-coordinate points of the polygon
+        * @param[in] p Number of points that represent the polygon
+        * @return @c true when the given point is inside the polygon
+        */
+        bool inPolygon( const float x,
+                        const float y,
+                        const float * const px,
+                        const float * const py,
+                        const size_t p ) noexcept;
+
+        /**
+        * @brief Determines if the point at ( @a x, @a y) is inside the circle
+        * with radius @a r located at @a cx and @a cy.
+        * @param[in] x Point x-coordinate
+        * @param[in] y Point y-coordinate
+        * @param[in] cx X-location of the circle
+        * @param[in] cy Y-location of the circle
+        * @param[in] r Radio of the circle
+        * @return @c true when the given point is inside the circle
+        */
+        bool inCircle( const float x,
+                       const float y,
+                       const float cx,
+                       const float cy,
+                       const float r ) noexcept;
+
+        /**
         * @brief Computes the error function of @a x.
         * @param[in] x The floating point value
         * @return If all validations are ok, the value of the error function is
@@ -509,7 +620,8 @@ namespace qlibs {
         * the range of an @c int, the behavior is unspecified. If @a x is not a
         * floating-point number, the behavior is unspecified.
         */
-        float rexp( float x, int32_t *pw2 );
+        float rexp( float x,
+                    int32_t *pw2 );
 
         /**
         * @brief Multiplies a floating point value @a x by the number 2 raised to
@@ -521,7 +633,8 @@ namespace qlibs {
         * overflow, @c ±inf is returned. If the range validation fails
         * due to underflow, the correct result (after rounding) is returned.
         */
-        float ldexp( float x, int32_t pw2 );
+        float ldexp( float x,
+                     int32_t pw2 );
 
         /**
         * @brief Computes the square root of the sum of the squares of @a x and @a y,
@@ -535,7 +648,8 @@ namespace qlibs {
         * fails due to underflow, the correct result
         * (after rounding) is returned.
         */
-        float hypot( float x, float y );
+        float hypot( float x,
+                     float y );
 
         /**
         * @brief Returns the next representable value of @a x in the direction of
@@ -548,21 +662,22 @@ namespace qlibs {
         * (with the same sign as @a x). If the range validation fails due to underflow,
         * the correct result is returned.
         */
-        float nextAfter( float x, float y );
+        float nextAfter( float x,
+                         float y );
 
         /**
         * @brief Computes the gamma function of @a x
         * @param[in] x The floating point value
-        * @return Upon successful completion, this function shall return Gamma(x).
-        * If @a x is a negative integer, a Inf() value shall be returned. If the
-        * correct value would cause overflow, tgamma() shall return ±Inf,
+        * @return Upon successful completion, this function shall return @c Gamma(x).
+        * If @a x is a negative integer, a @c inf value shall be returned. If the
+        * correct value would cause overflow, tgamma() shall return @c ±Inf,
         * with the same sign as the correct value of the function.
-        * If x is NaN, a NaN shall be returned.
-        * If x is +Inf, x shall be returned.
-        * If x is ±0, tgamma() shall return ±Inf.
-        * If x is -Inf, a NaN  value shall be returned.
-        * For IEEE Std 754-1985 float, overflow happens when 0 < x < 1/FLT_MAX,
-        * and 171.7 < x.
+        * If @a x is @c nan, a @c nan shall be returned.
+        * If @a x is @c +inf, @a x shall be returned.
+        * If @a x is @c ±0, tgamma() shall return @c ±Inf.
+        * If @a x is @c -inf, a @c nan  value shall be returned.
+        * For IEEE Std 754-1985 float, overflow happens when <tt> 0 < x < 1/FLT_MAX</tt>,
+        * and <tt>171.7 < x</tt>.
         */
         float tgamma( float x );
 
@@ -573,12 +688,12 @@ namespace qlibs {
         * over the reals, except the non-positive integers).
         * @param[in] x The floating point value
         * @return Upon successful completion, this function shall return the
-        * logarithmic gamma of x. If x is a non-positive integer, lgamma() shall
-        * return +Inf. If the correct value would cause overflow, lgamma() shall
-        * return ±Inf having the same sign as the correct value.
-        * If x is NaN, a NaN shall be returned.
-        * If x is 1 or 2, +0 shall be returned.
-        * If x is ±Inf, +Inf shall be returned.
+        * logarithmic gamma of @a x. If @a x is a non-positive integer, lgamma() shall
+        * return @c +inf. If the correct value would cause overflow, lgamma() shall
+        * return @c ±inf having the same sign as the correct value.
+        * If @a x is @c nan, a @c nan shall be returned.
+        * If @a x is @c 1 or @c 2, @c +0 shall be returned.
+        * If @a x is @c ±inf, @c +inf shall be returned.
         */
         float lgamma( float x );
 
@@ -590,11 +705,121 @@ namespace qlibs {
         * With @a x values greater than @c 35, this function overflows.
         * @param[in] x The floating point value
         * @return Upon successful completion, this function shall return the
-        * factorial of the integer part of x. If x is non-positive, factorial() shall
-        * return NaN. If the correct value would cause overflow, lgamma() shall
-        * return +Inf.
+        * factorial of the integer part of @a x. If @a x is non-positive, factorial() shall
+        * return @c nan. If the correct value would cause overflow, lgamma() shall
+        * return @c +inf.
         */
         float factorial( float x );
+
+        /**
+        * @brief Computes the associated Laguerre polynomials of the degree @a n,
+        * order @a m, and argument @a x.
+        * @param[in] n The degree of the polynomial, an unsigned integer value
+        * @param[in] m The order of the polynomial, an unsigned integer value
+        * @param[in] x The argument, a floating-point or integer value
+        * @return If all validations are ok, the value of the associated Laguerre
+        * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
+        * returned. If @a x is negative, @c nan is returned. If @a n or @a m is greater or
+        * equal to @c 128, the behavior is implementation-defined.
+        */
+        float assoc_laguerre( unsigned int n,
+                              unsigned int m,
+                              float x );
+
+        /**
+        * @brief Computes the associated Legendre polynomials of the degree @a n,
+        * order @a m, and argument @a x.
+        * @param[in] n The degree of the polynomial, an unsigned integer value
+        * @param[in] m The order of the polynomial, an unsigned integer value
+        * @param[in] x The argument, a floating-point or integer value
+        * @return If all validations are ok, the value of the associated Legendre
+        * polynomial of x shall be returned. If the argument is @c nan, a @c nan is
+        * returned. If <tt>|x| > 1</tt>, @c nan is returned due the domain error.
+        * If @a n is greater or equal to @c 128, the behavior is implementation-defined.
+        */
+        float assoc_legendre( unsigned int n,
+                              unsigned int m,
+                              float x );
+
+        /**
+        * @brief Computes the Beta function of @a x and @a y.
+        * @param[in] x The argument, a floating-point or integer value
+        * @param[in] y The argument, a floating-point or integer value
+        * @return If all validations are ok, the value of the Beta function of
+        * @a x and @a y. If the argument is @c nan, @c nan is returned. The function
+        * is only required to be defined where both @a x and @a y are greater
+        * than zero, and is allowed to return @c nan otherwise.
+        */
+        float beta( float x,
+                    float y );
+
+        /**
+        * @brief Computes the complete elliptic integral of the first kind of @a k
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @return If all validations are ok, the value of the complete elliptic
+        * integral of the first kind of @a k. If the argument is @c nan, @c nan is
+        * returned. If |k| > 1, NaN is returned due the domain error
+        */
+        float comp_ellint_1( float k );
+
+        /**
+        * @brief Computes the complete elliptic integral of the second kind of @a k
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @return If all validations are ok, the value of the complete elliptic
+        * integral of the second kind of @a k. If the argument is @c nan, @c nan is
+        * returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        */
+        float comp_ellint_2( float k );
+
+        /**
+        * @brief Computes the complete elliptic integral of the third kind of
+        * @a k and @a nu.
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @param[in] nu Elliptic characteristic as a floating-point value
+        * @return If all validations are ok, the value of the complete elliptic
+        * integral of the third kind of @a k and @a nu. If the argument is @c nan,
+        * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        */
+        float comp_ellint_3( float k,
+                             float nu );
+
+        /**
+        * @brief Computes the incomplete elliptic integral of the first kind of
+        * @a k and @a phi
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @param[in] phi Jacobi amplitude as a floating-point value given in radians
+        * @return If all validations are ok, the value of the incomplete elliptic
+        * integral of the first kind of @a k and @a phi. If the argument is @c nan,
+        * @c nan is returned. If |k| > 1, NaN is returned due the domain error
+        */
+        float ellint_1( float k,
+                        float phi );
+
+        /**
+        * @brief Computes the incomplete elliptic integral of the second kind of
+        * @a k and @a phi
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @param[in] phi Jacobi amplitude as a floating-point value given in radians
+        * @return If all validations are ok, the value of the incomplete elliptic
+        * integral of the second kind of @a k and @a phi. If the argument is @c nan,
+        * NaN is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        */
+        float ellint_2( float k,
+                        float phi );
+
+        /**
+        * @brief Computes the incomplete elliptic integral of the third kind of
+        * @a k, @a nu and @a phi
+        * @param[in] k Elliptic modulus or eccentricity as a floating-point value
+        * @param[in] nu Elliptic characteristic as a floating-point value
+        * @param[in] phi Jacobi amplitude as a floating-point value given in radians
+        * @return If all validations are ok, the value of the incomplete elliptic
+        * integral of the third kind of @a k, @a nu and @a phi. If the argument is @c nan,
+        * NaN is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        */
+        float ellint_3( float k,
+                        float nu,
+                        float phi );
 
         /*cstat -MISRAC++2008-0-1-4_b*/
 
@@ -626,8 +851,8 @@ namespace qlibs {
         constexpr float FFP_SQRT1_2         = ( 0.70710678118654752440F );
         /** @brief The natural logarithm of the square root of 2π given as a single-precision floating-point number */
         constexpr float FFP_LN_SQRT_2PI     = ( 0.9189385332046727417803297F );
-
-
+        /** @brief Constant Euler-Mascheroni */
+        constexpr float FFP_GAMMA_E         = ( 0.5772156649015328606065120900824024F );
 
         /*cstat +MISRAC++2008-0-1-4_b*/
 

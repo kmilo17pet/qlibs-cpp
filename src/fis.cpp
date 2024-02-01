@@ -1,6 +1,4 @@
 #include <include/fis.hpp>
-#include <include/mathex.hpp>
-
 
 using namespace qlibs;
 

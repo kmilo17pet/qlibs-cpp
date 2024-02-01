@@ -7,7 +7,6 @@ project( qlibs-cpp
 add_library( ${PROJECT_NAME} INTERFACE )
 
 target_sources( ${PROJECT_NAME} INTERFACE
-             "${CMAKE_CURRENT_LIST_DIR}/mathex.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/numa.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/tdl.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/ltisys.cpp"
@@ -29,12 +28,12 @@ target_compile_options( ${PROJECT_NAME} INTERFACE
                -std=c++11 -Wall -Wextra -Wconversion -pedantic
                -flto -Wimplicit-fallthrough=0 -Wformat-security
                -Wduplicated-cond -Wfloat-equal -Wshadow -Wsign-conversion
-               -Wlogical-not-parentheses -Wnull-dereference  -Wstringop-overflow 
-               -fdump-rtl-expand -fstrict-aliasing  -Wstrict-aliasing 
+               -Wlogical-not-parentheses -Wnull-dereference  -Wstringop-overflow
+               -fdump-rtl-expand -fstrict-aliasing  -Wstrict-aliasing
                -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs
-               -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wshadow 
-               -Wwrite-strings -Wsign-compare  -Wmissing-declarations -Wformat 
-               -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked 
+               -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wshadow
+               -Wwrite-strings -Wsign-compare  -Wmissing-declarations -Wformat
+               -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked
                -Wredundant-decls -Wunreachable-code
             >
 )

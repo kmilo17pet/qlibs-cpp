@@ -1,6 +1,9 @@
 #include <iostream>
 #include <qlibs.h>
 #include <include/mat.hpp>
+
+//#include <include/typeTraits.hpp>
+
 using namespace std;
 
 void test_fis( void );
@@ -306,6 +309,51 @@ void test_ffmath(void)
     cout << ffmath::getInf() << endl;
     cout << ffmath::tgamma( 2.5 ) << endl;
     cout << ffmath::lgamma( 2.5 ) << endl;
+
+    cout << ffmath::assoc_laguerre( 1, 10, 0.5 ) << endl;
+    cout << ffmath::assoc_laguerre( 2, 10, 0.5 ) << endl;
+
+
+    cout << ffmath::assoc_legendre( 2, 0, 0.5 ) << endl;
+    cout << ffmath::assoc_legendre( 2, 1, 0.5 ) << endl;
+    cout << ffmath::assoc_legendre( 2, 2, 0.5 ) << endl;
+
+
+    std::cout << ffmath::beta(0.1, 0.2) << std::endl;
+    std::cout << "comp_ellint_1" << std::endl;
+    std::cout << ffmath::comp_ellint_1( 0 ) << std::endl;
+    std::cout << ffmath::comp_ellint_1( 0.5 ) << std::endl;
+    std::cout << "comp_ellint_2" << std::endl;
+    std::cout << ffmath::comp_ellint_2( 0 ) << std::endl;
+    std::cout << ffmath::comp_ellint_2( 1 ) << std::endl;
+    std::cout << ffmath::comp_ellint_2( 0.5 ) << std::endl;
+    std::cout << "comp_ellint_3" << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0.5, 0 ) << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0, 0 ) << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0.5, 1 ) << std::endl;
+    std::cout << "ellint_2" << std::endl;
+    std::cout << ffmath::ellint_1( 0, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_1( 0, -ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_1( 0.7, 0 ) << std::endl;
+    std::cout << "ellint_2" << std::endl;
+    std::cout << ffmath::ellint_2( 0, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_2( 0, -ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_2( 0.7, 0 ) << std::endl;
+    std::cout << ffmath::ellint_2( 1, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << "ellint_3" << std::endl;
+    std::cout << ffmath::ellint_3( 0, 0, ffmath::FFP_PI_2 ) << std::endl;
+
+    std::cout << "midpoint" << std::endl;
+    std::cout << ffmath::midpoint( 3, 6 ) << std::endl;
+    std::cout << ffmath::midpoint( 6, 3 ) << std::endl;
+    std::cout << ffmath::midpoint( 6.56, 7.23 ) << std::endl;
+    std::cout << ffmath::midpoint( 2, 3 ) << std::endl;
+    std::cout << "lerp" << std::endl;
+    std::cout << ffmath::lerp( 5, 10, -2 ) << std::endl;
+    std::cout << ffmath::lerp( 5, 10, -1.5 ) << std::endl;
+    std::cout << ffmath::lerp( 5, 10, -1 ) << std::endl;
+    std::cout << ffmath::lerp( 5, 10, -0.5 ) << std::endl;
+
 }
 
 void test_mat( void )

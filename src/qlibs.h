@@ -49,7 +49,6 @@ This file is part of the QuarkTS++ OS distribution.
 #include <include/tdl.hpp>
 #include <include/numa.hpp>
 #include <include/ltisys.hpp>
-#include <include/mathex.hpp>
 #include <include/smoother.hpp>
 #include <include/fis.hpp>
 #include <include/pid.hpp>

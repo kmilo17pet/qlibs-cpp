@@ -1,4 +1,6 @@
 #include <include/ffmath.hpp>
+#include <iostream>
+#include <cmath>
 
 using namespace qlibs;
 
@@ -10,9 +12,34 @@ static inline void cast_reinterpret( T1 &f, const T2 &u )
 }
 
 static float getAbnormal( const int i );
-static float compute_cbrt( float x , bool r );
+static float compute_cbrt( float x ,
+                           bool r );
 static float lgamma_positive( float x );
+static float poly_laguerre_recursion( unsigned int n,
+                                      float alpha,
+                                      float x );
+static float poly_laguerre_large_n( unsigned int n,
+                                    float alpha,
+                                    float x );
+static float poly_laguerre_hyperg( unsigned int n,
+                                   float alpha,
+                                   float x );
+static float poly_legendre_p( unsigned int l,
+                              float x );
+static float ellint_rf( float x,
+                        float y,
+                        float z );
+static float ellint_rd( float x,
+                        float y,
+                        float z );
+static float ellint_rc( float x,
+                        float y );
+static float ellint_rj( float x,
+                        float y,
+                        float z,
+                        float p );
 
+/*============================================================================*/
 static inline float absolute( const float x )
 {
     return ( x < 0.0F ) ? -x : x;
@@ -130,6 +157,7 @@ float ffmath::sqrt( float x )
         cast_reinterpret( y, x );
         y = ( ( y - 0x00800000U ) >> 1U ) + 0x20000000U;
         cast_reinterpret( z, y );
+        z = 0.5F*( ( x/z ) + z );
         retVal = 0.5F*( ( x/z ) + z );
     }
 
@@ -191,7 +219,7 @@ float ffmath::cbrt( float x )
 float ffmath::rCbrt( float x )
 {
     return ( ffmath::classification::FFP_ZERO  == ffmath::classify( x ) ) ?
-            ffmath::getInf() : compute_cbrt( x, true );
+             ffmath::getInf() : compute_cbrt( x, true );
 }
 /*============================================================================*/
 float ffmath::rounding( float x )
@@ -220,15 +248,18 @@ float ffmath::trunc( float x )
 /*============================================================================*/
 float ffmath::frac( float x )
 {
-    return x - trunc( x );
+    return x - ffmath::trunc( x );
 }
 /*============================================================================*/
-float ffmath::rem( float x, float y )
+float ffmath::rem( float x,
+                   float y )
 {
-    return ( classification::FFP_ZERO  == classify( x ) ) ? getNan() : ( x - ( y*trunc( x/y ) ) );
+    return ( classification::FFP_ZERO  == classify( x ) ) ? ffmath::getNan()
+                                                          : ( x - ( y*ffmath::trunc( x/y ) ) );
 }
 /*============================================================================*/
-float ffmath::mod( float x, float y )
+float ffmath::mod( float x,
+                   float y )
 {
     float m;
 
@@ -285,7 +316,17 @@ float ffmath::sin( float x )
 /*============================================================================*/
 float ffmath::cos( float x )
 {
-    return ffmath::sin( x + ffmath::FFP_PI_2 );
+    float y;
+    const float abs_x = absolute( x );
+
+    if ( ffmath::isEqual( abs_x, ffmath::FFP_PI_2 ) ) {
+        y = 1.0e-12F;
+    }
+    else {
+        y = ffmath::sin( x + ffmath::FFP_PI_2 );
+    }
+
+    return y;
 }
 /*============================================================================*/
 float ffmath::tan( float x )
@@ -314,7 +355,8 @@ float ffmath::atan( float x )
     return x*( ( abs_x*( ( -1.45667498914F*abs_x ) + 2.18501248371F ) ) + 0.842458832225F );
 }
 /*============================================================================*/
-float ffmath::atan2( float y, float x )
+float ffmath::atan2( float y,
+                     float x )
 {
     float t, f;
 
@@ -400,7 +442,8 @@ float ffmath::log10( float x )
     return 0.301029996F*ffmath::log2(x);
 }
 /*============================================================================*/
-float ffmath::pow( float b, float e )
+float ffmath::pow( float b,
+                   float e )
 {
     return ffmath::exp2( e*ffmath::log2( b ) );
 }
@@ -459,6 +502,137 @@ float ffmath::wrapTo360( float x )
     return ffmath::mod( x, 360.0F );
 }
 /*============================================================================*/
+float ffmath::midpoint( float a,
+                        float b )
+{
+    float y;
+    constexpr float lo = 2.0F*1.175494351e-38F;
+    constexpr float hi = 0.5F*3.402823466e+38F;
+    const float abs_a = absolute( a );
+    const float abs_b = absolute( b );
+
+    if ( ( abs_a <= hi ) && ( abs_b <= hi ) ) {
+        y = 0.5F*( a + b );
+    }
+    else if ( abs_a < lo ) {
+        y = a + ( 0.5F*b );
+    }
+    else if ( abs_b < lo) {
+        y = ( 0.5F*a ) + b;
+    }
+    else {
+        y = ( 0.5F*a ) + ( 0.5F*b );
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::lerp( float a,
+                    float b,
+                    float t )
+{
+    float y;
+
+    if ( ( ( a <= 0.0F ) && ( b >= 0.0F ) ) || ( ( a >= 0.0F ) && ( b <= 0.0F ) ) ) {
+        y = ( t*b ) + ( a*( 1.0F - t ) );
+    }
+    else if ( ffmath::isEqual( t, 1.0F ) ) {
+        y = b;
+    }
+    else {
+        const float x = a + t*( b - a );
+        y = ( ( t > 1.0F ) == ( b > a ) ) ? ( ( b < x ) ? x : b )
+                                          : ( ( b > x ) ? x : b );
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::normalize( const float x,
+                         const float xMin,
+                         const float xMax ) noexcept
+{
+    return ( x - xMin )/( xMax - xMin );
+}
+/*============================================================================*/
+float ffmath::map(  const float x,
+                    const float xMin,
+                    const float xMax,
+                    const float yMin,
+                    const float yMax ) noexcept
+{
+    return ( ( yMax - yMin )*ffmath::normalize( x, xMin, xMax ) ) + yMin;
+}
+/*============================================================================*/
+bool ffmath::inRangeCoerce( float &x,
+                            const float lowerL,
+                            const float upperL ) noexcept
+{
+    bool retVal = false;
+
+    if ( ffmath::isNan( x ) ) {
+        x = lowerL;
+    }
+    else {
+        if ( x < lowerL ) {
+            x = lowerL;
+        }
+        else if ( x > upperL ) {
+            x = upperL;
+        }
+        else {
+            retVal = true;
+        }
+    }
+
+    return retVal;
+}
+/*============================================================================*/
+bool ffmath::inPolygon( const float x,
+                        const float y,
+                        const float * const px,
+                        const float * const py,
+                        const size_t p ) noexcept
+{
+    size_t i;
+    bool retVal = false;
+    float max_y = py[ 0 ], max_x = px[ 0 ], min_y = py[ 0 ], min_x = px[ 0 ];
+
+    for ( i = 0U ; i < p ; ++i ) {
+        max_y = ( py[ i ] > max_y ) ? py[ i ] : max_y;
+        max_x = ( px[ i ] > max_x ) ? px[ i ] : max_x;
+        min_y = ( py[ i ] < min_y ) ? py[ i ] : min_y;
+        min_x = ( px[ i ] < min_x ) ? px[ i ] : min_x;
+    }
+
+    if ( ( y >= min_y ) && ( y <= max_y ) && ( x >= min_x ) && ( x <= max_x ) ) {
+        size_t j = p - 1U;
+
+        for ( i = 0U ; i < p ; ++i ) {
+            if ( ( px[ i ] > x ) != ( px[ j ] > x ) ) {
+                const float dx = px[ j ] - px[ i ];
+                const float dy = py[ j ] - py[ i ];
+                if ( y < ( ( dy*( x - px[ i ] ) )/( dx + py[ i ] ) ) ) {
+                    retVal = !retVal;
+                }
+            }
+            j = i;
+        }
+    }
+
+    return retVal;
+}
+/*============================================================================*/
+bool ffmath::inCircle( const float x,
+                       const float y,
+                       const float cx,
+                       const float cy,
+                       const float r ) noexcept
+{
+    const float d = ( ( x - cx )*( x - cx ) ) + ( ( y - cy )*( y - cy ) );
+    return ( d <= ( r*r ) );
+}
+/*============================================================================*/
 float ffmath::erf( float x )
 {
     float retVal;
@@ -479,7 +653,8 @@ float ffmath::erfc( float x )
     return 1.0F - ffmath::erf( x );
 }
 /*============================================================================*/
-float ffmath::rexp( float x, int32_t *pw2 )
+float ffmath::rexp( float x,
+                    int32_t *pw2 )
 {
     uint32_t lu = 0U, iu;
     int32_t i = 0;
@@ -496,7 +671,8 @@ float ffmath::rexp( float x, int32_t *pw2 )
     return x;
 }
 /*============================================================================*/
-float ffmath::ldexp( float x, int32_t pw2 )
+float ffmath::ldexp( float x,
+                     int32_t pw2 )
 {
     uint32_t lu = 0U, eu;
     int32_t e = 0;
@@ -512,7 +688,8 @@ float ffmath::ldexp( float x, int32_t pw2 )
     return x;
 }
 /*============================================================================*/
-float ffmath::hypot( float x, float y )
+float ffmath::hypot( float x,
+                     float y )
 {
     float retVal;
     const auto xClass = ffmath::classify( x );
@@ -545,7 +722,8 @@ float ffmath::hypot( float x, float y )
     return retVal;
 }
 /*============================================================================*/
-float ffmath::nextAfter( float x, float y )
+float ffmath::nextAfter( float x,
+                         float y )
 {
     float retVal = 0.0F;
     uint32_t ax, ay, uxi = 0U, uyi = 0U;
@@ -582,13 +760,13 @@ float ffmath::tgamma( float x )
 
     const auto fClass = ffmath::classify( x );
     if ( classification::FFP_NAN == fClass ) {
-        result = getNan();
+        result = ffmath::getNan();
     }
     else if ( classification::FFP_ZERO == fClass ) {
-        result = getInf(); /* a huge value */
+        result = ffmath::getInf(); /* a huge value */
     }
     else if ( classification::FFP_INFINITE == fClass ) {
-        result = ( x > 0.0F ) ? getInf() : getNan();
+        result = ( x > 0.0F ) ? ffmath::getInf() : ffmath::getNan();
     }
     else {
         bool parity = false;
@@ -621,7 +799,7 @@ float ffmath::tgamma( float x )
                 result = 1.0F/y;
             }
             else {
-                result = getInf();
+                result = ffmath::getInf();
             }
         }
         else if ( y < 12.0F ) {
@@ -846,15 +1024,15 @@ float ffmath::lgamma( float x )
 
     const auto fClass = ffmath::classify( x );
     if ( classification::FFP_NAN == fClass ) {
-        result = getNan();
+        result = ffmath::getNan();
     }
     else if ( ( classification::FFP_ZERO == fClass ) || ( classification::FFP_INFINITE == fClass ) ) {
-        result = getInf();
+        result = ffmath::getInf();
     }
     else {
         if ( x < 0.0F ) {
             if ( x <= -4503599627370496.0F ) { /* x < 2^52 */
-                result = getInf();
+                result = ffmath::getInf();
             }
             else {
                 float y, y1, isItAnInt;
@@ -863,12 +1041,12 @@ float ffmath::lgamma( float x )
                 y1 = ffmath::trunc( y );
                 isItAnInt = y - y1;
                 if ( ffmath::isEqual( 0.0F, isItAnInt ) ) {
-                    result = getInf();
+                    result = ffmath::getInf();
                 }
                 else {
                     float a;
 
-                    a = sin( FFP_PI*isItAnInt );
+                    a = ffmath::sin( FFP_PI*isItAnInt );
                     result = ffmath::log( FFP_PI/absolute( a*x ) ) - lgamma_positive( -x );
                 }
             }
@@ -907,14 +1085,668 @@ float ffmath::factorial( float x )
     float y;
 
     if ( x > 34.0F ) {
-        y = getInf();
+        y = ffmath::getInf();
     }
     else if ( x >= 0.0F ) {
         const auto i = static_cast<size_t>( x );
         y = ft[ i ];
     }
     else {
-        y = getNan();
+        y = ffmath::getNan();
+    }
+
+    return y;
+}
+/*============================================================================*/
+static float poly_laguerre_recursion( unsigned int n,
+                                      float alpha,
+                                      float x )
+{
+    const float l0 = 1.0F;
+    float y;
+
+    if ( 0U == n ) {
+        y = l0;
+    }
+    else {
+        const float l1 = -x + 1.0F + alpha;
+        if ( 1U == n ) {
+            y = l1;
+        }
+        else {
+            float ln2 = l0;
+            float ln1 = l1;
+            float ln = 0.0F;
+            for ( size_t i = 2U ; i <= n ; ++i ) {
+                /*cstat -CERT-FLP36-C*/
+                const auto nn = static_cast<float>( i );
+                /*cstat +CERT-FLP36-C*/
+                ln = ( ( ( 2.0F*nn ) - 1.0F ) + alpha - x )*( ln1/nn )
+                     - ( ( nn - 1.0F ) + alpha )*( ln2/nn );
+                ln2 = ln1;
+                ln1 = ln;
+            }
+            y = ln;
+        }
+    }
+
+    return y;
+}
+/*============================================================================*/
+static float poly_laguerre_large_n( unsigned int n,
+                                    float alpha,
+                                    float x )
+{
+    constexpr float PI_2_SQ = 2.467401100272339498076235031476244330406188964F;
+    /*cstat -CERT-FLP36-C*/
+    const float m = static_cast<float>( n );
+    /*cstat +CERT-FLP36-C*/
+    const float a = -m;
+    const float b = alpha + 1.0F;
+    const float eta = ( 2.0F*b ) - ( 4.0F*a );
+    const float cos2th = x/eta;
+    const float sin2th = 1.0F - cos2th;
+    const float th = ffmath::acos( ffmath::sqrt( cos2th ) );
+    const float pre_h = PI_2_SQ*eta*eta*cos2th*sin2th;
+    const float lg_b = ffmath::lgamma( b + m );
+    const float ln_fact = ffmath::lgamma( m + 1.0F );
+
+    const float preTerm1 = 0.5F*( 1.0F - b )*ffmath::log( 0.25F*x*eta );
+    const float preTerm2 = 0.25F*ffmath::log( pre_h );
+    const float lnPre = lg_b - ln_fact + ( 0.5F*x ) + preTerm1 - preTerm2;
+    const float serTerm1 = ffmath::sin( ffmath::FFP_PI*a );
+    const float serTerm2 = ffmath::sin( ( 0.25F*eta*( ( 2.0F*th ) - ffmath::sin( 2.0F*th ) ) + ffmath::FFP_PI_4 ) );
+
+    return ffmath::exp( lnPre )*( serTerm1 + serTerm2 );
+}
+/*============================================================================*/
+static float poly_laguerre_hyperg( unsigned int n,
+                                   float alpha,
+                                   float x )
+{
+    const float b = alpha + 1.0F;
+    const float mx = -x;
+    const float tc_sgn = ( x < 0.0F ) ? 1.0F : ( ( 1 == ( n % 2 ) ) ? -1.0F : 1.0F );
+    const float ax = absolute( x );
+    float tc = 1.0F;
+
+    for ( size_t i = 1U ; i <= n ; ++i ) {
+        /*cstat -CERT-FLP36-C*/
+        const float k = static_cast<float>( i );
+        /*cstat +CERT-FLP36-C*/
+        tc *= ax/k;
+    }
+
+    float term = tc*tc_sgn;
+    float sum = term;
+    const int N = static_cast<int>( n );
+    for ( int i = ( N - 1 ) ; i >= 0; --i ) {
+        /*cstat -CERT-FLP36-C -MISRAC++2008-5-0-7*/
+        const float k = static_cast<float>( i );
+        term *= ( b + k )/static_cast<float>( N - i )*( k + 1.0F )/mx;
+        /*cstat +CERT-FLP36-C +MISRAC++2008-5-0-7*/
+        sum += term;
+    }
+
+    return sum;
+}
+/*============================================================================*/
+float ffmath::assoc_laguerre( unsigned int n,
+                              unsigned int m,
+                              float x )
+{
+    // include/tr1/poly_laguerre.tcc
+    float y;
+    /*cstat -CERT-FLP36-C*/
+    const float alpha = static_cast<float>( m );
+    const float N = static_cast<float>( n );
+    /*cstat +CERT-FLP36-C*/
+    if ( ( x < 0.0f ) || ffmath::isNan( x ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( 0U == n ) {
+        y = 1.0F;
+    }
+    else if ( 1U == n ) {
+        y = 1.0F + alpha - x;
+    }
+    else if ( ffmath::isEqual( 0.0F, x ) ) {
+        float prod = alpha + 1.0F;
+        for ( size_t i = 2U ; i < n ; ++i ) {
+            /*cstat -CERT-FLP36-C*/
+            const float k = static_cast<float>( i );
+            /*cstat +CERT-FLP36-C*/
+            prod *= ( alpha + k )/k;
+        }
+        y = prod;
+    }
+    else if ( ( n > 10000000 ) && ( alpha > -1.0F ) && ( x < ( ( 2.0F*( alpha + 1.0F ) ) + ( 4.0F*N ) ) ) ) {
+        y = poly_laguerre_large_n( n, alpha, x );
+    }
+    else if ( ( alpha >= 0.0F ) || ( ( x > 0.0F) && ( alpha < -( N + 1.0F ) ) ) ) {
+        y = poly_laguerre_recursion( n, alpha, x );
+    }
+    else {
+        y = poly_laguerre_hyperg( n, alpha, x );
+    }
+
+    return y;
+}
+/*============================================================================*/
+static float poly_legendre_p( unsigned int l,
+                              float x )
+{
+    float y;
+
+    if ( ffmath::isNan( x ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( ffmath::isEqual( -1.0F, x ) ) {
+        y = ( 1 == ( l % 2 ) ) ? -1.0F : 1.0F;
+    }
+    else {
+        float p_lm2 = 1.0F;
+
+        if ( 0U == l ) {
+            y = p_lm2;
+        }
+        else {
+            float p_lm1 = x;
+
+            if ( 1U == l ) {
+                y = p_lm1;
+            }
+            else {
+                float p_l = 0.0F;
+
+                for ( size_t i = 2U ; i <= l ; ++i ) {
+                    /*cstat -CERT-FLP36-C*/
+                    const float ll = static_cast<float>( i );
+                    /*cstat +CERT-FLP36-C*/
+                    p_l = ( 2.0F*x* p_lm1 ) - p_lm2 - ( ( x*p_lm1 ) - p_lm2)/ll;
+                    p_lm2 = p_lm1;
+                    p_lm1 = p_l;
+                }
+                y = p_l;
+            }
+        }
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::assoc_legendre( unsigned int n,
+                              unsigned int m,
+                              float x )
+{
+    float y;
+    const float phase = 1.0F;
+
+    if ( m > n ) {
+        y = 0.0F;
+    }
+    else if ( ffmath::isNan( x ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( 0U == m ) {
+        y = poly_legendre_p( n, x );
+    }
+    else {
+        float p_mm = 1.0F;
+        const float root = ffmath::sqrt( 1.0F - x )*ffmath::sqrt( 1.0F + x );
+        float fact = 1.0F;
+
+        for ( size_t i = 1U ; i <= m ; ++i ) {
+            p_mm *= phase*fact*root;
+            fact += 2.0F;
+        }
+
+        if ( n == m ) {
+            y = p_mm;
+        }
+        else {
+            /*cstat -CERT-FLP36-C*/
+            const float p_mp1m = ( 2.0F*static_cast<float>( m ) + 1.0F )*x*p_mm;
+            /*cstat +CERT-FLP36-C*/
+            if ( n == ( m + 1U ) ) {
+                y = p_mp1m;
+            }
+            else {
+                float p_lm2m = p_mm;
+                float p_lm1m = p_mp1m;
+                float p_lm = 0.0F;
+                /*cstat -CERT-FLP36-C*/
+                const float M = static_cast<float>( m );
+                for ( size_t i = ( m + 2U ) ; i <= n ; ++i ) {
+                    const float j = static_cast<float>( i );
+                    /*cstat +CERT-FLP36-C*/
+                    p_lm = ( ( ( 2.0F*j ) - 1.0F )*x*p_lm1m ) - ( ( j + M - 1.0F )*p_lm2m/( j - M ) );
+                    p_lm2m = p_lm1m;
+                    p_lm1m = p_lm;
+                }
+                y = p_lm;
+            }
+        }
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::beta( float x,
+                    float y )
+{
+    float result;
+
+    if ( ffmath::isNan( x ) || ffmath::isNan( y ) ) {
+        result = ffmath::getNan();
+    }
+    else {
+        const float bet = ffmath::lgamma( x ) + ffmath::lgamma( y ) - ffmath::lgamma( x + y );
+        result = ffmath::exp( bet );
+    }
+
+    return result;
+}
+/*============================================================================*/
+static float ellint_rf( float x,
+                        float y,
+                        float z )
+{
+    constexpr float min = 1.175494351e-38F;
+    const float loLim = 5.0F*min;
+    float result;
+
+
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ) {
+        result = ffmath::getNan();
+    }
+    else if ( ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim ) ) {
+        result = ffmath::getNan();
+    }
+    else {
+        constexpr float c0 = 0.25F;
+        constexpr float c1 = 0.04166666666666666666666666666667F;
+        constexpr float c2 = 0.1F;
+        constexpr float c3 = 0.06818181818181818181818181818182F;
+        constexpr float c4 = 0.07142857142857142857142857142857F;
+        constexpr float errTol = 0.0024607833005759250678823324F;
+
+        float xn = x;
+        float yn = y;
+        float zn = z;
+        float mu, xnDev, ynDev, znDev;
+        const size_t maxIter = 100U;
+        float epsilon;
+        float e2, e3, s;
+
+        for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
+            float abs_xnDev, abs_ynDev, abs_znDev, lambda;
+            float xRoot, yRoot, zRoot;
+
+            mu = ( xn + yn + zn )*0.33333333333333333333333333333333F;
+            xnDev = 2.0F - ( mu + xn )/mu;
+            ynDev = 2.0F - ( mu + yn )/mu;
+            znDev = 2.0F - ( mu + zn )/mu;
+            abs_xnDev = absolute( xnDev );
+            abs_ynDev = absolute( ynDev );
+            abs_znDev = absolute( znDev );
+            epsilon = ( abs_xnDev > abs_ynDev ) ? abs_xnDev : abs_ynDev;
+            epsilon = ( abs_znDev > epsilon ) ? abs_znDev : epsilon;
+            if ( epsilon < errTol ) {
+                break;
+            }
+            xRoot = ffmath::sqrt( xn );
+            yRoot = ffmath::sqrt( yn );
+            zRoot = ffmath::sqrt( zn );
+            lambda = xRoot*( yRoot + zRoot ) + ( yRoot*zRoot );
+            xn = c0*( xn + lambda );
+            yn = c0*( yn + lambda );
+            zn = c0*( zn + lambda );
+        }
+        e2 = xnDev*ynDev;
+        e3 = ( e2*znDev );
+        e2 = e2 - ( znDev*znDev );
+        s  = 1.0F + ( ( c1*e2 ) - c2 - ( c3*e3 ) )*e2  + ( c4*e3 );
+        result = s/ffmath::sqrt( mu );
+    }
+
+    return result;
+}
+/*============================================================================*/
+static float ellint_rd( float x,
+                        float y,
+                        float z )
+{
+    constexpr float errTol = 0.0017400365588678507952624663346341549F;
+    constexpr float loLim = 4.103335708781587555782386855921935e-26F;
+    float result;
+
+    if ( ( x < 0.0F ) || ( y < 0.0F ) ) {
+        result = ffmath::getNan();
+    }
+    else if ( ( ( x + y ) < loLim ) || ( z < loLim ) ) {
+        result = ffmath::getNan();
+    }
+    else {
+        constexpr float c0 = 0.25F;
+        constexpr float c1 = 0.214285714285714273819039021873322781175F;
+        constexpr float c2 = 0.16666666666666665741480812812369549646F;
+        constexpr float c3 = 0.409090909090909116141432377844466827809F;
+        constexpr float c4 = 0.1153846153846153910205174497605185024875F;
+        float xn = x;
+        float yn = y;
+        float zn = z;
+        float sigma = 0.0F;
+        float power4 = 1.0F;
+        float epsilon;
+        float mu, xnDev, ynDev, znDev;
+        float ea, eb, ec, ed, ef, s1, s2;
+        const size_t maxIter = 100U;
+
+        for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
+            float abs_xnDev, abs_ynDev, abs_znDev, lambda;
+            float xRoot, yRoot, zRoot;
+
+            mu = ( xn + yn + ( 3.0F*zn ) )*0.2F;
+            xnDev = ( mu - xn )/mu;
+            ynDev = ( mu - yn )/mu;
+            znDev = ( mu - zn )/mu;
+            abs_xnDev = absolute( xnDev );
+            abs_ynDev = absolute( ynDev );
+            abs_znDev = absolute( znDev );
+            epsilon = ( abs_xnDev > abs_ynDev ) ? abs_xnDev : abs_ynDev;
+            epsilon = ( abs_znDev > epsilon ) ? abs_znDev : epsilon;
+            if ( epsilon < errTol ) {
+                break;
+            }
+            xRoot = ffmath::sqrt( xn );
+            yRoot = ffmath::sqrt( yn );
+            zRoot = ffmath::sqrt( zn );
+            lambda = xRoot*( yRoot + zRoot ) + ( yRoot*zRoot );
+            sigma += power4/( zRoot*( zn + lambda ) );
+            power4 *= c0;
+            xn = c0*( xn + lambda );
+            yn = c0*( yn + lambda );
+            zn = c0*( zn + lambda );
+        }
+        ea = xnDev*ynDev;
+        eb = znDev*znDev;
+        ec = ea - eb;
+        ed = ea - ( 6.0F*eb );
+        ef = ed + ec + ec;
+        s1 = ed*( -c1 + ( c3*ed/3.0F ) - ( 1.5F*c4*znDev*ef ) );
+        s2 = znDev*( ( c2*ef ) + znDev*( -( c3*ec ) - ( znDev*c4 ) - ea ) );
+        result = ( 3.0F*sigma ) + power4*ffmath::rSqrt( mu )*( 1.0F + s1 + s2)/mu;
+    }
+
+    return result;
+}
+/*============================================================================*/
+static float ellint_rc( float x,
+                        float y )
+{
+    float result;
+    constexpr float loLim = 5.8774717550000002558112628881984982848919e-38F;
+    constexpr float errTol = 0.049606282877419791144113503378321F;
+
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( y < loLim ) ) {
+        result = ffmath::getNan();
+    }
+    else {
+        constexpr float c0 = 0.25F;
+        constexpr float c1 = 0.142857142857142849212692681248881854116F;
+        constexpr float c2 = 0.409090909090909116141432377844466827809F;
+        constexpr float c3 = 0.3F;
+        constexpr float c4 = 0.375F;
+        float xn = x;
+        float yn = y;
+        const size_t maxIter = 100;
+        float mu, s, sn;
+
+        for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
+            float lambda;
+
+            mu = ( xn + 2.0F*yn )*0.333333333333333333333333333333333F;
+            sn = ( yn + mu )/mu - 2.0F;
+            if ( absolute( sn) < errTol ){
+                break;
+            }
+            lambda = ( 2.0F*ffmath::sqrt( xn )*ffmath::sqrt( yn ) ) + yn;
+            xn = c0*( xn + lambda );
+            yn = c0*( yn + lambda );
+        }
+        s = sn*sn*( c3 + sn*( c1 + sn*( c4 + ( sn*c2 ) ) ) );
+        result = ( 1.0F + s )*ffmath::rSqrt( mu );
+    }
+
+    return result;
+}
+/*============================================================================*/
+static float ellint_rj( float x,
+                        float y,
+                        float z,
+                        float p )
+{
+    float result;
+    constexpr float loLim = 4.103335708781587555782386855921935e-26F;
+    constexpr float errTol = 0.049606282877419791144113503378321F;
+
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ) {
+        result = ffmath::getNan();
+    }
+    else if ( ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim ) ) {
+        result = ffmath::getNan();
+    }
+    else {
+        constexpr float c0 = 0.25F;
+        constexpr float c1 = 0.214285714285714273819039021873322781175F;
+        constexpr float c2 = 0.333333333333333333333333333333333333333F;
+        constexpr float c3 = 0.136363636363636353543427048862213268876F;
+        constexpr float c4 = 0.1153846153846153910205174497605185024875F;
+        float xn = x;
+        float yn = y;
+        float zn = z;
+        float pn = p;
+        float sigma = 0.0F;
+        float power4 = 1.0F;
+        float epsilon;
+        float mu, xnDev, ynDev, znDev, pnDev;
+        float ea, eb, ec, e2, e3, s1, s2, s3;
+        const size_t maxIter = 100;
+
+
+        for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
+            float abs_xnDev, abs_ynDev, abs_znDev, abs_pnDev, lambda, alpha1, alpha2, beta;
+            float xRoot, yRoot, zRoot;
+            mu = 0.2F*( xn + yn + zn + ( 2.0F*pn ) );
+            xnDev = ( mu - xn )/mu;
+            ynDev = ( mu - yn )/mu;
+            znDev = ( mu - zn )/mu;
+            pnDev = ( mu - pn )/mu;
+            abs_xnDev = absolute( xnDev );
+            abs_ynDev = absolute( ynDev );
+            abs_znDev = absolute( znDev );
+            abs_pnDev = absolute( pnDev );
+            epsilon = ( abs_xnDev > abs_ynDev ) ? abs_xnDev : abs_ynDev;
+            epsilon = ( abs_znDev > epsilon ) ? abs_znDev : epsilon;
+            epsilon = ( abs_pnDev > epsilon ) ? abs_pnDev : epsilon;
+            if ( epsilon < errTol ) {
+                break;
+            }
+            xRoot = ffmath::sqrt( xn );
+            yRoot = ffmath::sqrt( yn );
+            zRoot = ffmath::sqrt( zn );
+            lambda = xRoot*( yRoot + zRoot ) + ( yRoot*zRoot );
+            alpha1 = pn*( xRoot + yRoot + zRoot ) + xRoot*yRoot*zRoot;
+            alpha2 = alpha1*alpha1;
+            beta = pn*( pn + lambda )*( pn + lambda );
+            sigma += power4*ellint_rc( alpha2, beta );
+            power4 *= c0;
+            xn = c0*( xn + lambda );
+            yn = c0*( yn + lambda );
+            zn = c0*( zn + lambda );
+            pn = c0*( pn + lambda );
+        }
+        ea = xnDev*( ynDev + znDev ) + ynDev*znDev;
+        eb = xnDev*ynDev*znDev;
+        ec = pnDev*pnDev;
+        e2 = ea - 3.0F*ec;
+        e3 = eb + 2.0F*pnDev*( ea - ec );
+        s1 = 1.0F + e2*( -c1 + 0.75F*c3*e2 - 1.5F*c4*e3 );
+        s2 = eb*( 0.5F*c2 + pnDev*( -c3 - c3 + pnDev*c4 ) );
+        s3 = pnDev*ea*( c2 - ( pnDev*c3 ) ) - ( c2*pnDev*ec );
+        result = 3.0F*sigma + power4*( s1 + s2 + s3)/( mu * ffmath::sqrt( mu ) );
+    }
+
+    return result;
+}
+/*============================================================================*/
+float ffmath::comp_ellint_1( float k )
+{
+    float y;
+
+    if ( ffmath::isNan( k ) || ( absolute( k ) >= 1.0F ) ) {
+        y = ffmath::getNan();
+    }
+    else {
+        y = ellint_rf( 0.0F, 1.0F - ( k*k ), 1.0F );
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::comp_ellint_2( float k )
+{
+    float y;
+    const float abs_k = absolute( k );
+
+    if ( ffmath::isNan( k ) || ( abs_k > 1.0F ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( ffmath::isEqual( 1.0F, abs_k ) ) {
+        y = 1.0F;
+    }
+    else {
+        const float kk = k*k;
+        const float one_m_kk = 1.0F - kk;
+
+        y = ellint_rf( 0.0F, one_m_kk, 1.0F ) - 0.333333333333333F*kk*ellint_rd( 0.0F, one_m_kk, 1.0F );
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::comp_ellint_3( float k,
+                             float nu )
+{
+    float y;
+    const float abs_k = absolute( k );
+
+    if ( ffmath::isNan( k ) || ffmath::isNan( nu ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( ffmath::isEqual( 1.0F, nu ) ) {
+        y = ffmath::getInf();
+    }
+    else if ( abs_k > 1.0F ) {
+        y = ffmath::getNan();
+    }
+    else {
+        const float kk = k*k;
+        const float one_m_kk = 1.0F - kk;
+
+        y = ellint_rf( 0.0F, one_m_kk, 1.0F ) +
+            0.333333333333333F*nu*ellint_rj( 0.0F, one_m_kk, 1.0F, 1.0F - nu );
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::ellint_1( float k,
+                        float phi )
+{
+    float y;
+
+    if ( ffmath::isNan( k ) || ffmath::isNan( phi ) || ( absolute(k) > 1.0F ) ) {
+        y = ffmath::getNan();
+    }
+    else {
+        const float n = ffmath::floor( phi/ffmath::FFP_PI + 0.5F );
+        const float phi_red = phi - n*ffmath::FFP_PI;
+        const float s = ffmath::sin( phi_red );
+        const float c = ffmath::cos( phi_red );
+        const float f = s*ellint_rf( c*c, 1.0F - k*k*s*s, 1.0F );
+        if ( ffmath::classification::FFP_ZERO == ffmath::classify( n ) ) {
+            y = f;
+        }
+        else {
+            y = f + 2.0F*n*ffmath::comp_ellint_1( k );
+        }
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::ellint_2( float k,
+                        float phi )
+{
+    float y;
+
+    if ( ffmath::isNan( k ) || ffmath::isNan( phi ) || ( absolute( k ) > 1.0F ) ) {
+        y = ffmath::getNan();
+    }
+    else {
+        const float n = ffmath::floor( phi/ffmath::FFP_PI + 0.5F );
+        const float phi_red = phi - n*ffmath::FFP_PI;
+        const float kk = k*k;
+        const float s = ffmath::sin( phi_red );
+        const float ss = s*s;
+        const float sss = ss*s;
+        const float c = ffmath::cos( phi_red );
+        const float cc = c*c;
+        const float tmp = 1.0F - kk*ss;
+        const float e = s*ellint_rf( cc, tmp, 1.0F )
+                        - 0.333333333333F*kk*sss*ellint_rd( cc, tmp, 1.0F );
+
+        if ( ffmath::classification::FFP_ZERO == ffmath::classify( n ) ) {
+            y = e;
+        }
+        else {
+            y = e + 2.0F*n*ffmath::comp_ellint_2( k );
+        }
+    }
+
+    return y;
+}
+/*============================================================================*/
+float ffmath::ellint_3( float k,
+                        float nu,
+                        float phi )
+{
+    float y;
+
+    if ( ffmath::isNan( k ) || ffmath::isNan( nu ) || ffmath::isNan( phi ) || ( absolute( k ) > 1.0F ) ) {
+        y = ffmath::getNan();
+    }
+    else {
+        const float n = ffmath::floor( phi/ffmath::FFP_PI + 0.5F );
+        const float phi_red = phi - n*ffmath::FFP_PI;
+        const float kk = k*k;
+        const float s = ffmath::sin( phi_red );
+        const float ss = s*s;
+        const float sss = ss*s;
+        const float c = ffmath::cos( phi_red );
+        const float cc = c*c;
+        const float tmp = 1.0F - kk*ss;
+        const float pi = s*ellint_rf( cc, tmp, 1.0F )
+                        + 0.333333333333F*nu*sss*ellint_rj( cc, tmp, 1.0F, 1.0F - nu*ss );
+
+        if ( ffmath::classification::FFP_ZERO == ffmath::classify( n ) ) {
+            y = pi;
+        }
+        else {
+            y = pi + 2.0F*n*ffmath::comp_ellint_3( k, nu );
+        }
     }
 
     return y;

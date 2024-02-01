@@ -1,5 +1,4 @@
 #include <include/fis.hpp>
-#include <include/mathex.hpp>
 #include <include/ffmath.hpp>
 
 using namespace qlibs;
@@ -493,7 +492,7 @@ real_t fis::core::bound( real_t y,
                          const real_t minValue,
                          const real_t maxValue )
 {
-    (void)inRangeCoerce( y, minValue, maxValue );
+    (void)ffmath::inRangeCoerce( y, minValue, maxValue );
 
     return y;
 }
