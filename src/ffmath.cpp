@@ -1201,7 +1201,7 @@ float ffmath::assoc_laguerre( unsigned int n,
     const float alpha = static_cast<float>( m );
     const float N = static_cast<float>( n );
     /*cstat +CERT-FLP36-C*/
-    if ( ( x < 0.0f ) || ffmath::isNan( x ) ) {
+    if ( ( x < 0.0F ) || ffmath::isNan( x ) ) {
         y = ffmath::getNan();
     }
     else if ( 0U == n ) {
@@ -1357,10 +1357,9 @@ static float ellint_rf( float x,
     float result;
 
 
-    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ) {
-        result = ffmath::getNan();
-    }
-    else if ( ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim ) ) {
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ||
+        ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )
+       ) {
         result = ffmath::getNan();
     }
     else {
@@ -1421,10 +1420,7 @@ static float ellint_rd( float x,
     constexpr float loLim = 4.103335708781587555782386855921935e-26F;
     float result;
 
-    if ( ( x < 0.0F ) || ( y < 0.0F ) ) {
-        result = ffmath::getNan();
-    }
-    else if ( ( ( x + y ) < loLim ) || ( z < loLim ) ) {
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( ( x + y ) < loLim ) || ( z < loLim ) ) {
         result = ffmath::getNan();
     }
     else {
@@ -1531,10 +1527,9 @@ static float ellint_rj( float x,
     constexpr float loLim = 4.103335708781587555782386855921935e-26F;
     constexpr float errTol = 0.049606282877419791144113503378321F;
 
-    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ) {
-        result = ffmath::getNan();
-    }
-    else if ( ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim ) ) {
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ||
+         ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim )
+       ) {
         result = ffmath::getNan();
     }
     else {
@@ -1642,14 +1637,11 @@ float ffmath::comp_ellint_3( float k,
     float y;
     const float abs_k = absolute( k );
 
-    if ( ffmath::isNan( k ) || ffmath::isNan( nu ) ) {
+    if ( ffmath::isNan( k ) || ffmath::isNan( nu ) || ( abs_k > 1.0F ) ) {
         y = ffmath::getNan();
     }
     else if ( ffmath::isEqual( 1.0F, nu ) ) {
         y = ffmath::getInf();
-    }
-    else if ( abs_k > 1.0F ) {
-        y = ffmath::getNan();
     }
     else {
         const float kk = k*k;
