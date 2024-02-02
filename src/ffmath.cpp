@@ -1,6 +1,4 @@
 #include <include/ffmath.hpp>
-#include <iostream>
-#include <cmath>
 
 using namespace qlibs;
 
