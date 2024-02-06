@@ -68,5 +68,8 @@ var searchData=
   ['crc8_5frohc_65',['crc8_ROHC',['../classqlibs_1_1crc.html#ab42ec3f94bffb2e690f541588c6830f4',1,'qlibs::crc']]],
   ['crc8_5fwcdma_66',['crc8_WCDMA',['../classqlibs_1_1crc.html#a0051d061e8d161726d70b4d71cd69fc1',1,'qlibs::crc']]],
   ['crcmode_67',['crcMode',['../group__qcrc.html#ga5b194c56447214ee3207b107e549cad5',1,'qlibs']]],
-  ['custommf_68',['custommf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a1a30a490f584b71edfe91275976e63d4',1,'qlibs::fis']]]
+  ['custommf_68',['custommf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a1a30a490f584b71edfe91275976e63d4',1,'qlibs::fis']]],
+  ['cyl_5fbessel_5fi_69',['cyl_bessel_i',['../group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8',1,'qlibs::ffmath']]],
+  ['cyl_5fbessel_5fj_70',['cyl_bessel_j',['../group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0',1,'qlibs::ffmath']]],
+  ['cyl_5fbessel_5fk_71',['cyl_bessel_k',['../group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a',1,'qlibs::ffmath']]]
 ];

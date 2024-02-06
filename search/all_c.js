@@ -8,11 +8,15 @@ var searchData=
   ['mat_5fmagic_5',['MAT_MAGIC',['../namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a23a01acdab286057e6187c3c6aecfd3a',1,'qlibs']]],
   ['mat_5fzero_6',['MAT_ZERO',['../namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b',1,'qlibs']]],
   ['matspecial_7',['matSpecial',['../namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511',1,'qlibs']]],
-  ['max_8',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
-  ['mf_9',['mf',['../classqlibs_1_1fis_1_1mf.html#a449bc5fb79eed493ab499fbe8fcbac3d',1,'qlibs::fis::mf::mf()'],['../classqlibs_1_1fis_1_1mf.html',1,'qlibs::fis::mf']]],
-  ['midpoint_10',['midpoint',['../group__qffmath.html#gaa4d423217e6e4ef2414d6668a03a56bb',1,'qlibs::ffmath']]],
-  ['min_11',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
-  ['mod_12',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
-  ['mom_13',['mom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2',1,'qlibs::fis']]],
-  ['mu_14',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
+  ['max_8',['Max',['../group__qffmath.html#gaf3f4268fdc8131e7b15c04f72b6be9d9',1,'qlibs::ffmath']]],
+  ['max_9',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
+  ['max_10',['Max',['../structfloat__limits.html#aa944ec5d11971e784f4a13b07cb75242',1,'float_limits']]],
+  ['mf_11',['mf',['../classqlibs_1_1fis_1_1mf.html#a449bc5fb79eed493ab499fbe8fcbac3d',1,'qlibs::fis::mf::mf()'],['../classqlibs_1_1fis_1_1mf.html',1,'qlibs::fis::mf']]],
+  ['midpoint_12',['midpoint',['../group__qffmath.html#gaa4d423217e6e4ef2414d6668a03a56bb',1,'qlibs::ffmath']]],
+  ['min_13',['Min',['../structfloat__limits.html#a339a8b71e5530984de05ea93ecf5b584',1,'float_limits']]],
+  ['min_14',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
+  ['min_15',['Min',['../group__qffmath.html#ga7cdff7184e67aa97f8a41f7e5927fede',1,'qlibs::ffmath']]],
+  ['mod_16',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
+  ['mom_17',['mom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2',1,'qlibs::fis']]],
+  ['mu_18',['mu',['../classqlibs_1_1pid_auto_tuning.html#abcbf1264057f3bdee5ad465b0001c622',1,'qlibs::pidAutoTuning']]]
 ];

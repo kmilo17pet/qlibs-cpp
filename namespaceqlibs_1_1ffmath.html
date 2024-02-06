@@ -127,6 +127,7 @@ $(document).ready(function(){initNavTree('namespaceqlibs_1_1ffmath.html',''); in
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -137,6 +138,12 @@ $(document).ready(function(){initNavTree('namespaceqlibs_1_1ffmath.html',''); in
 <p>Namespace for the Fast floating-point math library.  
 <a href="namespaceqlibs_1_1ffmath.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1ffmath_1_1numbers.html">numbers</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides several mathematical constants as single-precision floating-point numbers.  <a href="structqlibs_1_1ffmath_1_1numbers.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga9185f89b32b1af03a9f7c02c8a1f1cdd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9185f89b32b1af03a9f7c02c8a1f1cdd">classification</a> { <br />
@@ -165,6 +172,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qffmath.html#ga9185f89b32b1af03a9f7c02c8a1f1cdd">classification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb">classify</a> (const float f)</td></tr>
 <tr class="memdesc:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Categorizes the floating-point number <em>x</em>. This function determines whether its argument is a normal floating-point number, or one of several special categories of values, including NaN (not a number), infinity, subnormal floating-point values or zero. To determine what category the argument belongs to, compare the return value with the any of the following number classification macros:  <a href="group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb">More...</a><br /></td></tr>
 <tr class="separator:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf3f4268fdc8131e7b15c04f72b6be9d9">Max</a> (const T x, const T y)</td></tr>
+<tr class="separator:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7cdff7184e67aa97f8a41f7e5927fede">Min</a> (const T x, const T y)</td></tr>
+<tr class="separator:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gadb57fa2be222cd1aaf4a6c926e4e78c0">isNan</a> (const float x)</td></tr>
 <tr class="memdesc:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if <em>x</em> is Not-A-Number (NaN)  <a href="group__qffmath.html#gadb57fa2be222cd1aaf4a6c926e4e78c0">More...</a><br /></td></tr>
 <tr class="separator:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,12 +352,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">factorial</a> (float x)</td></tr>
 <tr class="memdesc:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the factorial of the integer part of <em>x</em>.  <a href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">More...</a><br /></td></tr>
 <tr class="separator:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9e62ce0792aeddb4f9851fbd54680ed8">assoc_laguerre</a> (unsigned int n, unsigned int m, float x)</td></tr>
-<tr class="memdesc:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Laguerre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga9e62ce0792aeddb4f9851fbd54680ed8">More...</a><br /></td></tr>
-<tr class="separator:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad96ae6ad92b5dd450125f1eece9f43e3">assoc_legendre</a> (unsigned int n, unsigned int m, float x)</td></tr>
-<tr class="memdesc:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Legendre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#gad96ae6ad92b5dd450125f1eece9f43e3">More...</a><br /></td></tr>
-<tr class="separator:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga57e18a5fcd64d6829bf13bfd55ac7cf1">assoc_laguerre</a> (size_t n, size_t m, float x)</td></tr>
+<tr class="memdesc:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Laguerre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga57e18a5fcd64d6829bf13bfd55ac7cf1">More...</a><br /></td></tr>
+<tr class="separator:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga55fc4eb28d96e0cd7f03e4cd69d05d6c">assoc_legendre</a> (size_t n, size_t m, float x)</td></tr>
+<tr class="memdesc:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Legendre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga55fc4eb28d96e0cd7f03e4cd69d05d6c">More...</a><br /></td></tr>
+<tr class="separator:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac0b8667e23ccb49bb29567797ee4e34e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gac0b8667e23ccb49bb29567797ee4e34e">beta</a> (float x, float y)</td></tr>
 <tr class="memdesc:gac0b8667e23ccb49bb29567797ee4e34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Beta function of <em>x</em> and <em>y</em>.  <a href="group__qffmath.html#gac0b8667e23ccb49bb29567797ee4e34e">More...</a><br /></td></tr>
 <tr class="separator:gac0b8667e23ccb49bb29567797ee4e34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,6 +379,39 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6">ellint_3</a> (float k, float nu, float phi)</td></tr>
 <tr class="memdesc:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the incomplete elliptic integral of the third kind of <em>k</em>, <em>nu</em> and <em>phi</em>.  <a href="group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6">More...</a><br /></td></tr>
 <tr class="separator:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2feef83f0b68b15213d3a874ee132dc7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7">expint</a> (float num)</td></tr>
+<tr class="memdesc:ga2feef83f0b68b15213d3a874ee132dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Exponential integral of <em>num</em>.  <a href="group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7">More...</a><br /></td></tr>
+<tr class="separator:ga2feef83f0b68b15213d3a874ee132dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1f0e976869a66b602fc16926107a8b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad1f0e976869a66b602fc16926107a8b1">hermite</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:gad1f0e976869a66b602fc16926107a8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (physicist's) Hermite polynomials of the degree <em>n</em> and argument <em>x</em>.  <a href="group__qffmath.html#gad1f0e976869a66b602fc16926107a8b1">More...</a><br /></td></tr>
+<tr class="separator:gad1f0e976869a66b602fc16926107a8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2218cf71ca04fa7029b979b57224f380"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2218cf71ca04fa7029b979b57224f380">laguerre</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga2218cf71ca04fa7029b979b57224f380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the non-associated Laguerre polynomials of the degree <em>n</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga2218cf71ca04fa7029b979b57224f380">More...</a><br /></td></tr>
+<tr class="separator:ga2218cf71ca04fa7029b979b57224f380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9aa33f38928dbc0d2988ac71658b5752"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9aa33f38928dbc0d2988ac71658b5752">legendre</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga9aa33f38928dbc0d2988ac71658b5752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the unassociated Legendre polynomials of the degree <em>n</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga9aa33f38928dbc0d2988ac71658b5752">More...</a><br /></td></tr>
+<tr class="separator:ga9aa33f38928dbc0d2988ac71658b5752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga998670a53bda8651dc02f633cbc134fa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa">riemann_zeta</a> (float s)</td></tr>
+<tr class="memdesc:ga998670a53bda8651dc02f633cbc134fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Riemann zeta function of <em>s</em>.  <a href="group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa">More...</a><br /></td></tr>
+<tr class="separator:ga998670a53bda8651dc02f633cbc134fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da">sph_bessel</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the spherical Bessel function of the first kind <em>n</em>, and <em>x</em>.  <a href="group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da">More...</a><br /></td></tr>
+<tr class="separator:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1d91b27692bcf07ca48fda87965086b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b">sph_neumann</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:gaf1d91b27692bcf07ca48fda87965086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the spherical Bessel function of the second kind also known as the spherical Neumann function of <em>n</em> and <em>x</em>.  <a href="group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b">More...</a><br /></td></tr>
+<tr class="separator:gaf1d91b27692bcf07ca48fda87965086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99330295d97fed41d1acf25ab81409a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8">cyl_bessel_i</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga99330295d97fed41d1acf25ab81409a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the regular modified cylindrical Bessel function of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8">More...</a><br /></td></tr>
+<tr class="separator:ga99330295d97fed41d1acf25ab81409a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0800b4af470efed8fa44bb898eaed7d0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0">cyl_bessel_j</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga0800b4af470efed8fa44bb898eaed7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cylindrical Bessel function of the first kind of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0">More...</a><br /></td></tr>
+<tr class="separator:ga0800b4af470efed8fa44bb898eaed7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73f335c184e11403f99e1a7266d69d2a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a">cyl_bessel_k</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga73f335c184e11403f99e1a7266d69d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the irregular modified cylindrical Bessel function (also known as modified Bessel function of the second kind) of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a">More...</a><br /></td></tr>
+<tr class="separator:ga73f335c184e11403f99e1a7266d69d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6e40f496a09b0319302f2cde77a82a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8">sph_legendre</a> (size_t l, size_t m, float theta)</td></tr>
+<tr class="memdesc:gaf6e40f496a09b0319302f2cde77a82a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">1-3) Computes the spherical associated Legendre function of degree <em>l</em>, order <em>m</em>, and polar angle <em>theta</em>  <a href="group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8">More...</a><br /></td></tr>
+<tr class="separator:gaf6e40f496a09b0319302f2cde77a82a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -387,6 +433,9 @@ Variables</h2></td></tr>
 <tr class="memitem:ga4555327272c4af4b5dfd6213574a47a8"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga4555327272c4af4b5dfd6213574a47a8">FFP_PI</a></td></tr>
 <tr class="memdesc:ga4555327272c4af4b5dfd6213574a47a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The circumference of a circle with diameter 1, ( π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga4555327272c4af4b5dfd6213574a47a8">More...</a><br /></td></tr>
 <tr class="separator:ga4555327272c4af4b5dfd6213574a47a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga083524baccef2dbf5863111dff9c34bc"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga083524baccef2dbf5863111dff9c34bc">FFP_2PI</a></td></tr>
+<tr class="memdesc:ga083524baccef2dbf5863111dff9c34bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice circumference of a circle with diameter 1, ( 2π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga083524baccef2dbf5863111dff9c34bc">More...</a><br /></td></tr>
+<tr class="separator:ga083524baccef2dbf5863111dff9c34bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaecf61a36f13ab995e64d17eea01a10e3"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaecf61a36f13ab995e64d17eea01a10e3">FFP_PI_2</a></td></tr>
 <tr class="memdesc:gaecf61a36f13ab995e64d17eea01a10e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Half of π ( π/2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gaecf61a36f13ab995e64d17eea01a10e3">More...</a><br /></td></tr>
 <tr class="separator:gaecf61a36f13ab995e64d17eea01a10e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,21 +448,42 @@ Variables</h2></td></tr>
 <tr class="memitem:ga378fb16701afc3184f8c56e30d99a42a"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a">FFP_2_PI</a></td></tr>
 <tr class="memdesc:ga378fb16701afc3184f8c56e30d99a42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice the inverse of π ( 2/π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a">More...</a><br /></td></tr>
 <tr class="separator:ga378fb16701afc3184f8c56e30d99a42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaecb24cd0874ffef028e92ed8afe949dc"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaecb24cd0874ffef028e92ed8afe949dc">FFP_1_SQRTPI</a></td></tr>
+<tr class="memdesc:gaecb24cd0874ffef028e92ed8afe949dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gaecb24cd0874ffef028e92ed8afe949dc">More...</a><br /></td></tr>
+<tr class="separator:gaecb24cd0874ffef028e92ed8afe949dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9499a336527d605f29f4bb286816482c"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">FFP_2_SQRTPI</a></td></tr>
-<tr class="memdesc:ga9499a336527d605f29f4bb286816482c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of the square root of π ( 2/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">More...</a><br /></td></tr>
+<tr class="memdesc:ga9499a336527d605f29f4bb286816482c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice the inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">More...</a><br /></td></tr>
 <tr class="separator:ga9499a336527d605f29f4bb286816482c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga81990ada2a31fba91c6e601bf9d069d4"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga81990ada2a31fba91c6e601bf9d069d4">FFP_SQRT2</a></td></tr>
 <tr class="memdesc:ga81990ada2a31fba91c6e601bf9d069d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square root of 2 ( √2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga81990ada2a31fba91c6e601bf9d069d4">More...</a><br /></td></tr>
 <tr class="separator:ga81990ada2a31fba91c6e601bf9d069d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd">FFP_SQRT3</a></td></tr>
+<tr class="memdesc:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square root of 3 ( √3 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd">More...</a><br /></td></tr>
+<tr class="separator:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacdf60923b073c1afc6fa824e120a2083"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gacdf60923b073c1afc6fa824e120a2083">FFP_SQRT1_2</a></td></tr>
 <tr class="memdesc:gacdf60923b073c1afc6fa824e120a2083"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gacdf60923b073c1afc6fa824e120a2083">More...</a><br /></td></tr>
 <tr class="separator:gacdf60923b073c1afc6fa824e120a2083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga42139e0b4c3b448240bee9e6d63c0ac0">FFP_SQRT1_3</a></td></tr>
+<tr class="memdesc:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of square root of 3 ( 1/√3 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga42139e0b4c3b448240bee9e6d63c0ac0">More...</a><br /></td></tr>
+<tr class="separator:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ebb8b444d93b2e01976f09728c46772"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga5ebb8b444d93b2e01976f09728c46772">FFP_LN_SQRT_2PI</a></td></tr>
 <tr class="memdesc:ga5ebb8b444d93b2e01976f09728c46772"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural logarithm of the square root of 2π given as a single-precision floating-point number.  <a href="group__qffmath.html#ga5ebb8b444d93b2e01976f09728c46772">More...</a><br /></td></tr>
 <tr class="separator:ga5ebb8b444d93b2e01976f09728c46772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">FFP_GAMMA_E</a></td></tr>
-<tr class="memdesc:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant Euler-Mascheroni.  <a href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">More...</a><br /></td></tr>
+<tr class="memdesc:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant Euler-Mascheroni given as a single-precision floating-point number.  <a href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">More...</a><br /></td></tr>
 <tr class="separator:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga078f143768fc23adadf9045e1bb76ef0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga078f143768fc23adadf9045e1bb76ef0">FFP_PHI</a></td></tr>
+<tr class="memdesc:ga078f143768fc23adadf9045e1bb76ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The golden ratio, (1+√5)/2 given as a single-precision floating-point number.  <a href="group__qffmath.html#ga078f143768fc23adadf9045e1bb76ef0">More...</a><br /></td></tr>
+<tr class="separator:ga078f143768fc23adadf9045e1bb76ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7928175f7d7dd8a3393c5981c9c85514"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7928175f7d7dd8a3393c5981c9c85514">FFP_RADIAN</a></td></tr>
+<tr class="memdesc:ga7928175f7d7dd8a3393c5981c9c85514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radian, value of ( 180/π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga7928175f7d7dd8a3393c5981c9c85514">More...</a><br /></td></tr>
+<tr class="separator:ga7928175f7d7dd8a3393c5981c9c85514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae689abe8b1b9b40538ffabccef85b3c3"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gae689abe8b1b9b40538ffabccef85b3c3">FFP_LOG10_2</a></td></tr>
+<tr class="memdesc:gae689abe8b1b9b40538ffabccef85b3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base 10 logarithm of 2 ( log_10 2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gae689abe8b1b9b40538ffabccef85b3c3">More...</a><br /></td></tr>
+<tr class="separator:gae689abe8b1b9b40538ffabccef85b3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8b5944a144c63ecb3362c58989b051c"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gac8b5944a144c63ecb3362c58989b051c">FFP_LN_PI</a></td></tr>
+<tr class="memdesc:gac8b5944a144c63ecb3362c58989b051c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural logarithm of π ( ln(π) ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gac8b5944a144c63ecb3362c58989b051c">More...</a><br /></td></tr>
+<tr class="separator:gac8b5944a144c63ecb3362c58989b051c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace for the Fast floating-point math library. </p>

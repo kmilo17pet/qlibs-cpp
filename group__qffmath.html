@@ -127,6 +127,7 @@ $(document).ready(function(){initNavTree('group__qffmath.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -137,6 +138,12 @@ $(document).ready(function(){initNavTree('group__qffmath.html',''); initResizabl
 <p>Fast floating-point math library for applications where speed is more important than accuracy.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1ffmath_1_1numbers.html">qlibs::ffmath::numbers</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides several mathematical constants as single-precision floating-point numbers.  <a href="structqlibs_1_1ffmath_1_1numbers.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga9185f89b32b1af03a9f7c02c8a1f1cdd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9185f89b32b1af03a9f7c02c8a1f1cdd">qlibs::ffmath::classification</a> { <br />
@@ -165,6 +172,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qffmath.html#ga9185f89b32b1af03a9f7c02c8a1f1cdd">classification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb">qlibs::ffmath::classify</a> (const float f)</td></tr>
 <tr class="memdesc:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Categorizes the floating-point number <em>x</em>. This function determines whether its argument is a normal floating-point number, or one of several special categories of values, including NaN (not a number), infinity, subnormal floating-point values or zero. To determine what category the argument belongs to, compare the return value with the any of the following number classification macros:  <a href="group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb">More...</a><br /></td></tr>
 <tr class="separator:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf3f4268fdc8131e7b15c04f72b6be9d9">qlibs::ffmath::Max</a> (const T x, const T y)</td></tr>
+<tr class="separator:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7cdff7184e67aa97f8a41f7e5927fede">qlibs::ffmath::Min</a> (const T x, const T y)</td></tr>
+<tr class="separator:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gadb57fa2be222cd1aaf4a6c926e4e78c0">qlibs::ffmath::isNan</a> (const float x)</td></tr>
 <tr class="memdesc:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if <em>x</em> is Not-A-Number (NaN)  <a href="group__qffmath.html#gadb57fa2be222cd1aaf4a6c926e4e78c0">More...</a><br /></td></tr>
 <tr class="separator:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,12 +352,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">qlibs::ffmath::factorial</a> (float x)</td></tr>
 <tr class="memdesc:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the factorial of the integer part of <em>x</em>.  <a href="group__qffmath.html#ga7738f83c9e81e1a4ecedb540807d68e9">More...</a><br /></td></tr>
 <tr class="separator:ga7738f83c9e81e1a4ecedb540807d68e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9e62ce0792aeddb4f9851fbd54680ed8">qlibs::ffmath::assoc_laguerre</a> (unsigned int n, unsigned int m, float x)</td></tr>
-<tr class="memdesc:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Laguerre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga9e62ce0792aeddb4f9851fbd54680ed8">More...</a><br /></td></tr>
-<tr class="separator:ga9e62ce0792aeddb4f9851fbd54680ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad96ae6ad92b5dd450125f1eece9f43e3">qlibs::ffmath::assoc_legendre</a> (unsigned int n, unsigned int m, float x)</td></tr>
-<tr class="memdesc:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Legendre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#gad96ae6ad92b5dd450125f1eece9f43e3">More...</a><br /></td></tr>
-<tr class="separator:gad96ae6ad92b5dd450125f1eece9f43e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga57e18a5fcd64d6829bf13bfd55ac7cf1">qlibs::ffmath::assoc_laguerre</a> (size_t n, size_t m, float x)</td></tr>
+<tr class="memdesc:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Laguerre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga57e18a5fcd64d6829bf13bfd55ac7cf1">More...</a><br /></td></tr>
+<tr class="separator:ga57e18a5fcd64d6829bf13bfd55ac7cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga55fc4eb28d96e0cd7f03e4cd69d05d6c">qlibs::ffmath::assoc_legendre</a> (size_t n, size_t m, float x)</td></tr>
+<tr class="memdesc:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the associated Legendre polynomials of the degree <em>n</em>, order <em>m</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga55fc4eb28d96e0cd7f03e4cd69d05d6c">More...</a><br /></td></tr>
+<tr class="separator:ga55fc4eb28d96e0cd7f03e4cd69d05d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac0b8667e23ccb49bb29567797ee4e34e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gac0b8667e23ccb49bb29567797ee4e34e">qlibs::ffmath::beta</a> (float x, float y)</td></tr>
 <tr class="memdesc:gac0b8667e23ccb49bb29567797ee4e34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Beta function of <em>x</em> and <em>y</em>.  <a href="group__qffmath.html#gac0b8667e23ccb49bb29567797ee4e34e">More...</a><br /></td></tr>
 <tr class="separator:gac0b8667e23ccb49bb29567797ee4e34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,6 +379,39 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6">qlibs::ffmath::ellint_3</a> (float k, float nu, float phi)</td></tr>
 <tr class="memdesc:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the incomplete elliptic integral of the third kind of <em>k</em>, <em>nu</em> and <em>phi</em>.  <a href="group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6">More...</a><br /></td></tr>
 <tr class="separator:ga3aa46fc7504c3025852c3a638e0a39f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2feef83f0b68b15213d3a874ee132dc7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7">qlibs::ffmath::expint</a> (float num)</td></tr>
+<tr class="memdesc:ga2feef83f0b68b15213d3a874ee132dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Exponential integral of <em>num</em>.  <a href="group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7">More...</a><br /></td></tr>
+<tr class="separator:ga2feef83f0b68b15213d3a874ee132dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1f0e976869a66b602fc16926107a8b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gad1f0e976869a66b602fc16926107a8b1">qlibs::ffmath::hermite</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:gad1f0e976869a66b602fc16926107a8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (physicist's) Hermite polynomials of the degree <em>n</em> and argument <em>x</em>.  <a href="group__qffmath.html#gad1f0e976869a66b602fc16926107a8b1">More...</a><br /></td></tr>
+<tr class="separator:gad1f0e976869a66b602fc16926107a8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2218cf71ca04fa7029b979b57224f380"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2218cf71ca04fa7029b979b57224f380">qlibs::ffmath::laguerre</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga2218cf71ca04fa7029b979b57224f380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the non-associated Laguerre polynomials of the degree <em>n</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga2218cf71ca04fa7029b979b57224f380">More...</a><br /></td></tr>
+<tr class="separator:ga2218cf71ca04fa7029b979b57224f380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9aa33f38928dbc0d2988ac71658b5752"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9aa33f38928dbc0d2988ac71658b5752">qlibs::ffmath::legendre</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga9aa33f38928dbc0d2988ac71658b5752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the unassociated Legendre polynomials of the degree <em>n</em>, and argument <em>x</em>.  <a href="group__qffmath.html#ga9aa33f38928dbc0d2988ac71658b5752">More...</a><br /></td></tr>
+<tr class="separator:ga9aa33f38928dbc0d2988ac71658b5752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga998670a53bda8651dc02f633cbc134fa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa">qlibs::ffmath::riemann_zeta</a> (float s)</td></tr>
+<tr class="memdesc:ga998670a53bda8651dc02f633cbc134fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Riemann zeta function of <em>s</em>.  <a href="group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa">More...</a><br /></td></tr>
+<tr class="separator:ga998670a53bda8651dc02f633cbc134fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da">qlibs::ffmath::sph_bessel</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the spherical Bessel function of the first kind <em>n</em>, and <em>x</em>.  <a href="group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da">More...</a><br /></td></tr>
+<tr class="separator:ga0c25bbed5c8f7610a49d3deeb60be6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1d91b27692bcf07ca48fda87965086b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b">qlibs::ffmath::sph_neumann</a> (size_t n, float x)</td></tr>
+<tr class="memdesc:gaf1d91b27692bcf07ca48fda87965086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the spherical Bessel function of the second kind also known as the spherical Neumann function of <em>n</em> and <em>x</em>.  <a href="group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b">More...</a><br /></td></tr>
+<tr class="separator:gaf1d91b27692bcf07ca48fda87965086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99330295d97fed41d1acf25ab81409a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8">qlibs::ffmath::cyl_bessel_i</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga99330295d97fed41d1acf25ab81409a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the regular modified cylindrical Bessel function of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8">More...</a><br /></td></tr>
+<tr class="separator:ga99330295d97fed41d1acf25ab81409a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0800b4af470efed8fa44bb898eaed7d0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0">qlibs::ffmath::cyl_bessel_j</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga0800b4af470efed8fa44bb898eaed7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cylindrical Bessel function of the first kind of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0">More...</a><br /></td></tr>
+<tr class="separator:ga0800b4af470efed8fa44bb898eaed7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73f335c184e11403f99e1a7266d69d2a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a">qlibs::ffmath::cyl_bessel_k</a> (float nu, float x)</td></tr>
+<tr class="memdesc:ga73f335c184e11403f99e1a7266d69d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the irregular modified cylindrical Bessel function (also known as modified Bessel function of the second kind) of <em>nu</em> and <em>x</em>.  <a href="group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a">More...</a><br /></td></tr>
+<tr class="separator:ga73f335c184e11403f99e1a7266d69d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6e40f496a09b0319302f2cde77a82a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8">qlibs::ffmath::sph_legendre</a> (size_t l, size_t m, float theta)</td></tr>
+<tr class="memdesc:gaf6e40f496a09b0319302f2cde77a82a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">1-3) Computes the spherical associated Legendre function of degree <em>l</em>, order <em>m</em>, and polar angle <em>theta</em>  <a href="group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8">More...</a><br /></td></tr>
+<tr class="separator:gaf6e40f496a09b0319302f2cde77a82a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -387,6 +433,9 @@ Variables</h2></td></tr>
 <tr class="memitem:ga4555327272c4af4b5dfd6213574a47a8"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga4555327272c4af4b5dfd6213574a47a8">qlibs::ffmath::FFP_PI</a></td></tr>
 <tr class="memdesc:ga4555327272c4af4b5dfd6213574a47a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The circumference of a circle with diameter 1, ( π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga4555327272c4af4b5dfd6213574a47a8">More...</a><br /></td></tr>
 <tr class="separator:ga4555327272c4af4b5dfd6213574a47a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga083524baccef2dbf5863111dff9c34bc"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga083524baccef2dbf5863111dff9c34bc">qlibs::ffmath::FFP_2PI</a></td></tr>
+<tr class="memdesc:ga083524baccef2dbf5863111dff9c34bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice circumference of a circle with diameter 1, ( 2π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga083524baccef2dbf5863111dff9c34bc">More...</a><br /></td></tr>
+<tr class="separator:ga083524baccef2dbf5863111dff9c34bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaecf61a36f13ab995e64d17eea01a10e3"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaecf61a36f13ab995e64d17eea01a10e3">qlibs::ffmath::FFP_PI_2</a></td></tr>
 <tr class="memdesc:gaecf61a36f13ab995e64d17eea01a10e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Half of π ( π/2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gaecf61a36f13ab995e64d17eea01a10e3">More...</a><br /></td></tr>
 <tr class="separator:gaecf61a36f13ab995e64d17eea01a10e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,21 +448,42 @@ Variables</h2></td></tr>
 <tr class="memitem:ga378fb16701afc3184f8c56e30d99a42a"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a">qlibs::ffmath::FFP_2_PI</a></td></tr>
 <tr class="memdesc:ga378fb16701afc3184f8c56e30d99a42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice the inverse of π ( 2/π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a">More...</a><br /></td></tr>
 <tr class="separator:ga378fb16701afc3184f8c56e30d99a42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaecb24cd0874ffef028e92ed8afe949dc"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gaecb24cd0874ffef028e92ed8afe949dc">qlibs::ffmath::FFP_1_SQRTPI</a></td></tr>
+<tr class="memdesc:gaecb24cd0874ffef028e92ed8afe949dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gaecb24cd0874ffef028e92ed8afe949dc">More...</a><br /></td></tr>
+<tr class="separator:gaecb24cd0874ffef028e92ed8afe949dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9499a336527d605f29f4bb286816482c"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">qlibs::ffmath::FFP_2_SQRTPI</a></td></tr>
-<tr class="memdesc:ga9499a336527d605f29f4bb286816482c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of the square root of π ( 2/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">More...</a><br /></td></tr>
+<tr class="memdesc:ga9499a336527d605f29f4bb286816482c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Twice the inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga9499a336527d605f29f4bb286816482c">More...</a><br /></td></tr>
 <tr class="separator:ga9499a336527d605f29f4bb286816482c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga81990ada2a31fba91c6e601bf9d069d4"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga81990ada2a31fba91c6e601bf9d069d4">qlibs::ffmath::FFP_SQRT2</a></td></tr>
 <tr class="memdesc:ga81990ada2a31fba91c6e601bf9d069d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square root of 2 ( √2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga81990ada2a31fba91c6e601bf9d069d4">More...</a><br /></td></tr>
 <tr class="separator:ga81990ada2a31fba91c6e601bf9d069d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd">qlibs::ffmath::FFP_SQRT3</a></td></tr>
+<tr class="memdesc:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square root of 3 ( √3 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd">More...</a><br /></td></tr>
+<tr class="separator:ga2fbf65040896adcbd678d1c5ef4702dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacdf60923b073c1afc6fa824e120a2083"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gacdf60923b073c1afc6fa824e120a2083">qlibs::ffmath::FFP_SQRT1_2</a></td></tr>
 <tr class="memdesc:gacdf60923b073c1afc6fa824e120a2083"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gacdf60923b073c1afc6fa824e120a2083">More...</a><br /></td></tr>
 <tr class="separator:gacdf60923b073c1afc6fa824e120a2083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga42139e0b4c3b448240bee9e6d63c0ac0">qlibs::ffmath::FFP_SQRT1_3</a></td></tr>
+<tr class="memdesc:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse of square root of 3 ( 1/√3 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga42139e0b4c3b448240bee9e6d63c0ac0">More...</a><br /></td></tr>
+<tr class="separator:ga42139e0b4c3b448240bee9e6d63c0ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ebb8b444d93b2e01976f09728c46772"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga5ebb8b444d93b2e01976f09728c46772">qlibs::ffmath::FFP_LN_SQRT_2PI</a></td></tr>
 <tr class="memdesc:ga5ebb8b444d93b2e01976f09728c46772"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural logarithm of the square root of 2π given as a single-precision floating-point number.  <a href="group__qffmath.html#ga5ebb8b444d93b2e01976f09728c46772">More...</a><br /></td></tr>
 <tr class="separator:ga5ebb8b444d93b2e01976f09728c46772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">qlibs::ffmath::FFP_GAMMA_E</a></td></tr>
-<tr class="memdesc:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant Euler-Mascheroni.  <a href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">More...</a><br /></td></tr>
+<tr class="memdesc:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant Euler-Mascheroni given as a single-precision floating-point number.  <a href="group__qffmath.html#gae61e7c9965f51ae9e2300fa4eb001e79">More...</a><br /></td></tr>
 <tr class="separator:gae61e7c9965f51ae9e2300fa4eb001e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga078f143768fc23adadf9045e1bb76ef0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga078f143768fc23adadf9045e1bb76ef0">qlibs::ffmath::FFP_PHI</a></td></tr>
+<tr class="memdesc:ga078f143768fc23adadf9045e1bb76ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The golden ratio, (1+√5)/2 given as a single-precision floating-point number.  <a href="group__qffmath.html#ga078f143768fc23adadf9045e1bb76ef0">More...</a><br /></td></tr>
+<tr class="separator:ga078f143768fc23adadf9045e1bb76ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7928175f7d7dd8a3393c5981c9c85514"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#ga7928175f7d7dd8a3393c5981c9c85514">qlibs::ffmath::FFP_RADIAN</a></td></tr>
+<tr class="memdesc:ga7928175f7d7dd8a3393c5981c9c85514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radian, value of ( 180/π ) given as a single-precision floating-point number.  <a href="group__qffmath.html#ga7928175f7d7dd8a3393c5981c9c85514">More...</a><br /></td></tr>
+<tr class="separator:ga7928175f7d7dd8a3393c5981c9c85514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae689abe8b1b9b40538ffabccef85b3c3"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gae689abe8b1b9b40538ffabccef85b3c3">qlibs::ffmath::FFP_LOG10_2</a></td></tr>
+<tr class="memdesc:gae689abe8b1b9b40538ffabccef85b3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base 10 logarithm of 2 ( log_10 2 ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gae689abe8b1b9b40538ffabccef85b3c3">More...</a><br /></td></tr>
+<tr class="separator:gae689abe8b1b9b40538ffabccef85b3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8b5944a144c63ecb3362c58989b051c"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qffmath.html#gac8b5944a144c63ecb3362c58989b051c">qlibs::ffmath::FFP_LN_PI</a></td></tr>
+<tr class="memdesc:gac8b5944a144c63ecb3362c58989b051c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural logarithm of π ( ln(π) ) given as a single-precision floating-point number.  <a href="group__qffmath.html#gac8b5944a144c63ecb3362c58989b051c">More...</a><br /></td></tr>
+<tr class="separator:gac8b5944a144c63ecb3362c58989b051c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Fast floating-point math library for applications where speed is more important than accuracy. </p>
@@ -590,8 +660,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga9e62ce0792aeddb4f9851fbd54680ed8" name="ga9e62ce0792aeddb4f9851fbd54680ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9e62ce0792aeddb4f9851fbd54680ed8">&#9670;&nbsp;</a></span>assoc_laguerre()</h2>
+<a id="ga57e18a5fcd64d6829bf13bfd55ac7cf1" name="ga57e18a5fcd64d6829bf13bfd55ac7cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57e18a5fcd64d6829bf13bfd55ac7cf1">&#9670;&nbsp;</a></span>assoc_laguerre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,13 +669,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">float qlibs::ffmath::assoc_laguerre </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
@@ -635,8 +705,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gad96ae6ad92b5dd450125f1eece9f43e3" name="gad96ae6ad92b5dd450125f1eece9f43e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad96ae6ad92b5dd450125f1eece9f43e3">&#9670;&nbsp;</a></span>assoc_legendre()</h2>
+<a id="ga55fc4eb28d96e0cd7f03e4cd69d05d6c" name="ga55fc4eb28d96e0cd7f03e4cd69d05d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55fc4eb28d96e0cd7f03e4cd69d05d6c">&#9670;&nbsp;</a></span>assoc_legendre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -644,13 +714,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">float qlibs::ffmath::assoc_legendre </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
@@ -1044,6 +1114,120 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga99330295d97fed41d1acf25ab81409a8" name="ga99330295d97fed41d1acf25ab81409a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99330295d97fed41d1acf25ab81409a8">&#9670;&nbsp;</a></span>cyl_bessel_i()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::cyl_bessel_i </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>nu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the regular modified cylindrical Bessel function of <em>nu</em> and <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nu</td><td>The order of the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument to the function, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the regular modified cylindrical Bessel function of <em>nu</em> and <em>x</em>. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>nu</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="ga0800b4af470efed8fa44bb898eaed7d0" name="ga0800b4af470efed8fa44bb898eaed7d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0800b4af470efed8fa44bb898eaed7d0">&#9670;&nbsp;</a></span>cyl_bessel_j()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::cyl_bessel_j </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>nu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the cylindrical Bessel function of the first kind of <em>nu</em> and <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nu</td><td>The order of the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument to the function, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the irregular modified cylindrical Bessel function (also known as modified Bessel function of the second kind) of <em>nu</em> and <em>x</em>. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>nu</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="ga73f335c184e11403f99e1a7266d69d2a" name="ga73f335c184e11403f99e1a7266d69d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73f335c184e11403f99e1a7266d69d2a">&#9670;&nbsp;</a></span>cyl_bessel_k()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::cyl_bessel_k </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>nu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the irregular modified cylindrical Bessel function (also known as modified Bessel function of the second kind) of <em>nu</em> and <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nu</td><td>The order of the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument to the function, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the irregular modified cylindrical Bessel function (also known as modified Bessel function of the second kind) of <em>nu</em> and <em>x</em>. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>nu</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
 <a id="gae9f99245649658d596c24624945b56d0" name="gae9f99245649658d596c24624945b56d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae9f99245649658d596c24624945b56d0">&#9670;&nbsp;</a></span>ellint_1()</h2>
 
@@ -1161,7 +1345,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the incomplete elliptic integral of the third kind of <em>k</em>, <em>nu</em> and <em>phi</em>. If the argument is <code>nan</code>, NaN is returned. If <code>|k| &gt; 1</code>, <code>nan</code> is returned due the domain error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the incomplete elliptic integral of the third kind of <em>k</em>, <em>nu</em> and <em>phi</em>. If the argument is <code>nan</code>, <code>nan</code> is returned. If <code>|k| &gt; 1</code>, <code>nan</code> is returned due the domain error </dd></dl>
 
 </div>
 </div>
@@ -1300,6 +1484,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2feef83f0b68b15213d3a874ee132dc7" name="ga2feef83f0b68b15213d3a874ee132dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2feef83f0b68b15213d3a874ee132dc7">&#9670;&nbsp;</a></span>expint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::expint </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the Exponential integral of <em>num</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>A floating-point value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the exponential integral of <em>num</em>. If the argument is <code>nan</code>, <code>nan</code> is returned. If the argument is <code>±0</code>, <code>-inf</code> is returned. </dd></dl>
+
+</div>
+</div>
 <a id="ga7738f83c9e81e1a4ecedb540807d68e9" name="ga7738f83c9e81e1a4ecedb540807d68e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7738f83c9e81e1a4ecedb540807d68e9">&#9670;&nbsp;</a></span>factorial()</h2>
 
@@ -1422,6 +1633,44 @@ Variables</h2></td></tr>
 
 <p>Returns Not a Number (NaN) <code>nan</code> as a 32-bit floating point number. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <code>nan</code> value </dd></dl>
+
+</div>
+</div>
+<a id="gad1f0e976869a66b602fc16926107a8b1" name="gad1f0e976869a66b602fc16926107a8b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1f0e976869a66b602fc16926107a8b1">&#9670;&nbsp;</a></span>hermite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::hermite </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the (physicist's) Hermite polynomials of the degree <em>n</em> and argument <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The degree of the polynomial </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument, a floating-point value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of order-n Hermite polynomial of <em>x</em>. If the argument is <code>nan</code>, <code>nan</code> is returned. If <code>n&gt;=128</code>, the behavior is implementation-defined. </dd></dl>
 
 </div>
 </div>
@@ -1843,6 +2092,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2218cf71ca04fa7029b979b57224f380" name="ga2218cf71ca04fa7029b979b57224f380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2218cf71ca04fa7029b979b57224f380">&#9670;&nbsp;</a></span>laguerre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::laguerre </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the non-associated Laguerre polynomials of the degree <em>n</em>, and argument <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The degree of the polynomial, an unsigned integer value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the non-associated Laguerre polynomial of <em>x</em> shall be returned. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>x</em> is negative, <code>nan</code> is returned. If <em>n</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
 <a id="ga396c804d2c8d8049d9eb2480beda1f3d" name="ga396c804d2c8d8049d9eb2480beda1f3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga396c804d2c8d8049d9eb2480beda1f3d">&#9670;&nbsp;</a></span>ldexp()</h2>
 
@@ -1878,6 +2165,44 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><em>x</em> multiplied by 2 to the power of <em>pw2</em> <code>x×2^pwd</code> is returned. If the range validation fails due to overflow, <code>±inf</code> is returned. If the range validation fails due to underflow, the correct result (after rounding) is returned. </dd></dl>
+
+</div>
+</div>
+<a id="ga9aa33f38928dbc0d2988ac71658b5752" name="ga9aa33f38928dbc0d2988ac71658b5752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9aa33f38928dbc0d2988ac71658b5752">&#9670;&nbsp;</a></span>legendre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::legendre </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the unassociated Legendre polynomials of the degree <em>n</em>, and argument <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The degree of the polynomial, an unsigned integer value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the unassociated Legendre polynomial of <em>x</em> shall be returned. If the argument is <code>nan</code>, a <code>nan</code> is returned. The function is not required to be defined for <code>|x| &gt; 1 &lt;//t&gt;. If <em>n</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </code></dd></dl>
 
 </div>
 </div>
@@ -2102,6 +2427,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaf3f4268fdc8131e7b15c04f72b6be9d9" name="gaf3f4268fdc8131e7b15c04f72b6be9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf3f4268fdc8131e7b15c04f72b6be9d9">&#9670;&nbsp;</a></span>Max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T qlibs::ffmath::Max </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="gaa4d423217e6e4ef2414d6668a03a56bb" name="gaa4d423217e6e4ef2414d6668a03a56bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa4d423217e6e4ef2414d6668a03a56bb">&#9670;&nbsp;</a></span>midpoint()</h2>
 
@@ -2137,6 +2500,44 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Half the sum of <em>a</em> and <em>b</em>. No overflow occurs. A at most one inexact operation occurs. </dd></dl>
+
+</div>
+</div>
+<a id="ga7cdff7184e67aa97f8a41f7e5927fede" name="ga7cdff7184e67aa97f8a41f7e5927fede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7cdff7184e67aa97f8a41f7e5927fede">&#9670;&nbsp;</a></span>Min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T qlibs::ffmath::Min </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2439,6 +2840,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga998670a53bda8651dc02f633cbc134fa" name="ga998670a53bda8651dc02f633cbc134fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga998670a53bda8651dc02f633cbc134fa">&#9670;&nbsp;</a></span>riemann_zeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::riemann_zeta </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the Riemann zeta function of <em>s</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>A floating-point value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the Riemann zeta function of <em>s</em>. If the argument is <code>nan</code>, <code>nan</code> is returned. </dd></dl>
+
+</div>
+</div>
 <a id="gad7bc3aac4bac1f2e6745310970aceec8" name="gad7bc3aac4bac1f2e6745310970aceec8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad7bc3aac4bac1f2e6745310970aceec8">&#9670;&nbsp;</a></span>rounding()</h2>
 
@@ -2571,6 +2999,127 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the hyperbolic sine of <em>x</em> <code>sinh(x)</code> is returned. If the range validation fails, a <code>±inf</code> is value is returned. </dd></dl>
+
+</div>
+</div>
+<a id="ga0c25bbed5c8f7610a49d3deeb60be6da" name="ga0c25bbed5c8f7610a49d3deeb60be6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c25bbed5c8f7610a49d3deeb60be6da">&#9670;&nbsp;</a></span>sph_bessel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::sph_bessel </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the spherical Bessel function of the first kind <em>n</em>, and <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The order of the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument to the function, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the spherical Bessel function of the first kind of <em>n</em> and <em>x</em>. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>n</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="gaf6e40f496a09b0319302f2cde77a82a8" name="gaf6e40f496a09b0319302f2cde77a82a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf6e40f496a09b0319302f2cde77a82a8">&#9670;&nbsp;</a></span>sph_legendre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::sph_legendre </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>theta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>1-3) Computes the spherical associated Legendre function of degree <em>l</em>, order <em>m</em>, and polar angle <em>theta</em> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>The degree </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The order </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Polar angle, measured in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the spherical associated Legendre function (that is, spherical harmonic with sigma = 0) of <em>l</em>, <em>m</em>, and <em>theta</em>. If the argument <em>x</em> is <code>nan</code>, a <code>nan</code> is returned. If <em>l</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="gaf1d91b27692bcf07ca48fda87965086b" name="gaf1d91b27692bcf07ca48fda87965086b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1d91b27692bcf07ca48fda87965086b">&#9670;&nbsp;</a></span>sph_neumann()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float qlibs::ffmath::sph_neumann </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the spherical Bessel function of the second kind also known as the spherical Neumann function of <em>n</em> and <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The order of the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The argument to the function, a floating-point or integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If all validations are ok, the value of the spherical Bessel function of the second kind (spherical Neumann function) of <em>n</em> and <em>x</em>. If the argument is <code>nan</code>, a <code>nan</code> is returned. If <em>n</em> is greater or equal than <code>128</code>, the behavior is implementation-defined. </dd></dl>
 
 </div>
 </div>
@@ -2842,6 +3391,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaecb24cd0874ffef028e92ed8afe949dc" name="gaecb24cd0874ffef028e92ed8afe949dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaecb24cd0874ffef028e92ed8afe949dc">&#9670;&nbsp;</a></span>FFP_1_SQRTPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_1_SQRTPI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
 <a id="ga378fb16701afc3184f8c56e30d99a42a" name="ga378fb16701afc3184f8c56e30d99a42a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga378fb16701afc3184f8c56e30d99a42a">&#9670;&nbsp;</a></span>FFP_2_PI</h2>
 
@@ -2886,7 +3459,31 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The inverse of the square root of π ( 2/√π ) given as a single-precision floating-point number. </p>
+<p>Twice the inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
+<a id="ga083524baccef2dbf5863111dff9c34bc" name="ga083524baccef2dbf5863111dff9c34bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga083524baccef2dbf5863111dff9c34bc">&#9670;&nbsp;</a></span>FFP_2PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_2PI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Twice circumference of a circle with diameter 1, ( 2π ) given as a single-precision floating-point number. </p>
 
 </div>
 </div>
@@ -2934,7 +3531,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constant Euler-Mascheroni. </p>
+<p>Constant Euler-Mascheroni given as a single-precision floating-point number. </p>
 
 </div>
 </div>
@@ -2986,6 +3583,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gac8b5944a144c63ecb3362c58989b051c" name="gac8b5944a144c63ecb3362c58989b051c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8b5944a144c63ecb3362c58989b051c">&#9670;&nbsp;</a></span>FFP_LN_PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_LN_PI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The natural logarithm of π ( ln(π) ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
 <a id="ga5ebb8b444d93b2e01976f09728c46772" name="ga5ebb8b444d93b2e01976f09728c46772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5ebb8b444d93b2e01976f09728c46772">&#9670;&nbsp;</a></span>FFP_LN_SQRT_2PI</h2>
 
@@ -3007,6 +3628,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The natural logarithm of the square root of 2π given as a single-precision floating-point number. </p>
+
+</div>
+</div>
+<a id="gae689abe8b1b9b40538ffabccef85b3c3" name="gae689abe8b1b9b40538ffabccef85b3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae689abe8b1b9b40538ffabccef85b3c3">&#9670;&nbsp;</a></span>FFP_LOG10_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_LOG10_2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The base 10 logarithm of 2 ( log_10 2 ) given as a single-precision floating-point number. </p>
 
 </div>
 </div>
@@ -3055,6 +3700,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
+<a id="ga078f143768fc23adadf9045e1bb76ef0" name="ga078f143768fc23adadf9045e1bb76ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga078f143768fc23adadf9045e1bb76ef0">&#9670;&nbsp;</a></span>FFP_PHI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_PHI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The golden ratio, (1+√5)/2 given as a single-precision floating-point number. </p>
 
 </div>
 </div>
@@ -3130,6 +3799,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga7928175f7d7dd8a3393c5981c9c85514" name="ga7928175f7d7dd8a3393c5981c9c85514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7928175f7d7dd8a3393c5981c9c85514">&#9670;&nbsp;</a></span>FFP_RADIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_RADIAN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Radian, value of ( 180/π ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
 <a id="gacdf60923b073c1afc6fa824e120a2083" name="gacdf60923b073c1afc6fa824e120a2083"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gacdf60923b073c1afc6fa824e120a2083">&#9670;&nbsp;</a></span>FFP_SQRT1_2</h2>
 
@@ -3154,6 +3847,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga42139e0b4c3b448240bee9e6d63c0ac0" name="ga42139e0b4c3b448240bee9e6d63c0ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42139e0b4c3b448240bee9e6d63c0ac0">&#9670;&nbsp;</a></span>FFP_SQRT1_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_SQRT1_3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The inverse of square root of 3 ( 1/√3 ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
 <a id="ga81990ada2a31fba91c6e601bf9d069d4" name="ga81990ada2a31fba91c6e601bf9d069d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga81990ada2a31fba91c6e601bf9d069d4">&#9670;&nbsp;</a></span>FFP_SQRT2</h2>
 
@@ -3175,6 +3892,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The square root of 2 ( √2 ) given as a single-precision floating-point number. </p>
+
+</div>
+</div>
+<a id="ga2fbf65040896adcbd678d1c5ef4702dd" name="ga2fbf65040896adcbd678d1c5ef4702dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fbf65040896adcbd678d1c5ef4702dd">&#9670;&nbsp;</a></span>FFP_SQRT3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float qlibs::ffmath::FFP_SQRT3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The square root of 3 ( √3 ) given as a single-precision floating-point number. </p>
 
 </div>
 </div>

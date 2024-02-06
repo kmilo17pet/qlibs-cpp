@@ -6,6 +6,7 @@ var hierarchy =
     ] ],
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
     [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
+    [ "float_limits", "structfloat__limits.html", null ],
     [ "qlibs::fp16", "classqlibs_1_1fp16.html", null ],
     [ "qlibs::interp1", "classqlibs_1_1interp1.html", null ],
     [ "qlibs::fis::ioBase", "classqlibs_1_1fis_1_1io_base.html", [
@@ -34,6 +35,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "qlibs::nState", "classqlibs_1_1n_state.html", null ],
+    [ "qlibs::ffmath::numbers", "structqlibs_1_1ffmath_1_1numbers.html", null ],
     [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
     [ "qlibs::pidGains", "structqlibs_1_1pid_gains.html", [
       [ "qlibs::pidController", "classqlibs_1_1pid_controller.html", null ]

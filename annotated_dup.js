@@ -1,6 +1,9 @@
 var annotated_dup =
 [
     [ "qlibs", "namespaceqlibs.html", [
+      [ "ffmath", "namespaceqlibs_1_1ffmath.html", [
+        [ "numbers", "structqlibs_1_1ffmath_1_1numbers.html", "structqlibs_1_1ffmath_1_1numbers" ]
+      ] ],
       [ "fis", "namespaceqlibs_1_1fis.html", [
         [ "core", "classqlibs_1_1fis_1_1core.html", null ],
         [ "input", "classqlibs_1_1fis_1_1input.html", "classqlibs_1_1fis_1_1input" ],
@@ -38,5 +41,6 @@ var annotated_dup =
       [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
-    ] ]
+    ] ],
+    [ "float_limits", "structfloat__limits.html", "structfloat__limits" ]
 ];

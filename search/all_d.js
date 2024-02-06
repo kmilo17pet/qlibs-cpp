@@ -9,5 +9,6 @@ var searchData=
   ['norminf_6',['normInf',['../classqlibs_1_1mat.html#aeacda8230e3ebecd3746ee77229d183e',1,'qlibs::mat']]],
   ['nstate_7',['nState',['../classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f',1,'qlibs::nState::nState()'],['../classqlibs_1_1n_state.html',1,'qlibs::nState']]],
   ['num_8',['num',['../structqlibs_1_1continuous_t_f.html#ae603a1cc01795a074a805cd5bad98d1b',1,'qlibs::continuousTF::num()'],['../structqlibs_1_1discrete_t_f.html#aea735bee00dd46574d5b127fc2a983d2',1,'qlibs::discreteTF::num()']]],
-  ['numerical_20state_20class_9',['Numerical state class',['../group__qnuma.html',1,'']]]
+  ['numbers_9',['numbers',['../structqlibs_1_1ffmath_1_1numbers.html',1,'qlibs::ffmath']]],
+  ['numerical_20state_20class_10',['Numerical state class',['../group__qnuma.html',1,'']]]
 ];

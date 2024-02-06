@@ -57,8 +57,8 @@ var NAVTREEINDEX =
 [
 "_arduino_01support.html",
 "classqlibs_1_1mat.html#a3fa89ac7510d4258cbf51039a52c9267",
-"group__qffmath.html#ga48c227d95bcf981020c47e711f9c5e34",
-"qbitfield_desc.html#qbitfield_dump"
+"group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb",
+"namespacemembers_i.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

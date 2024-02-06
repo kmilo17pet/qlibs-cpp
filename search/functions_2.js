@@ -8,10 +8,10 @@ var searchData=
   ['comp_5fellint_5f1_5',['comp_ellint_1',['../group__qffmath.html#ga6f4370a5355319baf01a91b36b16295b',1,'qlibs::ffmath']]],
   ['comp_5fellint_5f2_6',['comp_ellint_2',['../group__qffmath.html#ga7ace56cc166102808a471dbcce34146d',1,'qlibs::ffmath']]],
   ['comp_5fellint_5f3_7',['comp_ellint_3',['../group__qffmath.html#ga76eee6283cbdeba7375804b6da1c902f',1,'qlibs::ffmath']]],
-  ['continuoussystem_8',['continuousSystem',['../classqlibs_1_1continuous_system.html#a4e07a15d84bba1a75e2e1ef7e152188d',1,'qlibs::continuousSystem::continuousSystem(real_t(&amp;num)[systemOrder+1], real_t(&amp;den)[systemOrder+1], nState(&amp;x)[systemOrder], const real_t dT) noexcept'],['../classqlibs_1_1continuous_system.html#aa1fff5d5e3d692eccc74072f6bf5b11e',1,'qlibs::continuousSystem::continuousSystem(continuousTF&lt; order &gt; &amp;ctf, const real_t dT)'],['../classqlibs_1_1continuous_system.html#a70dd4c9ec4ab4b3d0e4b6457ebcff0a1',1,'qlibs::continuousSystem::continuousSystem(real_t *num, real_t *den, nState *x, const size_t nD, const real_t dT) noexcept']]],
+  ['continuoussystem_8',['continuousSystem',['../classqlibs_1_1continuous_system.html#aa1fff5d5e3d692eccc74072f6bf5b11e',1,'qlibs::continuousSystem::continuousSystem(continuousTF&lt; order &gt; &amp;ctf, const real_t dT)'],['../classqlibs_1_1continuous_system.html#a70dd4c9ec4ab4b3d0e4b6457ebcff0a1',1,'qlibs::continuousSystem::continuousSystem(real_t *num, real_t *den, nState *x, const size_t nD, const real_t dT) noexcept'],['../classqlibs_1_1continuous_system.html#a4e07a15d84bba1a75e2e1ef7e152188d',1,'qlibs::continuousSystem::continuousSystem(real_t(&amp;num)[systemOrder+1], real_t(&amp;den)[systemOrder+1], nState(&amp;x)[systemOrder], const real_t dT) noexcept']]],
   ['continuoustf_9',['continuousTF',['../structqlibs_1_1continuous_t_f.html#a8e56f1f7dc3b9e7c07e88df5c29a8c95',1,'qlibs::continuousTF']]],
   ['control_10',['control',['../classqlibs_1_1pid_controller.html#adb695602fafd10c67ca8089a217afebc',1,'qlibs::pidController']]],
-  ['cos_11',['cos',['../classqlibs_1_1fp16.html#a1e3bad5cb386dc1da5be80b5724dd5d3',1,'qlibs::fp16::cos()'],['../group__qffmath.html#gaa083609d7a29f69608f3b5b3584777a2',1,'qlibs::ffmath::cos(float x)']]],
+  ['cos_11',['cos',['../group__qffmath.html#gaa083609d7a29f69608f3b5b3584777a2',1,'qlibs::ffmath::cos()'],['../classqlibs_1_1fp16.html#a1e3bad5cb386dc1da5be80b5724dd5d3',1,'qlibs::fp16::cos()']]],
   ['cosh_12',['cosh',['../group__qffmath.html#gae886198bdebc0e005dd1c710a943bc00',1,'qlibs::ffmath::cosh()'],['../classqlibs_1_1fp16.html#a7cb1c5521b30b8101db4a0d3ed4ed713',1,'qlibs::fp16::cosh()']]],
   ['crc16_5fa_13',['crc16_A',['../classqlibs_1_1crc.html#a9459dbf84a9043ef26c0ac5fa1de503c',1,'qlibs::crc']]],
   ['crc16_5farc_14',['crc16_ARC',['../classqlibs_1_1crc.html#a4bce4d077130b092cf89b17294adf7ec',1,'qlibs::crc']]],
@@ -54,5 +54,8 @@ var searchData=
   ['crc8_5fitu_51',['crc8_ITU',['../classqlibs_1_1crc.html#ad7401feaa0091d163741845655bf3b23',1,'qlibs::crc']]],
   ['crc8_5fmaxim_52',['crc8_MAXIM',['../classqlibs_1_1crc.html#a72d81f4b4c521cc24a5d508da737db7e',1,'qlibs::crc']]],
   ['crc8_5frohc_53',['crc8_ROHC',['../classqlibs_1_1crc.html#ab42ec3f94bffb2e690f541588c6830f4',1,'qlibs::crc']]],
-  ['crc8_5fwcdma_54',['crc8_WCDMA',['../classqlibs_1_1crc.html#a0051d061e8d161726d70b4d71cd69fc1',1,'qlibs::crc']]]
+  ['crc8_5fwcdma_54',['crc8_WCDMA',['../classqlibs_1_1crc.html#a0051d061e8d161726d70b4d71cd69fc1',1,'qlibs::crc']]],
+  ['cyl_5fbessel_5fi_55',['cyl_bessel_i',['../group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8',1,'qlibs::ffmath']]],
+  ['cyl_5fbessel_5fj_56',['cyl_bessel_j',['../group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0',1,'qlibs::ffmath']]],
+  ['cyl_5fbessel_5fk_57',['cyl_bessel_k',['../group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a',1,'qlibs::ffmath']]]
 ];
