@@ -64,12 +64,12 @@ real_t interp1::previous( const real_t x,
     real_t y = ffmath::getNan();
 
     if ( ( tableSize >= 2U ) && ( nullptr != tx ) && ( nullptr != ty ) ) {
-        size_t nearestIndex = 0U;
-
         if ( x <= tx[ 0 ] ) {
             y = ty[ 0 ];
         }
         else {
+            size_t nearestIndex = 0U;
+
             for ( size_t i = 1U ; i < tableSize; ++i ) {
                 if ( x < tx [ i ] ) {
                     break;

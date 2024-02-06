@@ -1486,11 +1486,10 @@ static float ellint_rf( float x,
         float zn = z;
         float mu, xnDev, ynDev, znDev;
         const size_t maxIter = 100U;
-        float epsilon;
         float e2, e3, s;
 
         for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
-            float abs_xnDev, abs_ynDev, abs_znDev, lambda;
+            float abs_xnDev, abs_ynDev, abs_znDev, lambda, epsilon;
             float xRoot, yRoot, zRoot;
 
             mu = ( xn + yn + zn )*c13;
@@ -1545,13 +1544,12 @@ static float ellint_rd( float x,
         float zn = z;
         float sigma = 0.0F;
         float power4 = 1.0F;
-        float epsilon;
         float mu, xnDev, ynDev, znDev;
         float ea, eb, ec, ed, ef, s1, s2;
         const size_t maxIter = 100U;
 
         for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
-            float abs_xnDev, abs_ynDev, abs_znDev, lambda;
+            float abs_xnDev, abs_ynDev, abs_znDev, lambda, epsilon;
             float xRoot, yRoot, zRoot;
 
             mu = ( xn + yn + ( 3.0F*zn ) )*0.2F;
@@ -1657,14 +1655,14 @@ static float ellint_rj( float x,
         float pn = p;
         float sigma = 0.0F;
         float power4 = 1.0F;
-        float epsilon;
         float mu, xnDev, ynDev, znDev, pnDev;
         float ea, eb, ec, e2, e3, s1, s2, s3;
         const size_t maxIter = 100;
 
 
         for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
-            float abs_xnDev, abs_ynDev, abs_znDev, abs_pnDev, lambda, alpha1, alpha2, beta;
+            float abs_xnDev, abs_ynDev, abs_znDev, abs_pnDev, lambda, alpha1;
+            float alpha2, beta, epsilon;
             float xRoot, yRoot, zRoot;
             mu = 0.2F*( xn + yn + zn + ( 2.0F*pn ) );
             xnDev = ( mu - xn )/mu;
