@@ -2153,7 +2153,7 @@ static float riemann_zeta_glob( float s )
         num *= 0.5F;
     }
     /*cstat +MISRAC++2008-6-6-4*/
-    zeta /= 1.0F - ffmath::pow( 2.0F, 1.0f - s );
+    zeta /= 1.0F - ffmath::pow( 2.0F, 1.0F - s );
 
     if ( neg ) {
         zeta *= ffmath::pow( 2.0F*ffmath::FFP_PI, ss )*
@@ -2262,7 +2262,7 @@ static void bessel_jn( float nu,
         const float x_min = 2.0F;
         /*cstat -CERT-FLP34-C*/
         const int nl = ( x < x_min ) ? static_cast<int>( nu + 0.5F )
-                                     : ffmath::Max( 0, static_cast<int>( nu - x + 1.5f) ) ;
+                                     : ffmath::Max( 0, static_cast<int>( nu - x + 1.5F ) ) ;
         /*cstat +CERT-FLP34-C -CERT-FLP36-C*/
         const float mu = nu - static_cast<float>( nl );
         /*cstat +CERT-FLP36-C*/
