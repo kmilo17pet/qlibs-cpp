@@ -1,8 +1,7 @@
 #include <iostream>
 #include <qlibs.h>
+#include <cmath>
 #include <include/mat.hpp>
-
-//#include <include/typeTraits.hpp>
 
 using namespace std;
 
@@ -353,6 +352,49 @@ void test_ffmath(void)
     std::cout << ffmath::lerp( 5, 10, -1.5 ) << std::endl;
     std::cout << ffmath::lerp( 5, 10, -1 ) << std::endl;
     std::cout << ffmath::lerp( 5, 10, -0.5 ) << std::endl;
+
+    std::cout << "expint" << std::endl;
+    std::cout << ffmath::expint( 0 ) << std::endl;
+    std::cout << ffmath::expint( 1 ) << std::endl;
+    std::cout << -ffmath::exp(1)*ffmath::expint( -1 ) << std::endl;
+    //for (float x{1.f}; x < 8.8f; x += 0.3565f){
+    //    std::cout << ffmath::expint( x ) << std::endl;
+    //}
+    std::cout << "hermite" << std::endl;
+    std::cout << ffmath::hermite( 3, 10 ) << std::endl;
+    std::cout << ffmath::hermite( 4, 10 ) << std::endl;
+
+    std::cout << "laguerre" << std::endl;
+    std::cout << ffmath::laguerre( 1, 0.5 ) << std::endl;
+    std::cout << ffmath::laguerre( 2, 0.5 ) << std::endl;
+    std::cout << ffmath::laguerre( 3, 0 ) << std::endl;
+
+    std::cout << "legendre" << std::endl;
+    std::cout << ffmath::legendre( 3, 0.25 ) << std::endl;
+    std::cout << ffmath::legendre( 4, 0.25 ) << std::endl;
+
+    std::cout << "riemann_zeta" << std::endl;
+    for (const double x : {-39.0, -2.0, -1.0, 0.0, 1.0, 0.5, 2.0})
+        std::cout << x << " -> "<< ffmath::riemann_zeta(x) << std::endl;
+
+    std::cout << "sph_bessel" << std::endl;
+    std::cout << ffmath::sph_bessel( 1, 1.2345 ) << std::endl;
+    std::cout << "sph_neumann" << std::endl;
+    std::cout << ffmath::sph_neumann( 1, 1.2345 ) << std::endl;
+
+    std::cout << "cyl_bessel_i" << std::endl;
+    std::cout << ffmath::cyl_bessel_i( 0, 1.2345 ) << std::endl;
+    std::cout << ffmath::cyl_bessel_i( 1, 1.2345 ) << std::endl;
+
+    std::cout << "cyl_bessel_k" << std::endl;
+    std::cout << ffmath::cyl_bessel_k( 0.5, 1.2345 ) << std::endl;
+
+    std::cout << "cyl_bessel_j" << std::endl;
+    std::cout << ffmath::cyl_bessel_j( 0, 1.2345 ) << std::endl;
+    std::cout << ffmath::cyl_bessel_j( 0, 1100  ) << std::endl;
+
+    std::cout << "sph_legendre" << std::endl;
+    std::cout << ffmath::sph_legendre( 3, 0, 2.2345 ) << std::endl;
 
 }
 

@@ -7,9 +7,8 @@ uint32_t crc::reflect( uint32_t xData,
                        const uint8_t nBits ) noexcept
 {
     uint32_t  r = 0;
-    uint8_t xBit;
     /*Reflect the data about the center bit*/
-    for ( xBit= 0U ; xBit < nBits ; ++xBit ) {
+    for ( uint8_t xBit= 0U ; xBit < nBits ; ++xBit ) {
         /*if the LSB bit is set, set the reflection of it*/
         if ( 0U != ( xData & 0x01U ) ) {
             /*cstat -MISRAC++2008-5-0-10 -MISRAC++2008-5-0-8*/
@@ -34,7 +33,6 @@ uint32_t crc::generic( crcMode mode,
     uint32_t val = 0U;
 
     if ( ( nullptr != pData ) && ( length > 0U ) && ( ( mode == crcMode::CRC8 ) || ( mode == crcMode::CRC16 ) || ( mode == crcMode::CRC32 ) ) ) {
-        size_t i;
         uint8_t xBit;
         const uint32_t widthValues[ 3 ] = { 8UL, 16UL, 32UL };
         const uint32_t width = widthValues[ mode ];
@@ -48,7 +46,7 @@ uint32_t crc::generic( crcMode mode,
         xorOut &= bitMask;
         val = init;
 
-        for ( i = 0 ; i < length ; ++i ) {
+        for ( size_t i = 0U ; i < length ; ++i ) {
             /*cstat -MISRAC++2008-5-0-8*/
             val ^= ( refIn ) ? ( reflect( static_cast<uint32_t>( msg[ i ] ) , 8U ) <<  wd1 )
                              : ( static_cast<uint32_t>( msg[ i ] ) << wd1 );

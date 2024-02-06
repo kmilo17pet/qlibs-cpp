@@ -81,6 +81,18 @@ namespace qlibs {
         */
         classification classify( const float f );
 
+        template<typename T>
+        inline T Max( const T x, const T y )
+        {
+            return ( x > y ) ? x : y;
+        }
+
+        template<typename T>
+        inline T Min( const T x, const T y )
+        {
+            return ( x < y ) ? x : y;
+        }
+
         /**
         * @brief Determine if @a x is Not-A-Number (NaN)
         * @param[in] x The number you want to test.
@@ -722,8 +734,8 @@ namespace qlibs {
         * returned. If @a x is negative, @c nan is returned. If @a n or @a m is greater or
         * equal to @c 128, the behavior is implementation-defined.
         */
-        float assoc_laguerre( unsigned int n,
-                              unsigned int m,
+        float assoc_laguerre( size_t n,
+                              size_t m,
                               float x );
 
         /**
@@ -737,8 +749,8 @@ namespace qlibs {
         * returned. If <tt>|x| > 1</tt>, @c nan is returned due the domain error.
         * If @a n is greater or equal to @c 128, the behavior is implementation-defined.
         */
-        float assoc_legendre( unsigned int n,
-                              unsigned int m,
+        float assoc_legendre( size_t n,
+                              size_t m,
                               float x );
 
         /**
@@ -815,46 +827,244 @@ namespace qlibs {
         * @param[in] phi Jacobi amplitude as a floating-point value given in radians
         * @return If all validations are ok, the value of the incomplete elliptic
         * integral of the third kind of @a k, @a nu and @a phi. If the argument is @c nan,
-        * NaN is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
         float ellint_3( float k,
                         float nu,
                         float phi );
 
+        /**
+        * @brief Computes the Exponential integral of @a num
+        * @param[in] num A floating-point value
+        * @return If all validations are ok, the value of the exponential integral
+        * of @a num. If the argument is @c nan, @c nan is returned. If the argument
+        * is @c ±0, @c -inf is returned.
+        */
+        float expint( float num );
+
+        /**
+        * @brief Computes the (physicist's) Hermite polynomials of the degree
+        * @a n and argument @a x
+        * @param[in] n The degree of the polynomial
+        * @param[in] x The argument, a floating-point value
+        * @return If all validations are ok, the value of order-n Hermite polynomial
+        * of @a x. If the argument is @c nan, @c nan is returned. If <tt>n>=128</tt>,
+        * the behavior is implementation-defined.
+        */
+        float hermite( size_t n,
+                       float x );
+
+        /**
+        * @brief Computes the non-associated Laguerre polynomials of the degree @a n,
+        * and argument @a x.
+        * @param[in] n The degree of the polynomial, an unsigned integer value
+        * @param[in] x The argument, a floating-point or integer value
+        * @return If all validations are ok, the value of the non-associated Laguerre
+        * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
+        * returned. If @a x is negative, @c nan is returned. If @a n is greater or
+        * equal than @c 128, the behavior is implementation-defined.
+        */
+        float laguerre( size_t n,
+                        float x );
+
+        /**
+        * @brief Computes the unassociated Legendre polynomials of the degree @a n,
+        * and argument @a x.
+        * @param[in] n The degree of the polynomial, an unsigned integer value
+        * @param[in] x The argument, a floating-point or integer value
+        * @return If all validations are ok, the value of the unassociated Legendre
+        * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
+        * returned. The function is not required to be defined for <tt>|x| > 1 <//t>.
+        * If @a n is greater or equal than @c 128, the behavior is implementation-defined.
+        */
+        float legendre( size_t n,
+                        float x );
+
+        /**
+        * @brief Computes the Riemann zeta function of @a s
+        * @param[in] s A floating-point value
+        * @return If all validations are ok, the value of the Riemann zeta function
+        * of @a s. If the argument is @c nan, @c nan is returned.
+        */
+        float riemann_zeta( float s );
+
+        /**
+        * @brief Computes the spherical Bessel function of the first kind @a n,
+        * and @a x.
+        * @param[in] n The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return If all validations are ok, the value of the spherical Bessel
+        * function of the first kind of @a n and @a x. If the argument is @c nan, a @c nan is
+        * returned. If @a n is greater or equal than @c 128, the behavior is
+        * implementation-defined.
+        */
+        float sph_bessel( size_t n,
+                          float x );
+
+        /**
+        * @brief Computes the spherical Bessel function of the second kind also
+        * known as the spherical Neumann function of @a n and @a x.
+        * @param[in] n The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return If all validations are ok, the value of the spherical Bessel
+        * function of the second kind (spherical Neumann function) of  @a n and
+        * @a x. If the argument is @c nan, a @c nan is
+        * returned. If @a n is greater or equal than @c 128, the behavior is
+        * implementation-defined.
+        */
+        float sph_neumann( size_t n,
+                           float x );
+
+        /**
+        * @brief Computes the regular modified cylindrical Bessel function of
+        * @a nu and @a x
+        * @param[in] nu The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return If all validations are ok, the value of the regular modified
+        * cylindrical Bessel function of @a nu and @a x. If the argument is
+        * @c nan, a @c nan is returned. If @a nu is greater or equal than @c 128,
+        * the behavior is implementation-defined.
+        */
+        float cyl_bessel_i( float nu,
+                            float x );
+
+        /**
+        * @brief Computes the cylindrical Bessel function of the first kind of @a nu
+        * and @a x
+        * @param[in] nu The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return If all validations are ok, the value of the irregular modified cylindrical Bessel function
+        * (also known as modified Bessel function of the second kind) of @a nu
+        * and @a x. If the argument is @c nan, a @c nan is returned. If @a nu is
+        * greater or equal than @c 128, the behavior is implementation-defined.
+        */
+        float cyl_bessel_j( float nu,
+                            float x );
+
+        /**
+        * @brief Computes the irregular modified cylindrical Bessel function
+        * (also known as modified Bessel function of the second kind) of @a nu
+        * and @a x
+        * @param[in] nu The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return If all validations are ok, the value of the irregular modified cylindrical Bessel function
+        * (also known as modified Bessel function of the second kind) of @a nu
+        * and @a x. If the argument is @c nan, a @c nan is returned. If @a nu is
+        * greater or equal than @c 128, the behavior is implementation-defined.
+        */
+        float cyl_bessel_k( float nu,
+                            float x );
+
+        /**
+        * @brief 1-3) Computes the spherical associated Legendre function of
+        * degree @a l, order @a m, and polar angle @a theta
+        * @param[in] l The degree
+        * @param[in] m The order
+        * @param[in] x Polar angle, measured in radians
+        * @return If all validations are ok, the value of the spherical associated
+        * Legendre function (that is, spherical harmonic with sigma = 0) of @a l,
+        * @a m, and @a theta. If the argument @a x is @c nan, a @c nan is returned.
+        * If @a l is greater or equal than @c 128, the behavior is implementation-defined.
+        */
+        float sph_legendre( size_t l,
+                            size_t m,
+                            float theta );
+
         /*cstat -MISRAC++2008-0-1-4_b*/
 
         /** @brief The base of natural logarithms ( e ) given as a single-precision floating-point number*/
-        constexpr float FFP_E               = ( 2.71828182845904523540F );
+        constexpr float FFP_E               = ( 2.718281828459045235360287471352662498F );
         /** @brief The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number */
-        constexpr float FFP_LOG2E           = ( 1.44269504088896340740F );
+        constexpr float FFP_LOG2E           = ( 1.442695040888963407359924681001892137F );
         /** @brief The base 10 logarithm of e ( log_10 e ) given as a single-precision floating-point number */
-        constexpr float FFP_LOG10E          = ( 0.43429448190325182765F );
+        constexpr float FFP_LOG10E          = ( 0.434294481903251827651128918916605082F );
         /** @brief The natural logarithm of 2 ( ln 2 ) given as a single-precision floating-point number */
-        constexpr float FFP_LN2             = ( 0.69314718055994530942F );
+        constexpr float FFP_LN2             = ( 0.693147180559945309417232121458176568F );
         /** @brief The natural logarithm of 10 ( ln 10 ) given as a single-precision floating-point number */
-        constexpr float FFP_LN10            = ( 2.30258509299404568402F );
+        constexpr float FFP_LN10            = ( 2.302585092994045684017991454684364208F );
         /** @brief The circumference of a circle with diameter 1, ( π ) given as a single-precision floating-point number */
-        constexpr float FFP_PI              = ( 3.14159265358979323846F );
+        constexpr float FFP_PI              = ( 3.141592653589793238462643383279502884F );
+        /** @brief Twice circumference of a circle with diameter 1, ( 2π ) given as a single-precision floating-point number */
+        constexpr float FFP_2PI             = ( 6.283185307179586231995926937088370323F );
         /** @brief Half of π ( π/2 ) given as a single-precision floating-point number */
-        constexpr float FFP_PI_2            = ( 1.57079632679489661923F );
+        constexpr float FFP_PI_2            = ( 1.570796326794896557998981734272092580F );
         /** @brief A quarter of π ( π/4 ) given as a single-precision floating-point number */
-        constexpr float FFP_PI_4            = ( 0.78539816339744830962F );
+        constexpr float FFP_PI_4            = ( 0.785398163397448278999490867136046290F );
         /** @brief The inverse of π  ( 1/π ) given as a single-precision floating-point number */
-        constexpr float FFP_1_PI            = ( 0.31830988618379067154F );
-        /** @brief Twice the inverse of π  (  2/π ) given as a single-precision floating-point number */
-        constexpr float FFP_2_PI            = ( 0.63661977236758134308F );
-        /** @brief The inverse of the square root of π ( 2/√π ) given as a single-precision floating-point number */
-        constexpr float FFP_2_SQRTPI        = ( 1.12837916709551257390F );
+        constexpr float FFP_1_PI            = ( 0.318309886183790671537767526745028724F );
+        /** @brief Twice the inverse of π  ( 2/π ) given as a single-precision floating-point number */
+        constexpr float FFP_2_PI            = ( 0.636619772367581382432888403855031356F );
+        /** @brief The inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number */
+        constexpr float FFP_1_SQRTPI        = ( 0.564189583547756286948079451560772586F );
+        /** @brief Twice the inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number */
+        constexpr float FFP_2_SQRTPI        = ( 1.128379167095512558560699289955664426F );
         /** @brief The square root of 2 ( √2 ) given as a single-precision floating-point number */
-        constexpr float FFP_SQRT2           = ( 1.41421356237309504880F );
+        constexpr float FFP_SQRT2           = ( 1.414213562373095048801688724209698079F );
+        /** @brief The square root of 3 ( √3 ) given as a single-precision floating-point number */
+        constexpr float FFP_SQRT3           = ( 1.732050807568877293527446341505872367F );
         /** @brief The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number */
-        constexpr float FFP_SQRT1_2         = ( 0.70710678118654752440F );
+        constexpr float FFP_SQRT1_2         = ( 0.707106781186547461715008466853760182F );
+        /** @brief The inverse of square root of 3 ( 1/√3 ) given as a single-precision floating-point number */
+        constexpr float FFP_SQRT1_3         = ( 0.577350269189625764509148780501957456F );
         /** @brief The natural logarithm of the square root of 2π given as a single-precision floating-point number */
-        constexpr float FFP_LN_SQRT_2PI     = ( 0.9189385332046727417803297F );
-        /** @brief Constant Euler-Mascheroni */
-        constexpr float FFP_GAMMA_E         = ( 0.5772156649015328606065120900824024F );
-
+        constexpr float FFP_LN_SQRT_2PI     = ( 0.918938533204672669540968854562379419F );
+        /** @brief Constant Euler-Mascheroni given as a single-precision floating-point number*/
+        constexpr float FFP_GAMMA_E         = ( 0.577215664901532860606512090082402431F );
+        /** @brief The golden ratio, (1+√5)/2 given as a single-precision floating-point number*/
+        constexpr float FFP_PHI             = ( 1.618033988749894848204586834365638118F );
+        /** @brief Radian, value of ( 180/π ) given as a single-precision floating-point number*/
+        constexpr float FFP_RADIAN          = ( 57.29577951308232286464772187173366546F );
+        /** @brief The base 10 logarithm of 2 ( log_10 2 ) given as a single-precision floating-point number */
+        constexpr float FFP_LOG10_2         = ( 0.301029995663981198017467022509663366F );
+        /** @brief The natural logarithm of π ( ln(π) ) given as a single-precision floating-point number */
+        constexpr float FFP_LN_PI           = ( 1.144729885849400163877476188645232468F );
         /*cstat +MISRAC++2008-0-1-4_b*/
+
+        /**
+        * @brief Provides several mathematical constants as single-precision floating-point numbers
+        */
+        struct numbers {
+            /** @brief The base of natural logarithms ( e ) given as a single-precision floating-point number*/
+            static constexpr float e()              { return FFP_E; }
+            /** @brief The base 2 logarithm of e ( log_2 e ) given as a single-precision floating-point number */
+            static constexpr float log2e()          { return FFP_LOG2E; }
+            /** @brief The base 10 logarithm of e ( log_10 e ) given as a single-precision floating-point number */
+            static constexpr float log10e()         { return FFP_LOG10E; }
+            /** @brief The natural logarithm of 2 ( ln 2 ) given as a single-precision floating-point number */
+            static constexpr float ln2()            { return FFP_LN2; }
+            /** @brief The natural logarithm of 10 ( ln 10 ) given as a single-precision floating-point number */
+            static constexpr float ln10()           { return FFP_LN10; }
+            /** @brief The circumference of a circle with diameter 1, ( π ) given as a single-precision floating-point number */
+            static constexpr float pi()             { return FFP_PI; }
+            /** @brief The inverse of π  ( 1/π ) given as a single-precision floating-point number */
+            static constexpr float inv_pi()         { return FFP_1_PI; }
+            /** @brief The inverse of the square root of π ( 1/√π ) given as a single-precision floating-point number */
+            static constexpr float inv_sqrtpi()     { return FFP_1_SQRTPI; }
+            /** @brief The square root of 2 ( √2 ) given as a single-precision floating-point number */
+            static constexpr float sqrt2()          { return FFP_SQRT2; }
+            /** @brief The square root of 4 ( √4 ) given as a single-precision floating-point number */
+            static constexpr float sqrt3()          { return FFP_SQRT3; }
+            /** @brief The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number */
+            static constexpr float inv_sqrt2()      { return FFP_SQRT1_2; }
+            /** @brief The inverse of square root of 2 ( 1/√2 ) given as a single-precision floating-point number */
+            static constexpr float inv_sqrt3()      { return FFP_SQRT1_3; }
+            /** @brief Constant Euler-Mascheroni given as a single-precision floating-point number*/
+            static constexpr float egamma()         { return FFP_GAMMA_E; }
+            /** @brief The golden ratio, (1+√5)/2 given as a single-precision floating-point number*/
+            static constexpr float phi()            { return FFP_PHI; }
+            /** @brief Twice circumference of a circle with diameter 1, ( 2π ) given as a single-precision floating-point number */
+            static constexpr float twice_pi()       { return FFP_2PI; }
+            /** @brief Half of π ( π/2 ) given as a single-precision floating-point number */
+            static constexpr float half_pi()        { return FFP_PI_2; }
+            /** @brief A quarter of π ( π/4 ) given as a single-precision floating-point number */
+            static constexpr float quarter_pi()     { return FFP_PI_4; }
+            /** @brief Radian, value of ( 180/π ) given as a single-precision floating-point number*/
+            static constexpr float radian()         { return FFP_RADIAN; }
+            /** @brief The natural logarithm of π ( ln(π) ) given as a single-precision floating-point number */
+            static constexpr float lnpi()           { return FFP_LN_PI; }
+            /** @brief The natural logarithm of the square root of 2π ( ln( √2π ) ) given as a single-precision floating-point number */
+            static constexpr float ln_sqrt_2pi()    { return FFP_LN_SQRT_2PI; }
+        };
 
         /** @}*/
     }
