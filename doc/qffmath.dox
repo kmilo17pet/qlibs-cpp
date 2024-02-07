@@ -3,7 +3,7 @@
 * mathematical functions and transformations. The \ref qlibs::ffmath can
 * replace a default math floating-point library, delivering better performance
 * with less code delivering a very close aproximations to the standard library.
-* \ref qlibs::ffmath is Very fast and very small, it delivers FPU-like performance
+* \ref qlibs::ffmath is very fast and small, it delivers FPU-like performance
 * in pure software. Where available, it even boosts the performance of an FPU for
 * complex mathematical functions.
 *
@@ -61,6 +61,11 @@
 * - \ref qlibs::ffmath::pow() Computes the power raised to the base number
 *
 * @subsection  qffmath_special Special functions
+* Most special functions are designed to prioritize precision over speed given
+* their applications, and their implementation closely follows that of the C++
+* standard. qlibs::ffmath provides these special functions to ensure
+* compatibility with compilers that lack them.
+*
 * - \ref qlibs::ffmath::erf() Computes the error function
 * - \ref qlibs::ffmath::erfc() Computes the complementary error function
 * - \ref qlibs::ffmath::rexp() Decomposes given floating point value into a normalized fraction and an integral power of two.
@@ -79,6 +84,17 @@
 * - \ref qlibs::ffmath::ellint_1() Computes the incomplete elliptic integral of the first kind
 * - \ref qlibs::ffmath::ellint_2() Computes the incomplete elliptic integral of the second kind
 * - \ref qlibs::ffmath::ellint_3() Computes the incomplete elliptic integral of the third kind
+* - \ref qlibs::ffmath::expint() Computes the Exponential integral
+* - \ref qlibs::ffmath::hermite() Computes the (physicist's) Hermite polynomials
+* - \ref qlibs::ffmath::laguerre() Computes the non-associated Laguerre polynomials
+* - \ref qlibs::ffmath::legendre() Computes the unassociated Legendre polynomials
+* - \ref qlibs::ffmath::riemann_zeta() Computes the Riemann zeta function
+* - \ref qlibs::ffmath::sph_bessel() Computes the spherical Bessel function of the first kind
+* - \ref qlibs::ffmath::sph_neumann() Computes the spherical Bessel function of the second kind ( spherical Neumann function )
+* - \ref qlibs::ffmath::cyl_bessel_i() Computes the regular modified cylindrical Bessel function
+* - \ref qlibs::ffmath::cyl_bessel_j() Computes the cylindrical Bessel function of the first kind
+* - \ref qlibs::ffmath::cyl_bessel_k() Computes the irregular modified cylindrical Bessel function
+* - \ref qlibs::ffmath::sph_legendre() Computes the spherical associated Legendre function
 *
 * @subsection  qffmath_const Constants
 * - \ref qlibs::ffmath::getInf() Returns positive infinity @c inf as a 32-bit floating point number

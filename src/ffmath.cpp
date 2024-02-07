@@ -4,7 +4,7 @@ references :
 https://github.com/akohlmey/fastermath
 */
 
-struct float_limits {
+struct limits {
     static constexpr float Min() { return FLT_MIN; }
     static constexpr float Max() { return FLT_MAX; }
     static constexpr float epsilon() { return FLT_EPSILON; }
@@ -46,7 +46,6 @@ static float ellint_rj( float x,
                         float y,
                         float z,
                         float p );
-
 static float expint_E1_series( float x );
 static float expint_Ei( float x );
 static float expint_E1_asymp( float x );
@@ -55,10 +54,8 @@ static float expint_E1( float x );
 static float expint_En_cont_frac( size_t n,
                                   float x );
 static float expint_Ei_series( float x );
-
 static float riemann_zeta_glob( float s );
 static float riemann_zeta_product( float s );
-
 static void gamma_temme( float mu,
                          float& gam1,
                          float& gam2,
@@ -327,7 +324,7 @@ float ffmath::mod( float x,
             }
             else if ( m < 0.0F ) {
                 const float tmp = y + m;
-                m = ( absolute( tmp - y ) <= float_limits::Min() ) ? 0.0F : tmp;
+                m = ( absolute( tmp - y ) <= limits::Min() ) ? 0.0F : tmp;
             }
             else {
                 /*nothing to do here*/
@@ -339,7 +336,7 @@ float ffmath::mod( float x,
             }
             else if ( m > 0.0F ) {
                 const float tmp = y + m;
-                m = ( absolute( tmp - y ) <= float_limits::Min() ) ? 0.0F : tmp;
+                m = ( absolute( tmp - y ) <= limits::Min() ) ? 0.0F : tmp;
             }
             else {
                 /*nothing to do here*/
@@ -414,39 +411,11 @@ float ffmath::atan2( float y,
     float t, f;
 
     t = ffmath::FFP_PI - ( ( y < 0.0F ) ? ffmath::FFP_2PI : 0.0F );
-    f = ( absolute( x ) <= float_limits::Min() ) ? 1.0F : 0.0F;
+    f = ( absolute( x ) <= limits::Min() ) ? 1.0F : 0.0F;
     y = ffmath::atan( y/( x + f ) ) + ( ( x < 0.0F ) ? t : 0.0F );
 
     return y + ( f*( ( 0.5F*t ) - y ) );
 }
-/*============================================================================*/
-//float ffmath::exp2( float x )
-//{
-//    float retVal;
-//
-//    if ( x <= -126.0F ) {
-//        retVal = 0.0F;
-//    }
-//    else if ( x > 128.0F ) {
-//        retVal = ffmath::getInf();
-//    }
-//    else {
-//        float y = 0.0F;
-//        uint32_t exponent;
-//        /*cstat -MISRAC++2008-5-0-7 -CERT-FLP34-C*/
-//        exponent = static_cast<uint32_t>( x + 127.0F );
-//        /*cstat +MISRAC++2008-5-0-7 +CERT-FLP34-C*/
-//        /*cstat -CERT-FLP36-C*/
-//        x += 127.0F - static_cast<float>( exponent );
-//        /*cstat +CERT-FLP36-C*/
-//        exponent <<= 23U;
-//        cast_reinterpret( y, exponent );
-//        x *= ( x*0.339766027F ) + 0.660233972F;
-//        retVal = y*( x + 1.0F );
-//    }
-//
-//    return retVal;
-//}
 /*============================================================================*/
 float ffmath::exp2( float x )
 {
@@ -559,16 +528,18 @@ float ffmath::pow( float b,
 /*============================================================================*/
 float ffmath::sinh( float x )
 {
-    return 0.5F*( ffmath::exp( x ) - ffmath::exp( -x ) );
-    //x = ffmath::exp( x );
-    //return ( ( x - 1.0F )/x )*0.5F;
+    const float epx = ffmath::exp( x );
+    const float enx = 1.0F/epx;
+
+    return 0.5F*( epx - enx );
 }
 /*============================================================================*/
 float ffmath::cosh( float x )
 {
-    return 0.5F*( ffmath::exp( x ) + ffmath::exp( -x ) );
-    //x = ffmath::exp( x );
-    //return ( ( x + 1.0F )/x )*0.5F;
+    const float epx = ffmath::exp( x );
+    const float enx = 1.0F/epx;
+
+    return 0.5F*( epx + enx );
 }
 /*============================================================================*/
 float ffmath::tanh( float x )
@@ -617,8 +588,8 @@ float ffmath::midpoint( float a,
                         float b )
 {
     float y;
-    constexpr float lo = 2.0F*float_limits::Min();
-    constexpr float hi = 0.5F*float_limits::Max();
+    constexpr float lo = 2.0F*limits::Min();
+    constexpr float hi = 0.5F*limits::Max();
     const float abs_a = absolute( a );
     const float abs_b = absolute( b );
 
@@ -905,8 +876,8 @@ float ffmath::tgamma( float x )
                 goto EXIT_TGAMMA;
             }
         }
-        if ( y < float_limits::epsilon() ) {
-            if ( y >= float_limits::Min() ) {
+        if ( y < limits::epsilon() ) {
+            if ( y >= limits::Min() ) {
                 result = 1.0F/y;
             }
             else {
@@ -995,54 +966,6 @@ static float lgamma_positive( float x )
     constexpr float d1 = -5.772156649015328605195174e-1F;
     constexpr float d2 = 4.227843350984671393993777e-1F;
     constexpr float d4 = 1.791759469228055000094023e+0F;
-    constexpr float p1[ 8 ] = { 4.945235359296727046734888e+0F,
-                                2.018112620856775083915565e+2F,
-                                2.290838373831346393026739e+3F,
-                                1.131967205903380828685045e+4F,
-                                2.855724635671635335736389e+4F,
-                                3.848496228443793359990269e+4F,
-                                2.637748787624195437963534e+4F,
-                                7.225813979700288197698961e+3F };
-    constexpr float q1[ 8 ] = { 6.748212550303777196073036e+1F,
-                                1.113332393857199323513008e+3F,
-                                7.738757056935398733233834e+3F,
-                                2.763987074403340708898585e+4F,
-                                5.499310206226157329794414e+4F,
-                                6.161122180066002127833352e+4F,
-                                3.635127591501940507276287e+4F,
-                                8.785536302431013170870835e+3F };
-    constexpr float p2[ 8 ] = { 4.974607845568932035012064e+0F,
-                                5.424138599891070494101986e+2F,
-                                1.550693864978364947665077e+4F,
-                                1.847932904445632425417223e+5F,
-                                1.088204769468828767498470e+6F,
-                                3.338152967987029735917223e+6F,
-                                5.106661678927352456275255e+6F,
-                                3.074109054850539556250927e+6F };
-    constexpr float q2[ 8 ] = { 1.830328399370592604055942e+2F,
-                                7.765049321445005871323047e+3F,
-                                1.331903827966074194402448e+5F,
-                                1.136705821321969608938755e+6F,
-                                5.267964117437946917577538e+6F,
-                                1.346701454311101692290052e+7F,
-                                1.782736530353274213975932e+7F,
-                                9.533095591844353613395747e+6F };
-    constexpr float p4[ 8 ] = { 1.474502166059939948905062e+04F,
-                                2.426813369486704502836312e+06F,
-                                1.214755574045093227939592e+08F,
-                                2.663432449630976949898078e+09F,
-                                2.940378956634553899906876e+10F,
-                                1.702665737765398868392998e+11F,
-                                4.926125793377430887588120e+11F,
-                                5.606251856223951465078242e+11F };
-    constexpr float q4[ 8 ] = { 2.690530175870899333379843e+03F,
-                                6.393885654300092398984238e+05F,
-                                4.135599930241388052042842e+07F,
-                                1.120872109616147941376570e+09F,
-                                1.488613728678813811542398e+10F,
-                                1.016803586272438228077304e+11F,
-                                3.417476345507377132798597e+11F,
-                                4.463158187419713286462081e+11F };
     constexpr float pnt68 = 0.6796875F;
     float result;
 
@@ -1053,7 +976,7 @@ static float lgamma_positive( float x )
         float y, corrector, num, den;
 
         y = x;
-        if ( y <= float_limits::epsilon() ) {
+        if ( y <= limits::epsilon() ) {
             result = -ffmath::log( y );
         }
         else if ( y <= 1.5F ) {
@@ -1070,20 +993,44 @@ static float lgamma_positive( float x )
             if ( ( y <= 0.5F ) || ( y >= pnt68 ) ) {
                 den = 1.0F;
                 num = 0.0F;
-                for ( size_t i = 0U ; i < 8U ; ++i ) {
-                    num = ( num*xMinus ) + p1[ i ];
-                    den = ( den*xMinus ) + q1[ i ];
-                }
+                num = ( num*xMinus ) + 4.945235359296727046734888e+0F;
+                num = ( num*xMinus ) + 2.018112620856775083915565e+2F;
+                num = ( num*xMinus ) + 2.290838373831346393026739e+3F;
+                num = ( num*xMinus ) + 1.131967205903380828685045e+4F;
+                num = ( num*xMinus ) + 2.855724635671635335736389e+4F;
+                num = ( num*xMinus ) + 3.848496228443793359990269e+4F;
+                num = ( num*xMinus ) + 2.637748787624195437963534e+4F;
+                num = ( num*xMinus ) + 7.225813979700288197698961e+3F;
+                den = ( den*xMinus ) + 6.748212550303777196073036e+1F;
+                den = ( den*xMinus ) + 1.113332393857199323513008e+3F;
+                den = ( den*xMinus ) + 7.738757056935398733233834e+3F;
+                den = ( den*xMinus ) + 2.763987074403340708898585e+4F;
+                den = ( den*xMinus ) + 5.499310206226157329794414e+4F;
+                den = ( den*xMinus ) + 6.161122180066002127833352e+4F;
+                den = ( den*xMinus ) + 3.635127591501940507276287e+4F;
+                den = ( den*xMinus ) + 8.785536302431013170870835e+3F;
                 result = corrector + ( xMinus*( d1 + xMinus*( num/den ) ) );
             }
             else {
                 xMinus = ( y - 0.5F ) - 0.5F;
                 den = 1.0F;
                 num = 0.0F;
-                for ( size_t i = 0U; i < 8U ; ++i ) {
-                    num = num*xMinus + p2[ i ];
-                    den = den*xMinus + q2[ i ];
-                }
+                num = ( num*xMinus ) + 4.974607845568932035012064e+0F;
+                num = ( num*xMinus ) + 5.424138599891070494101986e+2F;
+                num = ( num*xMinus ) + 1.550693864978364947665077e+4F;
+                num = ( num*xMinus ) + 1.847932904445632425417223e+5F;
+                num = ( num*xMinus ) + 1.088204769468828767498470e+6F;
+                num = ( num*xMinus ) + 3.338152967987029735917223e+6F;
+                num = ( num*xMinus ) + 5.106661678927352456275255e+6F;
+                num = ( num*xMinus ) + 3.074109054850539556250927e+6F;
+                den = ( den*xMinus ) + 1.830328399370592604055942e+2F;
+                den = ( den*xMinus ) + 7.765049321445005871323047e+3F;
+                den = ( den*xMinus ) + 1.331903827966074194402448e+5F;
+                den = ( den*xMinus ) + 1.136705821321969608938755e+6F;
+                den = ( den*xMinus ) + 5.267964117437946917577538e+6F;
+                den = ( den*xMinus ) + 1.346701454311101692290052e+7F;
+                den = ( den*xMinus ) + 1.782736530353274213975932e+7F;
+                den = ( den*xMinus ) + 9.533095591844353613395747e+6F;
                 result = corrector + ( xMinus*( d2 + xMinus*( num/den ) ) );
             }
         }
@@ -1091,20 +1038,44 @@ static float lgamma_positive( float x )
             const float xMinus = y - 2.0F;
             den = 1.0F;
             num = 0.0F;
-            for ( size_t i = 0U; i < 8U ; ++i ) {
-                num = num*xMinus + p2[ i ];
-                den = den*xMinus + q2[ i ];
-            }
+            num = ( num*xMinus ) + 4.974607845568932035012064e+0F;
+            num = ( num*xMinus ) + 5.424138599891070494101986e+2F;
+            num = ( num*xMinus ) + 1.550693864978364947665077e+4F;
+            num = ( num*xMinus ) + 1.847932904445632425417223e+5F;
+            num = ( num*xMinus ) + 1.088204769468828767498470e+6F;
+            num = ( num*xMinus ) + 3.338152967987029735917223e+6F;
+            num = ( num*xMinus ) + 5.106661678927352456275255e+6F;
+            num = ( num*xMinus ) + 3.074109054850539556250927e+6F;
+            den = ( den*xMinus ) + 1.830328399370592604055942e+2F;
+            den = ( den*xMinus ) + 7.765049321445005871323047e+3F;
+            den = ( den*xMinus ) + 1.331903827966074194402448e+5F;
+            den = ( den*xMinus ) + 1.136705821321969608938755e+6F;
+            den = ( den*xMinus ) + 5.267964117437946917577538e+6F;
+            den = ( den*xMinus ) + 1.346701454311101692290052e+7F;
+            den = ( den*xMinus ) + 1.782736530353274213975932e+7F;
+            den = ( den*xMinus ) + 9.533095591844353613395747e+6F;
             result = xMinus*( d2 + xMinus*( num/den ) );
         }
         else if ( y <= 12.0F ) {
             const float xMinus = y - 4.0F;
             den = -1.0F;
             num = 0.0F;
-            for ( size_t i = 0U; i < 8U ; ++i ) {
-                num = num*xMinus + p4[ i ];
-                den = den*xMinus + q4[ i ];
-            }
+            num = ( num*xMinus ) + 1.474502166059939948905062e+04F;
+            num = ( num*xMinus ) + 2.426813369486704502836312e+06F;
+            num = ( num*xMinus ) + 1.214755574045093227939592e+08F;
+            num = ( num*xMinus ) + 2.663432449630976949898078e+09F;
+            num = ( num*xMinus ) + 2.940378956634553899906876e+10F;
+            num = ( num*xMinus ) + 1.702665737765398868392998e+11F;
+            num = ( num*xMinus ) + 4.926125793377430887588120e+11F;
+            num = ( num*xMinus ) + 5.606251856223951465078242e+11F;
+            den = ( den*xMinus ) + 2.690530175870899333379843e+03F;
+            den = ( den*xMinus ) + 6.393885654300092398984238e+05F;
+            den = ( den*xMinus ) + 4.135599930241388052042842e+07F;
+            den = ( den*xMinus ) + 1.120872109616147941376570e+09F;
+            den = ( den*xMinus ) + 1.488613728678813811542398e+10F;
+            den = ( den*xMinus ) + 1.016803586272438228077304e+11F;
+            den = ( den*xMinus ) + 3.417476345507377132798597e+11F;
+            den = ( den*xMinus ) + 4.463158187419713286462081e+11F;
             result = d4 + xMinus*( num/den );
         }
         else {
@@ -1172,26 +1143,26 @@ float ffmath::lgamma( float x )
 /*============================================================================*/
 float ffmath::factorial( float x )
 {
-    constexpr float ft[ 35 ] = { 1.0F, 1.0F, 2.0F, 6.0F, 24.0F, 120.0F, 720.0F,
-                                 5040.0F, 40320.0F, 362880.0F, 3628800.0F,
-                                 39916800.0F, 479001600.0F, 6227020800.0F,
-                                 87178291200.0F, 1307674368000.0F,
-                                 20922789888000.0F, 355687428096000.0F,
-                                 6402373705728001.0F, 121645100408832000.0F,
-                                 2432902008176640000.0F, 51090942171709440000.0F,
-                                 1124000727777607680000.0F,
-                                 25852016738884978212864.0F,
-                                 620448401733239544217600.0F,
-                                 15511210043330988202786816.0F,
-                                 403291461126605719042260992.0F,
-                                 10888869450418351940239884288.0F,
-                                 304888344611713836734530715648.0F,
-                                 8841761993739700772720181510144.0F,
-                                 265252859812191104246398737973248.0F,
-                                 8222838654177921277277005322125312.0F,
-                                 263130836933693591553328612565319680.0F,
-                                 8683317618811885938715673895318323200.0F,
-                                 295232799039604119555149671006000381952.0F,
+    static const float ft[ 35 ] = { 1.0F, 1.0F, 2.0F, 6.0F, 24.0F, 120.0F, 720.0F,
+                                    5040.0F, 40320.0F, 362880.0F, 3628800.0F,
+                                    39916800.0F, 479001600.0F, 6227020800.0F,
+                                    87178291200.0F, 1307674368000.0F,
+                                    20922789888000.0F, 355687428096000.0F,
+                                    6402373705728001.0F, 121645100408832000.0F,
+                                    2432902008176640000.0F, 51090942171709440000.0F,
+                                    1124000727777607680000.0F,
+                                    25852016738884978212864.0F,
+                                    620448401733239544217600.0F,
+                                    15511210043330988202786816.0F,
+                                    403291461126605719042260992.0F,
+                                    10888869450418351940239884288.0F,
+                                    304888344611713836734530715648.0F,
+                                    8841761993739700772720181510144.0F,
+                                    265252859812191104246398737973248.0F,
+                                    8222838654177921277277005322125312.0F,
+                                    263130836933693591553328612565319680.0F,
+                                    8683317618811885938715673895318323200.0F,
+                                    295232799039604119555149671006000381952.0F,
                                  };
     float y;
 
@@ -1199,8 +1170,7 @@ float ffmath::factorial( float x )
         y = ffmath::getInf();
     }
     else if ( x >= 0.0F ) {
-        const auto i = static_cast<size_t>( x );
-        y = ft[ i ];
+        y = ft[ static_cast<size_t>( x ) ];
     }
     else {
         y = ffmath::getNan();
@@ -1266,7 +1236,8 @@ static float poly_laguerre_large_n( size_t n,
     const float preTerm2 = 0.25F*ffmath::log( pre_h );
     const float lnPre = lg_b - ln_fact + ( 0.5F*x ) + preTerm1 - preTerm2;
     const float serTerm1 = ffmath::sin( ffmath::FFP_PI*a );
-    const float serTerm2 = ffmath::sin( ( 0.25F*eta*( ( 2.0F*th ) - ffmath::sin( 2.0F*th ) ) + ffmath::FFP_PI_4 ) );
+    const float th2 = 2.0F*th;
+    const float serTerm2 = ffmath::sin( ( 0.25F*eta*( ( th2 ) - ffmath::sin( th2 ) ) + ffmath::FFP_PI_4 ) );
 
     return ffmath::exp( lnPre )*( serTerm1 + serTerm2 );
 }
@@ -1463,7 +1434,7 @@ static float ellint_rf( float x,
                         float y,
                         float z )
 {
-    constexpr float loLim = 5.0F*float_limits::Min();
+    constexpr float loLim = 5.0F*limits::Min();
     float result;
 
 
@@ -1638,9 +1609,8 @@ static float ellint_rj( float x,
     constexpr float loLim = 4.103335708781587555782386855921935e-26F;
     constexpr float errTol = 0.049606282877419791144113503378321F;
 
-    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ||
-         ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim )
-       ) {
+    if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) || ( ( x + y ) < loLim ) ||
+         ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim ) ) {
         result = ffmath::getNan();
     }
     else {
@@ -1658,7 +1628,6 @@ static float ellint_rj( float x,
         float mu, xnDev, ynDev, znDev, pnDev;
         float ea, eb, ec, e2, e3, s1, s2, s3;
         const size_t maxIter = 100;
-
 
         for ( size_t iter = 0U ; iter < maxIter ; ++iter ) {
             float abs_xnDev, abs_ynDev, abs_znDev, abs_pnDev, lambda, alpha1;
@@ -1784,7 +1753,7 @@ float ffmath::ellint_1( float k,
             y = f;
         }
         else {
-            y = f + 2.0F*n*ffmath::comp_ellint_1( k );
+            y = f + ( 2.0F*n*ffmath::comp_ellint_1( k ) );
         }
     }
 
@@ -1817,7 +1786,7 @@ float ffmath::ellint_2( float k,
             y = e;
         }
         else {
-            y = e + 2.0F*n*ffmath::comp_ellint_2( k );
+            y = e + ( 2.0F*n*ffmath::comp_ellint_2( k ) );
         }
     }
 
@@ -1850,7 +1819,7 @@ float ffmath::ellint_3( float k,
             y = pi;
         }
         else {
-            y = pi + 2.0F*n*ffmath::comp_ellint_3( k, nu );
+            y = pi + ( 2.0F*n*ffmath::comp_ellint_3( k, nu ) );
         }
     }
 
@@ -1868,8 +1837,8 @@ static float expint_E1_series( float x )
         /*cstat -CERT-FLP36-C*/
         const auto j = static_cast<float>( i );
         /*cstat +CERT-FLP36-C*/
-        term *= - x/j;
-        if ( absolute( term ) < float_limits::epsilon() ) {
+        term *= -x/j;
+        if ( absolute( term ) < limits::epsilon() ) {
             break;
         }
         if ( term >= 0.0F ) {
@@ -1918,7 +1887,7 @@ static float expint_Ei_asymp( float x )
         /*cstat -CERT-FLP36-C*/
         term *= -static_cast<float>( i )/x;
         /*cstat +CERT-FLP36-C*/
-        if ( ( term < float_limits::epsilon() ) || ( term >= prev ) ) {
+        if ( ( term < limits::epsilon() ) || ( term >= prev ) ) {
             break;
         }
         sum += term;
@@ -1956,7 +1925,7 @@ static float expint_En_cont_frac( size_t n,
     /*cstat -CERT-FLP36-C*/
     float b = x + static_cast<float>( n );
     /*cstat +CERT-FLP36-C*/
-    float c = 1.0F/float_limits::Min() ;
+    float c = 1.0F/limits::Min() ;
     float d = 1.0F/b;
     float h = d;
 
@@ -1969,7 +1938,7 @@ static float expint_En_cont_frac( size_t n,
         c = b + ( a/c );
         const float del = c*d;
         h *= del;
-        if ( absolute( del - 1.0F ) < float_limits::epsilon() ) {
+        if ( absolute( del - 1.0F ) < limits::epsilon() ) {
             y = h*ffmath::exp( -x );
             break;
         }
@@ -1990,7 +1959,7 @@ static float expint_Ei_series( float x )
         /*cstat +CERT-FLP36-C*/
         term *= x/j;
         sum += term/j;
-        if ( term < ( float_limits::epsilon()*sum ) ) {
+        if ( term < ( limits::epsilon()*sum ) ) {
             break;
         }
       }
@@ -2081,6 +2050,7 @@ float ffmath::legendre( size_t n,
     }
     else {
         float p_lm2 = 1.0F;
+
         if ( 0 == n ) {
             y = p_lm2;
         }
@@ -2132,6 +2102,7 @@ static float riemann_zeta_glob( float s )
             float bin_coeff = ffmath::lgamma( 1.0F + ii ) -
                               ffmath::lgamma( 1.0F + jj ) -
                               ffmath::lgamma( 1.0F + ii - jj );
+
             if ( bin_coeff > maxBinCoeff ) {
                 punt = true;
                 break;
@@ -2145,7 +2116,7 @@ static float riemann_zeta_glob( float s )
         }
         term *= num;
         zeta += term;
-        if ( absolute( term/zeta ) < float_limits::epsilon() ) {
+        if ( absolute( term/zeta ) < limits::epsilon() ) {
             break;
         }
         num *= 0.5F;
@@ -2163,19 +2134,18 @@ static float riemann_zeta_glob( float s )
 /*============================================================================*/
 static float riemann_zeta_product( float s )
 {
-    static constexpr float prime[] = {
-        2.0F, 3.0F, 5.0F, 7.0F, 11.0F, 13.0F, 17.0F, 19.0F, 23.0F, 29.0F, 31.0F,
-        37.0F, 41.0F, 43.0F, 47.0F, 53.0F, 59.0F, 61.0F, 67.0F, 71.0F, 73.0F,
-        79.0F, 83.0F, 89.0F, 97.0F, 101.0F, 103.0F, 107.0F, 109.0F
+    static const uint8_t prime[ 29 ] = {
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
+        71, 73, 79, 83, 89, 97, 101, 103, 107, 109
     };
     static constexpr size_t num_primes = sizeof(prime)/sizeof(float);
     float zeta = 1.0F;
 
     for ( size_t i = 0U ; i < num_primes; ++i ) {
-        const float fact = 1.0F - ffmath::pow( prime[ i ], -s );
+        const float f = 1.0F - ffmath::pow( static_cast<float>( prime[ i ] ), -s );
 
-        zeta *= fact;
-        if ( ( 1.0F - fact ) < float_limits::epsilon() ) {
+        zeta *= f;
+        if ( ( 1.0F - f ) < limits::epsilon() ) {
             break;
         }
     }
@@ -2221,7 +2191,7 @@ static void gamma_temme( float mu,
     gam_pl = 1.0F/ffmath::tgamma( 1.0F + mu );
     gam_mi = 1.0F/ffmath::tgamma( 1.0F - mu );
 
-    if ( absolute( mu ) < float_limits::epsilon() ) {
+    if ( absolute( mu ) < limits::epsilon() ) {
         gam1 = -ffmath::FFP_GAMMA_E;
     }
     else {
@@ -2254,7 +2224,7 @@ static void bessel_jn( float nu,
         n_pnu = ffmath::getInf();
     }
     else {
-        const float eps = float_limits::epsilon();
+        const float eps = limits::epsilon();
         const float fp_min = 1.08420217256745973463717809E-19F;
         const int max_iter = 15000;
         const float x_min = 2.0F;
@@ -2270,7 +2240,7 @@ static void bessel_jn( float nu,
         const float w = xi2/ffmath::FFP_PI;
         float iSign = 1.0F;
         float h = nu*xi;
-        if ( h < fp_min) {
+        if ( h < fp_min ) {
             h = fp_min;
         }
         float b = xi2*nu;
@@ -2297,14 +2267,15 @@ static void bessel_jn( float nu,
                 break;
             }
         }
-
         float j_nul = iSign*fp_min;
         float j_pnu_l = h*j_nul;
         const float j_nul1 = j_nul;
         const float j_pnu1 = j_pnu_l;
         float fact = nu*xi;
+
         for ( int l = nl; l >= 1; --l ) {
             const float j_nu_temp = ( fact*j_nul ) + j_pnu_l;
+
             fact -= xi;
             j_pnu_l = ( fact*j_nu_temp ) - j_nul;
             j_nul = j_nu_temp;
@@ -2322,6 +2293,7 @@ static void bessel_jn( float nu,
             float e = mu*d;
             const float fact2 = ( absolute( e ) < eps ) ? 1.0F : ffmath::sinh(e)/e;
             float gam1, gam2, gam_pl, gam_mi;
+
             gamma_temme( mu, gam1, gam2, gam_pl, gam_mi );
             float ff = ( 2.0F/ffmath::FFP_PI )*fact_l*( gam1*ffmath::cosh( e ) + ( gam2*fact2*d ) );
             e = ffmath::exp( e );
@@ -2330,10 +2302,10 @@ static void bessel_jn( float nu,
             const float pi_mu2 = pi_mu / 2.0F;
             const float fact3 = ( absolute( pi_mu2 ) < eps ) ? 1.0F : ffmath::sin( pi_mu2 )/pi_mu2;
             const float r = ffmath::FFP_PI*pi_mu2*fact3*fact3;
-            c = 1.0F;
-            d = -x2*x2;
             float sum = ff + ( r*q );
             float sum1 = p;
+            c = 1.0F;
+            d = -x2*x2;
             for ( int i = 1; i <= max_iter ; ++i ) {
                 /*cstat -CERT-FLP36-C*/
                 const float j = static_cast<float>( i );
@@ -2400,10 +2372,9 @@ static void bessel_jn( float nu,
                     break;
                 }
             }
-
             const float gam = ( p - f )/q;
-            Jmu = ffmath::sqrt( w/( ( p - f )*gam + q ) );
 
+            Jmu = ffmath::sqrt( w/( ( p - f )*gam + q ) );
             if ( ( Jmu*j_nul ) < 0.0F) {
                 Jmu = -Jmu;
             }
@@ -2436,13 +2407,12 @@ static void sph_bessel_jn( size_t n,
     /*cstat -CERT-FLP36-C*/
     const float nu = static_cast<float>( n ) + 0.5F;
     /*cstat +CERT-FLP36-C*/
-    float j_nu, n_nu, jp_nu, np_nu;
-    bessel_jn( nu, x, j_nu, n_nu, jp_nu, np_nu );
-
     constexpr float sqrtpi2 = 1.25331413731550012080617761967005208134651184F;
+    float j_nu, n_nu, jp_nu, np_nu;
     const float factor = sqrtpi2*ffmath::rSqrt( x );
     const float inv_2x = 1.0F/( 2.0F*x );
 
+    bessel_jn( nu, x, j_nu, n_nu, jp_nu, np_nu );
     j_n = factor*j_nu;
     n_n = factor*n_nu;
     jp_n = ( factor*jp_nu ) - ( j_n*inv_2x );
@@ -2462,6 +2432,7 @@ float ffmath::sph_bessel( size_t n,
     }
     else {
         float j_n, n_n, jp_n, np_n;
+
         sph_bessel_jn( n, x, j_n, n_n, jp_n, np_n );
         y = j_n;
     }
@@ -2482,6 +2453,7 @@ float ffmath::sph_neumann( size_t n,
     }
     else {
         float j_n, n_n, jp_n, np_n;
+
         sph_bessel_jn( n, x, j_n, n_n, jp_n, np_n );
         y = n_n;
     }
@@ -2512,8 +2484,8 @@ static void bessel_ik( float nu,
         k_pnu = -ffmath::getInf();
     }
     else {
-        const float eps = float_limits::epsilon();
-        const float fp_min = 10.0F*float_limits::epsilon();
+        const float eps = limits::epsilon();
+        const float fp_min = 10.0F*limits::epsilon();
         const int max_iter = 15000;
         const float x_min = 2.0F;
         /*cstat -CERT-FLP34-C -CERT-FLP36-C*/
@@ -2548,14 +2520,17 @@ static void bessel_ik( float nu,
         const float i_nul1 = i_nul;
         const float i_pnu_1 = i_pnu_l;
         float fact_m = nu*xi;
+
         for ( int l = nl ; l >= 1 ; --l ) {
             const float i_nu_temp = ( fact_m*i_nul )  + i_pnu_l;
+
             fact_m -= xi;
             i_pnu_l = ( fact_m*i_nu_temp ) + i_nul;
             i_nul = i_nu_temp;
         }
         const float f = i_pnu_l/i_nul;
         float Kmu, k_nu1;
+
         if ( x < x_min ) {
             const float x2 = 0.5F*x;
             const float pi_mu = ffmath::FFP_PI*mu;
@@ -2570,9 +2545,9 @@ static void bessel_ik( float nu,
             e = ffmath::exp( e );
             float p = e/( 2.0F*gam_pl );
             float q = 1.0F/( 2.0F*e*gam_mi );
+            float sum1 = p;
             c = 1.0F;
             d = x2*x2;
-            float sum1 = p;
 
             for ( int i = 1; i <= max_iter; ++i ) {
                 const float j = static_cast<float>( i );
@@ -2592,19 +2567,19 @@ static void bessel_ik( float nu,
             k_nu1 = sum1*xi2;
         }
         else {
-            b = 2.0F*( 1.0F + x );
-            d = 1.0F/b;
             float del_h = d;
-            h = del_h;
             float q1 = 0.0F;
             float q2 = 1.0F;
             const float a1 = 0.25F - mu2;
             float q = a1;
-            c = a1;
             float a = -a1;
             float s = 1.0F + ( q*del_h );
 
-            for ( int i = 2; i <= max_iter; ++i) {
+            b = 2.0F*( 1.0F + x );
+            d = 1.0F/b;
+            h = d;
+            c = a1;
+            for ( int i = 2 ; i <= max_iter; ++i) {
                 a -= static_cast<float>( 2*( i - 1 ) );
                 c = -a*c/static_cast<float>( i );
                 const float q_new = ( q1 - ( b*q2 ) )/a;
@@ -2625,9 +2600,9 @@ static void bessel_ik( float nu,
             Kmu = ffmath::sqrt( ffmath::FFP_PI/( 2.0F*x ) )*ffmath::exp(-x)/s;
             k_nu1 = Kmu*( mu + x + 0.5F - h )*xi;
         }
-
         const float k_pmu = ( mu*xi*Kmu ) - k_nu1;
         const float i_num_u = xi/( ( f*Kmu ) - k_pmu );
+
         i_nu = i_num_u*i_nul1/i_nul;
         i_pnu = i_num_u*i_pnu_1/i_nul;
         for ( int i = 1 ; i <= nl ; ++i ) {
@@ -2655,19 +2630,19 @@ static float cyl_bessel_ij_series( float nu,
     else {
         const float x2 = 0.5F*x;
         float fact = nu*ffmath::log( x2 );
+        float Jn = 1.0F;
+        float term = 1.0F;
+        const float xx4 = sgn*x2*x2;
 
         fact -= ffmath::lgamma( nu + 1.0F );
         fact = ffmath::exp( fact );
-        const float xx4 = sgn*x2*x2;
-        float Jn = 1.0F;
-        float term = 1.0F;
         for ( size_t i = 1U ; i < max_iter; ++i ) {
             /*cstat -CERT-FLP36-C*/
             const float j = static_cast<float>( i );
             /*cstat +CERT-FLP36-C*/
             term *= xx4/( j*( nu + j ) );
             Jn += term;
-            if ( absolute( term/Jn ) < float_limits::epsilon() ) {
+            if ( absolute( term/Jn ) < limits::epsilon() ) {
                 break;
             }
         }
@@ -2707,7 +2682,7 @@ static void cyl_bessel_jn_asymp( float nu,
     float P = 0.0F;
     float Q = 0.0F;
     float term = 1.0F;
-    const float eps = float_limits::epsilon();
+    const float eps = limits::epsilon();
     size_t i = 0U;
 
     do {
@@ -2751,11 +2726,13 @@ float ffmath::cyl_bessel_j( float nu,
     }
     else if ( x > 1000.0F ) {
         float j_nu, n_nu;
+
         cyl_bessel_jn_asymp( nu, x, j_nu, n_nu );
         y = j_nu;
     }
     else {
         float J_nu, N_nu, Jp_nu, Np_nu;
+
         bessel_jn( nu, x, J_nu, N_nu, Jp_nu, Np_nu );
         y = J_nu;
     }
@@ -2814,8 +2791,8 @@ float ffmath::sph_legendre( size_t l,
             const float sgn = ( 1U == ( m % 2U ) ) ? -1.0F : 1.0F;
             const float ln_circ = ffmath::log( 1.0F - ( x*x ) );
             const float ln_poc_h = ffmath::lgamma( mf + 0.5F ) - ffmath::lgamma( mf );
-            const float ln_pre_val = ( -0.25F*ffmath::FFP_LN_PI ) + 0.5F*( ln_poc_h + mf*ln_circ );
-            const float sr = ffmath::sqrt( ( 2.0F + 1.0F/mf )/pi4);
+            const float ln_pre_val = ( -0.25F*ffmath::FFP_LN_PI ) + 0.5F*( ln_poc_h + ( mf*ln_circ ) );
+            const float sr = ffmath::sqrt( ( 2.0F + ( 1.0F/mf ) )/pi4);
             float y_mm = sgn*sr*ffmath::exp( ln_pre_val );
             float y_mp1m = y_mp1m_factor*y_mm;
 

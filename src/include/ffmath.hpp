@@ -52,13 +52,13 @@ namespace qlibs {
                       const float tol = 1.175494351e-38F ) noexcept;
 
         /**
-        * @brief Returns positive infinity @c inf as a 32-bit floating point number
+        * @brief Returns positive @a infinity @c inf as a 32-bit floating point number
         * @return The @c +inf value
         */
         float getInf( void );
 
         /**
-        * @brief Returns Not a Number (NaN) @c nan as a 32-bit floating point number
+        * @brief Returns Not a Number ( @a NaN ) @c nan as a 32-bit floating point number
         * @return The @c nan value
         */
         float getNan( void );
@@ -66,8 +66,8 @@ namespace qlibs {
         /**
         * @brief Categorizes the floating-point number @a x. This function
         * determines whether its argument is a normal floating-point number, or one
-        * of several special categories of values, including NaN (not a number),
-        * infinity, subnormal floating-point values or zero. To determine what
+        * of several special categories of values, including @a NaN (not a number),
+        * @a infinity, subnormal floating-point values or zero. To determine what
         * category the argument belongs to, compare the return value with the
         * any of the following number classification macros:
         * - classification::FFP_ZERO
@@ -81,12 +81,26 @@ namespace qlibs {
         */
         classification classify( const float f );
 
+        /**
+        * @brief Returns the greater of the given values.
+        * @param[in] x Value to compare.
+        * @param[in] y Value to compare.
+        * @return The greater of @a x and @a y. If they are equivalent,
+        * returns @a y
+        */
         template<typename T>
         inline T Max( const T x, const T y )
         {
             return ( x > y ) ? x : y;
         }
 
+        /**
+        * @brief Returns the smaller  of the given values.
+        * @param[in] x Value to compare.
+        * @param[in] y Value to compare.
+        * @return The smaller of @a x and @a y. If they are equivalent,
+        * returns @a y
+        */
         template<typename T>
         inline T Min( const T x, const T y )
         {
@@ -94,9 +108,9 @@ namespace qlibs {
         }
 
         /**
-        * @brief Determine if @a x is Not-A-Number (NaN)
+        * @brief Determine if @a x is Not-A-Number @a NaN
         * @param[in] x The number you want to test.
-        * @return @c true if the value of @a x is (NaN), otherwise
+        * @return @c true if the value of @a x is @a NaN, otherwise
         * returns @c false.
         */
         inline bool isNan( const float x )
@@ -105,7 +119,7 @@ namespace qlibs {
         }
 
         /**
-        * @brief Determine if @a x is Infinity.
+        * @brief Determine if @a x is @a Infinity.
         * @param[in] x The number you want to test.
         * @return @c true if the value of @a x is ±Infinity, otherwise returns @c false.
         */
@@ -116,7 +130,7 @@ namespace qlibs {
 
         /**
         * @brief Determines if the given floating point number @a x has finite
-        * value i.e. it is normal, subnormal or zero, but not infinite or NaN.
+        * value i.e. it is normal, subnormal or zero, but not @a infinite or @a NaN.
         * @param[in] x The number you want to test.
         * @return @c true if @a x has a finite value, @c false otherwise
         */
@@ -161,7 +175,7 @@ namespace qlibs {
         /**
         * @brief Computes the square-root of @a x
         * @param[in] x The floating point value
-        * @return If all validations are ok, square root of @a x, is returned.
+        * @return Upon successful completion, square root of @a x, is returned.
         * If the domain validation fails, @c nan is returned
         */
         float sqrt( float x );
@@ -170,7 +184,7 @@ namespace qlibs {
         * @brief Computes the reciprocal square-root of @a x denoted as
         * <tt>1/sqrt(x)</tt>
         * @param[in] x The floating point value
-        * @return If all validations are ok, the reciprocal square root of @a x, is
+        * @return Upon successful completion, the reciprocal square root of @a x, is
         * returned. If the domain validation fails @c nan is returned
         */
         float rSqrt( float x );
@@ -178,7 +192,7 @@ namespace qlibs {
         /**
         * @brief Computes the cubic-root of @a x
         * @param[in] x The floating point value
-        * @return If all validations are ok, cubic root of @a x, is returned. If
+        * @return Upon successful completion, cubic root of @a x, is returned. If
         * the domain validation fails, @c nan is returned
         */
         float cbrt( float x );
@@ -187,7 +201,7 @@ namespace qlibs {
         * @brief Computes the reciprocal cubic-root of @a x denoted as
         * <tt>1/cbrt(x)</tt>
         * @param[in] x The floating point value
-        * @return If all validations are ok, the reciprocal cubic root of @a x, is
+        * @return Upon successful completion, the reciprocal cubic root of @a x, is
         * returned. If the domain validation fails @c nan is returned
         */
         float rCbrt( float x );
@@ -234,7 +248,7 @@ namespace qlibs {
         * @brief Computes the floating point remainder after division of @a x
         * by @a y, where  @a x is the dividend and @a y is the divisor. This
         * function is often called the remainder operation, which can be
-        * expressed as @c r=a-(b*trunc(a/b)) . This function follows the
+        * expressed as <tt>r=a-(b*trunc(a/b))</tt> . This function follows the
         * convention that @c rem(x,0) is @c nan.
         * @note The concept of remainder after division is not uniquely defined,
         * and the two functions ffmath::mod() and ffmath::rem() each compute a
@@ -258,7 +272,7 @@ namespace qlibs {
         * @brief Computes the floating point remainder after division of @a x
         * by @a y, where  @a x is the dividend and @a y is the divisor. This
         * function is often called the modulo operation, which can be expressed
-        * as @c b=a-m*floor(a/m) . This function follows the convention that
+        * as <tt>b=a-m*floor(a/m)</tt> . This function follows the convention that
         * @c mod(x,0) returns x.
         * @note The concept of remainder after division is not uniquely defined,
         * and the two functions ffmath::mod() and ffmath::rem() each compute a
@@ -282,8 +296,8 @@ namespace qlibs {
         /**
         * @brief Computes the sine of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If all validations are ok, the sine of @a x @c sin(x) in the
-        * range  [-1 ; +1], is returned. If the domain validation fails, a @c nan
+        * @return Upon successful completion, the sine of @a x @c sin(x) in the
+        * range <tt>[-1 ; +1]</tt>, is returned. If the domain validation fails, a @c nan
         * value is returned.
         */
         float sin( float x );
@@ -291,7 +305,7 @@ namespace qlibs {
         /**
         * @brief Computes the cosine of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If all validations are ok, the cosine of @a x @c cos(x) in the range
+        * @return Upon successful completion, the cosine of @a x @c cos(x) in the range
         * <tt>[-1 ; +1]</tt>, is returned. If the domain validation fails, a @c nan value is
         * returned.
         */
@@ -300,7 +314,7 @@ namespace qlibs {
         /**
         * @brief Computes the tangent of @a x (measured in radians).
         * @param[in] x The floating point value
-        * @return If all validations are ok, the tangent of @a x @c tan(x) is
+        * @return Upon successful completion, the tangent of @a x @c tan(x) is
         * returned. If the domain validation fails, a @c nan value is returned.
         */
         float tan( float x );
@@ -308,7 +322,7 @@ namespace qlibs {
         /**
         * @brief Computes the principal value of the arc sine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the arc sine of @a x @c arcsin(x) in the range
+        * @return Upon successful completion, the arc sine of @a x @c arcsin(x) in the range
         * <tt>[-pi/2 ; pi/2]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
@@ -317,7 +331,7 @@ namespace qlibs {
         /**
         * @brief Computes the principal value of the arc cosine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the arc cosine of @a x @c arccos(x) in the
+        * @return Upon successful completion, the arc cosine of @a x @c arccos(x) in the
         * range <tt>[0 ; pi]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
@@ -326,7 +340,7 @@ namespace qlibs {
         /**
         * @brief Computes the principal value of the arc tangent of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the arc sine of @a x @c arctan(x) in the range
+        * @return Upon successful completion, the arc sine of @a x @c arctan(x) in the range
         * <tt>[-pi/2 ; pi/2]</tt>. is returned.If the domain validation fails, a @c nan value is
         * returned.
         */
@@ -337,7 +351,7 @@ namespace qlibs {
         * determine the correct quadrant.
         * @param[in] y The floating point value
         * @param[in] x The floating point value
-        * @return If all validations are ok, the arc tangent of @c y/x <tt>arctan(y/x)</tt>
+        * @return Upon successful completion, the arc tangent of @c y/x <tt>arctan(y/x)</tt>
         * in the range <tt>[-pi ; +pi]</tt> radians, is returned. If the domain validation fails,
         * a @c nan value is returned.
         */
@@ -347,7 +361,7 @@ namespace qlibs {
         /**
         * @brief Computes 2 raised to the given power @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the base-2 exponential of @a x <tt>2^x</tt> is
+        * @return Upon successful completion, the base-2 exponential of @a x <tt>2^x</tt> is
         * returned. If the range validation fails due to overflow, @c inf is
         * returned.
         */
@@ -356,7 +370,7 @@ namespace qlibs {
         /**
         * @brief Computes the base 2 logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the base-2 logarithm of @a x @c log_2(x) is
+        * @return Upon successful completion, the base-2 logarithm of @a x @c log_2(x) is
         * returned. If the domain validation fails, a @c nan value is returned.
         * If the pole validation fails, @c -inf is returned.
         */
@@ -366,7 +380,7 @@ namespace qlibs {
         * @brief Computes the @a e ( Euler's number, @c 2.7182818 ) raised to the given
         * power @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the base-e exponential of @a x <tt>e^(x)</tt>
+        * @return Upon successful completion, the base-e exponential of @a x <tt>e^(x)</tt>
         * is returned. If the range validation fails due to overflow, @c +inf is
         * returned.
         */
@@ -375,7 +389,7 @@ namespace qlibs {
         /**
         * @brief Computes the value of 10 raised to the power of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the base-e exponential of @a x <tt>10^(x)</tt>
+        * @return Upon successful completion, the base-e exponential of @a x <tt>10^(x)</tt>
         * is returned. If the range validation fails due to overflow, @c ±inf or
         * @c nan is returned.
         */
@@ -384,7 +398,7 @@ namespace qlibs {
         /**
         * @brief Computes the natural (base e) logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the natural (base-e) logarithm of @a x
+        * @return Upon successful completion, the natural (base-e) logarithm of @a x
         * @c ln(x) is returned. If the domain validation fails, a @c nan value is
         * returned. If the pole validation fails, @c -inf is returned.
         */
@@ -393,7 +407,7 @@ namespace qlibs {
         /**
         * @brief Computes the common (base-10) logarithm of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the common (base-10) logarithm of @a x
+        * @return Upon successful completion, the common (base-10) logarithm of @a x
         * @c log_10(x) is returned. If the domain validation fails, a @c nan value is
         * returned. If the pole validation fails, @c -inf is returned.
         */
@@ -403,7 +417,7 @@ namespace qlibs {
         * @brief Computes the value of @a b raised to the power @a e.
         * @param[in] b Base as floating point value
         * @param[in] e Exponent as floating point value
-        * @return If all validations are ok, @a b raised to the power of @a e @c b^e is
+        * @return Upon successful completion, @a b raised to the power of @a e @c b^e is
         * returned. If the domain validation fails, a @c nan value is returned. If
         * the pole or range validation fails due to overflow, @c ±inf is
         * returned.
@@ -414,7 +428,7 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic sine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the hyperbolic sine of @a x @c sinh(x) is
+        * @return Upon successful completion, the hyperbolic sine of @a x @c sinh(x) is
         * returned. If the range validation fails, a @c ±inf is value is
         * returned.
         */
@@ -423,7 +437,7 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic cosine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the hyperbolic cosine of @a x @c cosh(x) is
+        * @return Upon successful completion, the hyperbolic cosine of @a x @c cosh(x) is
         * returned. If the range validation fails, a @c inf value is returned.
         */
         float cosh( float x );
@@ -431,7 +445,7 @@ namespace qlibs {
         /**
         * @brief Computes hyperbolic tangent of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the hyperbolic tangent of @a x
+        * @return Upon successful completion, the hyperbolic tangent of @a x
         * @c tanh(x) is returned.
         */
         float tanh( float x );
@@ -439,7 +453,7 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic sine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the inverse hyperbolic sine of @a x
+        * @return Upon successful completion, the inverse hyperbolic sine of @a x
         * <tt>sinh^-1(x)</tt> is returned.
         */
         float asinh( float x );
@@ -447,7 +461,7 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic cosine of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the inverse hyperbolic cosine of @a x
+        * @return Upon successful completion, the inverse hyperbolic cosine of @a x
         * <tt>cosh^-1(x)</tt> is returned.
         */
         float acosh( float x );
@@ -455,45 +469,45 @@ namespace qlibs {
         /**
         * @brief Computes the inverse hyperbolic tangent of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the inverse hyperbolic tangent of @a x
+        * @return Upon successful completion, the inverse hyperbolic tangent of @a x
         * <tt>tanh^-1(x)</tt> is returned. If the domain validation fails, a @c nan
         * value is returned. If the pole validation fails, @c ±inf is returned.
         */
         float atanh( float x );
 
         /**
-        * @brief Wraps angle @a x, in radians, to the interval [−pi, pi] such that
-        * pi maps to pi and −pi maps to −pi. In general, odd, positive multiples
-        * of pi map to pi and odd, negative multiples of pi map to −pi.
+        * @brief Wraps angle @a x, in radians, to the interval <tt>[−pi, pi]</tt> such that
+        * @c pi maps to @c pi and @c −pi maps to @c −pi. In general, odd, positive multiples
+        * of @c pi map to @c pi and odd, negative multiples of @c pi map to @c −pi.
         * @param x The angle in radians
-        * @return The angle @a x wrapped to the [-pi, pi] interval
+        * @return The angle @a x wrapped to the <tt>[-pi, pi]</tt> interval
         */
         float wrapToPi( float x );
 
         /**
-        * @brief Wraps angle @a x, in radians, to the interval [0, 2*pi] such that
-        * 0 maps to 0 and 2*pi and 2*pi maps to 2*pi. In general, positive multiples
-        * of 2*pi map to 2*pi and negative multiples of 2*pi map to 0.
+        * @brief Wraps angle @a x, in radians, to the interval <tt>[0, 2*pi]</tt> such that
+        * @c 0 maps to @c 0 and @c 2*pi and @c 2*pi maps to @c 2*pi. In general, positive multiples
+        * of @c 2*pi map to @c 2*pi and negative multiples of @c 2*pi map to @c 0.
         * @param x The angle in radians
-        * @return The angle @a x wrapped to the [0, 2*pi] interval
+        * @return The angle @a x wrapped to the <tt>[0, 2*pi]</tt> interval
         */
         float wrapTo2Pi( float x );
 
         /**
-        * @brief Wraps angle @a x, in degrees, to the interval [–180, 180] such
-        * that 180 maps to 180 and –180 maps to –180. In general, odd, positive
-        * multiples of 180 map to 180 and odd, negative multiples of 180 map to –180.
+        * @brief Wraps angle @a x, in degrees, to the interval <tt>[–180, 180]</tt> such
+        * that @c 180 maps to @c 180 and @c –180 maps to @c –180. In general, odd, positive
+        * multiples of @c 180 map to @c 180 and odd, negative multiples of @c 180 map to @c –180.
         * @param x The angle in degrees
-        * @return The angle @a x wrapped to the [-pi, pi] interval
+        * @return The angle @a x wrapped to the <tt>[-180, 180]</tt> interval
         */
         float wrapTo180( float x );
 
         /**
-        * @brief Wraps angle @a x, in degrees, to the interval [0, 360] such
-        * that 0 maps to 0 and 360 maps to 360. In general, positive multiples
-        * of 360 map to 360 and negative multiples of 360 map to zero.
+        * @brief Wraps angle @a x, in degrees, to the interval <tt>[0, 360]</tt> such
+        * that @c 0 maps to @c 0 and @c 360 maps to @c 360. In general, positive multiples
+        * of @c 360 map to @c 360 and negative multiples of @c 360 map to zero.
         * @param x The angle in degrees
-        * @return The angle @a x wrapped to the [0, 360] interval
+        * @return The angle @a x wrapped to the <tt>[0, 360]</tt> interval
         */
         float wrapTo360( float x );
 
@@ -607,7 +621,7 @@ namespace qlibs {
         /**
         * @brief Computes the error function of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the value of the error function is
+        * @return Upon successful completion, the value of the error function is
         * returned.
         */
         float erf( float x );
@@ -615,7 +629,7 @@ namespace qlibs {
         /**
         * @brief Computes the complementary error function of @a x.
         * @param[in] x The floating point value
-        * @return If all validations are ok, the value of the complementary error
+        * @return Upon successful completion, the value of the complementary error
         * function is returned.
         */
         float erfc( float x );
@@ -626,8 +640,8 @@ namespace qlibs {
         * @param[in] x The floating point value
         * @param[in] pw2 Pointer to integer value to store the exponent to
         * @return If @a x is zero, returns zero and stores zero in @a pw2. Otherwise
-        * (if @a x is not zero), if all validations are ok, returns the value @a y in the
-        * range (-1;-0.5], [0.5; 1) and stores an integer value in @a pw2 such that
+        * (if @a x is not zero), returns the value @a y in the
+        * range <tt>(-1;-0.5]</tt>, <tt>[0.5; 1)</tt> and stores an integer value in @a pw2 such that
         * <tt>y×2^(pw2) = x</tt> . If the value to be stored in @a pw2 is outside
         * the range of an @c int, the behavior is unspecified. If @a x is not a
         * floating-point number, the behavior is unspecified.
@@ -718,7 +732,7 @@ namespace qlibs {
         * @param[in] x The floating point value
         * @return Upon successful completion, this function shall return the
         * factorial of the integer part of @a x. If @a x is non-positive, factorial() shall
-        * return @c nan. If the correct value would cause overflow, lgamma() shall
+        * return @c nan. If the correct value would cause overflow, factorial() shall
         * return @c +inf.
         */
         float factorial( float x );
@@ -729,7 +743,7 @@ namespace qlibs {
         * @param[in] n The degree of the polynomial, an unsigned integer value
         * @param[in] m The order of the polynomial, an unsigned integer value
         * @param[in] x The argument, a floating-point or integer value
-        * @return If all validations are ok, the value of the associated Laguerre
+        * @return Upon successful completion, the value of the associated Laguerre
         * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
         * returned. If @a x is negative, @c nan is returned. If @a n or @a m is greater or
         * equal to @c 128, the behavior is implementation-defined.
@@ -744,7 +758,7 @@ namespace qlibs {
         * @param[in] n The degree of the polynomial, an unsigned integer value
         * @param[in] m The order of the polynomial, an unsigned integer value
         * @param[in] x The argument, a floating-point or integer value
-        * @return If all validations are ok, the value of the associated Legendre
+        * @return Upon successful completion, the value of the associated Legendre
         * polynomial of x shall be returned. If the argument is @c nan, a @c nan is
         * returned. If <tt>|x| > 1</tt>, @c nan is returned due the domain error.
         * If @a n is greater or equal to @c 128, the behavior is implementation-defined.
@@ -757,7 +771,7 @@ namespace qlibs {
         * @brief Computes the Beta function of @a x and @a y.
         * @param[in] x The argument, a floating-point or integer value
         * @param[in] y The argument, a floating-point or integer value
-        * @return If all validations are ok, the value of the Beta function of
+        * @return Upon successful completion, the value of the Beta function of
         * @a x and @a y. If the argument is @c nan, @c nan is returned. The function
         * is only required to be defined where both @a x and @a y are greater
         * than zero, and is allowed to return @c nan otherwise.
@@ -768,16 +782,16 @@ namespace qlibs {
         /**
         * @brief Computes the complete elliptic integral of the first kind of @a k
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
-        * @return If all validations are ok, the value of the complete elliptic
+        * @return Upon successful completion, the value of the complete elliptic
         * integral of the first kind of @a k. If the argument is @c nan, @c nan is
-        * returned. If |k| > 1, NaN is returned due the domain error
+        * returned. If <tt>|k| > 1</tt>, NaN is returned due the domain error
         */
         float comp_ellint_1( float k );
 
         /**
         * @brief Computes the complete elliptic integral of the second kind of @a k
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
-        * @return If all validations are ok, the value of the complete elliptic
+        * @return Upon successful completion, the value of the complete elliptic
         * integral of the second kind of @a k. If the argument is @c nan, @c nan is
         * returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
@@ -788,7 +802,7 @@ namespace qlibs {
         * @a k and @a nu.
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
         * @param[in] nu Elliptic characteristic as a floating-point value
-        * @return If all validations are ok, the value of the complete elliptic
+        * @return Upon successful completion, the value of the complete elliptic
         * integral of the third kind of @a k and @a nu. If the argument is @c nan,
         * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
@@ -800,9 +814,9 @@ namespace qlibs {
         * @a k and @a phi
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
         * @param[in] phi Jacobi amplitude as a floating-point value given in radians
-        * @return If all validations are ok, the value of the incomplete elliptic
+        * @return Upon successful completion, the value of the incomplete elliptic
         * integral of the first kind of @a k and @a phi. If the argument is @c nan,
-        * @c nan is returned. If |k| > 1, NaN is returned due the domain error
+        * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
         float ellint_1( float k,
                         float phi );
@@ -812,9 +826,9 @@ namespace qlibs {
         * @a k and @a phi
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
         * @param[in] phi Jacobi amplitude as a floating-point value given in radians
-        * @return If all validations are ok, the value of the incomplete elliptic
+        * @return Upon successful completion, the value of the incomplete elliptic
         * integral of the second kind of @a k and @a phi. If the argument is @c nan,
-        * NaN is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
+        * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
         float ellint_2( float k,
                         float phi );
@@ -825,7 +839,7 @@ namespace qlibs {
         * @param[in] k Elliptic modulus or eccentricity as a floating-point value
         * @param[in] nu Elliptic characteristic as a floating-point value
         * @param[in] phi Jacobi amplitude as a floating-point value given in radians
-        * @return If all validations are ok, the value of the incomplete elliptic
+        * @return Upon successful completion, the value of the incomplete elliptic
         * integral of the third kind of @a k, @a nu and @a phi. If the argument is @c nan,
         * @c nan is returned. If <tt>|k| > 1</tt>, @c nan is returned due the domain error
         */
@@ -836,7 +850,7 @@ namespace qlibs {
         /**
         * @brief Computes the Exponential integral of @a num
         * @param[in] num A floating-point value
-        * @return If all validations are ok, the value of the exponential integral
+        * @return Upon successful completion, the value of the exponential integral
         * of @a num. If the argument is @c nan, @c nan is returned. If the argument
         * is @c ±0, @c -inf is returned.
         */
@@ -847,7 +861,7 @@ namespace qlibs {
         * @a n and argument @a x
         * @param[in] n The degree of the polynomial
         * @param[in] x The argument, a floating-point value
-        * @return If all validations are ok, the value of order-n Hermite polynomial
+        * @return Upon successful completion, the value of order-n Hermite polynomial
         * of @a x. If the argument is @c nan, @c nan is returned. If <tt>n>=128</tt>,
         * the behavior is implementation-defined.
         */
@@ -859,7 +873,7 @@ namespace qlibs {
         * and argument @a x.
         * @param[in] n The degree of the polynomial, an unsigned integer value
         * @param[in] x The argument, a floating-point or integer value
-        * @return If all validations are ok, the value of the non-associated Laguerre
+        * @return Upon successful completion, the value of the non-associated Laguerre
         * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
         * returned. If @a x is negative, @c nan is returned. If @a n is greater or
         * equal than @c 128, the behavior is implementation-defined.
@@ -872,9 +886,9 @@ namespace qlibs {
         * and argument @a x.
         * @param[in] n The degree of the polynomial, an unsigned integer value
         * @param[in] x The argument, a floating-point or integer value
-        * @return If all validations are ok, the value of the unassociated Legendre
+        * @return Upon successful completion, the value of the unassociated Legendre
         * polynomial of @a x shall be returned. If the argument is @c nan, a @c nan is
-        * returned. The function is not required to be defined for <tt>|x| > 1 <//t>.
+        * returned. The function is not required to be defined for <tt>|x| > 1 </tt>.
         * If @a n is greater or equal than @c 128, the behavior is implementation-defined.
         */
         float legendre( size_t n,
@@ -883,7 +897,7 @@ namespace qlibs {
         /**
         * @brief Computes the Riemann zeta function of @a s
         * @param[in] s A floating-point value
-        * @return If all validations are ok, the value of the Riemann zeta function
+        * @return Upon successful completion, the value of the Riemann zeta function
         * of @a s. If the argument is @c nan, @c nan is returned.
         */
         float riemann_zeta( float s );
@@ -893,7 +907,7 @@ namespace qlibs {
         * and @a x.
         * @param[in] n The order of the function
         * @param[in] x The argument to the function, a floating-point or integer value
-        * @return If all validations are ok, the value of the spherical Bessel
+        * @return Upon successful completion, the value of the spherical Bessel
         * function of the first kind of @a n and @a x. If the argument is @c nan, a @c nan is
         * returned. If @a n is greater or equal than @c 128, the behavior is
         * implementation-defined.
@@ -906,7 +920,7 @@ namespace qlibs {
         * known as the spherical Neumann function of @a n and @a x.
         * @param[in] n The order of the function
         * @param[in] x The argument to the function, a floating-point or integer value
-        * @return If all validations are ok, the value of the spherical Bessel
+        * @return Upon successful completion, the value of the spherical Bessel
         * function of the second kind (spherical Neumann function) of  @a n and
         * @a x. If the argument is @c nan, a @c nan is
         * returned. If @a n is greater or equal than @c 128, the behavior is
@@ -920,7 +934,7 @@ namespace qlibs {
         * @a nu and @a x
         * @param[in] nu The order of the function
         * @param[in] x The argument to the function, a floating-point or integer value
-        * @return If all validations are ok, the value of the regular modified
+        * @return Upon successful completion, the value of the regular modified
         * cylindrical Bessel function of @a nu and @a x. If the argument is
         * @c nan, a @c nan is returned. If @a nu is greater or equal than @c 128,
         * the behavior is implementation-defined.
@@ -933,7 +947,7 @@ namespace qlibs {
         * and @a x
         * @param[in] nu The order of the function
         * @param[in] x The argument to the function, a floating-point or integer value
-        * @return If all validations are ok, the value of the irregular modified cylindrical Bessel function
+        * @return Upon successful completion, the value of the irregular modified cylindrical Bessel function
         * (also known as modified Bessel function of the second kind) of @a nu
         * and @a x. If the argument is @c nan, a @c nan is returned. If @a nu is
         * greater or equal than @c 128, the behavior is implementation-defined.
@@ -947,7 +961,7 @@ namespace qlibs {
         * and @a x
         * @param[in] nu The order of the function
         * @param[in] x The argument to the function, a floating-point or integer value
-        * @return If all validations are ok, the value of the irregular modified cylindrical Bessel function
+        * @return Upon successful completion, the value of the irregular modified cylindrical Bessel function
         * (also known as modified Bessel function of the second kind) of @a nu
         * and @a x. If the argument is @c nan, a @c nan is returned. If @a nu is
         * greater or equal than @c 128, the behavior is implementation-defined.
@@ -961,7 +975,7 @@ namespace qlibs {
         * @param[in] l The degree
         * @param[in] m The order
         * @param[in] x Polar angle, measured in radians
-        * @return If all validations are ok, the value of the spherical associated
+        * @return Upon successful completion, the value of the spherical associated
         * Legendre function (that is, spherical harmonic with sigma = 0) of @a l,
         * @a m, and @a theta. If the argument @a x is @c nan, a @c nan is returned.
         * If @a l is greater or equal than @c 128, the behavior is implementation-defined.
