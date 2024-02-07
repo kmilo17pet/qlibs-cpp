@@ -6,13 +6,13 @@ var hierarchy =
     ] ],
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
     [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
-    [ "float_limits", "structfloat__limits.html", null ],
     [ "qlibs::fp16", "classqlibs_1_1fp16.html", null ],
     [ "qlibs::interp1", "classqlibs_1_1interp1.html", null ],
     [ "qlibs::fis::ioBase", "classqlibs_1_1fis_1_1io_base.html", [
       [ "qlibs::fis::input", "classqlibs_1_1fis_1_1input.html", null ],
       [ "qlibs::fis::output", "classqlibs_1_1fis_1_1output.html", null ]
     ] ],
+    [ "limits", "structlimits.html", null ],
     [ "qlibs::mat< Rows, Cols >", "classqlibs_1_1mat.html", null ],
     [ "qlibs::fis::mf", "classqlibs_1_1fis_1_1mf.html", null ],
     [ "nonCopyable", null, [

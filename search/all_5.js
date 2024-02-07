@@ -7,7 +7,7 @@ var searchData=
   ['ellint_5f3_4',['ellint_3',['../group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6',1,'qlibs::ffmath']]],
   ['enableautotuning_5',['enableAutoTuning',['../classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e',1,'qlibs::pidController']]],
   ['end_6',['END',['../group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f',1,'fis.hpp']]],
-  ['epsilon_7',['epsilon',['../structfloat__limits.html#ab65a18b7d97186ca328c2622c1d441e7',1,'float_limits']]],
+  ['epsilon_7',['epsilon',['../structlimits.html#ab0df7021ea571d67bb4ff71a88a83ca9',1,'limits']]],
   ['erf_8',['erf',['../group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65',1,'qlibs::ffmath']]],
   ['erfc_9',['erfc',['../group__qffmath.html#ga4d271241abb1bfd4aab9ce2708556174',1,'qlibs::ffmath']]],
   ['excite_10',['excite',['../classqlibs_1_1ltisys.html#ad2b58062c2f6bf7320028275c2dd52b4',1,'qlibs::ltisys']]],

@@ -42,5 +42,5 @@ var annotated_dup =
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
       [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ],
-    [ "float_limits", "structfloat__limits.html", "structfloat__limits" ]
+    [ "limits", "structlimits.html", "structlimits" ]
 ];

@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('qffmath_desc.html',''); initResizable(
   <div class="headertitle"><div class="title">Fast floating point math library and extensions </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >qLibs provides its own math library with a set of APIs to compute common mathematical functions and transformations. The <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> can replace a default math floating-point library, delivering better performance with less code delivering a very close aproximations to the standard library. <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> is Very fast and very small, it delivers FPU-like performance in pure software. Where available, it even boosts the performance of an FPU for complex mathematical functions.</p>
+<div class="textblock"><p >qLibs provides its own math library with a set of APIs to compute common mathematical functions and transformations. The <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> can replace a default math floating-point library, delivering better performance with less code delivering a very close aproximations to the standard library. <a class="el" href="namespaceqlibs_1_1ffmath.html">qlibs::ffmath</a> is very fast and small, it delivers FPU-like performance in pure software. Where available, it even boosts the performance of an FPU for complex mathematical functions.</p>
 <p >The list of provided functions and constants:</p>
 <h2><a class="anchor" id="qffmath_classify"></a>
 Classification</h2>
@@ -192,6 +192,7 @@ Exponential functions</h2>
 </ul>
 <h2><a class="anchor" id="qffmath_special"></a>
 Special functions</h2>
+<p >Most special functions are designed to prioritize precision over speed given their applications, and their implementation closely follows that of the C++ standard. <a class="el" href="namespaceqlibs_1_1ffmath.html" title="Namespace for the Fast floating-point math library.">qlibs::ffmath</a> provides these special functions to ensure compatibility with compilers that lack them.</p>
 <ul>
 <li><a class="el" href="group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65">qlibs::ffmath::erf()</a> Computes the error function</li>
 <li><a class="el" href="group__qffmath.html#ga4d271241abb1bfd4aab9ce2708556174">qlibs::ffmath::erfc()</a> Computes the complementary error function</li>
@@ -211,6 +212,17 @@ Special functions</h2>
 <li><a class="el" href="group__qffmath.html#gae9f99245649658d596c24624945b56d0">qlibs::ffmath::ellint_1()</a> Computes the incomplete elliptic integral of the first kind</li>
 <li><a class="el" href="group__qffmath.html#ga957600c201c1c997439cb1d7fd9b9298">qlibs::ffmath::ellint_2()</a> Computes the incomplete elliptic integral of the second kind</li>
 <li><a class="el" href="group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6">qlibs::ffmath::ellint_3()</a> Computes the incomplete elliptic integral of the third kind</li>
+<li><a class="el" href="group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7">qlibs::ffmath::expint()</a> Computes the Exponential integral</li>
+<li><a class="el" href="group__qffmath.html#gad1f0e976869a66b602fc16926107a8b1">qlibs::ffmath::hermite()</a> Computes the (physicist's) Hermite polynomials</li>
+<li><a class="el" href="group__qffmath.html#ga2218cf71ca04fa7029b979b57224f380">qlibs::ffmath::laguerre()</a> Computes the non-associated Laguerre polynomials</li>
+<li><a class="el" href="group__qffmath.html#ga9aa33f38928dbc0d2988ac71658b5752">qlibs::ffmath::legendre()</a> Computes the unassociated Legendre polynomials</li>
+<li><a class="el" href="group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa">qlibs::ffmath::riemann_zeta()</a> Computes the Riemann zeta function</li>
+<li><a class="el" href="group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da">qlibs::ffmath::sph_bessel()</a> Computes the spherical Bessel function of the first kind</li>
+<li><a class="el" href="group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b">qlibs::ffmath::sph_neumann()</a> Computes the spherical Bessel function of the second kind ( spherical Neumann function )</li>
+<li><a class="el" href="group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8">qlibs::ffmath::cyl_bessel_i()</a> Computes the regular modified cylindrical Bessel function</li>
+<li><a class="el" href="group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0">qlibs::ffmath::cyl_bessel_j()</a> Computes the cylindrical Bessel function of the first kind</li>
+<li><a class="el" href="group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a">qlibs::ffmath::cyl_bessel_k()</a> Computes the irregular modified cylindrical Bessel function</li>
+<li><a class="el" href="group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8">qlibs::ffmath::sph_legendre()</a> Computes the spherical associated Legendre function</li>
 </ul>
 <h2><a class="anchor" id="qffmath_const"></a>
 Constants</h2>
