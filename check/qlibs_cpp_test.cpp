@@ -395,7 +395,10 @@ void test_ffmath(void)
 
     std::cout << "sph_legendre" << std::endl;
     std::cout << ffmath::sph_legendre( 3, 0, 2.2345 ) << std::endl;
-
+    std::cout << "copysgn" << std::endl;
+    std::cout << ffmath::copysign( 1, -2 ) << std::endl;
+    std::cout << ffmath::copysign( ffmath::getNan(), -2 ) << std::endl;
+    std::cout << ffmath::copysign( ffmath::getInf(), -2 ) << std::endl;
 }
 
 void test_mat( void )

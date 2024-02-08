@@ -152,6 +152,20 @@ ffmath::classification ffmath::classify( const float f )
     return retVal;
 }
 /*============================================================================*/
+float ffmath::copysign( float mag,
+                        float sgn )
+{
+    uint32_t u_mag, u_sgn;
+
+    cast_reinterpret( u_mag, mag );
+    cast_reinterpret( u_sgn, sgn );
+    u_mag &= 0x7FFFFFFFU;
+    u_mag |= u_sgn & 0x80000000U;
+    cast_reinterpret( mag, u_mag );
+
+    return mag;
+}
+/*============================================================================*/
 float ffmath::sign( float x )
 {
     float s;
@@ -505,6 +519,11 @@ float ffmath::exp( float x )
     return ffmath::exp2( ffmath::FFP_LOG2E*x );
 }
 /*============================================================================*/
+float ffmath::expm1( float x )
+{
+    return ffmath::exp2( ffmath::FFP_LOG2E*x ) - 1.0F;
+}
+/*============================================================================*/
 float ffmath::exp10( float x )
 {
     return ffmath::exp2( 3.32192809F*x );
@@ -513,6 +532,11 @@ float ffmath::exp10( float x )
 float ffmath::log( float x )
 {
     return ffmath::FFP_LN2*ffmath::log2( x );
+}
+/*============================================================================*/
+float ffmath::log1p( float x )
+{
+    return ffmath::FFP_LN2*ffmath::log2( 1.0F + x );
 }
 /*============================================================================*/
 float ffmath::log10( float x )

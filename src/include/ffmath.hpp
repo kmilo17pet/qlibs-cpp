@@ -151,6 +151,20 @@ namespace qlibs {
         }
 
         /**
+        * @brief  Composes a floating point value with the magnitude of @a mag
+        * and the sign of @a sgn
+        * @param[in] mag floating-point value.
+        * @param[in] sgn floating-point value
+        * @return The floating point value with the magnitude of @a mag and the
+        * sign of @a sgn is returned. If @a mag is @c nan, then @c nan with the
+        * sign of @a sgn is returned. if @c sgn is @c -0, the result is only
+        * negative if the implementation supports the signed zero consistently
+        * in arithmetic operations.
+        */
+        float copysign( float mag,
+                        float sgn );
+
+        /**
         * @brief Computes the sign function ( signum function).
         * @param[in] x The floating point value
         * @return The sign function of @a x
@@ -387,6 +401,17 @@ namespace qlibs {
         float exp( float x );
 
         /**
+        * @brief Returns @a e raised to the given power minus one <tt>e^x-1</tt>
+        * power @a x.
+        * @param[in] x The floating point value
+        * @return Upon successful completion, the base-e exponential of @a x minus
+        * one <tt>e^(x)-1</tt> is returned. If the range validation fails due
+        * to overflow, @c +inf is
+        * returned.
+        */
+        float expm1( float x );
+
+        /**
         * @brief Computes the value of 10 raised to the power of @a x.
         * @param[in] x The floating point value
         * @return Upon successful completion, the base-e exponential of @a x <tt>10^(x)</tt>
@@ -403,6 +428,17 @@ namespace qlibs {
         * returned. If the pole validation fails, @c -inf is returned.
         */
         float log( float x );
+
+        /**
+        * @brief Computes the natural (base e) logarithm of 1 plus the given
+        * number @a x @c ln(1+x) .
+        * @param[in] x The floating point value
+        * @return Upon successful completion, the natural (base-e) logarithm
+        * of 1 plus the given number @a x @c ln(1+x) is returned. If the domain
+        * validation fails, a @c nan value is returned. If the pole validation
+        * fails, @c -inf is returned.
+        */
+        float log1p( float x );
 
         /**
         * @brief Computes the common (base-10) logarithm of @a x.

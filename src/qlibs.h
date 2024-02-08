@@ -41,8 +41,8 @@ This file is part of the QuarkTS++ OS distribution.
 #ifndef QLIBS_CPP_H
 #define QLIBS_CPP_H
 
-#define QLIBS_CPP_VERSION         "1.1.7"
-#define QLIBS_CPP_VERNUM          ( 117U )
+#define QLIBS_CPP_VERSION         "1.1.8"
+#define QLIBS_CPP_VERNUM          ( 118U )
 #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
 
 #include <include/qlibs_types.hpp>
