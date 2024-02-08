@@ -40,12 +40,12 @@ void setup() {
 }
 
 void loop() {
-  real_t serviceScoreValue = mapMinMax( analogRead(servicePin), 0, 1023, 0.0f, 1.0f );
-  real_t foodScoreValue = mapMinMax( analogRead(foodPin), 0, 1023, 0.0f, 10.0f );
+  real_t serviceScoreValue = map( analogRead(servicePin), 0, 1023, 0.0f, 1.0f );
+  real_t foodScoreValue = map( analogRead(foodPin), 0, 1023, 0.0f, 10.0f );
 
   tipper.setInput( service, serviceScoreValue );
   tipper.setInput( food, foodScoreValue );
-  
+
   tipper.fuzzify();
   if ( tipper.inference() ) {
       tipper.deFuzzify();
