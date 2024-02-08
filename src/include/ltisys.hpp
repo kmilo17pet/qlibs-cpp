@@ -72,10 +72,10 @@ namespace qlibs {
         real_t den[ NA ];
         discreteStates<(NA>NB)? NA:NB> states = {};
         discreteTF( const real_t ( &numerator )[ NB ], const real_t ( &denominator)[ NA ] ) {
-            for ( size_t i = 0; i <= NB; ++i ) {
+            for ( size_t i = 0; i < NB; ++i ) {
                 num[ i ] = numerator[ i ];
             }
-            for ( size_t i = 0; i <= NA; ++i) {
+            for ( size_t i = 0; i < NA; ++i ) {
                 den[ i ] = denominator[ i ];
             }
         }
