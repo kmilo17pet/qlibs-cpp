@@ -13,5 +13,6 @@ var searchData=
   ['exp_10',['exp',['../classqlibs_1_1fp16.html#a38e896e81c633d8c831d9366b1365bd4',1,'qlibs::fp16::exp()'],['../group__qffmath.html#ga582ddbcb70a87c003aa6bbd0c57601ba',1,'qlibs::ffmath::exp(float x)']]],
   ['exp10_11',['exp10',['../group__qffmath.html#ga0bf4ade7dad579b2000f591f4ae15a89',1,'qlibs::ffmath']]],
   ['exp2_12',['exp2',['../group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf',1,'qlibs::ffmath']]],
-  ['expint_13',['expint',['../group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7',1,'qlibs::ffmath']]]
+  ['expint_13',['expint',['../group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7',1,'qlibs::ffmath']]],
+  ['expm1_14',['expm1',['../group__qffmath.html#ga9d9e6e1aee50c184a185efa82f61d101',1,'qlibs::ffmath']]]
 ];
