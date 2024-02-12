@@ -158,8 +158,8 @@ $(document).ready(function(){initNavTree('qssmoother_desc.html',''); initResizab
 </ul>
 </li>
 <li class="level1"><a href="#qssmoother_desf">Double Exponential Smoothing</a></li>
+<li class="level1"><a href="#qssmoother_ex10">Example: setting up the Double Exponential Smoothing:</a></li>
 <li class="level1"><a href="#qssmoother_alnf">Adaptive Linear Filter</a></li>
-<li class="level1"><a href="#qssmoother_ex10">Example of signal smoothing</a></li>
 </ul>
 </div>
 <div class="textblock"><p >In many embedded systems applications, signals are captured and may be subject to "noise." To reconstruct the original signal, a "smoothing filter" is applied to "clear" the signal of this noise. The filter attenuates high frequency components and emphasizes slow changes in values, making trends easier to discern. The qLibs library offers the <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a> class, which includes a collection of commonly used and efficient smoothing filters for easy signal processing.</p>
@@ -203,7 +203,7 @@ Moving Window Median Filter O(n)</h1>
 <center> \( \frac{1}{N}\sum_{i=0}^{N-1}y(t-i)=\frac{1}{N}[ y(t) + y(t-1) + ... + y(t-N-1) ] \) </center><p >This filter has a time complexity of \(O(n)\)</p>
 <h2><a class="anchor" id="qssmoother_ex3"></a>
 Example: setting up a moving window median filter:</h2>
-<div class="fragment"><div class="line">smootherMWM1 filter; </div>
+<div class="fragment"><div class="line">smootherMWM1 filter;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 20 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
@@ -218,7 +218,7 @@ Moving Window Median Filter O(1)</h1>
 <dl class="section remark"><dt>Remarks</dt><dd>This implementation offers a significant performance benefit as it has a constant time complexity of \(O(1)\) , compared to the previous filter where time complexity grows proportionally to the size of the window. Use this filter when dealing with large sliding windows.</dd></dl>
 <h2><a class="anchor" id="qssmoother_ex4"></a>
 Example: Setting up a moving window median filter:</h2>
-<div class="fragment"><div class="line">smootherMWM2 filter; </div>
+<div class="fragment"><div class="line">smootherMWM2 filter;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 150 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
@@ -233,7 +233,7 @@ Moving Outlier Removal Filter O(n)</h1>
 <center> \( y(k) = \overline{m(k)} \rightarrow \text{if} \rightarrow | \overline{m(k)} - x(k) | &gt; \alpha|\overline{m(k)}| \)</center><center> \( \text{else}=x(k) \) </center><p >This filter has a time complexity of \(O(n)\)</p>
 <h2><a class="anchor" id="qssmoother_ex5"></a>
 Example: setting up an outlier removal filter:</h2>
-<div class="fragment"><div class="line">smootherMOR1 smoother; </div>
+<div class="fragment"><div class="line">smootherMOR1 smoother;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.8f;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 10 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
@@ -247,7 +247,7 @@ Moving Outlier Removal Filter O(1)</h1>
 <p >The <a class="el" href="classqlibs_1_1smoother_m_o_r2.html">qlibs::smootherMOR2</a> is similar to the previous filter, but with a constant time complexity of  \(O(1)\) by using a <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> data structure.</p>
 <h2><a class="anchor" id="qssmoother_ex6"></a>
 Example: setting up an outlier removal filter:</h2>
-<div class="fragment"><div class="line">smootherMOR2 smoother; </div>
+<div class="fragment"><div class="line">smootherMOR2 smoother;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> alpha = 0.8f;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> m_window[ 100 ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
@@ -268,7 +268,7 @@ Example: setting up a gaussian filter:</h2>
 <div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> sigma = 0.5f;</div>
 <div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> centerOffset = SMOOTHER_WINDOW_SIZE/2.0f;</div>
 <div class="line"> </div>
-<div class="line">smootherGMWF filter; </div>
+<div class="line">smootherGMWF filter;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
@@ -284,7 +284,7 @@ Exponential Weighting filter</h1>
 <p >The moving average algorithm updates the weight and computes the moving average recursively for each data sample that comes in by using the following recursive equations:</p>
 <center> \( w(t) = \lambda w(t-1) + 1 \) </center><center> \( y(t) = ( 1-\frac{1}{w(t)} )y(t-1) + \frac{1}{w(t)}x(t)\) </center><h2><a class="anchor" id="qssmoother_ex8"></a>
 Example: setting up an exponential weighting filter:</h2>
-<div class="fragment"><div class="line">smootherEXPW  filter; </div>
+<div class="fragment"><div class="line">smootherEXPW  filter;</div>
 <div class="line"><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> lambda = 0.8f;</div>
 <div class="line"><span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
@@ -318,7 +318,16 @@ Double Exponential Smoothing</h1>
 <p >The double exponential smoothing filter can be used to generate forecasts by extrapolating the level and trend components into the future. The forecast for time \(t+k\) is given by:</p>
 <center> \( F(t+k) = L(t) + kT(t) \) </center><p >Where \(k\) is the number of time periods into the future.</p>
 <p >Overall, double exponential smoothing is a simple but effective technique for forecasting time series data with trends. It can be easily implemented 3 and provides accurate forecasts for short-term predictions. However, it may not perform well for longer-term forecasts or for data with complex seasonal patterns.</p>
-<h1><a class="anchor" id="qssmoother_alnf"></a>
+<h2><a class="anchor" id="qssmoother_ex10"></a>
+Example: setting up the Double Exponential Smoothing:</h2>
+<div class="fragment"><div class="line">smootherDESF filter;</div>
+<div class="line"><span class="keywordtype">bool</span> ret;</div>
+<div class="line"> </div>
+<div class="line">ret = filter.setup( 0.08f, 0.085f, 10.0f );</div>
+<div class="line"><span class="keywordflow">if</span> ( !ret ) {</div>
+<div class="line">    <span class="comment">// error, smooth filter cant be configured</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="qssmoother_alnf"></a>
 Adaptive Linear Filter</h1>
 <p >The <a class="el" href="classqlibs_1_1smoother_a_l_n_f.html">qlibs::smootherALNF</a> is a digital filter that adjusts its parameters based on the characteristics of the input signal and the desired output signal.</p>
 <p >The adaptive linear filter works by using an algorithm to iteratively adjust the filter coefficients in response to changes in the input signal \(x(t)\). The algorithm seeks to minimize the difference between the filter output and the desired output, known as the error signal \( e(t)\). This is done by adjusting the filter coefficients \(w_i(t)\) in the direction that reduces the error signal. For this, the Least Mean Squares (LMS) algorithm is being used. The LMS algorithm updates the filter coefficients by multiplying the error signal by the input signal and a small step size parameter, and then adding this product to the existing filter coefficients.</p>
@@ -326,7 +335,7 @@ Adaptive Linear Filter</h1>
 <p >One potential drawback of the adaptive linear filter is that it can be computationally intensive, especially if the input signal is large or the filter has many coefficients. Additionally, the performance of the filter can be sensitive to the choice of step size parameter, which must be carefully chosen to balance convergence speed with stability.</p>
 <p >The adaptation rule for every filter coefficient is given by </p><center> \( \Delta w(t) = \alpha e(t) x(t) + \mu \Delta w(t-1) \) </center><center> \( w(t) = w(t-1) x(t) + \Delta w(t) \) </center><p >The equation also includes a momentum term that adds a fraction of the previous coefficient update to the current coefficient update. This can help to reduce oscillations in the filter output and improve convergence speed.</p>
 <h1><a class="anchor" id="qssmoother_ex10"></a>
-Example of signal smoothing</h1>
+Example: setting up the Double Exponential Smoothing:</h1>
 <p >The following is an example of how a smoothing filter can be implemented. In this scenario, a Gaussian filter is used to smooth a speed sensor signal, reducing noise and improving overall signal quality. The filter is set up by defining the necessary parameters and instantiating the filter. The filter is then executed at a sampling rate of 100 milliseconds. This process involves sampling the signal and running it through the filter, resulting in a cleaned and enhanced signal that can be further processed without the need to account for noise and disturbances.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
@@ -359,7 +368,7 @@ Example of signal smoothing</h1>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    BSP_SystemInit( );</div>
 <div class="line">    ret = filter.setup( GAUSS_SIGMA, GAUSS_CENTER, window, kernel );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
