@@ -9,12 +9,12 @@
 * easy signal processing.
 *
 *  Below is the list of filters supported by @ref qssmoother :
-*  
+*
 *  @section qssmoother_lpf1 First Order Low Pass Filter
-*  
-*  \ref qlibs::smootherLPF1 is first-order low-pass filter that passes signals 
-*  with a frequency lower than a chosen cutoff frequency and reduces signals 
-*  with frequencies higher than the cutoff. This results in a smoother signal 
+*
+*  \ref qlibs::smootherLPF1 is first-order low-pass filter that passes signals
+*  with a frequency lower than a chosen cutoff frequency and reduces signals
+*  with frequencies higher than the cutoff. This results in a smoother signal
 *  by removing short-term fluctuations and highlighting longer-term trends.
 *  The discrete-time equation of this filter is defined as follows, where \f$w\f$
 *  is the cut-off frequency given in \f$rad/seg\f$
@@ -43,7 +43,7 @@
 *  @endcode
 *
 *  @section qssmoother_lpf2 Second Order Low Pass Filter
-*  
+*
 *  \ref qlibs::smootherLPF2 is a filter with similar properties to the 1st order low pass filter. The main
 *  difference is that the stop band roll-off will be twice the 1st order filters
 *  at 40dB/decade (12dB/octave) as the operating frequency increases above the
@@ -74,10 +74,10 @@
 *      // error, smooth filter cant be configured
 *  }
 *  @endcode
-*  
 *
-*  @section qssmoother_mwm1 Moving Window Median Filter O(n) 
-*  
+*
+*  @section qssmoother_mwm1 Moving Window Median Filter O(n)
+*
 *  \ref qlibs::smootherMWM1 is a low-pass filter that calculates the moving median of the input signal over
 *  time using the sliding window method. A window of a specified length is moved
 *  sample by sample and the median of the data in the window is computed.
@@ -92,11 +92,11 @@
 *
 *  <center> \f$ \frac{1}{N}\sum_{i=0}^{N-1}y(t-i)=\frac{1}{N}[ y(t) + y(t-1) + ... + y(t-N-1) ] \f$ </center>
 *
-*  This filter has a time complexity of \f$O(n)\f$ 
+*  This filter has a time complexity of \f$O(n)\f$
 *
 *  @subsection qssmoother_ex3 Example: setting up a moving window median filter:
 *  @code{.c}
-*  smootherMWM1 filter; 
+*  smootherMWM1 filter;
 *  real_t m_window[ 20 ] = { 0.0f };
 *  bool ret;
 *
@@ -107,8 +107,8 @@
 *  @endcode
 *
 *
-*  @section qssmoother_mwm2 Moving Window Median Filter O(1) 
-*  
+*  @section qssmoother_mwm2 Moving Window Median Filter O(1)
+*
 *  \ref qlibs::smootherMWM2 is a filter that operates on the same principle as the previous filter. The main
 *  difference is the treatment of the sliding window, which is implemented as a
 *  TDL (Tapped Delay Line) using a circular queue.
@@ -126,7 +126,7 @@
 *
 *  @subsection qssmoother_ex4 Example: Setting up a moving window median filter:
 *  @code{.c}
-*  smootherMWM2 filter; 
+*  smootherMWM2 filter;
 *  real_t m_window[ 150 ] = { 0.0f };
 *  bool ret;
 *
@@ -137,8 +137,8 @@
 *  @endcode
 *
 *
-*  @section qssmoother_mor1 Moving Outlier Removal Filter O(n) 
-*  
+*  @section qssmoother_mor1 Moving Outlier Removal Filter O(n)
+*
 *  The \ref qlibs::smootherMOR1 filter detects and removes outliers in the input signal by computing the
 *  median of a moving window for each sample. If a new incoming sample deviates
 *  from the median by a specified margin \f$\alpha\f$, it is replaced by the
@@ -152,11 +152,11 @@
 *     \f$  \text{else}=x(k) \f$
 *     </center>
 *
-*  This filter has a time complexity of \f$O(n)\f$ 
+*  This filter has a time complexity of \f$O(n)\f$
 *
 *  @subsection qssmoother_ex5 Example: setting up an outlier removal filter:
 *  @code{.c}
-*  smootherMOR1 smoother; 
+*  smootherMOR1 smoother;
 *  real_t alpha = 0.8f;
 *  real_t m_window[ 10 ] = { 0.0f };
 *  bool ret;
@@ -168,14 +168,14 @@
 *  @endcode
 *
 *
-*  @section qssmoother_mor2 Moving Outlier Removal Filter O(1) 
-*  
-*  The \ref qlibs::smootherMOR2 is similar to the previous filter, but with a constant time complexity of  \f$O(1)\f$ 
+*  @section qssmoother_mor2 Moving Outlier Removal Filter O(1)
+*
+*  The \ref qlibs::smootherMOR2 is similar to the previous filter, but with a constant time complexity of  \f$O(1)\f$
 *  by using a \ref qlibs::tdl data structure.
 *
 *  @subsection qssmoother_ex6 Example: setting up an outlier removal filter:
 *  @code{.c}
-*  smootherMOR2 smoother; 
+*  smootherMOR2 smoother;
 *  real_t alpha = 0.8f;
 *  real_t m_window[ 100 ] = { 0.0f };
 *  bool ret;
@@ -191,7 +191,7 @@
 *
 *  \ref qlibs::smootherGMWF is a filter that uses a kernel for smoothing,  which defines the shape of the function
 *  that is used to take the average of the neighboring points. A Gaussian kernel
-*  has the shape of a Gaussian curve with a normal distribution. 
+*  has the shape of a Gaussian curve with a normal distribution.
 *
 *  The coefficients of the kernel are computed from the following equation:
 *
@@ -210,7 +210,7 @@
 *  const real_t sigma = 0.5f;
 *  const real_t centerOffset = SMOOTHER_WINDOW_SIZE/2.0f;
 *
-*  smootherGMWF filter; 
+*  smootherGMWF filter;
 *  real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *  real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *  bool ret;
@@ -222,7 +222,7 @@
 *  @endcode
 *
 *
-*  @section qssmoother_expw Exponential Weighting filter 
+*  @section qssmoother_expw Exponential Weighting filter
 *
 *  The \ref qlibs::smootherEXPW filter uses a weighting factor that is computed and applied to the input
 *  signal in a recursive manner. The weighting factor decreases exponentially as
@@ -244,7 +244,7 @@
 *
 *  @subsection qssmoother_ex8 Example: setting up an exponential weighting filter:
 *  @code{.c}
-*  smootherEXPW  filter; 
+*  smootherEXPW  filter;
 *  real_t lambda = 0.8f;
 *  bool ret;
 *
@@ -255,7 +255,7 @@
 *  @endcode
 *
 *
-*  @section qssmoother_klmn Scalar Kalman filter 
+*  @section qssmoother_klmn Scalar Kalman filter
 *
 *  The \ref qlibs::smootherKLMN (Kalman Filter) is an efficient optimal estimator that provides a recursive
 *  computational methodology for getting the state of a signal from measurements
@@ -263,8 +263,8 @@
 *  the estimate. Here, the scalar or one-dimensional version is provided
 *  and only three design parameters are required, the initial covariance \f$P(0)\f$,
 *  the signal noise covariance \f$Q\f$ and the measurement uncertainty \f$r\f$.
-* 
-*  The recursive equations used by this scalar version are: 
+*
+*  The recursive equations used by this scalar version are:
 *
 *  predict
 *
@@ -283,11 +283,11 @@
 *  <center> \f$ P(k) = ( 1 - K(k)H )P(k-1) \f$ </center>
 *
 *  Where
-* 
+*
 *  \f$A\f$ is the state transition model, \f$H\f$ the observation model, \f$x(k)\f$
 *  the filter output (state estimation), \f$P(k)\f$ the covariance of the predicted
 *  state, \f$u(k)\f$ the signal measurement and \f$K(k)\f$ the kalman gain.
-*  
+*
 *  @subsection qssmoother_ex9 Example: setting up a scalar Kalman filter:
 *  @code{.c}
 *  smootherKLMN filter;
@@ -303,13 +303,13 @@
 *  @section qssmoother_desf Double Exponential Smoothing
 *
 *  The \ref qlibs::smootherDESF is a time series forecasting filter used to analyze and predict trends in
-*  data. It is an extension of simple exponential smoothing that incorporates 
+*  data. It is an extension of simple exponential smoothing that incorporates
 *  trend information into the forecast.
-* 
+*
 *  The double exponential smoothing filter calculates two smoothing coefficients,
 *  one for the level of the series and one for the trend. These coefficients are
-*  used to give more weight to recent observations and dampen the effect of 
-*  older observations. The level and trend are then updated using the following 
+*  used to give more weight to recent observations and dampen the effect of
+*  older observations. The level and trend are then updated using the following
 *  equations:
 *
 *  Level:
@@ -318,46 +318,57 @@
 *  Trend:
 *  <center> \f$ T(t) = \beta [ L(t-1) + T(t-1) ] + ( 1 - \beta ) T(t-1) \f$ </center>
 *
-*  where \f$\alpha\f$ and \f$\beta\f$  are the smoothing coefficients for the 
+*  where \f$\alpha\f$ and \f$\beta\f$  are the smoothing coefficients for the
 *  level and trend, respectively.
-* 
+*
 *  The double exponential smoothing filter can be used to generate forecasts by
 *  extrapolating the level and trend components into the future. The forecast for
 *  time \f$t+k\f$ is given by:
-*  
+*
 *   <center> \f$ F(t+k) = L(t) + kT(t) \f$ </center>
-* 
+*
 *  Where \f$k\f$  is the number of time periods into the future.
 *
-*  Overall, double exponential smoothing is a simple but effective technique 
+*  Overall, double exponential smoothing is a simple but effective technique
 *  for forecasting time series data with trends. It can be easily implemented 3
-*  and provides accurate forecasts for short-term predictions. However, it may 
-*  not perform well for longer-term forecasts or for data with complex seasonal 
+*  and provides accurate forecasts for short-term predictions. However, it may
+*  not perform well for longer-term forecasts or for data with complex seasonal
 *  patterns.
+*
+*  @subsection qssmoother_ex10 Example: setting up the Double Exponential Smoothing:
+*  @code{.c}
+*  smootherDESF filter;
+*  bool ret;
+*
+*  ret = filter.setup( 0.08f, 0.085f, 10.0f );
+*  if ( !ret ) {
+*      // error, smooth filter cant be configured
+*  }
+*  @endcode
 *
 *  @section qssmoother_alnf Adaptive Linear Filter
 *
 *  The \ref qlibs::smootherALNF is a digital filter that adjusts its parameters based on the
 *  characteristics of the input signal and the desired output signal.
-* 
+*
 *  The adaptive linear filter works by using an algorithm to iteratively adjust
 *  the filter coefficients in response to changes in the input signal \f$x(t)\f$.
 *  The algorithm seeks to minimize the difference between the filter output and
-*  the desired output, known as the error signal \f$ e(t)\f$. This is done by 
-*  adjusting the filter coefficients \f$w_i(t)\f$ in the direction that reduces 
-*  the error signal. For this, the Least Mean Squares (LMS) algorithm is being 
-*  used. The LMS algorithm updates the filter coefficients by multiplying the 
-*  error signal by the input signal and a small step size parameter, and then 
+*  the desired output, known as the error signal \f$ e(t)\f$. This is done by
+*  adjusting the filter coefficients \f$w_i(t)\f$ in the direction that reduces
+*  the error signal. For this, the Least Mean Squares (LMS) algorithm is being
+*  used. The LMS algorithm updates the filter coefficients by multiplying the
+*  error signal by the input signal and a small step size parameter, and then
 *  adding this product to the existing filter coefficients.
-* 
-*  It is particularly useful in situations where the characteristics of the 
+*
+*  It is particularly useful in situations where the characteristics of the
 *  input signal are unknown or change over time, as it can adapt to these changes
 *  and continue to provide accurate filtering or modeling.
 *
-*  One potential drawback of the adaptive linear filter is that it can be 
-*  computationally intensive, especially if the input signal is large or the 
-*  filter has many coefficients. Additionally, the performance of the filter 
-*  can be sensitive to the choice of step size parameter, which must be 
+*  One potential drawback of the adaptive linear filter is that it can be
+*  computationally intensive, especially if the input signal is large or the
+*  filter has many coefficients. Additionally, the performance of the filter
+*  can be sensitive to the choice of step size parameter, which must be
 *  carefully chosen to balance convergence speed with stability.
 *
 *  The adaptation rule for every filter coefficient is given by
@@ -365,8 +376,8 @@
 *
 *  <center> \f$ w(t) = w(t-1)  x(t) + \Delta w(t) \f$ </center>
 *
-*  The equation also includes a momentum term that adds a fraction of the 
-*  previous coefficient update to the current coefficient update. This can help 
+*  The equation also includes a momentum term that adds a fraction of the
+*  previous coefficient update to the current coefficient update. This can help
 *  to reduce oscillations in the filter output and improve convergence speed.
 *
 *  @section qssmoother_ex10 Example of signal smoothing
@@ -392,7 +403,7 @@
 *  constexpr uint32_t SMOOTHER_SAMPLE_TIME = 100;
 *  constexpr real_t GAUSS_SIGMA = 0.5f;
 *  constexpr real_t GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0f;
-*  
+*
 *  void xTaskSignalProcessing( void *arg )
 *  {
 *      smootherGMWF *filter = static_cast<smootherGMWF *>( arg );
@@ -405,14 +416,14 @@
 *          vTaskDelay( SMOOTHER_SAMPLE_TIME / portTICK_RATE_MS ) ;
 *      }
 *  }
-*  
+*
 *  int main( int argc, char *argv[] )
 *  {
 *      smootherGMWF filter;
 *      real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *      real_t kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };
 *      bool ret;
-*      
+*
 *      BSP_SystemInit( );
 *      ret = filter.setup( GAUSS_SIGMA, GAUSS_CENTER, window, kernel );
 *      if ( !ret ) {

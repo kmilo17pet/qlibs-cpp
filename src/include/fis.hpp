@@ -379,7 +379,7 @@ namespace qlibs {
             */
             using rules = int8_t;
             /*! @cond  */
-            #define FIS_RULES_MIN_VALUE     INT8_MIN
+            constexpr fis::rules FIS_RULES_MIN_VALUE = INT8_MIN;
             /*! @endcond  */
         #else
             /**
@@ -403,7 +403,7 @@ namespace qlibs {
             */
             using rules = int16_t;
             /*! @cond  */
-            #define FIS_RULES_MIN_VALUE     INT16_MIN
+            constexpr fis::rules FIS_RULES_MIN_VALUE = INT16_MIN;
             /*! @endcond  */
         #endif
 

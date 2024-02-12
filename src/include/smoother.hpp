@@ -480,28 +480,52 @@ namespace qlibs {
             * @brief Setup an initialize the Adaptive Filter LMS
             * @param[in] a Learning rate [ 0 < @a a < 1 ]
             * @param[in] m Momentum [ 0 < @a m < 1 ]
-            * @param[in] window An array to store the window samples.
             * @param[in] wsize The size of the @a window array
+            * @param[in] window An array to store the window samples.
+            * @param[in] weights An array to store the filter weights
+            * @param[in] w1 An array to keep previous estimated wights. To ignore
+            * pass @c nullptr as argument.
             * @return @c true on success, otherwise return @c false.
             */
             bool setup( const real_t a,
                         const real_t m,
+                        const size_t wsize,
                         real_t *window,
-                        const size_t wsize );
+                        real_t *weights,
+                        real_t *w1 = nullptr );
 
             /**
             * @brief Setup an initialize the Adaptive Filter LMS
             * @param[in] a Learning rate [ 0 < @a a < 1 ]
             * @param[in] m Momentum [ 0 < @a m < 1 ]
             * @param[in] window An array to store the window samples.
+            * @param[in] weights An array to store the filter weights
+            * @param[in] w1 An array to keep previous estimated wights.
             * @return @c true on success, otherwise return @c false.
             */
             template <size_t windowSize>
             bool setup( const real_t a,
                         const real_t m,
-                        real_t (&window)[ windowSize ] )
+                        real_t (&window)[ windowSize ],
+                        real_t (&weights)[ windowSize ],
+                        real_t (&w1)[ windowSize ] )
             {
-                return setup( a, m, window, windowSize, a );
+                return setup( a, m, windowSize, window, weights, w1 );
+            }
+
+            /**
+            * @brief Setup an initialize the Adaptive Filter LMS
+            * @param[in] a Learning rate [ 0 < @a a < 1 ]
+            * @param[in] window An array to store the window samples.
+            * @param[in] weights An array to store the filter weights.
+            * @return @c true on success, otherwise return @c false.
+            */
+            template <size_t windowSize>
+            bool setup( const real_t a,
+                        real_t (&window)[ windowSize ],
+                        real_t (&weights)[ windowSize ] )
+            {
+                return setup( a, 0.0F, windowSize, window, weights, nullptr);
             }
 
             /**

@@ -16,6 +16,7 @@ bool pidController::setup( const real_t kc,
 
     if ( dt > 0.0_re ) {
         dt = dT;
+        init = true;
         (void)setDerivativeFilter( 0.98_re );
         (void)setEpsilon( REAL_MIN );
         (void)setGains( kc, ki, kd );
@@ -25,7 +26,6 @@ bool pidController::setup( const real_t kc,
         (void)setExtraGains( 1.0_re, 1.0_re );
         (void)setDirection( pidDirection::PID_FORWARD );
         (void)setReferenceWeighting( 1.0_re, 0.0_re );
-        init = true;
         retValue = reset();
     }
 
@@ -110,8 +110,8 @@ bool pidController::setSaturation( const real_t Min,
     bool retValue = false;
 
     if ( init && ( Max > Min ) ) {
-        min = Min;
-        max = Max;
+        sat_Min = Min;
+        sat_Max = Max;
         retValue = true;
     }
 
@@ -210,6 +210,7 @@ bool pidController::reset( void ) noexcept
         D = 0.0_re;
         u1 = 0.0_re;
         m = 0.0_re;
+        uSat = 0.0_re;
         retValue = true;
     }
 
@@ -279,10 +280,11 @@ real_t pidController::control( const real_t w,
             v += w*theta;
         }
         /*bumpless-transfer*/
-        bt = ( kt*mInput ) + ( kw*( u - m ) );
+        bt = ( kt*mInput ) + ( kw*( uSat - m ) );
         m = b_state.integrate( bt, dt );
         sw = ( pidMode::PID_AUTOMATIC == mode ) ? v : m;
-        u = saturate( sw, min, max );
+        uSat = saturate( sw, sat_Min, sat_Max );
+        u = uSat; /*output saturated*/
         /*anti-windup feedback*/
         u1 = kw*( u - v );
         if ( nullptr != adapt ) {

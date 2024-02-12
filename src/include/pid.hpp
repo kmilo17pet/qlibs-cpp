@@ -65,6 +65,7 @@ namespace qlibs {
             */
             static const uint32_t UNDEFINED;
         protected:
+            /*! @cond  */
             real_t p00{ 1.0_re };
             real_t p01{ 0.0_re };
             real_t p10{ 0.0_re };
@@ -81,6 +82,7 @@ namespace qlibs {
             real_t speed{ 0.25_re };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
             uint32_t it{ UNDEFINED };/*enable time*/
             static bool isValidValue( const real_t x ) noexcept;
+            /*! @endcond  */
         public:
             pidAutoTuning() = default;
             bool step( const real_t u,
@@ -96,7 +98,7 @@ namespace qlibs {
     class pidController : public pidGains, private nonCopyable {
         private:
             //real_t Kc, Ki, Kd;
-            real_t b, c, min, max, epsilon, kw, kt, D, u1, beta;
+            real_t b, c, sat_Min, sat_Max, epsilon, kw, kt, D, u1, beta, uSat;
             real_t dt{ 1.0_re };
             real_t m, mInput;
             const real_t *yr{ nullptr };

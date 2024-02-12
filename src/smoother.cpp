@@ -366,8 +366,10 @@ real_t smootherDESF::smooth( const real_t x )
 /*============================================================================*/
 bool smootherALNF::setup( const real_t a,
                           const real_t m,
+                          const size_t wsize,
                           real_t *window,
-                          const size_t wsize )
+                          real_t *weights,
+                          real_t *w1 )
 {
     bool retValue = false;
 
@@ -375,8 +377,8 @@ bool smootherALNF::setup( const real_t a,
         alpha = a;
         mu = m;
         xx = window;
-        w = &window[ wsize ];
-        w_1 = ( mu > 0.0_re ) ? &window[ 2U*wsize ] : nullptr;
+        w = weights;
+        w_1 = ( mu > 0.0_re ) ? w1 : nullptr;
         n = wsize;
         retValue = reset();
     }
