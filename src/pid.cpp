@@ -265,7 +265,7 @@ real_t pidController::control( const real_t w,
         if ( ffmath::absf( e ) <= epsilon ) {
             e = 0.0_re;
         }
-        ie = c_state.integrate( e + u1, dt );
+        ie = c_state.integrate( e + u1, dt, false );
         de = c_state.derive( ( c*w ) - y , dt );
         D = de + beta*( D - de ); /*derivative filtering*/
         v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/

@@ -89,19 +89,23 @@ namespace qlibs {
             * @brief Perform a numerical integration step.
             * @param[in] s The input signal
             * @param[in] dt The time-step given in seconds.
+            * @param[in] bUpdate Flag to update the states ( @c true by default).
             * @return The current value of the integration step.
             */
             real_t integrate( const real_t s,
-                              const real_t dt ) noexcept;
+                              const real_t dt,
+                              const bool bUpdate = true ) noexcept;
 
              /**
             * @brief Perform a numerical derivation step by using the delta rule.
             * @param[in] s The input signal
             * @param[in] dt The time-step given in seconds.
+            * @param[in] bUpdate Flag to update the states ( @c true by default).
             * @return The current value of the derivation step.
             */
             real_t derive( const real_t s,
-                           const real_t dt ) noexcept;
+                           const real_t dt,
+                           const bool bUpdate = true ) noexcept;
 
             /**
             * @brief Set integration method .
