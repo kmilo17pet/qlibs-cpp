@@ -8,7 +8,7 @@ var searchData=
   ['inrangecoerce_5',['inRangeCoerce',['../group__qffmath.html#gaf9c395c971887baa6c243afc98d94a3f',1,'qlibs::ffmath']]],
   ['insertsample_6',['insertSample',['../classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5',1,'qlibs::tdl']]],
   ['instance_7',['instance',['../classqlibs_1_1fis_1_1instance.html#a466dbdbac4c947e4667c7b585f5c3384',1,'qlibs::fis::instance']]],
-  ['integrate_8',['integrate',['../classqlibs_1_1n_state.html#a33dbf81c894e3c72f2eea4c3c154ee3e',1,'qlibs::nState']]],
+  ['integrate_8',['integrate',['../classqlibs_1_1n_state.html#a6736a0afc3790ef3a05684b885023921',1,'qlibs::nState']]],
   ['interp1_9',['interp1',['../classqlibs_1_1interp1.html#afe5a03475b14f998daf9006f30ad7c08',1,'qlibs::interp1::interp1(const real_t *const xTable, const real_t *const yTable, const size_t sizeTable)'],['../classqlibs_1_1interp1.html#a6c88e602f639f90c815c8ec23786e0c9',1,'qlibs::interp1::interp1(real_t(&amp;xTable)[sizeTable], real_t(&amp;yTable)[sizeTable])']]],
   ['inv_10',['inv',['../classqlibs_1_1mat.html#a6fb68580ae09eb7384bcb6fb266a195f',1,'qlibs::mat']]],
   ['inv_5fpi_11',['inv_pi',['../structqlibs_1_1ffmath_1_1numbers.html#a1a00b628d23c054d3e13c9dceffee758',1,'qlibs::ffmath::numbers']]],

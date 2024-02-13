@@ -9,7 +9,7 @@ var searchData=
   ['inrangecoerce_6',['inRangeCoerce',['../group__qffmath.html#gaf9c395c971887baa6c243afc98d94a3f',1,'qlibs::ffmath']]],
   ['insertsample_7',['insertSample',['../classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5',1,'qlibs::tdl']]],
   ['instance_8',['instance',['../classqlibs_1_1fis_1_1instance.html#a466dbdbac4c947e4667c7b585f5c3384',1,'qlibs::fis::instance::instance()'],['../classqlibs_1_1fis_1_1instance.html',1,'qlibs::fis::instance']]],
-  ['integrate_9',['integrate',['../classqlibs_1_1n_state.html#a33dbf81c894e3c72f2eea4c3c154ee3e',1,'qlibs::nState']]],
+  ['integrate_9',['integrate',['../classqlibs_1_1n_state.html#a6736a0afc3790ef3a05684b885023921',1,'qlibs::nState']]],
   ['integration_5fquadratic_10',['INTEGRATION_QUADRATIC',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215',1,'qlibs']]],
   ['integration_5frectangular_11',['INTEGRATION_RECTANGULAR',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c',1,'qlibs']]],
   ['integration_5fsimpson_12',['INTEGRATION_SIMPSON',['../group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce',1,'qlibs']]],
