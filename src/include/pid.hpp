@@ -106,7 +106,7 @@ namespace qlibs {
     * @brief A PID controller object
     * @details The instance should be initialized using the pid::setup() method.
     */
-    class pidController : public pidGains, private nonCopyable {
+    class pidController : public pidGains, public nState, private nonCopyable {
         private:
             //real_t Kc, Ki, Kd;
             real_t b, c, sat_Min, sat_Max, epsilon, kw, kt, D, u1, beta, uSat;
@@ -114,13 +114,13 @@ namespace qlibs {
             real_t m, mInput;
             const real_t *yr{ nullptr };
             real_t alpha, gamma; /*MRAC additive controller parameters*/
-            nState c_state; /*controller integral & derivative state*/
+            //nState c_state; /*controller integral & derivative state*/
             nState m_state; /*MRAC additive controller state*/
             nState b_state; /*Bumpless-transfer state*/
             pidAutoTuning *adapt{ nullptr };
             pidMode mode{ pidMode::PID_AUTOMATIC };
             pidDirection dir{ pidDirection::PID_FORWARD };
-            bool init{ false };
+            bool isInitialized{ false };
             static real_t saturate( real_t x,
                                     const real_t vMin,
                                     const real_t vMax ) noexcept;

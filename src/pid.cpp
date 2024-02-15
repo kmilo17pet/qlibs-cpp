@@ -16,7 +16,7 @@ bool pidController::setup( const real_t kc,
 
     if ( dt > 0.0_re ) {
         dt = dT;
-        init = true;
+        isInitialized = true;
         (void)setDerivativeFilter( 0.98_re );
         (void)setEpsilon( REAL_MIN );
         (void)setGains( kc, ki, kd );
@@ -36,7 +36,7 @@ bool pidController::setDirection( const pidDirection d ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         dir = d;
         retValue = true;
     }
@@ -50,7 +50,7 @@ bool pidController::setParams( const real_t kc,
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         Kc = kc;
         Ki = kc/ti;
         Kd = kc*td;
@@ -66,7 +66,7 @@ bool pidController::setGains( const real_t kc,
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         Kc = kc;
         Ki = ki;
         Kd = kd;
@@ -80,7 +80,7 @@ bool pidController::setGains( const pidGains &g ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         Kc = g.Kc;
         Ki = g.Ki;
         Kd = g.Kd;
@@ -95,7 +95,7 @@ bool pidController::setExtraGains( const real_t Kw,
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         kw = Kw;
         kt = Kt;
         retValue = true;
@@ -109,7 +109,7 @@ bool pidController::setSaturation( const real_t Min,
 {
     bool retValue = false;
 
-    if ( init && ( Max > Min ) ) {
+    if ( isInitialized && ( Max > Min ) ) {
         sat_Min = Min;
         sat_Max = Max;
         retValue = true;
@@ -122,7 +122,7 @@ bool pidController::setSeries( void ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         real_t ti, td, tmp;
 
         ti = Kc/Ki;
@@ -141,7 +141,7 @@ bool pidController::setEpsilon( const real_t eps ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         epsilon = eps;
         retValue = true;
     }
@@ -153,7 +153,7 @@ bool pidController::setDerivativeFilter( const real_t Beta ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         beta = Beta;
         retValue = true;
     }
@@ -165,7 +165,7 @@ bool pidController::setMode( const pidMode Mode ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         mode = Mode;
         retValue = true;
     }
@@ -178,7 +178,7 @@ bool pidController::setReferenceWeighting( const real_t gb,
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         b = saturate( gb, 0.0_re, 1.0_re );
         c = saturate( gc, 0.0_re, 1.0_re );
         retValue = true;
@@ -191,7 +191,7 @@ bool pidController::setManualInput( const real_t manualInput ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         mInput = manualInput;
         retValue = true;
     }
@@ -203,8 +203,8 @@ bool pidController::reset( void ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
-        c_state.init();
+    if ( isInitialized ) {
+        init(); //internal controller state
         m_state.init();
         b_state.init();
         D = 0.0_re;
@@ -223,7 +223,7 @@ bool pidController::setModelReferenceControl( const real_t &modelRef,
 {
     bool retValue = false;
 
-    if ( init && ( Gamma > 0.0_re ) && ( Alpha > 0.0_re ) ) {
+    if ( isInitialized && ( Gamma > 0.0_re ) && ( Alpha > 0.0_re ) ) {
         m_state.init();
         alpha = Alpha;
         gamma = Gamma;
@@ -238,7 +238,7 @@ bool pidController::removeModelReferenceControl( void ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         yr = nullptr;
         retValue = true;
     }
@@ -251,7 +251,7 @@ real_t pidController::control( const real_t w,
 {
     real_t u = w;
 
-    if ( init ) {
+    if ( isInitialized ) {
         real_t e, v, de, ie, bt, sw, kc, ki, kd;
         kc = Kc;
         ki = Ki;
@@ -265,8 +265,8 @@ real_t pidController::control( const real_t w,
         if ( ffmath::absf( e ) <= epsilon ) {
             e = 0.0_re;
         }
-        de = c_state.derive( ( c*w ) - y , dt, false );
-        ie = c_state.integrate( e + u1 , dt );
+        de = derive( ( c*w ) - y , dt, false );
+        ie = integrate( e + u1 , dt );
         D = de + beta*( D - de ); /*derivative filtering*/
         v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
         if ( nullptr != yr ) {
@@ -346,22 +346,22 @@ bool pidAutoTuning::step( const real_t u,
 pidGains pidAutoTuning::getEstimates( void ) const noexcept
 {
     pidGains gains = { 0.0_re, 0.0_re, 0.0_re };
-    const real_t td = ( tao/10.0_re );
+    const real_t td = tao*0.1_re;
 
     switch ( type ) {
         case pidType::PID_TYPE_P:
-            gains.Kc = ( 1.03_re/k )*( ( tao/td ) + 0.34_re );
+            gains.Kc = speed*( 1.03_re/k )*( ( tao/td ) + 0.34_re );
             break;
         case pidType::PID_TYPE_PD:
-            gains.Kc = ( 1.24_re/k )*( ( tao/td ) + 0.129_re );
+            gains.Kc = speed*( 1.24_re/k )*( ( tao/td ) + 0.129_re );
             gains.Kd = gains.Kc*( 0.27_re*td )*( tao - 0.324_re*td )/( tao + 0.129_re*td );
             break;
         case pidType::PID_TYPE_PI:
-            gains.Kc = ( 0.9_re/k )*( ( tao/td ) + 0.092_re );
+            gains.Kc = speed*( 0.9_re/k )*( ( tao/td ) + 0.092_re );
             gains.Ki = gains.Kc*( tao + 2.22_re*td )/( 3.33_re*td*( tao + 0.092_re*td ) );
             break;
         case pidType::PID_TYPE_PID:
-            gains.Kc = ( 1.35_re/k )*( ( tao/td ) + 0.185_re );
+            gains.Kc = speed*( 1.35_re/k )*( ( tao/td ) + 0.185_re );
             gains.Ki = gains.Kc*( tao + 0.611_re*td )/( 2.5_re*td*( tao + 0.185_re*td ) );
             gains.Kd = ( 0.37_re*gains.Kc*td*tao )/( tao + 0.185_re*td );
             break;
@@ -387,7 +387,7 @@ bool pidController::bindAutoTuning( pidAutoTuning &at ) noexcept
 {
     bool retValue = false;
 
-    if ( init ) {
+    if ( isInitialized ) {
         real_t k, T;
 
         adapt = &at;
