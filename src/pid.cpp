@@ -1,6 +1,6 @@
 #include <include/pid.hpp>
 #include <include/ffmath.hpp>
-
+#include <iostream>
 using namespace qlibs;
 
 
@@ -265,8 +265,8 @@ real_t pidController::control( const real_t w,
         if ( ffmath::absf( e ) <= epsilon ) {
             e = 0.0_re;
         }
-        ie = c_state.integrate( e + u1, dt, false );
-        de = c_state.derive( ( c*w ) - y , dt );
+        de = c_state.derive( ( c*w ) - y , dt, false );
+        ie = c_state.integrate( e + u1 , dt );
         D = de + beta*( D - de ); /*derivative filtering*/
         v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
         if ( nullptr != yr ) {
@@ -285,8 +285,7 @@ real_t pidController::control( const real_t w,
         sw = ( pidMode::PID_AUTOMATIC == mode ) ? v : m;
         uSat = saturate( sw, sat_Min, sat_Max );
         u = uSat; /*output saturated*/
-        /*anti-windup feedback*/
-        u1 = kw*( u - v );
+        u1 = kw*( u - v ); /*anti-windup feedback*/
         if ( nullptr != adapt ) {
             adaptGains( u, y );
         }

@@ -50,7 +50,18 @@
         "iomanip": "cpp",
         "xloctime": "cpp",
         "string": "cpp",
-        "numbers": "cpp"
+        "numbers": "cpp",
+        "thread": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "forward_list": "cpp",
+        "locale": "cpp",
+        "mutex": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "vector": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

@@ -24,6 +24,13 @@ namespace qlibs {
     * @{
     */
 
+    /** @cond **/
+    /*only for continuousSystem*/
+    #if !defined( LTISYS_EVAL_MODEL_CONTROLLABLE ) || !defined( LTISYS_EVAL_MODEL_OBSERVABLE )
+        #define LTISYS_EVAL_MODEL_CONTROLLABLE
+    #endif
+    /** @endcond **/
+
     /**
     * @brief All the possible natures of a LTI system.
     */
@@ -55,6 +62,7 @@ namespace qlibs {
         real_t den[ order+1 ];
         continuousStates<order> states = {};
         continuousTF( const real_t ( &numerator )[ order + 1 ], const real_t ( &denominator )[ order + 1 ] ) {
+            static_assert( order >= 1 , "Order should be greater than 0" );
             for ( size_t i = 0; i <= order; ++i ) {
                 num[ i ] = numerator[ i ];
                 den[ i ] = denominator[ i ];

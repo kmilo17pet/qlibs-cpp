@@ -168,11 +168,11 @@ bool continuousSystem::setup( real_t *num,
 {
     bool retValue = false;
 
-    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) ) {
+    if ( ( nullptr != num ) && ( nullptr != den ) && ( nullptr != x ) && ( nD >= 1U ) ) {
         b = &num[ 1 ];
         n = nD;
         nb = n;
-        na = nD + 1;
+        na = nD + 1U;
         xc = x;
         dt = dT;
         a = &den[ 1 ];
@@ -206,6 +206,7 @@ bool continuousSystem::setInitStates( const real_t *xi )
     return retValue;
 }
 /*============================================================================*/
+#if defined( LTISYS_EVAL_MODEL_CONTROLLABLE )
 real_t continuousSystem::update( const real_t u )
 {
     real_t y = 0.0_re;
@@ -214,7 +215,6 @@ real_t continuousSystem::update( const real_t u )
     if ( 1U == n ) {
         dx0 = ( u - ( xc[ 0 ]*a[ 0 ] ) );
         (void)xc[ 0 ].integrate( dx0, dt );
-        y = ( b[ 0 ] - ( a[ 0 ]*b0 ) )*xc[ 0 ];
     }
     else {
         /*compute states of the system by using the controllable canonical form*/
@@ -229,11 +229,42 @@ real_t continuousSystem::update( const real_t u )
         dx0 = u - ( dx0 + ( a[ 0 ]*xc[ 0 ] ) );
         (void)xc[ 0 ].integrate( dx0, dt ); /*integrate to get the first state*/
         /*compute the remaining part of the output*/
-        y += ( b[ 0 ] - ( a[ 0 ]*b0 ) )*xc[ 0 ];
     }
+    /*get the output of the system*/
+    y += ( b[ 0 ] - ( a[ 0 ]*b0 ) )*xc[ 0 ];
 
     return y;
 }
+#elif defined( LTISYS_EVAL_MODEL_OBSERVABLE )
+/*============================================================================*/
+real_t continuousSystem::update( const real_t u )
+{
+    real_t y = 0.0_re;
+    const real_t x0 = xc[ 0 ](); /*save first state for computation*/
+    const size_t N = n - 1U;
+    /*compute the last derivative dx_{n}*/
+    const real_t dxn = ( -a[ N ]*x0 ) + ( ( b[ N ] - a[ N ]*b0 )*u );
+
+    if ( 1U == n ) {
+        xc[ 0 ].integrate( dxn, dt );
+    }
+    else {
+        /*compute states of the system by using the observable canonical form*/
+        for ( size_t i = 0U; i < N ; ++i ) {
+            const real_t dxi = ( -a[ i ]*x0 ) + xc[ i + 1U ] + ( ( b[ i ] - a[ i ]*b0 )*u );
+            (void)xc[ i ].integrate( dxi , dt );
+        }
+        /*integrate the remaining last state*/
+        (void)xc[ N ].integrate( dxn, dt );
+    }
+    /*get the output of the system*/
+    y = xc[ 0 ] + ( b0*u );
+
+    return y;
+}
+#else
+    #error "LTISYS evaluation mode not defined"
+#endif
 /*============================================================================*/
 bool continuousSystem::setIntegrationMethod( integrationMethod m )
 {
