@@ -34,7 +34,9 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "qlibs::nState", "classqlibs_1_1n_state.html", null ],
+    [ "qlibs::nState", "classqlibs_1_1n_state.html", [
+      [ "qlibs::pidController", "classqlibs_1_1pid_controller.html", null ]
+    ] ],
     [ "qlibs::ffmath::numbers", "structqlibs_1_1ffmath_1_1numbers.html", null ],
     [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", null ],
     [ "qlibs::pidGains", "structqlibs_1_1pid_gains.html", [
