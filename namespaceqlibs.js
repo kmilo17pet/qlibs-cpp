@@ -90,6 +90,12 @@ var namespaceqlibs =
       [ "PID_AUTOMATIC", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
       [ "PID_MANUAL", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
     ] ],
+    [ "pidType", "group__qpid.html#ga60823e0b36c4944749695b336713ea0a", [
+      [ "PID_TYPE_P", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aacfb3e915063bfb356bf0399444f745df", null ],
+      [ "PID_TYPE_PI", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa9c03bf35c212c7da339a3fb715271a41", null ],
+      [ "PID_TYPE_PD", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61", null ],
+      [ "PID_TYPE_PID", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6", null ]
+    ] ],
     [ "bitfield_size", "group__qbitfield.html#ga3645c015d457782880b34f38777f5067", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],
     [ "FP_2_PI", "group__qfp16.html#ga805c4ff0b0f82e1b8f140d54519b46dc", null ],

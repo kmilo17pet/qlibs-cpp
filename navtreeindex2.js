@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"group__qffmath.html#ga4f15ffe8a2f756a3f721fcbd1b9c3366":[2,9,47],
 "group__qffmath.html#ga4f9ac91888223d0eb01e24706dc1e61f":[2,9,6],
 "group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf":[2,9,32],
 "group__qffmath.html#ga55fc4eb28d96e0cd7f03e4cd69d05d6c":[2,9,8],
@@ -203,8 +204,13 @@ var NAVTREEINDEX2 =
 "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2ad2aa049af9027c8c5ae16d9c6cc5a156":[2,12,2,1],
 "group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2aff29ae7cc0b6aa4079e937814b92772c":[2,12,2,0],
 "group__qpid.html":[2,2],
+"group__qpid.html#ga60823e0b36c4944749695b336713ea0a":[2,2,5],
 "group__qpid.html#ga723e93113c48dc2437680a245624d0f3":[2,2,4],
 "group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106":[2,2,3],
+"group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6":[2,2,5,3],
+"group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61":[2,2,5,2],
+"group__qpid.html#gga60823e0b36c4944749695b336713ea0aa9c03bf35c212c7da339a3fb715271a41":[2,2,5,1],
+"group__qpid.html#gga60823e0b36c4944749695b336713ea0aacfb3e915063bfb356bf0399444f745df":[2,2,5,0],
 "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4":[2,2,4,0],
 "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3":[2,2,4,1],
 "group__qpid.html#ggaa9de50af5e1b6b26f2e6e12e2bd1b106aa8ccee4fef92774746a89d07d34c9fa2":[2,2,3,1],
@@ -225,8 +231,8 @@ var NAVTREEINDEX2 =
 "index.html":[],
 "index.html":[0],
 "modules.html":[2],
-"namespacemembers.html":[3,1,0,0],
 "namespacemembers.html":[3,1,0],
+"namespacemembers.html":[3,1,0,0],
 "namespacemembers_b.html":[3,1,0,1],
 "namespacemembers_c.html":[3,1,0,2],
 "namespacemembers_d.html":[3,1,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "namespacemembers_n.html":[3,1,0,11],
 "namespacemembers_p.html":[3,1,0,12],
 "namespacemembers_r.html":[3,1,0,13],
-"namespacemembers_s.html":[3,1,0,14],
-"namespacemembers_t.html":[3,1,0,15],
-"namespacemembers_type.html":[3,1,3],
-"namespacemembers_vars.html":[3,1,2],
-"namespacemembers_w.html":[3,1,0,16],
-"namespacemembers_z.html":[3,1,0,17],
-"namespaceqlibs.html":[3,0,0]
+"namespacemembers_s.html":[3,1,0,14]
 };

@@ -219,6 +219,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ce785a61afa8becb23b39038334435b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b">setAutoTuningParameters</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Mu, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Alpha, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> lambda) noexcept</td></tr>
 <tr class="memdesc:a1ce785a61afa8becb23b39038334435b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <a href="classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b">More...</a><br /></td></tr>
 <tr class="separator:a1ce785a61afa8becb23b39038334435b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3c2abc7161325dc32992f5c9ce2df4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4">setAutoTuningControllerType</a> (const <a class="el" href="group__qpid.html#ga60823e0b36c4944749695b336713ea0a">pidType</a> t) noexcept</td></tr>
+<tr class="memdesc:abb3c2abc7161325dc32992f5c9ce2df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the PID type to tune.  <a href="classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4">More...</a><br /></td></tr>
+<tr class="separator:abb3c2abc7161325dc32992f5c9ce2df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9b5537d70b094e5793fc5a182a10fe1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1">reset</a> (void) noexcept</td></tr>
 <tr class="memdesc:ab9b5537d70b094e5793fc5a182a10fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the internal PID controller calculations.  <a href="classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1">More...</a><br /></td></tr>
 <tr class="separator:ab9b5537d70b094e5793fc5a182a10fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -492,6 +495,41 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reset the internal PID controller calculations. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="abb3c2abc7161325dc32992f5c9ce2df4" name="abb3c2abc7161325dc32992f5c9ce2df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3c2abc7161325dc32992f5c9ce2df4">&#9670;&nbsp;</a></span>setAutoTuningControllerType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pidController::setAutoTuningControllerType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__qpid.html#ga60823e0b36c4944749695b336713ea0a">pidType</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select the PID type to tune. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The type of controller to tune. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, <code>false</code> on failure. </dd></dl>
 
 </div>
 </div>

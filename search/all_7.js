@@ -7,7 +7,7 @@ var searchData=
   ['generic_20cyclic_20redundancy_20check_20_28crc_29_20calculator_20class_4',['Generic Cyclic Redundancy Check (CRC) calculator class',['../qcrc_desc.html',1,'index']]],
   ['get_5',['get',['../classqlibs_1_1interp1.html#a72a093280adefe993cadb1933ffd178f',1,'qlibs::interp1']]],
   ['getatindex_6',['getAtIndex',['../classqlibs_1_1tdl.html#a236fbabc8932dbdb58ad43de621ddae6',1,'qlibs::tdl']]],
-  ['getestimates_7',['getEstimates',['../classqlibs_1_1pid_auto_tuning.html#a33d0357734c37d3b329fdb902339e8e7',1,'qlibs::pidAutoTuning']]],
+  ['getestimates_7',['getEstimates',['../classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208',1,'qlibs::pidAutoTuning']]],
   ['getinf_8',['getInf',['../group__qffmath.html#gae97a1210db400b3f7334e0adb591afd6',1,'qlibs::ffmath']]],
   ['getnan_9',['getNan',['../group__qffmath.html#gaa65082feae680669a122f16890263a67',1,'qlibs::ffmath']]],
   ['getnumberofpoints_10',['getNumberOfPoints',['../classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d',1,'qlibs::fis::system::getNumberOfPoints()'],['../classqlibs_1_1fis_1_1instance.html#a5ce490b3d54c6c4bf848c870f00a9cc8',1,'qlibs::fis::instance::getNumberOfPoints()']]],

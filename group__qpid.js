@@ -7,7 +7,7 @@ var group__qpid =
     ] ],
     [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", [
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html#a6c31332f466c91e8e2827a4fa9dead5c", null ],
-      [ "getEstimates", "classqlibs_1_1pid_auto_tuning.html#a33d0357734c37d3b329fdb902339e8e7", null ],
+      [ "getEstimates", "classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208", null ],
       [ "step", "classqlibs_1_1pid_auto_tuning.html#a1c77af50acce497a4ee912fbb96073d6", null ],
       [ "pidController", "classqlibs_1_1pid_auto_tuning.html#aa726a8d12c934b49a3c7add01d4f4d8c", null ],
       [ "UNDEFINED", "classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de", null ]
@@ -21,6 +21,7 @@ var group__qpid =
       [ "isAutoTuningComplete", "classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131", null ],
       [ "removeModelReferenceControl", "classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6", null ],
       [ "reset", "classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1", null ],
+      [ "setAutoTuningControllerType", "classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4", null ],
       [ "setAutoTuningParameters", "classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b", null ],
       [ "setDerivativeFilter", "classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c", null ],
       [ "setDirection", "classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f", null ],
@@ -46,5 +47,11 @@ var group__qpid =
     [ "qlibs::pidMode", "group__qpid.html#ga723e93113c48dc2437680a245624d0f3", [
       [ "qlibs::pidMode::PID_AUTOMATIC", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4", null ],
       [ "qlibs::pidMode::PID_MANUAL", "group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3", null ]
+    ] ],
+    [ "qlibs::pidType", "group__qpid.html#ga60823e0b36c4944749695b336713ea0a", [
+      [ "qlibs::pidType::PID_TYPE_P", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aacfb3e915063bfb356bf0399444f745df", null ],
+      [ "qlibs::pidType::PID_TYPE_PI", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa9c03bf35c212c7da339a3fb715271a41", null ],
+      [ "qlibs::pidType::PID_TYPE_PD", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61", null ],
+      [ "qlibs::pidType::PID_TYPE_PID", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6", null ]
     ] ]
 ];
