@@ -343,16 +343,31 @@ bool pidAutoTuning::step( const real_t u,
     return ready;
 }
 /*============================================================================*/
-pidGains pidAutoTuning::getEstimates( const real_t dt ) const noexcept
+pidGains pidAutoTuning::getEstimates( void ) const noexcept
 {
-    pidGains gains;
-    real_t tmp1, tmp2;
+    pidGains gains = { 0.0_re, 0.0_re, 0.0_re };
+    const real_t td = ( tao/10.0_re );
 
-    tmp1 = dt/tao;
-    tmp2 = ( 1.35_re + ( 0.25_re*tmp1 ) );
-    gains.Kc = ( speed*tmp2*tao )/( k*dt );
-    gains.Ki = ( ( speed*gains.Kc )*( 0.54_re + ( 0.33_re*tmp1 ) ) )/( tmp2*dt );
-    gains.Kd = ( 0.5_re*speed*gains.Kc*dt )/tmp2;
+    switch ( type ) {
+        case pidType::PID_TYPE_P:
+            gains.Kc = ( 1.03_re/k )*( ( tao/td ) + 0.34_re );
+            break;
+        case pidType::PID_TYPE_PD:
+            gains.Kc = ( 1.24_re/k )*( ( tao/td ) + 0.129_re );
+            gains.Kd = gains.Kc*( 0.27_re*td )*( tao - 0.324_re*td )/( tao + 0.129_re*td );
+            break;
+        case pidType::PID_TYPE_PI:
+            gains.Kc = ( 0.9_re/k )*( ( tao/td ) + 0.092_re );
+            gains.Ki = gains.Kc*( tao + 2.22_re*td )/( 3.33_re*td*( tao + 0.092_re*td ) );
+            break;
+        case pidType::PID_TYPE_PID:
+            gains.Kc = ( 1.35_re/k )*( ( tao/td ) + 0.185_re );
+            gains.Ki = gains.Kc*( tao + 0.611_re*td )/( 2.5_re*td*( tao + 0.185_re*td ) );
+            gains.Kd = ( 0.37_re*gains.Kc*td*tao )/( tao + 0.185_re*td );
+            break;
+        default:
+            break;
+    }
 
     return gains;
 }
@@ -361,7 +376,7 @@ void pidController::adaptGains( const real_t u,
                                 const real_t y ) noexcept
 {
     if ( adapt->step( u, y, dt ) ) {
-        pidGains newGains = adapt->getEstimates( dt );
+        pidGains newGains = adapt->getEstimates();
         Kc = newGains.Kc;
         Ki = newGains.Ki;
         Kd = newGains.Kd;
@@ -438,6 +453,18 @@ bool pidController::setAutoTuningParameters( const real_t Mu,
             adapt->speed = Alpha;
             retValue = true;
         }
+    }
+
+    return retValue;
+}
+/*============================================================================*/
+bool pidController::setAutoTuningControllerType( const pidType t ) noexcept
+{
+    bool retValue = false;
+
+    if ( nullptr != adapt ) {
+        adapt->type = t;
+        retValue = true;
     }
 
     return retValue;

@@ -306,57 +306,57 @@ void test_ffmath(void)
     cout << ffmath::wrapToPi( -4.5 ) << endl;
     cout << ffmath::getNan() << endl;
     cout << ffmath::getInf() << endl;
-    cout << ffmath::tgamma( 2.5 ) << endl;
-    cout << ffmath::lgamma( 2.5 ) << endl;
+    cout << ffmath::tgamma( 2.5f ) << endl;
+    cout << ffmath::lgamma( 2.5f ) << endl;
 
-    cout << ffmath::assoc_laguerre( 1, 10, 0.5 ) << endl;
-    cout << ffmath::assoc_laguerre( 2, 10, 0.5 ) << endl;
-
-
-    cout << ffmath::assoc_legendre( 2, 0, 0.5 ) << endl;
-    cout << ffmath::assoc_legendre( 2, 1, 0.5 ) << endl;
-    cout << ffmath::assoc_legendre( 2, 2, 0.5 ) << endl;
+    cout << ffmath::assoc_laguerre( 1, 10, 0.5f ) << endl;
+    cout << ffmath::assoc_laguerre( 2, 10, 0.5f ) << endl;
 
 
-    std::cout << ffmath::beta(0.1, 0.2) << std::endl;
+    cout << ffmath::assoc_legendre( 2, 0, 0.5f ) << endl;
+    cout << ffmath::assoc_legendre( 2, 1, 0.5f ) << endl;
+    cout << ffmath::assoc_legendre( 2, 2, 0.5f ) << endl;
+
+
+    std::cout << ffmath::beta(0.1f, 0.2f) << std::endl;
     std::cout << "comp_ellint_1" << std::endl;
-    std::cout << ffmath::comp_ellint_1( 0 ) << std::endl;
-    std::cout << ffmath::comp_ellint_1( 0.5 ) << std::endl;
+    std::cout << ffmath::comp_ellint_1( 0.0f ) << std::endl;
+    std::cout << ffmath::comp_ellint_1( 0.5f ) << std::endl;
     std::cout << "comp_ellint_2" << std::endl;
-    std::cout << ffmath::comp_ellint_2( 0 ) << std::endl;
-    std::cout << ffmath::comp_ellint_2( 1 ) << std::endl;
-    std::cout << ffmath::comp_ellint_2( 0.5 ) << std::endl;
+    std::cout << ffmath::comp_ellint_2( 0.0f ) << std::endl;
+    std::cout << ffmath::comp_ellint_2( 1.0f ) << std::endl;
+    std::cout << ffmath::comp_ellint_2( 0.5f ) << std::endl;
     std::cout << "comp_ellint_3" << std::endl;
-    std::cout << ffmath::comp_ellint_3( 0.5, 0 ) << std::endl;
-    std::cout << ffmath::comp_ellint_3( 0, 0 ) << std::endl;
-    std::cout << ffmath::comp_ellint_3( 0.5, 1 ) << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0.5f, 0.0f ) << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0.0f, 0.0f ) << std::endl;
+    std::cout << ffmath::comp_ellint_3( 0.5, 1.0f ) << std::endl;
     std::cout << "ellint_2" << std::endl;
-    std::cout << ffmath::ellint_1( 0, ffmath::FFP_PI_2 ) << std::endl;
-    std::cout << ffmath::ellint_1( 0, -ffmath::FFP_PI_2 ) << std::endl;
-    std::cout << ffmath::ellint_1( 0.7, 0 ) << std::endl;
+    std::cout << ffmath::ellint_1( 0.0f, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_1( 0.0f, -ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_1( 0.7f, 0.0f ) << std::endl;
     std::cout << "ellint_2" << std::endl;
-    std::cout << ffmath::ellint_2( 0, ffmath::FFP_PI_2 ) << std::endl;
-    std::cout << ffmath::ellint_2( 0, -ffmath::FFP_PI_2 ) << std::endl;
-    std::cout << ffmath::ellint_2( 0.7, 0 ) << std::endl;
-    std::cout << ffmath::ellint_2( 1, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_2( 0.0f , ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_2( 0.0f , -ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_2( 0.7f, 0.0f ) << std::endl;
+    std::cout << ffmath::ellint_2( 1.0f, ffmath::FFP_PI_2 ) << std::endl;
     std::cout << "ellint_3" << std::endl;
-    std::cout << ffmath::ellint_3( 0, 0, ffmath::FFP_PI_2 ) << std::endl;
+    std::cout << ffmath::ellint_3( 0.0f, 0.0f, ffmath::FFP_PI_2 ) << std::endl;
 
     std::cout << "midpoint" << std::endl;
-    std::cout << ffmath::midpoint( 3, 6 ) << std::endl;
-    std::cout << ffmath::midpoint( 6, 3 ) << std::endl;
-    std::cout << ffmath::midpoint( 6.56, 7.23 ) << std::endl;
-    std::cout << ffmath::midpoint( 2, 3 ) << std::endl;
+    std::cout << ffmath::midpoint( 3.0f, 6.0f ) << std::endl;
+    std::cout << ffmath::midpoint( 6.0f, 3.0f ) << std::endl;
+    std::cout << ffmath::midpoint( 6.56f, 7.23f ) << std::endl;
+    std::cout << ffmath::midpoint( 2.0f, 3.0f ) << std::endl;
     std::cout << "lerp" << std::endl;
-    std::cout << ffmath::lerp( 5, 10, -2 ) << std::endl;
-    std::cout << ffmath::lerp( 5, 10, -1.5 ) << std::endl;
-    std::cout << ffmath::lerp( 5, 10, -1 ) << std::endl;
-    std::cout << ffmath::lerp( 5, 10, -0.5 ) << std::endl;
+    std::cout << ffmath::lerp( 5.0f, 10.0f, -2.0f ) << std::endl;
+    std::cout << ffmath::lerp( 5.0f, 10.0f, -1.5f ) << std::endl;
+    std::cout << ffmath::lerp( 5.0f, 10.0f, -1.0f ) << std::endl;
+    std::cout << ffmath::lerp( 5.0f, 10.0f, -0.5f ) << std::endl;
 
     std::cout << "expint" << std::endl;
-    std::cout << ffmath::expint( 0 ) << std::endl;
-    std::cout << ffmath::expint( 1 ) << std::endl;
-    std::cout << -ffmath::exp(1)*ffmath::expint( -1 ) << std::endl;
+    std::cout << ffmath::expint( 0.0f ) << std::endl;
+    std::cout << ffmath::expint( 1.0f ) << std::endl;
+    std::cout << -ffmath::exp(1.0f)*ffmath::expint( -1.0f ) << std::endl;
     //for (float x{1.f}; x < 8.8f; x += 0.3565f){
     //    std::cout << ffmath::expint( x ) << std::endl;
     //}
@@ -374,31 +374,31 @@ void test_ffmath(void)
     std::cout << ffmath::legendre( 4, 0.25 ) << std::endl;
 
     std::cout << "riemann_zeta" << std::endl;
-    for (const double x : {-39.0, -2.0, -1.0, 0.0, 1.0, 0.5, 2.0})
+    for (const float x : {-39.0f, -2.0f, -1.0f, 0.0f, 1.0f, 0.5f, 2.0f})
         std::cout << x << " -> "<< ffmath::riemann_zeta(x) << std::endl;
 
     std::cout << "sph_bessel" << std::endl;
-    std::cout << ffmath::sph_bessel( 1, 1.2345 ) << std::endl;
+    std::cout << ffmath::sph_bessel( 1, 1.2345f ) << std::endl;
     std::cout << "sph_neumann" << std::endl;
-    std::cout << ffmath::sph_neumann( 1, 1.2345 ) << std::endl;
+    std::cout << ffmath::sph_neumann( 1, 1.2345f ) << std::endl;
 
     std::cout << "cyl_bessel_i" << std::endl;
-    std::cout << ffmath::cyl_bessel_i( 0, 1.2345 ) << std::endl;
-    std::cout << ffmath::cyl_bessel_i( 1, 1.2345 ) << std::endl;
+    std::cout << ffmath::cyl_bessel_i( 0.0f, 1.2345f ) << std::endl;
+    std::cout << ffmath::cyl_bessel_i( 1.0f, 1.2345f ) << std::endl;
 
     std::cout << "cyl_bessel_k" << std::endl;
-    std::cout << ffmath::cyl_bessel_k( 0.5, 1.2345 ) << std::endl;
+    std::cout << ffmath::cyl_bessel_k( 0.5f, 1.2345f ) << std::endl;
 
     std::cout << "cyl_bessel_j" << std::endl;
-    std::cout << ffmath::cyl_bessel_j( 0, 1.2345 ) << std::endl;
-    std::cout << ffmath::cyl_bessel_j( 0, 1100  ) << std::endl;
+    std::cout << ffmath::cyl_bessel_j( 0.0f, 1.2345f ) << std::endl;
+    std::cout << ffmath::cyl_bessel_j( 0.0f, 1100.0f  ) << std::endl;
 
     std::cout << "sph_legendre" << std::endl;
-    std::cout << ffmath::sph_legendre( 3, 0, 2.2345 ) << std::endl;
+    std::cout << ffmath::sph_legendre( 3, 0, 2.2345f ) << std::endl;
     std::cout << "copysgn" << std::endl;
-    std::cout << ffmath::copysign( 1, -2 ) << std::endl;
-    std::cout << ffmath::copysign( ffmath::getNan(), -2 ) << std::endl;
-    std::cout << ffmath::copysign( ffmath::getInf(), -2 ) << std::endl;
+    std::cout << ffmath::copysign( 1.0f, -2.0f ) << std::endl;
+    std::cout << ffmath::copysign( ffmath::getNan(), -2.0f ) << std::endl;
+    std::cout << ffmath::copysign( ffmath::getInf(), -2.0f ) << std::endl;
 }
 
 void test_mat( void )
@@ -417,7 +417,7 @@ void test_mat( void )
                 2.0f
               );
 
-    mat<2,1> result = 4.5 - z - 2.0f*x*y - 3;
+    mat<2,1> result = 4.5f - z - 2.0f*x*y - 3.0f;
     mat<4,4> I( MAT_IDENTITY );
     x*=x;
     result.display();
@@ -441,66 +441,66 @@ void test_interp1( void )
 
     cout << "linear" << endl;
     interpolation.setMethod( INTERP1_LINEAR );
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "sine" << endl;
     interpolation.setMethod( INTERP1_SINE );
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "cubic" << endl;
     interpolation.setMethod( INTERP1_CUBIC );
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "hermite" << endl;
     interpolation.setMethod( INTERP1_HERMITE );
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "nearest" << endl;
     interpolation.setMethod( INTERP1_NEAREST);
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "next" << endl;
     interpolation.setMethod( INTERP1_NEXT);
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "previous" << endl;
     interpolation.setMethod( INTERP1_PREVIOUS);
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "spline" << endl;
     interpolation.setMethod( INTERP1_SPLINE);
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
     cout << "cspline" << endl;
     interpolation.setMethod( INTERP1_CONSTRAINED_SPLINE);
-    cout << interpolation.get( 2.5 ) << endl;
-    cout << interpolation.get( 3.1 ) << endl;
-    cout << interpolation.get( 0.5 ) << endl;
-    cout << interpolation.get( 5.0 ) << endl;
+    cout << interpolation.get( 2.5f ) << endl;
+    cout << interpolation.get( 3.1f ) << endl;
+    cout << interpolation.get( 0.5f ) << endl;
+    cout << interpolation.get( 5.0f ) << endl;
 
 
     real_t xdat[] = { 1.0f, 6.0f, 11.0f, 16.0f, 21.0f, 26.0f, 31.0f, 36.0f };

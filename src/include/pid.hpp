@@ -32,6 +32,16 @@ namespace qlibs {
     };
 
     /**
+    * @brief Enumeration class with the operational modes for the PID controller
+    */
+    enum class pidType {
+        PID_TYPE_P,
+        PID_TYPE_PI,
+        PID_TYPE_PD,
+        PID_TYPE_PID,
+    };
+
+    /**
     * @brief Direction modes of the PID controller
     */
     enum class pidDirection {
@@ -82,13 +92,14 @@ namespace qlibs {
             real_t speed{ 0.25_re };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
             uint32_t it{ UNDEFINED };/*enable time*/
             static bool isValidValue( const real_t x ) noexcept;
+            pidType type{ pidType::PID_TYPE_PI };
             /*! @endcond  */
         public:
             pidAutoTuning() = default;
             bool step( const real_t u,
                        const real_t y,
                        const real_t dt ) noexcept;
-            pidGains getEstimates( const real_t dt ) const noexcept;
+            pidGains getEstimates( void ) const noexcept;
     };
 
     /**
@@ -320,7 +331,7 @@ namespace qlibs {
 
             /**
             * @brief Verifies that the auto tuning process has finished with new
-            * gains  set on the controller
+            * gains set on the controller
             * @return @c true if auto-tuning its complete, otherwise return @c false.
             */
             bool isAutoTuningComplete( void ) const noexcept;
@@ -335,6 +346,13 @@ namespace qlibs {
             bool setAutoTuningParameters( const real_t Mu,
                                           const real_t Alpha,
                                           const real_t lambda ) noexcept;
+
+            /**
+            * @brief Select the PID type to tune.
+            * @param[in] t The type of controller to tune.
+            * @return @c true on success, @c false on failure.
+            */
+            bool setAutoTuningControllerType( const pidType t ) noexcept;
 
             /**
             * @brief Reset the internal PID controller calculations.
