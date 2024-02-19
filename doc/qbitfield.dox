@@ -5,17 +5,17 @@
 * spread across an array of storage units, such as unsigned long integers.
 *
 * @section qbitfield_structure Structure
-* 
-* Bit arrays are stored in the qlibs::bitfield class. This class 
+*
+* Bit arrays are stored in the qlibs::bitfield class. This class
 * has two elements: an array of unsigned long integers called @c field for storing the
-* bits and an integer @c size for storing the number of bits in the array. 
+* bits and an integer @c size for storing the number of bits in the array.
 *
 *
 * @section qbitfield_functions Functions
 *
 * @subsection qbitfield_setup Instance setup
 *
-* - \ref qlibs::bitfield_size() Use it to determine the number of bytes required for a BitField.
+* - \ref qlibs::bitArea Use it to instantiate the area to store a BitField.
 * - \ref qlibs::bitfield::setup() Setup a initialize a BitField instance.
 *
 * @subsection qbitfield_sbit Single-bit
@@ -49,10 +49,10 @@
 *  int main( int argc, char *argv[] )
 *  {
 *      bitfield vPort; // create the bitfield instance
-*      uint8_t vPortArea[ QBITFIELD_SIZE(48) ] = { 0 }; // Create the bitfield storage area to hold 48bits
+*      bitArea<48> vPortArea; // Create the bitfield storage area to hold 48 bits
 *      uint16_t rWord;
 *
-*      vPort.setup( vPortArea, sizeof(vPortArea) );
+*      vPort.setup( vPortArea );
 *      vPort.clearAll();
 *      //we are going to write the following value in the bitfield = 0x8177AA55FF88
 *      vPort.writeUINTn( 0, 0xAA55FF88, 32 ); // write the first 32 bits
@@ -60,7 +60,7 @@
 *      vPort.writeBit( 47, 1 );         // write the last bit of the last byte
 *      vPort.writeBit( 40, 1 );         // write the first bit of the last byte
 *      rWord = static_cast<uint16_t>( vPort.readUINTn( 20, 16 ); // read a word at offset 24
-*      std::cout << std::hex  << vPortArea[0] << ", " 
+*      std::cout << std::hex  << vPortArea[0] << ", "
                               << vPortArea[1] << ", "
                               << vPortArea[2] << ", "
                               << vPortArea[3] << ", "

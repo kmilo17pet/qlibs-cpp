@@ -155,7 +155,7 @@ ffmath::classification ffmath::classify( const float f )
 float ffmath::copysign( float mag,
                         float sgn )
 {
-    uint32_t u_mag, u_sgn;
+    uint32_t u_mag = 0U, u_sgn = 0U;
 
     cast_reinterpret( u_mag, mag );
     cast_reinterpret( u_sgn, sgn );
@@ -2712,8 +2712,9 @@ static void cyl_bessel_jn_asymp( float nu,
     do {
         bool epsP, epsQ;
         float k2_1;
+        /*cstat -MISRAC++2008-0-1-2_b*/
         float k = static_cast<float>( i );
-
+        /*cstat +MISRAC++2008-0-1-2_b*/
         k2_1 = 2.0F*k - 1.0F;
         term *= ( i == 0U ) ? 1.0F : -( mu - ( k2_1*k2_1 ) )/( k*x8 );
         epsP = absolute( term ) < ( eps*absolute( P ) );

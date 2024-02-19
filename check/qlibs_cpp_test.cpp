@@ -514,8 +514,51 @@ void test_interp1( void )
     }
 }
 
+struct thing{
+    int a;
+    float b;
+};
+
+
+bool operator<(const thing& lhs, const thing& rhs) {
+    return ( lhs.a < rhs. a);
+}
+
 int main()
 {
+
+
+    thing things[] = {
+        {1,0},
+        {-2,5},
+        {8,4},
+        {-2, 2},
+    };
+
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
+    std::cout << "sorting "<< std::endl;
+    algorithm::sort( things );
+
+
+
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
+
+    std::cout << "reverse "<< std::endl;
+    algorithm::reverse( things );
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
+    std::cout << "rotate "<< std::endl;
+    algorithm::rotate( things );
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
+
+    return 0;
     test_crc();
     test_fp16();
     test_ltisys();

@@ -12,7 +12,6 @@
 
 #include <include/qlibs_types.hpp>
 #include <include/numa.hpp>
-#include <include/ltisys.hpp>
 
 /**
 * @brief The qLibs++ library namespace.
@@ -114,7 +113,6 @@ namespace qlibs {
             real_t m, mInput;
             const real_t *yr{ nullptr };
             real_t alpha, gamma; /*MRAC additive controller parameters*/
-            //nState c_state; /*controller integral & derivative state*/
             nState m_state; /*MRAC additive controller state*/
             nState b_state; /*Bumpless-transfer state*/
             pidAutoTuning *adapt{ nullptr };
@@ -359,6 +357,15 @@ namespace qlibs {
             * @return @c true on success, otherwise return @c false.
             */
             bool reset( void ) noexcept;
+
+            /**
+            * @brief Retrieve the current PID gains.
+            * @return A struct with the pid gains @a Kc @a Ki and @a Kd
+            */
+            inline pidGains getGains( void ) const noexcept
+            {
+                return { Kc, Ki, Kd };
+            }
     };
 
     /** @}*/

@@ -103,7 +103,7 @@
 *  \f$ G(z^{-1}) = \frac{N(z^{-1})}{D(z^{-1})} = \frac{ b_{0} + b_{1}z^{-1} + b_{2}z^{-2} + ... +  b_{m}z^{-m} }{ 1 + a_{1}z^{-1} + a_{2}z^{-2} + ... +  a_{n}z^{-n} } \f$
 
 * Discrete systems are instantiated in a similar way to continuous systems,
-* but there are some differences. States are should be stored in an array of type
+* but there are some differences. States should be stored in an array of type
 * \ref qlibs::discreteStates. The size of polynomials can vary according to
 * their order.
 * Please take a look at the following example:

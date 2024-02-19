@@ -1,30 +1,30 @@
 /*! @page qpid_desc PID Controller
 * @tableofcontents
-* A Proportional Integral Derivative (PID) controller is an automatically 
-* optimized and accurate control system responsible for ensuring that a 
-* process remains as close to the desired value as possible regardless of 
-* various disruptions. The controller compares the measured process variable  
-* \f$ y(t)\f$ and a desired Setpoint \f$ r(t)\f$ (desired outcome). Based on 
-* that comparison, the controller calculates the Proportional, Integral and 
-* Derivative terms and adds them to obtain the output signal \f$ u(t) \f$ that 
+* A Proportional Integral Derivative (PID) controller is an automatically
+* optimized and accurate control system responsible for ensuring that a
+* process remains as close to the desired value as possible regardless of
+* various disruptions. The controller compares the measured process variable
+* \f$ y(t)\f$ and a desired Setpoint \f$ r(t)\f$ (desired outcome). Based on
+* that comparison, the controller calculates the Proportional, Integral and
+* Derivative terms and adds them to obtain the output signal \f$ u(t) \f$ that
 * attempts to minimize the error. This output signal is then used to command
-* the Final Control Element (e.g an actuator) that is in charge of operating 
+* the Final Control Element (e.g an actuator) that is in charge of operating
 * the process.
 *
-* Proportional is used to find out the error between the desired value and 
-* actual value and is responsible for the corrective response. Integral is 
+* Proportional is used to find out the error between the desired value and
+* actual value and is responsible for the corrective response. Integral is
 * applied to calculate all the past values of error and then integrate them to
-* find out the Integral term. When error is expelled from the system this 
-* integral stops increasing. The derivative is used to predict the expected 
+* find out the Integral term. When error is expelled from the system this
+* integral stops increasing. The derivative is used to predict the expected
 * error values in the future based on the present values. Controlling effect can be
-* increased if the system has a rapid rate of change, which is also based on 
-* Derivative. Combining all these three operations gives the name Proportional 
+* increased if the system has a rapid rate of change, which is also based on
+* Derivative. Combining all these three operations gives the name Proportional
 * Integral Derivative (PID) Controller.
 *
-* qLibs provides the \ref qlibs::pidController implementation, which, apart from the simplified 
+* qLibs provides the \ref qlibs::pidController implementation, which, apart from the simplified
 * overview representation of the PID controller, it also addresses some practical
 * issues and includes additional features as listed below:
-* 
+*
 * - Derivative filter
 * - Anti-windup
 * - Bumpless transfer
@@ -35,26 +35,26 @@
 * @section qpid_approach PID Controller approach
 *
 * The mathematical model and practical loop use a direct control action for all
-* the PID terms, which means an increasing positive error results in an 
+* the PID terms, which means an increasing positive error results in an
 * increasing positive control output correction.
 *
-* The overall control function implemented in \ref qlibs::pidMode::PID_AUTOMATIC  mode is 
+* The overall control function implemented in \ref qlibs::pidMode::PID_AUTOMATIC  mode is
 * given by:
 *
 * <center>
-* \f$ v(t)= \psi(t)r(t) + [ K_{c}e_{b}(t) + K_{i}\int [ e(t) + c(t-1) ]dt + K_{d}f_{d}(t) ] \f$ 
+* \f$ v(t)= \psi(t)r(t) + [ K_{c}e_{b}(t) + K_{i}\int [ e(t) + c(t-1) ]dt + K_{d}f_{d}(t) ] \f$
 *
 *
-* \f$ u(t) = \text{Sat}[ v(t), u_{min}, u_{max} ]\f$ 
+* \f$ u(t) = \text{Sat}[ v(t), u_{min}, u_{max} ]\f$
 *
 * </center>
 * where \f$r(t)\f$ is the set-point, \f$y(t)\f$ the process output, \f$ e(t) \f$
-* its the error \f$K_{c},K_{i},K_{d}\f$ the PID gains respectively and 
+* its the error \f$K_{c},K_{i},K_{d}\f$ the PID gains respectively and
 * \f$u(t)\f$ the control action.
 *
 * \f$\psi(t)\f$ is the adaptive gain from the additive MRAC (later explained)
 *
-* As shown above, the derivative term \f$f_{d}(t)\f$ is the output of a 
+* As shown above, the derivative term \f$f_{d}(t)\f$ is the output of a
 * low-pass filter that takes the raw derivative as input.
 *
 * <center> \f$ f_{d}(t) = \text{LPF}[ \frac{de_{c}(t)}{dt} ]\f$  </center>
@@ -80,22 +80,22 @@
 * <em>PID Implementation</em>
 * </center>
 *
-* @section qpid_maninput Manual Mode 
-* When the operation mode is changed to \ref qlibs::pidMode::PID_MANUAL, the feedback is disconnected and 
-* the controller works in open loop being commanded by the manual input \f$ m(t) \f$. 
+* @section qpid_maninput Manual Mode
+* When the operation mode is changed to \ref qlibs::pidMode::PID_MANUAL, the feedback is disconnected and
+* the controller works in open loop being commanded by the manual input \f$ m(t) \f$.
 * Since the controller is a dynamic system, it is necessary to make sure that
 * the state of the system is correct when switching the controller between manual
-* and automatic mode. When the system is in manual mode, the control algorithm 
-* produces a control signal that may be different from the manually generated 
-* control signal. It is necessary to make sure that the two outputs coincide at 
-* the time of switching. This is called bumpless transfer and it's given by 
+* and automatic mode. When the system is in manual mode, the control algorithm
+* produces a control signal that may be different from the manually generated
+* control signal. It is necessary to make sure that the two outputs coincide at
+* the time of switching. This is called bumpless transfer and it's given by
 *
 * <center> \f$ v(t) = \int [ K_{T}m(t) + c(t-1) ]dt\f$ </center>
 *
 * @section qpid_create Creating a PID Controller
 *
 * Before you start using a controller, it must be instantiated first
-* via the \ref qlibs::pidController type and then configured using the \ref qlibs::pidController::setup() method, 
+* via the \ref qlibs::pidController type and then configured using the \ref qlibs::pidController::setup() method,
 * where you can define the PID gains and time step.
 *
 *  Example: Instantiating an configuring a PID controller:
@@ -117,10 +117,10 @@
 *  The following example illustrates how a PID controller can be used to regulate
 *  the speed of a DC motor. PID control operates on a separate task running
 *  periodically at a rate of 50mS. The speed measurement is read through
-*  an analog input and then scaled to the appropriate units (RPM). The \ref qlibs::pidController::control() 
+*  an analog input and then scaled to the appropriate units (RPM). The \ref qlibs::pidController::control()
 *  function will be in charge of computing the control action and updating the internal
 *  states of the controller. Then, the control output gets scaled back in order to
-*  send the control command by using the PWM(Pulse Width Modulation) module. 
+*  send the control command by using the PWM(Pulse Width Modulation) module.
 *
 *  @subsection qpid_ex1 Example: Speed control using a PID controller:
 *  @code{.c}
@@ -129,11 +129,11 @@
 *  #include "freertos/task.h"
 *  #include "bsp.h"
 *  #include <qlibs.h>
-*  
+*
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
 *  real_t SetPoint = 300.0f; // desired motor speed 300rpm
-*  
+*
 *  void xTaskPIDspeedControl( void *arg )
 *  {
 *      pidController *controller = static_cast<pidController *)( arg );
@@ -142,16 +142,16 @@
 *      for ( ;; ) {
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
 *          controlOutput = controller->control( SetPoint, processMeasurement );
-*          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); 
+*          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
 *  }
-*  
-*  int main( int argc, char *argv[] ) 
+*
+*  int main( int argc, char *argv[] )
 *  {
 *      pidController_t speedControl;
 *      bool ret;
-*      
+*
 *      BSP_SystemInit();
 *      ret = speedControl.setup( 1.0f, 0.1f, 0.0f, static_cast<real_t>( dt/1000.0f ) );
 *      if ( !ret ) {
@@ -169,41 +169,41 @@
 *
 * @section qpid_mrac Additive MRAC (Model Reference Adaptive Control)
 *
-* Model Reference Adaptive Control (MRAC) is a strategy where the controller 
-* of the closed-loop is adapted by an adjustment mechanism, which takes \f$ y_{m}(t) \f$ 
-* from a reference model as input and tries to adjust the controller output \f$v(t)\f$. 
+* Model Reference Adaptive Control (MRAC) is a strategy where the controller
+* of the closed-loop is adapted by an adjustment mechanism, which takes \f$ y_{m}(t) \f$
+* from a reference model as input and tries to adjust the controller output \f$v(t)\f$.
 * The adjustment mechanism used by \ref qpid is the enhanced MIT-rule approach,
 * which adapts a feed-forward gain by the error between the system \f$ y(t) \f$
 * and a reference model \f$ y_{m}(t) \f$, therefore is the so-called Gradient approach.
 *
 * <center>
-* \f$ e_{m}(t) = y(t) - y_{m}(t)\f$ 
+* \f$ e_{m}(t) = y(t) - y_{m}(t)\f$
 *
-* \f$ \delta(t) = -\gamma  \frac{ e_{m}(t) y_{m}(t) }{ \beta + y_{m}^{2}(t)  }  \f$ 
+* \f$ \delta(t) = -\gamma  \frac{ e_{m}(t) y_{m}(t) }{ \beta + y_{m}^{2}(t)  }  \f$
 * </center>
 *
-* where \f$\gamma(t)\f$ is the adaptation gain and \f$\beta(t)\f$ is introduced 
+* where \f$\gamma(t)\f$ is the adaptation gain and \f$\beta(t)\f$ is introduced
 * to remove the problem of the possible division by zero if \f$y_{m}^{2}(t) \f$
-* gets too small. 
+* gets too small.
 *
-* The MRAC adaptation is then computed by integrating the \f$\delta(t)\f$ term 
+* The MRAC adaptation is then computed by integrating the \f$\delta(t)\f$ term
 * as follows:
 *
 * <center> \f$ \psi(t) = \int [ \delta(t) + c(t) ] dt \f$ </center>
 *
 * This method can be used to adapt to slower changes but can become unstable for
-* abrupt changes to the system. Therefore, this implementation uses a so-called 
-* modified MRAC (M-MRAC) where the adaptation is later added to a PID controller, 
+* abrupt changes to the system. Therefore, this implementation uses a so-called
+* modified MRAC (M-MRAC) where the adaptation is later added to a PID controller,
 * being the MRAC the additive loop.
-* 
-* Abrupt changes to the system are absorbed by the  PID controller, while the 
-* change of the dynamics will still be handled by the MIT gain \f$\psi(t)\f$. 
-* This results in the equation of the control function presented at the 
+*
+* Abrupt changes to the system are absorbed by the  PID controller, while the
+* change of the dynamics will still be handled by the MIT gain \f$\psi(t)\f$.
+* This results in the equation of the control function presented at the
 * beginning of this section.
 *
-* To use the additive MRAC, you should first instantiate a reference model and 
-* then, enable the MRAC by using the \ref qlibs::pidController::setModelReferenceControl() 
-* method. Here, you must provide a pointer to the output of the reference model 
+* To use the additive MRAC, you should first instantiate a reference model and
+* then, enable the MRAC by using the \ref qlibs::pidController::setModelReferenceControl()
+* method. Here, you must provide the variable that stores the output of the reference model
 * and the adaptation gain \f$\gamma(t)\f$
 *
 *  @subsection qpid_ex2 Example: Speed control with PID controller with an additive MRAC:
@@ -214,12 +214,12 @@
 *  #include "freertos/task.h"
 *  #include "bsp.h"
 *  #include <qlibs.h>
-*  
+*
 *  #define REF_MODEL_ORDER   ( 1 )
 *
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
-*  
+*
 *  void xTaskPIDspeedControl( void *arg )
 *  {
 *      picController *controller = static_cast<pidcontroller *>( arg );
@@ -233,7 +233,7 @@
 *      real_t refmodel_output = 0.0f;
 *      real_t controlOutput = 0.0f;
 *
-*      controller->setModelReferenceControl( &refmodel_output, 0.01f );
+*      controller->setModelReferenceControl( refmodel_output, 0.01f );
 *      for ( ;; ) {
 *          refmodel_output = ref_model->excite( controlOutput );
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
@@ -242,12 +242,12 @@
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
 *  }
-*  
-*  int main( int argc, char *argv[] ) 
+*
+*  int main( int argc, char *argv[] )
 *  {
 *      picController speedControl;
 *      bool ret;
-*      
+*
 *      BSP_SystemInit( );
 *      ret = speedControl.setup( 1.0f, 0.1f, 0.0f, static_cast<real_t>( dt/1000.0f ) );
 *      if ( !ret ) {
@@ -264,16 +264,16 @@
 *
 * @section qpid_autotune Autotuning
 *
-* Autotuning can eliminate much of the trial and error of a manual tuning 
-* approach, especially if you do not have a lot of loop tuning experience. 
-* Performing the autotuning procedure will get the tuning parameters close to 
-* their optimal values, but additional manual tuning may be required to get 
+* Autotuning can eliminate much of the trial and error of a manual tuning
+* approach, especially if you do not have a lot of loop tuning experience.
+* Performing the autotuning procedure will get the tuning parameters close to
+* their optimal values, but additional manual tuning may be required to get
 * the tuning parameters to their optimal values.
 *
 * The Autotune feature for the controller will only run for a limited amount of time
-* after it gets enabled. In other words, autotuning does not run continuously 
-* during operation. Whenever there is a substantial change in the process 
-* dynamics, the tuning process will need to be repeated in order to derive new 
+* after it gets enabled. In other words, autotuning does not run continuously
+* during operation. Whenever there is a substantial change in the process
+* dynamics, the tuning process will need to be repeated in order to derive new
 * gains required for optimal control.
 *
 * Autotuning is performed by using the following recursive algorithm:
@@ -285,8 +285,8 @@
 *
 * \f$ P(t) = \lambda^{-1}[ I - L(t)+\phi^{T}]P(t-1) \f$
 *
-* \f$ \theta(t) = \begin{bmatrix} \theta_{1}(t) & \theta_{2}(t) \end{bmatrix}^T  \f$ 
-* and \f$ \phi(t) = \begin{bmatrix} -y(t-1) & u(t-1) \end{bmatrix}^T  \f$ 
+* \f$ \theta(t) = \begin{bmatrix} \theta_{1}(t) & \theta_{2}(t) \end{bmatrix}^T  \f$
+* and \f$ \phi(t) = \begin{bmatrix} -y(t-1) & u(t-1) \end{bmatrix}^T  \f$
 *
 * \f$ g(t) = \frac{ (1 - \mu)\theta_{2}(t) }{ 1 + \theta_{1} } + \mu g(t-1)  \f$
 *
@@ -299,7 +299,7 @@
 * \f$ K_{c}(t) = \alpha \frac{ K_{c}(t)dt }{ r_{2} } \f$
 * </center>
 *
-* where  \f$ r_{1} = dt/\tau(t) \f$  and \f$ r_{2} = 1.35 + 0.25r_{1} \f$ 
+* where  \f$ r_{1} = dt/\tau(t) \f$  and \f$ r_{2} = 1.35 + 0.25r_{1} \f$
 *
 * and the remaining parameters \f$\mu\f$, \f$\alpha\f$, \f$\lambda\f$ are internally
 * computed for best performance.
@@ -307,18 +307,18 @@
 * @subsection qpid_autotune_usage Autotuning Usage
 *
 * In order to use the autotuner, you must first instantiate the \ref qlibs::pidAutoTuning
-* object and bind it to a previously configured PID controller by using the 
+* object and bind it to a previously configured PID controller by using the
 * \ref qlibs::pidController::bindAutoTuning().
 *
-* After this, you can enable autotuning via \ref qlibs::pidController::enableAutoTuning() 
+* After this, you can enable autotuning via \ref qlibs::pidController::enableAutoTuning()
 * for a defined number of intervals. When the autotune ends, the resulting PID
 * gains will be applied to the bounded controller.
-* 
+*
 * @subsection qpid_ex3 Example: Speed control with PID controller and autotuning:
 * This example takes advantage of the FreeRTOS task notifications to enable the
 * autotuning when a rising edge is detected on a certain digital input. Autotuning
-* is enabled for 5 sec. Note that the setpoint is briefly modified during this 
-* process to stimulate the process. Upon completion, the setpoint is restored to 
+* is enabled for 5 sec. Note that the setpoint is briefly modified during this
+* process to stimulate the process. Upon completion, the setpoint is restored to
 * its original value.
 *
 *  @code{.c}
@@ -328,13 +328,13 @@
 *  #include "freertos/task.h"
 *  #include "bsp.h"
 *  #include <qlibs.h>
-*  
+*
 *
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
 *  TaskHandle_t pid_task;
-*  
-*  void gpio_Int_Handler( void ) 
+*
+*  void gpio_Int_Handler( void )
 *  {
 *      BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 *
@@ -354,16 +354,16 @@
 *      real_t processMeasurement;
 *      real_t SetPoint = 300.0f; // desired motor speed 300rpm
 *      real_t tmpSetPoint = 320.0f;
-*      real_t *p_setpoint  = &SetPoint;  
+*      real_t *p_setpoint  = &SetPoint;
 *      real_t refmodel_output = 0.0f;
 *      real_t controlOutput = 0.0f;
 *      uint32_t notification_autotune_enable;
 *
-*      controller->setModelReferenceControl( &refmodel_output, 0.01f );
+*      controller->setModelReferenceControl( refmodel_output, 0.01f );
 *      for ( ;; ) {
 *          notification_autotune_enable = ulTaskNotifyTake( pdTRUE, 0 ); // dont wait
 *          if ( notification_autotune_enable ) {
-*              p_setpoint = &tmpSetPoint; 
+*              p_setpoint = &tmpSetPoint;
 *              controller->enableAutoTuning( 100 ); //enable for 5 seconds ( 100*50mS )
 *          }
 *          if ( controller->isAutoTuningComplete() ) {
@@ -372,17 +372,17 @@
 *          }
 *          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
 *          controlOutput = controller->control( *p_setpoint, processMeasurement );
-*          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); 
+*          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
 *      }
 *  }
-*  
-*  int main( int argc, char *argv[] ) 
+*
+*  int main( int argc, char *argv[] )
 *  {
 *      pidController speedControl;
 *      pidAutoTuning at;
 *      bool ret;
-*      
+*
 *      BSP_SystemInit( );
 *      HAL_GPIO_Enable( GPIO12, GPIO_INPUT );
 *      HAL_GPIO_SetInterruptMode( GPIO12, RISING_EDGE );

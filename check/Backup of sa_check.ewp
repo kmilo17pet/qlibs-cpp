@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    <fileVersion>4</fileVersion>
+    <fileVersion>3</fileVersion>
     <configuration>
         <name>Debug</name>
         <toolchain>
@@ -11,7 +11,7 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>36</version>
+                <version>35</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -70,7 +70,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>9.50.1.69462</state>
+                    <state>9.32.1.54977</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
@@ -98,7 +98,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -115,7 +115,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -138,7 +138,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -211,18 +211,13 @@
                     <name>FPU64</name>
                     <state>1</state>
                 </option>
-                <option>
-                    <name>OG_32_64DeviceCoreSlave</name>
-                    <version>33</version>
-                    <state>39</state>
-                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>38</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -464,21 +459,13 @@
                     <name>CCStackProtection</name>
                     <state>0</state>
                 </option>
-                <option>
-                    <name>CCPointerAutentiction</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>CCBranchTargetIdentification</name>
-                    <state>0</state>
-                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>12</version>
+                <version>11</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -638,10 +625,6 @@
                     <name>PreInclude</name>
                     <state></state>
                 </option>
-                <option>
-                    <name>A_32_64Device</name>
-                    <state>1</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -682,6 +665,14 @@
                 <cmdline></cmdline>
                 <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
+            </data>
+        </settings>
+        <settings>
+            <name>BUILDACTION</name>
+            <archiveVersion>1</archiveVersion>
+            <data>
+                <prebuild></prebuild>
+                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
@@ -1079,11 +1070,6 @@
                 </option>
             </data>
         </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>2</archiveVersion>
-            <data />
-        </settings>
     </configuration>
     <configuration>
         <name>Release</name>
@@ -1095,7 +1081,7 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>36</version>
+                <version>35</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1154,7 +1140,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>9.50.1.69462</state>
+                    <state>7.50.2.0</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
@@ -1182,7 +1168,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1199,7 +1185,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1222,7 +1208,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>33</version>
+                    <version>32</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1295,18 +1281,13 @@
                     <name>FPU64</name>
                     <state>1</state>
                 </option>
-                <option>
-                    <name>OG_32_64DeviceCoreSlave</name>
-                    <version>33</version>
-                    <state>38</state>
-                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>38</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1548,21 +1529,13 @@
                     <name>CCStackProtection</name>
                     <state>0</state>
                 </option>
-                <option>
-                    <name>CCPointerAutentiction</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>CCBranchTargetIdentification</name>
-                    <state>0</state>
-                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>12</version>
+                <version>11</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1722,10 +1695,6 @@
                     <name>PreInclude</name>
                     <state></state>
                 </option>
-                <option>
-                    <name>A_32_64Device</name>
-                    <state>1</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -1766,6 +1735,14 @@
                 <cmdline></cmdline>
                 <hasPrio>0</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
+            </data>
+        </settings>
+        <settings>
+            <name>BUILDACTION</name>
+            <archiveVersion>1</archiveVersion>
+            <data>
+                <prebuild></prebuild>
+                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
@@ -2163,20 +2140,12 @@
                 </option>
             </data>
         </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>2</archiveVersion>
-            <data />
-        </settings>
     </configuration>
     <group>
         <name>config</name>
     </group>
     <group>
         <name>include</name>
-        <file>
-            <name>$PROJ_DIR$\..\src\include\algorithm.hpp</name>
-        </file>
         <file>
             <name>$PROJ_DIR$\..\src\include\bitfield.hpp</name>
         </file>
@@ -2193,6 +2162,9 @@
             <name>$PROJ_DIR$\..\src\include\fp16.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\include\generic.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\include\interp1.hpp</name>
         </file>
         <file>
@@ -2200,6 +2172,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\include\mat.hpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\include\mathex.hpp</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\include\numa.hpp</name>
@@ -2239,6 +2214,9 @@
         <name>$PROJ_DIR$\..\src\fp16.cpp</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\..\src\generic.cpp</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\..\src\interp1.cpp</name>
     </file>
     <file>
@@ -2246,6 +2224,9 @@
     </file>
     <file>
         <name>$PROJ_DIR$\main.cpp</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\..\src\mathex.cpp</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\src\numa.cpp</name>

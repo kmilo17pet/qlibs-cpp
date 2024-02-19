@@ -1,7 +1,7 @@
 cmake_minimum_required( VERSION 3.2 )
 project( qlibs-cpp
-         VERSION 1.2.4
-         DESCRIPTION "A collection of useful libraries for embedded systems"
+         VERSION 1.2.5
+         DESCRIPTION "A collection of useful C++ libraries for embedded systems"
          LANGUAGES CXX )
 
 add_library( ${PROJECT_NAME} INTERFACE )
@@ -18,7 +18,6 @@ target_sources( ${PROJECT_NAME} INTERFACE
              "${CMAKE_CURRENT_LIST_DIR}/crc.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/fp16.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/bitfield.cpp"
-             "${CMAKE_CURRENT_LIST_DIR}/generic.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/ffmath.cpp"
              "${CMAKE_CURRENT_LIST_DIR}/interp1.cpp"
            )

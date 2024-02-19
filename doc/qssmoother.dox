@@ -380,7 +380,7 @@
 *  previous coefficient update to the current coefficient update. This can help
 *  to reduce oscillations in the filter output and improve convergence speed.
 *
-*  @section qssmoother_ex10 Example of signal smoothing
+*  @section qssmoother_ex11 Example of signal smoothing
 *
 *  The following is an example of how a smoothing filter can be implemented. In
 *  this scenario, a Gaussian filter is used to smooth a speed sensor signal,

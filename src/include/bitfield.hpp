@@ -22,16 +22,13 @@ namespace qlibs {
     *  @{
     */
 
+
     /**
-    * @brief Determine the @c uint8_t array-size to setup a BitField instance.
-    * @param[in] n The desired number of bits for the BitField.
-    * @return The number for bytes ( or array size for @c uint8_t ) required for
-    * the BitField of @a n bits
+    * @brief Variable that allocates block of bytes to hold @a N bits for a BitField .
+    * @tparam[in] N The desired number of bits for the BitField.
     */
-    constexpr size_t bitfield_size( const size_t n )
-    {
-        return 4U*( ( ( n - 1U )/32U ) + 1U );
-    }
+    template <size_t N>
+    using bitArea = uint8_t[ 4U*( ( ( N - 1U )/32U ) + 1U ) ];
 
     /**
     * @brief A BitField object
@@ -99,14 +96,27 @@ namespace qlibs {
 
             /**
             * @brief Setup a initialize a BitField instance.
-            * @param[in] area A pointer to the memory block to hold the BitField.
-            * Should be an uint8_t array of size bitfield_size(n), where n, is the
-            * number of bits inside the BitField.
+            * @param[in] area The memory block to hold the BitField.
+            * Should be an uint8_t array created with the bitArea<n> alias,
+            * where n, is the number of bits for the BitField.
             * @param[in] area_size The number of bytes in @a area.
             * @return @c true on success, otherwise return @c false.
             */
             bool setup( void * const area,
                         const size_t area_size ) noexcept;
+
+            /**
+            * @brief Setup a initialize a BitField instance.
+            * @param[in] area The memory block to hold the BitField.
+            * Should be an uint8_t array created with the bitArea<n> alias,
+            * where n, is the number of bits for the BitField.
+            * @return @c true on success, otherwise return @c false.
+            */
+            template<size_t area_size>
+            bool setup( uint8_t ( &area )[ area_size ] )
+            {
+                return setup( area, area_size );
+            }
 
             /**
             * @brief Clear all the bits in the BitField.

@@ -1,14 +1,14 @@
 /*!
  * @file qlibs.h
  * @author J. Camilo Gomez C.
- * @version 1.2.4
+ * @version 1.2.5
  * @note This file is part of the qlibs++ distribution.
  * @brief Global inclusion header
  **/
 
 
 /*
-qlibs++ - A collection of useful libraries for embedded systems.
+qlibs++ - A collection of useful C++ libraries for embedded systems.
 MIT License
 C++11 and MISRA C++ 2008 / CERT Compliant
 
@@ -41,25 +41,25 @@ This file is part of the QuarkTS++ OS distribution.
 #ifndef QLIBS_CPP_H
 #define QLIBS_CPP_H
 
-#define QLIBS_CPP_VERSION         "1.2.4"
-#define QLIBS_CPP_VERNUM          ( 124U )
-#define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
+    #define QLIBS_CPP_VERSION         "1.2.5"
+    #define QLIBS_CPP_VERNUM          ( 125U )
+    #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
 
-#include <include/qlibs_types.hpp>
-#include <include/tdl.hpp>
-#include <include/numa.hpp>
-#include <include/ltisys.hpp>
-#include <include/smoother.hpp>
-#include <include/fis.hpp>
-#include <include/pid.hpp>
-#include <include/crc.hpp>
-#include <include/rms.hpp>
-#include <include/fp16.hpp>
-#include <include/generic.hpp>
-#include <include/ffmath.hpp>
-#include <include/bitfield.hpp>
-#include <include/interp1.hpp>
+    #include <include/qlibs_types.hpp>
+    #include <include/tdl.hpp>
+    #include <include/numa.hpp>
+    #include <include/ltisys.hpp>
+    #include <include/smoother.hpp>
+    #include <include/fis.hpp>
+    #include <include/pid.hpp>
+    #include <include/crc.hpp>
+    #include <include/rms.hpp>
+    #include <include/fp16.hpp>
+    #include <include/ffmath.hpp>
+    #include <include/bitfield.hpp>
+    #include <include/interp1.hpp>
+    #include <include/algorithm.hpp>
 
-using namespace qlibs;
+    using namespace qlibs;
 
 #endif /*QOS_CPP_H*/

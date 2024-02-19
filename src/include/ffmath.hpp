@@ -21,7 +21,7 @@ namespace qlibs {
     namespace ffmath {
 
 
-        /** @addtogroup  qffmath Float Fast-Math
+        /** @addtogroup qffmath Float Fast-Math
         * @brief Fast floating-point math library for applications where speed is
         * more important than accuracy
         *  @{
@@ -1010,10 +1010,10 @@ namespace qlibs {
         * degree @a l, order @a m, and polar angle @a theta
         * @param[in] l The degree
         * @param[in] m The order
-        * @param[in] x Polar angle, measured in radians
+        * @param[in] theta Polar angle, measured in radians
         * @return Upon successful completion, the value of the spherical associated
         * Legendre function (that is, spherical harmonic with sigma = 0) of @a l,
-        * @a m, and @a theta. If the argument @a x is @c nan, a @c nan is returned.
+        * @a m, and @a theta. If the argument @a theta is @c nan, a @c nan is returned.
         * If @a l is greater or equal than @c 128, the behavior is implementation-defined.
         */
         float sph_legendre( size_t l,
