@@ -153,6 +153,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a54bd31f8c51df852088a2bb74709b2e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4">setup</a> (void *const area, const size_t area_size) noexcept</td></tr>
 <tr class="memdesc:a54bd31f8c51df852088a2bb74709b2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a initialize a BitField instance.  <a href="classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4">More...</a><br /></td></tr>
 <tr class="separator:a54bd31f8c51df852088a2bb74709b2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3512c8c82942b1bed870fbaa5d18c5"><td class="memTemplParams" colspan="2">template&lt;size_t area_size&gt; </td></tr>
+<tr class="memitem:a2c3512c8c82942b1bed870fbaa5d18c5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1bitfield.html#a2c3512c8c82942b1bed870fbaa5d18c5">setup</a> (uint8_t(&amp;area)[area_size])</td></tr>
+<tr class="memdesc:a2c3512c8c82942b1bed870fbaa5d18c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a initialize a BitField instance.  <a href="classqlibs_1_1bitfield.html#a2c3512c8c82942b1bed870fbaa5d18c5">More...</a><br /></td></tr>
+<tr class="separator:a2c3512c8c82942b1bed870fbaa5d18c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a9332e8dc444603ffeaccb72f039e74"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74">clearAll</a> (void) noexcept</td></tr>
 <tr class="memdesc:a1a9332e8dc444603ffeaccb72f039e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all the bits in the BitField.  <a href="classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74">More...</a><br /></td></tr>
 <tr class="separator:a1a9332e8dc444603ffeaccb72f039e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -534,8 +538,45 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2c3512c8c82942b1bed870fbaa5d18c5" name="a2c3512c8c82942b1bed870fbaa5d18c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3512c8c82942b1bed870fbaa5d18c5">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t area_size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::bitfield::setup </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t(&amp;)&#160;</td>
+          <td class="paramname"><em>area</em>[area_size]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup a initialize a BitField instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>The memory block to hold the BitField. Should be an uint8_t array created with the bitArea&lt;n&gt; alias, where n, is the number of bits for the BitField. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a54bd31f8c51df852088a2bb74709b2e4" name="a54bd31f8c51df852088a2bb74709b2e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54bd31f8c51df852088a2bb74709b2e4">&#9670;&nbsp;</a></span>setup()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bd31f8c51df852088a2bb74709b2e4">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -571,7 +612,7 @@ Public Member Functions</h2></td></tr>
 <p>Setup a initialize a BitField instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>A pointer to the memory block to hold the BitField. Should be an uint8_t array of size bitfield_size(n), where n, is the number of bits inside the BitField. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>The memory block to hold the BitField. Should be an uint8_t array created with the bitArea&lt;n&gt; alias, where n, is the number of bits for the BitField. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">area_size</td><td>The number of bytes in <em>area</em>. </td></tr>
   </table>
   </dd>

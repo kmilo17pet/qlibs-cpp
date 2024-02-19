@@ -157,9 +157,11 @@ $(document).ready(function(){initNavTree('qssmoother_desc.html',''); initResizab
 <li class="level1"><a href="#qssmoother_klmn">Scalar Kalman filter</a><ul><li class="level2"><a href="#qssmoother_ex9">Example: setting up a scalar Kalman filter:</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#qssmoother_desf">Double Exponential Smoothing</a></li>
-<li class="level1"><a href="#qssmoother_ex10">Example: setting up the Double Exponential Smoothing:</a></li>
+<li class="level1"><a href="#qssmoother_desf">Double Exponential Smoothing</a><ul><li class="level2"><a href="#qssmoother_ex10">Example: setting up the Double Exponential Smoothing:</a></li>
+</ul>
+</li>
 <li class="level1"><a href="#qssmoother_alnf">Adaptive Linear Filter</a></li>
+<li class="level1"><a href="#qssmoother_ex11">Example of signal smoothing</a></li>
 </ul>
 </div>
 <div class="textblock"><p >In many embedded systems applications, signals are captured and may be subject to "noise." To reconstruct the original signal, a "smoothing filter" is applied to "clear" the signal of this noise. The filter attenuates high frequency components and emphasizes slow changes in values, making trends easier to discern. The qLibs library offers the <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a> class, which includes a collection of commonly used and efficient smoothing filters for easy signal processing.</p>
@@ -334,8 +336,8 @@ Adaptive Linear Filter</h1>
 <p >It is particularly useful in situations where the characteristics of the input signal are unknown or change over time, as it can adapt to these changes and continue to provide accurate filtering or modeling.</p>
 <p >One potential drawback of the adaptive linear filter is that it can be computationally intensive, especially if the input signal is large or the filter has many coefficients. Additionally, the performance of the filter can be sensitive to the choice of step size parameter, which must be carefully chosen to balance convergence speed with stability.</p>
 <p >The adaptation rule for every filter coefficient is given by </p><center> \( \Delta w(t) = \alpha e(t) x(t) + \mu \Delta w(t-1) \) </center><center> \( w(t) = w(t-1) x(t) + \Delta w(t) \) </center><p >The equation also includes a momentum term that adds a fraction of the previous coefficient update to the current coefficient update. This can help to reduce oscillations in the filter output and improve convergence speed.</p>
-<h1><a class="anchor" id="qssmoother_ex10"></a>
-Example: setting up the Double Exponential Smoothing:</h1>
+<h1><a class="anchor" id="qssmoother_ex11"></a>
+Example of signal smoothing</h1>
 <p >The following is an example of how a smoothing filter can be implemented. In this scenario, a Gaussian filter is used to smooth a speed sensor signal, reducing noise and improving overall signal quality. The filter is set up by defining the necessary parameters and instantiating the filter. The filter is then executed at a sampling rate of 100 milliseconds. This process involves sampling the signal and running it through the filter, resulting in a cleaned and enhanced signal that can be further processed without the need to account for noise and disturbances.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>

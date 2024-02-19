@@ -8,11 +8,12 @@ var searchData=
   ['get_5',['get',['../classqlibs_1_1interp1.html#a72a093280adefe993cadb1933ffd178f',1,'qlibs::interp1']]],
   ['getatindex_6',['getAtIndex',['../classqlibs_1_1tdl.html#a236fbabc8932dbdb58ad43de621ddae6',1,'qlibs::tdl']]],
   ['getestimates_7',['getEstimates',['../classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208',1,'qlibs::pidAutoTuning']]],
-  ['getinf_8',['getInf',['../group__qffmath.html#gae97a1210db400b3f7334e0adb591afd6',1,'qlibs::ffmath']]],
-  ['getnan_9',['getNan',['../group__qffmath.html#gaa65082feae680669a122f16890263a67',1,'qlibs::ffmath']]],
-  ['getnumberofpoints_10',['getNumberOfPoints',['../classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d',1,'qlibs::fis::system::getNumberOfPoints()'],['../classqlibs_1_1fis_1_1instance.html#a5ce490b3d54c6c4bf848c870f00a9cc8',1,'qlibs::fis::instance::getNumberOfPoints()']]],
-  ['getoldest_11',['getOldest',['../classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159',1,'qlibs::tdl']]],
-  ['getoutput_12',['getOutput',['../classqlibs_1_1fis_1_1instance.html#ae990f65cd11f5a868185a5610d53b13e',1,'qlibs::fis::instance::getOutput()'],['../classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1',1,'qlibs::fis::system::getOutput()']]],
-  ['getrecent_13',['getRecent',['../classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8',1,'qlibs::tdl']]],
-  ['gettype_14',['getType',['../classqlibs_1_1ltisys.html#a5a03f10256af1e6915333a04bd181173',1,'qlibs::ltisys']]]
+  ['getgains_8',['getGains',['../classqlibs_1_1pid_controller.html#a3b0938371f297f9269bcb4c01d08c16a',1,'qlibs::pidController']]],
+  ['getinf_9',['getInf',['../group__qffmath.html#gae97a1210db400b3f7334e0adb591afd6',1,'qlibs::ffmath']]],
+  ['getnan_10',['getNan',['../group__qffmath.html#gaa65082feae680669a122f16890263a67',1,'qlibs::ffmath']]],
+  ['getnumberofpoints_11',['getNumberOfPoints',['../classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d',1,'qlibs::fis::system::getNumberOfPoints()'],['../classqlibs_1_1fis_1_1instance.html#a5ce490b3d54c6c4bf848c870f00a9cc8',1,'qlibs::fis::instance::getNumberOfPoints()']]],
+  ['getoldest_12',['getOldest',['../classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159',1,'qlibs::tdl']]],
+  ['getoutput_13',['getOutput',['../classqlibs_1_1fis_1_1instance.html#ae990f65cd11f5a868185a5610d53b13e',1,'qlibs::fis::instance::getOutput()'],['../classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1',1,'qlibs::fis::system::getOutput()']]],
+  ['getrecent_14',['getRecent',['../classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8',1,'qlibs::tdl']]],
+  ['gettype_15',['getType',['../classqlibs_1_1ltisys.html#a5a03f10256af1e6915333a04bd181173',1,'qlibs::ltisys']]]
 ];

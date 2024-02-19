@@ -10,6 +10,7 @@ var classqlibs_1_1bitfield =
     [ "readUINTn", "classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e", null ],
     [ "setAll", "classqlibs_1_1bitfield.html#ac8bf522c01a711734d8f2d2f65d4c87e", null ],
     [ "setBit", "classqlibs_1_1bitfield.html#af27c81bfc8977d80f33806950018ce86", null ],
+    [ "setup", "classqlibs_1_1bitfield.html#a2c3512c8c82942b1bed870fbaa5d18c5", null ],
     [ "setup", "classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4", null ],
     [ "toggleBit", "classqlibs_1_1bitfield.html#abc994e1433e4e6ebc2f81c199c334f72", null ],
     [ "writeBit", "classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07", null ],

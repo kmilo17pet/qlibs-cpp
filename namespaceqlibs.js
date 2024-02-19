@@ -1,17 +1,16 @@
 var namespaceqlibs =
 [
+    [ "algorithm", "namespaceqlibs_1_1algorithm.html", [
+      [ "bSearch", "group__qalgorithm.html#gad7afb14d26abce3c631e2bd241dca22c", null ],
+      [ "lSearch", "group__qalgorithm.html#ga00cfac06c674b51d9fd27177a985e6bc", null ],
+      [ "reverse", "group__qalgorithm.html#ga12658b9048e6ee91a650acb365edcbf0", null ],
+      [ "rotate", "group__qalgorithm.html#ga7a0b2f4ddcfac8cd3ade0705e5dc764f", null ],
+      [ "set", "group__qalgorithm.html#gafb6c73400ff56061dc48841b8c8622b5", null ],
+      [ "sort", "group__qalgorithm.html#ga2b2a73ba5e4bbb37d819cb819fe06219", null ],
+      [ "swap", "group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2", null ]
+    ] ],
     [ "ffmath", "namespaceqlibs_1_1ffmath.html", "namespaceqlibs_1_1ffmath" ],
     [ "fis", "namespaceqlibs_1_1fis.html", "namespaceqlibs_1_1fis" ],
-    [ "generic", "namespaceqlibs_1_1generic.html", [
-      [ "bSearch", "group__qtypegeneric.html#ga5604d8d2805e5eeda2e53544b110a7a0", null ],
-      [ "forEach", "group__qtypegeneric.html#gab4818e24c0d6ee84051d6870f19d8664", null ],
-      [ "lSearch", "group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e", null ],
-      [ "reverse", "group__qtypegeneric.html#ga6db21157fb7adbaadc34e11b877230f8", null ],
-      [ "rotate", "group__qtypegeneric.html#gaaf19b6168bf0e9931cad22a3d66149f9", null ],
-      [ "set", "group__qtypegeneric.html#ga214751c5f34431838e9d5f2015d51877", null ],
-      [ "sort", "group__qtypegeneric.html#ga08acc13c13a224f664d821d1875ed06a", null ],
-      [ "swap", "group__qtypegeneric.html#gaaddaac5dad20d93d3dc6bd99db00579d", null ]
-    ] ],
     [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
     [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
     [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],
@@ -40,6 +39,7 @@ var namespaceqlibs =
     [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
+    [ "bitArea", "group__qbitfield.html#ga0605a418c230b31507a31411955b4531", null ],
     [ "continuousStates", "group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad", null ],
     [ "discreteStates", "group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1", null ],
     [ "real_t", "namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c", null ],
@@ -96,7 +96,6 @@ var namespaceqlibs =
       [ "PID_TYPE_PD", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61", null ],
       [ "PID_TYPE_PID", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6", null ]
     ] ],
-    [ "bitfield_size", "group__qbitfield.html#ga3645c015d457782880b34f38777f5067", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],
     [ "FP_2_PI", "group__qfp16.html#ga805c4ff0b0f82e1b8f140d54519b46dc", null ],
     [ "FP_2_SQRTPI", "group__qfp16.html#ga9da1ac6525314bf8d3524ff938dc7e75", null ],

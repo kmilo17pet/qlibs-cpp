@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tag_0',['tag',['../group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492',1,'qlibs::fis']]]
+  ['real_5ft_0',['real_t',['../namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c',1,'qlibs']]],
+  ['rules_1',['rules',['../group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555',1,'qlibs::fis']]]
 ];

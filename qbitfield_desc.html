@@ -149,7 +149,7 @@ Functions</h1>
 <h2><a class="anchor" id="qbitfield_setup"></a>
 Instance setup</h2>
 <ul>
-<li><a class="el" href="group__qbitfield.html#ga3645c015d457782880b34f38777f5067">qlibs::bitfield_size()</a> Use it to determine the number of bytes required for a BitField.</li>
+<li><a class="el" href="group__qbitfield.html#ga0605a418c230b31507a31411955b4531">qlibs::bitArea</a> Use it to instantiate the area to store a BitField.</li>
 <li><a class="el" href="classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4">qlibs::bitfield::setup()</a> Setup a initialize a BitField instance.</li>
 </ul>
 <h2><a class="anchor" id="qbitfield_sbit"></a>
@@ -184,10 +184,10 @@ Working with bitfields</h1>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
 <div class="line">    bitfield vPort; <span class="comment">// create the bitfield instance</span></div>
-<div class="line">    uint8_t vPortArea[ QBITFIELD_SIZE(48) ] = { 0 }; <span class="comment">// Create the bitfield storage area to hold 48bits</span></div>
+<div class="line">    bitArea&lt;48&gt; vPortArea; <span class="comment">// Create the bitfield storage area to hold 48 bits</span></div>
 <div class="line">    uint16_t rWord;</div>
 <div class="line"> </div>
-<div class="line">    vPort.setup( vPortArea, <span class="keyword">sizeof</span>(vPortArea) );</div>
+<div class="line">    vPort.setup( vPortArea );</div>
 <div class="line">    vPort.clearAll();</div>
 <div class="line">    <span class="comment">//we are going to write the following value in the bitfield = 0x8177AA55FF88</span></div>
 <div class="line">    vPort.writeUINTn( 0, 0xAA55FF88, 32 ); <span class="comment">// write the first 32 bits</span></div>
@@ -195,7 +195,7 @@ Working with bitfields</h1>
 <div class="line">    vPort.writeBit( 47, 1 );         <span class="comment">// write the last bit of the last byte</span></div>
 <div class="line">    vPort.writeBit( 40, 1 );         <span class="comment">// write the first bit of the last byte</span></div>
 <div class="line">    rWord = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>( vPort.readUINTn( 20, 16 ); <span class="comment">// read a word at offset 24</span></div>
-<div class="line">    std::cout &lt;&lt; std::hex  &lt;&lt; vPortArea[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> </div>
+<div class="line">    std::cout &lt;&lt; std::hex  &lt;&lt; vPortArea[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line">                           &lt;&lt; vPortArea[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line">                           &lt;&lt; vPortArea[2] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line">                           &lt;&lt; vPortArea[3] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>

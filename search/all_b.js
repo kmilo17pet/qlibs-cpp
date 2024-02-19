@@ -20,7 +20,7 @@ var searchData=
   ['log2_17',['log2',['../classqlibs_1_1fp16.html#a2052d8e7f87a522b46d423745f53d1a5',1,'qlibs::fp16::log2()'],['../group__qffmath.html#gaecd913f2dc2799c6dc09b1525da84fd6',1,'qlibs::ffmath::log2()']]],
   ['log2e_18',['log2e',['../structqlibs_1_1ffmath_1_1numbers.html#a2d297fe7c2a34fc4ac1f63891c39b505',1,'qlibs::ffmath::numbers']]],
   ['lom_19',['lom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ab151da20bd858f1adb6f610527a9af19',1,'qlibs::fis']]],
-  ['lsearch_20',['lSearch',['../group__qtypegeneric.html#gaff612ff160d8c61605f1b25386ae9a9e',1,'qlibs::generic']]],
+  ['lsearch_20',['lSearch',['../group__qalgorithm.html#ga00cfac06c674b51d9fd27177a985e6bc',1,'qlibs::algorithm']]],
   ['lti_20systems_21',['LTI Systems',['../group__qltisys.html',1,'']]],
   ['ltisys_22',['ltisys',['../classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59',1,'qlibs::ltisys::ltisys()'],['../classqlibs_1_1ltisys.html',1,'qlibs::ltisys']]],
   ['ltisys_5ftype_5fcontinuous_23',['LTISYS_TYPE_CONTINUOUS',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd',1,'qlibs']]],

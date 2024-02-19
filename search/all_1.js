@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../classqlibs_1_1ltisys.html#af3a5d92631d8bd493942412a6a152339',1,'qlibs::ltisys']]],
+  ['a_0',['a',['../classqlibs_1_1ltisys.html#af3a5d92631d8bd493942412a6a152339',1,'qlibs::ltisys::a()'],['../structthing.html#aef03dde51e3bb51ffe9cb092a8a0396d',1,'thing::a()']]],
   ['absf_1',['absf',['../group__qffmath.html#gae832095f4975240fb86603a6439cb74c',1,'qlibs::ffmath']]],
   ['absolute_2',['absolute',['../classqlibs_1_1fp16.html#a0de6955cbb25cfc1b6cf0811455f0460',1,'qlibs::fp16']]],
   ['acos_3',['acos',['../classqlibs_1_1fp16.html#a26ad7e600ba8283c649cfaa63655bb1b',1,'qlibs::fp16::acos()'],['../group__qffmath.html#gacf414cd52c51a4bcb8312db2340753ad',1,'qlibs::ffmath::acos(float x)']]],

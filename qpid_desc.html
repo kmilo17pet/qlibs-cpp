@@ -214,16 +214,16 @@ Example: Speed control using a PID controller:</h2>
 <div class="line">    for ( ;; ) {</div>
 <div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
 <div class="line">        controlOutput = controller-<span class="keyword">&gt;</span>control( SetPoint, processMeasurement );</div>
-<div class="line">        BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); </div>
+<div class="line">        BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );</div>
 <div class="line">        vTaskDelay( dt / portTICK_RATE_MS) ;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] ) </div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
 <div class="line">    pidController_t speedControl;</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    BSP_SystemInit();</div>
 <div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
@@ -243,7 +243,7 @@ Additive MRAC (Model Reference Adaptive Control)</h1>
 <p >The MRAC adaptation is then computed by integrating the \(\delta(t)\) term as follows:</p>
 <center> \( \psi(t) = \int [ \delta(t) + c(t) ] dt \) </center><p >This method can be used to adapt to slower changes but can become unstable for abrupt changes to the system. Therefore, this implementation uses a so-called modified MRAC (M-MRAC) where the adaptation is later added to a PID controller, being the MRAC the additive loop.</p>
 <p >Abrupt changes to the system are absorbed by the PID controller, while the change of the dynamics will still be handled by the MIT gain \(\psi(t)\). This results in the equation of the control function presented at the beginning of this section.</p>
-<p >To use the additive MRAC, you should first instantiate a reference model and then, enable the MRAC by using the <a class="el" href="classqlibs_1_1pid_controller.html#a7d6482d7d31956365ef120629e61fbe2">qlibs::pidController::setModelReferenceControl()</a> method. Here, you must provide a pointer to the output of the reference model and the adaptation gain \(\gamma(t)\)</p>
+<p >To use the additive MRAC, you should first instantiate a reference model and then, enable the MRAC by using the <a class="el" href="classqlibs_1_1pid_controller.html#a7d6482d7d31956365ef120629e61fbe2">qlibs::pidController::setModelReferenceControl()</a> method. Here, you must provide the variable that stores the output of the reference model and the adaptation gain \(\gamma(t)\)</p>
 <h2><a class="anchor" id="qpid_ex2"></a>
 Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -271,7 +271,7 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> refmodel_output = 0.0f;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput = 0.0f;</div>
 <div class="line"> </div>
-<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01f );</div>
+<div class="line">    controller-&gt;setModelReferenceControl( refmodel_output, 0.01f );</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        refmodel_output = ref_model-&gt;excite( controlOutput );</div>
 <div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
@@ -281,11 +281,11 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] ) </div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
 <div class="line">    picController speedControl;</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    BSP_SystemInit( );</div>
 <div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
@@ -324,7 +324,7 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line"><span class="keywordtype">void</span> xTaskPIDspeedControl( <span class="keywordtype">void</span> *arg );</div>
 <div class="line">TaskHandle_t pid_task;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> gpio_Int_Handler( <span class="keywordtype">void</span> ) </div>
+<div class="line"><span class="keywordtype">void</span> gpio_Int_Handler( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
 <div class="line">    BaseType_t xHigherPriorityTaskWoken = pdFALSE;</div>
 <div class="line"> </div>
@@ -344,16 +344,16 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> processMeasurement;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> tmpSetPoint = 320.0f;</div>
-<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *p_setpoint  = &amp;SetPoint;  </div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> *p_setpoint  = &amp;SetPoint;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> refmodel_output = 0.0f;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput = 0.0f;</div>
 <div class="line">    uint32_t notification_autotune_enable;</div>
 <div class="line"> </div>
-<div class="line">    controller-&gt;setModelReferenceControl( &amp;refmodel_output, 0.01f );</div>
+<div class="line">    controller-&gt;setModelReferenceControl( refmodel_output, 0.01f );</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        notification_autotune_enable = ulTaskNotifyTake( pdTRUE, 0 ); <span class="comment">// dont wait</span></div>
 <div class="line">        <span class="keywordflow">if</span> ( notification_autotune_enable ) {</div>
-<div class="line">            p_setpoint = &amp;tmpSetPoint; </div>
+<div class="line">            p_setpoint = &amp;tmpSetPoint;</div>
 <div class="line">            controller-&gt;enableAutoTuning( 100 ); <span class="comment">//enable for 5 seconds ( 100*50mS )</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">if</span> ( controller-&gt;isAutoTuningComplete() ) {</div>
@@ -362,17 +362,17 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">        }</div>
 <div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
 <div class="line">        controlOutput = controller-&gt;control( *p_setpoint, processMeasurement );</div>
-<div class="line">        BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) ); </div>
+<div class="line">        BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );</div>
 <div class="line">        vTaskDelay( dt / portTICK_RATE_MS) ;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] ) </div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
 <div class="line">    pidController speedControl;</div>
 <div class="line">    pidAutoTuning at;</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    BSP_SystemInit( );</div>
 <div class="line">    HAL_GPIO_Enable( GPIO12, GPIO_INPUT );</div>
 <div class="line">    HAL_GPIO_SetInterruptMode( GPIO12, RISING_EDGE );</div>

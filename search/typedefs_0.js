@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['continuousstates_0',['continuousStates',['../group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad',1,'qlibs']]]
+  ['bitarea_0',['bitArea',['../group__qbitfield.html#ga0605a418c230b31507a31411955b4531',1,'qlibs']]]
 ];

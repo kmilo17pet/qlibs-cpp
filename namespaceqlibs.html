@@ -131,7 +131,6 @@ $(document).ready(function(){initNavTree('namespaceqlibs.html',''); initResizabl
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">qlibs Namespace Reference</div></div>
 </div><!--header-->
@@ -142,14 +141,14 @@ $(document).ready(function(){initNavTree('namespaceqlibs.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:namespaceqlibs_1_1algorithm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs_1_1algorithm.html">algorithm</a></td></tr>
+<tr class="memdesc:namespaceqlibs_1_1algorithm"><td class="mdescLeft">&#160;</td><td class="mdescRight">The generic namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceqlibs_1_1ffmath"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs_1_1ffmath.html">ffmath</a></td></tr>
 <tr class="memdesc:namespaceqlibs_1_1ffmath"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the Fast floating-point math library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceqlibs_1_1fis"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs_1_1fis.html">fis</a></td></tr>
 <tr class="memdesc:namespaceqlibs_1_1fis"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Fuzzy Inference System namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceqlibs_1_1generic"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs_1_1generic.html">generic</a></td></tr>
-<tr class="memdesc:namespaceqlibs_1_1generic"><td class="mdescLeft">&#160;</td><td class="mdescRight">The generic namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -240,6 +239,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga0605a418c230b31507a31411955b4531"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:ga0605a418c230b31507a31411955b4531"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qbitfield.html#ga0605a418c230b31507a31411955b4531">bitArea</a> = uint8_t[4U *(((N - 1U)/32U)+1U)]</td></tr>
+<tr class="memdesc:ga0605a418c230b31507a31411955b4531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable that allocates block of bytes to hold <em>N</em> bits for a BitField .  <a href="group__qbitfield.html#ga0605a418c230b31507a31411955b4531">More...</a><br /></td></tr>
+<tr class="separator:ga0605a418c230b31507a31411955b4531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga133a514a9c835937ba3d6e92fadccaad"><td class="memTemplParams" colspan="2">template&lt;size_t order&gt; </td></tr>
 <tr class="memitem:ga133a514a9c835937ba3d6e92fadccaad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad">continuousStates</a> = <a class="el" href="classqlibs_1_1n_state.html">nState</a>[order]</td></tr>
 <tr class="memdesc:ga133a514a9c835937ba3d6e92fadccaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify continuous states.  <a href="group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad">More...</a><br /></td></tr>
@@ -319,12 +322,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gaa9de50af5e1b6b26f2e6e12e2bd1b106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direction modes of the PID controller.  <a href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">More...</a><br /></td></tr>
 <tr class="separator:gaa9de50af5e1b6b26f2e6e12e2bd1b106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga3645c015d457782880b34f38777f5067"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qbitfield.html#ga3645c015d457782880b34f38777f5067">bitfield_size</a> (const size_t n)</td></tr>
-<tr class="memdesc:ga3645c015d457782880b34f38777f5067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the <code>uint8_t</code> array-size to setup a BitField instance.  <a href="group__qbitfield.html#ga3645c015d457782880b34f38777f5067">More...</a><br /></td></tr>
-<tr class="separator:ga3645c015d457782880b34f38777f5067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
