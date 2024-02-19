@@ -124,23 +124,22 @@ namespace qlibs {
         }
 
         /**
-        * @brief Reverse the given array. Operation takes place on the portion
-        * of the array that starts at position @a init to position @a end.
+        * @brief Reverses the order of the elements in the range [first,last).
         * @param[in,out] array The array to reverse.
-        * @param[in] init Position of the first element.
-        * @param[in] end Position of the last element.
+         * @param[in] first Initial position of the portion to reverse
+         * @param[in] last Final position of the portion to reverse
         * @return none.
         */
 
         template<typename T, size_t n>
         void reverse( T ( &array )[ n ],
-                      const size_t init = 0U,
-                      const size_t end = n - 1U ) noexcept
+                      const size_t first = 0U,
+                      const size_t last = n - 1U ) noexcept
         {
-            if ( end > init ) {
-                size_t s = init, e = end;
+            if ( last > first ) {
+                size_t s = first, e = last;
 
-                while( s < e ) {
+                while ( s < e ) {
                     algorithm::swap( array[ s ], array[ e ] );
                     ++s;
                     --e;
@@ -149,11 +148,11 @@ namespace qlibs {
         }
 
         /**
-        * @brief Rotates @a k elements of the array pointed. Rotation direction
+        * @brief Rotates @a k elements of the array. Rotation direction
         * is determined by the sign of @a k, the means a positive value performs
-        *  a right-rotation and a negative value a left-rotation.
+        * a right-rotation and a negative value a left-rotation.
         * @param[in,out] array The array to rotate.
-        * @param[in] k Positions to rotate.
+        * @param[in] k Positions to rotate. Sign determines the rotate direction.
         * @return none.
         */
 
@@ -183,15 +182,15 @@ namespace qlibs {
         }
 
         /**
-         * @brief Sets all elements of an array in the range  [first,last) to a
-         * specific value.
-         * @param[in,out] array The array to set.
+         * @brief Assigns @a value to all the elements of the array in the
+         * range [first,last).
+         * @param[in,out] array The array to fill.
          * @param[in] value The value to set all elements to.
-         * @param[in] first Initial position of the portion to search
-         * @param[in] last Final position of the portion to search
+         * @param[in] first Initial position of the portion to fill
+         * @param[in] last Final position of the portion to fill
          */
         template<typename T, size_t n>
-        inline void set( T ( &array )[ n ],
+        inline void fill( T ( &array )[ n ],
                          const T value,
                          const size_t first = 0U,
                          const size_t last = n - 1U ) noexcept
@@ -202,12 +201,13 @@ namespace qlibs {
         }
 
         /**
-        * @brief Performs a linear search over the raw-array in the
-        * range [first,last) that matches the @a key.
+        * @brief Returns a pointer to the first element in the range [first,last)
+        * that compares equal to @a key. If no such element is found, the
+        * function returns @c nullptr.
         * @note The elements are compared using operator '=='
-        * @param[in] key The object that serves as key for
-        * the search.
         * @param[in] array The array where the search is performed
+        * @param[in] key Value to search for in the range. T shall be a type
+        * supporting comparisons using operator==.
         * @param[in] first Initial position of the portion to search
         * @param[in] last Final position of the portion to search
         * @return This function returns a pointer to an entry in the array that
@@ -215,11 +215,10 @@ namespace qlibs {
         * returned.
         */
         template<typename T, size_t n>
-        inline T* lSearch( const T key,
-                           T ( &array )[ n ],
-                           const size_t first = 0U,
-                           const size_t last = n - 1U
-                           ) noexcept
+        inline T* find( T ( &array )[ n ],
+                        const T key,
+                        const size_t first = 0U,
+                        const size_t last = n - 1U ) noexcept
         {
             T* found = nullptr;
 
@@ -233,24 +232,167 @@ namespace qlibs {
         }
 
         /**
-        * @brief Performs a binary search over the raw-array in the
-        * range [first,last) that matches the @a key..
-        * The array contents should be sorted in ascending order.
-        * @note The elements are compared using operator '<' and '=='
-        * @param[in] key The object that serves as key for
-        * the search.
+        * @brief Returns @c true if @a pred returns @c true for any of the
+        * elements in the range [first,last), and @c false otherwise.
+        * @param[in] array The array where the check is performed
+        * @param[in] pred Unary function that accepts an element in the range as
+        * argument and returns a value convertible to bool. The value returned
+        * indicates whether the element fulfills the condition checked by this
+        * function.
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return @c true if @a pred returns true for any of the elements in
+        * the range [first,last), and @c false otherwise.
+        */
+        template<typename T, size_t n>
+        inline bool any_of( T ( &array )[ n ],
+                            bool (*pred)( const T ),
+                            const size_t first = 0U,
+                            const size_t last = n - 1U ) noexcept
+        {
+            bool ret = false;
+
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( pred( array[ i ] ) ) {
+                    ret = true;
+                    break;
+                }
+            }
+            return ret;
+        }
+
+        /**
+        * @brief Returns @c true if @a pred returns @c true for all the
+        * elements in the range [first,last), and @c false otherwise.
+        * @param[in] array The array where the check is performed
+        * @param[in] pred Unary function that accepts an element in the range as
+        * argument and returns a value convertible to bool. The value returned
+        * indicates whether the element fulfills the condition checked by this
+        * function.
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return @c true if @a pred returns true for all the elements in
+        * the range [first,last), and @c false otherwise.
+        */
+        template<typename T, size_t n>
+        inline bool all_of( T ( &array )[ n ],
+                            bool (*pred)( const T ),
+                            const size_t first = 0U,
+                            const size_t last = n - 1U ) noexcept
+        {
+            bool ret = true;
+
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( !pred( array[ i ] ) ) {
+                    ret = false;
+                    break;
+                }
+            }
+            return ret;
+        }
+
+        /**
+        * @brief Returns the number of elements in the range [first,last) for
+        * which @c pred is @c true.
+        * @param[in] array The array where the count will be performed
+        * @param[in] pred Unary function that accepts an element in the range as
+        * argument, and returns a value convertible to bool. The value returned
+        * indicates whether the element is counted by this function.
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return The number of elements in the range [first,last) for which
+        * @a pred does not return @c false.
+        */
+        template<typename T, size_t n>
+        inline size_t count_if( T ( &array )[ n ],
+                                bool (*pred)( const T ),
+                                const size_t first = 0U,
+                                const size_t last = n - 1U ) noexcept
+        {
+            size_t count = 0U;
+
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( pred( array[ i ] ) ) {
+                    ++count;
+                }
+            }
+            return count;
+        }
+
+        /**
+        * @brief Returns an iterator to the first element in the range [first,last)
+        * for which @a pred returns @c true. If no such element is found, the
+        * function returns @c nullptr.
         * @param[in] array The array where the search is performed
+        * @param[in] pred Unary function that accepts an element in the range as
+        * argument and returns a value convertible to bool. The value returned
+        * indicates whether the element is considered a match in the context of
+        * this function.
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return A pointer to the first element in the range for which @a pred
+        * does not return @c false. If @a pred is @c false for all elements,
+        * the function returns @c nullptr.
+        */
+        template<typename T, size_t n>
+        inline T* find_if( T ( &array )[ n ],
+                           bool (*pred)( const T ),
+                           const size_t first = 0U,
+                           const size_t last = n - 1U ) noexcept
+        {
+            T *found = nullptr;
+
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( pred( array[ i ] ) ) {
+                    found = &array[ i ];
+                }
+            }
+            return found;
+        }
+
+        /**
+        * @brief Applies function @a fn to each of the elements in the range
+        *  [first,last).
+        * @param[in] array The array
+        * @param[in] fn Unary function that accepts an element in the range as
+        *  argument.
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return none
+        */
+        template<typename T, size_t n>
+        inline void for_each( T ( &array )[ n ],
+                              void (*fn)( T& ),
+                              const size_t first = 0U,
+                              const size_t last = n - 1U ) noexcept
+        {
+            for ( size_t i = first; i <= last; ++i ) {
+                (void)fn( array[ i ] );
+            }
+        }
+
+        /**
+        * @brief Returns a pointer to the first element in the range [first,last)
+        * that compares equal to @a key. If no such element is found, the
+        * function returns @c nullptr.
+        * @note The elements in the range shall already be sorted according to
+        * this same criterion (operator< or operator==), or at least partitioned with
+        * respect to @a key.
+        * @note The elements are compared using operator '=='
+        * @param[in] array The array where the search is performed
+        * @param[in] key Value to search for in the range. T shall be a type
+        * supporting comparisons using operator== and operator<.
         * @param[in] first Initial position of the portion to search
         * @param[in] last Final position of the portion to search
         * @return This function returns a pointer to an entry in the array that
-        * matches the search key. If key is not found, a @c nullptr pointer is returned.
+        * matches the search key. If key is not found, a @c nullptr pointer is
+        * returned.
         */
         template<typename T, size_t n>
-        inline T* bSearch( const T key,
-                           T ( &array )[ n ],
-                           const size_t first = 0U,
-                           const size_t last = n - 1U
-                           ) noexcept
+        inline T* binary_search( T ( &array )[ n ],
+                                 const T key,
+                                 const size_t first = 0U,
+                                 const size_t last = n - 1U ) noexcept
         {
             T* found = nullptr;
             int left = static_cast<int>( first );
