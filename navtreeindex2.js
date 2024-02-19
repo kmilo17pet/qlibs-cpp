@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb":[2,10,15],
+"group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd":[2,10,111],
+"group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7":[2,10,33],
+"group__qffmath.html#ga32e1fcbf545fc4dc441c00982c512498":[2,10,64],
+"group__qffmath.html#ga378fb16701afc3184f8c56e30d99a42a":[2,10,91],
 "group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03":[2,10,63],
 "group__qffmath.html#ga396c804d2c8d8049d9eb2480beda1f3d":[2,10,51],
 "group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6":[2,10,27],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "namespacemembers_func.html":[3,1,1],
 "namespacemembers_g.html":[3,1,0,6],
 "namespacemembers_h.html":[3,1,0,7],
-"namespacemembers_i.html":[3,1,0,8],
-"namespacemembers_l.html":[3,1,0,9],
-"namespacemembers_m.html":[3,1,0,10],
-"namespacemembers_n.html":[3,1,0,11],
-"namespacemembers_p.html":[3,1,0,12],
-"namespacemembers_r.html":[3,1,0,13]
+"namespacemembers_i.html":[3,1,0,8]
 };

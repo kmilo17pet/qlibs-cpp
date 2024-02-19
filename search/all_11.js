@@ -15,7 +15,7 @@ var searchData=
   ['rem_12',['rem',['../group__qffmath.html#ga5ba58ca696cc874fa1f2b99fb7001fc7',1,'qlibs::ffmath']]],
   ['removemodelreferencecontrol_13',['removeModelReferenceControl',['../classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6',1,'qlibs::pidController']]],
   ['reset_14',['reset',['../classqlibs_1_1smoother.html#a93047869cb3857e7c18924df8433ae32',1,'qlibs::smoother::reset()'],['../classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1',1,'qlibs::pidController::reset()']]],
-  ['reverse_15',['reverse',['../group__qalgorithm.html#ga12658b9048e6ee91a650acb365edcbf0',1,'qlibs::algorithm']]],
+  ['reverse_15',['reverse',['../group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6',1,'qlibs::algorithm']]],
   ['rexp_16',['rexp',['../group__qffmath.html#ga9a2da57b2b1a7e30b7b8c6f3011c7810',1,'qlibs::ffmath']]],
   ['riemann_5fzeta_17',['riemann_zeta',['../group__qffmath.html#ga998670a53bda8651dc02f633cbc134fa',1,'qlibs::ffmath']]],
   ['rms_18',['rms',['../classqlibs_1_1rms.html',1,'qlibs']]],
