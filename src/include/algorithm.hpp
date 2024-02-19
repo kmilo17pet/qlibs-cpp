@@ -196,7 +196,7 @@ namespace qlibs {
                          const size_t first = 0U,
                          const size_t last = n - 1U ) noexcept
         {
-            for ( size_t i = first ; i < last; ++i ) {
+            for ( size_t i = first ; i <= last; ++i ) {
                 array[ i ] = value;
             }
         }
@@ -223,7 +223,7 @@ namespace qlibs {
         {
             T* found = nullptr;
 
-            for ( size_t i = first; i < last; ++i ) {
+            for ( size_t i = first; i <= last; ++i ) {
                 if ( array[ i ] == key ) {
                     found = &array[ i ];
                     break;
