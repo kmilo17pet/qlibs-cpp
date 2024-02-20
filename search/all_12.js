@@ -54,7 +54,7 @@ var searchData=
   ['smoothermwm2_51',['smootherMWM2',['../classqlibs_1_1smoother_m_w_m2.html',1,'qlibs']]],
   ['smoothing_20filters_52',['Smoothing filters',['../group__qssmoother.html',1,'']]],
   ['som_53',['som',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26ac2e2ea78bd7006e1affc74c87f66a609',1,'qlibs::fis']]],
-  ['sort_54',['sort',['../group__qalgorithm.html#ga2b2a73ba5e4bbb37d819cb819fe06219',1,'qlibs::algorithm']]],
+  ['sort_54',['sort',['../group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32',1,'qlibs::algorithm']]],
   ['sph_5fbessel_55',['sph_bessel',['../group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da',1,'qlibs::ffmath']]],
   ['sph_5flegendre_56',['sph_legendre',['../group__qffmath.html#gaf6e40f496a09b0319302f2cde77a82a8',1,'qlibs::ffmath']]],
   ['sph_5fneumann_57',['sph_neumann',['../group__qffmath.html#gaf1d91b27692bcf07ca48fda87965086b',1,'qlibs::ffmath']]],

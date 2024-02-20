@@ -141,10 +141,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga314a345d986408fb8cbb7c97e51758a2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2">qlibs::algorithm::swap</a> (T &amp;x, T &amp;y) noexcept</td></tr>
 <tr class="memdesc:ga314a345d986408fb8cbb7c97e51758a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the values of a and b.  <a href="group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2">More...</a><br /></td></tr>
 <tr class="separator:ga314a345d986408fb8cbb7c97e51758a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b2a73ba5e4bbb37d819cb819fe06219"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
-<tr class="memitem:ga2b2a73ba5e4bbb37d819cb819fe06219"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga2b2a73ba5e4bbb37d819cb819fe06219">qlibs::algorithm::sort</a> (T(&amp;array)[n], size_t first=0U, size_t last=n - 1U)</td></tr>
-<tr class="memdesc:ga2b2a73ba5e4bbb37d819cb819fe06219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array in the range [first,last) into ascending order.  <a href="group__qalgorithm.html#ga2b2a73ba5e4bbb37d819cb819fe06219">More...</a><br /></td></tr>
-<tr class="separator:ga2b2a73ba5e4bbb37d819cb819fe06219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
+<tr class="memitem:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32">qlibs::algorithm::sort</a> (T(&amp;array)[n], size_t first=0U, size_t last=n - 1U) noexcept</td></tr>
+<tr class="memdesc:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array in the range [first,last) into ascending order.  <a href="group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32">More...</a><br /></td></tr>
+<tr class="separator:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
 <tr class="memitem:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6">qlibs::algorithm::reverse</a> (T(&amp;array)[n], const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the range [first,last).  <a href="group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6">More...</a><br /></td></tr>
@@ -725,7 +725,7 @@ template&lt;typename T , size_t n&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -791,13 +791,16 @@ template&lt;typename T , size_t n&gt; </div>
 
 </div>
 </div>
-<a id="ga2b2a73ba5e4bbb37d819cb819fe06219" name="ga2b2a73ba5e4bbb37d819cb819fe06219"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b2a73ba5e4bbb37d819cb819fe06219">&#9670;&nbsp;</a></span>sort()</h2>
+<a id="gaa93da6fe1b6a84391263e9f26f72ef32" name="gaa93da6fe1b6a84391263e9f26f72ef32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa93da6fe1b6a84391263e9f26f72ef32">&#9670;&nbsp;</a></span>sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , size_t n&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void qlibs::algorithm::sort </td>
@@ -823,11 +826,16 @@ template&lt;typename T , size_t n&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Sorts the given array in the range [first,last) into ascending order. </p>
 <dl class="section note"><dt>Note</dt><dd>The elements are compared using operator&lt; </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This algorithm uses a non-recursive variant of the quicksort algorithm. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This algorithm uses a non-recursive variant of the Quick Sort algorithm. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">array</td><td>The array to be sorted. </td></tr>

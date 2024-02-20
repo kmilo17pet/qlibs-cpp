@@ -10,6 +10,6 @@ var group__qalgorithm =
     [ "qlibs::algorithm::for_each", "group__qalgorithm.html#gabe7cc60a59a55ebc65ff8459ba496974", null ],
     [ "qlibs::algorithm::reverse", "group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6", null ],
     [ "qlibs::algorithm::rotate", "group__qalgorithm.html#ga7a0b2f4ddcfac8cd3ade0705e5dc764f", null ],
-    [ "qlibs::algorithm::sort", "group__qalgorithm.html#ga2b2a73ba5e4bbb37d819cb819fe06219", null ],
+    [ "qlibs::algorithm::sort", "group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32", null ],
     [ "qlibs::algorithm::swap", "group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2", null ]
 ];
