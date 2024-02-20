@@ -43,6 +43,10 @@ namespace qlibs {
 
          /** @cond */
         namespace impl {
+            struct sort_pair {
+                int first;
+                int second;
+            };
             template<typename T, size_t N>
             class sort_stack {
                 private:
@@ -50,23 +54,23 @@ namespace qlibs {
                     size_t topIndex;
                 public:
                     sort_stack() : topIndex( 0 ) {}
-                    bool empty( void ) const
+                    bool empty( void ) const noexcept
                     {
                         return 0 == topIndex;
                     }
-                    void push( const T& value )
+                    void push( const T& value ) noexcept
                     {
                         if ( topIndex < N ) {
                             dat[ topIndex++ ] = value;
                         }
                     }
-                    void pop( void )
+                    void pop( void ) noexcept
                     {
                         if ( topIndex > 0 ) {
                             --topIndex;
                         }
                     }
-                    T& top( void )
+                    T& top( void ) noexcept
                     {
                         return dat[ topIndex - 1 ];
                     }
@@ -78,7 +82,7 @@ namespace qlibs {
         * @brief Sorts the given array in the range [first,last) into ascending
         * order.
         * @note The elements are compared using operator<
-        * @remark This algorithm uses a non-recursive variant of the quicksort
+        * @remark This algorithm uses a non-recursive variant of the Quick Sort
         * algorithm.
         * @param[in,out] array The array to be sorted.
         * @param[in] first Initial position of the portion to be sorted
@@ -88,37 +92,35 @@ namespace qlibs {
         template<typename T, size_t n>
         void sort( T ( &array )[ n ],
                        size_t first = 0U,
-                       size_t last = n - 1U )
+                       size_t last = n - 1U ) noexcept
         {
-            struct pair {
-                int first;
-                int second;
-            };
-            algorithm::impl::sort_stack<pair, n> stack;
-            int start = static_cast<int>( first );
-            int end = static_cast<int>( last );
+            if ( n > 1U ) {
+                algorithm::impl::sort_stack<impl::sort_pair, n> stack;
+                int start = static_cast<int>( first );
+                int end = static_cast<int>( last );
 
-            stack.push( { start, end } );
-            while ( !stack.empty() ) {
-                pair indices = stack.top();
-                stack.pop();
-                start = indices.first;
-                end = indices.second;
-                int pivotIndex = start;
-                T pivotValue = array[ end ];
+                stack.push( { start, end } );
+                while ( !stack.empty() ) {
+                    impl::sort_pair indices = stack.top();
+                    stack.pop();
+                    start = indices.first;
+                    end = indices.second;
+                    int pivotIndex = start;
+                    T pivotValue = array[ end ];
 
-                for ( int i = start; i < end; ++i ) {
-                    if ( array[ i ] < pivotValue ) {
-                        algorithm::swap( array[ i ], array[ pivotIndex ] );
-                        ++pivotIndex;
+                    for ( int i = start; i < end; ++i ) {
+                        if ( array[ i ] < pivotValue ) {
+                            algorithm::swap( array[ i ], array[ pivotIndex ] );
+                            ++pivotIndex;
+                        }
                     }
-                }
-                algorithm::swap( array[ pivotIndex ],  array[ end ] );
-                if ( pivotIndex - 1 > start ) {
-                    stack.push( { start, pivotIndex - 1 } );
-                }
-                if ( pivotIndex + 1 < end ) {
-                    stack.push( { pivotIndex + 1, end } );
+                    algorithm::swap( array[ pivotIndex ], array[ end ] );
+                    if ( pivotIndex - 1 > start ) {
+                        stack.push( { start, pivotIndex - 1 } );
+                    }
+                    if ( pivotIndex + 1 < end ) {
+                        stack.push( { pivotIndex + 1, end } );
+                    }
                 }
             }
         }
@@ -126,15 +128,15 @@ namespace qlibs {
         /**
         * @brief Reverses the order of the elements in the range [first,last).
         * @param[in,out] array The array to reverse.
-         * @param[in] first Initial position of the portion to reverse
-         * @param[in] last Final position of the portion to reverse
+        * @param[in] first Initial position of the portion to reverse
+        * @param[in] last Final position of the portion to reverse
         * @return none.
         */
 
         template<typename T, size_t n>
-        void reverse( T ( &array )[ n ],
-                      const size_t first = 0U,
-                      const size_t last = n - 1U ) noexcept
+        inline void reverse( T ( &array )[ n ],
+                             const size_t first = 0U,
+                             const size_t last = n - 1U ) noexcept
         {
             if ( last > first ) {
                 size_t s = first, e = last;
