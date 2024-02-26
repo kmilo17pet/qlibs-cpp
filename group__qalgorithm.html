@@ -141,10 +141,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga314a345d986408fb8cbb7c97e51758a2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2">qlibs::algorithm::swap</a> (T &amp;x, T &amp;y) noexcept</td></tr>
 <tr class="memdesc:ga314a345d986408fb8cbb7c97e51758a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the values of a and b.  <a href="group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2">More...</a><br /></td></tr>
 <tr class="separator:ga314a345d986408fb8cbb7c97e51758a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
-<tr class="memitem:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32">qlibs::algorithm::sort</a> (T(&amp;array)[n], size_t first=0U, size_t last=n - 1U) noexcept</td></tr>
-<tr class="memdesc:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array in the range [first,last) into ascending order.  <a href="group__qalgorithm.html#gaa93da6fe1b6a84391263e9f26f72ef32">More...</a><br /></td></tr>
-<tr class="separator:gaa93da6fe1b6a84391263e9f26f72ef32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48d43ad20c39914aa26753acbcf65fa6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
+<tr class="memitem:ga48d43ad20c39914aa26753acbcf65fa6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga48d43ad20c39914aa26753acbcf65fa6">qlibs::algorithm::sort</a> (T(&amp;array)[n], size_t first=0U, size_t last=n - 1U, bool(*comp)(const T &amp;, const T &amp;)=nullptr) noexcept</td></tr>
+<tr class="memdesc:ga48d43ad20c39914aa26753acbcf65fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the given array in the range [first,last) into ascending order.  <a href="group__qalgorithm.html#ga48d43ad20c39914aa26753acbcf65fa6">More...</a><br /></td></tr>
+<tr class="separator:ga48d43ad20c39914aa26753acbcf65fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
 <tr class="memitem:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6">qlibs::algorithm::reverse</a> (T(&amp;array)[n], const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:ga00e963bd7d6ce54395ece99c9bf4a3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the range [first,last).  <a href="group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6">More...</a><br /></td></tr>
@@ -169,6 +169,14 @@ Functions</h2></td></tr>
 <tr class="memitem:gac6e4117263e36148821eb8d7a88023fb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#gac6e4117263e36148821eb8d7a88023fb">qlibs::algorithm::all_of</a> (T(&amp;array)[n], bool(*pred)(const T), const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:gac6e4117263e36148821eb8d7a88023fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if <em>pred</em> returns <code>true</code> for all the elements in the range [first,last), and <code>false</code> otherwise.  <a href="group__qalgorithm.html#gac6e4117263e36148821eb8d7a88023fb">More...</a><br /></td></tr>
 <tr class="separator:gac6e4117263e36148821eb8d7a88023fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
+<tr class="memitem:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga6ba8b40299364e46f6c2294b2a98eff0">qlibs::algorithm::replace</a> (T(&amp;array)[n], const T &amp;old_value, const T &amp;new_value, const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
+<tr class="memdesc:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements that are equal to old_value (using operator==)  <a href="group__qalgorithm.html#ga6ba8b40299364e46f6c2294b2a98eff0">More...</a><br /></td></tr>
+<tr class="separator:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
+<tr class="memitem:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga7dac8bab9bf1fc343058f37603dc2bd9">qlibs::algorithm::replace_if</a> (T(&amp;array)[n], bool(*pred)(const T &amp;), const T &amp;new_value, const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
+<tr class="memdesc:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements for which predicate <em>pred</em> returns <code>true</code>.  <a href="group__qalgorithm.html#ga7dac8bab9bf1fc343058f37603dc2bd9">More...</a><br /></td></tr>
+<tr class="separator:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7086954197e3a3c60d71d9f4f02287a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
 <tr class="memitem:gaf7086954197e3a3c60d71d9f4f02287a"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#gaf7086954197e3a3c60d71d9f4f02287a">qlibs::algorithm::count_if</a> (T(&amp;array)[n], bool(*pred)(const T), const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:gaf7086954197e3a3c60d71d9f4f02287a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the range [first,last) for which <code>pred</code> is <code>true</code>.  <a href="group__qalgorithm.html#gaf7086954197e3a3c60d71d9f4f02287a">More...</a><br /></td></tr>
@@ -498,6 +506,7 @@ template&lt;typename T , size_t n&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
 
 </div>
 </div>
@@ -688,6 +697,144 @@ template&lt;typename T , size_t n&gt; </div>
 
 </div>
 </div>
+<a id="ga6ba8b40299364e46f6c2294b2a98eff0" name="ga6ba8b40299364e46f6c2294b2a98eff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ba8b40299364e46f6c2294b2a98eff0">&#9670;&nbsp;</a></span>replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t n&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void qlibs::algorithm::replace </td>
+          <td>(</td>
+          <td class="paramtype">T(&amp;)&#160;</td>
+          <td class="paramname"><em>array</em>[n], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>old_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>new_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>first</em> = <code>0U</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>last</em> = <code>n&#160;-&#160;1U</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements that are equal to old_value (using operator==) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array where the check is performed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">old_value</td><td>The value of elements to replace </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_value</td><td>The value to use as replacement </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">first</td><td>Initial position of the portion to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">last</td><td>Final position of the portion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>none</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ga7dac8bab9bf1fc343058f37603dc2bd9" name="ga7dac8bab9bf1fc343058f37603dc2bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dac8bab9bf1fc343058f37603dc2bd9">&#9670;&nbsp;</a></span>replace_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t n&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::algorithm::replace_if </td>
+          <td>(</td>
+          <td class="paramtype">T(&amp;)&#160;</td>
+          <td class="paramname"><em>array</em>[n], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)(const T &amp;)&#160;</td>
+          <td class="paramname"><em>pred</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>new_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>first</em> = <code>0U</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>last</em> = <code>n&#160;-&#160;1U</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements for which predicate <em>pred</em> returns <code>true</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array where the check is performed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pred</td><td>Unary predicate which returns <code>true</code> if the element value should be replaced. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_value</td><td>The value to use as replacement </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">first</td><td>Initial position of the portion to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">last</td><td>Final position of the portion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>none</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ga00e963bd7d6ce54395ece99c9bf4a3e6" name="ga00e963bd7d6ce54395ece99c9bf4a3e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga00e963bd7d6ce54395ece99c9bf4a3e6">&#9670;&nbsp;</a></span>reverse()</h2>
 
@@ -791,8 +938,8 @@ template&lt;typename T , size_t n&gt; </div>
 
 </div>
 </div>
-<a id="gaa93da6fe1b6a84391263e9f26f72ef32" name="gaa93da6fe1b6a84391263e9f26f72ef32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa93da6fe1b6a84391263e9f26f72ef32">&#9670;&nbsp;</a></span>sort()</h2>
+<a id="ga48d43ad20c39914aa26753acbcf65fa6" name="ga48d43ad20c39914aa26753acbcf65fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48d43ad20c39914aa26753acbcf65fa6">&#9670;&nbsp;</a></span>sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -818,7 +965,13 @@ template&lt;typename T , size_t n&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>last</em> = <code>n&#160;-&#160;1U</code>&#160;</td>
+          <td class="paramname"><em>last</em> = <code>n&#160;-&#160;1U</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)(const T &amp;, const T &amp;)&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -841,6 +994,8 @@ template&lt;typename T , size_t n&gt; </div>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">array</td><td>The array to be sorted. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">first</td><td>Initial position of the portion to be sorted </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">last</td><td>Final position of the portion to be sorted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>Comparison function which returns ​<code>true</code> if the first argument is less than (i.e. is ordered before) the second. The signature of the comparison function should be equivalent to the following: bool cmp(const Type1&amp; a, const Type2&amp; b); <div class="fragment"><div class="line"><span class="keywordtype">bool</span> cmp( <span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> T&amp; b );</div>
+</div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>

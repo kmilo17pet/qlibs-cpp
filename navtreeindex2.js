@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b":[2,10,73],
+"group__qffmath.html#ga2c7dbd9a484ea51397a316e1d623eab3":[2,10,82],
 "group__qffmath.html#ga2f496f087abcb40f61d2cd4a79963dbb":[2,10,15],
 "group__qffmath.html#ga2fbf65040896adcbd678d1c5ef4702dd":[2,10,111],
 "group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7":[2,10,33],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "namespacemembers_eval.html":[3,1,5],
 "namespacemembers_f.html":[3,1,0,5],
 "namespacemembers_func.html":[3,1,1],
-"namespacemembers_g.html":[3,1,0,6],
-"namespacemembers_h.html":[3,1,0,7],
-"namespacemembers_i.html":[3,1,0,8]
+"namespacemembers_g.html":[3,1,0,6]
 };
