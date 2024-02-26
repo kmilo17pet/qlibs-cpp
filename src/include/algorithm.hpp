@@ -87,12 +87,20 @@ namespace qlibs {
         * @param[in,out] array The array to be sorted.
         * @param[in] first Initial position of the portion to be sorted
         * @param[in] last Final position of the portion to be sorted
+        * @param[in] comp Comparison function which returns ​@c true if the first
+        * argument is less than (i.e. is ordered before) the second.
+        * The signature of the comparison function should be equivalent to the
+        * following: bool cmp(const Type1& a, const Type2& b);
+        * @code{.c}
+        * bool cmp( const T& a, const T& b );
+        * @endcode
         * @return none.
         */
         template<typename T, size_t n>
         void sort( T ( &array )[ n ],
                        size_t first = 0U,
-                       size_t last = n - 1U ) noexcept
+                       size_t last = n - 1U,
+                       bool (*comp)( const T&, const T&) = nullptr ) noexcept
         {
             if ( n > 1U ) {
                 algorithm::impl::sort_stack<impl::sort_pair, n> stack;
@@ -109,7 +117,13 @@ namespace qlibs {
                     T pivotValue = array[ end ];
 
                     for ( int i = start; i < end; ++i ) {
-                        if ( array[ i ] < pivotValue ) {
+                        if ( nullptr != comp ) {
+                            if ( comp( array[ i ], array[ pivotIndex ] ) ) {
+                                algorithm::swap( array[ i ], array[ pivotIndex ] );
+                                ++pivotIndex;
+                            }
+                        }
+                        else if ( array[ i ] < pivotValue ) {
                             algorithm::swap( array[ i ], array[ pivotIndex ] );
                             ++pivotIndex;
                         }
@@ -132,7 +146,6 @@ namespace qlibs {
         * @param[in] last Final position of the portion to reverse
         * @return none.
         */
-
         template<typename T, size_t n>
         inline void reverse( T ( &array )[ n ],
                              const size_t first = 0U,
@@ -157,7 +170,6 @@ namespace qlibs {
         * @param[in] k Positions to rotate. Sign determines the rotate direction.
         * @return none.
         */
-
         template<typename T, size_t n>
         void rotate( T ( &array )[ n ],
                          const int k = 1 ) noexcept
@@ -190,6 +202,7 @@ namespace qlibs {
          * @param[in] value The value to set all elements to.
          * @param[in] first Initial position of the portion to fill
          * @param[in] last Final position of the portion to fill
+         * @return none.
          */
         template<typename T, size_t n>
         inline void fill( T ( &array )[ n ],
@@ -291,6 +304,59 @@ namespace qlibs {
                 }
             }
             return ret;
+        }
+
+        /**
+        * @brief Replaces all elements satisfying specific criteria with
+        * @a new_value in the range [first, last). Replaces all elements that
+        * are equal to old_value (using operator==)
+        * @param[in] array The array where the check is performed
+        * @param[in] old_value The value of elements to replace
+        * @param[in] new_value The value to use as replacement
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return @c none.
+        */
+        template<typename T, size_t n>
+        inline void replace( T ( &array )[ n ],
+                             const T& old_value,
+                             const T& new_value,
+                             const size_t first = 0U,
+                             const size_t last = n - 1U ) noexcept
+        {
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( old_value == array[ i ] ) {
+                    array[ i ] = new_value;
+                    break;
+                }
+            }
+        }
+
+        /**
+        * @brief Replaces all elements satisfying specific criteria with
+        * @a new_value in the range [first, last). Replaces all elements for
+        * which predicate @a pred returns @c true
+        * @param[in] array The array where the check is performed
+        * @param[in] pred Unary predicate which returns @c true if the element
+        * value should be replaced.
+        * @param[in] new_value The value to use as replacement
+        * @param[in] first Initial position of the portion to check
+        * @param[in] last Final position of the portion to check
+        * @return @c none.
+        */
+        template<typename T, size_t n>
+        inline bool replace_if( T ( &array )[ n ],
+                                bool (*pred)( const T& ),
+                                const T& new_value,
+                                const size_t first = 0U,
+                                const size_t last = n - 1U ) noexcept
+        {
+            for ( size_t i = first; i <= last; ++i ) {
+                if ( pred( array[ i ] ) ) {
+                    array[ i ] = new_value;
+                    break;
+                }
+            }
         }
 
         /**

@@ -246,6 +246,17 @@ bool pidController::removeModelReferenceControl( void ) noexcept
     return retValue;
 }
 /*============================================================================*/
+real_t pidController::error( real_t w, real_t y, real_t k ) noexcept
+{
+    real_t e = ( k*w ) - y;
+
+    if ( ffmath::absf( e ) <= epsilon ) {
+        e = 0.0_re;
+    }
+
+    return e;
+}
+/*============================================================================*/
 real_t pidController::control( const real_t w,
                                const real_t y ) noexcept
 {
@@ -261,14 +272,11 @@ real_t pidController::control( const real_t w,
             ki = ( ki > 0.0_re ) ? -ki : ki;
             kd = ( kd > 0.0_re ) ? -kd : kd;
         }
-        e = w - y;
-        if ( ffmath::absf( e ) <= epsilon ) {
-            e = 0.0_re;
-        }
-        de = derive( ( c*w ) - y , dt, false );
+        e = error( w, y );
+        de = derive( error( w, y, c ) , dt, false );
         ie = integrate( e + u1 , dt );
         D = de + beta*( D - de ); /*derivative filtering*/
-        v  = ( kc*( ( b*w ) - y ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
+        v  = ( kc*error( w, y, b ) ) + ( ki*ie ) + ( kd*D ); /*compute PID action*/
         if ( nullptr != yr ) {
             /*MRAC additive controller using the modified MIT rule*/
             real_t theta = 0.0_re;

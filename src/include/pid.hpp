@@ -119,6 +119,7 @@ namespace qlibs {
             pidMode mode{ pidMode::PID_AUTOMATIC };
             pidDirection dir{ pidDirection::PID_FORWARD };
             bool isInitialized{ false };
+            real_t error( real_t w, real_t y, real_t k = 1.0_re ) noexcept;
             static real_t saturate( real_t x,
                                     const real_t vMin,
                                     const real_t vMax ) noexcept;
