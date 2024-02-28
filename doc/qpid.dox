@@ -292,14 +292,13 @@
 *
 * \f$ \tau(t) = \frac{ ( \mu - 1 )dt }{ ln( |\theta_{1}| ) } + \mu \tau(t-1)  \f$
 *
-* \f$ K_{c}(t) = \alpha \frac{ r_{2} \tau(t) }{ g(t)dt } \f$
+* \f$ K_{c}(t) = \alpha \frac{ 1.35 }{ g(t) } \left ( \frac{ \tau(t) }{ T_d } + 0.185 \right ) \f$
 *
-* \f$ K_{i}(t) = \alpha \frac{ g(t)[ 0.54 + 0.33r_{1} ] }{ r_{2}dt } \f$
+* \f$ K_{i}(t) = K_{c}(t) \frac {\tau(t) + 0.611 T_d}{ 2.5 T_d( \tau(t) + 0.185 T_d)} \f$
 *
-* \f$ K_{c}(t) = \alpha \frac{ K_{c}(t)dt }{ r_{2} } \f$
+* \f$ K_{d}(t) = \frac{ 0.37 K_{c}(t) T_d \tau(t) }{ \tau(t) + 0.185 T_d} \f$
 * </center>
 *
-* where  \f$ r_{1} = dt/\tau(t) \f$  and \f$ r_{2} = 1.35 + 0.25r_{1} \f$
 *
 * and the remaining parameters \f$\mu\f$, \f$\alpha\f$, \f$\lambda\f$ are internally
 * computed for best performance.

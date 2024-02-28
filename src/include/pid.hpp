@@ -219,7 +219,7 @@ namespace qlibs {
 
             /**
             * @brief Set the minimum value considered as error.
-            * @param[in] eps The minimal error value.
+            * @param[in] eps The minimal error value ( eps > 0 ).
             * @return @c true on success, otherwise return @c false.
             */
             bool setEpsilon( const real_t eps ) noexcept;
