@@ -355,7 +355,9 @@ namespace qlibs {
                 friend class instance;
         };
 
+        /*! @cond  */
         #define FIS_RULE_ITEM_SIZE  1
+        /*! @endcond  */
 
         #if ( FIS_RULE_ITEM_SIZE == 1 )
             /**

@@ -35,9 +35,9 @@ namespace qlibs {
     * @brief All the possible natures of a LTI system.
     */
     enum ltisysType {
-        LTISYS_TYPE_UNKNOWN = 0,
-        LTISYS_TYPE_CONTINUOUS,
-        LTISYS_TYPE_DISCRETE,
+        LTISYS_TYPE_UNKNOWN = 0,    /*!< Unknown type of system */
+        LTISYS_TYPE_CONTINUOUS,     /*!< Continuous-time system*/
+        LTISYS_TYPE_DISCRETE,       /*!< Discrete-time controller */
     };
 
     /**
@@ -79,7 +79,15 @@ namespace qlibs {
         }
     };
 
-
+    /**
+    * @brief Computes the number of discrete delays required for a specified
+    * amount of time using a defined time-step.
+    * @see transportDelay
+    * @param[in] Time The amount of time to delay
+    * @param[in] dt The time step
+    * @return The number of discrete delays required to delay @a Time seconds
+    * using the time step @a dt
+    */
     constexpr size_t delayFromTime( const real_t Time, const real_t dt )
     {
         return static_cast<size_t>( ( Time/dt ) + 0.5_re );
@@ -88,6 +96,7 @@ namespace qlibs {
     /**
     * @brief Delays the input by a specified amount of time. You can use this
     * class to simulate a time delay.
+    * @see delayFromTime
     * @tparam numberOfDelay The number of discrete delays to be used. Use the
     * delayFromTime() function to determine the number of discrete delays required
     * for a specified amount of time.

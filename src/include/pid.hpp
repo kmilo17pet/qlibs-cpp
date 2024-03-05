@@ -34,10 +34,10 @@ namespace qlibs {
     * @brief Enumeration class with the operational modes for the PID controller
     */
     enum class pidType {
-        PID_TYPE_P,
-        PID_TYPE_PI,
-        PID_TYPE_PD,
-        PID_TYPE_PID,
+        PID_TYPE_P,     /*!< Proportional controller */
+        PID_TYPE_PI,    /*!< Proportional-Integral controller */
+        PID_TYPE_PD,    /*!< Proportional-Derivative controller */
+        PID_TYPE_PID,   /*!< Proportional-Integral-Derivative controller */
     };
 
     /**
