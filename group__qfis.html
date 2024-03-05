@@ -162,8 +162,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga9985d3e78c561854f0db2450bbdf9cf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga9985d3e78c561854f0db2450bbdf9cf1">FIS_RULE_ITEM_SIZE</a></td></tr>
-<tr class="separator:ga9985d3e78c561854f0db2450bbdf9cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7a664229ebde439af53621e565bbe02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></td></tr>
 <tr class="memdesc:gac7a664229ebde439af53621e565bbe02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a Fuzzy rule set. The <a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> statement is used to declare the starting point of a FIS rule set. It should be placed at the start of the rules enumeration. <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> declare the end of the FIS rule set.  <a href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">More...</a><br /></td></tr>
 <tr class="separator:gac7a664229ebde439af53621e565bbe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,10 +192,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga57d9a3356f255b6d2fc446e924bd3555"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">qlibs::fis::rules</a> = int8_t</td></tr>
-<tr class="memdesc:ga57d9a3356f255b6d2fc446e924bd3555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition to instantiate a set of fuzzy rules.  <a href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">More...</a><br /></td></tr>
-<tr class="separator:ga57d9a3356f255b6d2fc446e924bd3555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa555b2851a51ee1dbf32df8ee5e06492"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a> = <a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">rules</a></td></tr>
+<tr class="memitem:ga17efc32c2ffcdb790508608132279b8d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">qlibs::fis::rules</a> = int16_t</td></tr>
+<tr class="memdesc:ga17efc32c2ffcdb790508608132279b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition to instantiate a set of fuzzy rules.  <a href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">More...</a><br /></td></tr>
+<tr class="separator:ga17efc32c2ffcdb790508608132279b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa555b2851a51ee1dbf32df8ee5e06492"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a> = <a class="el" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">rules</a></td></tr>
 <tr class="memdesc:gaa555b2851a51ee1dbf32df8ee5e06492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to define an enum of fis tags.  <a href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">More...</a><br /></td></tr>
 <tr class="separator:gaa555b2851a51ee1dbf32df8ee5e06492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4eee7f1314bbe9839d043da373d92b91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qfis.html#ga4eee7f1314bbe9839d043da373d92b91">qlibs::fis::deFuzzFunction</a> = <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>(*)(<a class="el" href="classqlibs_1_1fis_1_1output.html">output</a> *const o, const deFuzzState stage)</td></tr>
@@ -324,20 +322,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga9985d3e78c561854f0db2450bbdf9cf1" name="ga9985d3e78c561854f0db2450bbdf9cf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9985d3e78c561854f0db2450bbdf9cf1">&#9670;&nbsp;</a></span>FIS_RULE_ITEM_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FIS_RULE_ITEM_SIZE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="gac7a664229ebde439af53621e565bbe02" name="gac7a664229ebde439af53621e565bbe02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac7a664229ebde439af53621e565bbe02">&#9670;&nbsp;</a></span>FIS_RULES_BEGIN</h2>
 
@@ -353,14 +337,14 @@ Enumerations</h2></td></tr>
 <p>Start a Fuzzy rule set. The <a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> statement is used to declare the starting point of a FIS rule set. It should be placed at the start of the rules enumeration. <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> declare the end of the FIS rule set. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Only one segment is allowed inside a fuzzy rule set. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>It must always be used together with a matching <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> statement. Example: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">fis::rules</a> Rules[] = {</div>
+<dl class="section note"><dt>Note</dt><dd>It must always be used together with a matching <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> statement. Example: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">fis::rules</a> Rules[] = {</div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__qfis_html_ga271cfbb53fb0266b8faa11bf1cbdd417"><div class="ttname"><a href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div><div class="ttdeci">#define FIS_RULES_END</div><div class="ttdoc">Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:474</div></div>
-<div class="ttc" id="agroup__qfis_html_ga57d9a3356f255b6d2fc446e924bd3555"><div class="ttname"><a href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">qlibs::fis::rules</a></div><div class="ttdeci">int8_t rules</div><div class="ttdoc">Type definition to instantiate a set of fuzzy rules.</div><div class="ttdef"><b>Definition:</b> fis.hpp:380</div></div>
-<div class="ttc" id="agroup__qfis_html_gac7a664229ebde439af53621e565bbe02"><div class="ttname"><a href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div><div class="ttdeci">#define FIS_RULES_BEGIN</div><div class="ttdoc">Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:455</div></div>
+<div class="ttc" id="agroup__qfis_html_ga17efc32c2ffcdb790508608132279b8d"><div class="ttname"><a href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">qlibs::fis::rules</a></div><div class="ttdeci">int16_t rules</div><div class="ttdoc">Type definition to instantiate a set of fuzzy rules.</div><div class="ttdef"><b>Definition:</b> fis.hpp:406</div></div>
+<div class="ttc" id="agroup__qfis_html_ga271cfbb53fb0266b8faa11bf1cbdd417"><div class="ttname"><a href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div><div class="ttdeci">#define FIS_RULES_END</div><div class="ttdoc">Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:476</div></div>
+<div class="ttc" id="agroup__qfis_html_gac7a664229ebde439af53621e565bbe02"><div class="ttname"><a href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div><div class="ttdeci">#define FIS_RULES_BEGIN</div><div class="ttdoc">Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...</div><div class="ttdef"><b>Definition:</b> fis.hpp:457</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -380,7 +364,7 @@ Enumerations</h2></td></tr>
 <p>Ends a Fuzzy rule set. The <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a> statement is used to finalize the declaration of a FIS rule set. It should be placed at the end of the rules enumeration. <a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> declare the start point of the FIS rule set. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Only one segment is allowed inside a fuzzy rule set. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>It must always be used together with a matching <a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> statement. Example: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">fis::rules</a> Rules[] = {</div>
+<dl class="section note"><dt>Note</dt><dd>It must always be used together with a matching <a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a> statement. Example: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">fis::rules</a> Rules[] = {</div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div>
@@ -498,14 +482,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga57d9a3356f255b6d2fc446e924bd3555" name="ga57d9a3356f255b6d2fc446e924bd3555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga57d9a3356f255b6d2fc446e924bd3555">&#9670;&nbsp;</a></span>rules</h2>
+<a id="ga17efc32c2ffcdb790508608132279b8d" name="ga17efc32c2ffcdb790508608132279b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17efc32c2ffcdb790508608132279b8d">&#9670;&nbsp;</a></span>rules</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">qlibs::fis::rules</a> = typedef int8_t</td>
+          <td class="memname">using <a class="el" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">qlibs::fis::rules</a> = typedef int16_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -513,18 +497,18 @@ Enumerations</h2></td></tr>
 <p>Type definition to instantiate a set of fuzzy rules. </p>
 <p >Rules are defined by combining I/O and membership function tags with the following statements:</p>
 <p ><a class="el" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02" title="Start a Fuzzy rule set. The FIS_RULES_BEGIN statement is used to declare the starting point of a FIS ...">FIS_RULES_BEGIN</a>, <a class="el" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb" title="Rule statement to begin a rule sentence.">IF</a>, <a class="el" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06" title="Rule statement to represent a premise.">IS</a>, <a class="el" href="group__qfis.html#gab3262baea101d64a3d11969b9dd2e78d" title="Rule statement to represent a negated premise.">IS_NOT</a>, <a class="el" href="group__qfis.html#gacd1b97556dfbbac61063a63031d2f91d" title="Rule statement to represent the AND connector.">AND</a>, <a class="el" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991" title="Rule statement to represent the OR connector.">OR</a>, <a class="el" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac" title="Rule statement to represent the implication.">THEN</a>, <a class="el" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f" title="Rule statement to end a rule sentence.">END</a> and <a class="el" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417" title="Ends a Fuzzy rule set. The FIS_RULES_END statement is used to finalize the declaration of a FIS rule ...">FIS_RULES_END</a></p>
-<p >Example: </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">fis::rules</a> Rules[] = {</div>
+<p >Example: </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">fis::rules</a> Rules[] = {</div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line">        <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_poor <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_rancid <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_cheap <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">        <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_good <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_average <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">        <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_excellent <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_delicious <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_generous <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417">FIS_RULES_END</a></div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__qfis_html_ga29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdoc">Rule statement to end a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:488</div></div>
-<div class="ttc" id="agroup__qfis_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdoc">Rule statement to represent the OR connector.</div><div class="ttdef"><b>Definition:</b> fis.hpp:480</div></div>
-<div class="ttc" id="agroup__qfis_html_gac138c68a0709c57bc5f7567abc1558eb"><div class="ttname"><a href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a></div><div class="ttdeci">#define IF</div><div class="ttdoc">Rule statement to begin a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:476</div></div>
-<div class="ttc" id="agroup__qfis_html_gad28e1b10e158ae134bb6fa3bb2f34a06"><div class="ttname"><a href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a></div><div class="ttdeci">#define IS</div><div class="ttdoc">Rule statement to represent a premise.</div><div class="ttdef"><b>Definition:</b> fis.hpp:484</div></div>
-<div class="ttc" id="agroup__qfis_html_gad9884c43f4f50a5852711a614f2343ac"><div class="ttname"><a href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a></div><div class="ttdeci">#define THEN</div><div class="ttdoc">Rule statement to represent the implication.</div><div class="ttdef"><b>Definition:</b> fis.hpp:482</div></div>
+<div class="ttc" id="agroup__qfis_html_ga29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdoc">Rule statement to end a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:490</div></div>
+<div class="ttc" id="agroup__qfis_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdoc">Rule statement to represent the OR connector.</div><div class="ttdef"><b>Definition:</b> fis.hpp:482</div></div>
+<div class="ttc" id="agroup__qfis_html_gac138c68a0709c57bc5f7567abc1558eb"><div class="ttname"><a href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a></div><div class="ttdeci">#define IF</div><div class="ttdoc">Rule statement to begin a rule sentence.</div><div class="ttdef"><b>Definition:</b> fis.hpp:478</div></div>
+<div class="ttc" id="agroup__qfis_html_gad28e1b10e158ae134bb6fa3bb2f34a06"><div class="ttname"><a href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a></div><div class="ttdeci">#define IS</div><div class="ttdoc">Rule statement to represent a premise.</div><div class="ttdef"><b>Definition:</b> fis.hpp:486</div></div>
+<div class="ttc" id="agroup__qfis_html_gad9884c43f4f50a5852711a614f2343ac"><div class="ttname"><a href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a></div><div class="ttdeci">#define THEN</div><div class="ttdoc">Rule statement to represent the implication.</div><div class="ttdef"><b>Definition:</b> fis.hpp:484</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -535,14 +519,14 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a> = typedef <a class="el" href="group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555">rules</a></td>
+          <td class="memname">using <a class="el" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a> = typedef <a class="el" href="group__qfis.html#ga17efc32c2ffcdb790508608132279b8d">rules</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Used to define an enum of fis tags. </p>
 <p >Tags for I/O and set/membership functions should be defined within enums of this type Example: </p><div class="fragment"><div class="line">enum : <a class="code hl_typedef" href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">fis::tag</a> { tag1, tag2, tag3 };</div>
-<div class="ttc" id="agroup__qfis_html_gaa555b2851a51ee1dbf32df8ee5e06492"><div class="ttname"><a href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a></div><div class="ttdeci">rules tag</div><div class="ttdoc">Used to define an enum of fis tags.</div><div class="ttdef"><b>Definition:</b> fis.hpp:419</div></div>
+<div class="ttc" id="agroup__qfis_html_gaa555b2851a51ee1dbf32df8ee5e06492"><div class="ttname"><a href="group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492">qlibs::fis::tag</a></div><div class="ttdeci">rules tag</div><div class="ttdoc">Used to define an enum of fis tags.</div><div class="ttdef"><b>Definition:</b> fis.hpp:421</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

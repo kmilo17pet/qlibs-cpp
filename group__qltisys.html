@@ -186,6 +186,7 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga56a12ae5105ad3774190994aec899a2d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d">qlibs::delayFromTime</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Time, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt)</td></tr>
+<tr class="memdesc:ga56a12ae5105ad3774190994aec899a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of discrete delays required for a specified amount of time using a defined time-step.  <a href="group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d">More...</a><br /></td></tr>
 <tr class="separator:ga56a12ae5105ad3774190994aec899a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -267,9 +268,12 @@ template&lt;size_t order&gt; </div>
 
 <p>All the possible natures of a LTI system. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18" name="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18"></a>LTISYS_TYPE_UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd" name="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd"></a>LTISYS_TYPE_CONTINUOUS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b" name="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b"></a>LTISYS_TYPE_DISCRETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18" name="gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18"></a>LTISYS_TYPE_UNKNOWN&#160;</td><td class="fielddoc"><p >Unknown type of system </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd" name="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd"></a>LTISYS_TYPE_CONTINUOUS&#160;</td><td class="fielddoc"><p >Continuous-time system </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b" name="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b"></a>LTISYS_TYPE_DISCRETE&#160;</td><td class="fielddoc"><p >Discrete-time controller </p>
+</td></tr>
 </table>
 
 </div>
@@ -308,6 +312,17 @@ template&lt;size_t order&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Computes the number of discrete delays required for a specified amount of time using a defined time-step. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classqlibs_1_1transport_delay.html" title="Delays the input by a specified amount of time. You can use this class to simulate a time delay.">transportDelay</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Time</td><td>The amount of time to delay </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>The time step </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of discrete delays required to delay <em>Time</em> seconds using the time step <em>dt</em> </dd></dl>
 
 </div>
 </div>

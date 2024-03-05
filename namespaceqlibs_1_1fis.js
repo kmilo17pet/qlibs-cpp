@@ -9,7 +9,7 @@ var namespaceqlibs_1_1fis =
     [ "system", "classqlibs_1_1fis_1_1system.html", "classqlibs_1_1fis_1_1system" ],
     [ "deFuzzFunction", "group__qfis.html#ga4eee7f1314bbe9839d043da373d92b91", null ],
     [ "fuzzyOperator", "group__qfis.html#ga1e9f4c8fa936b5c4031cb28f679b462b", null ],
-    [ "rules", "group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555", null ],
+    [ "rules", "group__qfis.html#ga17efc32c2ffcdb790508608132279b8d", null ],
     [ "tag", "group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492", null ],
     [ "deFuzzMethod", "group__qfis.html#gaaa87572cbd0f5fda216c13ce2e68ce26", [
       [ "centroid", "group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a7682c34d8a2e8186a0909712007ba769", null ],

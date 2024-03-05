@@ -81,7 +81,6 @@ var group__qfis =
     ] ],
     [ "AND", "group__qfis.html#gacd1b97556dfbbac61063a63031d2f91d", null ],
     [ "END", "group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f", null ],
-    [ "FIS_RULE_ITEM_SIZE", "group__qfis.html#ga9985d3e78c561854f0db2450bbdf9cf1", null ],
     [ "FIS_RULES_BEGIN", "group__qfis.html#gac7a664229ebde439af53621e565bbe02", null ],
     [ "FIS_RULES_END", "group__qfis.html#ga271cfbb53fb0266b8faa11bf1cbdd417", null ],
     [ "IF", "group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb", null ],
@@ -91,7 +90,7 @@ var group__qfis =
     [ "THEN", "group__qfis.html#gad9884c43f4f50a5852711a614f2343ac", null ],
     [ "qlibs::fis::deFuzzFunction", "group__qfis.html#ga4eee7f1314bbe9839d043da373d92b91", null ],
     [ "qlibs::fis::fuzzyOperator", "group__qfis.html#ga1e9f4c8fa936b5c4031cb28f679b462b", null ],
-    [ "qlibs::fis::rules", "group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555", null ],
+    [ "qlibs::fis::rules", "group__qfis.html#ga17efc32c2ffcdb790508608132279b8d", null ],
     [ "qlibs::fis::tag", "group__qfis.html#gaa555b2851a51ee1dbf32df8ee5e06492", null ],
     [ "qlibs::fis::deFuzzMethod", "group__qfis.html#gaaa87572cbd0f5fda216c13ce2e68ce26", [
       [ "qlibs::fis::centroid", "group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a7682c34d8a2e8186a0909712007ba769", null ],

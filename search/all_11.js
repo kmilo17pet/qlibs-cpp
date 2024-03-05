@@ -26,5 +26,5 @@ var searchData=
   ['rotate_23',['rotate',['../group__qalgorithm.html#ga7a0b2f4ddcfac8cd3ade0705e5dc764f',1,'qlibs::algorithm']]],
   ['rounding_24',['rounding',['../group__qffmath.html#gad7bc3aac4bac1f2e6745310970aceec8',1,'qlibs::ffmath::rounding()'],['../classqlibs_1_1fp16.html#a3d8757dfcfa81d9ceaae80d9e2c39e83',1,'qlibs::fp16::rounding()']]],
   ['rsqrt_25',['rSqrt',['../group__qffmath.html#ga26f6c54dfaf12e61980d1caba448911b',1,'qlibs::ffmath']]],
-  ['rules_26',['rules',['../group__qfis.html#ga57d9a3356f255b6d2fc446e924bd3555',1,'qlibs::fis']]]
+  ['rules_26',['rules',['../group__qfis.html#ga17efc32c2ffcdb790508608132279b8d',1,'qlibs::fis']]]
 ];
