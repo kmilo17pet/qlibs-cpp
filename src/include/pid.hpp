@@ -75,29 +75,58 @@ namespace qlibs {
             static const uint32_t UNDEFINED;
         protected:
             /*! @cond  */
-            real_t p00{ 1.0_re };
-            real_t p01{ 0.0_re };
-            real_t p10{ 0.0_re };
-            real_t p11{ 1.0_re };   /*covariance values*/
-            real_t b1{ 0.1_re };
-            real_t a1{ 0.9_re };   /*estimation  values*/
-            real_t uk{ 0.0_re };
-            real_t yk{ 0.0_re };      /*process I/O measurements*/
-            real_t l{ 0.9898_re }; /*memory factor [ 0.9 < l < 1 ]*/
-            real_t il{ 1.0_re };
-            real_t k{ 1.0_re };
-            real_t tao{ 1.0_re };      /*process metrics*/
-            real_t mu{ 0.95_re };
-            real_t speed{ 0.25_re };   /*fine adjustments  [ 0 < mu < speed ] [ 0 < speed < 1 ]*/
-            uint32_t it{ UNDEFINED };/*enable time*/
+            real_t p00{ 1.0_re };       /*covariance value*/
+            real_t p01{ 0.0_re };       /*covariance value*/
+            real_t p10{ 0.0_re };       /*covariance value*/
+            real_t p11{ 1.0_re };       /*covariance value*/
+            real_t b1{ 0.1_re };        /*estimation value*/
+            real_t a1{ 0.9_re };        /*estimation value*/
+            real_t uk{ 0.0_re };        /*process input*/
+            real_t yk{ 0.0_re };        /*process output*/
+            real_t l{ 0.9898_re };      /*memory factor [ 0.9 < l < 1 ]*/
+            real_t k{ 1.0_re };         /*process static gain*/
+            real_t tao{ 1.0_re };       /*process time constant*/
+            real_t mu{ 0.95_re };       /*variation attenuation*/
+            real_t speed{ 0.25_re };    /*final controller speed*/
+            uint32_t it{ UNDEFINED };   /*enable time*/
             static bool isValidValue( const real_t x ) noexcept;
             pidType type{ pidType::PID_TYPE_PI };
-            /*! @endcond  */
-        public:
-            pidAutoTuning() = default;
+            void initialize( const pidGains current,
+                             const real_t dt ) noexcept;
+            inline void enable( const uint32_t tEnable ) noexcept
+            {
+                it = ( 0UL == tEnable ) ? pidAutoTuning::UNDEFINED : tEnable;
+            }
+            inline bool isComplete( void ) const noexcept
+            {
+                return ( ( 0UL == it ) && ( it != pidAutoTuning::UNDEFINED ) );
+            }
+            inline void setMemoryFactor( const real_t lambda ) noexcept
+            {
+                l = lambda;
+            }
+            inline void setMomentum( const real_t Mu ) noexcept
+            {
+                mu = Mu;
+            }
+            inline void setEstimatedControllerSpeed( const real_t alpha ) noexcept
+            {
+                speed = alpha;
+            }
+            inline void setEstimatedControllerType( const pidType t ) noexcept
+            {
+                type = t;
+            }
+            static inline bool isValidParam( const real_t p ) noexcept
+            {
+                return ( p > 0.0_re ) && ( p <= 1.0_re );
+            }
             bool step( const real_t u,
                        const real_t y,
                        const real_t dt ) noexcept;
+            /*! @endcond  */
+        public:
+            pidAutoTuning() = default;
             pidGains getEstimates( void ) const noexcept;
     };
 
@@ -107,7 +136,6 @@ namespace qlibs {
     */
     class pidController : public pidGains, public nState, private nonCopyable {
         private:
-            //real_t Kc, Ki, Kd;
             real_t b, c, sat_Min, sat_Max, epsilon, kw, kt, D, u1, beta, uSat;
             real_t dt{ 1.0_re };
             real_t m, mInput;
@@ -226,10 +254,18 @@ namespace qlibs {
 
             /**
             * @brief Set the tuning parameter for the derivative filter.
-            * @param[in] Beta The tuning parameter. [ 0 < Beta < 1 ]
+            * @param[in] Beta The tuning parameter. [ 0 <= Beta < 1 ]
             * @return @c true on success, otherwise return @c false.
             */
             bool setDerivativeFilter( const real_t Beta ) noexcept;
+
+            /**
+            * @brief Set the time constant for the derivative filter.
+            * @note
+            * @param[in] Tf Derivative filter time constant [ Tf >= 0 ]
+            * @return @c true on success, otherwise return @c false.
+            */
+            bool setDerivativeFilterTimeConstant( const real_t Tf ) noexcept;
 
             /**
             * @brief Change the controller operational mode.

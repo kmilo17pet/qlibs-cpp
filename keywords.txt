@@ -37,6 +37,8 @@ continuousStates	KEYWORD1
 discreteStates	KEYWORD1
 continuousTF	KEYWORD1
 discreteTF	KEYWORD1
+transportDelay	KEYWORD1
+discreteDelay	KEYWORD1
 ltisys	KEYWORD1
 discreteSystem	KEYWORD1
 continuousSystem	KEYWORD1

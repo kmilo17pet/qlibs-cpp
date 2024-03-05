@@ -182,6 +182,7 @@ void test_fis( void )
     };
     real_t rulesStrength[ 3 ];
 
+
     tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rulesStrength );
     tipper.setupInput( service, 0.0f, 1.0f );
     tipper.setupInput( food, 0.0f, 10.0f );
@@ -259,15 +260,22 @@ void test_crc( void )
 
 void test_ltisys( void )
 {
+    constexpr real_t dt = 0.05f;
     cout << "LTISYS TEST"<< endl;
     cout << "continuousSystem"<< endl;
     continuousTF<3> ctf= {
         { 0.0f, 2.0f, 3.0f, 6.0f },
         { 1.0f, 6.0f, 11.0f, 16.0f },
     };
-    continuousSystem gc( ctf, 0.01f );
-    for ( int i = 0; i < 1000; i++ ) {
-        cout << gc.excite( 1.0f ) << endl;
+    transportDelay<delayFromTime(1.3f, dt )> delay;
+
+
+    continuousSystem gc( ctf, dt );
+
+    real_t t = 0.0;
+    for ( int i = 0; i < 100; i++ ) {
+        cout << t << "    "<< delay( gc.excite( 1.0f ) ) << endl;
+        t += dt;
     }
 
     cout << "discreteSystem"<< endl;
@@ -279,8 +287,10 @@ void test_ltisys( void )
     real_t den[] = { 1.0f, -0.85f, 0.02f };
     discreteStates<3> xd= { 0.0f, 0.0f, 0.0f };
     discreteSystem gd( num, den, xd );
+
     for ( int i = 0; i < 20; i++ ) {
-        cout << gd.excite( 1.0f ) << endl;
+        cout <<  gd.excite( 1.0f ) << endl;
+
     }
 
 }
@@ -526,8 +536,6 @@ bool operator<(const thing& lhs, const thing& rhs) {
 
 int main()
 {
-
-
     thing things[] = {
         {1,0},
         {-2,5},
@@ -557,11 +565,26 @@ int main()
     for ( auto i : things ) {
         std::cout <<  i.a << " , "<< i.b << std::endl;
     }
+    std::cout << "fill "<< std::endl;
+    algorithm::fill( things, {0 ,0}, 1,2 );
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
 
-    return 0;
+    std::cout << "foreach "<< std::endl;
+    algorithm::for_each( things, +[]( thing& t) { t.a++; } );
+
+    for ( auto i : things ) {
+        std::cout <<  i.a << " , "<< i.b << std::endl;
+    }
+
+    algorithm::any_of( things, +[](const thing x ) -> bool {
+        return x.a < 3;
+    } );
+
+    //return 0;
     test_crc();
     test_fp16();
-    test_ltisys();
     test_tdl();
 
     test_mat();
@@ -570,6 +593,8 @@ int main()
     test_fis2();
     test_fis3();
     test_ffmath();
+
+test_ltisys();
 
     return 0;
 }

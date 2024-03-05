@@ -57,7 +57,7 @@
 * As shown above, the derivative term \f$f_{d}(t)\f$ is the output of a
 * low-pass filter that takes the raw derivative as input.
 *
-* <center> \f$ f_{d}(t) = \text{LPF}[ \frac{de_{c}(t)}{dt} ]\f$  </center>
+* <center> \f$ f_{d}(t) = \text{LPF}[ \frac{de_{c}(t)}{dt} ] = de_c(t) + e^{-dt/T_f} \left [ f_d(t-1) - de_c(t)\right  ]\f$  </center>
 *
 * and \f$ c(t)\f$, the saturation feedback for the anti-windup, with \f$K_{w}\f$
 * as the adjustment parameter.
@@ -140,7 +140,7 @@
 *      real_t processMeasurement;
 *      real_t controlOutput;
 *      for ( ;; ) {
-*          processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
+*          processMeasurement = BSP_ScaletoSpeed( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );
 *          controlOutput = controller->control( SetPoint, processMeasurement );
 *          BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );
 *          vTaskDelay( dt / portTICK_RATE_MS) ;
