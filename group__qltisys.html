@@ -129,7 +129,8 @@ $(document).ready(function(){initNavTree('group__qltisys.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LTI Systems</div></div>
 </div><!--header-->
 <div class="contents">
@@ -141,6 +142,9 @@ $(document).ready(function(){initNavTree('group__qltisys.html',''); initResizabl
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF&lt; order &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continuous transfer function for easy LTI system definition.  <a href="structqlibs_1_1continuous_t_f.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1transport_delay.html">qlibs::transportDelay&lt; numberOfDelays &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of time. You can use this class to simulate a time delay.  <a href="classqlibs_1_1transport_delay.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1discrete_t_f.html">qlibs::discreteTF&lt; NB, NA &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete transfer function for easy LTI system definition.  <a href="structqlibs_1_1discrete_t_f.html#details">More...</a><br /></td></tr>
@@ -165,6 +169,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">qlibs::discreteStates</a> = <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>[order]</td></tr>
 <tr class="memdesc:ga1d7270ee26fea50834f73cab840fb2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify discrete states.  <a href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">More...</a><br /></td></tr>
 <tr class="separator:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memTemplParams" colspan="2">template&lt;size_t delay&gt; </td></tr>
+<tr class="memitem:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce">qlibs::discreteDelay</a> = <a class="el" href="classqlibs_1_1transport_delay.html">transportDelay</a>&lt; delay &gt;</td></tr>
+<tr class="memdesc:gaf175ceeca1335992ecd9ccff4c517dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of samples. You can use this class to simulate a discrete time delay.  <a href="group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce">More...</a><br /></td></tr>
+<tr class="separator:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -174,6 +182,11 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the possible natures of a LTI system.  <a href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">More...</a><br /></td></tr>
 <tr class="separator:ga07d3d07a42c49b5cb0850f77ad392faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga56a12ae5105ad3774190994aec899a2d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d">qlibs::delayFromTime</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Time, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt)</td></tr>
+<tr class="separator:ga56a12ae5105ad3774190994aec899a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Classes for recursive evaluation of LTI systems defined by transfer functions. </p>
@@ -194,6 +207,30 @@ template&lt;size_t order&gt; </div>
 </div><div class="memdoc">
 
 <p>Type to specify continuous states. </p>
+
+</div>
+</div>
+<a id="gaf175ceeca1335992ecd9ccff4c517dce" name="gaf175ceeca1335992ecd9ccff4c517dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf175ceeca1335992ecd9ccff4c517dce">&#9670;&nbsp;</a></span>discreteDelay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t delay&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce">qlibs::discreteDelay</a> = typedef <a class="el" href="classqlibs_1_1transport_delay.html">transportDelay</a>&lt;delay&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delays the input by a specified amount of samples. You can use this class to simulate a discrete time delay. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Delay</td><td>The number of samples to delay the signal. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -234,6 +271,43 @@ template&lt;size_t order&gt; </div>
 <tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd" name="gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd"></a>LTISYS_TYPE_CONTINUOUS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b" name="gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b"></a>LTISYS_TYPE_DISCRETE&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga56a12ae5105ad3774190994aec899a2d" name="ga56a12ae5105ad3774190994aec899a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56a12ae5105ad3774190994aec899a2d">&#9670;&nbsp;</a></span>delayFromTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t qlibs::delayFromTime </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

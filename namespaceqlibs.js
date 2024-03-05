@@ -46,8 +46,10 @@ var namespaceqlibs =
     [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
+    [ "transportDelay", "classqlibs_1_1transport_delay.html", "classqlibs_1_1transport_delay" ],
     [ "bitArea", "group__qbitfield.html#ga0605a418c230b31507a31411955b4531", null ],
     [ "continuousStates", "group__qltisys.html#ga133a514a9c835937ba3d6e92fadccaad", null ],
+    [ "discreteDelay", "group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce", null ],
     [ "discreteStates", "group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1", null ],
     [ "real_t", "namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c", null ],
     [ "crcMode", "group__qcrc.html#ga5b194c56447214ee3207b107e549cad5", [
@@ -103,6 +105,7 @@ var namespaceqlibs =
       [ "PID_TYPE_PD", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61", null ],
       [ "PID_TYPE_PID", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6", null ]
     ] ],
+    [ "delayFromTime", "group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],
     [ "FP_2_PI", "group__qfp16.html#ga805c4ff0b0f82e1b8f140d54519b46dc", null ],
     [ "FP_2_SQRTPI", "group__qfp16.html#ga9da1ac6525314bf8d3524ff938dc7e75", null ],

@@ -9,6 +9,7 @@ var searchData=
   ['tofloat_6',['toFloat',['../classqlibs_1_1fp16.html#a394ad7eb2355e1f9a6de1365b1c656f7',1,'qlibs::fp16']]],
   ['togglebit_7',['toggleBit',['../classqlibs_1_1bitfield.html#abc994e1433e4e6ebc2f81c199c334f72',1,'qlibs::bitfield']]],
   ['toint_8',['toInt',['../classqlibs_1_1fp16.html#a769a279ee71fc9b768611b394fe7ab64',1,'qlibs::fp16']]],
-  ['trunc_9',['trunc',['../group__qffmath.html#ga8fb7108960e6278afba8f4a59469436d',1,'qlibs::ffmath']]],
-  ['twice_5fpi_10',['twice_pi',['../structqlibs_1_1ffmath_1_1numbers.html#af579e6a0a1415309d5a241f82dbd876e',1,'qlibs::ffmath::numbers']]]
+  ['transportdelay_9',['transportDelay',['../classqlibs_1_1transport_delay.html#a59c44b8a460574c469f841f3c4bf384a',1,'qlibs::transportDelay']]],
+  ['trunc_10',['trunc',['../group__qffmath.html#ga8fb7108960e6278afba8f4a59469436d',1,'qlibs::ffmath']]],
+  ['twice_5fpi_11',['twice_pi',['../structqlibs_1_1ffmath_1_1numbers.html#af579e6a0a1415309d5a241f82dbd876e',1,'qlibs::ffmath::numbers']]]
 ];

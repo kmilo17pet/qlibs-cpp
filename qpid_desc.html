@@ -163,7 +163,7 @@ PID Controller approach</h1>
 <center> \( v(t)= \psi(t)r(t) + [ K_{c}e_{b}(t) + K_{i}\int [ e(t) + c(t-1) ]dt + K_{d}f_{d}(t) ] \)</center><center> \( u(t) = \text{Sat}[ v(t), u_{min}, u_{max} ]\)</center><center></center><p> where \(r(t)\) is the set-point, \(y(t)\) the process output, \( e(t) \) its the error \(K_{c},K_{i},K_{d}\) the PID gains respectively and \(u(t)\) the control action.</p>
 <p >\(\psi(t)\) is the adaptive gain from the additive MRAC (later explained)</p>
 <p >As shown above, the derivative term \(f_{d}(t)\) is the output of a low-pass filter that takes the raw derivative as input.</p>
-<center> \( f_{d}(t) = \text{LPF}[ \frac{de_{c}(t)}{dt} ]\) </center><p >and \( c(t)\), the saturation feedback for the anti-windup, with \(K_{w}\) as the adjustment parameter.</p>
+<center> \( f_{d}(t) = \text{LPF}[ \frac{de_{c}(t)}{dt} ] = de_c(t) + e^{-dt/T_f} \left [ f_d(t-1) - de_c(t)\right ]\) </center><p >and \( c(t)\), the saturation feedback for the anti-windup, with \(K_{w}\) as the adjustment parameter.</p>
 <center> \( c(t) = K_{w}[ u(t) - v(t) ] \) </center><center>  
 <!DOCTYPE html>
 <html>
@@ -212,7 +212,7 @@ Example: Speed control using a PID controller:</h2>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> processMeasurement;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> controlOutput;</div>
 <div class="line">    for ( ;; ) {</div>
-<div class="line">        processMeasurement = BSP_ScaletoSpeed ( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
+<div class="line">        processMeasurement = BSP_ScaletoSpeed( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
 <div class="line">        controlOutput = controller-<span class="keyword">&gt;</span>control( SetPoint, processMeasurement );</div>
 <div class="line">        BSP_PWMSet( BSP_AO_SPEED_PWM_CHANNEL, BSP_ScaletoPWM( controlOutput ) );</div>
 <div class="line">        vTaskDelay( dt / portTICK_RATE_MS) ;</div>

@@ -12,6 +12,7 @@ var classqlibs_1_1pid_controller =
     [ "setAutoTuningControllerType", "classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4", null ],
     [ "setAutoTuningParameters", "classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b", null ],
     [ "setDerivativeFilter", "classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c", null ],
+    [ "setDerivativeFilterTimeConstant", "classqlibs_1_1pid_controller.html#a68f55a067651af37eaacc86dd7881b2b", null ],
     [ "setDirection", "classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f", null ],
     [ "setEpsilon", "classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8", null ],
     [ "setExtraGains", "classqlibs_1_1pid_controller.html#a3868d83ac3e11846ae276c7f1234cf92", null ],

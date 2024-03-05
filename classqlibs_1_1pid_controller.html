@@ -187,6 +187,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">setDerivativeFilter</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Beta) noexcept</td></tr>
 <tr class="memdesc:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tuning parameter for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c">More...</a><br /></td></tr>
 <tr class="separator:a627e61060b12a8e3ab6e54d128f5fc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f55a067651af37eaacc86dd7881b2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#a68f55a067651af37eaacc86dd7881b2b">setDerivativeFilterTimeConstant</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Tf) noexcept</td></tr>
+<tr class="memdesc:a68f55a067651af37eaacc86dd7881b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time constant for the derivative filter.  <a href="classqlibs_1_1pid_controller.html#a68f55a067651af37eaacc86dd7881b2b">More...</a><br /></td></tr>
+<tr class="separator:a68f55a067651af37eaacc86dd7881b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">setMode</a> (const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> Mode) noexcept</td></tr>
 <tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <a href="classqlibs_1_1pid_controller.html#ad5b752263f58824d5dfa189dd40c2ba3">More...</a><br /></td></tr>
 <tr class="separator:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -670,7 +673,43 @@ Additional Inherited Members</h2></td></tr>
 <p>Set the tuning parameter for the derivative filter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">Beta</td><td>The tuning parameter. [ 0 &lt; Beta &lt; 1 ] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Beta</td><td>The tuning parameter. [ 0 &lt;= Beta &lt; 1 ] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a68f55a067651af37eaacc86dd7881b2b" name="a68f55a067651af37eaacc86dd7881b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f55a067651af37eaacc86dd7881b2b">&#9670;&nbsp;</a></span>setDerivativeFilterTimeConstant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pidController::setDerivativeFilterTimeConstant </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>&#160;</td>
+          <td class="paramname"><em>Tf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the time constant for the derivative filter. </p>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Tf</td><td>Derivative filter time constant [ Tf &gt;= 0 ] </td></tr>
   </table>
   </dd>
 </dl>

@@ -40,7 +40,8 @@ var annotated_dup =
       [ "smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", "classqlibs_1_1smoother_m_o_r2" ],
       [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
-      [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
+      [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
+      [ "transportDelay", "classqlibs_1_1transport_delay.html", "classqlibs_1_1transport_delay" ]
     ] ],
     [ "limits", "structlimits.html", "structlimits" ],
     [ "thing", "structthing.html", "structthing" ]

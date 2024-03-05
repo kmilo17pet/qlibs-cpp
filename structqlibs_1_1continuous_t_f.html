@@ -142,6 +142,7 @@ $(document).ready(function(){initNavTree('structqlibs_1_1continuous_t_f.html',''
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e56f1f7dc3b9e7c07e88df5c29a8c95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1continuous_t_f.html#a8e56f1f7dc3b9e7c07e88df5c29a8c95">continuousTF</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>(&amp;numerator)[order+1], const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>(&amp;denominator)[order+1])</td></tr>
+<tr class="memdesc:a8e56f1f7dc3b9e7c07e88df5c29a8c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="structqlibs_1_1continuous_t_f.html" title="Continuous transfer function for easy LTI system definition.">continuousTF</a> class.  <a href="structqlibs_1_1continuous_t_f.html#a8e56f1f7dc3b9e7c07e88df5c29a8c95">More...</a><br /></td></tr>
 <tr class="separator:a8e56f1f7dc3b9e7c07e88df5c29a8c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -157,6 +158,12 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;size_t order&gt;<br />
 struct qlibs::continuousTF&lt; order &gt;</div><p >Continuous transfer function for easy LTI system definition. </p>
 <dl class="section note"><dt>Note</dt><dd>Initial conditions are zero by default. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">order</td><td>The continuous system order </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8e56f1f7dc3b9e7c07e88df5c29a8c95" name="a8e56f1f7dc3b9e7c07e88df5c29a8c95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e56f1f7dc3b9e7c07e88df5c29a8c95">&#9670;&nbsp;</a></span>continuousTF()</h2>
@@ -193,6 +200,15 @@ template&lt;size_t order&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="structqlibs_1_1continuous_t_f.html" title="Continuous transfer function for easy LTI system definition.">continuousTF</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numerator</td><td>An array of size &lt;order&gt; with the coefficients of the numerator in descending powers of s. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">denominator</td><td>An array of size &lt;order&gt; with the coefficients of the denominator in descending powers of s. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

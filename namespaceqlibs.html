@@ -131,6 +131,7 @@ $(document).ready(function(){initNavTree('namespaceqlibs.html',''); initResizabl
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">qlibs Namespace Reference</div></div>
 </div><!--header-->
@@ -236,6 +237,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html">tdl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Tapped Delay Line (TDL) object.  <a href="classqlibs_1_1tdl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1transport_delay.html">transportDelay</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of time. You can use this class to simulate a time delay.  <a href="classqlibs_1_1transport_delay.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -251,6 +255,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">discreteStates</a> = <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a>[order]</td></tr>
 <tr class="memdesc:ga1d7270ee26fea50834f73cab840fb2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to specify discrete states.  <a href="group__qltisys.html#ga1d7270ee26fea50834f73cab840fb2a1">More...</a><br /></td></tr>
 <tr class="separator:ga1d7270ee26fea50834f73cab840fb2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memTemplParams" colspan="2">template&lt;size_t delay&gt; </td></tr>
+<tr class="memitem:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce">discreteDelay</a> = <a class="el" href="classqlibs_1_1transport_delay.html">transportDelay</a>&lt; delay &gt;</td></tr>
+<tr class="memdesc:gaf175ceeca1335992ecd9ccff4c517dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of samples. You can use this class to simulate a discrete time delay.  <a href="group__qltisys.html#gaf175ceeca1335992ecd9ccff4c517dce">More...</a><br /></td></tr>
+<tr class="separator:gaf175ceeca1335992ecd9ccff4c517dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f18e9bdf2c6555715e59c089f15f60c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> = float</td></tr>
 <tr class="memdesc:a8f18e9bdf2c6555715e59c089f15f60c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to instantiate a real variable double-precision of 64-bits IEEE 754.  <a href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">More...</a><br /></td></tr>
 <tr class="separator:a8f18e9bdf2c6555715e59c089f15f60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,6 +330,11 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gaa9de50af5e1b6b26f2e6e12e2bd1b106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direction modes of the PID controller.  <a href="group__qpid.html#gaa9de50af5e1b6b26f2e6e12e2bd1b106">More...</a><br /></td></tr>
 <tr class="separator:gaa9de50af5e1b6b26f2e6e12e2bd1b106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga56a12ae5105ad3774190994aec899a2d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d">delayFromTime</a> (const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> Time, const <a class="el" href="namespaceqlibs.html#a8f18e9bdf2c6555715e59c089f15f60c">real_t</a> dt)</td></tr>
+<tr class="separator:ga56a12ae5105ad3774190994aec899a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

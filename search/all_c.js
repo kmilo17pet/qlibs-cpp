@@ -12,8 +12,9 @@ var searchData=
   ['max_9',['max',['../classqlibs_1_1ltisys.html#add841ea47e9da27a1a6150a722afdc67',1,'qlibs::ltisys']]],
   ['mf_10',['mf',['../classqlibs_1_1fis_1_1mf.html#a449bc5fb79eed493ab499fbe8fcbac3d',1,'qlibs::fis::mf::mf()'],['../classqlibs_1_1fis_1_1mf.html',1,'qlibs::fis::mf']]],
   ['midpoint_11',['midpoint',['../group__qffmath.html#gaa4d423217e6e4ef2414d6668a03a56bb',1,'qlibs::ffmath']]],
-  ['min_12',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
-  ['min_13',['Min',['../structlimits.html#a1eba54d75271853724638fbc483f54c0',1,'limits::Min()'],['../group__qffmath.html#ga7cdff7184e67aa97f8a41f7e5927fede',1,'qlibs::ffmath::Min(const T x, const T y)']]],
-  ['mod_14',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
-  ['mom_15',['mom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2',1,'qlibs::fis']]]
+  ['min_12',['Min',['../structlimits.html#a1eba54d75271853724638fbc483f54c0',1,'limits']]],
+  ['min_13',['min',['../classqlibs_1_1ltisys.html#a91ff63abb5ee836266e14c0a24e1d11b',1,'qlibs::ltisys']]],
+  ['min_14',['Min',['../group__qffmath.html#ga7cdff7184e67aa97f8a41f7e5927fede',1,'qlibs::ffmath']]],
+  ['mod_15',['mod',['../group__qffmath.html#ga39224ff83a567d5c2966ce2b1c23ae03',1,'qlibs::ffmath']]],
+  ['mom_16',['mom',['../group__qfis.html#ggaaa87572cbd0f5fda216c13ce2e68ce26a099f7a7227b93471d5ee65f9927b97e2',1,'qlibs::fis']]]
 ];

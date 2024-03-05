@@ -8,7 +8,6 @@ var group__qpid =
     [ "qlibs::pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", [
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html#a6c31332f466c91e8e2827a4fa9dead5c", null ],
       [ "getEstimates", "classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208", null ],
-      [ "step", "classqlibs_1_1pid_auto_tuning.html#a1c77af50acce497a4ee912fbb96073d6", null ],
       [ "pidController", "classqlibs_1_1pid_auto_tuning.html#aa726a8d12c934b49a3c7add01d4f4d8c", null ],
       [ "UNDEFINED", "classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de", null ]
     ] ],
@@ -25,6 +24,7 @@ var group__qpid =
       [ "setAutoTuningControllerType", "classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4", null ],
       [ "setAutoTuningParameters", "classqlibs_1_1pid_controller.html#a1ce785a61afa8becb23b39038334435b", null ],
       [ "setDerivativeFilter", "classqlibs_1_1pid_controller.html#a627e61060b12a8e3ab6e54d128f5fc7c", null ],
+      [ "setDerivativeFilterTimeConstant", "classqlibs_1_1pid_controller.html#a68f55a067651af37eaacc86dd7881b2b", null ],
       [ "setDirection", "classqlibs_1_1pid_controller.html#a91c9b45ca2efaae7aa8184af3139c49f", null ],
       [ "setEpsilon", "classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8", null ],
       [ "setExtraGains", "classqlibs_1_1pid_controller.html#a3868d83ac3e11846ae276c7f1234cf92", null ],
