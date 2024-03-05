@@ -2794,7 +2794,7 @@ float ffmath::sph_legendre( size_t l,
         const float x = ffmath::cos( theta );
         constexpr float pi4 = 4.0F*ffmath::FFP_PI;
 
-        if ( m > l ) {
+        if ( m > l ) { //skipcq : CXX-W2041
             y = 0.0F;
         }
         else if ( 0U == m ) {

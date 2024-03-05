@@ -473,7 +473,7 @@ bool pidController::setAutoTuningParameters( const real_t Mu,
     bool retValue = false;
 
     if ( nullptr != adapt ) {
-        if ( adapt->isValidParam( Mu ) && adapt->isValidParam( Alpha ) && adapt->isValidParam( lambda ) ) {
+        if ( adapt->isValidParam( Mu ) && adapt->isValidParam( Alpha ) && adapt->isValidParam( lambda ) ) { //skipcq : CXX-C2022
             adapt->setMemoryFactor( lambda );
             adapt->setMomentum( Mu );
             adapt->setEstimatedControllerSpeed( Alpha );
