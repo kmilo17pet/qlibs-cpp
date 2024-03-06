@@ -345,7 +345,7 @@ namespace qlibs {
         * @return @c none.
         */
         template<typename T, size_t n>
-        inline bool replace_if( T ( &array )[ n ],
+        inline void replace_if( T ( &array )[ n ],
                                 bool (*pred)( const T& ),
                                 const T& new_value,
                                 const size_t first = 0U,
