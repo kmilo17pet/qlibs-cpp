@@ -10,7 +10,7 @@ var namespaceqlibs =
       [ "find_if", "group__qalgorithm.html#ga8a599d26ebe0e85aa9a78aebd82aee02", null ],
       [ "for_each", "group__qalgorithm.html#gabe7cc60a59a55ebc65ff8459ba496974", null ],
       [ "replace", "group__qalgorithm.html#ga6ba8b40299364e46f6c2294b2a98eff0", null ],
-      [ "replace_if", "group__qalgorithm.html#ga7dac8bab9bf1fc343058f37603dc2bd9", null ],
+      [ "replace_if", "group__qalgorithm.html#ga8f4890dc115e7662c3f6785cf1b28802", null ],
       [ "reverse", "group__qalgorithm.html#ga00e963bd7d6ce54395ece99c9bf4a3e6", null ],
       [ "rotate", "group__qalgorithm.html#ga7a0b2f4ddcfac8cd3ade0705e5dc764f", null ],
       [ "sort", "group__qalgorithm.html#ga48d43ad20c39914aa26753acbcf65fa6", null ],

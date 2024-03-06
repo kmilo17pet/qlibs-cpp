@@ -173,10 +173,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga6ba8b40299364e46f6c2294b2a98eff0">qlibs::algorithm::replace</a> (T(&amp;array)[n], const T &amp;old_value, const T &amp;new_value, const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements that are equal to old_value (using operator==)  <a href="group__qalgorithm.html#ga6ba8b40299364e46f6c2294b2a98eff0">More...</a><br /></td></tr>
 <tr class="separator:ga6ba8b40299364e46f6c2294b2a98eff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
-<tr class="memitem:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga7dac8bab9bf1fc343058f37603dc2bd9">qlibs::algorithm::replace_if</a> (T(&amp;array)[n], bool(*pred)(const T &amp;), const T &amp;new_value, const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
-<tr class="memdesc:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements for which predicate <em>pred</em> returns <code>true</code>.  <a href="group__qalgorithm.html#ga7dac8bab9bf1fc343058f37603dc2bd9">More...</a><br /></td></tr>
-<tr class="separator:ga7dac8bab9bf1fc343058f37603dc2bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f4890dc115e7662c3f6785cf1b28802"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
+<tr class="memitem:ga8f4890dc115e7662c3f6785cf1b28802"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#ga8f4890dc115e7662c3f6785cf1b28802">qlibs::algorithm::replace_if</a> (T(&amp;array)[n], bool(*pred)(const T &amp;), const T &amp;new_value, const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
+<tr class="memdesc:ga8f4890dc115e7662c3f6785cf1b28802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all elements satisfying specific criteria with <em>new_value</em> in the range [first, last). Replaces all elements for which predicate <em>pred</em> returns <code>true</code>.  <a href="group__qalgorithm.html#ga8f4890dc115e7662c3f6785cf1b28802">More...</a><br /></td></tr>
+<tr class="separator:ga8f4890dc115e7662c3f6785cf1b28802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7086954197e3a3c60d71d9f4f02287a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t n&gt; </td></tr>
 <tr class="memitem:gaf7086954197e3a3c60d71d9f4f02287a"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__qalgorithm.html#gaf7086954197e3a3c60d71d9f4f02287a">qlibs::algorithm::count_if</a> (T(&amp;array)[n], bool(*pred)(const T), const size_t first=0U, const size_t last=n - 1U) noexcept</td></tr>
 <tr class="memdesc:gaf7086954197e3a3c60d71d9f4f02287a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the range [first,last) for which <code>pred</code> is <code>true</code>.  <a href="group__qalgorithm.html#gaf7086954197e3a3c60d71d9f4f02287a">More...</a><br /></td></tr>
@@ -766,8 +766,8 @@ template&lt;typename T , size_t n&gt; </div>
 
 </div>
 </div>
-<a id="ga7dac8bab9bf1fc343058f37603dc2bd9" name="ga7dac8bab9bf1fc343058f37603dc2bd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7dac8bab9bf1fc343058f37603dc2bd9">&#9670;&nbsp;</a></span>replace_if()</h2>
+<a id="ga8f4890dc115e7662c3f6785cf1b28802" name="ga8f4890dc115e7662c3f6785cf1b28802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f4890dc115e7662c3f6785cf1b28802">&#9670;&nbsp;</a></span>replace_if()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -778,7 +778,7 @@ template&lt;typename T , size_t n&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool qlibs::algorithm::replace_if </td>
+          <td class="memname">void qlibs::algorithm::replace_if </td>
           <td>(</td>
           <td class="paramtype">T(&amp;)&#160;</td>
           <td class="paramname"><em>array</em>[n], </td>
