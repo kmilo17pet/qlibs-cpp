@@ -14,7 +14,9 @@
 * of the output  \f$ Y(s)= \mathcal{L}[y(t)]\f$.
 *
 *
+* <center>
 * \f$ G(s) = \frac{N(s)}{D(s)} = \frac{ b_{0}s^{n} + b_{1}s^{n-1} + b_{2}s^{n-2} + ... +  b_{n} }{ s^{n} + a_{1}s^{n-1} + a_{2}s^{n-2} + ... +  a_{n} } \f$
+* </center>
 *
 * \f$ N(s) \f$ and \f$ D(s) \f$ are the numerator and denominator polynomials in
 * descending powers of \f$s\f$, respectively.
@@ -33,8 +35,9 @@
 *
 * @subsection qltisys_ex1 Example: Evaluate the given continuous transfer function
 *
+* <center>
 *  \f$ G(s) = \frac{ 2s^{2} + 3s + 6 }{ s^{3} + 6s^{2} + 11s + 16 } \f$
-*
+* </center>
 *
 *  @code{.c}
 *  #include <iostream>
@@ -100,8 +103,10 @@
 * transfer function is similarly written as \f$ G(z^{-1}) \f$  and is often
 * referred to as the pulse-transfer function.
 *
+* <center>
 *  \f$ G(z^{-1}) = \frac{N(z^{-1})}{D(z^{-1})} = \frac{ b_{0} + b_{1}z^{-1} + b_{2}z^{-2} + ... +  b_{m}z^{-m} }{ 1 + a_{1}z^{-1} + a_{2}z^{-2} + ... +  a_{n}z^{-n} } \f$
-
+* </center>
+*
 * Discrete systems are instantiated in a similar way to continuous systems,
 * but there are some differences. States should be stored in an array of type
 * \ref qlibs::discreteStates. The size of polynomials can vary according to
@@ -110,7 +115,9 @@
 *
 * @subsection qltisys_ex2 Example: Evaluate the given discrete transfer function
 *
+* <center>
 *  \f$ G(z^{-1}) = \frac{ 0.1 + 0.2z^{-1} + 0.3z^{-2} }{ 1 - 0.85z^{-1} + 0.02z^{-2} } \f$
+* </center>
 *
 *  @code{.c}
 *  #include <iostream>

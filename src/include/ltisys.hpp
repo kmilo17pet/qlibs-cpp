@@ -59,9 +59,12 @@ namespace qlibs {
     */
     template<size_t order>
     struct continuousTF {
+        /** @cond **/
         real_t num[ order+1 ];
         real_t den[ order+1 ];
         continuousStates<order> states = {};
+        /** @endcond **/
+
         /**
         * @brief Constructor for the continuousTF class
         * @param[in] numerator An array of size <order> with the coefficients
@@ -150,9 +153,12 @@ namespace qlibs {
     */
     template<size_t NB, size_t NA>
     struct discreteTF {
+        /** @cond **/
         real_t num[ NB ];
         real_t den[ NA ];
         discreteStates<(NA>NB)? NA:NB> states = {};
+        /** @endcond **/
+
         /**
         * @brief Constructor for the discreteTF class
         * @param[in] numerator An array of size <NB> with the coefficients
@@ -176,6 +182,7 @@ namespace qlibs {
     */
     class ltisys : public tdl {
         protected:
+            /** @cond **/
             real_t *a{ nullptr };
             real_t *b{ nullptr };
             size_t n{ 0U };
@@ -191,7 +198,7 @@ namespace qlibs {
             real_t saturate( real_t y );
             ltisysType type{ LTISYS_TYPE_UNKNOWN };
             virtual real_t update( const real_t u ) = 0;
-
+            /** @endcond **/
         public:
             virtual ~ltisys() {}
             ltisys() = default;
