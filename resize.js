@@ -71,8 +71,8 @@ function initResizable() {
     if (sidenav.width()>0) {
       newWidth=0;
     } else {
-      const width = Cookie.readSetting(RESIZE_COOKIE_NAME,250);
-      newWidth = (width>250 && width<$(window).width()) ? width : 250;
+      const width = Cookie.readSetting(RESIZE_COOKIE_NAME,355);
+      newWidth = (width>355 && width<$(window).width()) ? width : 355;
     }
     restoreWidth(newWidth);
     const sidenavWidth = $(sidenav).outerWidth();
@@ -95,7 +95,7 @@ function initResizable() {
     $('#nav-sync').css({ right:'34px' });
     barWidth=20;
   }
-  const width = Cookie.readSetting(RESIZE_COOKIE_NAME,250);
+  const width = Cookie.readSetting(RESIZE_COOKIE_NAME,355);
   if (width) { restoreWidth(width); } else { resizeWidth(); }
   resizeHeight();
   const url = location.href;
