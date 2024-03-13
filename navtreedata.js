@@ -27,7 +27,7 @@ var NAVTREE =
   [ "API Reference", "index.html", [
     [ "Overview", "index.html", "index" ],
     [ "Arduino support", "_arduino_01support.html", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -47,7 +47,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ]
   ] ]
@@ -56,9 +56,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_arduino_01support.html",
-"classqlibs_1_1mat.html#a3fa89ac7510d4258cbf51039a52c9267",
-"group__qffmath.html#ga0c25bbed5c8f7610a49d3deeb60be6da",
-"namespacemembers_eval.html"
+"classqlibs_1_1mat.html#a53ffdaa782d463231e28a57a1d5973b6",
+"group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6",
+"namespacemembers_type.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

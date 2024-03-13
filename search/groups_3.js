@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fis_20_2d_20fuzzy_20inference_20system_0',['FIS - Fuzzy Inference System',['../group__qfis.html',1,'']]],
-  ['fixed_2dpoint_20q16_2e16_20math_1',['Fixed-Point Q16.16 math',['../group__qfp16.html',1,'']]],
-  ['float_20fast_2dmath_2',['Float Fast-Math',['../group__qffmath.html',1,'']]]
+  ['class_0',['Numerical state class',['../group__qnuma.html',1,'']]],
+  ['controller_1',['PID Controller',['../group__qpid.html',1,'']]],
+  ['crc_2',['CRC',['../group__qcrc.html',1,'']]]
 ];

@@ -18,5 +18,5 @@ var group__qbitfield =
       [ "writeFloat", "classqlibs_1_1bitfield.html#a87a227dedc282534244a9954aef0161a", null ],
       [ "writeUINTn", "classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37", null ]
     ] ],
-    [ "qlibs::bitArea", "group__qbitfield.html#ga0605a418c230b31507a31411955b4531", null ]
+    [ "qlibs::bitArea", "group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a", null ]
 ];

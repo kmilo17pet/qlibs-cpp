@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lti_20systems_0',['LTI Systems',['../group__qltisys.html',1,'']]]
+  ['delay_20line_0',['Tapped Delay Line',['../group__qtdl.html',1,'']]]
 ];

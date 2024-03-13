@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pid_20controller_0',['PID Controller',['../group__qpid.html',1,'']]]
+  ['inference_20system_0',['FIS - Fuzzy Inference System',['../group__qfis.html',1,'']]],
+  ['interpolation_1',['1D Interpolation',['../group__qinterp1.html',1,'']]]
 ];

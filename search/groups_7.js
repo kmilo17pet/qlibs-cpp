@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rms_0',['RMS',['../group__qrms.html',1,'']]]
+  ['line_0',['Tapped Delay Line',['../group__qtdl.html',1,'']]],
+  ['lti_20systems_1',['LTI Systems',['../group__qltisys.html',1,'']]]
 ];

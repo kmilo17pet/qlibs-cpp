@@ -35,6 +35,6 @@ var classqlibs_1_1fp16 =
     [ "toInt", "classqlibs_1_1fp16.html#a769a279ee71fc9b768611b394fe7ab64", null ],
     [ "wrapTo180", "classqlibs_1_1fp16.html#a3ad8e43dc16698b21adcc3ac7b309f05", null ],
     [ "wrapToPi", "classqlibs_1_1fp16.html#a7b5242399a39c32dbaf9c95b40085300", null ],
-    [ "operator\"\"_fp", "classqlibs_1_1fp16.html#a9c1228e71b6c18530940ca74783cd864", null ],
-    [ "operator\"\"_fp", "classqlibs_1_1fp16.html#ae3978e8f23b5b68325268c1d22663bc7", null ]
+    [ "operator\"\"_fp", "classqlibs_1_1fp16.html#acd393089889f5509b5187a248a2ed0a2", null ],
+    [ "operator\"\"_fp", "classqlibs_1_1fp16.html#a8732d93ac46459fe1e4cda84d779414e", null ]
 ];

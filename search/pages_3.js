@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['fast_20floating_20point_20math_20library_20and_20extensions_0',['Fast floating point math library and extensions',['../qffmath_desc.html',1,'index']]],
-  ['filters_20for_20signal_20smoothing_1',['Filters for signal smoothing',['../qssmoother_desc.html',1,'index']]],
-  ['fixed_2dpoint_20q16_2e16_20library_2',['Fixed-Point Q16.16 library',['../qfp16_desc.html',1,'index']]],
-  ['fuzzy_20inference_20system_20engine_3',['Fuzzy Inference System Engine',['../qfis_desc.html',1,'index']]]
+  ['calculator_20class_0',['Generic Cyclic Redundancy Check (CRC) calculator class',['../qcrc_desc.html',1,'index']]],
+  ['check_20crc_20calculator_20class_1',['Generic Cyclic Redundancy Check (CRC) calculator class',['../qcrc_desc.html',1,'index']]],
+  ['class_2',['class',['../qinterp1_desc.html',1,'1D Interpolation class'],['../qcrc_desc.html',1,'Generic Cyclic Redundancy Check (CRC) calculator class']]],
+  ['controller_3',['PID Controller',['../qpid_desc.html',1,'index']]],
+  ['crc_20calculator_20class_4',['Generic Cyclic Redundancy Check (CRC) calculator class',['../qcrc_desc.html',1,'index']]],
+  ['cyclic_20redundancy_20check_20crc_20calculator_20class_5',['Generic Cyclic Redundancy Check (CRC) calculator class',['../qcrc_desc.html',1,'index']]]
 ];
