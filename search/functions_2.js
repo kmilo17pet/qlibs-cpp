@@ -59,5 +59,6 @@ var searchData=
   ['crc8_5fwcdma_56',['crc8_WCDMA',['../classqlibs_1_1crc.html#a0051d061e8d161726d70b4d71cd69fc1',1,'qlibs::crc']]],
   ['cyl_5fbessel_5fi_57',['cyl_bessel_i',['../group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8',1,'qlibs::ffmath']]],
   ['cyl_5fbessel_5fj_58',['cyl_bessel_j',['../group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0',1,'qlibs::ffmath']]],
-  ['cyl_5fbessel_5fk_59',['cyl_bessel_k',['../group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a',1,'qlibs::ffmath']]]
+  ['cyl_5fbessel_5fk_59',['cyl_bessel_k',['../group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a',1,'qlibs::ffmath']]],
+  ['cyl_5fneumann_60',['cyl_neumann',['../group__qffmath.html#ga57f7c3d41c28cbe5776ba42e8c91d7c9',1,'qlibs::ffmath']]]
 ];

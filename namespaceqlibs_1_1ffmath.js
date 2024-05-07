@@ -31,6 +31,7 @@ var namespaceqlibs_1_1ffmath =
     [ "cyl_bessel_i", "group__qffmath.html#ga99330295d97fed41d1acf25ab81409a8", null ],
     [ "cyl_bessel_j", "group__qffmath.html#ga0800b4af470efed8fa44bb898eaed7d0", null ],
     [ "cyl_bessel_k", "group__qffmath.html#ga73f335c184e11403f99e1a7266d69d2a", null ],
+    [ "cyl_neumann", "group__qffmath.html#ga57f7c3d41c28cbe5776ba42e8c91d7c9", null ],
     [ "ellint_1", "group__qffmath.html#gae9f99245649658d596c24624945b56d0", null ],
     [ "ellint_2", "group__qffmath.html#ga957600c201c1c997439cb1d7fd9b9298", null ],
     [ "ellint_3", "group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6", null ],
