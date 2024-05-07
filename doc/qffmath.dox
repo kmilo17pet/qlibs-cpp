@@ -94,6 +94,7 @@
 * - \ref qlibs::ffmath::cyl_bessel_i() Computes the regular modified cylindrical Bessel function
 * - \ref qlibs::ffmath::cyl_bessel_j() Computes the cylindrical Bessel function of the first kind
 * - \ref qlibs::ffmath::cyl_bessel_k() Computes the irregular modified cylindrical Bessel function
+* - \ref qlibs::ffmath::cyl_neumann() Computes the cylinkdrical Neumann function.
 * - \ref qlibs::ffmath::sph_legendre() Computes the spherical associated Legendre function
 *
 * @subsection  qffmath_const Constants

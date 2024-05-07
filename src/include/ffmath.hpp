@@ -1,7 +1,7 @@
 /*!
  * @file ffmath.hpp
  * @author J. Camilo Gomez C.
- * @version 1.06
+ * @version 1.07
  * @note This file is part of the qLibs++ distribution.
  * @brief Fast floating-point math library for applications where speed is more
  * important than accuracy
@@ -1004,6 +1004,19 @@ namespace qlibs {
         */
         float cyl_bessel_k( float nu,
                             float x );
+
+        /**
+        * @brief Computes the cylindrical Neumann function ( also known as Bessel
+        * function of the second kind or Weber function) of @a nu and @a x.
+        * @param[in] nu The order of the function
+        * @param[in] x The argument to the function, a floating-point or integer value
+        * @return Upon successful completion, the value of the cylindrical Neumann
+        * function ( Bessel function of the second kind) of @a nu
+        * and @a x. If the argument is @c nan, a @c nan is returned. If @a nu is
+        * greater or equal than @c 128, the behavior is implementation-defined.
+        */
+        float cyl_neumann( float nu,
+                           float x );
 
         /**
         * @brief 1-3) Computes the spherical associated Legendre function of

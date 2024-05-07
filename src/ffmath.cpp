@@ -2781,6 +2781,28 @@ float ffmath::cyl_bessel_k( float nu,
     return y;
 }
 /*============================================================================*/
+float ffmath::cyl_neumann( float nu,
+                           float x )
+{
+    float y;
+
+    if ( ( nu < 0.0F ) || ( x < 0.0F ) || ffmath::isNan( nu ) || ffmath::isNan( x ) ) {
+        y = ffmath::getNan();
+    }
+    else if ( x > 1000.0F ) {
+        float J_nu, N_nu;
+        cyl_bessel_jn_asymp( nu, x, J_nu, N_nu );
+        y = N_nu;
+    }
+    else {
+        float J_nu, N_nu, Jp_nu, Np_nu;
+
+        bessel_jn( nu, x, J_nu, N_nu, Jp_nu, Np_nu );
+        y = N_nu;
+    }
+    return y;
+}
+/*============================================================================*/
 float ffmath::sph_legendre( size_t l,
                             size_t m,
                             float theta )
@@ -2854,4 +2876,3 @@ float ffmath::sph_legendre( size_t l,
     }
     return y;
 }
-/*============================================================================*/
