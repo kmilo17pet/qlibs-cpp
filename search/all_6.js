@@ -26,6 +26,6 @@ var searchData=
   ['double_20exponential_20smoothing_23',['Double Exponential Smoothing',['../qssmoother_desc.html#qssmoother_desf',1,'']]],
   ['double_20exponential_20smoothing_3a_24',['Example: setting up the Double Exponential Smoothing:',['../qssmoother_desc.html#qssmoother_ex10',1,'']]],
   ['dsigmf_25',['dsigmf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a805ad69cf52856d32baa079adee10552',1,'qlibs::fis']]],
-  ['dump_26',['dump',['../classqlibs_1_1bitfield.html#a8c09e3f23d830fd47d82250a2893ceca',1,'qlibs::bitfield']]],
-  ['dump_27',['Dump',['../qbitfield_desc.html#qbitfield_dump',1,'']]]
+  ['dump_26',['Dump',['../qbitfield_desc.html#qbitfield_dump',1,'']]],
+  ['dump_27',['dump',['../classqlibs_1_1bitfield.html#a8c09e3f23d830fd47d82250a2893ceca',1,'qlibs::bitfield']]]
 ];

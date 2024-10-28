@@ -3,7 +3,7 @@ var searchData=
   ['parameter_0',['parameter',['../group__qfis.html#ga2da6415f8f3a941b38888831813a7296',1,'qlibs::fis']]],
   ['paramvalue_1',['paramValue',['../group__qfis.html#ga58e4c5e17f2fb0200c3aaef612abbf29',1,'qlibs::fis']]],
   ['pass_20filter_2',['Pass Filter',['../qssmoother_desc.html#qssmoother_lpf1',1,'First Order Low Pass Filter'],['../qssmoother_desc.html#qssmoother_lpf2',1,'Second Order Low Pass Filter']]],
-  ['pass_20filter_3a_3',['Pass filter:',['../qssmoother_desc.html#qssmoother_ex1',1,'Example: setting up a 1st order low-pass filter:'],['../qssmoother_desc.html#qssmoother_ex2',1,'Example: setting up a 2nd order low-pass filter:']]],
+  ['pass_20filter_3a_3',['pass filter:',['../qssmoother_desc.html#qssmoother_ex1',1,'Example: setting up a 1st order low-pass filter:'],['../qssmoother_desc.html#qssmoother_ex2',1,'Example: setting up a 2nd order low-pass filter:']]],
   ['phi_4',['phi',['../structqlibs_1_1ffmath_1_1numbers.html#aa83d766d2459a09af9ee767437019040',1,'qlibs::ffmath::numbers']]],
   ['pi_5',['pi',['../structqlibs_1_1ffmath_1_1numbers.html#a68b99b52ca254a07aba1d8602167bcd9',1,'qlibs::ffmath::numbers']]],
   ['pid_20controller_6',['PID Controller',['../qpid_desc.html#qpid_create',1,'Creating a PID Controller'],['../group__qpid.html',1,'PID Controller'],['../qpid_desc.html',1,'PID Controller']]],

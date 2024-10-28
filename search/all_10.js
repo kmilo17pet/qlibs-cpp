@@ -22,10 +22,10 @@ var searchData=
   ['operator_5b_5d_19',['operator[]',['../classqlibs_1_1fis_1_1instance.html#aeba9e6235d84f0206a2602324a5488d7',1,'qlibs::fis::instance::operator[]()'],['../classqlibs_1_1fis_1_1system.html#a75835b4379528325ba1296176bbe815f',1,'qlibs::fis::system::operator[]()'],['../classqlibs_1_1mat.html#a452cee764f17a843dbd0cdfb71fc611a',1,'qlibs::mat::operator[](size_t index)'],['../classqlibs_1_1mat.html#a476b01cf8b806e333d1ddd515ebd0409',1,'qlibs::mat::operator[](size_t index) const'],['../classqlibs_1_1tdl.html#ac26718543f38a1ff23e8fa701fc79702',1,'qlibs::tdl::operator[]()']]],
   ['or_20',['OR',['../group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991',1,'fis.hpp']]],
   ['order_20low_20pass_20filter_21',['Order Low Pass Filter',['../qssmoother_desc.html#qssmoother_lpf1',1,'First Order Low Pass Filter'],['../qssmoother_desc.html#qssmoother_lpf2',1,'Second Order Low Pass Filter']]],
-  ['order_20low_20pass_20filter_3a_22',['Order low pass filter:',['../qssmoother_desc.html#qssmoother_ex1',1,'Example: setting up a 1st order low-pass filter:'],['../qssmoother_desc.html#qssmoother_ex2',1,'Example: setting up a 2nd order low-pass filter:']]],
+  ['order_20low_20pass_20filter_3a_22',['order low pass filter:',['../qssmoother_desc.html#qssmoother_ex1',1,'Example: setting up a 1st order low-pass filter:'],['../qssmoother_desc.html#qssmoother_ex2',1,'Example: setting up a 2nd order low-pass filter:']]],
   ['outlier_20removal_20filter_20o_201_23',['Moving Outlier Removal Filter O(1)',['../qssmoother_desc.html#qssmoother_mor2',1,'']]],
   ['outlier_20removal_20filter_20o_20n_24',['Moving Outlier Removal Filter O(n)',['../qssmoother_desc.html#qssmoother_mor1',1,'']]],
-  ['outlier_20removal_20filter_3a_25',['Outlier removal filter:',['../qssmoother_desc.html#qssmoother_ex5',1,'Example: setting up an outlier removal filter:'],['../qssmoother_desc.html#qssmoother_ex6',1,'Example: setting up an outlier removal filter:']]],
+  ['outlier_20removal_20filter_3a_25',['outlier removal filter:',['../qssmoother_desc.html#qssmoother_ex5',1,'Example: setting up an outlier removal filter:'],['../qssmoother_desc.html#qssmoother_ex6',1,'Example: setting up an outlier removal filter:']]],
   ['output_26',['output',['../classqlibs_1_1fis_1_1output.html',1,'qlibs::fis::output'],['../classqlibs_1_1fis_1_1output.html#a74af332ca8944b1bee33f82335326ca4',1,'qlibs::fis::output::output()']]],
   ['overview_27',['Overview',['../index.html',1,'']]]
 ];
