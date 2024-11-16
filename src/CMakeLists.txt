@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.2 )
 project( qlibs-cpp
-         VERSION 1.3.0
+         VERSION 1.3.1
          DESCRIPTION "A collection of useful C++ libraries for embedded systems"
          LANGUAGES CXX )
 

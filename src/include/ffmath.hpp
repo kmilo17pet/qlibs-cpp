@@ -1,7 +1,7 @@
 /*!
  * @file ffmath.hpp
  * @author J. Camilo Gomez C.
- * @version 1.07
+ * @version 1.08
  * @note This file is part of the qLibs++ distribution.
  * @brief Fast floating-point math library for applications where speed is more
  * important than accuracy
@@ -81,30 +81,48 @@ namespace qlibs {
         */
         classification classify( const float f );
 
-        /**
-        * @brief Returns the greater of the given values.
-        * @param[in] x Value to compare.
-        * @param[in] y Value to compare.
-        * @return The greater of @a x and @a y. If they are equivalent,
-        * returns @a y
-        */
+        /*! @cond  */
         template<typename T>
-        inline T Max( const T x, const T y )
-        {
-            return ( x > y ) ? x : y;
+        T Max(const T& first) {
+            return first;
         }
+        /*! @endcond  */
 
         /**
-        * @brief Returns the smaller  of the given values.
-        * @param[in] x Value to compare.
-        * @param[in] y Value to compare.
-        * @return The smaller of @a x and @a y. If they are equivalent,
-        * returns @a y
+        * @brief Finds the maximum value among the provided arguments.
+        * @tparam T The type of the arguments. Must support comparison using `>`.
+        * @tparam Args A parameter pack representing additional arguments of type `T`.
+        * @param first The first argument in the list.
+        * @param args Additional arguments to compare.
+        * @return The maximum value among the provided arguments.
+        * @note If only one argument is provided, that value is returned directly.
         */
+        template<typename T, typename... Args>
+        T Max( const T& first, const Args&... args ) {
+            const T& restMax = Max( args... );
+            return ( first > restMax ) ? first : restMax;
+        }
+
+        /*! @cond  */
         template<typename T>
-        inline T Min( const T x, const T y )
-        {
-            return ( x < y ) ? x : y;
+        T Min( const T& first ) {
+            return first;
+        }
+        /*! @endcond  */
+
+        /**
+        * @brief Finds the minimum value among the provided arguments.
+        * @tparam T The type of the arguments. Must support comparison using `<`.
+        * @tparam Args A parameter pack representing additional arguments of type `T`.
+        * @param first The first argument in the list.
+        * @param args Additional arguments to compare.
+        * @return The minimum value among the provided arguments.
+        * @note If only one argument is provided, that value is returned directly.
+        */
+        template<typename T, typename... Args>
+        T Min( const T& first, const Args&... args ) {
+            const T& restMin = Min( args... );
+            return ( first < restMin ) ? first : restMin;
         }
 
         /**
