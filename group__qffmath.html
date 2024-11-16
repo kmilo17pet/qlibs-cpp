@@ -184,14 +184,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2f496f087abcb40f61d2cd4a79963dbb" id="r_ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga9185f89b32b1af03a9f7c02c8a1f1cdd">classification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f496f087abcb40f61d2cd4a79963dbb">qlibs::ffmath::classify</a> (const float f)</td></tr>
 <tr class="memdesc:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Categorizes the floating-point number <em>x</em>. This function determines whether its argument is a normal floating-point number, or one of several special categories of values, including <em>NaN</em> (not a number), <em>infinity</em>, subnormal floating-point values or zero. To determine what category the argument belongs to, compare the return value with the any of the following number classification macros:  <br /></td></tr>
 <tr class="separator:ga2f496f087abcb40f61d2cd4a79963dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9" id="r_gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf3f4268fdc8131e7b15c04f72b6be9d9">qlibs::ffmath::Max</a> (const T x, const T y)</td></tr>
-<tr class="memdesc:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the greater of the given values.  <br /></td></tr>
-<tr class="separator:gaf3f4268fdc8131e7b15c04f72b6be9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede" id="r_ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga7cdff7184e67aa97f8a41f7e5927fede">qlibs::ffmath::Min</a> (const T x, const T y)</td></tr>
-<tr class="memdesc:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of the given values.  <br /></td></tr>
-<tr class="separator:ga7cdff7184e67aa97f8a41f7e5927fede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga110fcbe32b70e94a41c7c0476eff4b8b" id="r_ga110fcbe32b70e94a41c7c0476eff4b8b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:ga110fcbe32b70e94a41c7c0476eff4b8b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga110fcbe32b70e94a41c7c0476eff4b8b">qlibs::ffmath::Max</a> (const T &amp;first, const Args &amp;... args)</td></tr>
+<tr class="memdesc:ga110fcbe32b70e94a41c7c0476eff4b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the maximum value among the provided arguments.  <br /></td></tr>
+<tr class="separator:ga110fcbe32b70e94a41c7c0476eff4b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42f06c6a0e3c595d625819956020c351" id="r_ga42f06c6a0e3c595d625819956020c351"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:ga42f06c6a0e3c595d625819956020c351"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga42f06c6a0e3c595d625819956020c351">qlibs::ffmath::Min</a> (const T &amp;first, const Args &amp;... args)</td></tr>
+<tr class="memdesc:ga42f06c6a0e3c595d625819956020c351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the minimum value among the provided arguments.  <br /></td></tr>
+<tr class="separator:ga42f06c6a0e3c595d625819956020c351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb57fa2be222cd1aaf4a6c926e4e78c0" id="r_gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb57fa2be222cd1aaf4a6c926e4e78c0">qlibs::ffmath::isNan</a> (const float x)</td></tr>
 <tr class="memdesc:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if <em>x</em> is Not-A-Number <em>NaN</em>.  <br /></td></tr>
 <tr class="separator:gadb57fa2be222cd1aaf4a6c926e4e78c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2365,44 +2365,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf3f4268fdc8131e7b15c04f72b6be9d9" name="gaf3f4268fdc8131e7b15c04f72b6be9d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf3f4268fdc8131e7b15c04f72b6be9d9">&#9670;&#160;</a></span>Max()</h2>
+<a id="ga110fcbe32b70e94a41c7c0476eff4b8b" name="ga110fcbe32b70e94a41c7c0476eff4b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga110fcbe32b70e94a41c7c0476eff4b8b">&#9670;&#160;</a></span>Max()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;typename T , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T qlibs::ffmath::Max </td>
           <td>(</td>
-          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns the greater of the given values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Value to compare. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Value to compare. </td></tr>
+<p>Finds the maximum value among the provided arguments. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the arguments. Must support comparison using `&gt;`. </td></tr>
+    <tr><td class="paramname">Args</td><td>A parameter pack representing additional arguments of type `T`. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The greater of <em>x</em> and <em>y</em>. If they are equivalent, returns <em>y</em> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first argument in the list. </td></tr>
+    <tr><td class="paramname">args</td><td>Additional arguments to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The maximum value among the provided arguments. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If only one argument is provided, that value is returned directly. </dd></dl>
 
 </div>
 </div>
@@ -2437,44 +2437,44 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ga7cdff7184e67aa97f8a41f7e5927fede" name="ga7cdff7184e67aa97f8a41f7e5927fede"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7cdff7184e67aa97f8a41f7e5927fede">&#9670;&#160;</a></span>Min()</h2>
+<a id="ga42f06c6a0e3c595d625819956020c351" name="ga42f06c6a0e3c595d625819956020c351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42f06c6a0e3c595d625819956020c351">&#9670;&#160;</a></span>Min()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;typename T , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T qlibs::ffmath::Min </td>
           <td>(</td>
-          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns the smaller of the given values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Value to compare. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Value to compare. </td></tr>
+<p>Finds the minimum value among the provided arguments. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the arguments. Must support comparison using `&lt;`. </td></tr>
+    <tr><td class="paramname">Args</td><td>A parameter pack representing additional arguments of type `T`. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The smaller of <em>x</em> and <em>y</em>. If they are equivalent, returns <em>y</em> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first argument in the list. </td></tr>
+    <tr><td class="paramname">args</td><td>Additional arguments to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The minimum value among the provided arguments. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If only one argument is provided, that value is returned directly. </dd></dl>
 
 </div>
 </div>

@@ -57,7 +57,7 @@ var NAVTREEINDEX =
 [
 "_arduino_01support.html",
 "classqlibs_1_1mat.html#a53ffdaa782d463231e28a57a1d5973b6",
-"group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6",
+"group__qffmath.html#ga396c804d2c8d8049d9eb2480beda1f3d",
 "namespacemembers_t.html"
 ];
 
