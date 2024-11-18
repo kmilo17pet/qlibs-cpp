@@ -46,6 +46,8 @@
 *  #include <iostream>
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
+*
 *  int main( int argc, char *argv[] )
 *  {
 *      bitfield vPort; // create the bitfield instance

@@ -1,5 +1,7 @@
 #include <qlibs.h>
 
+using namespace qlibs;
+
 smootherGMWF filter;
 constexpr real_t SMOOTHER_SAMPLE_TIME = 20; /*mS*/
 int inputPin = A0;   // select the input pin for the potentiometer that will drive the system

@@ -1,5 +1,7 @@
 #include <qlibs.h>
 
+using namespace qlibs;
+
 enum : fis::tag { service, food};
 enum : fis::tag { tip};
 // I/O Membership functions tags

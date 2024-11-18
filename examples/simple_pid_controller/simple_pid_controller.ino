@@ -1,5 +1,7 @@
 #include <qlibs.h>
 
+using namespace qlibs;
+
 continuousTF<1> processTransferFunction= {
     { 0.0f, 1.5f, },
     { 2.0f, 1.0f, },

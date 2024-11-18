@@ -25,7 +25,8 @@
 *  #include "hal_timer.h"
 *  #include <qlibs.h>
 *
-*  
+*  using namespace qlibs;
+*
 *  static rms rms_instance;
 *  static volatile real_t rms_value = 0.0f;
 *  static real_t window[ 8 ] = { 0.0f };
@@ -57,7 +58,7 @@
 *
 *  #ifndef RMS_COMPUTE_H
 *  #define RMS_COMPUTE_H
-*  
+*
 *  #ifdef __cplusplus
 *  extern "C" {
 *  #endif

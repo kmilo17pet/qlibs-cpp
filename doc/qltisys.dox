@@ -45,6 +45,8 @@
 *  #include <thread>
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
+*
 *  void xTaskSystemSimulate( void )
 *  {
 *      const real_t dt = 0.05f; // Time step
@@ -73,6 +75,8 @@
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
+*
+*  using namespace qlibs;
 *
 *  void xTaskSystemSimulate( void )
 *  {
@@ -125,6 +129,8 @@
 *  #include <thread>
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
+*
 *  void xTaskSystemSimulate( void )
 *  {
 *      real_t num[] = { 0.1f 0.2f, 0.3f };
@@ -150,6 +156,8 @@
 *  #include <chrono>
 *  #include <thread>
 *  #include <qlibs.h>
+*
+*  using namespace qlibs;
 *
 *  void xTaskSystemSimulate( void )
 *  {

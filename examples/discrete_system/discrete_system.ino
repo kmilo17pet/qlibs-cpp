@@ -1,5 +1,7 @@
 #include <qlibs.h>
 
+using namespace qlibs;
+
 discreteTF<3,3> dtf= {
     { 0.1f, 0.2f, 0.3f },
     { 1.0f, -0.85f, 0.02f },

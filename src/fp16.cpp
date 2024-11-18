@@ -306,7 +306,9 @@ fp16Raw_t fp16::sqrt( fp16Raw_t x ) noexcept
                     x <<= 16;
                     retValue <<= 16;
                 }
+                /*cstat -ATH-shift-bounds -MISRAC++2008-5-8-1 -CERT-INT34-C_b*/
                 bit = 1U << 14U;
+                /*cstat +ATH-shift-bounds +MISRAC++2008-5-8-1 +CERT-INT34-C_b*/
             }
         }
     }

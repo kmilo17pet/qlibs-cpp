@@ -4,6 +4,7 @@
 #include <include/mat.hpp>
 
 using namespace std;
+using namespace qlibs;
 
 void test_fis( void );
 void test_fis2( void );

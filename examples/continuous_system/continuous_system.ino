@@ -1,5 +1,7 @@
 #include <qlibs.h>
 
+using namespace qlibs;
+
 continuousTF<3> ctf= {
     { 0.0f, 2.0f, 3.0f, 6.0f },
     { 1.0f, 6.0f, 11.0f, 16.0f },

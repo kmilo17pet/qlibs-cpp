@@ -348,6 +348,8 @@
 *  #include "tipper_fis.h"
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
+*
 *  // I/O Names
 *  enum : fis::tag { service, food};
 *  enum : fis::tag { tip};

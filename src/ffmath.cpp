@@ -1303,7 +1303,7 @@ static float poly_laguerre_recursion( size_t n,
 {
     const float l0 = 1.0F;
     float y;
-
+    /*cstat -MISRAC++2008-0-1-2_b*/
     if ( 0U == n ) {
         y = l0;
     }
@@ -1328,7 +1328,7 @@ static float poly_laguerre_recursion( size_t n,
             y = ln;
         }
     }
-
+    /*cstat +MISRAC++2008-0-1-2_b*/
     return y;
 }
 /*============================================================================*/
@@ -1366,7 +1366,9 @@ static float poly_laguerre_hyperg( size_t n,
 {
     const float b = alpha + 1.0F;
     const float mx = -x;
+    /*cstat -MISRAC++2008-0-1-2_b*/
     const float tc_sgn = ( x < 0.0F ) ? 1.0F : ( ( 1 == ( n % 2 ) ) ? -1.0F : 1.0F );
+    /*cstat +MISRAC++2008-0-1-2_b*/
     const float ax = absolute( x );
     float tc = 1.0F;
 
@@ -2017,7 +2019,7 @@ static float expint_Ei_asymp( float x )
 static float expint_E1( float x )
 {
     float y;
-
+    /*cstat -MISRAC++2008-0-1-2_b*/
     if ( x < 0.0F ) {
         y = -expint_Ei( -x );
     }
@@ -2030,7 +2032,7 @@ static float expint_E1( float x )
     else {
         y = expint_E1_asymp( x );
     }
-
+    /*cstat +MISRAC++2008-0-1-2_b*/
     return y;
 }
 /*============================================================================*/

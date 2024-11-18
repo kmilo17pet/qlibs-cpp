@@ -130,6 +130,8 @@
 *  #include "bsp.h"
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
+*
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
 *  real_t SetPoint = 300.0f; // desired motor speed 300rpm
@@ -214,6 +216,8 @@
 *  #include "freertos/task.h"
 *  #include "bsp.h"
 *  #include <qlibs.h>
+*
+*  using namespace qlibs;
 *
 *  #define REF_MODEL_ORDER   ( 1 )
 *
@@ -328,6 +332,7 @@
 *  #include "bsp.h"
 *  #include <qlibs.h>
 *
+*  using namespace qlibs;
 *
 *  const TickType_t dt = 50; //50mS time-step
 *  void xTaskPIDspeedControl( void *arg );
