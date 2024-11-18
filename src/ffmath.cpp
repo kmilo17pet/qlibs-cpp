@@ -288,26 +288,120 @@ float ffmath::rCbrt( float x )
 /*============================================================================*/
 float ffmath::rounding( float x )
 {
-    x += 12582912.0F;
-    x -= 12582912.0F;
-    return x;
+    int32_t i0 = 0, j0;
+    float ret = x;
+
+    cast_reinterpret( i0, x );
+    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
+    if ( j0 < 23 ) {
+        if ( j0 < 0 ) {
+            i0 &= static_cast<int32_t>( 0x80000000 );
+            if ( -1 == j0 ) {
+                i0 |= 0x3F800000;
+            }
+            cast_reinterpret( ret, i0 );
+        }
+        else {
+            const int32_t i = 0x007FFFFF >> j0;
+            if ( 0 != ( i0 & i ) ) {
+                i0 += 0x00400000 >> j0;
+                i0 &= ~i;
+                cast_reinterpret( ret, i0 );
+            }
+        }
+    }
+    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    return ret;
 }
 /*============================================================================*/
 float ffmath::floor( float x )
 {
-    return ffmath::rounding( x - 0.5F );
+    int32_t i0 = 0, j0;
+    float ret = x;
+
+    cast_reinterpret( i0, x );
+    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
+    if ( j0 < 23 ) {
+        if ( j0 < 0 ) {
+            if ( i0 >= 0 ) {
+                i0 = 0;
+            }
+            else if ( 0 != ( i0 & 0x7FFFFFFF ) ) {
+                i0 = static_cast<int32_t>( 0xBF800000 );
+            }
+            else {
+                /*nothing to do here*/
+            }
+            cast_reinterpret( ret, i0 );
+        }
+        else {
+            const int32_t i = ( 0x007FFFFF ) >> j0;
+            if ( 0 != ( i0 & i ) ) {
+                if ( i0 < 0 ) {
+                    i0 += 0x00800000 >> j0;
+                }
+                i0 &= (~i);
+                cast_reinterpret( ret, i0 );
+            }
+        }
+    }
+    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    return ret;
 }
 /*============================================================================*/
 float ffmath::ceil( float x )
 {
-    return ffmath::rounding( x + 0.5F );
+    int32_t i0 = 0, j0;
+    float ret = x;
+
+    cast_reinterpret( i0, x );
+    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
+    if ( j0 < 23 ) {
+        if ( j0 < 0 ) {
+            if ( i0 < 0 ) {
+                i0 = static_cast<int32_t>( 0x80000000 );
+            }
+            else if ( 0 != i0 ) {
+                i0 = static_cast<int32_t>( 0x3F800000 );
+            }
+            else {
+                /*nothing to do here*/
+            }
+            cast_reinterpret( ret, i0 );
+        }
+        else {
+            const int32_t i = ( 0x007FFFFF ) >> j0;
+            if ( 0 != ( i0 & i ) ) {
+                if ( i0 > 0 ) {
+                    i0 += 0x00800000 >> j0;
+                }
+                i0 &= (~i);
+                cast_reinterpret( ret, i0 );
+            }
+        }
+    }
+    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    return ret;
 }
 /*============================================================================*/
 float ffmath::trunc( float x )
 {
-    /*cstat -CERT-FLP34-C -CERT-FLP36-C*/
-    return static_cast<float>( static_cast<int32_t>( x ) );
-    /*cstat +CERT-FLP34-C +CERT-FLP36-C*/
+    int32_t i0 = 0, sx, j0;
+    float ret = x;
+
+    cast_reinterpret( i0, x );
+    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    sx = i0 & static_cast<int32_t>( 0x80000000 );
+    j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
+    if ( j0 < 23 ) {
+        const int32_t tmp = ( j0 < 0 ) ? sx : ( sx | ( i0 & ~( 0x007FFFFF >> j0 ) ) );
+        cast_reinterpret( ret, tmp );
+    }
+    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    return ret;
 }
 /*============================================================================*/
 float ffmath::frac( float x )
