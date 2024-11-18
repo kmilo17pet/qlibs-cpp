@@ -175,14 +175,16 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> real_t dt = 0.05f; <span class="comment">// Time step</span></div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> dt = 0.05f; <span class="comment">// Time step</span></div>
 <div class="line">    std::chrono::milliseconds delay(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>( dt*1000 ) );</div>
-<div class="line">    real_t num[] = { 0.0f, 2.0f, 3.0f, 6.0f };</div>
-<div class="line">    real_t den[] = { 1.0f, 6.0f, 11.0f, 16.0f };</div>
-<div class="line">    continuousStates&lt;3&gt; x = { 0.0f, 0.0f, 0.0f }; <span class="comment">// n = 3</span></div>
-<div class="line">    continuousSystem gc( num, den, xC, dt );</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> num[] = { 0.0f, 2.0f, 3.0f, 6.0f };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> den[] = { 1.0f, 6.0f, 11.0f, 16.0f };</div>
+<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#ga89e898dad572c32c1fedf8ac1ffeff9d">continuousStates&lt;3&gt;</a> x = { 0.0f, 0.0f, 0.0f }; <span class="comment">// n = 3</span></div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1continuous_system.html">continuousSystem</a> gc( num, den, xC, dt );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> ut, yt;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
@@ -193,6 +195,9 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;u(t) = &quot;</span> &lt;&lt; ut &lt;&lt; <span class="stringliteral">&quot; y(t) = &quot;</span> &lt;&lt; yt &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1continuous_system_html"><div class="ttname"><a href="classqlibs_1_1continuous_system.html">qlibs::continuousSystem</a></div><div class="ttdoc">A LTI continuous system object.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:466</div></div>
+<div class="ttc" id="agroup__qltisys_html_ga89e898dad572c32c1fedf8ac1ffeff9d"><div class="ttname"><a href="group__qltisys.html#ga89e898dad572c32c1fedf8ac1ffeff9d">qlibs::continuousStates</a></div><div class="ttdeci">nState[order] continuousStates</div><div class="ttdoc">Type to specify continuous states.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:47</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
 <div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
 </div><!-- fragment --><p>Alternatively, you can also use a simpler definition by employing the <a class="el" href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF</a> structure as follows:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -200,16 +205,18 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> real_t dt = 0.05f; <span class="comment">// Time step</span></div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> dt = 0.05f; <span class="comment">// Time step</span></div>
 <div class="line">    std::chrono::milliseconds delay(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>( dt*1000 ) );</div>
-<div class="line">    continuousTF&lt;3&gt; ctf= {</div>
+<div class="line">    <a class="code hl_struct" href="structqlibs_1_1continuous_t_f.html">continuousTF&lt;3&gt;</a> ctf= {</div>
 <div class="line">        { 0.0f, 2.0f, 3.0f, 6.0f },</div>
 <div class="line">        { 1.0f, 6.0f, 11.0f, 16.0f },</div>
 <div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">    continuousSystem gc( ctf, dt );</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1continuous_system.html">continuousSystem</a> gc( ctf, dt );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> ut, yt;</div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
 <div class="line">        ut = BSP_InputGet();</div>
@@ -219,6 +226,7 @@ Example: Evaluate the given continuous transfer function</h2>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;u(t) = &quot;</span> &lt;&lt; ut &lt;&lt; <span class="stringliteral">&quot; y(t) = &quot;</span> &lt;&lt; yt &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
+<div class="ttc" id="astructqlibs_1_1continuous_t_f_html"><div class="ttname"><a href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF</a></div><div class="ttdoc">Continuous transfer function for easy LTI system definition.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:61</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qltisys_disc"></a>
 Discrete-time transfer functions</h1>
 <p>The z-transform is used in discrete-time systems to deal with the relationship between an input signal \( u(t) \) and an output signal \( y(t) \) , so the transfer function is similarly written as \( G(z^{-1}) \) and is often referred to as the pulse-transfer function.</p>
@@ -230,12 +238,14 @@ Example: Evaluate the given discrete transfer function</h2>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    real_t num[] = { 0.1f 0.2f, 0.3f };</div>
-<div class="line">    real_t den[] = { 1.0f, -0.85f, 0.02f };</div>
-<div class="line">    discreteStates&lt;3&gt; xd = { 0.0f, 0.0f, 0.0f };</div>
-<div class="line">    discreteSystem gc( num, den, xd );</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> num[] = { 0.1f 0.2f, 0.3f };</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> den[] = { 1.0f, -0.85f, 0.02f };</div>
+<div class="line">    <a class="code hl_typedef" href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853">discreteStates&lt;3&gt;</a> xd = { 0.0f, 0.0f, 0.0f };</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1discrete_system.html">discreteSystem</a> gc( num, den, xd );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> uk, yk;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
@@ -245,19 +255,23 @@ Example: Evaluate the given discrete transfer function</h2>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;u(k) = &quot;</span> &lt;&lt; uk &lt;&lt; <span class="stringliteral">&quot; y(k) = &quot;</span> &lt;&lt; yk &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1discrete_system_html"><div class="ttname"><a href="classqlibs_1_1discrete_system.html">qlibs::discreteSystem</a></div><div class="ttdoc">A LTI discrete system object.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:271</div></div>
+<div class="ttc" id="agroup__qltisys_html_gad74b033f3e2ee951ba43bdec41200853"><div class="ttname"><a href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853">qlibs::discreteStates</a></div><div class="ttdeci">real_t[order] discreteStates</div><div class="ttdoc">Type to specify discrete states.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:53</div></div>
 </div><!-- fragment --><p>Alternatively, you can also use a simpler definition by employing the <a class="el" href="structqlibs_1_1discrete_t_f.html">qlibs::discreteTF</a> structure as follows:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSystemSimulate( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    discreteTF&lt;3,3&gt; dtf= {</div>
+<div class="line">    <a class="code hl_struct" href="structqlibs_1_1discrete_t_f.html">discreteTF&lt;3,3&gt;</a> dtf= {</div>
 <div class="line">        { 0.1f, 0.2f, 0.3f },</div>
 <div class="line">        { 1.0f, -0.85f, 0.02f },</div>
 <div class="line">    };</div>
-<div class="line">    discreteSystem gc( dtf );</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1discrete_system.html">discreteSystem</a> gc( dtf );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> uk, yk;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span>( ;; ) {</div>
@@ -267,6 +281,7 @@ Example: Evaluate the given discrete transfer function</h2>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;u(k) = &quot;</span> &lt;&lt; uk &lt;&lt; <span class="stringliteral">&quot; y(k) = &quot;</span> &lt;&lt; yk &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
+<div class="ttc" id="astructqlibs_1_1discrete_t_f_html"><div class="ttname"><a href="structqlibs_1_1discrete_t_f.html">qlibs::discreteTF</a></div><div class="ttdoc">Discrete transfer function for easy LTI system definition.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:155</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

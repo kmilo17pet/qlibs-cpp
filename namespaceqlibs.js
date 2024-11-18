@@ -16,8 +16,31 @@ var namespaceqlibs =
       [ "sort", "group__qalgorithm.html#ga48d43ad20c39914aa26753acbcf65fa6", null ],
       [ "swap", "group__qalgorithm.html#ga314a345d986408fb8cbb7c97e51758a2", null ]
     ] ],
+    [ "build", "namespaceqlibs_1_1build.html", [
+      [ "date", "namespaceqlibs_1_1build.html#a11ef511896c9638668ed5107d75268eb", null ],
+      [ "number", "namespaceqlibs_1_1build.html#adf4a40430806df6b0e7a800ba272fe0c", null ],
+      [ "std", "namespaceqlibs_1_1build.html#ab2fa8d476d1a4d6f44196ad595a86b5f", null ],
+      [ "time", "namespaceqlibs_1_1build.html#ae3925cf30976b3300b0077a763f6ed3a", null ]
+    ] ],
     [ "ffmath", "namespaceqlibs_1_1ffmath.html", "namespaceqlibs_1_1ffmath" ],
     [ "fis", "namespaceqlibs_1_1fis.html", "namespaceqlibs_1_1fis" ],
+    [ "product", "namespaceqlibs_1_1product.html", [
+      [ "author", "namespaceqlibs_1_1product.html#a8821024d81ca7b31c4aa1947a04c3175", null ],
+      [ "caption", "namespaceqlibs_1_1product.html#a11fbd4b479e9e55c94b7b7218010c86e", null ],
+      [ "category", "namespaceqlibs_1_1product.html#af6288bdfc5a29a99a245ee4c21aa842f", null ],
+      [ "compliance", "namespaceqlibs_1_1product.html#ac7b8ac114f5428abc9c20a47be23fe47", null ],
+      [ "copyright", "namespaceqlibs_1_1product.html#a741a5e71cf873bd67125757396a3bd1b", null ],
+      [ "license", "namespaceqlibs_1_1product.html#a1b04c0d2ff4cb0deebba408946d5db8a", null ],
+      [ "name", "namespaceqlibs_1_1product.html#a0ba9ab7958dbb84addd89f7e09bfde0a", null ],
+      [ "source_model", "namespaceqlibs_1_1product.html#a989cdf2844328210fc7907ea232813b8", null ]
+    ] ],
+    [ "version", "namespaceqlibs_1_1version.html", [
+      [ "mayor", "namespaceqlibs_1_1version.html#a291f672cf621438b737d234559c7b54c", null ],
+      [ "minor", "namespaceqlibs_1_1version.html#afd7386dba7f26fadfaa0a969a567b518", null ],
+      [ "number", "namespaceqlibs_1_1version.html#aa0b3e48dc303072dbe628bc8d6448bee", null ],
+      [ "rev", "namespaceqlibs_1_1version.html#aabf472f9512ab14542b884c28d403169", null ],
+      [ "str", "namespaceqlibs_1_1version.html#a7f7b3583b17e1147cd8bbf317eaa17de", null ]
+    ] ],
     [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
     [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
     [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],

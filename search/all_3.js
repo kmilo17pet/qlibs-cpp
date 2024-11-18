@@ -42,7 +42,8 @@ var searchData=
   ['atan_39',['atan',['../classqlibs_1_1fp16.html#a3efcd9ed0515976af80007720abb66e2',1,'qlibs::fp16::atan()'],['../group__qffmath.html#gae93342ca16d2bf0af5522e8fed73c725',1,'qlibs::ffmath::atan()']]],
   ['atan2_40',['atan2',['../classqlibs_1_1fp16.html#a4534b82edb0fd7e05e1c572ae7dc4573',1,'qlibs::fp16::atan2()'],['../group__qffmath.html#gacecf132196149ecb64f9f5764a702270',1,'qlibs::ffmath::atan2(float y, float x)']]],
   ['atanh_41',['atanh',['../group__qffmath.html#gaf8e811b8eefd476a5322c05fc7cf703f',1,'qlibs::ffmath']]],
-  ['autotuning_42',['Autotuning',['../qpid_desc.html#qpid_autotune',1,'']]],
-  ['autotuning_20usage_43',['Autotuning Usage',['../qpid_desc.html#qpid_autotune_usage',1,'']]],
-  ['autotuning_3a_44',['Example: Speed control with PID controller and autotuning:',['../qpid_desc.html#qpid_ex3',1,'']]]
+  ['author_42',['author',['../namespaceqlibs_1_1product.html#a8821024d81ca7b31c4aa1947a04c3175',1,'qlibs::product']]],
+  ['autotuning_43',['Autotuning',['../qpid_desc.html#qpid_autotune',1,'']]],
+  ['autotuning_20usage_44',['Autotuning Usage',['../qpid_desc.html#qpid_autotune_usage',1,'']]],
+  ['autotuning_3a_45',['Example: Speed control with PID controller and autotuning:',['../qpid_desc.html#qpid_ex3',1,'']]]
 ];

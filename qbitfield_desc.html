@@ -209,20 +209,22 @@ Working with bitfields</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
-<div class="line">    bitfield vPort; <span class="comment">// create the bitfield instance</span></div>
-<div class="line">    bitArea&lt;48&gt; vPortArea; <span class="comment">// Create the bitfield storage area to hold 48 bits</span></div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1bitfield.html">bitfield</a> vPort; <span class="comment">// create the bitfield instance</span></div>
+<div class="line">    <a class="code hl_typedef" href="group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a">bitArea&lt;48&gt;</a> vPortArea; <span class="comment">// Create the bitfield storage area to hold 48 bits</span></div>
 <div class="line">    uint16_t rWord;</div>
 <div class="line"> </div>
-<div class="line">    vPort.setup( vPortArea );</div>
-<div class="line">    vPort.clearAll();</div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4">setup</a>( vPortArea );</div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74">clearAll</a>();</div>
 <div class="line">    <span class="comment">//we are going to write the following value in the bitfield = 0x8177AA55FF88</span></div>
-<div class="line">    vPort.writeUINTn( 0, 0xAA55FF88, 32 ); <span class="comment">// write the first 32 bits</span></div>
-<div class="line">    vPort.writeUINTn( 32, 0x77, 8 ); <span class="comment">// write one of the last two bytes</span></div>
-<div class="line">    vPort.writeBit( 47, 1 );         <span class="comment">// write the last bit of the last byte</span></div>
-<div class="line">    vPort.writeBit( 40, 1 );         <span class="comment">// write the first bit of the last byte</span></div>
-<div class="line">    rWord = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>( vPort.readUINTn( 20, 16 ); <span class="comment">// read a word at offset 24</span></div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37">writeUINTn</a>( 0, 0xAA55FF88, 32 ); <span class="comment">// write the first 32 bits</span></div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37">writeUINTn</a>( 32, 0x77, 8 ); <span class="comment">// write one of the last two bytes</span></div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07">writeBit</a>( 47, 1 );         <span class="comment">// write the last bit of the last byte</span></div>
+<div class="line">    vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07">writeBit</a>( 40, 1 );         <span class="comment">// write the first bit of the last byte</span></div>
+<div class="line">    rWord = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>( vPort.<a class="code hl_function" href="classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e">readUINTn</a>( 20, 16 ); <span class="comment">// read a word at offset 24</span></div>
 <div class="line">    std::cout &lt;&lt; std::hex  &lt;&lt; vPortArea[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line">                           &lt;&lt; vPortArea[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line">                           &lt;&lt; vPortArea[2] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
@@ -232,6 +234,14 @@ Working with bitfields</h1>
 <div class="line">                           &lt;&lt; std::endl ;</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html"><div class="ttname"><a href="classqlibs_1_1bitfield.html">qlibs::bitfield</a></div><div class="ttdoc">A BitField object.</div><div class="ttdef"><b>Definition</b> bitfield.hpp:36</div></div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html_a096b26f09e65b118b5d6ed1d95b8e37e"><div class="ttname"><a href="classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e">qlibs::bitfield::readUINTn</a></div><div class="ttdeci">uint32_t readUINTn(const size_t index, const size_t xBits) const noexcept</div><div class="ttdoc">Reads an unsigned 32-bit value from the BitField.</div><div class="ttdef"><b>Definition</b> bitfield.cpp:113</div></div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html_a1a9332e8dc444603ffeaccb72f039e74"><div class="ttname"><a href="classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74">qlibs::bitfield::clearAll</a></div><div class="ttdeci">bool clearAll(void) noexcept</div><div class="ttdoc">Clear all the bits in the BitField.</div><div class="ttdef"><b>Definition</b> bitfield.cpp:25</div></div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html_a54bd31f8c51df852088a2bb74709b2e4"><div class="ttname"><a href="classqlibs_1_1bitfield.html#a54bd31f8c51df852088a2bb74709b2e4">qlibs::bitfield::setup</a></div><div class="ttdeci">bool setup(void *const area, const size_t area_size) noexcept</div><div class="ttdoc">Setup a initialize a BitField instance.</div><div class="ttdef"><b>Definition</b> bitfield.cpp:8</div></div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html_aa96fcf287ee7985bad2ebdc8b356ec07"><div class="ttname"><a href="classqlibs_1_1bitfield.html#aa96fcf287ee7985bad2ebdc8b356ec07">qlibs::bitfield::writeBit</a></div><div class="ttdeci">bool writeBit(const size_t index, const bool value) noexcept</div><div class="ttdoc">Writes one bit in a bitfield.</div><div class="ttdef"><b>Definition</b> bitfield.cpp:95</div></div>
+<div class="ttc" id="aclassqlibs_1_1bitfield_html_ae331dd372ddbca305bd9f04a05c04f37"><div class="ttname"><a href="classqlibs_1_1bitfield.html#ae331dd372ddbca305bd9f04a05c04f37">qlibs::bitfield::writeUINTn</a></div><div class="ttdeci">bool writeUINTn(const size_t index, const size_t xBits, uint32_t value) noexcept</div><div class="ttdoc">Writes an unsigned n-bit value from the BitField.</div><div class="ttdef"><b>Definition</b> bitfield.cpp:134</div></div>
+<div class="ttc" id="agroup__qbitfield_html_gac060ed7eabaa95f80e4b897235c9323a"><div class="ttname"><a href="group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a">qlibs::bitArea</a></div><div class="ttdeci">uint8_t[4U *(((N - 1U)/32U)+1U)] bitArea</div><div class="ttdoc">Variable that allocates block of bytes to hold N bits for a BitField .</div><div class="ttdef"><b>Definition</b> bitfield.hpp:31</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

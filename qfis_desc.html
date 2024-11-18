@@ -350,21 +350,23 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;tipper_fis.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// I/O Names</span></div>
-<div class="line">enum : fis::tag { service, food};</div>
-<div class="line">enum : fis::tag { tip};</div>
+<div class="line">enum : <a class="code hl_typedef" href="group__qfis.html#gae1cbb787b19276c23713f3ed8d627fa7">fis::tag</a> { service, food};</div>
+<div class="line">enum : <a class="code hl_typedef" href="group__qfis.html#gae1cbb787b19276c23713f3ed8d627fa7">fis::tag</a> { tip};</div>
 <div class="line"><span class="comment">// I/O Membership functions tags</span></div>
-<div class="line">enum : fis::tag { service_poor, service_good, service_excellent, food_rancid, food_delicious};</div>
-<div class="line">enum : fis::tag { tip_cheap, tip_average, tip_generous};</div>
+<div class="line">enum : <a class="code hl_typedef" href="group__qfis.html#gae1cbb787b19276c23713f3ed8d627fa7">fis::tag</a> { service_poor, service_good, service_excellent, food_rancid, food_delicious};</div>
+<div class="line">enum : <a class="code hl_typedef" href="group__qfis.html#gae1cbb787b19276c23713f3ed8d627fa7">fis::tag</a> { tip_cheap, tip_average, tip_generous};</div>
 <div class="line"><span class="comment">// FIS Object</span></div>
-<div class="line"><span class="keyword">static</span> fis::instance tipper;</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classqlibs_1_1fis_1_1instance.html">fis::instance</a> tipper;</div>
 <div class="line"><span class="comment">// I/O Fuzzy Objects</span></div>
-<div class="line"><span class="keyword">static</span> fis::input tipper_inputs[ 2 ];</div>
-<div class="line"><span class="keyword">static</span> fis::output tipper_outputs[ 1 ];</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classqlibs_1_1fis_1_1input.html">fis::input</a> tipper_inputs[ 2 ];</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classqlibs_1_1fis_1_1output.html">fis::output</a> tipper_outputs[ 1 ];</div>
 <div class="line"><span class="comment">// I/O Membership Objects</span></div>
-<div class="line"><span class="keyword">static</span> fis::mf MFin[5], MFout[3];</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classqlibs_1_1fis_1_1mf.html">fis::mf</a> MFin[5], MFout[3];</div>
 <div class="line"><span class="comment">// Rules of the inference system</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> fis::rules <a class="code hl_typedef" href="group__qfis.html#ga2e229d2c0ce2b97dbdaf4e8a5ec1a0c8">rules</a>[] = {</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__qfis.html#ga2e229d2c0ce2b97dbdaf4e8a5ec1a0c8">fis::rules</a> <a class="code hl_typedef" href="group__qfis.html#ga2e229d2c0ce2b97dbdaf4e8a5ec1a0c8">rules</a>[] = {</div>
 <div class="line">    <a class="code hl_define" href="group__qfis.html#gac7a664229ebde439af53621e565bbe02">FIS_RULES_BEGIN</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_poor <a class="code hl_define" href="group__qfis.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a> food <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> food_rancid <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_cheap <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
 <div class="line">       <a class="code hl_define" href="group__qfis.html#gac138c68a0709c57bc5f7567abc1558eb">IF</a> service <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> service_good <a class="code hl_define" href="group__qfis.html#gad9884c43f4f50a5852711a614f2343ac">THEN</a> tip <a class="code hl_define" href="group__qfis.html#gad28e1b10e158ae134bb6fa3bb2f34a06">IS</a> tip_average <a class="code hl_define" href="group__qfis.html#ga29fd18bed01c4d836c7ebfe73a125c3f">END</a></div>
@@ -377,28 +379,28 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> tipper_init( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    tipper.setup( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );</div>
-<div class="line">    tipper.setupInput( service, 0.0f, 1.0f );</div>
-<div class="line">    tipper.setupInput( food, 0.0f, 10.0f );</div>
-<div class="line">    tipper.setupOutput( tip, 0.0f, 30.0f );</div>
-<div class="line">    tipper.setupInputMF( service, poor, fis::gaussmf, (<span class="keyword">const</span> real_t[]){ 1.5f, 0.0f } );</div>
-<div class="line">    tipper.setupInputMF( service, good, fis::gaussmf, (<span class="keyword">const</span> real_t[]){ 1.5f, 5.0f } );</div>
-<div class="line">    tipper.setupInputMF( service, excellent, fis::gaussmf, (<span class="keyword">const</span> real_t[]){ 1.5f, 10.0f } );</div>
-<div class="line">    tipper.setupInputMF( food, rancid, fis::trapmf, (<span class="keyword">const</span> real_t[]){ 0.0f, 0.0f, 1.0f, 3.0f } );</div>
-<div class="line">    tipper.setupInputMF( food, delicious, fis::trapmf, (<span class="keyword">const</span> real_t[]){ 7.0f, 9.0f, 10.0f, 10.0f } );</div>
-<div class="line">    tipper.setupOutputMF( tip, cheap, fis::trimf, (<span class="keyword">const</span> real_t[]){ 0.0f, 5.0f, 10.0f } );</div>
-<div class="line">    tipper.setupOutputMF( tip, average, fis::trimf, (<span class="keyword">const</span> real_t[]){ 10.0f, 15.0f, 20.0f } );</div>
-<div class="line">    tipper.setupOutputMF( tip, generous, fis::trimf, (<span class="keyword">const</span> real_t[]){ 20.0f, 25.0f, 30.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a59ca79e21f6a23e48ea03bce615622e3">setup</a>( fis::Mamdani, tipper_inputs, tipper_outputs, MFin, MFout, rules, rStrength );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#ad1ebe1be24b0ba73ea774830753ac862">setupInput</a>( service, 0.0f, 1.0f );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#ad1ebe1be24b0ba73ea774830753ac862">setupInput</a>( food, 0.0f, 10.0f );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a6112ff20899d9c82f0517d94c2546253">setupOutput</a>( tip, 0.0f, 30.0f );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">setupInputMF</a>( service, poor, fis::gaussmf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 1.5f, 0.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">setupInputMF</a>( service, good, fis::gaussmf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 1.5f, 5.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">setupInputMF</a>( service, excellent, fis::gaussmf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 1.5f, 10.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">setupInputMF</a>( food, rancid, fis::trapmf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 0.0f, 0.0f, 1.0f, 3.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">setupInputMF</a>( food, delicious, fis::trapmf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 7.0f, 9.0f, 10.0f, 10.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a0eadfdb1f23c8e27d10c3b1576e73b2c">setupOutputMF</a>( tip, cheap, fis::trimf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 0.0f, 5.0f, 10.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a0eadfdb1f23c8e27d10c3b1576e73b2c">setupOutputMF</a>( tip, average, fis::trimf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 10.0f, 15.0f, 20.0f } );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a0eadfdb1f23c8e27d10c3b1576e73b2c">setupOutputMF</a>( tip, generous, fis::trimf, (<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>[]){ 20.0f, 25.0f, 30.0f } );</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> tipper_run( real_t *inputs, real_t *outputs )</div>
+<div class="line"><span class="keywordtype">void</span> tipper_run( <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *inputs, <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *outputs )</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Set the crips inputs</span></div>
-<div class="line">    tipper.setInput( service, inputs[ service ]  );</div>
-<div class="line">    tipper.setInput( food, inputs[ food ] );</div>
-<div class="line">    tipper.fuzzify();</div>
-<div class="line">    <span class="keywordflow">if</span> ( tipper.inference() ) {</div>
-<div class="line">        tipper.deFuzzify();</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#ac4dc4134b8a201d3c3b7b86142e3bd79">setInput</a>( service, inputs[ service ]  );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#ac4dc4134b8a201d3c3b7b86142e3bd79">setInput</a>( food, inputs[ food ] );</div>
+<div class="line">    tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a62b82142e1066a23f652b9b17c9234d9">fuzzify</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> ( tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a9d995e59a148a40a9642e20446bbca8c">inference</a>() ) {</div>
+<div class="line">        tipper.<a class="code hl_function" href="classqlibs_1_1fis_1_1instance.html#a2448948c0db254775d8a2767bc6178d4">deFuzzify</a>();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <span class="comment">// Error!</span></div>
@@ -407,7 +409,22 @@ Evaluating a Fuzzy Inference System</h1>
 <div class="line">    <span class="comment">// Get the crips outputs</span></div>
 <div class="line">    outputs[ tip ] = tipper[ tip ];</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1input_html"><div class="ttname"><a href="classqlibs_1_1fis_1_1input.html">qlibs::fis::input</a></div><div class="ttdoc">A FIS Input object.</div><div class="ttdef"><b>Definition</b> fis.hpp:149</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html">qlibs::fis::instance</a></div><div class="ttdoc">A FIS(Fuzzy Inference System) object.</div><div class="ttdef"><b>Definition</b> fis.hpp:500</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a0eadfdb1f23c8e27d10c3b1576e73b2c"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a0eadfdb1f23c8e27d10c3b1576e73b2c">qlibs::fis::instance::setupOutputMF</a></div><div class="ttdeci">bool setupOutputMF(const tag io, const tag mf, const shapeMF s, const real_t *cp, const real_t h=1.0_re) noexcept</div><div class="ttdoc">Setup the output tag and points for the specified membership function.</div><div class="ttdef"><b>Definition</b> fis.hpp:710</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a2448948c0db254775d8a2767bc6178d4"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a2448948c0db254775d8a2767bc6178d4">qlibs::fis::instance::deFuzzify</a></div><div class="ttdeci">bool deFuzzify(void) noexcept</div><div class="ttdoc">Perform the de-Fuzzification operation to compute the crisp outputs.</div><div class="ttdef"><b>Definition</b> fis.cpp:418</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a44117f9a43a032784a4e7f523b93af41"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a44117f9a43a032784a4e7f523b93af41">qlibs::fis::instance::setupInputMF</a></div><div class="ttdeci">bool setupInputMF(const tag io, const tag mf, const shapeMF s, const real_t *cp, const real_t h=1.0_re) noexcept</div><div class="ttdoc">Setup the input tag and points for the specified membership function.</div><div class="ttdef"><b>Definition</b> fis.hpp:659</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a59ca79e21f6a23e48ea03bce615622e3"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a59ca79e21f6a23e48ea03bce615622e3">qlibs::fis::instance::setup</a></div><div class="ttdeci">bool setup(const type t, input *const inputs, const size_t ni, output *const outputs, const size_t no, mf *const mf_inputs, const size_t nmi, mf *const mf_outputs, const size_t nmo, const rules *const r, const size_t n, real_t *rWeights=nullptr) noexcept</div><div class="ttdoc">Setup and initialize the FIS instance.</div><div class="ttdef"><b>Definition</b> fis.cpp:71</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a6112ff20899d9c82f0517d94c2546253"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a6112ff20899d9c82f0517d94c2546253">qlibs::fis::instance::setupOutput</a></div><div class="ttdeci">bool setupOutput(const tag t, const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the output with the specified tag and set limits for it.</div><div class="ttdef"><b>Definition</b> fis.cpp:136</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a62b82142e1066a23f652b9b17c9234d9"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a62b82142e1066a23f652b9b17c9234d9">qlibs::fis::instance::fuzzify</a></div><div class="ttdeci">bool fuzzify(void) noexcept</div><div class="ttdoc">Perform the fuzzification operation over the crisp inputs on the requested FIS object.</div><div class="ttdef"><b>Definition</b> fis.cpp:234</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_a9d995e59a148a40a9642e20446bbca8c"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#a9d995e59a148a40a9642e20446bbca8c">qlibs::fis::instance::inference</a></div><div class="ttdeci">bool inference(void) noexcept</div><div class="ttdoc">Perform the inference process on the FIS object.</div><div class="ttdef"><b>Definition</b> fis.cpp:478</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_ac4dc4134b8a201d3c3b7b86142e3bd79"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#ac4dc4134b8a201d3c3b7b86142e3bd79">qlibs::fis::instance::setInput</a></div><div class="ttdeci">bool setInput(const tag t, const real_t value) noexcept</div><div class="ttdoc">Set a crisp value of the input with the specified tag.</div><div class="ttdef"><b>Definition</b> fis.cpp:170</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1instance_html_ad1ebe1be24b0ba73ea774830753ac862"><div class="ttname"><a href="classqlibs_1_1fis_1_1instance.html#ad1ebe1be24b0ba73ea774830753ac862">qlibs::fis::instance::setupInput</a></div><div class="ttdeci">bool setupInput(const tag t, const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the input with the specified tag and set limits for it.</div><div class="ttdef"><b>Definition</b> fis.cpp:119</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1mf_html"><div class="ttname"><a href="classqlibs_1_1fis_1_1mf.html">qlibs::fis::mf</a></div><div class="ttdoc">A FIS Membership Function.</div><div class="ttdef"><b>Definition</b> fis.hpp:335</div></div>
+<div class="ttc" id="aclassqlibs_1_1fis_1_1output_html"><div class="ttname"><a href="classqlibs_1_1fis_1_1output.html">qlibs::fis::output</a></div><div class="ttdoc">A FIS Output object.</div><div class="ttdef"><b>Definition</b> fis.hpp:163</div></div>
 <div class="ttc" id="agroup__qfis_html_ga2e229d2c0ce2b97dbdaf4e8a5ec1a0c8"><div class="ttname"><a href="group__qfis.html#ga2e229d2c0ce2b97dbdaf4e8a5ec1a0c8">qlibs::fis::rules</a></div><div class="ttdeci">int16_t rules</div><div class="ttdoc">Type definition to instantiate a set of fuzzy rules.</div><div class="ttdef"><b>Definition</b> fis.hpp:406</div></div>
+<div class="ttc" id="agroup__qfis_html_gae1cbb787b19276c23713f3ed8d627fa7"><div class="ttname"><a href="group__qfis.html#gae1cbb787b19276c23713f3ed8d627fa7">qlibs::fis::tag</a></div><div class="ttdeci">rules tag</div><div class="ttdoc">Used to define an enum of fis tags.</div><div class="ttdef"><b>Definition</b> fis.hpp:421</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
 <div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qfis_codegen"></a>
 Code generation</h1>

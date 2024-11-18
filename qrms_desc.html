@@ -149,20 +149,21 @@ Example : By using a timer interrupt</h1>
 <div class="line"><span class="preprocessor">#include &quot;hal_timer.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> rms rms_instance;</div>
-<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> real_t rms_value = 0.0f;</div>
-<div class="line"><span class="keyword">static</span> real_t window[ 8 ] = { 0.0f };</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_class" href="classqlibs_1_1rms.html">rms</a> rms_instance;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> rms_value = 0.0f;</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> window[ 8 ] = { 0.0f };</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> TimerA0_Int_Handler( <span class="keywordtype">void</span> ) <span class="comment">//interrupt tick at 1mS</span></div>
 <div class="line">{</div>
-<div class="line">    rms_value = rms_instance.update( get_sample() );</div>
+<div class="line">    rms_value = rms_instance.<a class="code hl_function" href="classqlibs_1_1rms.html#a86721a80a069b9d0d62f9ef8d4fa82db">update</a>( get_sample() );</div>
 <div class="line">    HAL_TimerA0_ClearStatusFlag();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> rms_setup( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
-<div class="line">    rms_instance.setup( window );</div>
+<div class="line">    rms_instance.<a class="code hl_function" href="classqlibs_1_1rms.html#a36eec8a70dc6ef858cbebb3ea10accd0">setup</a>( window );</div>
 <div class="line">    HAL_TimerA0_Init();</div>
 <div class="line">    HAL_TimerA0_SetPeriod_mS( 1 );</div>
 <div class="line">    HAL_TimerA0_EnableInterrupts();</div>
@@ -173,6 +174,11 @@ Example : By using a timer interrupt</h1>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> rms_value;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1rms_html"><div class="ttname"><a href="classqlibs_1_1rms.html">qlibs::rms</a></div><div class="ttdoc">RMS calculator object.</div><div class="ttdef"><b>Definition</b> rms.hpp:30</div></div>
+<div class="ttc" id="aclassqlibs_1_1rms_html_a36eec8a70dc6ef858cbebb3ea10accd0"><div class="ttname"><a href="classqlibs_1_1rms.html#a36eec8a70dc6ef858cbebb3ea10accd0">qlibs::rms::setup</a></div><div class="ttdeci">bool setup(real_t *const window, const size_t wsize) noexcept</div><div class="ttdoc">Initialize the RMS instance by setting the default optimal parameters.</div><div class="ttdef"><b>Definition</b> rms.cpp:7</div></div>
+<div class="ttc" id="aclassqlibs_1_1rms_html_a86721a80a069b9d0d62f9ef8d4fa82db"><div class="ttname"><a href="classqlibs_1_1rms.html#a86721a80a069b9d0d62f9ef8d4fa82db">qlibs::rms::update</a></div><div class="ttdeci">real_t update(const real_t x) noexcept</div><div class="ttdoc">Computes the moving root mean square (RMS) of the input signal. The object uses both the exponential ...</div><div class="ttdef"><b>Definition</b> rms.cpp:22</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
+<div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
 </div><!-- fragment --><p> rms_compute.h </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef RMS_COMPUTE_H</span></div>
 <div class="line"><span class="preprocessor">#define RMS_COMPUTE_H</span></div>
 <div class="line"> </div>

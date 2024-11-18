@@ -412,19 +412,21 @@ Example of signal smoothing</h1>
 <div class="line"><span class="preprocessor">#include &quot;AppSignalProcessing.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceqlibs.html">qlibs</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> SMOOTHER_WINDOW_SIZE = 10;</div>
 <div class="line"><span class="keyword">constexpr</span> uint32_t SMOOTHER_SAMPLE_TIME = 100;</div>
-<div class="line"><span class="keyword">constexpr</span> real_t GAUSS_SIGMA = 0.5f;</div>
-<div class="line"><span class="keyword">constexpr</span> real_t GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0f;</div>
+<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> GAUSS_SIGMA = 0.5f;</div>
+<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> GAUSS_CENTER = SMOOTHER_WINDOW_SIZE/2.0f;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> xTaskSignalProcessing( <span class="keywordtype">void</span> *arg )</div>
 <div class="line">{</div>
-<div class="line">    smootherGMWF *filter = <span class="keyword">static_cast&lt;</span>smootherGMWF *<span class="keyword">&gt;</span>( arg );</div>
-<div class="line">    real_t noisySignal;</div>
-<div class="line">    real_t smoothedSignal;</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1smoother_g_m_w_f.html">smootherGMWF</a> *filter = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classqlibs_1_1smoother_g_m_w_f.html">smootherGMWF</a> *<span class="keyword">&gt;</span>( arg );</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> noisySignal;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> smoothedSignal;</div>
 <div class="line">    <span class="keywordflow">for</span> ( ;; ) {</div>
 <div class="line">        noisySignal = BSP_ScaletoSomething( BSP_AnalogRead( BSP_AI_SPEED_CHANNEL ) );</div>
-<div class="line">        smoothedSignal = filter-&gt;smooth( noisySignal );</div>
+<div class="line">        smoothedSignal = filter-&gt;<a class="code hl_function" href="classqlibs_1_1smoother_g_m_w_f.html#aa34b78d5b3151f21391428464d7478c0">smooth</a>( noisySignal );</div>
 <div class="line">        AppSignalProcess( smoothedSignal );</div>
 <div class="line">        vTaskDelay( SMOOTHER_SAMPLE_TIME / portTICK_RATE_MS ) ;</div>
 <div class="line">    }</div>
@@ -432,13 +434,13 @@ Example of signal smoothing</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
-<div class="line">    smootherGMWF filter;</div>
-<div class="line">    real_t window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1smoother_g_m_w_f.html">smootherGMWF</a> filter;</div>
+<div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> window[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> kernel[ SMOOTHER_WINDOW_SIZE ] = { 0.0f };</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">    BSP_SystemInit( );</div>
-<div class="line">    ret = filter.setup( GAUSS_SIGMA, GAUSS_CENTER, window, kernel );</div>
+<div class="line">    ret = filter.<a class="code hl_function" href="classqlibs_1_1smoother_g_m_w_f.html#a3a18a28dd0c3a567329f6d549ae62c82">setup</a>( GAUSS_SIGMA, GAUSS_CENTER, window, kernel );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">        puts( <span class="stringliteral">&quot;ERROR: Cant configure the smoother filter&quot;</span> );</div>
 <div class="line">    }</div>
@@ -447,6 +449,10 @@ Example of signal smoothing</h1>
 <div class="line">    <span class="keywordflow">for</span>( ;; );</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1smoother_g_m_w_f_html"><div class="ttname"><a href="classqlibs_1_1smoother_g_m_w_f.html">qlibs::smootherGMWF</a></div><div class="ttdoc">A Gaussian filter.</div><div class="ttdef"><b>Definition</b> smoother.hpp:309</div></div>
+<div class="ttc" id="aclassqlibs_1_1smoother_g_m_w_f_html_a3a18a28dd0c3a567329f6d549ae62c82"><div class="ttname"><a href="classqlibs_1_1smoother_g_m_w_f.html#a3a18a28dd0c3a567329f6d549ae62c82">qlibs::smootherGMWF::setup</a></div><div class="ttdeci">bool setup(const real_t sg, const real_t c, real_t *window, real_t *kernel, const size_t wk_size)</div><div class="ttdoc">Setup an initialize the Gaussian filter.</div><div class="ttdef"><b>Definition</b> smoother.cpp:216</div></div>
+<div class="ttc" id="aclassqlibs_1_1smoother_g_m_w_f_html_aa34b78d5b3151f21391428464d7478c0"><div class="ttname"><a href="classqlibs_1_1smoother_g_m_w_f.html#aa34b78d5b3151f21391428464d7478c0">qlibs::smootherGMWF::smooth</a></div><div class="ttdeci">real_t smooth(const real_t x) override</div><div class="ttdoc">Perform the smooth operation recursively for the input signal x.</div><div class="ttdef"><b>Definition</b> smoother.cpp:256</div></div>
+<div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
 <div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
