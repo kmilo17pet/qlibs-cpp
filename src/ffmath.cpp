@@ -10,13 +10,25 @@ struct limits {
     static constexpr float epsilon() { return FLT_EPSILON; }
 };
 
+constexpr uint32_t F32_NO_SIGN_MASK = 0x7FFFFFFFU;
+constexpr uint32_t F32_SIGN_MASK = 0x80000000U;
+constexpr uint32_t F32_EXPONENT_MASK = 0x7F800000U;
+constexpr uint32_t F32_MANTISSA_MASK = 0x007FFFFFU;
+constexpr uint32_t F32_MANTISSA_NBITS = 23U;
+
 using namespace qlibs;
 
-template<typename T1, typename T2>
-static inline void cast_reinterpret( T1 &f, const T2 &u )
-{
-    static_assert( sizeof(T1) == sizeof(T2), "Types must match sizes" );
-    (void)memcpy( &f, &u, sizeof(T2) );
+namespace {
+    /*provide own implementation of bit_cast for pre C++20*/
+    /*cstat -CERT-EXP33-C_a*/
+    template <typename To, typename From>
+    inline To bit_cast( const From& src ) noexcept {
+        static_assert( sizeof(To) == sizeof(From), "Types must match sizes" );
+        To dst;
+        (void)memcpy( &dst, &src, sizeof(To) );
+        return dst;
+    }
+    /*cstat +CERT-EXP33-C_a*/
 }
 
 static float getAbnormal( const int i );
@@ -50,7 +62,6 @@ static float expint_E1_series( float x );
 static float expint_Ei( float x );
 static float expint_E1_asymp( float x );
 static float expint_Ei_asymp( float x );
-static float expint_E1( float x );
 static float expint_En_cont_frac( size_t n,
                                   float x );
 static float expint_Ei_series( float x );
@@ -91,7 +102,8 @@ static void cyl_bessel_jn_asymp( float nu,
 /*============================================================================*/
 static inline float absolute( const float x )
 {
-    return ( x < 0.0F ) ? -x : x;
+    //return ( x < 0.0F ) ? -x : x;
+    return bit_cast<float>( F32_NO_SIGN_MASK & bit_cast<uint32_t>( x ) );
 }
 /*============================================================================*/
 static float getAbnormal( const int i )
@@ -101,7 +113,8 @@ static float getAbnormal( const int i )
     static bool init = true;
 
     if ( init ) {
-        cast_reinterpret( f_ab, u_ab );
+        f_ab[ 0 ] = bit_cast<float>( u_ab[ 0 ] );
+        f_ab[ 1 ] = bit_cast<float>( u_ab[ 1 ] );
         init = false;
     }
 
@@ -127,11 +140,8 @@ float ffmath::getNan( void )
 /*============================================================================*/
 ffmath::classification ffmath::classify( const float f )
 {
-    uint32_t u = 0U;
+    const uint32_t u = bit_cast<uint32_t>( f ) & F32_NO_SIGN_MASK;
     ffmath::classification retVal;
-
-    cast_reinterpret( u, f );
-    u &= 0x7FFFFFFFU;
 
     if ( 0U == u ) {
         retVal = ffmath::classification::FFP_ZERO;
@@ -155,15 +165,12 @@ ffmath::classification ffmath::classify( const float f )
 float ffmath::copysign( float mag,
                         float sgn )
 {
-    uint32_t u_mag = 0U, u_sgn = 0U;
+    uint32_t u_mag = bit_cast<uint32_t>( mag );
+    const uint32_t u_sgn = bit_cast<uint32_t>( sgn );
+    u_mag &= F32_NO_SIGN_MASK;
+    u_mag |= u_sgn & F32_SIGN_MASK;
 
-    cast_reinterpret( u_mag, mag );
-    cast_reinterpret( u_sgn, sgn );
-    u_mag &= 0x7FFFFFFFU;
-    u_mag |= u_sgn & 0x80000000U;
-    cast_reinterpret( mag, u_mag );
-
-    return mag;
+    return bit_cast<float>(u_mag );
 }
 /*============================================================================*/
 float ffmath::sign( float x )
@@ -193,12 +200,11 @@ float ffmath::absf( float x )
 /*============================================================================*/
 float ffmath::recip( float x )
 {
-    uint32_t y = 0U;
     float z = 0.0F;
+    uint32_t y = bit_cast<uint32_t>( x );
 
-    cast_reinterpret( y, x );
     y = 0x7EF311C7U - y;
-    cast_reinterpret( z, y );
+    z = bit_cast<float>( y );
 
     return z*( 2.0F - ( x*z ) );
 }
@@ -214,12 +220,11 @@ float ffmath::sqrt( float x )
         retVal = 0.0F;
     }
     else {
-        uint32_t y = 0U;
+        uint32_t y = bit_cast<uint32_t>( x );
         float z = 0.0F;
 
-        cast_reinterpret( y, x );
         y = ( ( y - 0x00800000U ) >> 1U ) + 0x20000000U;
-        cast_reinterpret( z, y );
+        z = bit_cast<float>( y );
         z = 0.5F*( ( x/z ) + z );
         retVal = 0.5F*( ( x/z ) + z );
     }
@@ -238,12 +243,11 @@ float ffmath::rSqrt( float x )
         retVal = ffmath::getInf();
     }
     else {
-        uint32_t y = 0U;
+        uint32_t y = bit_cast<uint32_t>( x );
         const float z = 0.5F*x;
 
-        cast_reinterpret( y, x );
         y = 0x5F375A86U - ( y >> 1U );
-        cast_reinterpret( x, y );
+        x = bit_cast<float>( y );
         retVal = x*( 1.5F - ( z*x*x ) );
     }
 
@@ -255,16 +259,15 @@ static float compute_cbrt( float x , bool r )
     float retVal, y = 0.0F, c, d;
     const float k[ 3 ] = { 1.752319676F, 1.2509524245F, 0.5093818292F };
     constexpr float c13 = 1.0F/3.0F;
-    uint32_t i = 0U;
+    uint32_t i = bit_cast<uint32_t>( x );
     bool neg = false;
 
     if ( x < 0.0F ) {
         x = -x;
         neg = true;
     }
-    cast_reinterpret( i, x );
     i = 0x548C2B4BU - ( i/3U );
-    cast_reinterpret( y, i );
+    y = bit_cast<float>( i );
     c = x*y*y*y;
     y = y*( k[ 0 ] - ( c*( k[ 1 ] - ( k[ 2 ]*c ) ) ) );
 
@@ -288,81 +291,82 @@ float ffmath::rCbrt( float x )
 /*============================================================================*/
 float ffmath::rounding( float x )
 {
-    int32_t i0 = 0, j0;
+    int32_t i0 = bit_cast<int32_t>( x );
+    int32_t j0;
     float ret = x;
 
-    cast_reinterpret( i0, x );
-    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    /*cstat -MISRAC++2008-5-0-21 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
     j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
     if ( j0 < 23 ) {
         if ( j0 < 0 ) {
-            i0 &= static_cast<int32_t>( 0x80000000 );
+            i0 &= static_cast<int32_t>( F32_SIGN_MASK );
             if ( -1 == j0 ) {
                 i0 |= 0x3F800000;
             }
-            cast_reinterpret( ret, i0 );
+            ret = bit_cast<float>( i0 );
         }
         else {
             const int32_t i = 0x007FFFFF >> j0;
+
             if ( 0 != ( i0 & i ) ) {
                 i0 += 0x00400000 >> j0;
                 i0 &= ~i;
-                cast_reinterpret( ret, i0 );
+                ret = bit_cast<float>( i0 );
             }
         }
     }
-    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    /*cstat +MISRAC++2008-5-0-21 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
     return ret;
 }
 /*============================================================================*/
 float ffmath::floor( float x )
 {
-    int32_t i0 = 0, j0;
+    int32_t i0 = bit_cast<int32_t>( x );
+    int32_t j0;
     float ret = x;
 
-    cast_reinterpret( i0, x );
-    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    /*cstat -MISRAC++2008-5-0-21 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
     j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
     if ( j0 < 23 ) {
         if ( j0 < 0 ) {
             if ( i0 >= 0 ) {
                 i0 = 0;
             }
-            else if ( 0 != ( i0 & 0x7FFFFFFF ) ) {
-                i0 = static_cast<int32_t>( 0xBF800000 );
+            else if ( 0 != ( i0 & static_cast<int32_t>( F32_NO_SIGN_MASK ) ) ) {
+                i0 = static_cast<int32_t>( 0xBF800000U );
             }
             else {
                 /*nothing to do here*/
             }
-            cast_reinterpret( ret, i0 );
+            ret = bit_cast<float>( i0 );
         }
         else {
-            const int32_t i = ( 0x007FFFFF ) >> j0;
+            const int32_t i = 0x007FFFFF >> j0;
             if ( 0 != ( i0 & i ) ) {
                 if ( i0 < 0 ) {
                     i0 += 0x00800000 >> j0;
                 }
                 i0 &= (~i);
-                cast_reinterpret( ret, i0 );
+                ret = bit_cast<float>( i0 );
             }
         }
     }
-    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    /*cstat +MISRAC++2008-5-0-21 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
     return ret;
 }
 /*============================================================================*/
 float ffmath::ceil( float x )
 {
-    int32_t i0 = 0, j0;
+    int32_t i0 = bit_cast<int32_t>( x );
+    int32_t j0;
     float ret = x;
 
-    cast_reinterpret( i0, x );
-    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    /*cstat -MISRAC++2008-5-0-21 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
     j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
     if ( j0 < 23 ) {
         if ( j0 < 0 ) {
             if ( i0 < 0 ) {
-                i0 = static_cast<int32_t>( 0x80000000 );
+                i0 = static_cast<int32_t>( F32_SIGN_MASK );
             }
             else if ( 0 != i0 ) {
                 i0 = static_cast<int32_t>( 0x3F800000 );
@@ -370,37 +374,36 @@ float ffmath::ceil( float x )
             else {
                 /*nothing to do here*/
             }
-            cast_reinterpret( ret, i0 );
+            ret = bit_cast<float>( i0 );
         }
         else {
-            const int32_t i = ( 0x007FFFFF ) >> j0;
+            const int32_t i = 0x007FFFFF >> j0;
             if ( 0 != ( i0 & i ) ) {
                 if ( i0 > 0 ) {
                     i0 += 0x00800000 >> j0;
                 }
                 i0 &= (~i);
-                cast_reinterpret( ret, i0 );
+                ret = bit_cast<float>( i0 );
             }
         }
     }
-    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    /*cstat +MISRAC++2008-5-0-21 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
     return ret;
 }
 /*============================================================================*/
 float ffmath::trunc( float x )
 {
-    int32_t i0 = 0, sx, j0;
+    const int32_t i0 = bit_cast<int32_t>( x );
+    int32_t sx, j0;
     float ret = x;
-
-    cast_reinterpret( i0, x );
-    /*cstat -MISRAC++2008-5-0-21 -MISRAC++2008-2-13-3 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
-    sx = i0 & static_cast<int32_t>( 0x80000000 );
+    /*cstat -MISRAC++2008-5-0-21 -ATH-neg-check-nonneg -ATH-shift-neg -CERT-INT34-C_c*/
+    sx = i0 & static_cast<int32_t>( F32_SIGN_MASK );
     j0 = ( ( i0 >> 23 ) & 0xFF ) - 0x7F;
     if ( j0 < 23 ) {
         const int32_t tmp = ( j0 < 0 ) ? sx : ( sx | ( i0 & ~( 0x007FFFFF >> j0 ) ) );
-        cast_reinterpret( ret, tmp );
+        ret = bit_cast<float>( tmp );
     }
-    /*cstat +MISRAC++2008-5-0-21 +MISRAC++2008-2-13-3 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
+    /*cstat +MISRAC++2008-5-0-21 +ATH-neg-check-nonneg +ATH-shift-neg +CERT-INT34-C_c*/
     return ret;
 }
 /*============================================================================*/
@@ -412,8 +415,8 @@ float ffmath::frac( float x )
 float ffmath::rem( float x,
                    float y )
 {
-    return ( classification::FFP_ZERO  == classify( x ) ) ? ffmath::getNan()
-                                                          : ( x - ( y*ffmath::trunc( x/y ) ) );
+    return ( classification::FFP_ZERO == classify( x ) ) ? ffmath::getNan()
+                                                         : ( x - ( y*ffmath::trunc( x/y ) ) );
 }
 /*============================================================================*/
 float ffmath::mod( float x,
@@ -537,7 +540,6 @@ float ffmath::exp2( float x )
     }
     else {
         float ip, fp;
-        float ep_f = 0.0F;
         int32_t ep_i;
 
         ip = ffmath::floor( x + 0.5F );
@@ -552,8 +554,7 @@ float ffmath::exp2( float x )
         x = ( x*fp ) + 2.402264791363012e-1F;
         x = ( x*fp ) + 6.931472028550421e-1F;
         x = ( x*fp ) + 1.0F;
-        cast_reinterpret( ep_f, ep_i );
-        retVal = ep_f*x;
+        retVal = x*bit_cast<float>( ep_i );
     }
 
     return retVal;
@@ -572,14 +573,12 @@ float ffmath::log2( float x )
     else {
         float z, px;
         int32_t ip, fp;
-        int32_t val_i = 0;
-
-        cast_reinterpret( val_i, x );
+        const int32_t val_i = bit_cast<int32_t>( x );
         /*cstat -MISRAC++2008-5-0-21*/
         fp = val_i & 8388607;
         ip = val_i & 2139095040;
         fp |= 1065353216;
-        cast_reinterpret( x, fp );
+        x = bit_cast<float>( fp );
         ip >>= 23;
         ip -= 127;
         /*cstat +MISRAC++2008-5-0-21*/
@@ -856,36 +855,34 @@ float ffmath::erfc( float x )
 float ffmath::rexp( float x,
                     int32_t *pw2 )
 {
-    uint32_t lu = 0U, iu;
+    uint32_t lu = bit_cast<uint32_t>( x );
+    uint32_t iu;
     int32_t i = 0;
 
-    cast_reinterpret( lu, x );
     iu  = ( lu >> 23U ) & 0x000000FFU;  /* Find the exponent (power of 2) */
-    cast_reinterpret( i, iu );
+    i = bit_cast<int32_t>( iu );
     i -= 0x7E;
     pw2[ 0 ] = static_cast<int>( i );
     lu &= 0x807FFFFFU; /* strip all exponent bits */
     lu |= 0x3F000000U; /* mantissa between 0.5 and 1 */
-    cast_reinterpret( x, lu );
 
-    return x;
+    return bit_cast<float>( lu );
 }
 /*============================================================================*/
 float ffmath::ldexp( float x,
                      int32_t pw2 )
 {
-    uint32_t lu = 0U, eu;
+    uint32_t lu = bit_cast<uint32_t>( x );
+    uint32_t eu;
     int32_t e = 0;
 
-    cast_reinterpret( lu, x );
     eu = ( lu >> 23U ) & 0x000000FFU;
-    cast_reinterpret( e, eu );
+    e = bit_cast<int32_t>( eu );
     e += pw2;
-    cast_reinterpret( eu, e );
+    eu = bit_cast<uint32_t>( e );
     lu = ( ( eu & 0xFFU ) << 23U ) | ( lu & 0x807FFFFFU );
-    cast_reinterpret( x, lu );
 
-    return x;
+    return bit_cast<float>( lu );
 }
 /*============================================================================*/
 float ffmath::hypot( float x,
@@ -926,10 +923,10 @@ float ffmath::nextAfter( float x,
                          float y )
 {
     float retVal = 0.0F;
-    uint32_t ax, ay, uxi = 0U, uyi = 0U;
+    uint32_t ax, ay;
+    uint32_t uxi = bit_cast<uint32_t>( x );
+    const uint32_t uyi = bit_cast<uint32_t>( y );
 
-    cast_reinterpret( uxi, x );
-    cast_reinterpret( uyi, y );
     if ( ffmath::isNan( x ) || ffmath::isNan( y ) ) {
         retVal = ffmath::getNan();
     }
@@ -937,18 +934,18 @@ float ffmath::nextAfter( float x,
         retVal = y;
     }
     else {
-        ax = uxi & 0x7FFFFFFFU;
-        ay = uyi & 0x7FFFFFFFU;
+        ax = uxi & F32_NO_SIGN_MASK;
+        ay = uyi & F32_NO_SIGN_MASK;
         if ( 0U == ax ) {
-            uxi = ( 0U == ay ) ? uyi : ( ( uyi & 0x80000000U ) | 1U );
+            uxi = ( 0U == ay ) ? uyi : ( ( uyi & F32_SIGN_MASK ) | 1U );
         }
-        else if ( ( ax > ay ) || ( 0U != ( ( uxi^uyi ) & 0x80000000U ) ) ) {
+        else if ( ( ax > ay ) || ( 0U != ( ( uxi^uyi ) & F32_SIGN_MASK ) ) ) {
             --uxi;
         }
         else {
             ++uxi;
         }
-        cast_reinterpret( retVal, uxi );
+        retVal = bit_cast<float>( uxi );
     }
 
     return retVal;
@@ -2016,26 +2013,6 @@ static float expint_Ei_asymp( float x )
     return ffmath::exp( x )*sum/x;
 }
 /*============================================================================*/
-static float expint_E1( float x )
-{
-    float y;
-    /*cstat -MISRAC++2008-0-1-2_b*/
-    if ( x < 0.0F ) {
-        y = -expint_Ei( -x );
-    }
-    else if ( x < 1.0F ) {
-        y = expint_E1_series( x );
-    }
-    else if ( x < 100.F ) {
-        y = expint_En_cont_frac( 1, x );
-    }
-    else {
-        y = expint_E1_asymp( x );
-    }
-    /*cstat +MISRAC++2008-0-1-2_b*/
-    return y;
-}
-/*============================================================================*/
 static float expint_En_cont_frac( size_t n,
                                   float x )
 {
@@ -2092,13 +2069,24 @@ static float expint_Ei( float x )
     float y;
 
     if ( x < 0.0F ) {
-        y = -expint_E1( -x );
-    }
-    else if ( x < logEps ) {
-        y = expint_Ei_series( x );
+        x = -x;
+        if ( x < 1.0F ) {
+            y = expint_E1_series( x );
+        }
+        else if ( x < 100.F ) {
+            y = -expint_En_cont_frac( 1, x );
+        }
+        else {
+            y = -expint_E1_asymp( x );
+        }
     }
     else {
-        y = expint_Ei_asymp( x );
+        if ( x < logEps ) {
+            y = expint_Ei_series( x );
+        }
+        else {
+            y = expint_Ei_asymp( x );
+        }
     }
 
     return y;
@@ -2466,7 +2454,9 @@ static void bessel_jn( float nu,
             p = temp;
 
             for ( int i = 2; i <= max_iter; ++i ) {
+                /*cstat -CERT-FLP36-C*/
                 a += static_cast<float>( 2*( i - 1 ) );
+                /*cstat +CERT-FLP36-C*/
                 bi += 2.0F;
                 dr = ( a*dr ) + br;
                 di = ( a*di ) + bi;
@@ -2669,7 +2659,9 @@ static void bessel_ik( float nu,
             d = x2*x2;
 
             for ( int i = 1; i <= max_iter; ++i ) {
+                /*cstat -CERT-FLP36-C*/
                 const float j = static_cast<float>( i );
+                /*cstat +CERT-FLP36-C*/
                 ff = ( j*ff + p + q )/( j*j - mu2 );
                 c *= d/j;
                 p /= j - mu;
@@ -2699,8 +2691,10 @@ static void bessel_ik( float nu,
             h = d;
             c = a1;
             for ( int i = 2 ; i <= max_iter; ++i) {
+                /*cstat -CERT-FLP36-C*/
                 a -= static_cast<float>( 2*( i - 1 ) );
                 c = -a*c/static_cast<float>( i );
+                /*cstat +CERT-FLP36-C*/
                 const float q_new = ( q1 - ( b*q2 ) )/a;
                 q1 = q2;
                 q2 = q_new;
@@ -2807,15 +2801,17 @@ static void cyl_bessel_jn_asymp( float nu,
     do {
         bool epsP, epsQ;
         float k2_1;
-        /*cstat -MISRAC++2008-0-1-2_b*/
+        /*cstat -MISRAC++2008-0-1-2_b -CERT-FLP36-C*/
         float k = static_cast<float>( i );
-        /*cstat +MISRAC++2008-0-1-2_b*/
+        /*cstat +MISRAC++2008-0-1-2_b +CERT-FLP36-C*/
         k2_1 = 2.0F*k - 1.0F;
         term *= ( i == 0U ) ? 1.0F : -( mu - ( k2_1*k2_1 ) )/( k*x8 );
         epsP = absolute( term ) < ( eps*absolute( P ) );
         P += term;
         ++i;
+        /*cstat -MISRAC++2008-0-1-2_b -CERT-FLP36-C*/
         k = static_cast<float>( i );
+        /*cstat +MISRAC++2008-0-1-2_b +CERT-FLP36-C*/
         k2_1 = 2.0F*k - 1.0F;
         term *= ( mu - ( k2_1*k2_1 ) )/( k*x8 );
         epsQ = absolute( term ) < ( eps*absolute( Q ) );
