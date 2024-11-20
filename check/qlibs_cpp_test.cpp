@@ -299,6 +299,7 @@ void test_ltisys( void )
 void test_ffmath(void)
 {
     cout << "ffmath" << endl;
+    cout << ffmath::sqrt( 0.5f ) << endl;
     cout << ffmath::exp( 0.5f ) << endl;
     cout << ffmath::log( 0.5f ) << endl;
     cout << ffmath::sin( 0.5f ) << endl;
@@ -328,7 +329,8 @@ void test_ffmath(void)
     cout << ffmath::assoc_legendre( 2, 1, 0.5f ) << endl;
     cout << ffmath::assoc_legendre( 2, 2, 0.5f ) << endl;
 
-
+    std::cout << "beta" << std::endl;
+    std::cout << ffmath::beta(0.123f, 1.0f - 0.123f) << std::endl;
     std::cout << ffmath::beta(0.1f, 0.2f) << std::endl;
     std::cout << "comp_ellint_1" << std::endl;
     std::cout << ffmath::comp_ellint_1( 0.0f ) << std::endl;

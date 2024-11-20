@@ -20,7 +20,7 @@ bool interp1::setMethod( const interp1Method m ) noexcept
         &interp1::cSpline,
     };
 
-    if ( ( m > 0 ) && ( m < INTERP1_MAX ) ) {
+    if ( ( m >= 0 ) && ( m < INTERP1_MAX ) ) {
         method = im[ m ];
         retValue = true;
     }

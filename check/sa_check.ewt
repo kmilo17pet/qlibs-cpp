@@ -2968,6 +2968,9 @@
             <name>$PROJ_DIR$\..\src\include\pid.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\include\qlibs_types.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\include\rms.hpp</name>
         </file>
         <file>

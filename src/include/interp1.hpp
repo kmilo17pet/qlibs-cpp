@@ -3,11 +3,7 @@
  * @author J. Camilo Gomez C.
  * @version 1.01
  * @note This file is part of the qLibs-cpp distribution.
- * @brief Helper class that implements a Tapped Delay Line (TDL). A TDL is a
- * delay line that provides access to its contents at arbitrary intermediate
- * delay length values.
- * This class runs in constant time O(1), so it becomes useful when you need to
- * work with long delayed lines.
+ * @brief 1D Interpolation Class
  **/
 
 #ifndef QLIBS_INTERP1
@@ -24,9 +20,9 @@ namespace qlibs {
     *  @{
     */
 
-        /**
-        * @brief An enum with all the available interpolation methods.
-        */
+    /**
+    * @brief An enum with all the available interpolation methods.
+    */
     enum interp1Method {
         INTERP1_NEXT = 0,               /*!< Return the next neighbor.*/
         INTERP1_PREVIOUS,               /*!< Return the previous neighbor.*/
@@ -170,6 +166,7 @@ namespace qlibs {
             * @brief Interpolate input point @a x to determine the value of @a y
             * at the points @a xi using the current method. If value is beyond
             * the endpoints, extrapolation is performed using the current method.
+            * @param[in] x The input point.
             * @return @c The interpolated-extrapolated @a y value.
             */
             inline real_t get( const T x ) noexcept

@@ -12,9 +12,6 @@ struct limits {
 
 constexpr uint32_t F32_NO_SIGN_MASK = 0x7FFFFFFFU;
 constexpr uint32_t F32_SIGN_MASK = 0x80000000U;
-constexpr uint32_t F32_EXPONENT_MASK = 0x7F800000U;
-constexpr uint32_t F32_MANTISSA_MASK = 0x007FFFFFU;
-constexpr uint32_t F32_MANTISSA_NBITS = 23U;
 
 using namespace qlibs;
 
@@ -1797,7 +1794,7 @@ float ffmath::comp_ellint_1( float k )
 {
     float y;
 
-    if ( ffmath::isNan( k ) || ( absolute( k ) >= 1.0F ) ) {
+    if ( ffmath::isNan( k ) || ( absolute( k ) >= 1.0F ) ) { //no side effects
         y = ffmath::getNan();
     }
     else {
