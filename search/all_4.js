@@ -11,11 +11,12 @@ var searchData=
   ['bit_8',['Single-bit',['../qbitfield_desc.html#qbitfield_sbit',1,'']]],
   ['bit_20field_9',['Bit-Field',['../group__qbitfield.html',1,'']]],
   ['bit_20field_20manipulation_20library_10',['Bit-Field manipulation library',['../qbitfield_desc.html',1,'index']]],
-  ['bitarea_11',['bitArea',['../group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a',1,'qlibs']]],
-  ['bitfield_12',['bitfield',['../classqlibs_1_1bitfield.html',1,'qlibs::bitfield'],['../classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa',1,'qlibs::bitfield::bitfield()']]],
-  ['bitfields_13',['Working with bitfields',['../qbitfield_desc.html#qbitfield_workingwith',1,'']]],
-  ['bits_14',['Multiple-bits',['../qbitfield_desc.html#qbitfield_pattern',1,'']]],
-  ['building_20a_20mamdani_20fis_15',['Building a Mamdani FIS',['../qfis_desc.html#qfis_buildfis',1,'']]],
-  ['by_20transfer_20functions_16',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]],
-  ['by_20using_20a_20timer_20interrupt_17',['Example :  By using a timer interrupt',['../qrms_desc.html#qrms_ex1',1,'']]]
+  ['bit_5fcast_11',['bit_cast',['../namespaceanonymous__namespace_02ffmath_8cpp_03.html#a4e0e63908d1c0c66a7fd9f35bd0d2f90',1,'anonymous_namespace{ffmath.cpp}']]],
+  ['bitarea_12',['bitArea',['../group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a',1,'qlibs']]],
+  ['bitfield_13',['bitfield',['../classqlibs_1_1bitfield.html',1,'qlibs::bitfield'],['../classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa',1,'qlibs::bitfield::bitfield()']]],
+  ['bitfields_14',['Working with bitfields',['../qbitfield_desc.html#qbitfield_workingwith',1,'']]],
+  ['bits_15',['Multiple-bits',['../qbitfield_desc.html#qbitfield_pattern',1,'']]],
+  ['building_20a_20mamdani_20fis_16',['Building a Mamdani FIS',['../qfis_desc.html#qfis_buildfis',1,'']]],
+  ['by_20transfer_20functions_17',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]],
+  ['by_20using_20a_20timer_20interrupt_18',['Example :  By using a timer interrupt',['../qrms_desc.html#qrms_ex1',1,'']]]
 ];
