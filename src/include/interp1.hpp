@@ -33,7 +33,9 @@ namespace qlibs {
         INTERP1_HERMITE,                /*!< Piecewise cubic Hermite interpolation.*/
         INTERP1_SPLINE,                 /*!< Catmull spline interpolation.*/
         INTERP1_CONSTRAINED_SPLINE,     /*!< A special kind of spline that doesn't overshoot.*/
+        /*! @cond  */
         INTERP1_MAX,
+        /*! @endcond  */
     };
 
     /**

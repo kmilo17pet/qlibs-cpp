@@ -5,9 +5,18 @@ https://github.com/akohlmey/fastermath
 */
 
 struct limits {
+    union fu32 {
+        uint32_t asUnsigned;
+        float asFloat;
+        /*cstat -COP-member-uninit*/
+        constexpr fu32( uint32_t value ) : asUnsigned( value ) {}
+        /*cstat +COP-member-uninit*/
+    };
     static constexpr float Min() { return FLT_MIN; }
     static constexpr float Max() { return FLT_MAX; }
     static constexpr float epsilon() { return FLT_EPSILON; }
+    static constexpr float infinity() { return fu32( 0x7F800000U ).asFloat; }
+    static constexpr float nan() { return fu32( 0x7FBFFFFFU ).asFloat; }
 };
 
 constexpr uint32_t F32_NO_SIGN_MASK = 0x7FFFFFFFU;
@@ -28,7 +37,6 @@ namespace {
     /*cstat +CERT-EXP33-C_a*/
 }
 
-static float getAbnormal( const int i );
 static float compute_cbrt( float x ,
                            bool r );
 static float lgamma_positive( float x );
@@ -99,23 +107,7 @@ static void cyl_bessel_jn_asymp( float nu,
 /*============================================================================*/
 static inline float absolute( const float x )
 {
-    //return ( x < 0.0F ) ? -x : x;
     return bit_cast<float>( F32_NO_SIGN_MASK & bit_cast<uint32_t>( x ) );
-}
-/*============================================================================*/
-static float getAbnormal( const int i )
-{
-    static const uint32_t u_ab[ 2 ] = { 0x7F800000U, 0x7FBFFFFFU };
-    static float f_ab[ 2 ] = { 0.0F, 0.0F };
-    static bool init = true;
-
-    if ( init ) {
-        f_ab[ 0 ] = bit_cast<float>( u_ab[ 0 ] );
-        f_ab[ 1 ] = bit_cast<float>( u_ab[ 1 ] );
-        init = false;
-    }
-
-    return f_ab[ i ];
 }
 /*============================================================================*/
 bool ffmath::isEqual( const float a,
@@ -127,12 +119,12 @@ bool ffmath::isEqual( const float a,
 /*============================================================================*/
 float ffmath::getInf( void )
 {
-    return getAbnormal( 0 );
+    return limits::infinity();
 }
 /*============================================================================*/
 float ffmath::getNan( void )
 {
-    return getAbnormal( 1 );
+    return limits::nan();
 }
 /*============================================================================*/
 ffmath::classification ffmath::classify( const float f )
@@ -184,7 +176,7 @@ float ffmath::sign( float x )
         s = 0.0F;
     }
     else {
-        s = ffmath::getNan();
+        s = limits::nan();
     }
 
     return s;
@@ -211,7 +203,7 @@ float ffmath::sqrt( float x )
     float retVal;
 
     if ( x < 0.0F ) {
-        retVal = ffmath::getNan();
+        retVal = limits::nan();
     }
     else if ( ffmath::classification::FFP_ZERO == ffmath::classify( x ) ) {
         retVal = 0.0F;
@@ -234,10 +226,10 @@ float ffmath::rSqrt( float x )
     float retVal;
 
     if ( x < 0.0F ) {
-        retVal = ffmath::getNan();
+        retVal = limits::nan();
     }
     else if ( ffmath::classification::FFP_ZERO  == ffmath::classify( x ) ) {
-        retVal = ffmath::getInf();
+        retVal = limits::infinity();
     }
     else {
         uint32_t y = bit_cast<uint32_t>( x );
@@ -283,7 +275,7 @@ float ffmath::cbrt( float x )
 float ffmath::rCbrt( float x )
 {
     return ( ffmath::classification::FFP_ZERO  == ffmath::classify( x ) ) ?
-             ffmath::getInf() : compute_cbrt( x, true );
+             limits::infinity() : compute_cbrt( x, true );
 }
 /*============================================================================*/
 float ffmath::rounding( float x )
@@ -412,7 +404,7 @@ float ffmath::frac( float x )
 float ffmath::rem( float x,
                    float y )
 {
-    return ( classification::FFP_ZERO == classify( x ) ) ? ffmath::getNan()
+    return ( classification::FFP_ZERO == classify( x ) ) ? limits::nan()
                                                          : ( x - ( y*ffmath::trunc( x/y ) ) );
 }
 /*============================================================================*/
@@ -533,7 +525,7 @@ float ffmath::exp2( float x )
         retVal = 0.0F;
     }
     else if ( x > 128.0F ) {
-        retVal = ffmath::getInf();
+        retVal = limits::infinity();
     }
     else {
         float ip, fp;
@@ -562,10 +554,10 @@ float ffmath::log2( float x )
     float retVal;
 
     if ( x < 0.0F ) {
-        retVal = ffmath::getNan();
+        retVal = limits::nan();
     }
     else if ( ffmath::classification::FFP_ZERO == ffmath::classify( x ) ) {
-        retVal = -ffmath::getInf();
+        retVal = -limits::infinity();
     }
     else {
         float z, px;
@@ -669,7 +661,7 @@ float ffmath::asinh( float x )
 /*============================================================================*/
 float ffmath::acosh( float x )
 {
-    return ( x < 1.0F ) ? ffmath::getNan()
+    return ( x < 1.0F ) ? limits::nan()
                         : ffmath::log( x + ffmath::sqrt( ( x*x ) - 1.0F ) );
 }
 /*============================================================================*/
@@ -909,8 +901,8 @@ float ffmath::hypot( float x,
     }
     else {
         retVal = ( ( classification::FFP_INFINITE == xClass ) ||
-                   ( classification::FFP_INFINITE == yClass )  ) ? ffmath::getInf()
-                                                                 : ffmath::getNan();
+                   ( classification::FFP_INFINITE == yClass )  ) ? limits::infinity()
+                                                                 : limits::nan();
     }
 
     return retVal;
@@ -925,7 +917,7 @@ float ffmath::nextAfter( float x,
     const uint32_t uyi = bit_cast<uint32_t>( y );
 
     if ( ffmath::isNan( x ) || ffmath::isNan( y ) ) {
-        retVal = ffmath::getNan();
+        retVal = limits::nan();
     }
     else if ( uxi == uyi ) {
         retVal = y;
@@ -954,13 +946,13 @@ float ffmath::tgamma( float x )
 
     const auto fClass = ffmath::classify( x );
     if ( classification::FFP_NAN == fClass ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else if ( classification::FFP_ZERO == fClass ) {
-        result = ffmath::getInf(); /* a huge value */
+        result = limits::infinity(); /* a huge value */
     }
     else if ( classification::FFP_INFINITE == fClass ) {
-        result = ( x > 0.0F ) ? ffmath::getInf() : ffmath::getNan();
+        result = ( x > 0.0F ) ? limits::infinity() : limits::nan();
     }
     else {
         bool parity = false;
@@ -984,7 +976,7 @@ float ffmath::tgamma( float x )
                 y += 1.0F;
             }
             else {
-                result = ffmath::getNan();
+                result = limits::nan();
                 goto EXIT_TGAMMA;
             }
         }
@@ -993,7 +985,7 @@ float ffmath::tgamma( float x )
                 result = 1.0F/y;
             }
             else {
-                result = ffmath::getInf();
+                result = limits::infinity();
             }
         }
         else if ( y < 12.0F ) {
@@ -1058,7 +1050,7 @@ float ffmath::tgamma( float x )
                 result = ffmath::exp( sum );
             }
             else {
-                result = ffmath::getInf();
+                result = limits::infinity();
             }
         }
         if ( parity ) {
@@ -1082,7 +1074,7 @@ static float lgamma_positive( float x )
     float result;
 
     if ( x > 171.624F ) {
-        result = ffmath::getInf();
+        result = limits::infinity();
     }
     else {
         float y, corrector, num, den;
@@ -1218,15 +1210,15 @@ float ffmath::lgamma( float x )
 
     const auto fClass = ffmath::classify( x );
     if ( classification::FFP_NAN == fClass ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else if ( ( classification::FFP_ZERO == fClass ) || ( classification::FFP_INFINITE == fClass ) ) {
-        result = ffmath::getInf();
+        result = limits::infinity();
     }
     else {
         if ( x < 0.0F ) {
             if ( x <= -4503599627370496.0F ) { /* x < 2^52 */
-                result = ffmath::getInf();
+                result = limits::infinity();
             }
             else {
                 float y, y1, isItAnInt;
@@ -1235,7 +1227,7 @@ float ffmath::lgamma( float x )
                 y1 = ffmath::trunc( y );
                 isItAnInt = y - y1;
                 if ( ffmath::isEqual( 0.0F, isItAnInt ) ) {
-                    result = ffmath::getInf();
+                    result = limits::infinity();
                 }
                 else {
                     float a;
@@ -1279,13 +1271,13 @@ float ffmath::factorial( float x )
     float y;
 
     if ( x > 34.0F ) {
-        y = ffmath::getInf();
+        y = limits::infinity();
     }
     else if ( x >= 0.0F ) {
         y = ft[ static_cast<size_t>( x ) ];
     }
     else {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
 
     return y;
@@ -1391,14 +1383,13 @@ float ffmath::assoc_laguerre( size_t n,
                               size_t m,
                               float x )
 {
-    // include/tr1/poly_laguerre.tcc
     float y;
     /*cstat -CERT-FLP36-C*/
     const float alpha = static_cast<float>( m );
     const float N = static_cast<float>( n );
     /*cstat +CERT-FLP36-C*/
     if ( ( x < 0.0F ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( 0U == n ) {
         y = 1.0F;
@@ -1435,7 +1426,7 @@ static float poly_legendre_p( size_t l,
     float y;
 
     if ( ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( -1.0F, x ) ) {
         y = ( 1 == ( l % 2 ) ) ? -1.0F : 1.0F;
@@ -1482,7 +1473,7 @@ float ffmath::assoc_legendre( size_t n,
         y = 0.0F;
     }
     else if ( ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( 0U == m ) {
         y = poly_legendre_p( n, x );
@@ -1534,7 +1525,7 @@ float ffmath::beta( float x,
     float result;
 
     if ( ffmath::isNan( x ) || ffmath::isNan( y ) ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else {
         const float bet = ffmath::lgamma( x ) + ffmath::lgamma( y ) - ffmath::lgamma( x + y );
@@ -1555,7 +1546,7 @@ static float ellint_rf( float x,
     if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) ||
         ( ( x + y ) < loLim ) || ( ( x + z ) < loLim ) || ( ( y + z) < loLim )
        ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else {
         constexpr float c0 = 1.0F/4.0F;
@@ -1616,7 +1607,7 @@ static float ellint_rd( float x,
     float result;
 
     if ( ( x < 0.0F ) || ( y < 0.0F ) || ( ( x + y ) < loLim ) || ( z < loLim ) ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else {
         constexpr float c0 = 1.0F/4.0F;
@@ -1680,7 +1671,7 @@ static float ellint_rc( float x,
     constexpr float errTol = 0.049606282877419791144113503378321F;
 
     if ( ( x < 0.0F ) || ( y < 0.0F ) || ( y < loLim ) ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else {
         constexpr float c0 = 1.0F/4.0F;
@@ -1725,7 +1716,7 @@ static float ellint_rj( float x,
 
     if ( ( x < 0.0F ) || ( y < 0.0F ) || ( z < 0.0F ) || ( ( x + y ) < loLim ) ||
          ( ( x + z ) < loLim ) || ( ( y + z) < loLim )|| ( p < loLim ) ) {
-        result = ffmath::getNan();
+        result = limits::nan();
     }
     else {
         constexpr float c0 = 1.0F/4.0F;
@@ -1794,8 +1785,8 @@ float ffmath::comp_ellint_1( float k )
 {
     float y;
 
-    if ( ffmath::isNan( k ) || ( absolute( k ) >= 1.0F ) ) { //no side effects
-        y = ffmath::getNan();
+    if ( ffmath::isNan( k ) || ( absolute( k ) >= 1.0F ) ) { /*no side effects*/
+        y = limits::nan();
     }
     else {
         y = ellint_rf( 0.0F, 1.0F - ( k*k ), 1.0F );
@@ -1810,7 +1801,7 @@ float ffmath::comp_ellint_2( float k )
     const float abs_k = absolute( k );
 
     if ( ffmath::isNan( k ) || ( abs_k > 1.0F ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( 1.0F, abs_k ) ) {
         y = 1.0F;
@@ -1833,10 +1824,10 @@ float ffmath::comp_ellint_3( float k,
     const float abs_k = absolute( k );
 
     if ( ffmath::isNan( k ) || ffmath::isNan( nu ) || ( abs_k > 1.0F ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( 1.0F, nu ) ) {
-        y = ffmath::getInf();
+        y = limits::infinity();
     }
     else {
         const float kk = k*k;
@@ -1855,7 +1846,7 @@ float ffmath::ellint_1( float k,
     float y;
 
     if ( ffmath::isNan( k ) || ffmath::isNan( phi ) || ( absolute(k) > 1.0F ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         const float n = ffmath::floor( phi/ffmath::FFP_PI + 0.5F );
@@ -1880,7 +1871,7 @@ float ffmath::ellint_2( float k,
     float y;
 
     if ( ffmath::isNan( k ) || ffmath::isNan( phi ) || ( absolute( k ) > 1.0F ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         constexpr float c13 = 1.0F/3.0F;
@@ -1914,7 +1905,7 @@ float ffmath::ellint_3( float k,
     float y;
 
     if ( ffmath::isNan( k ) || ffmath::isNan( nu ) || ffmath::isNan( phi ) || ( absolute( k ) > 1.0F ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         const float n = ffmath::floor( phi/ffmath::FFP_PI + 0.5F );
@@ -2013,7 +2004,7 @@ static float expint_Ei_asymp( float x )
 static float expint_En_cont_frac( size_t n,
                                   float x )
 {
-    float y = ffmath::getNan();
+    float y = limits::nan();
     const int maxIter = 1000;
     const int nm1 = static_cast<int>( n ) - 1;
     /*cstat -CERT-FLP36-C*/
@@ -2091,7 +2082,7 @@ static float expint_Ei( float x )
 /*============================================================================*/
 float ffmath::expint( float num )
 {
-    return ( ffmath::isNan( num ) ) ? ffmath::getNan() : expint_Ei( num );
+    return ( ffmath::isNan( num ) ) ? limits::nan() : expint_Ei( num );
 }
 /*============================================================================*/
 float ffmath::hermite( size_t n,
@@ -2100,7 +2091,7 @@ float ffmath::hermite( size_t n,
     float y = 0.0F;
 
     if ( ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         const float H_0 = 1.0F;
@@ -2145,7 +2136,7 @@ float ffmath::legendre( size_t n,
     float y = 0.0F;
 
     if ( ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( 1.0F, x ) ) {
         y = 1.0F;
@@ -2263,10 +2254,10 @@ float ffmath::riemann_zeta( float s )
     float z;
 
     if ( ffmath::isNan( s ) ) {
-        z = ffmath::getNan();
+        z = limits::nan();
     }
     else if ( ffmath::isEqual( 1.0F, s ) ) {
-        z = ffmath::getInf();
+        z = limits::infinity();
     }
     else if ( s < -19.0F ) {
         z = riemann_zeta_product( 1.0F - s );
@@ -2324,8 +2315,8 @@ static void bessel_jn( float nu,
             j_nu = 0.0F;
             j_pnu = 0.0F;
         }
-        n_nu = -ffmath::getInf();
-        n_pnu = ffmath::getInf();
+        n_nu = -limits::infinity();
+        n_pnu = limits::infinity();
     }
     else {
         const float eps = limits::epsilon();
@@ -2531,7 +2522,7 @@ float ffmath::sph_bessel( size_t n,
     float y;
 
     if ( ( x < 0.0F ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( 0.0F, x ) ) {
         y = ( 0U == n ) ? 1.0F : 0.0F;
@@ -2552,10 +2543,10 @@ float ffmath::sph_neumann( size_t n,
     float y;
 
     if ( ( x < 0.0F ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ffmath::isEqual( 0.0F, x ) ) {
-        y = -ffmath::getInf();
+        y = -limits::infinity();
     }
     else {
         float j_n, n_n, jp_n, np_n;
@@ -2586,8 +2577,8 @@ static void bessel_ik( float nu,
             i_nu = 0.0F;
             i_pnu = 0.0F;
         }
-        k_nu = ffmath::getInf();
-        k_pnu = -ffmath::getInf();
+        k_nu = limits::infinity();
+        k_pnu = -limits::infinity();
     }
     else {
         const float eps = limits::epsilon();
@@ -2768,7 +2759,7 @@ float ffmath::cyl_bessel_i( float nu,
     float y;
 
     if ( ( nu < 0.0F ) || ( x < 0.0F ) || ffmath::isNan( nu ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ( x*x ) < ( 10.0F*( nu + 1.0F ) ) ) {
         y = cyl_bessel_ij_series( nu, x, 1.0F, 200U );
@@ -2832,7 +2823,7 @@ float ffmath::cyl_bessel_j( float nu,
     float y;
 
     if ( ( nu < 0.0F ) || ( x < 0.0F ) || ffmath::isNan( nu ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( ( x*x ) < ( 10.0F*( nu + 1.0F ) ) ) {
         y = cyl_bessel_ij_series( nu, x, -1.0F, 200U );
@@ -2858,7 +2849,7 @@ float ffmath::cyl_bessel_k( float nu,
     float y;
 
     if ( ( nu < 0.0F ) || ( x < 0.0F ) || ffmath::isNan( nu ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         float I_nu, K_nu, Ip_nu, Kp_nu;
@@ -2875,7 +2866,7 @@ float ffmath::cyl_neumann( float nu,
     float y;
 
     if ( ( nu < 0.0F ) || ( x < 0.0F ) || ffmath::isNan( nu ) || ffmath::isNan( x ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else if ( x > 1000.0F ) {
         float J_nu, N_nu;
@@ -2898,7 +2889,7 @@ float ffmath::sph_legendre( size_t l,
     float y;
 
     if ( ffmath::isNan( theta ) ) {
-        y = ffmath::getNan();
+        y = limits::nan();
     }
     else {
         const float x = ffmath::cos( theta );
