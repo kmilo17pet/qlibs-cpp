@@ -258,15 +258,15 @@ Example: Speed control using a PID controller:</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] )</div>
 <div class="line">{</div>
-<div class="line">    pidController_t speedControl;</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1pid_controller.html">pidController</a> speedControl;</div>
 <div class="line">    <span class="keywordtype">bool</span> ret;</div>
 <div class="line"> </div>
 <div class="line">    BSP_SystemInit();</div>
-<div class="line">    ret = speedControl.setup( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
+<div class="line">    ret = speedControl.<a class="code hl_function" href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">setup</a>( 1.0f, 0.1f, 0.0f, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a><span class="keyword">&gt;</span>( dt/1000.0f ) );</div>
 <div class="line">    <span class="keywordflow">if</span> ( !ret ) {</div>
 <div class="line">        puts( <span class="stringliteral">&quot;ERROR: Cant configure PID controller&quot;</span> );</div>
 <div class="line">    }</div>
-<div class="line">    speedControl.setSaturation( 0.0f, 100.0f );</div>
+<div class="line">    speedControl.<a class="code hl_function" href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">setSaturation</a>( 0.0f, 100.0f );</div>
 <div class="line">    <span class="comment">// Create the task that handles the speed control at the defined rate</span></div>
 <div class="line">    xTaskCreate( xTaskPIDspeedControl, <span class="stringliteral">&quot;speedControl&quot;</span>, 1024, &amp;speedControl, configMAX_PRIORITIES - 1 , <span class="keyword">nullptr</span> );</div>
 <div class="line">    vTaskStartScheduler();</div>
@@ -274,6 +274,8 @@ Example: Speed control using a PID controller:</h2>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassqlibs_1_1pid_controller_html"><div class="ttname"><a href="classqlibs_1_1pid_controller.html">qlibs::pidController</a></div><div class="ttdoc">A PID controller object.</div><div class="ttdef"><b>Definition</b> pid.hpp:137</div></div>
+<div class="ttc" id="aclassqlibs_1_1pid_controller_html_a024a3e62c9090fe9b2e44043beb0ae7c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">qlibs::pidController::setup</a></div><div class="ttdeci">bool setup(const real_t kc, const real_t ki, const real_t kd, const real_t dT) noexcept</div><div class="ttdoc">Setup and initialize the PID controller instance.</div><div class="ttdef"><b>Definition</b> pid.cpp:10</div></div>
+<div class="ttc" id="aclassqlibs_1_1pid_controller_html_a3e3161df46ae458642e45b0ef0b954b9"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">qlibs::pidController::setSaturation</a></div><div class="ttdeci">bool setSaturation(const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the output saturation for the PID controller.</div><div class="ttdef"><b>Definition</b> pid.cpp:107</div></div>
 <div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> fp16.cpp:4</div></div>
 <div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qpid_mrac"></a>
@@ -434,8 +436,6 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassqlibs_1_1pid_auto_tuning_html"><div class="ttname"><a href="classqlibs_1_1pid_auto_tuning.html">qlibs::pidAutoTuning</a></div><div class="ttdoc">A PID Auto-tuning object.</div><div class="ttdef"><b>Definition</b> pid.hpp:69</div></div>
-<div class="ttc" id="aclassqlibs_1_1pid_controller_html_a024a3e62c9090fe9b2e44043beb0ae7c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">qlibs::pidController::setup</a></div><div class="ttdeci">bool setup(const real_t kc, const real_t ki, const real_t kd, const real_t dT) noexcept</div><div class="ttdoc">Setup and initialize the PID controller instance.</div><div class="ttdef"><b>Definition</b> pid.cpp:10</div></div>
-<div class="ttc" id="aclassqlibs_1_1pid_controller_html_a3e3161df46ae458642e45b0ef0b954b9"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">qlibs::pidController::setSaturation</a></div><div class="ttdeci">bool setSaturation(const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the output saturation for the PID controller.</div><div class="ttdef"><b>Definition</b> pid.cpp:107</div></div>
 <div class="ttc" id="aclassqlibs_1_1pid_controller_html_ac104a665b6e24907cc74c42913c9f31c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">qlibs::pidController::bindAutoTuning</a></div><div class="ttdeci">bool bindAutoTuning(pidAutoTuning &amp;at) noexcept</div><div class="ttdoc">Binds the specified instance to enable the PID controller auto tuning algorithm.</div><div class="ttdef"><b>Definition</b> pid.cpp:433</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -18,7 +18,6 @@ var group__qinterp1 =
       [ "qlibs::INTERP1_CUBIC", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e", null ],
       [ "qlibs::INTERP1_HERMITE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896", null ],
       [ "qlibs::INTERP1_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09", null ],
-      [ "qlibs::INTERP1_CONSTRAINED_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4", null ],
-      [ "qlibs::INTERP1_MAX", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661", null ]
+      [ "qlibs::INTERP1_CONSTRAINED_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4", null ]
     ] ]
 ];

@@ -7,6 +7,7 @@ var hierarchy =
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
     [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
     [ "qlibs::fp16", "classqlibs_1_1fp16.html", null ],
+    [ "limits::fu32", "unionlimits_1_1fu32.html", null ],
     [ "qlibs::interp1", "classqlibs_1_1interp1.html", null ],
     [ "qlibs::fis::ioBase", "classqlibs_1_1fis_1_1io_base.html", [
       [ "qlibs::fis::input", "classqlibs_1_1fis_1_1input.html", null ],

@@ -8,10 +8,9 @@ var searchData=
   ['interp1_5fcubic_5',['INTERP1_CUBIC',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e',1,'qlibs']]],
   ['interp1_5fhermite_6',['INTERP1_HERMITE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896',1,'qlibs']]],
   ['interp1_5flinear_7',['INTERP1_LINEAR',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a22f483d14462af57c9222997156184bf',1,'qlibs']]],
-  ['interp1_5fmax_8',['INTERP1_MAX',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661',1,'qlibs']]],
-  ['interp1_5fnearest_9',['INTERP1_NEAREST',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17',1,'qlibs']]],
-  ['interp1_5fnext_10',['INTERP1_NEXT',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373',1,'qlibs']]],
-  ['interp1_5fprevious_11',['INTERP1_PREVIOUS',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1',1,'qlibs']]],
-  ['interp1_5fsine_12',['INTERP1_SINE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc',1,'qlibs']]],
-  ['interp1_5fspline_13',['INTERP1_SPLINE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09',1,'qlibs']]]
+  ['interp1_5fnearest_8',['INTERP1_NEAREST',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a55e69cb1e84831e58448388733dfff17',1,'qlibs']]],
+  ['interp1_5fnext_9',['INTERP1_NEXT',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a7d7acaecaedaa551cae7cfa632b9a373',1,'qlibs']]],
+  ['interp1_5fprevious_10',['INTERP1_PREVIOUS',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a527d33d8406fa2cd3228d09f541f93d1',1,'qlibs']]],
+  ['interp1_5fsine_11',['INTERP1_SINE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a942f197457272e25f4b42290a7e4d7dc',1,'qlibs']]],
+  ['interp1_5fspline_12',['INTERP1_SPLINE',['../group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09',1,'qlibs']]]
 ];

@@ -10,5 +10,6 @@ var searchData=
   ['fp16_7',['fp16',['../classqlibs_1_1fp16.html#acb45986b550fff096603c196df5abb85',1,'qlibs::fp16::fp16()'],['../classqlibs_1_1fp16.html#afe8f5cb00a5cc7c58c022649434e840c',1,'qlibs::fp16::fp16(const fp16 &amp;other)']]],
   ['frac_8',['frac',['../group__qffmath.html#ga3fe71e414943b548d1b41116db40621e',1,'qlibs::ffmath']]],
   ['from_9',['from',['../classqlibs_1_1fp16.html#ab98ae26da9495b52f65f7d9c05e94862',1,'qlibs::fp16::from(const int x) noexcept'],['../classqlibs_1_1fp16.html#ac7d3e21e868f5bacfd458d05f074975d',1,'qlibs::fp16::from(const float x) noexcept'],['../classqlibs_1_1fp16.html#a6bcb3b015b7cc4d521a545c453bba948',1,'qlibs::fp16::from(const double x) noexcept']]],
-  ['fuzzify_10',['fuzzify',['../classqlibs_1_1fis_1_1instance.html#a62b82142e1066a23f652b9b17c9234d9',1,'qlibs::fis::instance::fuzzify()'],['../classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e',1,'qlibs::fis::system::fuzzify()']]]
+  ['fu32_10',['fu32',['../unionlimits_1_1fu32.html#a4896b86c523fe57e19a3253df6ef27dc',1,'limits::fu32']]],
+  ['fuzzify_11',['fuzzify',['../classqlibs_1_1fis_1_1instance.html#a62b82142e1066a23f652b9b17c9234d9',1,'qlibs::fis::instance::fuzzify()'],['../classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e',1,'qlibs::fis::system::fuzzify()']]]
 ];

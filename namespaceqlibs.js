@@ -100,8 +100,7 @@ var namespaceqlibs =
       [ "INTERP1_CUBIC", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a1eadcd0e810bac704b36e746b1ba560e", null ],
       [ "INTERP1_HERMITE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016adf40ae1e0e308e2593d7ff023b8f0896", null ],
       [ "INTERP1_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09", null ],
-      [ "INTERP1_CONSTRAINED_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4", null ],
-      [ "INTERP1_MAX", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a12ce36bc0015b29eafc42afb4f6ca661", null ]
+      [ "INTERP1_CONSTRAINED_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4", null ]
     ] ],
     [ "ltisysType", "group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa", [
       [ "LTISYS_TYPE_UNKNOWN", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18", null ],
