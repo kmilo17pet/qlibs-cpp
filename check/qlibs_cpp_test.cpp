@@ -268,9 +268,7 @@ void test_ltisys( void )
         { 0.0f, 2.0f, 3.0f, 6.0f },
         { 1.0f, 6.0f, 11.0f, 16.0f },
     };
-    transportDelay<delayFromTime(1.3f, dt )> delay;
-
-
+    transportDelay< (1.3_td,dt) > delay;
     continuousSystem gc( ctf, dt );
 
     real_t t = 0.0;

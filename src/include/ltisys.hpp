@@ -82,6 +82,33 @@ namespace qlibs {
         }
     };
 
+
+    struct timeDelay {
+        real_t value;
+        constexpr explicit timeDelay(real_t v) : value(v) {}
+        /** @cond **/
+        constexpr size_t operator()(const real_t dt) const {
+            return static_cast<size_t>((value / dt) + 0.5f);
+        }
+        constexpr size_t operator[](const real_t dt) const {
+            return static_cast<size_t>((value / dt) + 0.5f);
+        }
+        /** @endcond **/
+    };
+    /** @cond **/
+    constexpr timeDelay operator"" _td(long double v) {
+        return timeDelay(static_cast<real_t>(v));
+    }
+
+    constexpr size_t operator,(const timeDelay td, const real_t dt) {
+        return static_cast<size_t>( ( td.value/dt ) + 0.5_re );
+    }
+
+    constexpr size_t operator+(const timeDelay td, const real_t dt) {
+        return static_cast<size_t>( ( td.value/dt ) + 0.5_re );
+    }
+    /** @endcond **/
+
     /**
     * @brief Computes the number of discrete delays required for a specified
     * amount of time using a defined time-step.
@@ -94,6 +121,20 @@ namespace qlibs {
     constexpr size_t delayFromTime( const real_t Time, const real_t dt )
     {
         return static_cast<size_t>( ( Time/dt ) + 0.5_re );
+    }
+
+    /**
+    * @brief Computes the number of discrete delays required for a specified
+    * amount of time using a defined time-step.
+    * @see transportDelay
+    * @param[in] Time The amount of time to delay
+    * @param[in] dt The time step
+    * @return The number of discrete delays required to delay @a Time seconds
+    * using the time step @a dt
+    */
+    constexpr size_t delayFromTime( const timeDelay Time, const real_t dt )
+    {
+        return static_cast<size_t>( ( Time.value/dt ) + 0.5_re );
     }
 
     /**
@@ -133,6 +174,10 @@ namespace qlibs {
             {
                 delay.insertSample( xInput );
                 return delay.getOldest();
+            }
+
+            constexpr size_t getNumberOfDelays() const noexcept {
+                return numberOfDelays;
             }
     };
 

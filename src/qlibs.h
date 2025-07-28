@@ -41,9 +41,9 @@ This file is part of the QuarkTS++ OS distribution.
 #ifndef QLIBS_CPP_H
 #define QLIBS_CPP_H
 
-    #define QLIBS_CPP_VERSION         "1.3.4"
-    #define QLIBS_CPP_VERNUM          ( 134 )
-    #define QLIBS_CPP_CAPTION         "qLibs++" QLIBS_CPP_VERSION
+    #define QLIBS_CPP_VERSION         "1.3.5"
+    #define QLIBS_CPP_VERNUM          ( 135 )
+    #define QLIBS_CPP_CAPTION         "qLibs++ " QLIBS_CPP_VERSION
 
     #include <include/qlibs_types.hpp>
     #include <include/tdl.hpp>
@@ -62,7 +62,7 @@ This file is part of the QuarkTS++ OS distribution.
 
     namespace qlibs {
         namespace build {
-            constexpr const uint32_t number = 2374;
+            constexpr const uint32_t number = 2382;
             constexpr const char* date = __DATE__;
             constexpr const char* time = __TIME__;
             constexpr const char* std = "c++11";
@@ -72,7 +72,7 @@ This file is part of the QuarkTS++ OS distribution.
             constexpr const uint8_t number = QLIBS_CPP_VERNUM;
             constexpr const uint8_t mayor = 1U;
             constexpr const uint8_t minor = 3U;
-            constexpr const uint8_t rev = 4U;
+            constexpr const uint8_t rev = 5U;
         }
         namespace product {
             constexpr const char* author = "J. Camilo Gomez C.";
