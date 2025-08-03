@@ -88,10 +88,10 @@ namespace qlibs {
         constexpr explicit timeDelay(real_t v) : value(v) {}
         /** @cond **/
         constexpr size_t operator()(const real_t dt) const {
-            return static_cast<size_t>((value / dt) + 0.5f);
+            return static_cast<size_t>( ( value/dt )  + 0.5_re);
         }
         constexpr size_t operator[](const real_t dt) const {
-            return static_cast<size_t>((value / dt) + 0.5f);
+            return static_cast<size_t>( ( value/dt ) + 0.5_re);
         }
         /** @endcond **/
     };
@@ -234,8 +234,8 @@ namespace qlibs {
             size_t na{ 0U };
             size_t nb{ 0U };
             real_t b0{ 0.0_re };
-            real_t min{ REAL_MIN };
-            real_t max{ REAL_MAX };
+            real_t min{ -REAL_MAX };
+            real_t max{ +REAL_MAX };
             void normalizeTransferFunction( real_t *num,
                                             real_t *den,
                                             size_t n_num,
@@ -257,7 +257,31 @@ namespace qlibs {
             * @param[in] u A sample of the input signal that excites the system
             * @return The system response.
             */
+
+            /**
+            * @brief Drives the LTI system recursively using the provided input
+            * sample.
+            * @details This function evaluates the system response based on the
+            * given input signal and the internal state of the system. It must
+            * be called periodically with a fixed time step to maintain correct
+            * system behavior.
+            *
+            * @pre The instance must be properly initialized before calling this method.
+            *
+            * @note The user is responsible for ensuring that this function is invoked at consistent
+            * intervals equal to the system's time step @a dt. This timing should
+            * be enforced using a hardware timer, software timer, real-time task,
+            * or another reliable timing mechanism.
+            *
+            * @param[in] u A new input sample that excites (drives) the system.
+            * @return The system's output (response) at the current time step.
+            */
             real_t excite( real_t u );
+
+            /// @copydoc excite(real_t)
+            real_t operator()( const real_t u ) {
+                return excite( u );
+            }
 
             /**
             * @brief Check if the LTI system is initialized.

@@ -277,6 +277,12 @@ void test_ltisys( void )
         t += dt;
     }
 
+    pidController controller;
+    auto othergains = 1.5_kc + 0.1_ki;
+    controller.setup(1.5_kc + 0.1_ki, dt);
+    auto gains = controller.getGains();
+
+    cout << "kc = "<< gains.Kc << " ki = "<< gains.Ki << endl;
     cout << "discreteSystem"<< endl;
     //discreteTF<3,3> dtf= {
     //    { 0.1f, 0.2f, 0.3f },

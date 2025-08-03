@@ -65,3 +65,48 @@ real_t nState::derive( const real_t s,
     return ds;
 }
 /*===========================================================================*/
+integrator::integrator(const real_t timeStep, const real_t initialCondition )
+    : dt( timeStep )
+{
+    init( initialCondition, initialCondition, initialCondition );
+}
+/*===========================================================================*/
+bool integrator::setSaturation( const real_t minV,
+                                const real_t maxV ) noexcept
+{
+    bool retValue = false;
+
+    if ( maxV > minV ) {
+        min = minV;
+        max = maxV;
+        retValue = true;
+    }
+    return retValue;
+}
+/*===========================================================================*/
+real_t integrator::operator()( const real_t xDot ) {
+    real_t xt;
+
+    xt = integrate( xDot, dt );
+    if ( xt > max ) {
+        xt = max;
+    }
+    else if ( xt < min ) {
+        xt = min;
+    }
+    else {
+        /*nothing to do*/
+    }
+
+    return xt;
+}
+/*===========================================================================*/
+derivative::derivative(const real_t timeStep, const real_t initialCondition )
+    : dt( timeStep )
+{
+    init( initialCondition, initialCondition, initialCondition );
+}
+/*===========================================================================*/
+real_t derivative::operator()( const real_t xt ) {
+    return derive( xt, dt );
+}

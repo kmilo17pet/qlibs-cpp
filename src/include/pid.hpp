@@ -56,10 +56,36 @@ namespace qlibs {
     * @brief PID Gains structure
     */
     struct pidGains {
-        real_t Kc;  /*!< Proportional gain */
-        real_t Ki;  /*!< Integral gain */
-        real_t Kd;  /*!< Derivative gain */
+        real_t Kc{ 0.0_re };  /*!< Proportional gain */
+        real_t Ki{ 0.0_re };  /*!< Integral gain */
+        real_t Kd{ 0.0_re };  /*!< Derivative gain */
+
+        /*! @cond  */
+        constexpr pidGains() = default;
+        constexpr pidGains(real_t kc, real_t ki, real_t kd)
+            : Kc(kc), Ki(ki), Kd(kd) {}
+
+        constexpr pidGains operator+(const pidGains& other) const {
+            return pidGains{
+                this->Kc + other.Kc,
+                this->Ki + other.Ki,
+                this->Kd + other.Kd
+            };
+        }
+        /*! @endcond  */
     };
+
+    /*! @cond  */
+    constexpr pidGains operator"" _kc(long double v) {
+        return {static_cast<real_t>(v), 0.0_re, 0.0_re};
+    }
+    constexpr pidGains operator"" _ki(long double v) {
+        return {0.0_re, static_cast<real_t>(v), 0.0_re};
+    }
+    constexpr pidGains operator"" _kd(long double v) {
+        return {0.0_re, 0.0_re, static_cast<real_t>(v)};
+    }
+    /*! @endcond  */
 
     /**
     * @brief A PID Auto-tuning object
@@ -332,6 +358,14 @@ namespace qlibs {
             */
             real_t control( const real_t w,
                             const real_t y ) noexcept;
+
+
+            /// @copydoc control(const real_t, const real_t)
+            real_t operator()( const real_t w,
+                               const real_t y )
+            {
+                return control( w, y );
+            }
 
             /**
             * @brief Binds the specified instance to enable the PID controller auto
