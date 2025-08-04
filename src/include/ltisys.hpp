@@ -83,31 +83,77 @@ namespace qlibs {
     };
 
 
+    /**
+     * @brief Represents a time delay value for use in transportDelay constructor.
+     *
+     * This utility provides a convenient way to convert a continuous-time delay
+     * (in seconds) into a discrete-time delay step count based on a given time step `dt`.
+     *
+     * Example usage:
+     * @code
+     * transportDelay< 2.5_td(dt) > processDelay;
+     * @endcode
+     */
     struct timeDelay {
+        /// Delay duration in seconds.
         real_t value;
+
+        /**
+        * @brief Construct a new timeDelay object.
+        * @param v The delay value in seconds.
+        */
         constexpr explicit timeDelay(real_t v) : value(v) {}
-        /** @cond **/
+
+        /**
+        * @brief Computes the number of discrete steps equivalent to the delay.
+        * @param dt The time step used in the simulation.
+        * @return The delay expressed in number of steps, rounded to the nearest integer.
+        */
         constexpr size_t operator()(const real_t dt) const {
             return static_cast<size_t>( ( value/dt )  + 0.5_re);
         }
+
+        /**
+        * @brief Alternate syntax to compute delay in steps using indexing operator.
+        * @param dt The time step used in the simulation.
+        * @return The delay expressed in number of steps, rounded to the nearest integer.
+        */
         constexpr size_t operator[](const real_t dt) const {
             return static_cast<size_t>( ( value/dt ) + 0.5_re);
         }
-        /** @endcond **/
     };
-    /** @cond **/
+
+    /**
+    * @brief Literal for creating a timeDelay from a floating-point value.
+    *
+    * Example:
+    * @code
+    * auto d = 0.2_td; // same as timeDelay(0.2_re)
+    * @endcode
+    *
+    * @param v The delay value in seconds.
+    * @return A timeDelay instance.
+    */
     constexpr timeDelay operator"" _td(long double v) {
         return timeDelay(static_cast<real_t>(v));
     }
 
+    /**
+    * @brief Computes the delay in discrete steps using the comma operator.
+    *
+    * This allows concise syntax like:
+    * @code
+    * constexpr real_t dt = 0.01_re;
+    * size_t steps = 0.2_td, dt; // same as timeDelay(0.2_re)(dt)
+    * @endcode
+    *
+    * @param td A timeDelay object.
+    * @param dt The time step.
+    * @return The delay in steps.
+    */
     constexpr size_t operator,(const timeDelay td, const real_t dt) {
         return static_cast<size_t>( ( td.value/dt ) + 0.5_re );
     }
-
-    constexpr size_t operator+(const timeDelay td, const real_t dt) {
-        return static_cast<size_t>( ( td.value/dt ) + 0.5_re );
-    }
-    /** @endcond **/
 
     /**
     * @brief Computes the number of discrete delays required for a specified
@@ -152,11 +198,14 @@ namespace qlibs {
     * class to simulate a time delay.
     * @see delayFromTime
     * @tparam numberOfDelay The number of discrete delays to be used. Use the
-    * delayFromTime() function to determine the number of discrete delays required
-    * for a specified amount of time.
+    * timeDelay facility or  delayFromTime() function to determine the number
+    * of discrete delays required for a specified amount of time.
     * Example :
     * @code{.cpp}
-    * transportDelay<delayFromTime( 2.5f, dt )> myDelay1;
+    * constexpr real_t dt = 0.1_re;
+    * transportDelay< 2.5_td(dt) )> myDelay1;
+    * transportDelay< delayFromTime(5.2, dt) )> myDelay2;
+    * transportDelay< 4.3_td[dt] )> myDelay2;
     * @endcode
     */
     template<size_t numberOfDelays>
