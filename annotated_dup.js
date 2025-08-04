@@ -14,14 +14,11 @@ var annotated_dup =
         [ "system", "classqlibs_1_1fis_1_1system.html", "classqlibs_1_1fis_1_1system" ]
       ] ],
       [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
-      [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
-      [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],
       [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
-      [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
-      [ "discreteTF", "structqlibs_1_1discrete_t_f.html", "structqlibs_1_1discrete_t_f" ],
+      [ "derivative", "classqlibs_1_1derivative.html", "classqlibs_1_1derivative" ],
       [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
+      [ "integrator", "classqlibs_1_1integrator.html", "classqlibs_1_1integrator" ],
       [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
-      [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
       [ "mat", "classqlibs_1_1mat.html", "classqlibs_1_1mat" ],
       [ "nState", "classqlibs_1_1n_state.html", "classqlibs_1_1n_state" ],
       [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
@@ -40,8 +37,7 @@ var annotated_dup =
       [ "smootherMOR2", "classqlibs_1_1smoother_m_o_r2.html", "classqlibs_1_1smoother_m_o_r2" ],
       [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
       [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
-      [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
-      [ "transportDelay", "classqlibs_1_1transport_delay.html", "classqlibs_1_1transport_delay" ]
+      [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ]
     ] ],
     [ "limits", "structlimits.html", "structlimits" ],
     [ "thing", "structthing.html", "structthing" ]

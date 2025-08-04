@@ -10,6 +10,5 @@ var searchData=
   ['getnumberofpoints_7',['getNumberOfPoints',['../classqlibs_1_1fis_1_1instance.html#a5ce490b3d54c6c4bf848c870f00a9cc8',1,'qlibs::fis::instance::getNumberOfPoints()'],['../classqlibs_1_1fis_1_1system.html#a8d6294fe569ae490f4aad7abf1bb2a8d',1,'qlibs::fis::system::getNumberOfPoints()']]],
   ['getoldest_8',['getOldest',['../classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159',1,'qlibs::tdl']]],
   ['getoutput_9',['getOutput',['../classqlibs_1_1fis_1_1instance.html#ae990f65cd11f5a868185a5610d53b13e',1,'qlibs::fis::instance::getOutput()'],['../classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1',1,'qlibs::fis::system::getOutput()']]],
-  ['getrecent_10',['getRecent',['../classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8',1,'qlibs::tdl']]],
-  ['gettype_11',['getType',['../classqlibs_1_1ltisys.html#a5a03f10256af1e6915333a04bd181173',1,'qlibs::ltisys']]]
+  ['getrecent_10',['getRecent',['../classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8',1,'qlibs::tdl']]]
 ];

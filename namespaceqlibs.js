@@ -42,14 +42,11 @@ var namespaceqlibs =
       [ "str", "namespaceqlibs_1_1version.html#a7f7b3583b17e1147cd8bbf317eaa17de", null ]
     ] ],
     [ "bitfield", "classqlibs_1_1bitfield.html", "classqlibs_1_1bitfield" ],
-    [ "continuousSystem", "classqlibs_1_1continuous_system.html", "classqlibs_1_1continuous_system" ],
-    [ "continuousTF", "structqlibs_1_1continuous_t_f.html", "structqlibs_1_1continuous_t_f" ],
     [ "crc", "classqlibs_1_1crc.html", "classqlibs_1_1crc" ],
-    [ "discreteSystem", "classqlibs_1_1discrete_system.html", "classqlibs_1_1discrete_system" ],
-    [ "discreteTF", "structqlibs_1_1discrete_t_f.html", "structqlibs_1_1discrete_t_f" ],
+    [ "derivative", "classqlibs_1_1derivative.html", "classqlibs_1_1derivative" ],
     [ "fp16", "classqlibs_1_1fp16.html", "classqlibs_1_1fp16" ],
+    [ "integrator", "classqlibs_1_1integrator.html", "classqlibs_1_1integrator" ],
     [ "interp1", "classqlibs_1_1interp1.html", "classqlibs_1_1interp1" ],
-    [ "ltisys", "classqlibs_1_1ltisys.html", "classqlibs_1_1ltisys" ],
     [ "mat", "classqlibs_1_1mat.html", "classqlibs_1_1mat" ],
     [ "nState", "classqlibs_1_1n_state.html", "classqlibs_1_1n_state" ],
     [ "pidAutoTuning", "classqlibs_1_1pid_auto_tuning.html", "classqlibs_1_1pid_auto_tuning" ],
@@ -69,11 +66,7 @@ var namespaceqlibs =
     [ "smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", "classqlibs_1_1smoother_m_w_m1" ],
     [ "smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", "classqlibs_1_1smoother_m_w_m2" ],
     [ "tdl", "classqlibs_1_1tdl.html", "classqlibs_1_1tdl" ],
-    [ "transportDelay", "classqlibs_1_1transport_delay.html", "classqlibs_1_1transport_delay" ],
     [ "bitArea", "group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a", null ],
-    [ "continuousStates", "group__qltisys.html#ga89e898dad572c32c1fedf8ac1ffeff9d", null ],
-    [ "discreteDelay", "group__qltisys.html#ga2dade50797abbbaec85106050db0b048", null ],
-    [ "discreteStates", "group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853", null ],
     [ "real_t", "namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e", null ],
     [ "crcMode", "group__qcrc.html#ga5b194c56447214ee3207b107e549cad5", [
       [ "CRC8", "group__qcrc.html#gga5b194c56447214ee3207b107e549cad5a70f6e8e0b91a39229a4d97de2e29f9cb", null ],
@@ -102,11 +95,6 @@ var namespaceqlibs =
       [ "INTERP1_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016a83e346affcaca72dc8d419812f490d09", null ],
       [ "INTERP1_CONSTRAINED_SPLINE", "group__qinterp1.html#gga3b97e7424eae482b8b70649d8ab22016acbb10706073ccf5716eadf1488c10fb4", null ]
     ] ],
-    [ "ltisysType", "group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa", [
-      [ "LTISYS_TYPE_UNKNOWN", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18", null ],
-      [ "LTISYS_TYPE_CONTINUOUS", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd", null ],
-      [ "LTISYS_TYPE_DISCRETE", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b", null ]
-    ] ],
     [ "matSpecial", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511", [
       [ "MAT_ZERO", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a1e9a553843036e17f00ee26c7a84aa4b", null ],
       [ "MAT_IDENTITY", "namespaceqlibs.html#a9e19221783d7af35b19059c1c0e14511a421e57b45ad7c9178011a03a11a8ecbc", null ],
@@ -127,7 +115,6 @@ var namespaceqlibs =
       [ "PID_TYPE_PD", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa98df99b297d37aff68bebca147a26e61", null ],
       [ "PID_TYPE_PID", "group__qpid.html#gga60823e0b36c4944749695b336713ea0aa089c57706330ae730346240a7b931ca6", null ]
     ] ],
-    [ "delayFromTime", "group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],
     [ "FP_2_PI", "group__qfp16.html#ga805c4ff0b0f82e1b8f140d54519b46dc", null ],
     [ "FP_2_SQRTPI", "group__qfp16.html#ga9da1ac6525314bf8d3524ff938dc7e75", null ],

@@ -18,7 +18,6 @@ var searchData=
   ['getoldest_15',['getOldest',['../classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159',1,'qlibs::tdl']]],
   ['getoutput_16',['getOutput',['../classqlibs_1_1fis_1_1instance.html#ae990f65cd11f5a868185a5610d53b13e',1,'qlibs::fis::instance::getOutput()'],['../classqlibs_1_1fis_1_1system.html#aadf18ace703598a1e962ac5715d7fda1',1,'qlibs::fis::system::getOutput()']]],
   ['getrecent_17',['getRecent',['../classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8',1,'qlibs::tdl']]],
-  ['gettype_18',['getType',['../classqlibs_1_1ltisys.html#a5a03f10256af1e6915333a04bd181173',1,'qlibs::ltisys']]],
-  ['given_20continuous_20transfer_20function_19',['Example: Evaluate the given continuous transfer function',['../qltisys_desc.html#qltisys_ex1',1,'']]],
-  ['given_20discrete_20transfer_20function_20',['Example: Evaluate the given discrete transfer function',['../qltisys_desc.html#qltisys_ex2',1,'']]]
+  ['given_20continuous_20transfer_20function_18',['Example: Evaluate the given continuous transfer function',['../qltisys_desc.html#qltisys_ex1',1,'']]],
+  ['given_20discrete_20transfer_20function_19',['Example: Evaluate the given discrete transfer function',['../qltisys_desc.html#qltisys_ex2',1,'']]]
 ];

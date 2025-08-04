@@ -7,6 +7,7 @@ var classqlibs_1_1pid_controller =
     [ "enableAutoTuning", "classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e", null ],
     [ "getGains", "classqlibs_1_1pid_controller.html#a3b0938371f297f9269bcb4c01d08c16a", null ],
     [ "isAutoTuningComplete", "classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131", null ],
+    [ "operator()", "classqlibs_1_1pid_controller.html#a7bdad9f4b4b36ea4c8fdf700dc0c472b", null ],
     [ "removeModelReferenceControl", "classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6", null ],
     [ "reset", "classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1", null ],
     [ "setAutoTuningControllerType", "classqlibs_1_1pid_controller.html#abb3c2abc7161325dc32992f5c9ce2df4", null ],

@@ -56,10 +56,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_arduino_01support.html",
-"classqlibs_1_1mat.html#a53ffdaa782d463231e28a57a1d5973b6",
-"group__qffmath.html#ga396c804d2c8d8049d9eb2480beda1f3d",
-"namespacemembers_s.html"
+"classqlibs_1_1mat.html#ab7dc3b75c19c536face5e60622ce52e6",
+"group__qffmath.html#ga76eee6283cbdeba7375804b6da1c902f",
+"namespaceqlibs_1_1version.html#a7f7b3583b17e1147cd8bbf317eaa17de"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';

@@ -30,10 +30,5 @@ var searchData=
   ['low_20pass_20filter_27',['Low Pass Filter',['../qssmoother_desc.html#qssmoother_lpf1',1,'First Order Low Pass Filter'],['../qssmoother_desc.html#qssmoother_lpf2',1,'Second Order Low Pass Filter']]],
   ['low_20pass_20filter_3a_28',['low pass filter:',['../qssmoother_desc.html#qssmoother_ex1',1,'Example: setting up a 1st order low-pass filter:'],['../qssmoother_desc.html#qssmoother_ex2',1,'Example: setting up a 2nd order low-pass filter:']]],
   ['lti_20systems_29',['LTI Systems',['../group__qltisys.html',1,'']]],
-  ['lti_20systems_20evaluation_20by_20transfer_20functions_30',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]],
-  ['ltisys_31',['ltisys',['../classqlibs_1_1ltisys.html',1,'qlibs::ltisys'],['../classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59',1,'qlibs::ltisys::ltisys()']]],
-  ['ltisys_5ftype_5fcontinuous_32',['LTISYS_TYPE_CONTINUOUS',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaa90e8608f79949da072fca6df56bb51dd',1,'qlibs']]],
-  ['ltisys_5ftype_5fdiscrete_33',['LTISYS_TYPE_DISCRETE',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b',1,'qlibs']]],
-  ['ltisys_5ftype_5funknown_34',['LTISYS_TYPE_UNKNOWN',['../group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaafde6deaf09be68d93ca5d0f6afcbdf18',1,'qlibs']]],
-  ['ltisystype_35',['ltisysType',['../group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa',1,'qlibs']]]
+  ['lti_20systems_20evaluation_20by_20transfer_20functions_30',['Recursive LTI Systems Evaluation by transfer functions.',['../qltisys_desc.html',1,'index']]]
 ];
