@@ -1,4 +1,5 @@
 #include <include/ltisys.hpp>
+#include <include/ffmath.hpp>
 
 using namespace qlibs;
 
@@ -22,15 +23,7 @@ void ltisys::normalizeTransferFunction( real_t *num,
 /*============================================================================*/
 real_t ltisys::saturate( real_t y )
 {
-    if ( y < min ) {
-        y = min;
-    }
-    else if ( y > max ) {
-        y = max;
-    }
-    else {
-        /*do nothing*/
-    }
+    (void)ffmath::inRangeCoerce( y, min, max );
     return y;
 }
 /*============================================================================*/

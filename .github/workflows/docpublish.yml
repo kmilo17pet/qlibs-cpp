@@ -1,4 +1,4 @@
-name: documentation
+name: publish
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout repository and submodules

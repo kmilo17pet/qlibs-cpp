@@ -508,16 +508,7 @@ real_t pidController::saturate( real_t x,
                                 const real_t vMin,
                                 const real_t vMax ) noexcept
 {
-    if ( x > vMax ) {
-        x = vMax;
-    }
-    else if ( x < vMin ) {
-        x = vMin;
-    }
-    else {
-        /*nothing to do*/
-    }
-
+    (void)ffmath::inRangeCoerce( x, vMin, vMax );
     return x;
 }
 /*============================================================================*/
