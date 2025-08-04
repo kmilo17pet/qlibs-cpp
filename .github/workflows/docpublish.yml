@@ -1,4 +1,4 @@
-name: publish
+name: documentation
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository and submodules
@@ -24,9 +24,8 @@ jobs:
         doxyfile-path: './doc/Doxyfile'
     - name: rm gitignore
       run: rm .gitignore
-    - name: Publish generated content to GitHub Pages
-      uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
+    - name: Deploy doc
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        dir: ./doxyout/html
-        branch: gh-pages
-        token: ${{ secrets.GITHUB_TOKEN  }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doxyout/html
