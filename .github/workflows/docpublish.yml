@@ -29,4 +29,4 @@ jobs:
       with:
         dir: ./doxyout/html
         branch: gh-pages
-        token: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN  }}
