@@ -62,7 +62,7 @@ bool ltisys::setSaturation( const real_t minV,
     return retValue;
 }
 /*============================================================================*/
-real_t ltisys::excite( real_t u )
+real_t ltisys::excite( real_t u ) noexcept
 {
     real_t y = 0.0_re;
 
@@ -282,5 +282,16 @@ bool continuousSystem::setIntegrationMethod( integrationMethod m )
     }
 
     return retValue;
+}
+/*============================================================================*/
+bool smithPredictor::updatePrediction( const real_t ut,
+                                       const real_t yt ) noexcept
+{
+    const real_t yt_hat_d = model->excite( ut );
+    const real_t yt_hat = modelDelay->delay( yt_hat_d );
+    const real_t ep_hat = yt - yt_hat;
+
+    yp_hat = yt_hat_d + ( filter ? filter->excite( ep_hat ) : ep_hat );
+    return true;
 }
 /*============================================================================*/
