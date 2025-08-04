@@ -12,8 +12,10 @@ var searchData=
   ['up_20the_20double_20exponential_20smoothing_3a_9',['Example: setting up the Double Exponential Smoothing:',['../qssmoother_desc.html#qssmoother_ex10',1,'']]],
   ['up_20to_20256_20delays_10',['Example : Code snippet to instantiate a TDL to hold up to 256 delays.',['../qtdl_desc.html#qtdl_ex1',1,'']]],
   ['update_11',['update',['../classqlibs_1_1rms.html#a86721a80a069b9d0d62f9ef8d4fa82db',1,'qlibs::rms']]],
-  ['usage_12',['Autotuning Usage',['../qpid_desc.html#qpid_autotune_usage',1,'']]],
-  ['using_20a_20pid_20controller_3a_13',['Example: Speed control using a PID controller:',['../qpid_desc.html#qpid_ex1',1,'']]],
-  ['using_20a_20timer_20interrupt_14',['Example :  By using a timer interrupt',['../qrms_desc.html#qrms_ex1',1,'']]],
-  ['using_20the_20controller_15',['Using the controller',['../qpid_desc.html#qfpid_usage',1,'']]]
+  ['updatefir_12',['updateFIR',['../classqlibs_1_1discrete_system.html#a4042744053e29dbcf01f6ac0775ad0a7',1,'qlibs::discreteSystem']]],
+  ['updateprediction_13',['updatePrediction',['../classqlibs_1_1smith_predictor.html#aedea306e13d851b18c5e2caa6ad9370b',1,'qlibs::smithPredictor']]],
+  ['usage_14',['Autotuning Usage',['../qpid_desc.html#qpid_autotune_usage',1,'']]],
+  ['using_20a_20pid_20controller_3a_15',['Example: Speed control using a PID controller:',['../qpid_desc.html#qpid_ex1',1,'']]],
+  ['using_20a_20timer_20interrupt_16',['Example :  By using a timer interrupt',['../qrms_desc.html#qrms_ex1',1,'']]],
+  ['using_20the_20controller_17',['Using the controller',['../qpid_desc.html#qfpid_usage',1,'']]]
 ];

@@ -162,9 +162,9 @@ Inheritance diagram for qlibs::smootherDESF:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e47d35fe261e05f325e81a741afde62" id="r_a3e47d35fe261e05f325e81a741afde62"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e47d35fe261e05f325e81a741afde62">~smootherDESF</a> ()</td></tr>
-<tr class="memdesc:a3e47d35fe261e05f325e81a741afde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Double exponential smoothing instance.  <br /></td></tr>
 <tr class="separator:a3e47d35fe261e05f325e81a741afde62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaff0f5ed3caa4f96aa610d5838365b4" id="r_aaaff0f5ed3caa4f96aa610d5838365b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaff0f5ed3caa4f96aa610d5838365b4">setup</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> a, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> b, const size_t nS)</td></tr>
+<tr class="memdesc:aaaff0f5ed3caa4f96aa610d5838365b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an initialize the Double exponential smoothing instance.  <br /></td></tr>
 <tr class="separator:aaaff0f5ed3caa4f96aa610d5838365b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bfe74ab8ece59fb727c86b7fd624554" id="r_a4bfe74ab8ece59fb727c86b7fd624554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bfe74ab8ece59fb727c86b7fd624554">smooth</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x) override</td></tr>
 <tr class="memdesc:a4bfe74ab8ece59fb727c86b7fd624554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em class="arg">x</em>.  <br /></td></tr>
@@ -205,17 +205,6 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Setup an initialize the Double exponential smoothing instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Weight for the level [ 0 &lt; <em class="arg">a</em> &lt; 1 ] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Weight for the trend [ 0 &lt; <em class="arg">b</em> &lt; 1 ] </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">nS</td><td>Number of steps for the forecast </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -242,6 +231,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setup an initialize the Double exponential smoothing instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Weight for the level [ 0 &lt; <em class="arg">a</em> &lt; 1 ] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Weight for the trend [ 0 &lt; <em class="arg">b</em> &lt; 1 ] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nS</td><td>Number of steps for the forecast </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
 
 </div>
 </div>

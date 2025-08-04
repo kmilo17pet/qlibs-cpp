@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>Documentation: qlibs::discreteSystem Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/kmilo17pet/qlibs-cpp" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="qlibs_logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentation
+   </div>
+   <div id="projectbrief">Tools for embedded systems</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classqlibs_1_1discrete_system.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="classqlibs_1_1discrete_system-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">qlibs::discreteSystem Class Reference<div class="ingroups"><a class="el" href="group__qltisys.html">LTI Systems</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A LTI discrete system object.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ltisys_8hpp_source.html">ltisys.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for qlibs::discreteSystem:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classqlibs_1_1discrete_system.png" usemap="#qlibs::discreteSystem_map" alt=""/>
+  <map id="qlibs::discreteSystem_map" name="qlibs::discreteSystem_map">
+<area href="classqlibs_1_1ltisys.html" title="A LTI system base class." alt="qlibs::ltisys" shape="rect" coords="0,112,128,136"/>
+<area href="classqlibs_1_1tdl.html" title="A Tapped Delay Line (TDL) object." alt="qlibs::tdl" shape="rect" coords="0,56,128,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0723d673327ba04bcc363dd0bf48fba5" id="r_a0723d673327ba04bcc363dd0bf48fba5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0723d673327ba04bcc363dd0bf48fba5">~discreteSystem</a> ()</td></tr>
+<tr class="separator:a0723d673327ba04bcc363dd0bf48fba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c662c10b640e391d8b7f19a7bb4f75" id="r_ae6c662c10b640e391d8b7f19a7bb4f75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6c662c10b640e391d8b7f19a7bb4f75">discreteSystem</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *num, <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *den, <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *x, const size_t n_b, const size_t n_a) noexcept</td></tr>
+<tr class="memdesc:ae6c662c10b640e391d8b7f19a7bb4f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a the discrete LTI system.  <br /></td></tr>
+<tr class="separator:ae6c662c10b640e391d8b7f19a7bb4f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee816b304c8aafdf6e8d92b7ba35d597" id="r_aee816b304c8aafdf6e8d92b7ba35d597"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA&gt; </td></tr>
+<tr class="memitem:aee816b304c8aafdf6e8d92b7ba35d597"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aee816b304c8aafdf6e8d92b7ba35d597">discreteSystem</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;num)[NB], <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;den)[NA], <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *x) noexcept</td></tr>
+<tr class="memdesc:aee816b304c8aafdf6e8d92b7ba35d597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a the discrete LTI system.  <br /></td></tr>
+<tr class="separator:aee816b304c8aafdf6e8d92b7ba35d597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568a5c4467fbbad2cbb1fe59a66182d1" id="r_a568a5c4467fbbad2cbb1fe59a66182d1"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA&gt; </td></tr>
+<tr class="memitem:a568a5c4467fbbad2cbb1fe59a66182d1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a568a5c4467fbbad2cbb1fe59a66182d1">discreteSystem</a> (<a class="el" href="structqlibs_1_1discrete_t_f.html">discreteTF</a>&lt; NB, NA &gt; &amp;dtf) noexcept</td></tr>
+<tr class="memdesc:a568a5c4467fbbad2cbb1fe59a66182d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a the discrete LTI system from a transfer function definition.  <br /></td></tr>
+<tr class="separator:a568a5c4467fbbad2cbb1fe59a66182d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395b6eed065ec959972ba8e4a99284b1" id="r_a395b6eed065ec959972ba8e4a99284b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a395b6eed065ec959972ba8e4a99284b1">setup</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *num, <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *den, <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *x, const size_t n_b, const size_t n_a) noexcept</td></tr>
+<tr class="memdesc:a395b6eed065ec959972ba8e4a99284b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of the discrete LTI system.  <br /></td></tr>
+<tr class="separator:a395b6eed065ec959972ba8e4a99284b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac420b6b155fb1559c14166534dd35fd7" id="r_ac420b6b155fb1559c14166534dd35fd7"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA&gt; </td></tr>
+<tr class="memitem:ac420b6b155fb1559c14166534dd35fd7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac420b6b155fb1559c14166534dd35fd7">setup</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;num)[NB], <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;den)[NA], <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *x)</td></tr>
+<tr class="memdesc:ac420b6b155fb1559c14166534dd35fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of the discrete LTI system.  <br /></td></tr>
+<tr class="separator:ac420b6b155fb1559c14166534dd35fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09c9b64f863cab9a38ea6a665a3d933" id="r_ac09c9b64f863cab9a38ea6a665a3d933"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA&gt; </td></tr>
+<tr class="memitem:ac09c9b64f863cab9a38ea6a665a3d933"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac09c9b64f863cab9a38ea6a665a3d933">setup</a> (<a class="el" href="structqlibs_1_1discrete_t_f.html">discreteTF</a>&lt; NB, NA &gt; &amp;dtf) noexcept</td></tr>
+<tr class="memdesc:ac09c9b64f863cab9a38ea6a665a3d933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize an instance of the discrete LTI system from a transfer function definition.  <br /></td></tr>
+<tr class="separator:ac09c9b64f863cab9a38ea6a665a3d933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afae7d9eb20e3f5e4318df953dd5393c3" id="r_afae7d9eb20e3f5e4318df953dd5393c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afae7d9eb20e3f5e4318df953dd5393c3">isInitialized</a> (void) const override</td></tr>
+<tr class="memdesc:afae7d9eb20e3f5e4318df953dd5393c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LTI discrete system is initialized.  <br /></td></tr>
+<tr class="separator:afae7d9eb20e3f5e4318df953dd5393c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1372b358328b00567f061a0296ce6266" id="r_a1372b358328b00567f061a0296ce6266"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1372b358328b00567f061a0296ce6266">setInitStates</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *xi=nullptr) override</td></tr>
+<tr class="memdesc:a1372b358328b00567f061a0296ce6266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial states for the discrete system.  <br /></td></tr>
+<tr class="separator:a1372b358328b00567f061a0296ce6266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classqlibs_1_1ltisys"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classqlibs_1_1ltisys')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1ltisys.html">qlibs::ltisys</a></td></tr>
+<tr class="memitem:a44ede5ecfd6e581c5448c5035124b138 inherit pub_methods_classqlibs_1_1ltisys" id="r_a44ede5ecfd6e581c5448c5035124b138"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a44ede5ecfd6e581c5448c5035124b138">~ltisys</a> ()</td></tr>
+<tr class="separator:a44ede5ecfd6e581c5448c5035124b138 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab626baedcfddadd4a3bec42d530a6e59 inherit pub_methods_classqlibs_1_1ltisys" id="r_ab626baedcfddadd4a3bec42d530a6e59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#ab626baedcfddadd4a3bec42d530a6e59">ltisys</a> ()=default</td></tr>
+<tr class="separator:ab626baedcfddadd4a3bec42d530a6e59 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641f71290a08848800000dc952e9e374 inherit pub_methods_classqlibs_1_1ltisys" id="r_a641f71290a08848800000dc952e9e374"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374">excite</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> u) noexcept</td></tr>
+<tr class="memdesc:a641f71290a08848800000dc952e9e374 inherit pub_methods_classqlibs_1_1ltisys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the LTI system recursively using the provided input sample.  <br /></td></tr>
+<tr class="separator:a641f71290a08848800000dc952e9e374 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bf0b1f96dde3a744b25b950d5dd22b inherit pub_methods_classqlibs_1_1ltisys" id="r_af9bf0b1f96dde3a744b25b950d5dd22b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#af9bf0b1f96dde3a744b25b950d5dd22b">operator()</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> u)</td></tr>
+<tr class="memdesc:af9bf0b1f96dde3a744b25b950d5dd22b inherit pub_methods_classqlibs_1_1ltisys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the LTI system recursively using the provided input sample.  <br /></td></tr>
+<tr class="separator:af9bf0b1f96dde3a744b25b950d5dd22b inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a03f10256af1e6915333a04bd181173 inherit pub_methods_classqlibs_1_1ltisys" id="r_a5a03f10256af1e6915333a04bd181173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__qltisys.html#ga07d3d07a42c49b5cb0850f77ad392faa">ltisysType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#a5a03f10256af1e6915333a04bd181173">getType</a> (void) const</td></tr>
+<tr class="memdesc:a5a03f10256af1e6915333a04bd181173 inherit pub_methods_classqlibs_1_1ltisys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the LTI system type.  <br /></td></tr>
+<tr class="separator:a5a03f10256af1e6915333a04bd181173 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e8567dbb2efe239465ead2d4b50eb6 inherit pub_methods_classqlibs_1_1ltisys" id="r_aa8e8567dbb2efe239465ead2d4b50eb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#aa8e8567dbb2efe239465ead2d4b50eb6">setDelay</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const w, const size_t nD, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re) noexcept</td></tr>
+<tr class="memdesc:aa8e8567dbb2efe239465ead2d4b50eb6 inherit pub_methods_classqlibs_1_1ltisys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the input delay for LTI system.  <br /></td></tr>
+<tr class="separator:aa8e8567dbb2efe239465ead2d4b50eb6 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae096341d0d845ecfdc5d0abc89054c44 inherit pub_methods_classqlibs_1_1ltisys" id="r_ae096341d0d845ecfdc5d0abc89054c44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1ltisys.html#ae096341d0d845ecfdc5d0abc89054c44">setSaturation</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> minV, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> maxV) noexcept</td></tr>
+<tr class="memdesc:ae096341d0d845ecfdc5d0abc89054c44 inherit pub_methods_classqlibs_1_1ltisys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the output saturation for the LTI system.  <br /></td></tr>
+<tr class="separator:ae096341d0d845ecfdc5d0abc89054c44 inherit pub_methods_classqlibs_1_1ltisys"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classqlibs_1_1tdl"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classqlibs_1_1tdl')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a></td></tr>
+<tr class="memitem:a2b26c5d5a9b79dc602f801fe9aec232e inherit pub_methods_classqlibs_1_1tdl" id="r_a2b26c5d5a9b79dc602f801fe9aec232e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a2b26c5d5a9b79dc602f801fe9aec232e">~tdl</a> ()</td></tr>
+<tr class="separator:a2b26c5d5a9b79dc602f801fe9aec232e inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7944a111174aebcef9aa07efb65f3277 inherit pub_methods_classqlibs_1_1tdl" id="r_a7944a111174aebcef9aa07efb65f3277"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277">tdl</a> ()=default</td></tr>
+<tr class="separator:a7944a111174aebcef9aa07efb65f3277 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a688ee3fdcd7bb854965673f222be1ef2 inherit pub_methods_classqlibs_1_1tdl" id="r_a688ee3fdcd7bb854965673f222be1ef2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a688ee3fdcd7bb854965673f222be1ef2">tdl</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const area, const size_t n, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re)</td></tr>
+<tr class="memdesc:a688ee3fdcd7bb854965673f222be1ef2 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Tapped Delay Line (TDL) instance.  <br /></td></tr>
+<tr class="separator:a688ee3fdcd7bb854965673f222be1ef2 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cab6009f5c4ea3d1b2befc519ce604 inherit pub_methods_classqlibs_1_1tdl" id="r_a92cab6009f5c4ea3d1b2befc519ce604"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfDelays&gt; </td></tr>
+<tr class="memitem:a92cab6009f5c4ea3d1b2befc519ce604 inherit pub_methods_classqlibs_1_1tdl"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a92cab6009f5c4ea3d1b2befc519ce604">tdl</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;area)[numberOfDelays], const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re) noexcept</td></tr>
+<tr class="memdesc:a92cab6009f5c4ea3d1b2befc519ce604 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Tapped Delay Line (TDL) instance.  <br /></td></tr>
+<tr class="separator:a92cab6009f5c4ea3d1b2befc519ce604 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a175e050320e962329d71a285e8f9c1 inherit pub_methods_classqlibs_1_1tdl" id="r_a1a175e050320e962329d71a285e8f9c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a1a175e050320e962329d71a285e8f9c1">setup</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const area, const size_t n, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re) noexcept</td></tr>
+<tr class="memdesc:a1a175e050320e962329d71a285e8f9c1 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters.  <br /></td></tr>
+<tr class="separator:a1a175e050320e962329d71a285e8f9c1 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33573a4fd6049865183d48b379cb8c28 inherit pub_methods_classqlibs_1_1tdl" id="r_a33573a4fd6049865183d48b379cb8c28"><td class="memTemplParams" colspan="2">template&lt;size_t numberOfDelays&gt; </td></tr>
+<tr class="memitem:a33573a4fd6049865183d48b379cb8c28 inherit pub_methods_classqlibs_1_1tdl"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a33573a4fd6049865183d48b379cb8c28">setup</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;area)[numberOfDelays], const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re) noexcept</td></tr>
+<tr class="memdesc:a33573a4fd6049865183d48b379cb8c28 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters.  <br /></td></tr>
+<tr class="separator:a33573a4fd6049865183d48b379cb8c28 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2eff3cb7ee8fc1993a28489a1638a83 inherit pub_methods_classqlibs_1_1tdl" id="r_ad2eff3cb7ee8fc1993a28489a1638a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#ad2eff3cb7ee8fc1993a28489a1638a83">flush</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initVal=0.0_re) noexcept</td></tr>
+<tr class="memdesc:ad2eff3cb7ee8fc1993a28489a1638a83 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all delays from the TDL and sets them to the specified value.  <br /></td></tr>
+<tr class="separator:ad2eff3cb7ee8fc1993a28489a1638a83 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe67745e061e6df0a5a6fd054b7bf159 inherit pub_methods_classqlibs_1_1tdl" id="r_abe67745e061e6df0a5a6fd054b7bf159"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159">getOldest</a> (void) const noexcept</td></tr>
+<tr class="memdesc:abe67745e061e6df0a5a6fd054b7bf159 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the oldest sample from the TDL x(k-n)  <br /></td></tr>
+<tr class="separator:abe67745e061e6df0a5a6fd054b7bf159 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3b27761fd229ce8f4cf6a5abfff1a8 inherit pub_methods_classqlibs_1_1tdl" id="r_a1b3b27761fd229ce8f4cf6a5abfff1a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8">getRecent</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a1b3b27761fd229ce8f4cf6a5abfff1a8 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the most recent sample from the TDL x(k)  <br /></td></tr>
+<tr class="separator:a1b3b27761fd229ce8f4cf6a5abfff1a8 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a236fbabc8932dbdb58ad43de621ddae6 inherit pub_methods_classqlibs_1_1tdl" id="r_a236fbabc8932dbdb58ad43de621ddae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a236fbabc8932dbdb58ad43de621ddae6">getAtIndex</a> (const size_t i) const noexcept</td></tr>
+<tr class="memdesc:a236fbabc8932dbdb58ad43de621ddae6 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified delayed sample from the TDL x(k-i)  <br /></td></tr>
+<tr class="separator:a236fbabc8932dbdb58ad43de621ddae6 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae540e2c95394ddd038398776cadd56b5 inherit pub_methods_classqlibs_1_1tdl" id="r_ae540e2c95394ddd038398776cadd56b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5">insertSample</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sample) noexcept</td></tr>
+<tr class="memdesc:ae540e2c95394ddd038398776cadd56b5 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new sample to the TDL removing the oldest sample.  <br /></td></tr>
+<tr class="separator:ae540e2c95394ddd038398776cadd56b5 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26718543f38a1ff23e8fa701fc79702 inherit pub_methods_classqlibs_1_1tdl" id="r_ac26718543f38a1ff23e8fa701fc79702"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#ac26718543f38a1ff23e8fa701fc79702">operator[]</a> (int index) noexcept</td></tr>
+<tr class="memdesc:ac26718543f38a1ff23e8fa701fc79702 inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified delayed sample from the TDL x(k-i)  <br /></td></tr>
+<tr class="separator:ac26718543f38a1ff23e8fa701fc79702 inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f76f8258c4adef8d7257e17bda7698d inherit pub_methods_classqlibs_1_1tdl" id="r_a0f76f8258c4adef8d7257e17bda7698d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d">operator()</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sample) noexcept</td></tr>
+<tr class="memdesc:a0f76f8258c4adef8d7257e17bda7698d inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new sample to the TDL removing the oldest sample.  <br /></td></tr>
+<tr class="separator:a0f76f8258c4adef8d7257e17bda7698d inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl" id="r_a09adc71e6997931a4232fce2d1495f8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c">isInitialized</a> (void) const</td></tr>
+<tr class="memdesc:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the TDL has been initialized.  <br /></td></tr>
+<tr class="separator:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4042744053e29dbcf01f6ac0775ad0a7" id="r_a4042744053e29dbcf01f6ac0775ad0a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4042744053e29dbcf01f6ac0775ad0a7">updateFIR</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *w, const size_t wsize, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const c=nullptr)</td></tr>
+<tr class="memdesc:a4042744053e29dbcf01f6ac0775ad0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the discrete FIR filter by updating the delay lines of <em class="arg">x</em> inside the window <em class="arg">w</em> of size <em class="arg">wsize</em> with the coefficients given in <em class="arg">c</em>. If <em class="arg">c</em> it's not supplied, this function just perform the window update.  <br /></td></tr>
+<tr class="separator:a4042744053e29dbcf01f6ac0775ad0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A LTI discrete system object. </p>
+<p>The instance should be initialized using the <a class="el" href="#a395b6eed065ec959972ba8e4a99284b1" title="Setup and initialize an instance of the discrete LTI system.">discreteSystem::setup()</a> method. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0723d673327ba04bcc363dd0bf48fba5" name="a0723d673327ba04bcc363dd0bf48fba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0723d673327ba04bcc363dd0bf48fba5">&#9670;&#160;</a></span>~discreteSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual qlibs::discreteSystem::~discreteSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6c662c10b640e391d8b7f19a7bb4f75" name="ae6c662c10b640e391d8b7f19a7bb4f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c662c10b640e391d8b7f19a7bb4f75">&#9670;&#160;</a></span>discreteSystem() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::discreteSystem::discreteSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>den</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>n_b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>n_a</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for a the discrete LTI system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of <code>nb</code> elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of or <code>na</code> elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. Should be an, an array of type <a class="el" href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853" title="Type to specify discrete states.">discreteStates</a> with max(na,nb) elements The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374" title="Drives the LTI system recursively using the provided input sample.">discreteSystem::excite()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_b</td><td>Number of elements in <em class="arg">num</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>example: \( b_{0}+b_{1}z^{-1}+b_{2}z^{-2}+b_{3}z^{-3}, nb = 4 \) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>Number of elements in <em class="arg">den</em>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>example 1: \( a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 4 \) </p><dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="#a1372b358328b00567f061a0296ce6266" title="Set the initial states for the discrete system.">discreteSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="aee816b304c8aafdf6e8d92b7ba35d597" name="aee816b304c8aafdf6e8d92b7ba35d597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee816b304c8aafdf6e8d92b7ba35d597">&#9670;&#160;</a></span>discreteSystem() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::discreteSystem::discreteSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;)</td>          <td class="paramname"><span class="paramname"><em>num</em></span>[NB], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;)</td>          <td class="paramname"><span class="paramname"><em>den</em></span>[NA], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for a the discrete LTI system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of <code>nb</code> elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of or <code>na</code> elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. Should be an, an array of type <a class="el" href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853" title="Type to specify discrete states.">discreteStates</a> with max(na,nb) elements The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374" title="Drives the LTI system recursively using the provided input sample.">discreteSystem::excite()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="#a1372b358328b00567f061a0296ce6266" title="Set the initial states for the discrete system.">discreteSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="a568a5c4467fbbad2cbb1fe59a66182d1" name="a568a5c4467fbbad2cbb1fe59a66182d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568a5c4467fbbad2cbb1fe59a66182d1">&#9670;&#160;</a></span>discreteSystem() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::discreteSystem::discreteSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqlibs_1_1discrete_t_f.html">discreteTF</a>&lt; NB, NA &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dtf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for a the discrete LTI system from a transfer function definition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dtf</td><td>: The transfer function definition </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afae7d9eb20e3f5e4318df953dd5393c3" name="afae7d9eb20e3f5e4318df953dd5393c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae7d9eb20e3f5e4318df953dd5393c3">&#9670;&#160;</a></span>isInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::discreteSystem::isInitialized </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the LTI discrete system is initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the system has been initialized, otherwise return <code>false</code>. </dd></dl>
+
+<p>Implements <a class="el" href="classqlibs_1_1ltisys.html#a5700dfd0f718292a6d9da75d8211ab90">qlibs::ltisys</a>.</p>
+
+</div>
+</div>
+<a id="a1372b358328b00567f061a0296ce6266" name="a1372b358328b00567f061a0296ce6266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1372b358328b00567f061a0296ce6266">&#9670;&#160;</a></span>setInitStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool discreteSystem::setInitStates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>xi</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the initial states for the discrete system. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>System should be previously initialized by using the <a class="el" href="#a395b6eed065ec959972ba8e4a99284b1" title="Setup and initialize an instance of the discrete LTI system.">discreteSystem::setup()</a> method </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xi</td><td>An array of n-elements with the initial state values. User can pass <code>nullptr</code> as argument to set initial conditions equal to zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+<p>Implements <a class="el" href="classqlibs_1_1ltisys.html#a898fbe818bc27032e34e1e79b2afd0fa">qlibs::ltisys</a>.</p>
+
+</div>
+</div>
+<a id="ac09c9b64f863cab9a38ea6a665a3d933" name="ac09c9b64f863cab9a38ea6a665a3d933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09c9b64f863cab9a38ea6a665a3d933">&#9670;&#160;</a></span>setup() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::discreteSystem::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqlibs_1_1discrete_t_f.html">discreteTF</a>&lt; NB, NA &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dtf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize an instance of the discrete LTI system from a transfer function definition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dtf</td><td>: The transfer function definition </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a395b6eed065ec959972ba8e4a99284b1" name="a395b6eed065ec959972ba8e4a99284b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395b6eed065ec959972ba8e4a99284b1">&#9670;&#160;</a></span>setup() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool discreteSystem::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>den</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>n_b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>n_a</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize an instance of the discrete LTI system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of <code>nb</code> elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of or <code>na</code> elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. Should be an, an array of type <a class="el" href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853" title="Type to specify discrete states.">discreteStates</a> with max(na,nb) elements The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374" title="Drives the LTI system recursively using the provided input sample.">discreteSystem::excite()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_b</td><td>Number of elements in <em class="arg">num</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>example: \( b_{0}+b_{1}z^{-1}+b_{2}z^{-2}+b_{3}z^{-3}, nb = 4 \) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_a</td><td>Number of elements in <em class="arg">den</em>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>example 1: \( a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 4 \) </p><dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="#a1372b358328b00567f061a0296ce6266" title="Set the initial states for the discrete system.">discreteSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="ac420b6b155fb1559c14166534dd35fd7" name="ac420b6b155fb1559c14166534dd35fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac420b6b155fb1559c14166534dd35fd7">&#9670;&#160;</a></span>setup() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::discreteSystem::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;)</td>          <td class="paramname"><span class="paramname"><em>num</em></span>[NB], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>(&amp;)</td>          <td class="paramname"><span class="paramname"><em>den</em></span>[NA], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup and initialize an instance of the discrete LTI system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num</td><td>: An array of <code>nb</code> elements with the numerator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">den</td><td>An array of or <code>na</code> elements with the denominator coefficients of the transfer function. Coefficients should be given in descending powers of the n or nb-degree polynomial. Coefficients will be normalized internally. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>Initial conditions of the system. Should be an, an array of type <a class="el" href="group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853" title="Type to specify discrete states.">discreteStates</a> with max(na,nb) elements The supplied array will be updated on every invocation of <a class="el" href="classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374" title="Drives the LTI system recursively using the provided input sample.">discreteSystem::excite()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, initial conditions are set to zero. To change the initial conditions to the desired values, use the <a class="el" href="#a1372b358328b00567f061a0296ce6266" title="Set the initial states for the discrete system.">discreteSystem::setInitStates()</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="a4042744053e29dbcf01f6ac0775ad0a7" name="a4042744053e29dbcf01f6ac0775ad0a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4042744053e29dbcf01f6ac0775ad0a7">&#9670;&#160;</a></span>updateFIR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> discreteSystem::updateFIR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>wsize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>c</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate the discrete FIR filter by updating the delay lines of <em class="arg">x</em> inside the window <em class="arg">w</em> of size <em class="arg">wsize</em> with the coefficients given in <em class="arg">c</em>. If <em class="arg">c</em> it's not supplied, this function just perform the window update. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">w</td><td>An array of <em class="arg">wsize</em> elements that holds the window with the delay lines of <em class="arg">x</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wsize</td><td>The number of elements of <em class="arg">w</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>A sample of the input signal. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>An array of <em class="arg">wsize</em> elements with the coefficients of the FIR filter. Coefficients should be given in descending powers of the nth-degree polynomial. To ignore pass <code>nullptr</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If <em class="arg">c</em> is provided, returns the evaluation of the FIR filter. otherwise return the sum of the updated window <em class="arg">w</em>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceqlibs.html">qlibs</a></li><li class="navelem"><a class="el" href="classqlibs_1_1discrete_system.html">discreteSystem</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

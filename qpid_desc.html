@@ -305,11 +305,11 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line"><span class="keywordtype">void</span> xTaskPIDspeedControl( <span class="keywordtype">void</span> *arg )</div>
 <div class="line">{</div>
 <div class="line">    picController *controller = <span class="keyword">static_cast&lt;</span>pidcontroller *<span class="keyword">&gt;</span>( arg );</div>
-<div class="line">    continuousTF&lt;1&gt; ctf= {</div>
+<div class="line">    <a class="code hl_struct" href="structqlibs_1_1continuous_t_f.html">continuousTF&lt;1&gt;</a> ctf= {</div>
 <div class="line">        { 0.0f, 1.0f },</div>
 <div class="line">        { 3.0f, 1.0f },</div>
 <div class="line">    };</div>
-<div class="line">    continuousSystem ref_model( ctf, 0.01f );</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1continuous_system.html">continuousSystem</a> ref_model( ctf, 0.01f );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> processMeasurement;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> refmodel_output = 0.0f;</div>
@@ -342,6 +342,8 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="line">    <span class="keywordflow">for</span>( ;; );</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassqlibs_1_1continuous_system_html"><div class="ttname"><a href="classqlibs_1_1continuous_system.html">qlibs::continuousSystem</a></div><div class="ttdoc">A LTI continuous system object.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:562</div></div>
+<div class="ttc" id="astructqlibs_1_1continuous_t_f_html"><div class="ttname"><a href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF</a></div><div class="ttdoc">Continuous transfer function for easy LTI system definition.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:61</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qpid_autotune"></a>
 Autotuning</h1>
 <p>Autotuning can eliminate much of the trial and error of a manual tuning approach, especially if you do not have a lot of loop tuning experience. Performing the autotuning procedure will get the tuning parameters close to their optimal values, but additional manual tuning may be required to get the tuning parameters to their optimal values.</p>
@@ -380,11 +382,11 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line"><span class="keywordtype">void</span> xTaskPIDspeedControl( <span class="keywordtype">void</span> *arg )</div>
 <div class="line">{</div>
 <div class="line">    picController *controller = <span class="keyword">static_cast&lt;</span>pidcontroller *<span class="keyword">&gt;</span>( arg );</div>
-<div class="line">    continuousTF&lt;1&gt; ctf= {</div>
+<div class="line">    <a class="code hl_struct" href="structqlibs_1_1continuous_t_f.html">continuousTF&lt;1&gt;</a> ctf= {</div>
 <div class="line">        { 0.0f, 1.0f },</div>
 <div class="line">        { 3.0f, 1.0f },</div>
 <div class="line">    };</div>
-<div class="line">    continuousSystem ref_model( ctf, 0.01f );</div>
+<div class="line">    <a class="code hl_class" href="classqlibs_1_1continuous_system.html">continuousSystem</a> ref_model( ctf, 0.01f );</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> processMeasurement;</div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> SetPoint = 300.0f; <span class="comment">// desired motor speed 300rpm</span></div>
 <div class="line">    <a class="code hl_typedef" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> tmpSetPoint = 320.0f;</div>
