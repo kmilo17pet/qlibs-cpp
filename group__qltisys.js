@@ -5,6 +5,8 @@ var group__qltisys =
     ] ],
     [ "qlibs::timeDelay", "structqlibs_1_1time_delay.html", [
       [ "timeDelay", "structqlibs_1_1time_delay.html#a377f48d28d463a327fd34d849eebfe7e", null ],
+      [ "operator()", "structqlibs_1_1time_delay.html#abeca981e90037c4ddcdf4a0b7f52bfbd", null ],
+      [ "operator[]", "structqlibs_1_1time_delay.html#ae13549f6e33cf1d3f021c9f4f06bae17", null ],
       [ "value", "structqlibs_1_1time_delay.html#a61ca14b9e16c3cd2a3c2b659971469a6", null ]
     ] ],
     [ "qlibs::transportDelay< numberOfDelays >", "classqlibs_1_1transport_delay.html", [
@@ -69,5 +71,7 @@ var group__qltisys =
       [ "qlibs::LTISYS_TYPE_DISCRETE", "group__qltisys.html#gga07d3d07a42c49b5cb0850f77ad392faaac7cb5df9362f98c273bd665e9b94ab9b", null ]
     ] ],
     [ "qlibs::delayFromTime", "group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d", null ],
-    [ "qlibs::delayFromTime", "group__qltisys.html#ga313ae7a2081ae6216260e5ce52853a52", null ]
+    [ "qlibs::delayFromTime", "group__qltisys.html#ga313ae7a2081ae6216260e5ce52853a52", null ],
+    [ "qlibs::operator\"\"_td", "group__qltisys.html#gae32d1fbf5690dd5494c2d5a6f16a7e3b", null ],
+    [ "qlibs::operator,", "group__qltisys.html#gaadf616c69d175be55519ec5179382e3e", null ]
 ];

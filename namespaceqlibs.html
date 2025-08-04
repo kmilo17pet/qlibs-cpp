@@ -265,6 +265,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Tapped Delay Line (TDL) object.  <a href="classqlibs_1_1tdl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqlibs_1_1time_delay.html">timeDelay</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a time delay value for use in <a class="el" href="classqlibs_1_1transport_delay.html" title="Delays the input by a specified amount of time. You can use this class to simulate a time delay.">transportDelay</a> constructor.  <a href="structqlibs_1_1time_delay.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1transport_delay.html">transportDelay</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of time. You can use this class to simulate a time delay.  <a href="classqlibs_1_1transport_delay.html#details">More...</a><br /></td></tr>
@@ -361,6 +362,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gae32d1fbf5690dd5494c2d5a6f16a7e3b" id="r_gae32d1fbf5690dd5494c2d5a6f16a7e3b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structqlibs_1_1time_delay.html">timeDelay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#gae32d1fbf5690dd5494c2d5a6f16a7e3b">operator&quot;&quot;_td</a> (long double v)</td></tr>
+<tr class="memdesc:gae32d1fbf5690dd5494c2d5a6f16a7e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Literal for creating a <a class="el" href="structqlibs_1_1time_delay.html" title="Represents a time delay value for use in transportDelay constructor.">timeDelay</a> from a floating-point value.  <br /></td></tr>
+<tr class="separator:gae32d1fbf5690dd5494c2d5a6f16a7e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadf616c69d175be55519ec5179382e3e" id="r_gaadf616c69d175be55519ec5179382e3e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#gaadf616c69d175be55519ec5179382e3e">operator,</a> (const <a class="el" href="structqlibs_1_1time_delay.html">timeDelay</a> td, const <a class="el" href="#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> dt)</td></tr>
+<tr class="memdesc:gaadf616c69d175be55519ec5179382e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the delay in discrete steps using the comma operator.  <br /></td></tr>
+<tr class="separator:gaadf616c69d175be55519ec5179382e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga56a12ae5105ad3774190994aec899a2d" id="r_ga56a12ae5105ad3774190994aec899a2d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d">delayFromTime</a> (const <a class="el" href="#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Time, const <a class="el" href="#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> dt)</td></tr>
 <tr class="memdesc:ga56a12ae5105ad3774190994aec899a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of discrete delays required for a specified amount of time using a defined time-step.  <br /></td></tr>
 <tr class="separator:ga56a12ae5105ad3774190994aec899a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -133,6 +133,8 @@ var namespaceqlibs =
     ] ],
     [ "delayFromTime", "group__qltisys.html#ga56a12ae5105ad3774190994aec899a2d", null ],
     [ "delayFromTime", "group__qltisys.html#ga313ae7a2081ae6216260e5ce52853a52", null ],
+    [ "operator\"\"_td", "group__qltisys.html#gae32d1fbf5690dd5494c2d5a6f16a7e3b", null ],
+    [ "operator,", "group__qltisys.html#gaadf616c69d175be55519ec5179382e3e", null ],
     [ "FP_1_PI", "group__qfp16.html#gabe6840cf6b0f063e4d7eec72f0e141de", null ],
     [ "FP_2_PI", "group__qfp16.html#ga805c4ff0b0f82e1b8f140d54519b46dc", null ],
     [ "FP_2_SQRTPI", "group__qfp16.html#ga9da1ac6525314bf8d3524ff938dc7e75", null ],
