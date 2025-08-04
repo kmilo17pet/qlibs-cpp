@@ -67,9 +67,9 @@ namespace qlibs {
 
         /**
         * @brief Constructor for the continuousTF class
-        * @param[in] numerator An array of size <order> with the coefficients
+        * @param[in] numerator An array of size @c order with the coefficients
         * of the numerator in descending powers of s.
-        * @param[in] denominator An array of size <order> with the coefficients
+        * @param[in] denominator An array of size @c order with the coefficients
         * of the denominator in descending powers of s.
         */
         continuousTF( const real_t ( &numerator )[ order + 1 ], const real_t ( &denominator )[ order + 1 ] )
@@ -145,7 +145,7 @@ namespace qlibs {
         virtual real_t operator()(const real_t xInput) noexcept = 0;
         virtual size_t getNumberOfDelays() const noexcept = 0;
     };
-    /** @cond **/
+    /** @endcond **/
 
     /**
     * @brief Delays the input by a specified amount of time. You can use this
@@ -228,9 +228,9 @@ namespace qlibs {
 
         /**
         * @brief Constructor for the discreteTF class
-        * @param[in] numerator An array of size <NB> with the coefficients
+        * @param[in] numerator An array of size @c NB with the coefficients
         * of the numerator in descending powers of z.
-        * @param[in] denominator An array of size <NA> with the coefficients
+        * @param[in] denominator An array of size @c NA with the coefficients
         * of the denominator in descending powers of z.
         */
         discreteTF( const real_t ( &numerator )[ NB ], const real_t ( &denominator)[ NA ] ) {
@@ -271,16 +271,6 @@ namespace qlibs {
             ltisys() = default;
 
             /**
-            * @brief Drives the LTI system recursively using the input signal provided
-            * @pre Instance must be previously initialized.
-            * @note The user must ensure that this function is executed in the
-            * required sample time @a T  or time step @a dt either by using a
-            * HW or SW timer, a real time task or a timing service.
-            * @param[in] u A sample of the input signal that excites the system
-            * @return The system response.
-            */
-
-            /**
             * @brief Drives the LTI system recursively using the provided input
             * sample.
             * @details This function evaluates the system response based on the
@@ -300,7 +290,24 @@ namespace qlibs {
             */
             real_t excite( real_t u ) noexcept;
 
-            /// @copydoc excite(real_t)
+            /**
+            * @brief Drives the LTI system recursively using the provided input
+            * sample.
+            * @details This function evaluates the system response based on the
+            * given input signal and the internal state of the system. It must
+            * be called periodically with a fixed time step to maintain correct
+            * system behavior.
+            *
+            * @pre The instance must be properly initialized before calling this method.
+            *
+            * @note The user is responsible for ensuring that this function is invoked at consistent
+            * intervals equal to the system's time step @a dt. This timing should
+            * be enforced using a hardware timer, software timer, real-time task,
+            * or another reliable timing mechanism.
+            *
+            * @param[in] u A new input sample that excites (drives) the system.
+            * @return The system's output (response) at the current time step.
+            */
             real_t operator()( const real_t u ) {
                 return excite( u );
             }
@@ -386,7 +393,6 @@ namespace qlibs {
             * @param[in] n_a Number of elements in @a den.
             *
             * example 1: \f$ a_{0}+a_{1}z^{-1}+a_{2}z^{-2}+a_{3}z^{-3}, na = 4 \f$
-            * @return @c true on success, otherwise return @c false.
             * @note By default, initial conditions are set to zero. To change the initial
             * conditions to the desired values, use the
             * discreteSystem::setInitStates() method.
@@ -414,7 +420,6 @@ namespace qlibs {
             * an array of type discreteStates with max(na,nb) elements
             * The supplied array will be updated on every invocation of
             * discreteSystem::excite().
-            * @return @c true on success, otherwise return @c false.
             * @note By default, initial conditions are set to zero. To change the initial
             * conditions to the desired values, use the
             * discreteSystem::setInitStates() method.

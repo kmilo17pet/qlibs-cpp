@@ -65,7 +65,6 @@ namespace qlibs {
             * @param[in] x0 initial condition at time t(0)
             * @param[in] sn_1 initial condition at time (t-1)
             * @param[in] sn_2 initial condition at time (t-2)
-            * @return none
             */
             nState( const real_t x0 = 0.0_re,
                     const real_t sn_1 = 0.0_re,
@@ -79,7 +78,6 @@ namespace qlibs {
             * @param[in] x0 initial condition at time t(0)
             * @param[in] sn_1 initial condition at time (t-1)
             * @param[in] sn_2 initial condition at time (t-2)
-            * @return none
             */
             void init( const real_t x0 = 0.0_re,
                        const real_t sn_1 = 0.0_re,
@@ -126,8 +124,6 @@ namespace qlibs {
             *
             * @note The effectiveness and accuracy of each method depend on the
             * signal characteristics and time step.
-            *
-            * @return @c true if the method was successfully set; @c false otherwise.
             */
             inline void setIntegrationMethod( integrationMethod m ) noexcept
             {
@@ -151,8 +147,6 @@ namespace qlibs {
             *
             * @note Choose the method based on the required balance between
             * accuracy and latency.
-            *
-            * @return @c true if the method was successfully set; @c false otherwise.
             */
             inline void setDerivationMethod( derivationMethod m ) noexcept
             {

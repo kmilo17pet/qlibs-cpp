@@ -25,7 +25,7 @@ namespace qlibs {
 
     /**
     * @brief Variable that allocates block of bytes to hold @a N bits for a BitField .
-    * @tparam[in] N The desired number of bits for the BitField.
+    * @tparam [in] N The desired number of bits for the BitField.
     */
     template <size_t N>
     using bitArea = uint8_t[ 4U*( ( ( N - 1U )/32U ) + 1U ) ];

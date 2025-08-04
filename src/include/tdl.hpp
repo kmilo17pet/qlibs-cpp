@@ -77,7 +77,6 @@ namespace qlibs {
             * @param[in] area An array of size @a n where delays will be stored
             * @param[in] n The number of elements on @a area.
             * @param[in] initVal The value with which all TDL delays will be initialized
-            * @return none
             */
             void setup( real_t * const area,
                         const size_t n,
@@ -88,7 +87,6 @@ namespace qlibs {
             * the default optimal parameters.
             * @param[in] area The array where delays will be stored
             * @param[in] initVal The value with which all TDL delays will be initialized
-            * @return none
             */
             template <size_t numberOfDelays>
             void setup( real_t (&area)[ numberOfDelays ],
@@ -100,7 +98,6 @@ namespace qlibs {
             /**
             * @brief Clears all delays from the TDL and sets them to the specified value
             * @param[in] initVal The value with which all TDL delays will be initialized
-            * @return none
             */
             void flush( const real_t initVal = 0.0_re ) noexcept;
 
@@ -126,7 +123,6 @@ namespace qlibs {
             /**
             * @brief Insert a new sample to the TDL removing the oldest sample
             * @param[in] sample The new sample to insert.
-            * @return none
             */
             void insertSample( const real_t sample ) noexcept;
 
@@ -140,7 +136,6 @@ namespace qlibs {
             /**
             * @brief Insert a new sample to the TDL removing the oldest sample
             * @param[in] sample The new sample to insert.
-            * @return none
             */
             void operator()( const real_t sample ) noexcept
             {

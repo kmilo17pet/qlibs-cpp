@@ -31,7 +31,6 @@ namespace qlibs {
         * @brief Exchanges the values of a and b.
         * @param[in,out] x Object to be swapped.
         * @param[in,out] y Object to be swapped.
-        * @return none.
         */
         template <typename T>
         void swap( T& x, T& y ) noexcept
@@ -94,7 +93,6 @@ namespace qlibs {
         * @code{.c}
         * bool cmp( const T& a, const T& b );
         * @endcode
-        * @return none.
         */
         template<typename T, size_t n>
         void sort( T ( &array )[ n ],
@@ -144,7 +142,6 @@ namespace qlibs {
         * @param[in,out] array The array to reverse.
         * @param[in] first Initial position of the portion to reverse
         * @param[in] last Final position of the portion to reverse
-        * @return none.
         */
         template<typename T, size_t n>
         inline void reverse( T ( &array )[ n ],
@@ -168,7 +165,6 @@ namespace qlibs {
         * a right-rotation and a negative value a left-rotation.
         * @param[in,out] array The array to rotate.
         * @param[in] k Positions to rotate. Sign determines the rotate direction.
-        * @return none.
         */
         template<typename T, size_t n>
         void rotate( T ( &array )[ n ],
@@ -202,7 +198,6 @@ namespace qlibs {
          * @param[in] value The value to set all elements to.
          * @param[in] first Initial position of the portion to fill
          * @param[in] last Final position of the portion to fill
-         * @return none.
          */
         template<typename T, size_t n>
         inline void fill( T ( &array )[ n ],
@@ -315,7 +310,6 @@ namespace qlibs {
         * @param[in] new_value The value to use as replacement
         * @param[in] first Initial position of the portion to check
         * @param[in] last Final position of the portion to check
-        * @return @c none.
         */
         template<typename T, size_t n>
         inline void replace( T ( &array )[ n ],
@@ -342,7 +336,6 @@ namespace qlibs {
         * @param[in] new_value The value to use as replacement
         * @param[in] first Initial position of the portion to check
         * @param[in] last Final position of the portion to check
-        * @return @c none.
         */
         template<typename T, size_t n>
         inline void replace_if( T ( &array )[ n ],
@@ -426,7 +419,6 @@ namespace qlibs {
         *  argument.
         * @param[in] first Initial position of the portion to check
         * @param[in] last Final position of the portion to check
-        * @return none
         */
         template<typename T, size_t n>
         inline void for_each( T ( &array )[ n ],

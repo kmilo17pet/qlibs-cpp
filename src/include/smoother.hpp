@@ -438,6 +438,7 @@ namespace qlibs {
             real_t n;
             /*! @endcond  */
         public:
+            virtual ~smootherDESF() {}
 
             /**
             * @brief Setup an initialize the Double exponential smoothing instance
@@ -446,7 +447,6 @@ namespace qlibs {
             * @param[in] nS Number of steps for the forecast
             * @return @c true on success, otherwise return @c false.
             */
-            virtual ~smootherDESF() {}
             bool setup( const real_t a,
                         const real_t b,
                         const size_t nS );
