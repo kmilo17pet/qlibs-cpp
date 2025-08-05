@@ -169,8 +169,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa9063929c7d37c4917bf5e38686d35e" id="r_afa9063929c7d37c4917bf5e38686d35e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9063929c7d37c4917bf5e38686d35e">operator()</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> xInput) noexcept override</td></tr>
 <tr class="memdesc:afa9063929c7d37c4917bf5e38686d35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the input by a specified amount of time.  <br /></td></tr>
 <tr class="separator:afa9063929c7d37c4917bf5e38686d35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e439b0091a5e4328d888723b4a4edff" id="r_a3e439b0091a5e4328d888723b4a4edff"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e439b0091a5e4328d888723b4a4edff">getNumberOfDelays</a> () const noexcept</td></tr>
-<tr class="separator:a3e439b0091a5e4328d888723b4a4edff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57092869d987e09e57e96320a460070" id="r_ae57092869d987e09e57e96320a460070"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae57092869d987e09e57e96320a460070">getNumberOfDelays</a> () const noexcept</td></tr>
+<tr class="memdesc:ae57092869d987e09e57e96320a460070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of delay steps configured for this instance.  <br /></td></tr>
+<tr class="separator:ae57092869d987e09e57e96320a460070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;size_t numberOfDelays&gt;<br />
@@ -289,8 +290,8 @@ template&lt;size_t numberOfDelays&gt; </div>
 
 </div>
 </div>
-<a id="a3e439b0091a5e4328d888723b4a4edff" name="a3e439b0091a5e4328d888723b4a4edff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e439b0091a5e4328d888723b4a4edff">&#9670;&#160;</a></span>getNumberOfDelays()</h2>
+<a id="ae57092869d987e09e57e96320a460070" name="ae57092869d987e09e57e96320a460070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae57092869d987e09e57e96320a460070">&#9670;&#160;</a></span>getNumberOfDelays()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,10 +310,13 @@ template&lt;size_t numberOfDelays&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the number of delay steps configured for this instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of delays (equal to the template parameter). </dd></dl>
 
 </div>
 </div>
