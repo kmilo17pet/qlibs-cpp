@@ -37,7 +37,6 @@ namespace qlibs {
             real_t *rd{ nullptr };
             real_t *wr{ nullptr };
             size_t itemCount{ 0U };
-            const real_t undefined{ 0.0_re/0.0_re }; // skipcq: CXX-W2010
 
             void insertNewest( const real_t sample ) noexcept;
             void removeOldest( void ) noexcept;
@@ -131,7 +130,7 @@ namespace qlibs {
             * @param[in] index The requested delay index
             * @return The requested value from the TDL
             */
-            const real_t& operator[]( int index ) noexcept;
+            real_t operator[]( int index ) noexcept;
 
             /**
             * @brief Insert a new sample to the TDL removing the oldest sample

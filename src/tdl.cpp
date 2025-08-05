@@ -53,9 +53,14 @@ real_t tdl::getRecent( void ) const noexcept
 /*============================================================================*/
 real_t tdl::getAtIndex( const size_t i ) const noexcept
 {
+    size_t j = i;
+
+    if ( j >= itemCount ) {
+        j = itemCount - 1U;
+    }
     /*cstat -MISRAC++2008-5-0-3*/
-    return ( ( wr >= rd ) && ( ( head + i ) >= wr ) ) ? rd[ itemCount - i ]
-                                                      : *( rd - i );
+    return ( ( wr >= rd ) && ( ( head + j ) >= wr ) ) ? rd[ itemCount - j ]
+                                                      : *( rd - j );
     /*cstat +MISRAC++2008-5-0-3*/
 }
 /*============================================================================*/
@@ -65,23 +70,13 @@ void tdl::insertSample( const real_t sample ) noexcept
     insertNewest( sample );
 }
 /*============================================================================*/
-const real_t& tdl::operator[]( int index ) noexcept
+real_t tdl::operator[]( int index ) noexcept
 {
-    const size_t i = static_cast<size_t>( index );
-    /*cstat -MISRAC++2008-6-6-5*/
-    if ( ( index >= 0 ) && ( i < itemCount ) ) {
-        /*cstat -MISRAC++2008-5-0-3*/
-        return ( ( wr >= rd ) && ( ( head + i ) >= wr ) ) ? rd[ itemCount - i ]
-                                                          : *( rd - i );
-        /*cstat +MISRAC++2008-5-0-3*/
+    if ( index < 0 ) {
+        index = -index;
     }
-    else if ( -1 == index ) {
-        return ( ( rd + 1U ) >= tail ) ? head[ 0 ] : rd[ 1 ];
-    }
-    else {
-        return undefined;
-    }
-    /*cstat +MISRAC++2008-6-6-5*/
+
+    return getAtIndex( static_cast<size_t>( index ) );
 }
 /*============================================================================*/
 /*! @endcond  */

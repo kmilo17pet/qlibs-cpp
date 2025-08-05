@@ -2229,9 +2229,6 @@
             <name>$PROJ_DIR$\..\src\include\ltisys.hpp</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\include\mat.hpp</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\src\include\numa.hpp</name>
         </file>
         <file>

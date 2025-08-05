@@ -1,7 +1,7 @@
 #include <iostream>
 #include <qlibs.h>
 #include <cmath>
-#include <include/mat.hpp>
+//#include <include/mat.hpp>
 
 using namespace std;
 using namespace qlibs;
@@ -417,7 +417,7 @@ void test_ffmath(void)
     std::cout << ffmath::copysign( ffmath::getNan(), -2.0f ) << std::endl;
     std::cout << ffmath::copysign( ffmath::getInf(), -2.0f ) << std::endl;
 }
-
+/*
 void test_mat( void )
 {
     cout<<"MAT TEST"<<endl;
@@ -449,7 +449,7 @@ void test_mat( void )
     (x*ix).display();
 
 }
-
+*/
 void test_interp1( void )
 {
     real_t tx[] = { 1.0f, 2.0f, 3.0f, 4.0f };
@@ -594,7 +594,7 @@ int main()
     test_fp16();
     test_tdl();
 
-    test_mat();
+    //test_mat();
     test_interp1();
     test_fis();
     test_fis2();

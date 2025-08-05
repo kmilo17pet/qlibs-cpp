@@ -247,7 +247,12 @@ namespace qlibs {
                 return delay( xInput );
             }
 
-            constexpr size_t getNumberOfDelays() const noexcept {
+            /**
+            * @brief Returns the number of delay steps configured for this instance.
+            * 
+            * @return The number of delays (equal to the template parameter).
+            */
+            size_t getNumberOfDelays() const noexcept {
                 return numberOfDelays;
             }
     };

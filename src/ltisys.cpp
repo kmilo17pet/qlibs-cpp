@@ -284,7 +284,7 @@ bool smithPredictor::updatePrediction( const real_t ut,
     const real_t yt_hat = modelDelay->delay( yt_hat_d );
     const real_t ep_hat = yt - yt_hat;
 
-    yp_hat = yt_hat_d + ( filter ? filter->excite( ep_hat ) : ep_hat );
+    yp_hat = yt_hat_d + ( ( nullptr != filter ) ? filter->excite( ep_hat ) : ep_hat );
     return true;
 }
 /*============================================================================*/
