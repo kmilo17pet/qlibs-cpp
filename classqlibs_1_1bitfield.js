@@ -5,6 +5,8 @@ var classqlibs_1_1bitfield =
     [ "clearAll", "classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74", null ],
     [ "clearBit", "classqlibs_1_1bitfield.html#a1b5c5d435a54c81220d93803c384bada", null ],
     [ "dump", "classqlibs_1_1bitfield.html#a8c09e3f23d830fd47d82250a2893ceca", null ],
+    [ "isInitialized", "classqlibs_1_1bitfield.html#a276cdfca65788c0d4097e94017c9d680", null ],
+    [ "operator bool", "classqlibs_1_1bitfield.html#a65d9c9bffedc485f19ba93753e5fea2f", null ],
     [ "readBit", "classqlibs_1_1bitfield.html#a4a341fe55ab7bd1268295bbebd95c69a", null ],
     [ "readFloat", "classqlibs_1_1bitfield.html#aae351d60490ae87b58a77e6dd85ff9e8", null ],
     [ "readUINTn", "classqlibs_1_1bitfield.html#a096b26f09e65b118b5d6ed1d95b8e37e", null ],

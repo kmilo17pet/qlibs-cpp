@@ -19,6 +19,7 @@ var group__qpid =
       [ "enableAutoTuning", "classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e", null ],
       [ "getGains", "classqlibs_1_1pid_controller.html#a3b0938371f297f9269bcb4c01d08c16a", null ],
       [ "isAutoTuningComplete", "classqlibs_1_1pid_controller.html#a2968dd11df6b432622b222eb41113131", null ],
+      [ "operator bool", "classqlibs_1_1pid_controller.html#ad162ed2eaa67cae7a6929b03ee61a54a", null ],
       [ "operator()", "classqlibs_1_1pid_controller.html#a7bdad9f4b4b36ea4c8fdf700dc0c472b", null ],
       [ "removeModelReferenceControl", "classqlibs_1_1pid_controller.html#aa1bb8f7c7b01adf85e42401fafe841e6", null ],
       [ "reset", "classqlibs_1_1pid_controller.html#ab9b5537d70b094e5793fc5a182a10fe1", null ],

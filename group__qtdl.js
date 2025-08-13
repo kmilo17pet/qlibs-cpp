@@ -11,6 +11,7 @@ var group__qtdl =
       [ "getRecent", "classqlibs_1_1tdl.html#a1b3b27761fd229ce8f4cf6a5abfff1a8", null ],
       [ "insertSample", "classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5", null ],
       [ "isInitialized", "classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c", null ],
+      [ "operator bool", "classqlibs_1_1tdl.html#a9343708e90795a5b83224793a7045cdf", null ],
       [ "operator()", "classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d", null ],
       [ "operator[]", "classqlibs_1_1tdl.html#a510307781eb2ef6dbaddc3ead495e43e", null ],
       [ "setup", "classqlibs_1_1tdl.html#a1a175e050320e962329d71a285e8f9c1", null ],

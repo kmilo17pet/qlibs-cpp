@@ -221,13 +221,19 @@ $(function(){initNavTree('tdl_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="keywordflow">return</span> ( <span class="keyword">nullptr</span> != head );</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            }</div>
 </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    };</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classqlibs_1_1tdl.html#a9343708e90795a5b83224793a7045cdf">  156</a></span>            <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c">isInitialized</a>(); <span class="comment">// controls truthiness</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            }</div>
 </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#endif </span><span class="comment">/*QLIBS_TDL*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    };</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#endif </span><span class="comment">/*QLIBS_TDL*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aclassqlibs_1_1tdl_html_a09adc71e6997931a4232fce2d1495f8c"><div class="ttname"><a href="classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c">qlibs::tdl::isInitialized</a></div><div class="ttdeci">bool isInitialized(void) const</div><div class="ttdoc">Check if the TDL has been initialized.</div><div class="ttdef"><b>Definition</b> tdl.hpp:148</div></div>
 <div class="ttc" id="aclassqlibs_1_1tdl_html_a0f76f8258c4adef8d7257e17bda7698d"><div class="ttname"><a href="classqlibs_1_1tdl.html#a0f76f8258c4adef8d7257e17bda7698d">qlibs::tdl::operator()</a></div><div class="ttdeci">void operator()(const real_t sample) noexcept</div><div class="ttdoc">Insert a new sample to the TDL removing the oldest sample.</div><div class="ttdef"><b>Definition</b> tdl.hpp:139</div></div>
 <div class="ttc" id="aclassqlibs_1_1tdl_html_a1a175e050320e962329d71a285e8f9c1"><div class="ttname"><a href="classqlibs_1_1tdl.html#a1a175e050320e962329d71a285e8f9c1">qlibs::tdl::setup</a></div><div class="ttdeci">void setup(real_t *const area, const size_t n, const real_t initVal=0.0_re) noexcept</div><div class="ttdoc">Setup and initialize a Tapped Delay Line (TDL) instance by setting the default optimal parameters.</div></div>

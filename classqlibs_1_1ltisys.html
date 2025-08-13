@@ -176,6 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5700dfd0f718292a6d9da75d8211ab90" id="r_a5700dfd0f718292a6d9da75d8211ab90"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5700dfd0f718292a6d9da75d8211ab90">isInitialized</a> (void) const =0</td></tr>
 <tr class="memdesc:a5700dfd0f718292a6d9da75d8211ab90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LTI system is initialized.  <br /></td></tr>
 <tr class="separator:a5700dfd0f718292a6d9da75d8211ab90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed691f0d8f1b4d2be897639937ec8fa2" id="r_aed691f0d8f1b4d2be897639937ec8fa2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed691f0d8f1b4d2be897639937ec8fa2">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:aed691f0d8f1b4d2be897639937ec8fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LTI system is initialized.  <br /></td></tr>
+<tr class="separator:aed691f0d8f1b4d2be897639937ec8fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a898fbe818bc27032e34e1e79b2afd0fa" id="r_a898fbe818bc27032e34e1e79b2afd0fa"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a898fbe818bc27032e34e1e79b2afd0fa">setInitStates</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *xi=nullptr)=0</td></tr>
 <tr class="memdesc:a898fbe818bc27032e34e1e79b2afd0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial states for the given system.  <br /></td></tr>
 <tr class="separator:a898fbe818bc27032e34e1e79b2afd0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,6 +234,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl" id="r_a09adc71e6997931a4232fce2d1495f8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a09adc71e6997931a4232fce2d1495f8c">isInitialized</a> (void) const</td></tr>
 <tr class="memdesc:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the TDL has been initialized.  <br /></td></tr>
 <tr class="separator:a09adc71e6997931a4232fce2d1495f8c inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9343708e90795a5b83224793a7045cdf inherit pub_methods_classqlibs_1_1tdl" id="r_a9343708e90795a5b83224793a7045cdf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1tdl.html#a9343708e90795a5b83224793a7045cdf">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:a9343708e90795a5b83224793a7045cdf inherit pub_methods_classqlibs_1_1tdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the TDL has been initialized.  <br /></td></tr>
+<tr class="separator:a9343708e90795a5b83224793a7045cdf inherit pub_methods_classqlibs_1_1tdl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A LTI system base class. </p>
@@ -378,6 +384,34 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the system has been initialized, otherwise return <code>false</code>. </dd></dl>
 
 <p>Implemented in <a class="el" href="classqlibs_1_1continuous_system.html#aca0b51fe11d4876ba6b8fc79124356ef">qlibs::continuousSystem</a>, and <a class="el" href="classqlibs_1_1discrete_system.html#afae7d9eb20e3f5e4318df953dd5393c3">qlibs::discreteSystem</a>.</p>
+
+</div>
+</div>
+<a id="aed691f0d8f1b4d2be897639937ec8fa2" name="aed691f0d8f1b4d2be897639937ec8fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed691f0d8f1b4d2be897639937ec8fa2">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::ltisys::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the LTI system is initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the system has been initialized, otherwise return <code>false</code>. </dd></dl>
 
 </div>
 </div>

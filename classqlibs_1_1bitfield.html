@@ -205,6 +205,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c09e3f23d830fd47d82250a2893ceca" id="r_a8c09e3f23d830fd47d82250a2893ceca"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c09e3f23d830fd47d82250a2893ceca">dump</a> (void *const dst, const size_t n) noexcept</td></tr>
 <tr class="memdesc:a8c09e3f23d830fd47d82250a2893ceca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies <em class="arg">n</em> bytes from the bit-field instance to a designed memory area.  <br /></td></tr>
 <tr class="separator:a8c09e3f23d830fd47d82250a2893ceca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276cdfca65788c0d4097e94017c9d680" id="r_a276cdfca65788c0d4097e94017c9d680"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a276cdfca65788c0d4097e94017c9d680">isInitialized</a> (void) const</td></tr>
+<tr class="memdesc:a276cdfca65788c0d4097e94017c9d680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the bit-field instance has been initialized.  <br /></td></tr>
+<tr class="separator:a276cdfca65788c0d4097e94017c9d680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d9c9bffedc485f19ba93753e5fea2f" id="r_a65d9c9bffedc485f19ba93753e5fea2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65d9c9bffedc485f19ba93753e5fea2f">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:a65d9c9bffedc485f19ba93753e5fea2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the bit-field instance has been initialized.  <br /></td></tr>
+<tr class="separator:a65d9c9bffedc485f19ba93753e5fea2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A BitField object. </p>
@@ -358,6 +364,62 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Destination is returned on success, otherwise <code>nullptr</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a276cdfca65788c0d4097e94017c9d680" name="a276cdfca65788c0d4097e94017c9d680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a276cdfca65788c0d4097e94017c9d680">&#9670;&#160;</a></span>isInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::bitfield::isInitialized </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the bit-field instance has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if instance has been initialized </dd></dl>
+
+</div>
+</div>
+<a id="a65d9c9bffedc485f19ba93753e5fea2f" name="a65d9c9bffedc485f19ba93753e5fea2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d9c9bffedc485f19ba93753e5fea2f">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::bitfield::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the bit-field instance has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if instance has been initialized </dd></dl>
 
 </div>
 </div>

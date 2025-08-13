@@ -7,6 +7,8 @@ var classqlibs_1_1fis_1_1instance =
     [ "getNumberOfPoints", "classqlibs_1_1fis_1_1instance.html#a5ce490b3d54c6c4bf848c870f00a9cc8", null ],
     [ "getOutput", "classqlibs_1_1fis_1_1instance.html#ae990f65cd11f5a868185a5610d53b13e", null ],
     [ "inference", "classqlibs_1_1fis_1_1instance.html#a9d995e59a148a40a9642e20446bbca8c", null ],
+    [ "isInitialized", "classqlibs_1_1fis_1_1instance.html#a5ccb744f8a6e8e5f86877850833b9114", null ],
+    [ "operator bool", "classqlibs_1_1fis_1_1instance.html#a3dcfc62a41d3f3bf2e25d417f372eea6", null ],
     [ "operator<<", "classqlibs_1_1fis_1_1instance.html#a51f0004a5cc5da7360d34f8638b8a5cd", null ],
     [ "operator<<", "classqlibs_1_1fis_1_1instance.html#a8bfed162c9921602ee2f644dc9678c98", null ],
     [ "operator<<", "classqlibs_1_1fis_1_1instance.html#a91a60b9d7b59dc146295141ecfccfb37", null ],

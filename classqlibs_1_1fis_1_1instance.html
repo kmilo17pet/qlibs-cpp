@@ -214,6 +214,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ed95de19dae9d0946a02868d1d46ae1" id="r_a0ed95de19dae9d0946a02868d1d46ae1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ed95de19dae9d0946a02868d1d46ae1">setRuleWeights</a> (<a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *rWeights) noexcept</td></tr>
 <tr class="memdesc:a0ed95de19dae9d0946a02868d1d46ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set weights to the rules of the inference system.  <br /></td></tr>
 <tr class="separator:a0ed95de19dae9d0946a02868d1d46ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ccb744f8a6e8e5f86877850833b9114" id="r_a5ccb744f8a6e8e5f86877850833b9114"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ccb744f8a6e8e5f86877850833b9114">isInitialized</a> (void) const</td></tr>
+<tr class="memdesc:a5ccb744f8a6e8e5f86877850833b9114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the FIS instance has been initialized.  <br /></td></tr>
+<tr class="separator:a5ccb744f8a6e8e5f86877850833b9114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcfc62a41d3f3bf2e25d417f372eea6" id="r_a3dcfc62a41d3f3bf2e25d417f372eea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dcfc62a41d3f3bf2e25d417f372eea6">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:a3dcfc62a41d3f3bf2e25d417f372eea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the FIS instance has been initialized.  <br /></td></tr>
+<tr class="separator:a3dcfc62a41d3f3bf2e25d417f372eea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ce490b3d54c6c4bf848c870f00a9cc8" id="r_a5ce490b3d54c6c4bf848c870f00a9cc8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ce490b3d54c6c4bf848c870f00a9cc8">getNumberOfPoints</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a5ce490b3d54c6c4bf848c870f00a9cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of points used on Mamdani to perform the de-fuzzification proccess.  <br /></td></tr>
 <tr class="separator:a5ce490b3d54c6c4bf848c870f00a9cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,6 +443,62 @@ Public Member Functions</h2></td></tr>
 <p>Perform the inference process on the FIS object. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The instance should have already invoked the fuzzification operation successfully with <a class="el" href="#a62b82142e1066a23f652b9b17c9234d9" title="Perform the fuzzification operation over the crisp inputs on the requested FIS object.">instance::fuzzify()</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a5ccb744f8a6e8e5f86877850833b9114" name="a5ccb744f8a6e8e5f86877850833b9114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccb744f8a6e8e5f86877850833b9114">&#9670;&#160;</a></span>isInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::fis::instance::isInitialized </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the FIS instance has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if instance has been initialized </dd></dl>
+
+</div>
+</div>
+<a id="a3dcfc62a41d3f3bf2e25d417f372eea6" name="a3dcfc62a41d3f3bf2e25d417f372eea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcfc62a41d3f3bf2e25d417f372eea6">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::fis::instance::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the FIS instance has been initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if instance has been initialized </dd></dl>
 
 </div>
 </div>

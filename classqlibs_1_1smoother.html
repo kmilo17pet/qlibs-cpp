@@ -174,8 +174,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b07901eddb032c2ceb48ef2f7fd7f54" id="r_a1b07901eddb032c2ceb48ef2f7fd7f54"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b07901eddb032c2ceb48ef2f7fd7f54">~smoother</a> ()</td></tr>
 <tr class="separator:a1b07901eddb032c2ceb48ef2f7fd7f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec30c8dbc4317e6e36fbebe8e84a0b29" id="r_aec30c8dbc4317e6e36fbebe8e84a0b29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec30c8dbc4317e6e36fbebe8e84a0b29">isInitialized</a> (void) const</td></tr>
-<tr class="memdesc:aec30c8dbc4317e6e36fbebe8e84a0b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the smoother filter is initialized.  <br /></td></tr>
+<tr class="memdesc:aec30c8dbc4317e6e36fbebe8e84a0b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the smoother filter has been initialized using setup().  <br /></td></tr>
 <tr class="separator:aec30c8dbc4317e6e36fbebe8e84a0b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade188a4d1d43c1938a000a706e092457" id="r_ade188a4d1d43c1938a000a706e092457"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade188a4d1d43c1938a000a706e092457">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:ade188a4d1d43c1938a000a706e092457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the smoother filter has been initialized using setup().  <br /></td></tr>
+<tr class="separator:ade188a4d1d43c1938a000a706e092457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed55eebe0a8653e933f6044c13d45340" id="r_aed55eebe0a8653e933f6044c13d45340"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed55eebe0a8653e933f6044c13d45340">smooth</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x)=0</td></tr>
 <tr class="memdesc:aed55eebe0a8653e933f6044c13d45340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the smooth operation recursively for the input signal <em class="arg">x</em>.  <br /></td></tr>
 <tr class="separator:aed55eebe0a8653e933f6044c13d45340"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,6 +220,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool qlibs::smoother::isInitialized </td>
@@ -225,9 +231,42 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Check if the smoother filter is initialized. </p>
+<p>Check if the smoother filter has been initialized using setup(). </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the smoother has been initialized, otherwise return <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ade188a4d1d43c1938a000a706e092457" name="ade188a4d1d43c1938a000a706e092457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade188a4d1d43c1938a000a706e092457">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::smoother::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the smoother filter has been initialized using setup(). </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the smoother has been initialized, otherwise return <code>false</code>. </dd></dl>
 
 </div>
