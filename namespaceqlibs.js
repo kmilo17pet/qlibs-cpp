@@ -76,6 +76,7 @@ var namespaceqlibs =
     [ "transportDelay", "classqlibs_1_1transport_delay.html", "classqlibs_1_1transport_delay" ],
     [ "bitArea", "group__qbitfield.html#gac060ed7eabaa95f80e4b897235c9323a", null ],
     [ "continuousStates", "group__qltisys.html#ga89e898dad572c32c1fedf8ac1ffeff9d", null ],
+    [ "customProcessModel", "group__qltisys.html#gaf9f2635970b4ce8217a81e737196a489", null ],
     [ "discreteDelay", "group__qltisys.html#ga2dade50797abbbaec85106050db0b048", null ],
     [ "discreteStates", "group__qltisys.html#gad74b033f3e2ee951ba43bdec41200853", null ],
     [ "real_t", "namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e", null ],

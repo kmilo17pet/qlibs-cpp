@@ -64,6 +64,11 @@ var index =
       ] ],
       [ "Discrete-time transfer functions", "qltisys_desc.html#qltisys_disc", [
         [ "Example: Evaluate the given discrete transfer function", "qltisys_desc.html#qltisys_ex2", null ]
+      ] ],
+      [ "Transport-Delay", "qltisys_desc.html#qltisys_transportdelay", [
+        [ "Basic Example", "qltisys_desc.html#td_basic", null ],
+        [ "Using Time Conversion", "qltisys_desc.html#td_timeconv", null ],
+        [ "Example: Continuous System with Delay", "qltisys_desc.html#td_continuous", null ]
       ] ]
     ] ],
     [ "Fixed-Point Q16.16 library", "qfp16_desc.html", [

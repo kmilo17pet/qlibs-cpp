@@ -157,9 +157,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e25155d86ef25da59bf4850182a827c" id="r_a6e25155d86ef25da59bf4850182a827c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e25155d86ef25da59bf4850182a827c">smithPredictor</a> (<a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;modelTf, ITransportDelay &amp;mDelay, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
 <tr class="memdesc:a6e25155d86ef25da59bf4850182a827c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate.  <br /></td></tr>
 <tr class="separator:a6e25155d86ef25da59bf4850182a827c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0f76ab04f97e453f7b54749530b64f" id="r_a9e0f76ab04f97e453f7b54749530b64f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e0f76ab04f97e453f7b54749530b64f">smithPredictor</a> (<a class="el" href="group__qltisys.html#gaf9f2635970b4ce8217a81e737196a489">customProcessModel</a> modelCustom, ITransportDelay &amp;mDelay, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
+<tr class="memdesc:a9e0f76ab04f97e453f7b54749530b64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate.  <br /></td></tr>
+<tr class="separator:a9e0f76ab04f97e453f7b54749530b64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd38cbf51836d1f6843676133671bb3" id="r_a1fd38cbf51836d1f6843676133671bb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd38cbf51836d1f6843676133671bb3">smithPredictor</a> (<a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;modelTf, ITransportDelay &amp;mDelay, <a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;filterTf, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
 <tr class="memdesc:a1fd38cbf51836d1f6843676133671bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate.  <br /></td></tr>
 <tr class="separator:a1fd38cbf51836d1f6843676133671bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6988d0a72f8679b7cfad59ec575c5dc3" id="r_a6988d0a72f8679b7cfad59ec575c5dc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6988d0a72f8679b7cfad59ec575c5dc3">smithPredictor</a> (<a class="el" href="group__qltisys.html#gaf9f2635970b4ce8217a81e737196a489">customProcessModel</a> modelCustom, ITransportDelay &amp;mDelay, <a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;filterTf, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
+<tr class="memdesc:a6988d0a72f8679b7cfad59ec575c5dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate.  <br /></td></tr>
+<tr class="separator:a6988d0a72f8679b7cfad59ec575c5dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedea306e13d851b18c5e2caa6ad9370b" id="r_aedea306e13d851b18c5e2caa6ad9370b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedea306e13d851b18c5e2caa6ad9370b">updatePrediction</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> ut, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> yt) noexcept</td></tr>
 <tr class="memdesc:aedea306e13d851b18c5e2caa6ad9370b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the internal prediction based on control input and measured plant output.  <br /></td></tr>
 <tr class="separator:aedea306e13d851b18c5e2caa6ad9370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +175,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ac78b022b9831c26fd5b83460266d47" id="r_a8ac78b022b9831c26fd5b83460266d47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ac78b022b9831c26fd5b83460266d47">setFilter</a> (<a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;filterTf) noexcept</td></tr>
 <tr class="memdesc:a8ac78b022b9831c26fd5b83460266d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an optional filter for the internal Smith Predictor model.  <br /></td></tr>
 <tr class="separator:a8ac78b022b9831c26fd5b83460266d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe487b97b5f19991e50a1bf802d83ea" id="r_a1fe487b97b5f19991e50a1bf802d83ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fe487b97b5f19991e50a1bf802d83ea">setModelData</a> (void *data) noexcept</td></tr>
+<tr class="memdesc:a1fe487b97b5f19991e50a1bf802d83ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the model data when alternate when a custom delay-free plant model is used.  <br /></td></tr>
+<tr class="separator:a1fe487b97b5f19991e50a1bf802d83ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A Smith Predictor implementation for compensating time delays in control systems. </p>
@@ -200,7 +209,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a6e25155d86ef25da59bf4850182a827c" name="a6e25155d86ef25da59bf4850182a827c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e25155d86ef25da59bf4850182a827c">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e25155d86ef25da59bf4850182a827c">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,8 +253,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9e0f76ab04f97e453f7b54749530b64f" name="a9e0f76ab04f97e453f7b54749530b64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0f76ab04f97e453f7b54749530b64f">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::smithPredictor::smithPredictor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qltisys.html#gaf9f2635970b4ce8217a81e737196a489">customProcessModel</a></td>          <td class="paramname"><span class="paramname"><em>modelCustom</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ITransportDelay &amp;</td>          <td class="paramname"><span class="paramname"><em>mDelay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>initialCondition</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0_re</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">modelCustom</td><td>Reference to the system model representing the delay-free plant. User should define a custom function that recreates the system dynamics. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mDelay</td><td>Reference to the transport delay block modeling the plant’s dead time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialCondition</td><td>Initial value for the internal output prediction (<code>yp_hat</code>). Default is 0.0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1fd38cbf51836d1f6843676133671bb3" name="a1fd38cbf51836d1f6843676133671bb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fd38cbf51836d1f6843676133671bb3">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd38cbf51836d1f6843676133671bb3">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,6 +338,57 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">modelTf</td><td>Reference to the LTI system model representing the delay-free plant. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mDelay</td><td>Reference to the transport delay block modeling the plant’s dead time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filterTf</td><td>Reference to the LTI system used as the robustness filter. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialCondition</td><td>Initial value for the internal output prediction (<code>yp_hat</code>). Default is 0.0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Both the model and delay block are passed by reference and stored internally as pointers. </dd></dl>
+
+</div>
+</div>
+<a id="a6988d0a72f8679b7cfad59ec575c5dc3" name="a6988d0a72f8679b7cfad59ec575c5dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6988d0a72f8679b7cfad59ec575c5dc3">&#9670;&#160;</a></span>smithPredictor() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qlibs::smithPredictor::smithPredictor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__qltisys.html#gaf9f2635970b4ce8217a81e737196a489">customProcessModel</a></td>          <td class="paramname"><span class="paramname"><em>modelCustom</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ITransportDelay &amp;</td>          <td class="paramname"><span class="paramname"><em>mDelay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqlibs_1_1ltisys.html">ltisys</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filterTf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>initialCondition</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0_re</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a Smith Predictor with a plant model, delay model, and optional initial output estimate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">modelCustom</td><td>Reference to the system model representing the delay-free plant. User should define a custom function that recreates the system dynamics. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mDelay</td><td>Reference to the transport delay block modeling the plant’s dead time. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">filterTf</td><td>Reference to the LTI system used as the robustness filter. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">initialCondition</td><td>Initial value for the internal output prediction (<code>yp_hat</code>). Default is 0.0.</td></tr>
@@ -357,6 +461,40 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the filter was set successfully.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The filter is applied internally to the model-based prediction and does not affect the plant or delay block directly. </dd></dl>
+
+</div>
+</div>
+<a id="a1fe487b97b5f19991e50a1bf802d83ea" name="a1fe487b97b5f19991e50a1bf802d83ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fe487b97b5f19991e50a1bf802d83ea">&#9670;&#160;</a></span>setModelData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qlibs::smithPredictor::setModelData </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the model data when alternate when a custom delay-free plant model is used. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data passed to the user-defined model at the moment of evaluation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success. False otherwise </dd></dl>
 
 </div>
 </div>

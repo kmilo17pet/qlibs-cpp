@@ -235,9 +235,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2968dd11df6b432622b222eb41113131" id="r_a2968dd11df6b432622b222eb41113131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2968dd11df6b432622b222eb41113131">isAutoTuningComplete</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a2968dd11df6b432622b222eb41113131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the auto tuning process has finished with new gains set on the controller.  <br /></td></tr>
 <tr class="separator:a2968dd11df6b432622b222eb41113131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ce785a61afa8becb23b39038334435b" id="r_a1ce785a61afa8becb23b39038334435b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce785a61afa8becb23b39038334435b">setAutoTuningParameters</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Mu, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Alpha, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> lambda) noexcept</td></tr>
-<tr class="memdesc:a1ce785a61afa8becb23b39038334435b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <br /></td></tr>
-<tr class="separator:a1ce785a61afa8becb23b39038334435b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e87bdef7a2f38d832c95016d87161b" id="r_a73e87bdef7a2f38d832c95016d87161b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e87bdef7a2f38d832c95016d87161b">setAutoTuningParameters</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Mu, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Alpha, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> lambda, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> Tb=3.0_re) noexcept</td></tr>
+<tr class="memdesc:a73e87bdef7a2f38d832c95016d87161b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change parameters of the auto-tuning algorithm.  <br /></td></tr>
+<tr class="separator:a73e87bdef7a2f38d832c95016d87161b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3c2abc7161325dc32992f5c9ce2df4" id="r_abb3c2abc7161325dc32992f5c9ce2df4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb3c2abc7161325dc32992f5c9ce2df4">setAutoTuningControllerType</a> (const <a class="el" href="group__qpid.html#ga60823e0b36c4944749695b336713ea0a">pidType</a> t) noexcept</td></tr>
 <tr class="memdesc:abb3c2abc7161325dc32992f5c9ce2df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the PID type to tune.  <br /></td></tr>
 <tr class="separator:abb3c2abc7161325dc32992f5c9ce2df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -635,8 +635,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ce785a61afa8becb23b39038334435b" name="a1ce785a61afa8becb23b39038334435b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ce785a61afa8becb23b39038334435b">&#9670;&#160;</a></span>setAutoTuningParameters()</h2>
+<a id="a73e87bdef7a2f38d832c95016d87161b" name="a73e87bdef7a2f38d832c95016d87161b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e87bdef7a2f38d832c95016d87161b">&#9670;&#160;</a></span>setAutoTuningParameters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -657,7 +657,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>Tb</em></span><span class="paramdefsep"> = </span><span class="paramdefval">3.0_re</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -673,6 +678,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Mu</td><td>Algorithm momentum. [ 0 &lt;= Mu &lt;= 1 ]. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Alpha</td><td>Final controller speed adjustment. [ 0 &lt; Alpha &lt;= 1 ]. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>Algorithm forgetting factor [ 0.8 &lt;= lambda &lt;= 1 ]. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Tb</td><td>Gains blend-time[ Tb &gt; 0 ]. </td></tr>
   </table>
   </dd>
 </dl>

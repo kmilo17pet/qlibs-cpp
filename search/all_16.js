@@ -17,5 +17,6 @@ var searchData=
   ['usage_14',['Autotuning Usage',['../qpid_desc.html#qpid_autotune_usage',1,'']]],
   ['using_20a_20pid_20controller_3a_15',['Example: Speed control using a PID controller:',['../qpid_desc.html#qpid_ex1',1,'']]],
   ['using_20a_20timer_20interrupt_16',['Example :  By using a timer interrupt',['../qrms_desc.html#qrms_ex1',1,'']]],
-  ['using_20the_20controller_17',['Using the controller',['../qpid_desc.html#qfpid_usage',1,'']]]
+  ['using_20the_20controller_17',['Using the controller',['../qpid_desc.html#qfpid_usage',1,'']]],
+  ['using_20time_20conversion_18',['Using Time Conversion',['../qltisys_desc.html#td_timeconv',1,'']]]
 ];
