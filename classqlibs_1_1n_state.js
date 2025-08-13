@@ -7,5 +7,6 @@ var classqlibs_1_1n_state =
     [ "integrate", "classqlibs_1_1n_state.html#a6736a0afc3790ef3a05684b885023921", null ],
     [ "operator()", "classqlibs_1_1n_state.html#ac1cbaf9ad49a7802dbf17ee6fd1a60b6", null ],
     [ "setDerivationMethod", "classqlibs_1_1n_state.html#a5cee75054a5b36c68371ccfbe5195ec5", null ],
-    [ "setIntegrationMethod", "classqlibs_1_1n_state.html#a94a03478ba137ed5e057a331c116896b", null ]
+    [ "setIntegrationMethod", "classqlibs_1_1n_state.html#a94a03478ba137ed5e057a331c116896b", null ],
+    [ "setSaturation", "classqlibs_1_1n_state.html#a102cacbb17c1f53ebcc763d82d021d5d", null ]
 ];

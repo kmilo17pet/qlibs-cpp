@@ -183,6 +183,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5cee75054a5b36c68371ccfbe5195ec5" id="r_a5cee75054a5b36c68371ccfbe5195ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cee75054a5b36c68371ccfbe5195ec5">setDerivationMethod</a> (<a class="el" href="group__qnuma.html#ga1407622c3f944440d8d0aac8393dbcc4">derivationMethod</a> m) noexcept</td></tr>
 <tr class="memdesc:a5cee75054a5b36c68371ccfbe5195ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the numerical derivation method.  <br /></td></tr>
 <tr class="separator:a5cee75054a5b36c68371ccfbe5195ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a102cacbb17c1f53ebcc763d82d021d5d" id="r_a102cacbb17c1f53ebcc763d82d021d5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a102cacbb17c1f53ebcc763d82d021d5d">setSaturation</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> minV, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> maxV) noexcept</td></tr>
+<tr class="memdesc:a102cacbb17c1f53ebcc763d82d021d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the saturation limits for the integrator output.  <br /></td></tr>
+<tr class="separator:a102cacbb17c1f53ebcc763d82d021d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cbaf9ad49a7802dbf17ee6fd1a60b6" id="r_ac1cbaf9ad49a7802dbf17ee6fd1a60b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1cbaf9ad49a7802dbf17ee6fd1a60b6">operator()</a> (void) const noexcept</td></tr>
 <tr class="memdesc:ac1cbaf9ad49a7802dbf17ee6fd1a60b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the state.  <br /></td></tr>
 <tr class="separator:ac1cbaf9ad49a7802dbf17ee6fd1a60b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -496,6 +499,46 @@ Public Member Functions</h2></td></tr>
 <p><code><a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a94f646c6c058f07197cfb955ea20d0ce">INTEGRATION_SIMPSON</a></code> : Integrate using the Simpson's 1/3 rule.</p>
 <p><code><a class="el" href="group__qnuma.html#gga867953a85c4e25b6edbb282446413cf2a33dec44f4cac202b2f01d92a730b1215">INTEGRATION_QUADRATIC</a></code> : Integrate using a parabola fit to three points.</p>
 <dl class="section note"><dt>Note</dt><dd>The effectiveness and accuracy of each method depend on the signal characteristics and time step. </dd></dl>
+
+</div>
+</div>
+<a id="a102cacbb17c1f53ebcc763d82d021d5d" name="a102cacbb17c1f53ebcc763d82d021d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a102cacbb17c1f53ebcc763d82d021d5d">&#9670;&#160;</a></span>setSaturation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nState::setSaturation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>minV</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a></td>          <td class="paramname"><span class="paramname"><em>maxV</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the saturation limits for the integrator output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">minV</td><td>The minimum value the output can reach. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxV</td><td>The maximum value the output can reach. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the limits are valid and applied; <code>false</code> otherwise (e.g., minV &gt; maxV). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If not set, the output is unbounded. </dd></dl>
 
 </div>
 </div>

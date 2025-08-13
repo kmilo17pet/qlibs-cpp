@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classqlibs_1_1mat.html#a31dfec13bf708343a943184b553e112f":[4,0,0,13,25],
 "classqlibs_1_1mat.html#a379933358c586ac844751f5c0ad153d3":[3,0,1,17,27],
 "classqlibs_1_1mat.html#a379933358c586ac844751f5c0ad153d3":[4,0,0,13,27],
 "classqlibs_1_1mat.html#a3c3b5d94a58686e65b3146611d9fa81b":[3,0,1,17,0],
@@ -60,6 +59,7 @@ var NAVTREEINDEX1 =
 "classqlibs_1_1mat.html#afd5552c0a09d83507a95fdd9c952d475":[3,0,1,17,19],
 "classqlibs_1_1mat.html#afd5552c0a09d83507a95fdd9c952d475":[4,0,0,13,19],
 "classqlibs_1_1n_state.html":[2,12,0],
+"classqlibs_1_1n_state.html#a102cacbb17c1f53ebcc763d82d021d5d":[2,12,0,8],
 "classqlibs_1_1n_state.html#a3905519ba64f0e937b7be3a595cab034":[2,12,0,0],
 "classqlibs_1_1n_state.html#a5cee75054a5b36c68371ccfbe5195ec5":[2,12,0,6],
 "classqlibs_1_1n_state.html#a6733b684221cd624a3092e404a24a522":[2,12,0,2],
