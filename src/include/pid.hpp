@@ -449,6 +449,15 @@ namespace qlibs {
             {
                 return { Kc, Ki, Kd };
             }
+
+            /**
+            * @brief Check if the PID instance has been initialized using setup().
+            * @return @c true if the PID instance has been initialized, otherwise
+            * return @c false.
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized;
+            }
     };
 
     /** @}*/

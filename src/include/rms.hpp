@@ -69,6 +69,15 @@ namespace qlibs {
             }
 
             /**
+            * @brief Check if the RMS instance has been initialized using setup().
+            * @return @c true if the RMS instance has been initialized, otherwise
+            * return @c false.
+            */
+            explicit operator bool() const noexcept {
+                return smootherLPF1::isInitialized(); // controls truthiness
+            }
+
+            /**
             * @brief Change the recursive parameters for the moving RMS estimator.
             * @param[in] l Exponential weighting factor, specified as a positive
             * real scalar in the range [0,1]. A forgetting factor of 0.9 gives more

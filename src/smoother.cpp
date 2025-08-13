@@ -22,6 +22,7 @@ bool smootherLPF1::setup( const real_t a )
     if ( ( a > 0.0_re ) && ( a < 1.0_re ) ) {
         alpha = a;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -57,6 +58,7 @@ bool smootherLPF2::setup( const real_t a )
         a2 = ( 1.0_re - p1 + aa )/r;
         b1 = 2.0_re*k;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -91,6 +93,7 @@ bool smootherMWM1::setup( real_t *window,
         w = window;
         wsize = w_size;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -115,6 +118,7 @@ bool smootherMWM2::setup( real_t *window,
     if ( ( nullptr != window ) && ( w_size > 0U ) ) {
         tdl::setup( window, w_size );
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -147,6 +151,7 @@ bool smootherMOR1::setup( real_t *window,
         wsize = w_size;
         alpha = a;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -185,6 +190,7 @@ bool smootherMOR2::setup( real_t *window,
         sum = 0.0_re;
         m = 0.0_re;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -248,6 +254,7 @@ bool smootherGMWF::setup( const real_t sg,
         k = kernel;
         wsize = ws;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -271,6 +278,7 @@ bool smootherEXPW::setup( const real_t lam )
         m = 0.0_re;
         w = 1.0_re;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -305,6 +313,7 @@ bool smootherKLMN::setup( const real_t processNoiseCov,
         A = 1.0_re;
         H = 1.0_re;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -343,6 +352,7 @@ bool smootherDESF::setup( const real_t a,
         n = static_cast<real_t>( nS );
         /*cstat +CERT-FLP36-C */
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;
@@ -381,6 +391,7 @@ bool smootherALNF::setup( const real_t a,
         w_1 = ( mu > 0.0_re ) ? w1 : nullptr;
         n = wsize;
         retValue = reset();
+        isSetup = retValue;
     }
 
     return retValue;

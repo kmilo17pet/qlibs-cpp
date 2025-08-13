@@ -28,6 +28,7 @@ namespace qlibs {
         protected:
             /*! @cond  */
             bool init{ true };
+            bool isSetup{ false };
             static void windowSet( real_t *w,
                                    const size_t wsize,
                                    const real_t x );
@@ -36,11 +37,24 @@ namespace qlibs {
             virtual ~smoother() {}
 
             /**
-            * @brief Check if the smoother filter is initialized.
+            * @brief Check if the smoother filter has been initialized using setup().
             * @return @c true if the smoother has been initialized, otherwise
             * return @c false.
             */
-            bool isInitialized( void ) const;
+            bool isInitialized( void ) const
+            {
+                return isSetup;
+            }
+
+            /**
+            * @brief Check if the smoother filter has been initialized using setup().
+            * @return @c true if the smoother has been initialized, otherwise
+            * return @c false.
+            */
+            explicit operator bool() const noexcept
+            {
+                return isInitialized();
+            }
 
             /**
             * @brief Perform the smooth operation recursively for the input signal @a x.

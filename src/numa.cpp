@@ -84,7 +84,8 @@ bool integrator::setSaturation( const real_t minV,
     return retValue;
 }
 /*===========================================================================*/
-real_t integrator::operator()( const real_t xDot ) {
+real_t integrator::operator()( const real_t xDot )
+{
     real_t xt;
 
     xt = integrate( xDot, dt );
@@ -101,6 +102,11 @@ real_t integrator::operator()( const real_t xDot ) {
     return xt;
 }
 /*===========================================================================*/
+real_t integrator::operator()() const
+{
+    return nState::operator()();
+}
+/*===========================================================================*/
 derivative::derivative(const real_t timeStep, const real_t initialCondition )
     : dt( timeStep )
 {
@@ -110,3 +116,4 @@ derivative::derivative(const real_t timeStep, const real_t initialCondition )
 real_t derivative::operator()( const real_t xt ) {
     return derive( xt, dt );
 }
+/*===========================================================================*/

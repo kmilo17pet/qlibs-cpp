@@ -148,6 +148,14 @@ namespace qlibs {
             bool isInitialized( void ) const {
                 return ( nullptr != head );
             }
+
+            /**
+            * @brief Check if the TDL has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized(); // controls truthiness
+            }
     };
 
     /** @}*/

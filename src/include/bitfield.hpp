@@ -213,6 +213,22 @@ namespace qlibs {
             */
             void* dump( void * const dst,
                         const size_t n ) noexcept;
+
+            /**
+            * @brief Check if the bit-field instance has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            bool isInitialized( void ) const {
+                return ( nullptr != field );
+            }
+
+            /**
+            * @brief Check if the bit-field instance has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized();
+            }
     };
 
     /** @}*/

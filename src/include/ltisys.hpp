@@ -373,6 +373,16 @@ namespace qlibs {
             */
             virtual bool isInitialized( void ) const = 0;
 
+
+            /**
+            * @brief Check if the LTI system is initialized.
+            * @return @c true if the system has been initialized, otherwise
+            * return @c false.
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized();
+            }
+
             /**
             * @brief Set the initial states for the given system
             * @pre System should be previously initialized by using the @c setup() method
@@ -575,6 +585,15 @@ namespace qlibs {
             bool isInitialized( void ) const override
             {
                 return ( nullptr != xd ) && ( LTISYS_TYPE_DISCRETE == type );
+            }
+
+            /**
+            * @brief Check if the LTI discrete system is initialized.
+            * @return @c true if the system has been initialized, otherwise
+            * return @c false.
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized();
             }
 
             /**

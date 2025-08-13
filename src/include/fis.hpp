@@ -815,6 +815,22 @@ namespace qlibs {
             bool setRuleWeights( real_t *rWeights ) noexcept;
 
             /**
+            * @brief Check if the FIS instance has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            bool isInitialized( void ) const {
+                return ( nullptr != xInput );
+            }
+
+            /**
+            * @brief Check if the FIS instance has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            explicit operator bool() const noexcept {
+                return isInitialized();
+            }
+
+            /**
             * @brief Get the number of points used on Mamdani to perform the
             * de-fuzzification proccess
             * @return The number for points for de-fuzzification.
@@ -1207,6 +1223,23 @@ namespace qlibs {
                 }
                 return *this;
             }
+
+            /**
+            * @brief Check if the FIS system has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            bool isInitialized( void ) const {
+                return sys.isInitialized();
+            }
+
+            /**
+            * @brief Check if the FIS system has been initialized.
+            * @return @c true if instance has been initialized
+            */
+            explicit operator bool() const noexcept {
+                return sys.isInitialized();
+            }
+
     };
         /** @}*/
     }

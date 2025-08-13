@@ -258,6 +258,12 @@ namespace qlibs {
             * @note This should be called at intervals equal to the time step provided in the constructor.
             */
             real_t operator()( const real_t xDot );
+
+            /**
+            * @brief Retrieve the current value of the integration
+            * @return The current value of the integral.
+            */
+            real_t operator()() const;
     };
 
     /**
