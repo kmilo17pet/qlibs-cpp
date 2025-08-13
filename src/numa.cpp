@@ -32,6 +32,17 @@ real_t nState::integrate( const real_t s,
         default:
             break;
     }
+
+    if ( x[ 0 ] > vmax ) {
+        x[ 0 ] = vmax;
+    }
+    else if ( x[ 0 ] < vmin ) {
+        x[ 0 ] = vmin;
+    }
+    else {
+        /*nothing to do*/
+    }
+
     if ( bUpdate ) {
         update( s );
     }
@@ -58,11 +69,35 @@ real_t nState::derive( const real_t s,
         default:
             break;
     }
+
+    if ( x[ 0 ] > vmax ) {
+        x[ 0 ] = vmax;
+    }
+    else if ( x[ 0 ] < vmin ) {
+        x[ 0 ] = vmin;
+    }
+    else {
+        /*nothing to do*/
+    }
+
     if ( bUpdate ) {
         update( s );
     }
 
     return ds;
+}
+/*===========================================================================*/
+bool nState::setSaturation( const real_t minV,
+                            const real_t maxV ) noexcept
+{
+    bool retValue = false;
+
+    if ( maxV > minV ) {
+        vmin = minV;
+        vmax = maxV;
+        retValue = true;
+    }
+    return retValue;
 }
 /*===========================================================================*/
 integrator::integrator(const real_t timeStep, const real_t initialCondition )
@@ -71,35 +106,9 @@ integrator::integrator(const real_t timeStep, const real_t initialCondition )
     init( initialCondition, initialCondition, initialCondition );
 }
 /*===========================================================================*/
-bool integrator::setSaturation( const real_t minV,
-                                const real_t maxV ) noexcept
-{
-    bool retValue = false;
-
-    if ( maxV > minV ) {
-        min = minV;
-        max = maxV;
-        retValue = true;
-    }
-    return retValue;
-}
-/*===========================================================================*/
 real_t integrator::operator()( const real_t xDot )
 {
-    real_t xt;
-
-    xt = integrate( xDot, dt );
-    if ( xt > max ) {
-        xt = max;
-    }
-    else if ( xt < min ) {
-        xt = min;
-    }
-    else {
-        /*nothing to do*/
-    }
-
-    return xt;
+    return integrate( xDot, dt );
 }
 /*===========================================================================*/
 real_t integrator::operator()() const

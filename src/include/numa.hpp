@@ -50,6 +50,8 @@ namespace qlibs {
     class nState {
         private:
             real_t x[ 3 ] = { 0.0_re, 0.0_re, 0.0_re };
+            real_t vmin{ -REAL_MAX };
+            real_t vmax{ +REAL_MAX };
             void inline update( const real_t &s )
             {
                 x[ 2 ] = x[ 1 ];
@@ -153,7 +155,18 @@ namespace qlibs {
                 dMethod = m;
             }
 
-             /**
+            /**
+            * @brief Sets the saturation limits for the integrator output.
+            * @param[in] minV The minimum value the output can reach.
+            * @param[in] maxV The maximum value the output can reach.
+            * @return @c true if the limits are valid and applied; @c false
+            * otherwise (e.g., minV > maxV).
+            * @note If not set, the output is unbounded.
+            */
+            bool setSaturation( const real_t minV,
+                                const real_t maxV ) noexcept;
+
+            /**
             * @brief Get the value of the state.
             * @return The current value of the state.
             */
@@ -222,8 +235,6 @@ namespace qlibs {
     class integrator : public nState, private nonCopyable {
         private:
             real_t dt;
-            real_t min{ -REAL_MAX };
-            real_t max{ +REAL_MAX };
         public:
             virtual ~integrator() {}
 
@@ -240,15 +251,6 @@ namespace qlibs {
             integrator( const real_t timeStep,
                         const real_t initialCondition = 0.0_re );
 
-            /**
-            * @brief Sets the saturation limits for the integrator output.
-            * @param[in] minV The minimum value the output can reach.
-            * @param[in] maxV The maximum value the output can reach.
-            * @return @c true if the limits are valid and applied; @c false
-            * otherwise (e.g., minV > maxV).
-            * @note If not set, the output is unbounded.
-            */
-            bool setSaturation( const real_t minV, const real_t maxV ) noexcept;
 
             /**
             * @brief Performs one step of numerical integration.
