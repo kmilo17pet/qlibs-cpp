@@ -280,11 +280,26 @@ bool continuousSystem::setIntegrationMethod( integrationMethod m )
 bool smithPredictor::updatePrediction( const real_t ut,
                                        const real_t yt ) noexcept
 {
-    const real_t yt_hat_d = model->excite( ut );
-    const real_t yt_hat = modelDelay->delay( yt_hat_d );
-    const real_t ep_hat = yt - yt_hat;
+    bool retValue = true;
+    real_t yt_hat_d = 0.0_re;
 
-    yp_hat = yt_hat_d + ( ( nullptr != filter ) ? filter->excite( ep_hat ) : ep_hat );
-    return true;
+    if ( nullptr != model ) {
+        yt_hat_d = model->excite( ut );
+    }
+    else if ( nullptr != modelAlternate ) {
+        yt_hat_d = modelAlternate( ut, alternateData );
+    }
+    else {
+        retValue = false;
+    }
+
+    if ( retValue ) {
+        const real_t yt_hat = modelDelay->delay( yt_hat_d );
+        const real_t ep_hat = yt - yt_hat;
+
+        yp_hat = yt_hat_d + ( ( nullptr != filter ) ? filter->excite( ep_hat )
+                                                    : ep_hat );
+    }
+    return retValue;
 }
 /*============================================================================*/

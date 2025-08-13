@@ -249,7 +249,7 @@ namespace qlibs {
 
             /**
             * @brief Returns the number of delay steps configured for this instance.
-            * 
+            *
             * @return The number of delays (equal to the template parameter).
             */
             size_t getNumberOfDelays() const noexcept {
@@ -802,6 +802,10 @@ namespace qlibs {
             bool setIntegrationMethod( integrationMethod m );
     };
 
+
+    using customProcessModel = real_t(*)(real_t, void*);
+
+
     /**
      * @brief A Smith Predictor implementation for compensating time delays in
      * control systems.
@@ -812,10 +816,12 @@ namespace qlibs {
      */
     class smithPredictor {
     private:
-        ltisys *model;
+        ltisys *model{nullptr};
+        customProcessModel modelAlternate{ nullptr };
         ITransportDelay *modelDelay;
         ltisys *filter{ nullptr };
         real_t yp_hat;
+        void *alternateData{ nullptr };
     public:
         virtual ~smithPredictor() {}
         /**
@@ -838,6 +844,22 @@ namespace qlibs {
         /**
          * @brief Constructs a Smith Predictor with a plant model, delay model,
          * and optional initial output estimate.
+         * @param[in] modelCustom Reference to the system model representing the
+         * delay-free plant. User should define a custom function that recreates
+         * the system dynamics.
+         * @param[in] mDelay Reference to the transport delay block modeling the
+         * plant’s dead time.
+         * @param[in] initialCondition Initial value for the internal output
+         * prediction (@c yp_hat). Default is 0.0.
+         */
+        smithPredictor( customProcessModel modelCustom,
+                        ITransportDelay& mDelay,
+                        const real_t initialCondition = 0.0_re )
+                        : modelAlternate(modelCustom), modelDelay(&mDelay), yp_hat(initialCondition) {}
+
+        /**
+         * @brief Constructs a Smith Predictor with a plant model, delay model,
+         * and optional initial output estimate.
          * @param[in] modelTf Reference to the LTI system model representing the
          * delay-free plant.
          * @param[in] mDelay Reference to the transport delay block modeling the
@@ -854,6 +876,27 @@ namespace qlibs {
                         ltisys& filterTf,
                         const real_t initialCondition = 0.0_re )
                         : model(&modelTf), modelDelay(&mDelay), filter(&filterTf), yp_hat(initialCondition) {}
+
+        /**
+         * @brief Constructs a Smith Predictor with a plant model, delay model,
+         * and optional initial output estimate.
+         * @param[in] modelCustom Reference to the system model representing the
+         * delay-free plant. User should define a custom function that recreates
+         * the system dynamics.
+         * @param[in] mDelay Reference to the transport delay block modeling the
+         * plant’s dead time.
+         * @param[in] filterTf Reference to the LTI system used as the robustness
+         * filter.
+         * @param[in] initialCondition Initial value for the internal output
+         * prediction (@c yp_hat). Default is 0.0.
+         *
+         * @note Both the model and delay block are passed by reference and stored internally as pointers.
+         */
+        smithPredictor( customProcessModel modelCustom,
+                        ITransportDelay& mDelay,
+                        ltisys& filterTf,
+                        const real_t initialCondition = 0.0_re )
+                        : modelAlternate(modelCustom), modelDelay(&mDelay), filter(&filterTf), yp_hat(initialCondition) {}
 
         /**
          * @brief Updates the internal prediction based on control input and
@@ -895,8 +938,27 @@ namespace qlibs {
          * and does not affect the plant or delay block directly.
          */
         bool setFilter( ltisys& filterTf ) noexcept {
-            filter = &filterTf;
-            return true;
+            bool retValue = filter != &filterTf;
+            if ( retValue ) {
+                filter = &filterTf;
+            }
+            return retValue;
+        }
+
+        /**
+         * @brief Sets the model data when alternate when a custom delay-free
+         * plant model is used
+         *
+         * @param[in] data The data passed to the user-defined model at the moment
+         * of evaluation
+         * @return @c true on success. False otherwise
+         */
+        bool setModelData( void* data ) noexcept {
+            bool retValue = data != alternateData;
+            if ( retValue ) {
+                alternateData = data;
+            }
+            return retValue;
         }
     };
 

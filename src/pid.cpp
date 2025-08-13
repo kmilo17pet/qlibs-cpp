@@ -51,9 +51,7 @@ bool pidController::setParams( const real_t kc,
     bool retValue = false;
 
     if ( isInitialized ) {
-        Kc = kc;
-        Ki = kc/ti;
-        Kd = kc*td;
+        (void)setGains( kc, kc/ti, kc*td );
         retValue = true;
     }
 
@@ -67,6 +65,7 @@ bool pidController::setGains( const real_t kc,
     bool retValue = false;
 
     if ( isInitialized ) {
+        nextGains = { kc, ki, kd };
         Kc = kc;
         Ki = ki;
         Kd = kd;
@@ -81,6 +80,7 @@ bool pidController::setGains( const pidGains &g ) noexcept
     bool retValue = false;
 
     if ( isInitialized ) {
+        nextGains = g;
         Kc = g.Kc;
         Ki = g.Ki;
         Kd = g.Kd;
@@ -128,9 +128,10 @@ bool pidController::setSeries( void ) noexcept
         ti = Kc/Ki;
         td = Kd/Kc;
         tmp = 1.0_re + ( td/ti );
-        Kc = Kc*tmp;
-        Ki = Kc/( ti*tmp );
-        Kd = Kc*( td/tmp );
+        nextGains = { Kc*tmp, Kc/( ti*tmp ), Kc*( td/tmp ) };
+        Kc = nextGains.Kc;
+        Ki = nextGains.Ki;
+        Kd = nextGains.Kd;
         retValue = true;
     }
 
@@ -423,11 +424,11 @@ void pidController::adaptGains( const real_t u,
                                 const real_t y ) noexcept
 {
     if ( adapt->step( u, y, dt ) ) {
-        pidGains newGains = adapt->getEstimates();
-        Kc = newGains.Kc;
-        Ki = newGains.Ki;
-        Kd = newGains.Kd;
+        nextGains = adapt->getEstimates();
     }
+    Kc += gainBlend*( nextGains.Kc - Kc );
+    Ki += gainBlend*( nextGains.Ki - Ki );
+    Kd += gainBlend*( nextGains.Kd - Kd );
 }
 /*============================================================================*/
 bool pidController::bindAutoTuning( pidAutoTuning &at ) noexcept
@@ -468,15 +469,20 @@ bool pidController::isAutoTuningComplete( void ) const noexcept
 /*============================================================================*/
 bool pidController::setAutoTuningParameters( const real_t Mu,
                                              const real_t Alpha,
-                                             const real_t lambda ) noexcept
+                                             const real_t lambda,
+                                             const real_t Tb ) noexcept
 {
     bool retValue = false;
 
     if ( nullptr != adapt ) {
-        if ( adapt->isValidParam( Mu ) && adapt->isValidParam( Alpha ) && adapt->isValidParam( lambda ) ) { //skipcq : CXX-C2022
+        if ( adapt->isValidParam( Mu ) && adapt->isValidParam( Alpha ) && adapt->isValidParam( lambda ) && ( Tb > 0.0_re )  ) { //skipcq : CXX-C2022
             adapt->setMemoryFactor( lambda );
             adapt->setMomentum( Mu );
             adapt->setEstimatedControllerSpeed( Alpha );
+            gainBlend = dt/Tb;
+            if ( gainBlend > 1.0_re ) {
+                gainBlend = 1.0_re;
+            }
             retValue = true;
         }
     }
@@ -490,7 +496,6 @@ bool pidController::setAutoTuningControllerType( const pidType t ) noexcept
 
     if ( nullptr != adapt ) {
         adapt->setEstimatedControllerType( t );
-        //adapt->type = t;
         retValue = true;
     }
 

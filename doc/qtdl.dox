@@ -1,24 +1,23 @@
 /*! @page qtdl_desc Tapped Delay Line in O(1)
 * The class \ref qtdl is an implementation of the Tapped Delay Line (TDL) structure.
-* A TDL is a discrete element in digital filter theory, that allows a signal to 
+* A TDL is a discrete element in digital filter theory, that allows a signal to
 * be delayed by a number of samples and provides an output signal for each delay.
-* Here, a TDL is implemented as a circular buffer. This means 
+* Here, a TDL is implemented as a circular buffer. This means
 * that the complexity of the enqueue and dequeue operations is constant @c O(1), so
 * integer delays can be computed very efficiently.
 *
-* The delay by one sample is notated \f$z^{-1}\f$ and delays of \f$N\f$ samples 
-* is notated as \f$z^{-N}\f$  motivated by the role the z-transform plays in 
+* The delay by one sample is notated \f$z^{-1}\f$ and delays of \f$N\f$ samples
+* is notated as \f$z^{-N}\f$  motivated by the role the z-transform plays in
 * describing digital filter structures.
 *
 * To create a TDL, you just need to define an instance of type \ref qlibs::tdl and
 * then, configure it by using the constructor or \ref qlibs::tdl::setup(),
-* where you can define the number of lines to be delayed and the initial values 
+* where you can define the number of lines to be delayed and the initial values
 * for all of them. Then, you can start operating over this structure by inserting
 * samples of the input signal by using \ref qlibs::tdl::insertSample().
 * You can also get any specific delay from it by using:
 *
 * - \ref qlibs::tdl::getOldest(), to get the oldest delay at tap \f$z^{-N}\f$
-* You can also use the index at @c -1 as follows: @c "delay[ -1 ]"
 * - \ref qlibs::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$.
 * You can also use the index using an unsigned value as follows: @c "delay[ i ]"
 * - Index operator
@@ -27,7 +26,7 @@
 * base component of some aspects of \ref qlibs::smoother and \ref qlibs::ltisys.
 *
 * @section qtdl_ex1 Example : Code snippet to instantiate a TDL to hold up to 256 delays.
-* 
+*
 *  @code{.c}
 *  real_t storage[ 256 ] = { 0.0f };
 *  tdl delay( storage );
@@ -41,6 +40,6 @@
 *
 * @code{.c}
 *  auto d3 = delay[ 3 ]; // get delay at t-3, same as delay.getAtIndex( 3 )
-*  auto dOldest = delay[ -1 ]; // get delay at t-255 , same as delay.getOldest()
+*  auto dOldest = delay.getOldest(); // get the oldest sample at t-N
 *  @endcode
 */

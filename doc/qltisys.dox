@@ -176,4 +176,136 @@
 *      }
 *  }
 *  @endcode
+*
+* @section qltisys_transportdelay Transport-Delay
+*
+* The  qlibs::transportDelay class models a "pure time delay" in a discrete-time
+* system.
+* It holds incoming samples in a buffer and outputs a sample from the past after
+* a fixed number of discrete steps.
+*
+* Mathematically, a transport delay can be expressed as:
+* <center>
+* \f$ y[k] = x[k - N] \f$
+* </center>
+*
+* where:
+* - \f$ y[k] \f$ is the current output sample,
+* - \f$ x[k] \f$ is the current input sample,
+* - \f$ N \f$ is the number of discrete delay steps (@a numberOfDelays).
+*
+* This is useful for:
+* - Simulating signal propagation delays.
+* - Implementing dead-time elements in control systems.
+* - Testing systems where data arrival is intentionally delayed.
+*
+* The delay amount is determined in discrete steps, not directly in seconds.
+* To convert a time delay in seconds to discrete steps, you can use:
+* - The  qlibs::delayFromTime() helper function, or
+* - The qlibs::timeDelay literal facility @c _td .
+*
+* In simulation or discrete-time signal processing, a pure delay shifts the
+* input signal in time without altering its shape or magnitude.
+* In continuous-time systems, a pure time delay is represented by:
+*
+* <center>
+* \f$ G(s) = e^{-sT_d} \f$
+* </center>
+*
+* where \f$ T_d \f$ is the delay time.
+* When discretized for simulation (with a time step \f$ \Delta t \f$), the delay
+* becomes a **FIFO buffer** of length:
+*
+* <center>
+* \f$ N = \frac{T_d}{\Delta t} \f$
+* </center>
+*
+* The qlibs::transportDelay class implements this buffer with:
+* - @b Insertion of the newest sample at each step.
+* - @b Extraction of the oldest stored sample as the delayed output.
+*
+* This is especially important in control system simulations where transport
+* delays affect stability and performance.
+*
+* @subsection td_basic Basic Example
+*
+* @code{.c}
+* #include <qlibs.h>
+*
+* using namespace qlibs;
+*
+* constexpr real_t dt = 0.1_re; // 100 ms simulation step
+* transportDelay<3> myDelay;    // Delay by 3 discrete steps (0.3 seconds)
+*
+* void simulate() {
+*     real_t inputSignal = 1.0_re;
+*     real_t outputSignal = myDelay.delay(inputSignal);
+*     // outputSignal contains the value of inputSignal from 0.3 seconds ago
+* }
+* @endcode
+*
+* @subsection td_timeconv Using Time Conversion
+*
+* If you want a delay in seconds but only know the simulation step (dt),
+* use qlibs::delayFromTime() or @c _td:
+*
+* @code{.c}
+* constexpr real_t dt = 0.1_re;
+*
+* // Delay by 2.5 seconds
+* transportDelay<delayFromTime(2.5, dt)> myDelay1;
+*
+* // Using the _td literal:
+* transportDelay<2.5_td(dt)> myDelay2;
+*
+* // Using operator[] form:
+* transportDelay<4.3_td[dt]> myDelay3;
+* @endcode
+*
+* @subsection td_continuous Example: Continuous System with Delay
+*
+* This example simulates a first-order system with a pure transport delay.
+* The system is:
+*
+* <center>
+* \f$ G(s) = \frac{1}{\tau s + 1} \cdot e^{-sT_d} \f$
+* </center>
+*
+* The delay is implemented with qlibs::transportDelay after the continuous system
+* output.
+*
+* @code{.c}
+* #include <iostream>
+* #include <chrono>
+* #include <thread>
+* #include <qlibs.h>
+*
+* using namespace qlibs;
+*
+* void xTaskSystemSimulate( void )
+* {
+*     // Continuous system parameters
+*     constexpr real_t tau = 1.0_re; // Time constant
+*     constexpr real_t dt  = 0.01_re; // Simulation step
+*     constexpr real_t Td  = 0.5_re; // Transport delay in seconds
+*     std::chrono::milliseconds delay(static_cast<long long>( dt*1000 ) );
+*
+*     continuousTF<1> ctf= {
+*         { 0.0f, 1.0f, },
+*         { tau, 1.0f, },
+*     };
+*     continuousSystem gc( ctf, dt );
+*     transportDelay<delayFromTime(Td, dt)> delayBlock;
+*     real_t ut, yt;
+*
+*     for( ;; ) {
+*         ut = BSP_InputGet();
+*         yt = delayBlock( gc.excite( ut ) );
+*
+*         std::this_thread::sleep_for(delay);
+*         std::cout << "u(t) = " << ut << " y(t) = " << yt << std::endl;
+*     }
+* }
+* @endcode
+*
 */

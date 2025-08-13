@@ -162,8 +162,9 @@ namespace qlibs {
     */
     class pidController : public pidGains, public nState, private nonCopyable {
         private:
-            real_t b, c, sat_Min, sat_Max, epsilon, kw, kt, D, u1, beta, uSat;
+            real_t b, c, sat_Min, sat_Max, epsilon, kw, kt, D, u1, beta, uSat, gainBlend;
             real_t dt{ 1.0_re };
+            pidGains nextGains;
             real_t m, mInput;
             const real_t *yr{ nullptr };
             real_t alpha, gamma; /*MRAC additive controller parameters*/
@@ -419,11 +420,13 @@ namespace qlibs {
             * @param[in] Mu Algorithm momentum. [ 0 <= Mu <= 1 ].
             * @param[in] Alpha Final controller speed adjustment. [ 0 < Alpha <= 1 ].
             * @param[in] lambda Algorithm forgetting factor [ 0.8 <= lambda <= 1 ].
+            * @param[in] Tb Gains blend-time[  Tb > 0  ].
             * @return @c true on success, @c false on failure.
             */
             bool setAutoTuningParameters( const real_t Mu,
                                           const real_t Alpha,
-                                          const real_t lambda ) noexcept;
+                                          const real_t lambda,
+                                          const real_t Tb = 3.0_re ) noexcept;
 
             /**
             * @brief Select the PID type to tune.
