@@ -2,7 +2,7 @@ var group__qbitfield =
 [
     [ "qlibs::bitfield", "classqlibs_1_1bitfield.html", [
       [ "bitfield", "classqlibs_1_1bitfield.html#af0253d6ca5ca78803539a8f302da81fa", null ],
-      [ "~bitfield", "classqlibs_1_1bitfield.html#ab83815105a278c70220a1b4d30d87f54", null ],
+      [ "~bitfield", "classqlibs_1_1bitfield.html#a08c6e28f07138380e53aa899b41ed80e", null ],
       [ "clearAll", "classqlibs_1_1bitfield.html#a1a9332e8dc444603ffeaccb72f039e74", null ],
       [ "clearBit", "classqlibs_1_1bitfield.html#a1b5c5d435a54c81220d93803c384bada", null ],
       [ "dump", "classqlibs_1_1bitfield.html#a8c09e3f23d830fd47d82250a2893ceca", null ],

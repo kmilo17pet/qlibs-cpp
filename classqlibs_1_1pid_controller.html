@@ -203,7 +203,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a68f55a067651af37eaacc86dd7881b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time constant for the derivative filter.  <br /></td></tr>
 <tr class="separator:a68f55a067651af37eaacc86dd7881b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b752263f58824d5dfa189dd40c2ba3" id="r_ad5b752263f58824d5dfa189dd40c2ba3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b752263f58824d5dfa189dd40c2ba3">setMode</a> (const <a class="el" href="group__qpid.html#ga723e93113c48dc2437680a245624d0f3">pidMode</a> Mode) noexcept</td></tr>
-<tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;.  <br /></td></tr>
+<tr class="memdesc:ad5b752263f58824d5dfa189dd40c2ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> is performed;.  <br /></td></tr>
 <tr class="separator:ad5b752263f58824d5dfa189dd40c2ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea472ad5950fcb964137688e8aef8f0" id="r_a7ea472ad5950fcb964137688e8aef8f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ea472ad5950fcb964137688e8aef8f0">setReferenceWeighting</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> gb, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> gc) noexcept</td></tr>
 <tr class="memdesc:a7ea472ad5950fcb964137688e8aef8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID Reference(Set-Point) Weighting. This value is used in order to avoid the increase of the rise time due to the smoothing of the reference signal applied to the closed-loop system.  <br /></td></tr>
@@ -215,7 +215,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7d6482d7d31956365ef120629e61fbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the additive MRAC(Model Reference Adaptive Control) feature.  <br /></td></tr>
 <tr class="separator:a7d6482d7d31956365ef120629e61fbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1bb8f7c7b01adf85e42401fafe841e6" id="r_aa1bb8f7c7b01adf85e42401fafe841e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1bb8f7c7b01adf85e42401fafe841e6">removeModelReferenceControl</a> (void) noexcept</td></tr>
-<tr class="memdesc:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop.  <br /></td></tr>
+<tr class="memdesc:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the additive MRAC(Model Reference Adaptive Control) feature from the control loop. MRAC(Model Reference Adaptive Control) feature from the control loop.  <br /></td></tr>
 <tr class="separator:aa1bb8f7c7b01adf85e42401fafe841e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb695602fafd10c67ca8089a217afebc" id="r_adb695602fafd10c67ca8089a217afebc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb695602fafd10c67ca8089a217afebc">control</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> w, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> y) noexcept</td></tr>
 <tr class="memdesc:adb695602fafd10c67ca8089a217afebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the control action for given PID controller instance.  <br /></td></tr>
@@ -251,8 +251,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad162ed2eaa67cae7a6929b03ee61a54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the PID instance has been initialized using <a class="el" href="#a024a3e62c9090fe9b2e44043beb0ae7c" title="Setup and initialize the PID controller instance.">setup()</a>.  <br /></td></tr>
 <tr class="separator:ad162ed2eaa67cae7a6929b03ee61a54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classqlibs_1_1n_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classqlibs_1_1n_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1n_state.html">qlibs::nState</a></td></tr>
-<tr class="memitem:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state" id="r_a3905519ba64f0e937b7be3a595cab034"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a3905519ba64f0e937b7be3a595cab034">~nState</a> ()</td></tr>
-<tr class="separator:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state" id="r_a643da5905e0d63f0d58efc68293cbfb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a643da5905e0d63f0d58efc68293cbfb0">~nState</a> ()=default</td></tr>
+<tr class="separator:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state" id="r_ad921a081792c80c6c64446a6c6d55a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f">nState</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x0=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_1=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_2=0.0_re) noexcept</td></tr>
 <tr class="memdesc:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the state object.  <br /></td></tr>
 <tr class="separator:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -442,7 +442,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the number of time steps where the auto tuner algorithm will modify the controller gains. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>Controller must have an <a class="el" href="classqlibs_1_1pid_auto_tuning.html" title="A PID Auto-tuning object.">pidAutoTuning</a> object already binded wih <a class="el" href="#ac104a665b6e24907cc74c42913c9f31c" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Controller must have a <a class="el" href="classqlibs_1_1pid_auto_tuning.html" title="A PID Auto-tuning object.">pidAutoTuning</a> object already binded with <a class="el" href="#ac104a665b6e24907cc74c42913c9f31c" title="Binds the specified instance to enable the PID controller auto tuning algorithm.">pidController::bindAutoTuning()</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>To disable auto-tuning pass a 0uL value to the <em class="arg">tEnable</em> argument. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -602,7 +602,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Removes the Enable the additive MRAC(Model Reference Adaptive Control) feature from the control loop. </p>
+<p>Removes the additive MRAC(Model Reference Adaptive Control) feature from the control loop. MRAC(Model Reference Adaptive Control) feature from the control loop. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, otherwise return <code>false</code>. </dd></dl>
 
 </div>
@@ -1032,7 +1032,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> its performed;. </p>
+<p>Change the controller operational mode. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a>, the computed output of the PID controller will be used as the control signal for the process. In <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3aba6a2d6c84aaa55b4a26ecac6305c2c3">pidMode::PID_MANUAL</a> mode, the manual input will be used as the control signal for the process and the PID controller loop will continue operating to guarantee the bumpless-transfer when a switch to the <a class="el" href="group__qpid.html#gga723e93113c48dc2437680a245624d0f3a38952ba98f03798cf14daf6294b7a4a4">pidMode::PID_AUTOMATIC</a> is performed;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">Mode</td><td>The desired operational mode. </td></tr>
@@ -1080,7 +1080,7 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">modelRef</td><td>A pointer to the output of the model reference. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Gamma</td><td>Adjustable parameter to indicate the adaptation speed. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Alpha</td><td>Adjustable parameter the adaptation momentum. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Alpha</td><td>Adjustable parameter for the adaptation momentum. </td></tr>
   </table>
   </dd>
 </dl>

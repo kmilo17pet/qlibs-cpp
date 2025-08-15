@@ -1,7 +1,7 @@
 var group__qnuma =
 [
     [ "qlibs::nState", "classqlibs_1_1n_state.html", [
-      [ "~nState", "classqlibs_1_1n_state.html#a3905519ba64f0e937b7be3a595cab034", null ],
+      [ "~nState", "classqlibs_1_1n_state.html#a643da5905e0d63f0d58efc68293cbfb0", null ],
       [ "nState", "classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f", null ],
       [ "derive", "classqlibs_1_1n_state.html#a6733b684221cd624a3092e404a24a522", null ],
       [ "init", "classqlibs_1_1n_state.html#a8d12da7effe75a714ed9ec010d132202", null ],
@@ -12,13 +12,13 @@ var group__qnuma =
       [ "setSaturation", "classqlibs_1_1n_state.html#a102cacbb17c1f53ebcc763d82d021d5d", null ]
     ] ],
     [ "qlibs::integrator", "classqlibs_1_1integrator.html", [
-      [ "~integrator", "classqlibs_1_1integrator.html#a96ec5d13adb463a2688794d1e8ba9190", null ],
+      [ "~integrator", "classqlibs_1_1integrator.html#af7a7536071d4a57711556648748fabb0", null ],
       [ "integrator", "classqlibs_1_1integrator.html#ae34a074b2a9dd7b086602fb3569705e1", null ],
       [ "operator()", "classqlibs_1_1integrator.html#a4b5ff8dab60b5cb98e41dd6c0c94dc7a", null ],
       [ "operator()", "classqlibs_1_1integrator.html#a68a16214a5ab21e6414e538a33ea9fbe", null ]
     ] ],
     [ "qlibs::derivative", "classqlibs_1_1derivative.html", [
-      [ "~derivative", "classqlibs_1_1derivative.html#a179d2de9bf7f07c58c8eee6fbfdefb0a", null ],
+      [ "~derivative", "classqlibs_1_1derivative.html#a711a292709580bfcc8a8614e95ee0fb0", null ],
       [ "derivative", "classqlibs_1_1derivative.html#a530c26465cb9363377732be7f4d1576a", null ],
       [ "operator()", "classqlibs_1_1derivative.html#ac62dbb7cefb14d61b87c39e1be2daccf", null ]
     ] ],

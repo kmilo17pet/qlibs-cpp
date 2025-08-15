@@ -161,8 +161,8 @@ Inheritance diagram for qlibs::integrator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96ec5d13adb463a2688794d1e8ba9190" id="r_a96ec5d13adb463a2688794d1e8ba9190"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96ec5d13adb463a2688794d1e8ba9190">~integrator</a> ()</td></tr>
-<tr class="separator:a96ec5d13adb463a2688794d1e8ba9190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a7536071d4a57711556648748fabb0" id="r_af7a7536071d4a57711556648748fabb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a7536071d4a57711556648748fabb0">~integrator</a> ()=default</td></tr>
+<tr class="separator:af7a7536071d4a57711556648748fabb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34a074b2a9dd7b086602fb3569705e1" id="r_ae34a074b2a9dd7b086602fb3569705e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae34a074b2a9dd7b086602fb3569705e1">integrator</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> timeStep, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
 <tr class="memdesc:ae34a074b2a9dd7b086602fb3569705e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an integrator block with a given <em class="arg">timeStep</em> time and optional initial condition.  <br /></td></tr>
 <tr class="separator:ae34a074b2a9dd7b086602fb3569705e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,8 +173,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4b5ff8dab60b5cb98e41dd6c0c94dc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current value of the integration.  <br /></td></tr>
 <tr class="separator:a4b5ff8dab60b5cb98e41dd6c0c94dc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classqlibs_1_1n_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classqlibs_1_1n_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1n_state.html">qlibs::nState</a></td></tr>
-<tr class="memitem:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state" id="r_a3905519ba64f0e937b7be3a595cab034"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a3905519ba64f0e937b7be3a595cab034">~nState</a> ()</td></tr>
-<tr class="separator:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state" id="r_a643da5905e0d63f0d58efc68293cbfb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a643da5905e0d63f0d58efc68293cbfb0">~nState</a> ()=default</td></tr>
+<tr class="separator:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state" id="r_ad921a081792c80c6c64446a6c6d55a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f">nState</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x0=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_1=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_2=0.0_re) noexcept</td></tr>
 <tr class="memdesc:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the state object.  <br /></td></tr>
 <tr class="separator:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,8 +204,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A numerical integration class. </p>
 <p>A numerical integration class that can be used to compute in real-time the numerical approximation of an integral for data values sampled periodically. It supports optional output saturation limits. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a96ec5d13adb463a2688794d1e8ba9190" name="a96ec5d13adb463a2688794d1e8ba9190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96ec5d13adb463a2688794d1e8ba9190">&#9670;&#160;</a></span>~integrator()</h2>
+<a id="af7a7536071d4a57711556648748fabb0" name="af7a7536071d4a57711556648748fabb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a7536071d4a57711556648748fabb0">&#9670;&#160;</a></span>~integrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +222,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

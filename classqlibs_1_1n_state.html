@@ -163,8 +163,8 @@ Inheritance diagram for qlibs::nState:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3905519ba64f0e937b7be3a595cab034" id="r_a3905519ba64f0e937b7be3a595cab034"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3905519ba64f0e937b7be3a595cab034">~nState</a> ()</td></tr>
-<tr class="separator:a3905519ba64f0e937b7be3a595cab034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643da5905e0d63f0d58efc68293cbfb0" id="r_a643da5905e0d63f0d58efc68293cbfb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a643da5905e0d63f0d58efc68293cbfb0">~nState</a> ()=default</td></tr>
+<tr class="separator:a643da5905e0d63f0d58efc68293cbfb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad921a081792c80c6c64446a6c6d55a8f" id="r_ad921a081792c80c6c64446a6c6d55a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad921a081792c80c6c64446a6c6d55a8f">nState</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x0=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_1=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_2=0.0_re) noexcept</td></tr>
 <tr class="memdesc:ad921a081792c80c6c64446a6c6d55a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the state object.  <br /></td></tr>
 <tr class="separator:ad921a081792c80c6c64446a6c6d55a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,8 +194,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A numerical state object. </p>
 <p>A numerical state object can be used to compute in real-time the numerical approximations of integral and derivative operations for data values sampled periodically. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3905519ba64f0e937b7be3a595cab034" name="a3905519ba64f0e937b7be3a595cab034"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3905519ba64f0e937b7be3a595cab034">&#9670;&#160;</a></span>~nState()</h2>
+<a id="a643da5905e0d63f0d58efc68293cbfb0" name="a643da5905e0d63f0d58efc68293cbfb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643da5905e0d63f0d58efc68293cbfb0">&#9670;&#160;</a></span>~nState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +212,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -254,9 +254,9 @@ Public Member Functions</h2></td></tr>
 <p>Constructor for the state object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x0</td><td>initial condition at time t(0) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sn_1</td><td>initial condition at time (t-1) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sn_2</td><td>initial condition at time (t-2) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x0</td><td>Initial condition at time t(0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sn_1</td><td>Initial condition at time (t-1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sn_2</td><td>Initial condition at time (t-2) </td></tr>
   </table>
   </dd>
 </dl>
@@ -344,9 +344,9 @@ Public Member Functions</h2></td></tr>
 <p>Initialize the state object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x0</td><td>initial condition at time t(0) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sn_1</td><td>initial condition at time (t-1) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sn_2</td><td>initial condition at time (t-2) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x0</td><td>Initial condition at time t(0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sn_1</td><td>Initial condition at time (t-1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sn_2</td><td>Initial condition at time (t-2) </td></tr>
   </table>
   </dd>
 </dl>

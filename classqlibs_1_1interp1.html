@@ -152,8 +152,8 @@ $(function(){initNavTree('classqlibs_1_1interp1.html',''); initResizable(true); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aef08eda0617a867b924c18afd165fc10" id="r_aef08eda0617a867b924c18afd165fc10"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef08eda0617a867b924c18afd165fc10">~interp1</a> ()</td></tr>
-<tr class="separator:aef08eda0617a867b924c18afd165fc10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6c692fe4f09be334ae4b6fdf950e7a" id="r_a3d6c692fe4f09be334ae4b6fdf950e7a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d6c692fe4f09be334ae4b6fdf950e7a">~interp1</a> ()=default</td></tr>
+<tr class="separator:a3d6c692fe4f09be334ae4b6fdf950e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe5a03475b14f998daf9006f30ad7c08" id="r_afe5a03475b14f998daf9006f30ad7c08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe5a03475b14f998daf9006f30ad7c08">interp1</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const xTable, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> *const yTable, const size_t sizeTable)</td></tr>
 <tr class="memdesc:afe5a03475b14f998daf9006f30ad7c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the 1D interpolation instance.  <br /></td></tr>
 <tr class="separator:afe5a03475b14f998daf9006f30ad7c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,8 +179,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A 1D interpolation object. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aef08eda0617a867b924c18afd165fc10" name="aef08eda0617a867b924c18afd165fc10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef08eda0617a867b924c18afd165fc10">&#9670;&#160;</a></span>~interp1()</h2>
+<a id="a3d6c692fe4f09be334ae4b6fdf950e7a" name="a3d6c692fe4f09be334ae4b6fdf950e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6c692fe4f09be334ae4b6fdf950e7a">&#9670;&#160;</a></span>~interp1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -241,7 +241,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">xTable</td><td>An array of size <em class="arg">sizeTable</em> with the x points sorted in ascending order. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">yTable</td><td>An array of size <em class="arg">sizeTable</em> with the y points. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sizeTable</td><td>The number of points in <em class="arg">xTable</em> <em class="arg">yTable</em> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sizeTable</td><td>The number of points in <em class="arg">xTable</em> and <em class="arg">yTable</em> </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,7 +321,7 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>The</code> interpolated-extrapolated <em class="arg">y</em> value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>The</code> interpolated or extrapolated <em class="arg">y</em> value. </dd></dl>
 
 </div>
 </div>
@@ -362,7 +362,7 @@ template&lt;typename T&gt; </div>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">xTable</td><td>An array of size <em class="arg">sizeTable</em> with the x points sorted in ascending order. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">yTable</td><td>An array of size <em class="arg">sizeTable</em> with the y points. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sizeTable</td><td>The number of points in <em class="arg">xTable</em> <em class="arg">yTable</em> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sizeTable</td><td>The number of points in <em class="arg">xTable</em> and <em class="arg">yTable</em> </td></tr>
   </table>
   </dd>
 </dl>

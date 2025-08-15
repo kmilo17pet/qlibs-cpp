@@ -6,7 +6,7 @@ var searchData=
   ['tapped_20delay_20line_3',['Tapped Delay Line',['../group__qtdl.html',1,'']]],
   ['tapped_20delay_20line_20in_20o_201_4',['Tapped Delay Line in O(1)',['../qtdl_desc.html',1,'index']]],
   ['tconcavemf_5',['tconcavemf',['../group__qfis.html#gga9dbb7ad4f4d6111e49be796105f1fd84a528e5dabe49eb4ae12424ba5639ce107',1,'qlibs::fis']]],
-  ['tdl_6',['tdl',['../classqlibs_1_1tdl.html',1,'qlibs::tdl'],['../classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277',1,'qlibs::tdl::tdl()=default'],['../classqlibs_1_1tdl.html#a688ee3fdcd7bb854965673f222be1ef2',1,'qlibs::tdl::tdl(real_t *const area, const size_t n, const real_t initVal=0.0_re)'],['../classqlibs_1_1tdl.html#a92cab6009f5c4ea3d1b2befc519ce604',1,'qlibs::tdl::tdl(real_t(&amp;area)[numberOfDelays], const real_t initVal=0.0_re) noexcept']]],
+  ['tdl_6',['tdl',['../classqlibs_1_1tdl.html',1,'qlibs::tdl'],['../classqlibs_1_1tdl.html#a7944a111174aebcef9aa07efb65f3277',1,'qlibs::tdl::tdl()=default'],['../classqlibs_1_1tdl.html#ac39c928f1a497b52bbf02b781269cf42',1,'qlibs::tdl::tdl(real_t *const area, const size_t n, const real_t initVal=0.0_re) noexcept'],['../classqlibs_1_1tdl.html#a92cab6009f5c4ea3d1b2befc519ce604',1,'qlibs::tdl::tdl(real_t(&amp;area)[numberOfDelays], const real_t initVal=0.0_re) noexcept']]],
   ['tdl_20to_20hold_20up_20to_20256_20delays_7',['Example : Code snippet to instantiate a TDL to hold up to 256 delays.',['../qtdl_desc.html#qtdl_ex1',1,'']]],
   ['tgamma_8',['tgamma',['../group__qffmath.html#ga89aa8ec856d8e1b8420028ffad822942',1,'qlibs::ffmath']]],
   ['that_20demonstrates_20the_20spline_20interpolation_9',['Example : Code snippet that demonstrates the spline interpolation .',['../qinterp1_desc.html#qinterp1_ex1',1,'']]],

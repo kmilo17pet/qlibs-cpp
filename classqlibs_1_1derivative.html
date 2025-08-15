@@ -161,8 +161,8 @@ Inheritance diagram for qlibs::derivative:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a179d2de9bf7f07c58c8eee6fbfdefb0a" id="r_a179d2de9bf7f07c58c8eee6fbfdefb0a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a179d2de9bf7f07c58c8eee6fbfdefb0a">~derivative</a> ()</td></tr>
-<tr class="separator:a179d2de9bf7f07c58c8eee6fbfdefb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a711a292709580bfcc8a8614e95ee0fb0" id="r_a711a292709580bfcc8a8614e95ee0fb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a711a292709580bfcc8a8614e95ee0fb0">~derivative</a> ()=default</td></tr>
+<tr class="separator:a711a292709580bfcc8a8614e95ee0fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530c26465cb9363377732be7f4d1576a" id="r_a530c26465cb9363377732be7f4d1576a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a530c26465cb9363377732be7f4d1576a">derivative</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> timeStep, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> initialCondition=0.0_re)</td></tr>
 <tr class="memdesc:a530c26465cb9363377732be7f4d1576a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a derivative block with a given <em class="arg">timeStep</em> and optional initial condition.  <br /></td></tr>
 <tr class="separator:a530c26465cb9363377732be7f4d1576a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,8 +170,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac62dbb7cefb14d61b87c39e1be2daccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the numerical derivative based on the current input value.  <br /></td></tr>
 <tr class="separator:ac62dbb7cefb14d61b87c39e1be2daccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classqlibs_1_1n_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classqlibs_1_1n_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classqlibs_1_1n_state.html">qlibs::nState</a></td></tr>
-<tr class="memitem:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state" id="r_a3905519ba64f0e937b7be3a595cab034"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a3905519ba64f0e937b7be3a595cab034">~nState</a> ()</td></tr>
-<tr class="separator:a3905519ba64f0e937b7be3a595cab034 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state" id="r_a643da5905e0d63f0d58efc68293cbfb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#a643da5905e0d63f0d58efc68293cbfb0">~nState</a> ()=default</td></tr>
+<tr class="separator:a643da5905e0d63f0d58efc68293cbfb0 inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state" id="r_ad921a081792c80c6c64446a6c6d55a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f">nState</a> (const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> x0=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_1=0.0_re, const <a class="el" href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">real_t</a> sn_2=0.0_re) noexcept</td></tr>
 <tr class="memdesc:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the state object.  <br /></td></tr>
 <tr class="separator:ad921a081792c80c6c64446a6c6d55a8f inherit pub_methods_classqlibs_1_1n_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,8 +201,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A numerical derivative class. </p>
 <p>A numerical derivative class that can be used to compute in real-time the numerical approximations of derivatives for data values sampled periodically. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a179d2de9bf7f07c58c8eee6fbfdefb0a" name="a179d2de9bf7f07c58c8eee6fbfdefb0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a179d2de9bf7f07c58c8eee6fbfdefb0a">&#9670;&#160;</a></span>~derivative()</h2>
+<a id="a711a292709580bfcc8a8614e95ee0fb0" name="a711a292709580bfcc8a8614e95ee0fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a711a292709580bfcc8a8614e95ee0fb0">&#9670;&#160;</a></span>~derivative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +219,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
