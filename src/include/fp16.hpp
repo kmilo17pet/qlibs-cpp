@@ -186,7 +186,7 @@ namespace qlibs {
             inline fp16 operator++(int) noexcept
             {
                 fp16 temp = *this;
-                value = add( value, one );;
+                value = add( value, one );
                 return temp;
             }
             inline fp16& operator--() noexcept
@@ -197,7 +197,7 @@ namespace qlibs {
             inline fp16 operator--(int) noexcept
             {
                 fp16 temp = *this;
-                value = sub( value, one );;
+                value = sub( value, one );
                 return temp;
             }
             inline bool operator>(const fp16 &other) const noexcept

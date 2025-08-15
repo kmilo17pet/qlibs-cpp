@@ -301,7 +301,7 @@ namespace qlibs {
             * pidMode::PID_MANUAL mode, the manual input will be used as the control
             * signal for the process and the PID controller loop will continue
             * operating to guarantee the bumpless-transfer when a switch to
-            * the pidMode::PID_AUTOMATIC its performed;
+            * the pidMode::PID_AUTOMATIC is performed;
             * @param[in] Mode The desired operational mode.
             * @return @c true on success, otherwise return @c false.
             */
@@ -333,7 +333,7 @@ namespace qlibs {
             * @brief Enable the additive MRAC(Model Reference Adaptive Control) feature.
             * @param[in] modelRef A pointer to the output of the model reference.
             * @param[in] Gamma Adjustable parameter to indicate the adaptation speed.
-            * @param[in] Alpha Adjustable parameter the adaptation momentum.
+            * @param[in] Alpha Adjustable parameter for the adaptation momentum.
             * @return @c true on success, otherwise return @c false.
             */
             bool setModelReferenceControl( const real_t &modelRef,
@@ -341,7 +341,8 @@ namespace qlibs {
                                            const real_t Alpha = 0.01_re ) noexcept;
 
             /**
-            * @brief Removes the Enable the additive
+            * @brief Removes the additive MRAC(Model Reference Adaptive Control)
+            * feature from the control loop.
             * MRAC(Model Reference Adaptive Control) feature from the control loop.
             * @return @c true on success, otherwise return @c false.
             */
@@ -399,7 +400,7 @@ namespace qlibs {
             /**
             * @brief Set the number of time steps where the auto tuner algorithm will
             * modify the controller gains.
-            * @pre Controller must have an pidAutoTuning object already binded wih
+            * @pre Controller must have a pidAutoTuning object already binded with
             * pidController::bindAutoTuning()
             * @note To disable auto-tuning pass a 0uL value to the @a tEnable argument.
             * @param[in] tEnable The number of time steps. To keep the auto tuner

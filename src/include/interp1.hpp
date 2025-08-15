@@ -103,12 +103,12 @@ namespace qlibs {
                                    const real_t * const ty,
                                    const size_t tableSize );
         public:
-            virtual ~interp1() {}
+            virtual ~interp1() = default;
             /**
             * @brief Constructor for the 1D interpolation instance.
             * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
             * @param[in] yTable An array of size @a sizeTable with the y points.
-            * @param[in] sizeTable The number of points in @a xTable @a yTable
+            * @param[in] sizeTable The number of points in @a xTable and @a yTable
             */
             interp1( const real_t * const xTable,
                      const real_t * const yTable,
@@ -127,7 +127,7 @@ namespace qlibs {
             * @brief Set the data table for the 1D interpolation instance.
             * @param[in] xTable An array of size @a sizeTable with the x points sorted in ascending order.
             * @param[in] yTable An array of size @a sizeTable with the y points.
-            * @param[in] sizeTable The number of points in @a xTable @a yTable
+            * @param[in] sizeTable The number of points in @a xTable and @a yTable
             */
             bool setData( const real_t * const xTable,
                           const real_t * const yTable,
@@ -162,15 +162,15 @@ namespace qlibs {
             * @return @c true on success otherwise @c false.
             */
             bool setMethod( const interp1Method m ) noexcept;
-            template <typename T>
 
             /**
             * @brief Interpolate input point @a x to determine the value of @a y
             * at the points @a xi using the current method. If value is beyond
             * the endpoints, extrapolation is performed using the current method.
             * @param[in] x The input point.
-            * @return @c The interpolated-extrapolated @a y value.
+            * @return @c The interpolated or extrapolated @a y value.
             */
+            template <typename T>
             inline real_t get( const T x ) noexcept
             {
                 return method( static_cast<real_t>( x ), xData, yData, dataSize );

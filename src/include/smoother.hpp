@@ -65,7 +65,7 @@ namespace qlibs {
             virtual real_t smooth( const real_t x ) = 0;
 
             /**
-            * @brief Reset the the smoother filter.
+            * @brief Reset the smoother filter.
             * @return @c true on success, otherwise return false.
             */
             inline bool reset( void )
@@ -497,7 +497,7 @@ namespace qlibs {
             * @param[in] wsize The size of the @a window array
             * @param[in] window An array to store the window samples.
             * @param[in] weights An array to store the filter weights
-            * @param[in] w1 An array to keep previous estimated wights. To ignore
+            * @param[in] w1 An array to keep previous estimated weights. To ignore
             * pass @c nullptr as argument.
             * @return @c true on success, otherwise return @c false.
             */
@@ -514,7 +514,7 @@ namespace qlibs {
             * @param[in] m Momentum [ 0 < @a m < 1 ]
             * @param[in] window An array to store the window samples.
             * @param[in] weights An array to store the filter weights
-            * @param[in] w1 An array to keep previous estimated wights.
+            * @param[in] w1 An array to keep previous estimated weights.
             * @return @c true on success, otherwise return @c false.
             */
             template <size_t windowSize>

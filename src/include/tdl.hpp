@@ -42,7 +42,7 @@ namespace qlibs {
             void removeOldest( void ) noexcept;
             /*! @endcond  */
         public:
-            virtual ~tdl() {}
+            virtual ~tdl() noexcept = default;
             tdl() = default;
 
             /**
@@ -53,7 +53,7 @@ namespace qlibs {
             */
             tdl( real_t * const area,
                  const size_t n,
-                 const real_t initVal = 0.0_re )
+                 const real_t initVal = 0.0_re ) noexcept
             {
                 setup( area, n, initVal );
             }
@@ -145,7 +145,7 @@ namespace qlibs {
             * @brief Check if the TDL has been initialized.
             * @return @c true if instance has been initialized
             */
-            bool isInitialized( void ) const {
+            bool isInitialized( void ) const noexcept {
                 return ( nullptr != head );
             }
 

@@ -29,7 +29,7 @@ namespace qlibs {
     */
     class rms : public smootherEXPW, public smootherMWM2, public smootherLPF1 {
         public:
-            virtual ~rms() {}
+            virtual ~rms() noexcept = default;
             rms() = default;
 
             /**

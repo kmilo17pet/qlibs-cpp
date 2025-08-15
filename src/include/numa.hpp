@@ -27,7 +27,7 @@ namespace qlibs {
     */
     enum integrationMethod {
         INTEGRATION_RECTANGULAR,    /*!< Numerical integration using the rectangular rule*/
-        INTEGRATION_TRAPEZOIDAL,    /*!< Numerical integration using the trapezoidal rectangular rule*/
+        INTEGRATION_TRAPEZOIDAL,    /*!< Numerical integration using the trapezoidal rule*/
         INTEGRATION_SIMPSON,        /*!< Numerical integration using the Simpson's 1/3 rule.*/
         INTEGRATION_QUADRATIC,      /*!< Numerical integration using a parabola fit to three points.*/
     };
@@ -60,13 +60,13 @@ namespace qlibs {
             integrationMethod iMethod{ INTEGRATION_TRAPEZOIDAL };
             derivationMethod dMethod{ DERIVATION_2POINTS };
         public:
-            virtual ~nState() {}
+            virtual ~nState() = default;
 
             /**
             * @brief Constructor for the state object
-            * @param[in] x0 initial condition at time t(0)
-            * @param[in] sn_1 initial condition at time (t-1)
-            * @param[in] sn_2 initial condition at time (t-2)
+            * @param[in] x0 Initial condition at time t(0)
+            * @param[in] sn_1 Initial condition at time (t-1)
+            * @param[in] sn_2 Initial condition at time (t-2)
             */
             nState( const real_t x0 = 0.0_re,
                     const real_t sn_1 = 0.0_re,
@@ -77,9 +77,9 @@ namespace qlibs {
 
             /**
             * @brief Initialize the state object
-            * @param[in] x0 initial condition at time t(0)
-            * @param[in] sn_1 initial condition at time (t-1)
-            * @param[in] sn_2 initial condition at time (t-2)
+            * @param[in] x0 Initial condition at time t(0)
+            * @param[in] sn_1 Initial condition at time (t-1)
+            * @param[in] sn_2 Initial condition at time (t-2)
             */
             void init( const real_t x0 = 0.0_re,
                        const real_t sn_1 = 0.0_re,
@@ -236,7 +236,7 @@ namespace qlibs {
         private:
             real_t dt;
         public:
-            virtual ~integrator() {}
+            virtual ~integrator() = default;
 
             /**
             * @brief Constructs an integrator block with a given @a timeStep time
@@ -278,7 +278,7 @@ namespace qlibs {
         private:
             real_t dt;
         public:
-            virtual ~derivative() {}
+            virtual ~derivative() = default;
 
             /**
             * @brief Constructs a derivative block with a given @a timeStep and

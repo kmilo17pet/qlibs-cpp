@@ -67,9 +67,9 @@ namespace qlibs {
 
         /**
         * @brief Constructor for the continuousTF class
-        * @param[in] numerator An array of size @c order with the coefficients
+        * @param[in] numerator An array of size @c order+1 with the coefficients
         * of the numerator in descending powers of s.
-        * @param[in] denominator An array of size @c order with the coefficients
+        * @param[in] denominator An array of size @c order+1 with the coefficients
         * of the denominator in descending powers of s.
         */
         continuousTF( const real_t ( &numerator )[ order + 1 ], const real_t ( &denominator )[ order + 1 ] )
@@ -203,9 +203,9 @@ namespace qlibs {
     * Example :
     * @code{.cpp}
     * constexpr real_t dt = 0.1_re;
-    * transportDelay< 2.5_td(dt) )> myDelay1;
-    * transportDelay< delayFromTime(5.2, dt) )> myDelay2;
-    * transportDelay< 4.3_td[dt] )> myDelay2;
+    * transportDelay< 2.5_td(dt) > myDelay1;
+    * transportDelay< delayFromTime(5.2, dt) > myDelay2;
+    * transportDelay< 4.3_td[dt] > myDelay2;
     * @endcode
     */
     template<size_t numberOfDelays>
@@ -371,7 +371,7 @@ namespace qlibs {
             * @return @c true if the system has been initialized, otherwise
             * return @c false.
             */
-            virtual bool isInitialized( void ) const = 0;
+            virtual bool isInitialized( void ) const noexcept = 0;
 
 
             /**
@@ -582,7 +582,7 @@ namespace qlibs {
             * @return @c true if the system has been initialized, otherwise
             * return @c false.
             */
-            bool isInitialized( void ) const override
+            bool isInitialized( void ) const noexcept override
             {
                 return ( nullptr != xd ) && ( LTISYS_TYPE_DISCRETE == type );
             }
@@ -791,7 +791,7 @@ namespace qlibs {
             * @return @c true if the system has been initialized, otherwise
             * return @c false.
             */
-            bool isInitialized( void ) const override
+            bool isInitialized( void ) const noexcept override
             {
                 return ( nullptr != xc ) && ( LTISYS_TYPE_CONTINUOUS == type );
             }

@@ -92,7 +92,7 @@ namespace qlibs {
 
         public:
             bitfield() = default;
-            virtual ~bitfield() {}
+            virtual ~bitfield() = default;
 
             /**
             * @brief Setup a initialize a BitField instance.
