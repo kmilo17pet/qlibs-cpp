@@ -44,12 +44,10 @@
 *
 *  @section qssmoother_lpf2 Second Order Low Pass Filter
 *
-*  \ref qlibs::smootherLPF2 is a filter with similar properties to the 1st order low pass filter. The main
-*  difference is that the stop band roll-off will be twice the 1st order filters
-*  at 40dB/decade (12dB/octave) as the operating frequency increases above the
-*  cut-off frequency \f$w\f$.
+*  \ref qlibs::smootherLPF2 extends the first-order filter with steeper attenuation.
+*  Its stop-band roll-off is twice as sharp (≈40 dB/decade or 12 dB/octave).
 *
-*  The difference-equation of the output of this filter is given by:
+*  The difference equation is:
 *
 *     <center> \f$y(t)=kx(t)+b_{1}x(t-1)+kx(t-2)-a_{1}y(t-1)-a_{2}y(t-2)\f$ </center>
 *

@@ -268,40 +268,63 @@
 *
 * @section qpid_autotune Autotuning
 *
-* Autotuning can eliminate much of the trial and error of a manual tuning
-* approach, especially if you do not have a lot of loop tuning experience.
-* Performing the autotuning procedure will get the tuning parameters close to
-* their optimal values, but additional manual tuning may be required to get
-* the tuning parameters to their optimal values.
+* Autotuning eliminates much of the trial-and-error required by manual PID tuning,
+* especially when loop dynamics are complex or the user lacks tuning experience.
+* The procedure provides controller gains that are close to optimal, but a fine
+* adjustment step may still be necessary to achieve the best performance.
 *
-* The Autotune feature for the controller will only run for a limited amount of time
-* after it gets enabled. In other words, autotuning does not run continuously
-* during operation. Whenever there is a substantial change in the process
-* dynamics, the tuning process will need to be repeated in order to derive new
-* gains required for optimal control.
+* The Autotune feature is executed only for a limited time after activation;
+* it is not a continuous background process. If the plant dynamics change
+* significantly (e.g., due to load variation or environmental conditions),
+* the autotuning sequence must be repeated to update the control gains.
 *
-* Autotuning is performed by using the following recursive algorithm:
+* The underlying method is based on a Recursive Least Squares (RLS) identification
+* of the process, followed by an analytical mapping to PID parameters. The RLS
+* algorithm estimates a first-order process model, from which the controller
+* computes suitable gains. The recursive update makes the method efficient for
+* real-time embedded systems, as it avoids repeated excitation tests or large
+* datasets.
 *
-* <center>
+* @note
+* The estimation assumes a first-order stable process model. Therefore,
+* this autotuning method is only reliable when applied to inherently
+* stable processes. For unstable or integrating processes, the RLS
+* identification may diverge and the computed PID gains may not be valid.
+*
+* The algorithm proceeds as follows:
+*
+* Compute the correction gain \f$ L(t) \f$
+*
 * \f$ L(t) =  \frac{ P(t-1)\phi }{ \lambda + \phi^{T}P(t-1)\phi  } \f$
+*
+* Perform correction
 *
 * \f$\theta(t) = \theta(t-1) + L[ y(t) - \phi^{T}\theta(t)  ] \f$
 *
-* \f$ P(t) = \lambda^{-1}[ I - L(t)+\phi^{T}]P(t-1) \f$
+* where,
 *
 * \f$ \theta(t) = \begin{bmatrix} \theta_{1}(t) & \theta_{2}(t) \end{bmatrix}^T  \f$
 * and \f$ \phi(t) = \begin{bmatrix} -y(t-1) & u(t-1) \end{bmatrix}^T  \f$
 *
+* Update covariance
+*
+* \f$ P(t) = \lambda^{-1}[ I - L(t)+\phi^{T}]P(t-1) \f$
+*
+* Compute the system gain \f$ g(t) \f$
+*
 * \f$ g(t) = \frac{ (1 - \mu)\theta_{2}(t) }{ 1 + \theta_{1} } + \mu g(t-1)  \f$
 *
+* Compute the system time-constant \f$ \tau(t) \f$
+*
 * \f$ \tau(t) = \frac{ ( \mu - 1 )dt }{ ln( |\theta_{1}| ) } + \mu \tau(t-1)  \f$
+*
+* Compute the PID gains
 *
 * \f$ K_{c}(t) = \alpha \frac{ 1.35 }{ g(t) } \left ( \frac{ \tau(t) }{ T_d } + 0.185 \right ) \f$
 *
 * \f$ K_{i}(t) = K_{c}(t) \frac {\tau(t) + 0.611 T_d}{ 2.5 T_d( \tau(t) + 0.185 T_d)} \f$
 *
 * \f$ K_{d}(t) = \frac{ 0.37 K_{c}(t) T_d \tau(t) }{ \tau(t) + 0.185 T_d} \f$
-* </center>
 *
 *
 * and the remaining parameters \f$\mu\f$, \f$\alpha\f$, \f$\lambda\f$ are internally
