@@ -273,7 +273,7 @@ Example: Speed control using a PID controller:</h2>
 <div class="line">    <span class="keywordflow">for</span>( ;; );</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassqlibs_1_1pid_controller_html"><div class="ttname"><a href="classqlibs_1_1pid_controller.html">qlibs::pidController</a></div><div class="ttdoc">A PID controller object.</div><div class="ttdef"><b>Definition</b> pid.hpp:163</div></div>
+<div class="ttc" id="aclassqlibs_1_1pid_controller_html"><div class="ttname"><a href="classqlibs_1_1pid_controller.html">qlibs::pidController</a></div><div class="ttdoc">A PID controller object.</div><div class="ttdef"><b>Definition</b> pid.hpp:194</div></div>
 <div class="ttc" id="aclassqlibs_1_1pid_controller_html_a024a3e62c9090fe9b2e44043beb0ae7c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c">qlibs::pidController::setup</a></div><div class="ttdeci">bool setup(const real_t kc, const real_t ki, const real_t kd, const real_t dT) noexcept</div><div class="ttdoc">Setup and initialize the PID controller instance.</div><div class="ttdef"><b>Definition</b> pid.cpp:10</div></div>
 <div class="ttc" id="aclassqlibs_1_1pid_controller_html_a3e3161df46ae458642e45b0ef0b954b9"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#a3e3161df46ae458642e45b0ef0b954b9">qlibs::pidController::setSaturation</a></div><div class="ttdeci">bool setSaturation(const real_t Min, const real_t Max) noexcept</div><div class="ttdoc">Setup the output saturation for the PID controller.</div><div class="ttdef"><b>Definition</b> pid.cpp:107</div></div>
 <div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> mat.hpp:18</div></div>
@@ -346,10 +346,28 @@ Example: Speed control with PID controller with an additive MRAC:</h2>
 <div class="ttc" id="astructqlibs_1_1continuous_t_f_html"><div class="ttname"><a href="structqlibs_1_1continuous_t_f.html">qlibs::continuousTF</a></div><div class="ttdoc">Continuous transfer function for easy LTI system definition.</div><div class="ttdef"><b>Definition</b> ltisys.hpp:61</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="qpid_autotune"></a>
 Autotuning</h1>
-<p>Autotuning can eliminate much of the trial and error of a manual tuning approach, especially if you do not have a lot of loop tuning experience. Performing the autotuning procedure will get the tuning parameters close to their optimal values, but additional manual tuning may be required to get the tuning parameters to their optimal values.</p>
-<p>The Autotune feature for the controller will only run for a limited amount of time after it gets enabled. In other words, autotuning does not run continuously during operation. Whenever there is a substantial change in the process dynamics, the tuning process will need to be repeated in order to derive new gains required for optimal control.</p>
-<p>Autotuning is performed by using the following recursive algorithm:</p>
-<center> \( L(t) =  \frac{ P(t-1)\phi }{ \lambda + \phi^{T}P(t-1)\phi  } \)</center><center> \(\theta(t) = \theta(t-1) + L[ y(t) - \phi^{T}\theta(t)  ] \)</center><center> \( P(t) = \lambda^{-1}[ I - L(t)+\phi^{T}]P(t-1) \)</center><center> \( \theta(t) = \begin{bmatrix} \theta_{1}(t) &amp; \theta_{2}(t) \end{bmatrix}^T  \) and \( \phi(t) = \begin{bmatrix} -y(t-1) &amp; u(t-1) \end{bmatrix}^T  \)</center><center> \( g(t) = \frac{ (1 - \mu)\theta_{2}(t) }{ 1 + \theta_{1} } + \mu g(t-1)  \)</center><center> \( \tau(t) = \frac{ ( \mu - 1 )dt }{ ln( |\theta_{1}| ) } + \mu \tau(t-1)  \)</center><center> \( K_{c}(t) = \alpha \frac{ 1.35 }{ g(t) } \left ( \frac{ \tau(t) }{ T_d } + 0.185 \right ) \)</center><center> \( K_{i}(t) = K_{c}(t) \frac {\tau(t) + 0.611 T_d}{ 2.5 T_d( \tau(t) + 0.185 T_d)} \)</center><center> \( K_{d}(t) = \frac{ 0.37 K_{c}(t) T_d \tau(t) }{ \tau(t) + 0.185 T_d} \) </center><p>and the remaining parameters \(\mu\), \(\alpha\), \(\lambda\) are internally computed for best performance.</p>
+<p>Autotuning eliminates much of the trial-and-error required by manual PID tuning, especially when loop dynamics are complex or the user lacks tuning experience. The procedure provides controller gains that are close to optimal, but a fine adjustment step may still be necessary to achieve the best performance.</p>
+<p>The Autotune feature is executed only for a limited time after activation; it is not a continuous background process. If the plant dynamics change significantly (e.g., due to load variation or environmental conditions), the autotuning sequence must be repeated to update the control gains.</p>
+<p>The underlying method is based on a Recursive Least Squares (RLS) identification of the process, followed by an analytical mapping to PID parameters. The RLS algorithm estimates a first-order process model, from which the controller computes suitable gains. The recursive update makes the method efficient for real-time embedded systems, as it avoids repeated excitation tests or large datasets.</p>
+<dl class="section note"><dt>Note</dt><dd>The estimation assumes a first-order stable process model. Therefore, this autotuning method is only reliable when applied to inherently stable processes. For unstable or integrating processes, the RLS identification may diverge and the computed PID gains may not be valid.</dd></dl>
+<p>The algorithm proceeds as follows:</p>
+<p>Compute the correction gain \( L(t) \)</p>
+<p>\( L(t) =  \frac{ P(t-1)\phi }{ \lambda + \phi^{T}P(t-1)\phi  } \)</p>
+<p>Perform correction</p>
+<p>\(\theta(t) = \theta(t-1) + L[ y(t) - \phi^{T}\theta(t)  ] \)</p>
+<p>where,</p>
+<p>\( \theta(t) = \begin{bmatrix} \theta_{1}(t) &amp; \theta_{2}(t) \end{bmatrix}^T  \) and \( \phi(t) = \begin{bmatrix} -y(t-1) &amp; u(t-1) \end{bmatrix}^T  \)</p>
+<p>Update covariance</p>
+<p>\( P(t) = \lambda^{-1}[ I - L(t)+\phi^{T}]P(t-1) \)</p>
+<p>Compute the system gain \( g(t) \)</p>
+<p>\( g(t) = \frac{ (1 - \mu)\theta_{2}(t) }{ 1 + \theta_{1} } + \mu g(t-1)  \)</p>
+<p>Compute the system time-constant \( \tau(t) \)</p>
+<p>\( \tau(t) = \frac{ ( \mu - 1 )dt }{ ln( |\theta_{1}| ) } + \mu \tau(t-1)  \)</p>
+<p>Compute the PID gains</p>
+<p>\( K_{c}(t) = \alpha \frac{ 1.35 }{ g(t) } \left ( \frac{ \tau(t) }{ T_d } + 0.185 \right ) \)</p>
+<p>\( K_{i}(t) = K_{c}(t) \frac {\tau(t) + 0.611 T_d}{ 2.5 T_d( \tau(t) + 0.185 T_d)} \)</p>
+<p>\( K_{d}(t) = \frac{ 0.37 K_{c}(t) T_d \tau(t) }{ \tau(t) + 0.185 T_d} \)</p>
+<p>and the remaining parameters \(\mu\), \(\alpha\), \(\lambda\) are internally computed for best performance.</p>
 <h2><a class="anchor" id="qpid_autotune_usage"></a>
 Autotuning Usage</h2>
 <p>In order to use the autotuner, you must first instantiate the <a class="el" href="classqlibs_1_1pid_auto_tuning.html">qlibs::pidAutoTuning</a> object and bind it to a previously configured PID controller by using the <a class="el" href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">qlibs::pidController::bindAutoTuning()</a>.</p>
@@ -435,8 +453,8 @@ Example: Speed control with PID controller and autotuning:</h2>
 <div class="line">    <span class="keywordflow">for</span>( ;; );</div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassqlibs_1_1pid_auto_tuning_html"><div class="ttname"><a href="classqlibs_1_1pid_auto_tuning.html">qlibs::pidAutoTuning</a></div><div class="ttdoc">A PID Auto-tuning object.</div><div class="ttdef"><b>Definition</b> pid.hpp:95</div></div>
-<div class="ttc" id="aclassqlibs_1_1pid_controller_html_ac104a665b6e24907cc74c42913c9f31c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">qlibs::pidController::bindAutoTuning</a></div><div class="ttdeci">bool bindAutoTuning(pidAutoTuning &amp;at) noexcept</div><div class="ttdoc">Binds the specified instance to enable the PID controller auto tuning algorithm.</div><div class="ttdef"><b>Definition</b> pid.cpp:434</div></div>
+<div class="ttc" id="aclassqlibs_1_1pid_auto_tuning_html"><div class="ttname"><a href="classqlibs_1_1pid_auto_tuning.html">qlibs::pidAutoTuning</a></div><div class="ttdoc">A PID Auto-tuning object.</div><div class="ttdef"><b>Definition</b> pid.hpp:96</div></div>
+<div class="ttc" id="aclassqlibs_1_1pid_controller_html_ac104a665b6e24907cc74c42913c9f31c"><div class="ttname"><a href="classqlibs_1_1pid_controller.html#ac104a665b6e24907cc74c42913c9f31c">qlibs::pidController::bindAutoTuning</a></div><div class="ttdeci">bool bindAutoTuning(pidAutoTuning &amp;at) noexcept</div><div class="ttdoc">Binds the specified instance to enable the PID controller auto tuning algorithm.</div><div class="ttdef"><b>Definition</b> pid.cpp:534</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

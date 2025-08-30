@@ -141,23 +141,24 @@ $(function(){initNavTree('qtdl_desc.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Tapped Delay Line in O(1)</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The class <a class="el" href="group__qtdl.html">Tapped Delay Line</a> is an implementation of the Tapped Delay Line (TDL) structure. A TDL is a discrete element in digital filter theory, that allows a signal to be delayed by a number of samples and provides an output signal for each delay. Here, a TDL is implemented as a circular buffer. This means that the complexity of the enqueue and dequeue operations is constant <code>O(1)</code>, so integer delays can be computed very efficiently.</p>
-<p>The delay by one sample is notated \(z^{-1}\) and delays of \(N\) samples is notated as \(z^{-N}\) motivated by the role the z-transform plays in describing digital filter structures.</p>
-<p>To create a TDL, you just need to define an instance of type <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> and then, configure it by using the constructor or <a class="el" href="classqlibs_1_1tdl.html#a1a175e050320e962329d71a285e8f9c1">qlibs::tdl::setup()</a>, where you can define the number of lines to be delayed and the initial values for all of them. Then, you can start operating over this structure by inserting samples of the input signal by using <a class="el" href="classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5">qlibs::tdl::insertSample()</a>. You can also get any specific delay from it by using:</p>
-<ul>
-<li><a class="el" href="classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159">qlibs::tdl::getOldest()</a>, to get the oldest delay at tap \(z^{-N}\)</li>
-<li><a class="el" href="classqlibs_1_1tdl.html#a236fbabc8932dbdb58ad43de621ddae6">qlibs::tdl::getAtIndex()</a>, to get the delay at tap \(z^{-i}\). You can also use the index using an unsigned value as follows: <code>"delay[ i ]"</code> </li>
-<li>Index operator</li>
+<div class="textblock"><p>The class <a class="el" href="group__qtdl.html">Tapped Delay Line</a> implements a Tapped Delay Line (TDL), a fundamental structure in digital filter theory. A TDL delays an input signal by a number of samples and exposes each delayed version as an output</p>
+<p>In this implementation, the TDL is backed by a circular buffer. As a result, both enqueue and dequeue operations run in constant time <code>O(1)</code>, making integer delays highly efficient.</p>
+<p>A delay of one sample is denoted \(z^{-1}\) , while a delay of \(N\) samples is denoted \(z^{-N}\) consistent with z-transform notation in digital signal processing.</p>
+<p>To use a TDL, create an instance of <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> and configure it using either the constructor or <a class="el" href="classqlibs_1_1tdl.html#a1a175e050320e962329d71a285e8f9c1">qlibs::tdl::setup()</a>. During setup you specify both the number of delay taps and their initial values. Once configured, samples of the input signal can be inserted using <a class="el" href="classqlibs_1_1tdl.html#ae540e2c95394ddd038398776cadd56b5">qlibs::tdl::insertSample()</a> (or the function-call operator).</p>
+<p>You can access specific delayed samples via:</p><ul>
+<li><a class="el" href="classqlibs_1_1tdl.html#abe67745e061e6df0a5a6fd054b7bf159">qlibs::tdl::getOldest()</a> - retrieves the oldest sample (tap \(z^{-N}\))</li>
+<li><a class="el" href="classqlibs_1_1tdl.html#a236fbabc8932dbdb58ad43de621ddae6">qlibs::tdl::getAtIndex()</a> — retrieves the sample at tap \(z^{-i}\)</li>
+<li>The index operator <code>delay</code>[i] — equivalent to <code>getAtIndex(i)</code> </li>
 </ul>
-<p>Given the applications of this structure, the <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> class is used as the base component of some aspects of <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a> and <a class="el" href="classqlibs_1_1ltisys.html">qlibs::ltisys</a>.</p>
+<p>Because of its versatility, the <a class="el" href="classqlibs_1_1tdl.html">qlibs::tdl</a> class is a core component in higher-level modules such as <a class="el" href="classqlibs_1_1smoother.html">qlibs::smoother</a> and <a class="el" href="classqlibs_1_1ltisys.html">qlibs::ltisys</a>.</p>
 <h1><a class="anchor" id="qtdl_ex1"></a>
-Example : Code snippet to instantiate a TDL to hold up to 256 delays.</h1>
+Example : Instantiating a TDL with 256 delay taps</h1>
 <div class="fragment"><div class="line">real_t storage[ 256 ] = { 0.0f };</div>
 <div class="line">tdl delay( storage );</div>
-</div><!-- fragment --><div class="fragment"><div class="line">delay.insertSample( 2.5 );</div>
+</div><!-- fragment --><p>Insert new samples: </p><div class="fragment"><div class="line">delay.insertSample( 2.5 );</div>
 <div class="line">delay.insertSample( -2.3 );</div>
 <div class="line">delay( 4.8 ); <span class="comment">// same as delay.insertSample( 4.8 )</span></div>
-</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">auto</span> d3 = delay[ 3 ]; <span class="comment">// get delay at t-3, same as delay.getAtIndex( 3 )</span></div>
+</div><!-- fragment --><p>Retrieve delayed samples: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> d3 = delay[ 3 ]; <span class="comment">// get delay at t-3, same as delay.getAtIndex( 3 )</span></div>
 <div class="line"><span class="keyword">auto</span> dOldest = delay.getOldest(); <span class="comment">// get the oldest sample at t-N</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -144,8 +144,9 @@ $(function(){initNavTree('qrms_desc.html',''); initResizable(true); });
 <div class="textblock"><p>Real-time digital systems often require the calculation of a root-mean, such as a root-mean-square (RMS) level or average magnitude of a complex signal. While averaging can be efficiently implemented by most microprocessors, obtaining an efficient and rapidly converging algorithm is surely a time-consuming task due to the adjustments and optimizations that need to be performed. On the other hand, calculating the square root can be challenging, especially with low-cost hardware. If the processor does not have a built-in fast square root function, it must be implemented in software. While this can provide accurate results, it may not be as efficient.</p>
 <p><a class="el" href="classqlibs_1_1rms.html">qlibs::rms</a> provides a super-efficient method to compute the Recursive Root Mean Square (RMS). The implementation uses 3-stage filtering and Newton's method to obtain the square root. The filter parameters are perfectly tuned and optimized to converge in around 16 cycles, operating at a sampling rate of 1mS. This means that you must configure your embedded system to meet those specifications, either by configuring a timer interrupt or by delegating responsibility to a real-time task.</p>
 <h1><a class="anchor" id="qrms_ex1"></a>
-Example : By using a timer interrupt</h1>
-<p>rms_compute.c </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bsp.h&quot;</span></div>
+Example: Using a Timer Interrupt</h1>
+<p>The following example demonstrates how to configure a timer to periodically update the RMS estimator at a 1 ms interval.</p>
+<p><b>File:</b> <code>rms_compute.c</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bsp.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;hal_timer.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qlibs.h&gt;</span></div>
 <div class="line"> </div>
@@ -179,7 +180,7 @@ Example : By using a timer interrupt</h1>
 <div class="ttc" id="aclassqlibs_1_1rms_html_a86721a80a069b9d0d62f9ef8d4fa82db"><div class="ttname"><a href="classqlibs_1_1rms.html#a86721a80a069b9d0d62f9ef8d4fa82db">qlibs::rms::update</a></div><div class="ttdeci">real_t update(const real_t x) noexcept</div><div class="ttdoc">Computes the moving root mean square (RMS) of the input signal. The object uses both the exponential ...</div><div class="ttdef"><b>Definition</b> rms.cpp:22</div></div>
 <div class="ttc" id="anamespaceqlibs_html"><div class="ttname"><a href="namespaceqlibs.html">qlibs</a></div><div class="ttdoc">The qLibs++ library namespace.</div><div class="ttdef"><b>Definition</b> mat.hpp:18</div></div>
 <div class="ttc" id="anamespaceqlibs_html_aeca7cb28a6516edf7d0ad96ef698918e"><div class="ttname"><a href="namespaceqlibs.html#aeca7cb28a6516edf7d0ad96ef698918e">qlibs::real_t</a></div><div class="ttdeci">float real_t</div><div class="ttdoc">A type to instantiate a real variable double-precision of 64-bits IEEE 754.</div><div class="ttdef"><b>Definition</b> qlibs_types.hpp:43</div></div>
-</div><!-- fragment --><p> rms_compute.h </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef RMS_COMPUTE_H</span></div>
+</div><!-- fragment --><p><b>File:</b> <code>rms_compute.h</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef RMS_COMPUTE_H</span></div>
 <div class="line"><span class="preprocessor">#define RMS_COMPUTE_H</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#ifdef __cplusplus</span></div>
