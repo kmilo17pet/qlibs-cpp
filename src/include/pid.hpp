@@ -131,6 +131,9 @@ namespace qlibs {
             real_t speed{ 0.25_re };    /*final controller speed*/
             uint32_t it{ UNDEFINED };   /*enable time*/
 
+
+            static bool resetEstimation( estimationParams &p,
+                                         const real_t r );
             static bool getTimeConstant( real_t& tau,
                                          const real_t abs_z,
                                          const real_t dt );

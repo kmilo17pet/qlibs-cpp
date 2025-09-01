@@ -371,13 +371,29 @@ void pidAutoTuning::computeParamsN2( systemParams& p,
         const real_t rPart = -0.5_re*a1;
         const real_t iPart = -0.5_re*ffmath::sqrt( a2_4 - a1a1 );
         const real_t r = ffmath::hypot( rPart, iPart );
+        p.tau2 = 0.0_re;
         p.stable = getTimeConstant( p.tau1, r, dt );
     }
+}
+/*============================================================================*/
+bool pidAutoTuning::resetEstimation( estimationParams &p,
+                                     const real_t r )
+{
+    bool rst = ( r < 0.0_re ) || ( r > 10000.0_re );
+    if ( rst ) {
+        constexpr real_t r_alfa = 0.1_re;
+        p.P[0][0] = r_alfa; p.P[0][1] = 0.0_re; p.P[0][2] = 0.0_re; p.P[0][3] = 0.0_re;
+        p.P[1][0] = 0.0_re; p.P[1][1] = r_alfa; p.P[1][2] = 0.0_re; p.P[1][3] = 0.0_re;
+        p.P[2][0] = 0.0_re; p.P[2][1] = 0.0_re; p.P[2][2] = r_alfa; p.P[2][3] = 0.0_re;
+        p.P[3][0] = 0.0_re; p.P[3][1] = 0.0_re; p.P[3][2] = 0.0_re; p.P[3][3] = r_alfa;
+    }
+    return rst;
 }
 /*============================================================================*/
 void pidAutoTuning::estimationStepN1( estimationParams &p,
                                       const real_t y )
 {
+    constexpr real_t reg = 0.0001_re;
     const real_t f = 1.0_re/p.lambda;
     const real_t phi[2] = { p.u1, p.y2 };
     const real_t P_phi[2] = {
@@ -385,20 +401,24 @@ void pidAutoTuning::estimationStepN1( estimationParams &p,
         ( p.P[1][0]*phi[0] ) + ( p.P[1][1]*phi[1] ),
     };
     const real_t r = p.lambda + ( ( phi[0]*P_phi[0] ) + ( phi[1]*P_phi[1] ) );
+    if ( resetEstimation( p, r ) ) {
+        return;
+    }
     const real_t inv_r = 1.0_re/r;
     const real_t L[4] ={ P_phi[0]*inv_r, P_phi[1]*inv_r };
     const real_t e  = y - ( ( phi[0]*p.theta[0] ) + ( phi[1]*p.theta[1] ) );
     p.theta[0] += L[0]*e;
     p.theta[1] += L[1]*e;
-    p.P[0][0] = f*( p.P[0][0] - ( L[0]*P_phi[0] ) );
+    p.P[0][0] = f*( p.P[0][0] - ( L[0]*P_phi[0] ) ) + reg;
     p.P[0][1] = f*( p.P[0][1] - ( L[0]*P_phi[1] ) );
     p.P[1][0] = f*( p.P[1][0] - ( L[1]*P_phi[0] ) );
-    p.P[1][1] = f*( p.P[1][1] - ( L[1]*P_phi[1] ) );
+    p.P[1][1] = f*( p.P[1][1] - ( L[1]*P_phi[1] ) ) + reg;
 }
 /*============================================================================*/
 void pidAutoTuning::estimationStepN2( estimationParams &p,
                                       const real_t y )
 {
+    constexpr real_t reg = 0.0001_re;
     const real_t f = 1.0_re/p.lambda;
     const real_t phi[4] = { p.u1, p.u2, p.y1, p.y2 };
     const real_t P_phi[4] = {
@@ -408,6 +428,9 @@ void pidAutoTuning::estimationStepN2( estimationParams &p,
          ( p.P[0][3]*phi[0] ) + ( p.P[1][3]*phi[1] ) + ( p.P[2][3]*phi[2] ) + ( p.P[3][3]*phi[3] ),
     };
     const real_t r = p.lambda + ( ( phi[0]*P_phi[0] ) + ( phi[1]*P_phi[1] ) + ( phi[2]*P_phi[2] ) + ( phi[3]*P_phi[3]) );
+    if ( resetEstimation( p, r ) ) {
+        return;
+    }
     const real_t inv_r = 1.0_re/r;
     const real_t L[4] ={ P_phi[0]*inv_r, P_phi[1]*inv_r, P_phi[2]*inv_r, P_phi[3]*inv_r };
     const real_t e  = y - ( ( phi[0]*p.theta[0] ) + ( phi[1]*p.theta[1] ) + ( phi[2]*p.theta[2] ) + ( phi[3]*p.theta[3] ) );
@@ -415,16 +438,16 @@ void pidAutoTuning::estimationStepN2( estimationParams &p,
     p.theta[1] += L[1]*e;
     p.theta[2] += L[2]*e;
     p.theta[3] += L[3]*e;
-    p.P[0][0] = f*( p.P[0][0] - ( L[0]*P_phi[0] ) );
+    p.P[0][0] = f*( p.P[0][0] - ( L[0]*P_phi[0] ) ) + reg;
     p.P[0][1] = f*( p.P[0][1] - ( L[0]*P_phi[1] ) );
     p.P[0][2] = f*( p.P[0][2] - ( L[0]*P_phi[2] ) );
     p.P[0][3] = f*( p.P[0][3] - ( L[0]*P_phi[3] ) );
-    p.P[1][1] = f*( p.P[1][1] - ( L[1]*P_phi[1] ) );
+    p.P[1][1] = f*( p.P[1][1] - ( L[1]*P_phi[1] ) ) + reg;
     p.P[1][2] = f*( p.P[1][2] - ( L[1]*P_phi[2] ) );
     p.P[1][3] = f*( p.P[1][3] - ( L[1]*P_phi[3] ) );
-    p.P[2][2] = f*( p.P[2][2] - ( L[2]*P_phi[2] ) );
+    p.P[2][2] = f*( p.P[2][2] - ( L[2]*P_phi[2] ) ) + reg;
     p.P[2][3] = f*( p.P[2][3] - ( L[2]*P_phi[3] ) );
-    p.P[3][3] = f*( p.P[3][3] - ( L[3]*P_phi[3] ) );
+    p.P[3][3] = f*( p.P[3][3] - ( L[3]*P_phi[3] ) ) + reg;
 }
 /*============================================================================*/
 bool pidAutoTuning::step( const real_t u,
@@ -435,7 +458,7 @@ bool pidAutoTuning::step( const real_t u,
 
     estimationStep( estParams, y );
     estParams.y2 = estParams.y1;
-    estParams.y1 = y;
+    estParams.y1 = -y;
     estParams.u2 = estParams.u1;
     estParams.u1 = u;
     computeParameters( sysParams, estParams, dt );
@@ -498,10 +521,10 @@ void pidAutoTuning::initialize( const pidGains current,
     estParams = {
         { th0, th1, th2, th3 },
         {
-            { 1000.0_re, 0.0_re,    0.0_re,    0.0_re     },
-            { 0.0_re,    1000.0_re, 0.0_re,    0.0_re     },
-            { 0.0_re,    0.0_re,    1000.0_re, 0.0_re     },
-            { 0.0_re,    0.0_re,    0.0_re,    10000.0_re },
+            { 1000.0_re, 0.0_re,    0.0_re,    0.0_re    },
+            { 0.0_re,    1000.0_re, 0.0_re,    0.0_re    },
+            { 0.0_re,    0.0_re,    1000.0_re, 0.0_re    },
+            { 0.0_re,    0.0_re,    0.0_re,    1000.0_re },
         },
         0.9898_re,
         0.0_re, 0.0_re, 0.0_re, 0.0_re
