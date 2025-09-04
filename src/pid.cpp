@@ -470,10 +470,22 @@ bool pidAutoTuning::step( const real_t u,
     return ready;
 }
 /*============================================================================*/
+bool pidAutoTuning::enable2ndOrderEstimates( const bool en ) noexcept
+{
+    if ( en ) {
+        estimationStep = estimationStepN2;
+        computeParameters = computeParamsN2;
+    }
+    else {
+        estimationStep = estimationStepN1;
+        computeParameters = computeParamsN1;
+    }
+}
+/*============================================================================*/
 pidGains pidAutoTuning::getEstimates( void ) const noexcept
 {
     pidGains gains = { 0.0_re, 0.0_re, 0.0_re };
-    const real_t tau = sysParams.tau1;
+    const real_t tau = sysParams.tau1 + sysParams.tau2;
     const real_t k = sysParams.gain;
     const real_t td = tau*0.1_re;
 

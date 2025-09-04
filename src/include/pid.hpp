@@ -188,6 +188,7 @@ namespace qlibs {
         public:
             pidAutoTuning() = default;
             pidGains getEstimates( void ) const noexcept;
+            bool enableOrder2Estimates( const bool en ) noexcept;
     };
 
     /**
