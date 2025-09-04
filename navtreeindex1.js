@@ -69,10 +69,11 @@ var NAVTREEINDEX1 =
 "classqlibs_1_1n_state.html#ac1cbaf9ad49a7802dbf17ee6fd1a60b6":[2,12,0,5],
 "classqlibs_1_1n_state.html#ad921a081792c80c6c64446a6c6d55a8f":[2,12,0,1],
 "classqlibs_1_1pid_auto_tuning.html":[2,2,1],
-"classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208":[2,2,1,1],
+"classqlibs_1_1pid_auto_tuning.html#a0a2529182790c64ae5d1361674637208":[2,2,1,2],
+"classqlibs_1_1pid_auto_tuning.html#a2acd8466eafa1a70b07d490b2ac8d446":[2,2,1,1],
 "classqlibs_1_1pid_auto_tuning.html#a6c31332f466c91e8e2827a4fa9dead5c":[2,2,1,0],
-"classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de":[2,2,1,3],
-"classqlibs_1_1pid_auto_tuning.html#aa726a8d12c934b49a3c7add01d4f4d8c":[2,2,1,2],
+"classqlibs_1_1pid_auto_tuning.html#aa40e0ead85229b469ea74ca68ffc79de":[2,2,1,4],
+"classqlibs_1_1pid_auto_tuning.html#aa726a8d12c934b49a3c7add01d4f4d8c":[2,2,1,3],
 "classqlibs_1_1pid_controller.html":[2,2,2],
 "classqlibs_1_1pid_controller.html#a024a3e62c9090fe9b2e44043beb0ae7c":[2,2,2,28],
 "classqlibs_1_1pid_controller.html#a124b96d1c7f9d882edf4b55e0af320c8":[2,2,2,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "functions_v.html":[4,3,0,20],
 "functions_vars.html":[4,3,2],
 "functions_w.html":[4,3,0,21],
-"functions_~.html":[4,3,0,22],
-"group__qalgorithm.html":[2,9]
+"functions_~.html":[4,3,0,22]
 };
