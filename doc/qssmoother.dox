@@ -21,7 +21,7 @@
 *
 *  The difference-equation of the output of this filter is given by:
 *
-*     <center> \f$y(t)=x(t)+\alpha[y(t-1)+x(t)]\f$ </center>
+*     <center> \f$y(t)=x(t)+\alpha[y(t-1)-x(t)]\f$ </center>
 *
 * where,
 *
