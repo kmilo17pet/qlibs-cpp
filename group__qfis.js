@@ -58,7 +58,7 @@ var group__qfis =
       [ "core", "classqlibs_1_1fis_1_1instance.html#af764561c544bacc1b90b526ee8d3c708", null ],
       [ "system", "classqlibs_1_1fis_1_1instance.html#ac76afe9ca618f861b8a09cb2aaa53e9e", null ]
     ] ],
-    [ "qlibs::fis::system< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classqlibs_1_1fis_1_1system.html", [
+    [ "qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;", "classqlibs_1_1fis_1_1system.html", [
       [ "system", "classqlibs_1_1fis_1_1system.html#a86ddeb9b68e5993ab8b277296b602f32", null ],
       [ "deFuzzify", "classqlibs_1_1fis_1_1system.html#ad31a3a11db2f7bfbb81a8e956972eb9a", null ],
       [ "fuzzify", "classqlibs_1_1fis_1_1system.html#a52403c56b8b91b03a56dd349cf084e8e", null ],

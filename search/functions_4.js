@@ -6,14 +6,13 @@ var searchData=
   ['ellint_5f2_3',['ellint_2',['../group__qffmath.html#ga957600c201c1c997439cb1d7fd9b9298',1,'qlibs::ffmath']]],
   ['ellint_5f3_4',['ellint_3',['../group__qffmath.html#ga3aa46fc7504c3025852c3a638e0a39f6',1,'qlibs::ffmath']]],
   ['enableautotuning_5',['enableAutoTuning',['../classqlibs_1_1pid_controller.html#a4f8454872ae2baae5962c0f88a966d3e',1,'qlibs::pidController']]],
-  ['enableorder2estimates_6',['enableOrder2Estimates',['../classqlibs_1_1pid_auto_tuning.html#a2acd8466eafa1a70b07d490b2ac8d446',1,'qlibs::pidAutoTuning']]],
-  ['epsilon_7',['epsilon',['../structlimits.html#ab0df7021ea571d67bb4ff71a88a83ca9',1,'limits']]],
-  ['erf_8',['erf',['../group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65',1,'qlibs::ffmath']]],
-  ['erfc_9',['erfc',['../group__qffmath.html#ga4d271241abb1bfd4aab9ce2708556174',1,'qlibs::ffmath']]],
-  ['excite_10',['excite',['../classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374',1,'qlibs::ltisys']]],
-  ['exp_11',['exp',['../classqlibs_1_1fp16.html#a38e896e81c633d8c831d9366b1365bd4',1,'qlibs::fp16::exp()'],['../group__qffmath.html#ga582ddbcb70a87c003aa6bbd0c57601ba',1,'qlibs::ffmath::exp(float x)']]],
-  ['exp10_12',['exp10',['../group__qffmath.html#ga0bf4ade7dad579b2000f591f4ae15a89',1,'qlibs::ffmath']]],
-  ['exp2_13',['exp2',['../group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf',1,'qlibs::ffmath']]],
-  ['expint_14',['expint',['../group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7',1,'qlibs::ffmath']]],
-  ['expm1_15',['expm1',['../group__qffmath.html#ga9d9e6e1aee50c184a185efa82f61d101',1,'qlibs::ffmath']]]
+  ['epsilon_6',['epsilon',['../structlimits.html#ab0df7021ea571d67bb4ff71a88a83ca9',1,'limits']]],
+  ['erf_7',['erf',['../group__qffmath.html#ga74eff75b64924b94dbd85e58eec80d65',1,'qlibs::ffmath']]],
+  ['erfc_8',['erfc',['../group__qffmath.html#ga4d271241abb1bfd4aab9ce2708556174',1,'qlibs::ffmath']]],
+  ['excite_9',['excite',['../classqlibs_1_1ltisys.html#a641f71290a08848800000dc952e9e374',1,'qlibs::ltisys']]],
+  ['exp_10',['exp',['../classqlibs_1_1fp16.html#a38e896e81c633d8c831d9366b1365bd4',1,'qlibs::fp16::exp()'],['../group__qffmath.html#ga582ddbcb70a87c003aa6bbd0c57601ba',1,'qlibs::ffmath::exp(float x)']]],
+  ['exp10_11',['exp10',['../group__qffmath.html#ga0bf4ade7dad579b2000f591f4ae15a89',1,'qlibs::ffmath']]],
+  ['exp2_12',['exp2',['../group__qffmath.html#ga5483e41366e80bae21505e74ce3bcdaf',1,'qlibs::ffmath']]],
+  ['expint_13',['expint',['../group__qffmath.html#ga2feef83f0b68b15213d3a874ee132dc7',1,'qlibs::ffmath']]],
+  ['expm1_14',['expm1',['../group__qffmath.html#ga9d9e6e1aee50c184a185efa82f61d101',1,'qlibs::ffmath']]]
 ];

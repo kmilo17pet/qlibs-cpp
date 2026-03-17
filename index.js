@@ -93,11 +93,11 @@ var index =
       [ "Working with bitfields", "qbitfield_desc.html#qbitfield_workingwith", null ]
     ] ],
     [ "Recursive Root Mean Square estimator", "qrms_desc.html", [
-      [ "Example: Using a Timer Interrupt", "qrms_desc.html#qrms_ex1", null ]
+      [ "Example : By using a timer interrupt", "qrms_desc.html#qrms_ex1", null ]
     ] ],
     [ "Generic Cyclic Redundancy Check (CRC) calculator class", "qcrc_desc.html", null ],
     [ "Tapped Delay Line in O(1)", "qtdl_desc.html", [
-      [ "Example : Instantiating a TDL with 256 delay taps", "qtdl_desc.html#qtdl_ex1", null ]
+      [ "Example : Code snippet to instantiate a TDL to hold up to 256 delays.", "qtdl_desc.html#qtdl_ex1", null ]
     ] ],
     [ "Fast floating point math library and extensions", "qffmath_desc.html", null ],
     [ "1D Interpolation class", "qinterp1_desc.html", [

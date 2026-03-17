@@ -1,11 +1,11 @@
 var hierarchy =
 [
-    [ "qlibs::continuousTF< order >", "structqlibs_1_1continuous_t_f.html", null ],
+    [ "qlibs::continuousTF&lt; order &gt;", "structqlibs_1_1continuous_t_f.html", null ],
     [ "qlibs::fis::core", "classqlibs_1_1fis_1_1core.html", [
       [ "qlibs::fis::instance", "classqlibs_1_1fis_1_1instance.html", null ]
     ] ],
     [ "qlibs::crc", "classqlibs_1_1crc.html", null ],
-    [ "qlibs::discreteTF< NB, NA >", "structqlibs_1_1discrete_t_f.html", null ],
+    [ "qlibs::discreteTF&lt; NB, NA &gt;", "structqlibs_1_1discrete_t_f.html", null ],
     [ "qlibs::fp16", "classqlibs_1_1fp16.html", null ],
     [ "limits::fu32", "unionlimits_1_1fu32.html", null ],
     [ "qlibs::interp1", "classqlibs_1_1interp1.html", null ],
@@ -18,7 +18,7 @@ var hierarchy =
       [ "qlibs::transportDelay< numberOfDelays >", "classqlibs_1_1transport_delay.html", null ]
     ] ],
     [ "limits", "structlimits.html", null ],
-    [ "qlibs::mat< Rows, Cols >", "classqlibs_1_1mat.html", null ],
+    [ "qlibs::mat&lt; Rows, Cols &gt;", "classqlibs_1_1mat.html", null ],
     [ "qlibs::fis::mf", "classqlibs_1_1fis_1_1mf.html", null ],
     [ "nonCopyable", null, [
       [ "qlibs::bitfield", "classqlibs_1_1bitfield.html", null ],
@@ -69,7 +69,7 @@ var hierarchy =
       [ "qlibs::smootherMWM1", "classqlibs_1_1smoother_m_w_m1.html", null ],
       [ "qlibs::smootherMWM2", "classqlibs_1_1smoother_m_w_m2.html", null ]
     ] ],
-    [ "qlibs::fis::system< fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules >", "classqlibs_1_1fis_1_1system.html", null ],
+    [ "qlibs::fis::system&lt; fType, numberOfInputs, numberOfOutputs, numberOfInputSets, numberOfOutputSets, numberOfRules &gt;", "classqlibs_1_1fis_1_1system.html", null ],
     [ "thing", "structthing.html", null ],
     [ "qlibs::timeDelay", "structqlibs_1_1time_delay.html", null ]
 ];

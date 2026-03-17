@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['manipulation_20library_0',['Bit-Field manipulation library',['../qbitfield_desc.html',1,'index']]],
-  ['math_20library_20and_20extensions_1',['Fast floating point math library and extensions',['../qffmath_desc.html',1,'index']]],
-  ['mean_20square_20estimator_2',['Recursive Root Mean Square estimator',['../qrms_desc.html',1,'index']]]
+  ['helpers_0',['Trigonometric functions and helpers',['../qfp16_desc.html#qfp16_trig_functions',1,'']]],
+  ['hold_20up_20to_20256_20delays_1',['Example : Code snippet to instantiate a TDL to hold up to 256 delays.',['../qtdl_desc.html#qtdl_ex1',1,'']]]
 ];
