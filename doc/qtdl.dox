@@ -1,43 +1,45 @@
 /*! @page qtdl_desc Tapped Delay Line in O(1)
-* The class \ref qtdl is an implementation of the Tapped Delay Line (TDL) structure.
-* A TDL is a discrete element in digital filter theory, that allows a signal to
-* be delayed by a number of samples and provides an output signal for each delay.
-* Here, a TDL is implemented as a circular buffer. This means
-* that the complexity of the enqueue and dequeue operations is constant @c O(1), so
-* integer delays can be computed very efficiently.
+* The class \ref qtdl implements a Tapped Delay Line (TDL), a fundamental structure
+* in digital filter theory. A TDL delays an input signal by a number of samples and
+* exposes each delayed version as an output
 *
-* The delay by one sample is notated \f$z^{-1}\f$ and delays of \f$N\f$ samples
-* is notated as \f$z^{-N}\f$  motivated by the role the z-transform plays in
-* describing digital filter structures.
+* In this implementation, the TDL is backed by a circular buffer. As a result,
+* both enqueue and dequeue operations run in constant time @c O(1), making integer
+* delays highly efficient.
 *
-* To create a TDL, you just need to define an instance of type \ref qlibs::tdl and
-* then, configure it by using the constructor or \ref qlibs::tdl::setup(),
-* where you can define the number of lines to be delayed and the initial values
-* for all of them. Then, you can start operating over this structure by inserting
-* samples of the input signal by using \ref qlibs::tdl::insertSample().
-* You can also get any specific delay from it by using:
+* A delay of one sample is denoted  \f$z^{-1}\f$ , while a delay of \f$N\f$ samples
+* is denoted \f$z^{-N}\f$ consistent with z-transform notation in digital signal
+* processing.
 *
-* - \ref qlibs::tdl::getOldest(), to get the oldest delay at tap \f$z^{-N}\f$
-* - \ref qlibs::tdl::getAtIndex(), to get the delay at tap \f$z^{-i}\f$.
-* You can also use the index using an unsigned value as follows: @c "delay[ i ]"
-* - Index operator
+* To use a TDL, create an instance of \ref qlibs::tdl and configure it using either
+* the constructor or \ref qlibs::tdl::setup(). During setup you specify both the
+* number of delay taps and their initial values. Once configured, samples of the
+* input signal can be inserted using \ref qlibs::tdl::insertSample() (or the
+* function-call operator).
 *
-* Given the applications of this structure, the \ref qlibs::tdl class is used as the
-* base component of some aspects of \ref qlibs::smoother and \ref qlibs::ltisys.
+* You can access specific delayed samples via:
+* - \ref qlibs::tdl::getOldest() - retrieves the oldest sample (tap \f$z^{-N}\f$)
+* - \ref qlibs::tdl::getAtIndex() — retrieves the sample at tap \f$z^{-i}\f$
+* - The index operator @c delay[i] — equivalent to @c getAtIndex(i)
 *
-* @section qtdl_ex1 Example : Code snippet to instantiate a TDL to hold up to 256 delays.
+* Because of its versatility, the \ref qlibs::tdl class is a core component in
+* higher-level modules such as \ref qlibs::smoother and \ref qlibs::ltisys.
+*
+* @section qtdl_ex1 Example : Instantiating a TDL with 256 delay taps
 *
 *  @code{.c}
 *  real_t storage[ 256 ] = { 0.0f };
 *  tdl delay( storage );
 *  @endcode
 *
+* Insert new samples:
 * @code{.c}
 *  delay.insertSample( 2.5 );
 *  delay.insertSample( -2.3 );
 *  delay( 4.8 ); // same as delay.insertSample( 4.8 )
 *  @endcode
 *
+* Retrieve delayed samples:
 * @code{.c}
 *  auto d3 = delay[ 3 ]; // get delay at t-3, same as delay.getAtIndex( 3 )
 *  auto dOldest = delay.getOldest(); // get the oldest sample at t-N

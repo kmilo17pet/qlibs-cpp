@@ -87,12 +87,33 @@ namespace qlibs {
     }
     /*! @endcond  */
 
+
     /**
     * @brief A PID Auto-tuning object
     * @details The instance should be bound to a configured PID controller by
     * using the pidController::bindAutoTuning() method
     */
     class pidAutoTuning {
+        /*! @cond  */
+        struct systemParams {
+            real_t gain;
+            real_t tau1;
+            real_t tau2;
+            bool stable;
+        };
+
+        struct estimationParams {
+            real_t theta[4];    /*parameter estimations*/
+            real_t P[4][4];     /*covariance matrix*/
+            real_t lambda;      /*forgetting factor [ 0.9 < l < 1 ]*/
+            real_t y1, y2;      /*past values of y(t)*/
+            real_t u1, u2;      /*past values of u(t)*/
+        };
+
+        using EstimationStepFn = void(*)(estimationParams&, real_t);
+        using ComputeParamsFn =  void(*)(systemParams&,const estimationParams&, const real_t);
+
+        /*! @endcond  */
         friend class pidController;
         public:
             /**
@@ -101,20 +122,33 @@ namespace qlibs {
             static const uint32_t UNDEFINED;
         protected:
             /*! @cond  */
-            real_t p00{ 1.0_re };       /*covariance value*/
-            real_t p01{ 0.0_re };       /*covariance value*/
-            real_t p10{ 0.0_re };       /*covariance value*/
-            real_t p11{ 1.0_re };       /*covariance value*/
-            real_t b1{ 0.1_re };        /*estimation value*/
-            real_t a1{ 0.9_re };        /*estimation value*/
-            real_t uk{ 0.0_re };        /*process input*/
-            real_t yk{ 0.0_re };        /*process output*/
-            real_t l{ 0.9898_re };      /*memory factor [ 0.9 < l < 1 ]*/
-            real_t k{ 1.0_re };         /*process static gain*/
-            real_t tao{ 1.0_re };       /*process time constant*/
+            EstimationStepFn estimationStep{ &pidAutoTuning::estimationStepN1 };
+            ComputeParamsFn computeParameters{ &pidAutoTuning::computeParamsN1 };
+            estimationParams estParams;
+            systemParams sysParams;
+
             real_t mu{ 0.95_re };       /*variation attenuation*/
             real_t speed{ 0.25_re };    /*final controller speed*/
             uint32_t it{ UNDEFINED };   /*enable time*/
+
+
+            static bool resetEstimation( estimationParams &p,
+                                         const real_t r );
+            static bool getTimeConstant( real_t& tau,
+                                         const real_t abs_z,
+                                         const real_t dt );
+            static void computeParamsN1( systemParams& p,
+                                         const estimationParams& e,
+                                         const real_t dt );
+            static void computeParamsN2( systemParams& p,
+                                         const estimationParams& e,
+                                         const real_t dt );
+
+            static void estimationStepN1( estimationParams &p,
+                                          const real_t y );
+            static void estimationStepN2( estimationParams &p,
+                                          const real_t y );
+
             static bool isValidValue( const real_t x ) noexcept;
             pidType type{ pidType::PID_TYPE_PI };
             void initialize( const pidGains current,
@@ -129,7 +163,7 @@ namespace qlibs {
             }
             inline void setMemoryFactor( const real_t lambda ) noexcept
             {
-                l = lambda;
+                estParams.lambda = lambda;
             }
             inline void setMomentum( const real_t Mu ) noexcept
             {
@@ -154,6 +188,7 @@ namespace qlibs {
         public:
             pidAutoTuning() = default;
             pidGains getEstimates( void ) const noexcept;
+            bool enableOrder2Estimates( const bool en ) noexcept;
     };
 
     /**

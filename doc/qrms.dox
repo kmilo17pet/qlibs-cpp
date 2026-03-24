@@ -17,9 +17,12 @@
 * specifications, either by configuring a timer interrupt or by delegating
 * responsibility to a real-time task.
 *
-* @section qrms_ex1 Example :  By using a timer interrupt
+* @section qrms_ex1 Example: Using a Timer Interrupt
 *
-*  rms_compute.c
+* The following example demonstrates how to configure a timer to periodically update the RMS
+* estimator at a 1 ms interval.
+*
+* @b File: @c rms_compute.c
 *  @code{.c}
 *  #include "bsp.h"
 *  #include "hal_timer.h"
@@ -53,7 +56,8 @@
 *
 *
 *  @endcode
-*  rms_compute.h
+*
+*  @b File: @c rms_compute.h
 *  @code{.c}
 *
 *  #ifndef RMS_COMPUTE_H
